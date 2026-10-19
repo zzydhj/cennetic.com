@@ -1,0 +1,375 @@
+# ─────────────────────────────────────────────────────────────
+# Decap CMS 内容后台配置
+#
+# 访问路径：https://qfcncmachine.com/admin/
+#
+# ── 上线前必须做的一步 ──
+#   1. GitHub → Settings → Developer settings → OAuth Apps → New OAuth App
+#   2. Authorization callback URL 填：https://qfcncmachine.com/admin/auth
+#      （路径必须是 /admin/auth，Decap 硬编码这个回调，改不了）
+#   3. 把生成的 Client ID 填到下面 backend.client_id
+#      不要勾 "Generate a client secret"：implicit 流程用不到 secret，
+#      而一旦有了 secret 就意味着必须有服务端来保管它 —— 那就不再是纯静态了。
+#
+# ── 为什么是 implicit 而不是 pkce ──
+#   pkce 只适用于 git-gateway 与 GitLab 后端。GitHub 后端要免服务器、免密钥，
+#   官方支持的组合就是 auth_type: implicit + client_id。写成 pkce 会登不进去。
+#
+# ── 迁移期与后台的边界（重要）──
+#   npm run migrate 的 04/05/06/07 会用源站数据整体覆盖 src/content 与 src/data。
+#   后台的修改会被下次重跑管道抹掉。所以：
+#     · 初次迁移阶段：以管道为准，后台先别用。
+#     · 切换完成后：管道退役，后台是唯一内容源，不要再跑 04-07。
+#   package.json 的 prebuild 只跑 01 03 09（抓数据 + 拉图 + 同步），
+#   刻意不含 04-07，所以正常部署不会碰你写的文章。
+#
+# ── 字段必须列全 ──
+#   Decap 保存时只写配置里声明过的字段，未声明的直接丢弃。
+#   所以下面每个集合都把 schema 的全部键列出来了，包括用 widget: hidden 保住的
+#   sourceId、_comment、canonical 这类不该让编辑手改但要保留的值。
+# ─────────────────────────────────────────────────────────────
+
+backend:
+    name: github
+    repo: zzydhj/qfcncmachine.com
+    branch: main
+    auth_type: implicit
+    client_id: REPLACE_WITH_GITHUB_OAUTH_CLIENT_ID
+
+# 编辑提交进 cms 分支并生成合并请求，而不是直接改写 main：
+# 改坏一篇不会立刻打掉线上页面，Cloudflare Pages 还会先给分支出一份预览。
+publish_mode: editorial_workflow
+
+media_folder: public/uploads
+public_folder: /uploads
+
+site_url: https://qfcncmachine.com
+display_url: https://qfcncmachine.com
+logo_url: /favicon.svg
+show_preview_links: true
+
+locale: en
+
+collections:
+    # ── 文章 ────────────────────────────────────────────────
+    - name: articles
+      label: 文章
+      label_singular: 文章
+      folder: src/content/articles
+      create: true
+      extension: md
+      format: frontmatter
+      # 文件名即 slug，也就是线上 URL；用 identifier_field 让标题栏显示 slug
+      slug: '{{fields.slug}}'
+      identifier_field: slug
+      path: '{{slug}}'
+      summary: '{{fields.title}} · {{fields.date}}'
+      sortable_fields: ['date', 'title']
+      editor:
+          preview: false
+      fields:
+          - { label: SEO 标题, name: title, widget: string, hint: '用于 <title> 与 og:title，不要写站点后缀，模板会统一拼' }
+          - { label: 页面主标题, name: heading, widget: string, hint: '用于页面 H1，可与 SEO 标题不同' }
+          - label: 摘要
+            name: description
+            widget: text
+            hint: '30–255 字符；会出现在搜索结果与卡片上'
+            pattern:
+                - '.{30,255}'
+                - '长度必须介于 30 到 255 字符'
+          - label: Slug
+            name: slug
+            widget: string
+            hint: '决定线上 URL，发布后改动会造成旧收录链接 404'
+            pattern:
+                - '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+                - '只能用小写字母、数字和连字符'
+          # 站内链接目标，形如 /slug/。新文章可不填，模板会自动按 slug 推导。
+          - label: 规范路径
+            name: canonical
+            widget: string
+            required: false
+            hint: '形如 /某文章/；留空则按 slug 自动生成。改 slug 时必须同步改这里'
+          - label: 分类
+            name: categories
+            widget: relation
+            collection: blog-categories
+            value_field: '{{fields.slug}}'
+            display_fields: '{{fields.name}}'
+            search_fields: '{{fields.slug}}'
+            multiple: true
+            min: 0
+            required: false
+          - label: 作者
+            name: author
+            widget: string
+            required: false
+            hint: '对应 src/data/authors.json 的键；留空则回落到默认作者'
+          - label: 发布日期
+            name: date
+            widget: datetime
+            date_format: 'YYYY-MM-DD'
+            time_format: 'HH:mm'
+            format: 'YYYY-MM-DDTHH:mm:ssZZ'
+          - label: 最后修改（schema 用）
+            name: lastmod
+            widget: datetime
+            required: false
+            date_format: 'YYYY-MM-DD'
+            time_format: 'HH:mm'
+            format: 'YYYY-MM-DDTHH:mm:ssZZ'
+          - label: 更新时间
+            name: modified
+            widget: datetime
+            required: false
+            date_format: 'YYYY-MM-DD'
+            time_format: 'HH:mm'
+            format: 'YYYY-MM-DDTHH:mm:ssZZ'
+          - label: 主图
+            name: hero
+            widget: image
+            required: false
+            hint: '会作为 og:image 与文章卡片图'
+          - { label: 主图替代文本, name: heroAlt, widget: string, required: false }
+          - { label: 主图宽度, name: heroWidth, widget: number, value_type: int, min: 1, required: false }
+          - { label: 主图高度, name: heroHeight, widget: number, value_type: int, min: 1, required: false }
+          - label: FAQ
+            name: faq
+            widget: list
+            required: false
+            fields:
+                - { label: 问题, name: q, widget: string }
+                - { label: 答案, name: a, widget: text }
+          - label: robots
+            name: robots
+            widget: string
+            default: 'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large'
+            hint: '填 noindex, follow 可从搜索结果撤下本篇'
+          - { label: 字数（统计用）, name: wordCount, widget: number, value_type: int, min: 0, required: false, default: 0 }
+          - { label: 阅读分钟数, name: readingMinutes, widget: number, value_type: int, min: 1, required: false, default: 1 }
+          # 源站文章 ID，仅供回溯对账，不参与渲染
+          - { label: 源站 ID, name: sourceId, widget: hidden, required: false }
+          # 正文保持 HTML 源码编辑：文章里有 143 个表格与 qf-* 组件类名，
+          # 富文本所见即所得会把这些结构吃掉，存一次就把挣到排名的页面改残。
+          - label: 正文（HTML）
+            name: body
+            widget: code
+            language: html
+            output_code: true
+            default: ''
+
+    # ── 固定页面 ────────────────────────────────────────────
+    - name: pages
+      label: 页面
+      label_singular: 页面
+      folder: src/content/pages
+      create: true
+      extension: md
+      format: frontmatter
+      slug: '{{fields.slug}}'
+      identifier_field: slug
+      path: '{{slug}}'
+      summary: '{{fields.title}}'
+      editor:
+          preview: false
+      fields:
+          - { label: SEO 标题, name: title, widget: string }
+          - { label: 页面主标题, name: heading, widget: string }
+          - { label: 摘要, name: description, widget: text, default: '' }
+          - label: Slug
+            name: slug
+            widget: string
+            pattern:
+                - '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+                - '只能用小写字母、数字和连字符'
+          - { label: 规范路径, name: canonical, widget: string, required: false, hint: '形如 /about-us/；留空则按 slug 自动生成' }
+          - label: robots
+            name: robots
+            widget: string
+            default: 'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large'
+          - { label: 发布日期, name: date, widget: datetime, required: false, date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DDTHH:mm:ssZZ' }
+          - { label: 最后修改, name: lastmod, widget: datetime, required: false, date_format: 'YYYY-MM-DD', time_format: 'HH:mm', format: 'YYYY-MM-DDTHH:mm:ssZZ' }
+          - { label: 主图, name: hero, widget: image, required: false }
+          - { label: 菜单排序, name: menuOrder, widget: number, value_type: int, default: 0 }
+          - label: 列表型页面
+            name: isListing
+            widget: boolean
+            default: false
+            hint: '/blog/ /products/ 这类主体是列表的页面；勾选后正文只当列表上方的引言'
+          - { label: 作者, name: author, widget: string, required: false }
+          - label: FAQ
+            name: faq
+            widget: list
+            required: false
+            fields:
+                - { label: 问题, name: q, widget: string }
+                - { label: 答案, name: a, widget: text }
+          - { label: 源站 ID, name: sourceId, widget: hidden, required: false }
+          - label: 正文（HTML）
+            name: body
+            widget: code
+            language: html
+            output_code: true
+            default: ''
+
+    # ── 产品 ────────────────────────────────────────────────
+    - name: products
+      label: 产品
+      label_singular: 产品
+      folder: src/data/products
+      create: true
+      extension: json
+      format: json
+      slug: '{{fields.slug}}'
+      identifier_field: slug
+      path: '{{slug}}'
+      summary: '{{fields.name}}'
+      editor:
+          preview: false
+      fields:
+          - label: Slug
+            name: slug
+            widget: string
+            pattern:
+                - '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+                - '只能用小写字母、数字和连字符'
+          - { label: 型号名称, name: name, widget: string }
+          - { label: 规范链接, name: canonical, widget: string }
+          # 迁移时留下的已弃用字段；不在 Product 类型里，也不能被后台删掉，
+          # 否则重跑 06 又会把它写回来，形成来回拖动。
+          - { label: 旧图（已弃用）, name: unusedImages, widget: hidden, required: false }
+          - { label: 简介, name: summary, widget: text, hint: '出现在列表页与 meta description' }
+          - label: 图集
+            name: images
+            widget: list
+            types:
+                - label: 图片
+                  value:
+                      - { label: 路径, name: src, widget: string }
+                      - { label: 替代文本, name: alt, widget: string }
+                      - { label: 宽度, name: width, widget: number, value_type: int, min: 1 }
+                      - { label: 高度, name: height, widget: number, value_type: int, min: 1 }
+          - label: 所属分类
+            name: categories
+            widget: list
+            fields:
+                - { label: Slug, name: slug, widget: string }
+                - { label: 名称, name: name, widget: string }
+                - { label: 规范链接, name: canonical, widget: string }
+          - label: 规格
+            name: specs
+            widget: list
+            fields:
+                - { label: 参数名, name: name, widget: string }
+                - label: 取值
+                  name: values
+                  widget: list
+                  field: { label: 值, name: value, widget: string }
+          - label: 正文（HTML）
+            name: body
+            widget: code
+            language: html
+            output_code: true
+            default: ''
+
+    # ── 博客分类 ────────────────────────────────────────────
+    - name: blog-categories
+      label: 博客分类
+      label_singular: 博客分类
+      folder: src/data/blog-categories
+      create: true
+      extension: json
+      format: json
+      slug: '{{fields.slug}}'
+      identifier_field: slug
+      path: '{{slug}}'
+      summary: '{{fields.name}}'
+      editor:
+          preview: false
+      fields:
+          - label: Slug
+            name: slug
+            widget: string
+            pattern:
+                - '^[a-z0-9]+(?:-[a-z0-9]+)*$'
+                - '只能用小写字母、数字和连字符'
+          - { label: 名称, name: name, widget: string }
+          - { label: 规范路径, name: canonical, widget: string, required: false, hint: '形如 /category/技术/；留空则按 slug 生成' }
+          - { label: 分类描述, name: description, widget: text, default: '' }
+          - { label: 分类页标题, name: title, widget: string, required: false, hint: '留空则按「名称 - 站点名」自动生成' }
+          - label: robots
+            name: robots
+            widget: string
+            default: 'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large'
+            hint: '文章数为 0 的分类应设 noindex, follow，与源站行为保持一致'
+          - { label: 文章数, name: count, widget: number, value_type: int, min: 0, default: 0, hint: '仅展示用；列表页实际按查询结果渲染' }
+
+    # ── 站点信息 ────────────────────────────────────────────
+    - name: site
+      label: 站点信息
+      editor:
+          preview: false
+      files:
+          - name: site
+            label: 站点信息
+            file: src/data/site.json
+            extension: json
+            fields:
+                - { label: 站点名, name: name, widget: string }
+                - { label: 公司全称, name: legalName, widget: string }
+                - { label: 简称, name: shortName, widget: string }
+                - { label: 站点根地址, name: url, widget: string, hint: 'canonical、sitemap、结构化数据都以此为基准，改动要同步 Cloudflare 域名' }
+                - { label: 语言代码, name: language, widget: string, default: en }
+                - { label: Logo 路径, name: logo, widget: string }
+                - { label: 站点描述, name: description, widget: text }
+                - { label: 邮箱, name: email, widget: string }
+                - { label: 电话（拨号用）, name: phone, widget: string }
+                - { label: 电话（展示用）, name: phoneDisplay, widget: string }
+                - label: WhatsApp
+                  name: whatsapp
+                  widget: object
+                  fields:
+                      - { label: 号码（不带加号）, name: number, widget: string, hint: '拼 wa.me 链接，格式如 8615118243737' }
+                      - { label: 展示文本, name: display, widget: string }
+                - label: Tawk.to 在线客服
+                  name: tawk
+                  widget: object
+                  fields:
+                      - { label: propertyId, name: propertyId, widget: string, default: '', hint: 'Tawk 后台 Property ID；留空则不加载客服脚本' }
+                      - { label: widgetId, name: widgetId, widget: string, default: '', hint: 'Tawk 后台 Widget ID，通常是 chat 开头' }
+                - label: 统计
+                  name: analytics
+                  widget: object
+                  fields:
+                      - { label: gtagId, name: gtagId, widget: string, default: '', hint: 'Google Tag Manager 容器 ID' }
+                - label: 地址
+                  name: address
+                  widget: object
+                  fields:
+                      - { label: 街道/镇, name: street, widget: string }
+                      - { label: 城市, name: city, widget: string }
+                      - { label: 省份, name: region, widget: string }
+                      - { label: 国家, name: country, widget: string }
+                      - { label: 国家代码, name: countryCode, widget: string }
+                - { label: 默认分享图, name: ogDefaultImage, widget: string, hint: '文章没设主图时用它；必须是真实存在的文件，否则分享出去没缩略图' }
+                - label: 首页背景视频
+                  name: hero
+                  widget: object
+                  fields:
+                      - { label: 说明, name: _comment, widget: text, required: false }
+                      - { label: 视频路径, name: video, widget: string }
+                      - { label: 封面路径, name: poster, widget: string, hint: '封面是 LCP 元素，务必是已压缩的小图' }
+                      - { label: 封面宽度, name: posterWidth, widget: number, value_type: int, min: 1 }
+                      - { label: 封面高度, name: posterHeight, widget: number, value_type: int, min: 1 }
+                      - { label: 封面替代文本, name: posterAlt, widget: string }
+                - label: 工厂介绍视频
+                  name: youtube
+                  widget: object
+                  fields:
+                      - { label: 说明, name: _comment, widget: text, required: false }
+                      - { label: YouTube 视频 ID, name: factoryVideoId, widget: string, hint: '只填 ID，不填完整链接；后台默认只渲染封面，点击才加载第三方脚本' }
+                      - { label: 封面路径, name: poster, widget: string }
+                      - { label: 封面宽度, name: posterWidth, widget: number, value_type: int, min: 1 }
+                      - { label: 封面高度, name: posterHeight, widget: number, value_type: int, min: 1 }
+                - { label: 工作时间, name: hours, widget: string }
+                - { label: 底部一句话, name: foundingNote, widget: string }

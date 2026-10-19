@@ -1,0 +1,235 @@
+/**
+ * 全局样式入口：Tailwind + 设计令牌 + 基础重置 + 少量跨页复用的组件类。
+ *
+ * 只在真正需要跨页复用时才建组件类（按钮 / 容器 / 卡片 / 章节标题）。
+ * 单页独有的样式一律写进该组件的 <style>，由 Astro 做作用域隔离，
+ * 避免全站样式表持续膨胀 —— 那正是源站 Elementor 堆到 100KB 内联 CSS 的成因。
+ *
+ * 文章正文样式不在此处引入，它只在文章页需要，由 ArticleLayout 单独引入。
+ */
+
+@import 'tailwindcss';
+@import './tokens.css';
+
+@layer base {
+    html {
+        /* 锚点跳转时给固定头部留出空间，否则标题被遮住 */
+        scroll-padding-top: 5.5rem;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.65;
+        color: var(--color-body);
+        background: var(--color-paper);
+        /* 防止图片/表格溢出造成横向滚动与布局位移 */
+        overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+        color: var(--color-ink);
+        font-weight: 700;
+        line-height: 1.25;
+        text-wrap: balance;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: var(--color-brand);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--color-brand-dark);
+    }
+
+    img,
+    svg,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 无尺寸信息的图占位，避免加载时跳动 */
+    img[width][height] {
+        aspect-ratio: attr(width) / attr(height);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-brand);
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer components {
+
+    /*
+     * 全站唯一的宽度容器。名字用 .shell 而不是 .container：
+     * .container 是 Tailwind v4 的保留工具类，同名会与之对撞，
+     * 结果宽度由加载顺序决定（实测 header 量到 1280 而非设定的 1200）。
+     *
+     * 宽度只在这一层加一次；section 自己不再加水平边距，
+     * 上一版三层边距叠加把 1440 视口的内容压成了 1040px。
+     */
+    .shell {
+        width: 100%;
+        max-width: var(--container-wide);
+        margin-inline: auto;
+        padding-inline: var(--spacing-page);
+    }
+
+    /* 阅读列：政策长文等需要限制行长 */
+    .shell-narrow {
+        max-width: var(--container-prose);
+    }
+
+    /* 超宽区：图库、大表格等需要多吃横向空间 */
+    .shell-wide {
+        max-width: var(--container-max);
+    }
+
+    .prose-width {
+        max-width: var(--container-prose);
+        margin-inline: auto;
+    }
+
+    /* 按钮：primary 为品牌红实心，ghost 为描边 */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.95rem;
+        line-height: 1;
+        padding: 0.8rem 1.5rem;
+        border-radius: var(--radius-sm);
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: background-color var(--dur) var(--ease),
+            color var(--dur) var(--ease),
+            border-color var(--dur) var(--ease);
+        text-align: center;
+    }
+
+    .btn-primary {
+        background: var(--color-brand);
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background: var(--color-brand-dark);
+        color: #fff;
+    }
+
+    .btn-ghost {
+        background: transparent;
+        color: var(--color-brand);
+        border-color: var(--color-brand);
+    }
+
+    .btn-ghost:hover {
+        background: var(--color-brand);
+        color: #fff;
+    }
+
+    .btn-light {
+        background: #fff;
+        color: var(--color-brand);
+    }
+
+    .btn-light:hover {
+        background: var(--color-brand-soft);
+        color: var(--color-brand-dark);
+    }
+
+    /* WhatsApp 主行动按钮：绿底，识别度高，与品牌红区分开 */
+    .btn-wa {
+        background: #25d366;
+        color: #fff;
+    }
+
+    .btn-wa:hover {
+        background: #1da851;
+        color: #fff;
+    }
+
+    .btn-sm {
+        padding: 0.6rem 1.1rem;
+        font-size: 0.85rem;
+    }
+
+    /* 卡片 */
+    .card {
+        background: var(--color-paper);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+    }
+
+    .card:hover {
+        box-shadow: var(--shadow-card);
+    }
+
+    /* 章节标题：原站用小号红色引导词 + 大标题的两行结构，这里保留 */
+    .eyebrow {
+        font-family: var(--font-display);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-brand);
+        margin: 0 0 0.5rem;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 1.1rem + 2vw, 2.15rem);
+        margin: 0 0 0.75rem;
+    }
+
+    .section {
+        padding-block: clamp(2.5rem, 5vw, 4.5rem);
+    }
+
+    /* 跳到手柄：仅键盘聚焦时显形 */
+    .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 100;
+        background: var(--color-ink);
+        color: #fff;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .skip-link:focus {
+        left: 0.5rem;
+        top: 0.5rem;
+    }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+          后台不入库：robots.txt 已 Disallow: /admin/，这里再声明一次兜底，
+          避免有人从别的页面误链过来被爬虫顺着收走。
+        -->
+    <meta name="robots" content="noindex, nofollow" />
+    <title>内容后台 · QiaoFeng CNC</title>
+</head>
+
+<body>
+    <!--
+          Decap CMS（原 Netlify CMS）：Git-based 后台，零服务器。
+          编辑直接提交进 GitHub 仓库，合并后由 Cloudflare Pages 重新构建 ——
+          没有数据库、没有 PHP、没有可被打的登录面板，源站下线也不影响它。
+
+          为什么走 CDN 而不是 npm 依赖：decap-cms 的 dist 包约 2 MB 且自带 React，
+          装进项目会被 Astro 拉进依赖图，而后台根本不需要 SSR、类型或构建期参与。
+
+          为什么这里不另外引 React、也不引独立 CSS、也不手动 render()：
+          dist/decap-cms.js 是自包含 UMD（内含 React 19），样式由包自己注入，
+          脚本加载后自动挂载到 body。额外挂一份 React 会变成两个实例导致 hook 报错，
+          手动 render() 也不是它公开的 API。版本锁定而不是 ^3.0.0：
+          后台是编辑每天用的东西，不能被上游 minor 更新静默改变行为。
+        -->
+    <script src="https://unpkg.com/decap-cms@3.17.1/dist/decap-cms.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+  "slug": "uncategorized",
+  "name": "Uncategorized",
+  "description": "",
+  "title": "Uncategorized",
+  "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  "count": 1,
+  "canonical": "/category/uncategorized/"
+}

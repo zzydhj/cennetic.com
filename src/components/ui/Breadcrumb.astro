@@ -1,0 +1,79 @@
+---
+/**
+ * 面包屑。同时渲染可见导航与结构化数据所需的路径序列。
+ * 只给末级以外的项加链接 —— 当前页自指链接无意义且会被爬虫跟出多余请求。
+ */
+export interface Crumb {
+    name: string;
+    path: string;
+}
+
+interface Props {
+    items: Crumb[];
+}
+
+const { items } = Astro.props;
+const last = items.length - 1;
+---
+
+{
+    items.length > 1 && (
+        <nav class="crumbs" aria-label="Breadcrumb">
+            <ol>
+                {items.map((c, i) => (
+                    <li>
+                        {i === last ? (
+                            <span aria-current="page">{c.name}</span>
+                        ) : (
+                            <a href={c.path}>{c.name}</a>
+                        )}
+                        {i < last && (
+                            <span class="sep" aria-hidden="true">
+                                /
+                            </span>
+                        )}
+                    </li>
+                ))}
+            </ol>
+        </nav>
+    )
+}
+
+<style>
+    .crumbs {
+        font-size: 0.8rem;
+        color: var(--color-muted);
+        padding: 1rem 0 0;
+    }
+
+    ol {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    a {
+        color: var(--color-muted);
+    }
+    a:hover {
+        color: var(--color-brand);
+    }
+
+    [aria-current="page"] {
+        color: var(--color-ink);
+        font-weight: 600;
+    }
+
+    .sep {
+        color: var(--color-line);
+    }
+</style>

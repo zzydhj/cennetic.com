@@ -1,0 +1,75 @@
+---
+/**
+ * /news-and-media/ —— 源站这里既有 Elementor 正文（17027 字），
+ * 又带一批文章卡片。所以正文作引言区，下面按日期出最新列表。
+ * 分页沿用源站的归档行为：本页面列最新 12 篇，完整翻页入口指向 /blog/。
+ */
+import { getCollection } from "astro:content";
+import ArchiveLayout from "@layouts/ArchiveLayout.astro";
+import ArticleGrid from "@components/ui/ArticleGrid.astro";
+import { allArticles } from "@lib/content.ts";
+import { siteConfig } from "@lib/catalog.ts";
+
+export const prerender = true;
+
+const entry = (await getCollection("pages")).find(
+    (p) => p.data.slug === "news-and-media",
+);
+const d = entry?.data;
+const html =
+    (entry as unknown as { body?: string } | undefined)?.body?.trim() ?? "";
+
+const posts = await allArticles();
+const latest = posts.slice(0, 12);
+---
+
+<ArchiveLayout
+    title={d?.title ?? "News & Media"}
+    description={d?.description ??
+        "Company news, product releases and media coverage from QiaoFeng CNC Machine in Dongguan, China."}
+    heading={d?.heading ?? "News & Media"}
+    path="/news-and-media/"
+    robots={d?.robots ??
+        "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"}
+    crumbs={[
+        { name: "Home", path: "/" },
+        { name: "News & Media", path: "/news-and-media/" },
+    ]}
+    pageType="archive"
+    ogImage={d?.hero ?? siteConfig.ogDefaultImage}
+>
+    {html && <div class="intro qf-article-body" set:html={html} />}
+
+    <section class="latest" aria-labelledby="latest-h">
+        <h2 id="latest-h">Latest from the factory</h2>
+        <ArticleGrid articles={latest} columns={3} />
+        <p class="all">
+            <a class="btn btn-ghost btn-sm" href="/blog/">All articles</a>
+        </p>
+    </section>
+</ArchiveLayout>
+
+<style>
+    .intro {
+        margin-bottom: 2.5rem;
+    }
+
+    .intro :global(img) {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .latest {
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--color-line);
+    }
+
+    .latest h2 {
+        font-size: 1.3rem;
+        margin: 0 0 1.1rem;
+    }
+
+    .all {
+        margin: 1.5rem 0 0;
+    }
+</style>

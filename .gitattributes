@@ -1,0 +1,40 @@
+# 统一换行符。
+#
+# 开发机是 Windows（CRLF），Cloudflare Pages 构建在 Linux（LF）。不做归一化的话，
+# 同一份内容文件会在两种换行符之间反复跳动，产生整文件级别的无意义 diff，
+# 而且 Decap 后台（写 LF）与本地编辑器（写 CRLF）会互相覆盖对方没改的行。
+#
+# 策略：仓库里一律存 LF，签出时按平台转换。
+* text=auto eol=lf
+
+# ── 明确按文本处理 ──
+*.astro   text eol=lf
+*.ts      text eol=lf
+*.json    text eol=lf
+*.md      text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.css     text eol=lf
+*.html    text eol=lf
+*.xml     text eol=lf
+*.svg     text eol=lf
+.gitignore    text eol=lf
+_headers      text eol=lf
+_redirects    text eol=lf
+
+# ── 二进制：禁止任何转换 ──
+# 视频与图片被当文本处理会直接损坏文件，这里显式钉死。
+*.mp4    binary
+*.webm   binary
+*.mov    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.webp   binary
+*.avif   binary
+*.gif    binary
+*.ico    binary
+
+# ── diff 体验 ──
+package-lock.json merge=binary
+*.snap binary

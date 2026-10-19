@@ -1,0 +1,64 @@
+---
+/**
+ * /blog/ 及其分页 /blog/page/N/。
+ *
+ * 用单个 [...page] 路由同时承接首页与分页：源站这两类 URL 都在且都被 index，
+ * 拆成两个文件容易让分页漏建（分页漏一页就是一个 404）。
+ */
+import { getCollection } from "astro:content";
+import ArchiveLayout from "@layouts/ArchiveLayout.astro";
+import ArticleGrid from "@components/ui/ArticleGrid.astro";
+import { allArticles, paginate, pageCount } from "@lib/content.ts";
+import { siteConfig } from "@lib/catalog.ts";
+
+export const prerender = true;
+
+const BASE = "/blog/";
+
+export async function getStaticPaths() {
+    const posts = await allArticles();
+    const blogPage = (await getCollection("pages")).find(
+        (p) => p.data.slug === "blog",
+    );
+
+    return Array.from({ length: pageCount(posts.length) }, (_, i) => ({
+        params: { page: i === 0 ? undefined : `page/${i + 1}` },
+        props: { entry: blogPage, n: i + 1 },
+    }));
+}
+
+const n = Astro.props.n ?? 1;
+const entry = Astro.props.entry;
+
+const posts = await allArticles();
+const { items, pagination } = paginate(posts, n, BASE);
+const d = entry?.data;
+
+const path = n === 1 ? BASE : `${BASE}page/${n}/`;
+---
+
+<ArchiveLayout
+    title={n === 1
+        ? d?.title || "CNC Machining Guides & Technical Articles"
+        : `Blog - Page ${n}`}
+    description={d?.description ||
+        "Practical CNC machining guides from QiaoFeng — buying advice, technical explainers, comparisons and maintenance know-how for factory engineers."}
+    heading={n === 1
+        ? "CNC Machining Guides & Technical Articles"
+        : `Blog — page ${n}`}
+    path={path}
+    robots={d?.robots ??
+        "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"}
+    crumbs={[
+        { name: "Home", path: "/" },
+        { name: "Blog", path: BASE },
+    ]}
+    intro={n === 1 ? d?.description || undefined : undefined}
+    pagination={pagination}
+    basePath={BASE}
+    total={posts.length}
+    pageType="archive"
+    ogImage={d?.hero ?? siteConfig.ogDefaultImage}
+>
+    <ArticleGrid articles={items} featureFirst={n === 1} columns={3} />
+</ArchiveLayout>

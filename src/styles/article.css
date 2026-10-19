@@ -1,0 +1,132 @@
+/**
+ * 文章正文样式 · 人工层
+ *
+ * 分层原因：article.migrated.css 由 `npm run migrate -- 04` 生成，重跑即覆盖，
+ * 绝不能手改；所有品牌统一与微调写在这个文件里。两者顺序固定 —— 先引入生成层，
+ * 再用本文件的规则覆盖，所以这里的每一条都必须是有意为之的偏离。
+ *
+ * 生成层的来源：源站 106 篇文章各自内联一份手写 CSS，实测归并有 65 个互不相同的变体
+ * （字号 15px/16px、正文色 #333/#222、字体 Arial/'Segoe UI' 混用），
+ * 由 lib/css-merge.ts 按「同一选择器同一属性取出现次数最多的值」投票合并而成。
+ */
+
+@import './article.migrated.css';
+
+/* ── 1. 字体归一：正文改用品牌字体，而非源站混用的 Arial / Segoe UI ──
+   品牌正文字体是无衬线的 Albert Sans，与站点头部保持一致；
+   行高与字号沿用生成层的投票结果，此处只换字面。 */
+.qf-article-body {
+    font-family: var(--font-body);
+    /* 生成层投票出 15px 是少数派写法，品牌正文统一 16px 起 */
+    font-size: 1.0625rem;
+    color: var(--color-body);
+}
+
+/* ── 2. 标题颜色与字体归一：源站存在 #222 与 #333 两套写法 ── */
+.qf-article-body h1,
+.qf-article-body h2,
+.qf-article-body h3,
+.qf-article-body h4 {
+    font-family: var(--font-display);
+    color: var(--color-ink);
+}
+
+/* 迁移时把正文里越级的 h1 降成了 h2、把 pros/cons 的 h4 升成了 h3，
+   层级变了，字号必须跟着校正，否则原 h1 尺寸会显得突兀。 */
+.qf-article-body h2 {
+    font-size: clamp(1.45rem, 1.2rem + 1.2vw, 1.85rem);
+}
+
+.qf-article-body h3 {
+    font-size: clamp(1.18rem, 1.05rem + 0.6vw, 1.35rem);
+}
+
+/* ── 3. 品牌红统一：源站混用 #cc0000 与 #e53935 等，一律收进令牌 ── */
+.qf-article-body h2 {
+    border-bottom-color: var(--color-brand);
+}
+
+.qf-article-body a {
+    color: var(--color-brand);
+}
+
+.qf-article-body a:hover {
+    color: var(--color-brand-dark);
+}
+
+/* ── 4. 图片：宽高已由迁移写入 HTML 属性，这里只管排版 ── */
+.qf-article-body img {
+    border-radius: var(--radius);
+    background: var(--color-surface-alt);
+}
+
+/* ── 5. 表格：源站 143 个表格样式各异，统一成一套可读的对比表 ── */
+.qf-article-body table {
+    font-size: 0.95em;
+}
+
+.qf-article-body th {
+    background: var(--color-surface);
+    color: var(--color-ink);
+}
+
+/* ── 6. 迁移新增的语义结构：读者评价改为 figure/blockquote/figcaption ── */
+.qf-testimonial {
+    background: var(--color-surface-alt);
+    border-left: 4px solid var(--color-brand);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.15rem 1.35rem;
+    margin: 1.75rem 0;
+}
+
+.qf-testimonial blockquote {
+    margin: 0;
+    font-style: normal;
+    color: var(--color-ink);
+}
+
+.qf-testimonial figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-muted);
+}
+
+/* ── 7. CTA 区块：源站靠内联样式硬堆，改由类名驱动 ──
+   迁移时已剥掉 CTA 按钮上的 style 属性，其外观完全依赖这里的定义。 */
+.qf-cta-box {
+    background: linear-gradient(135deg, var(--color-brand), var(--color-brand-dark));
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 2.5rem 0;
+    text-align: center;
+}
+
+.qf-cta-box h2,
+.qf-cta-box h3 {
+    color: #fff;
+    border: none;
+    margin: 0 0 0.6rem;
+}
+
+.qf-cta-box p {
+    color: rgb(255 255 255 / 0.92);
+    margin: 0 auto 1.25rem;
+    max-width: 62ch;
+}
+
+.qf-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* ── 8. 无障碍与低动效 ── */
+@media (prefers-reduced-motion: reduce) {
+    .qf-article-body * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

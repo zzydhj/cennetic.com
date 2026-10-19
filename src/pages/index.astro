@@ -1,0 +1,674 @@
+---
+/**
+ * 首页。
+ *
+ * 源站首页是 10 万字符的 Elementor 页面（head 内联 CSS 就有 102KB）。
+ * 按既定方向「保留品牌视觉、重写排版」，这里不搬那套 DOM，
+ * 而是用真实数据（产品分类 / 产品 / 文章）重新组装。
+ *
+ * 布局约定：section 全出血负责背景色带与纵向节奏，内部只放一层 .shell 控制宽度。
+ * 上一版 main 和 section 各加一次边距，三层叠加把 1440 视口的内容压成 1040px。
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ArticleCard from "@components/ui/ArticleCard.astro";
+import ProductCard from "@components/ui/ProductCard.astro";
+import HeroVideo from "@components/ui/HeroVideo.astro";
+import YouTubeEmbed from "@components/ui/YouTubeEmbed.astro";
+import { getCollection } from "astro:content";
+import { allArticles } from "@lib/content.ts";
+import {
+    siteConfig,
+    allProducts,
+    footerProductCategories,
+} from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+
+export const prerender = true;
+
+const home = (await getCollection("pages")).find((p) => p.data.slug === "home");
+const articles = await allArticles();
+const products = allProducts();
+
+const latest = articles.slice(0, 3);
+const popular = products.slice(0, 4);
+const categories = footerProductCategories;
+
+const wa = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    {
+        text: "Hi QiaoFeng, I would like a quote for CNC machines.",
+    },
+);
+
+const heroImage = popular[0]?.images[0] ?? null;
+const description = home?.data.description || siteConfig.description;
+// 首屏真正最先绘制的是 hero 的 poster，不是产品图：preload 必须指向它，否则白预加载一张次要图
+const lcpImage = siteConfig.hero.poster;
+---
+
+<BaseLayout
+    isHome
+    title="QiaoFeng CNC Machine"
+    description={description}
+    path="/"
+    ogImage={heroImage?.src}
+    pageType="home"
+    preloadLcpImage={lcpImage}
+>
+    <section class="band band-hero">
+        <!--
+          原站首页 hero 就是一段全屏背景视频（Elementor section 背景，10.38MB 无 poster）。
+          这里用原生实现：视频绝对铺满整个 section，文案浮在上头；
+          poster 仍是 LCP 元素，视频满足条件后才空闲加载并淡入。
+        -->
+        <HeroVideo variant="fill" />
+
+        <div class="shell hero">
+            <div class="hero-copy">
+                <p class="eyebrow">{siteConfig.legalName} · Dongguan, China</p>
+                <h1>High-Precision CNC Machining Solutions</h1>
+                <p class="lede">
+                    A true source factory — not a trading company. We engineer
+                    and build machining centers, drilling and tapping centers
+                    and CNC lathes, and ship them direct to factories across
+                    Europe, North America and Southeast Asia.
+                </p>
+                <p class="actions">
+                    <a
+                        class="btn btn-wa"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank">Get a Quick Quote</a
+                    >
+                    <a class="btn btn-light" href="/about-us/"
+                        >Discover Our Factory</a
+                    >
+                </p>
+
+                <dl class="stats">
+                    <div><dt>15+</dt><dd>Years manufacturing</dd></div>
+                    <div><dt>750+</dt><dd>Factories served</dd></div>
+                    <div><dt>2-year</dt><dd>Machine warranty</dd></div>
+                </dl>
+            </div>
+        </div>
+
+        {
+            popular[0] && (
+                <a class="hero-tag" href={popular[0].canonical}>
+                    <span>Featured model</span>
+                    <strong>{popular[0].name}</strong>
+                </a>
+            )
+        }
+    </section>
+
+    <section class="band" aria-labelledby="cats-h">
+        <div class="shell">
+            <p class="eyebrow">Machine categories</p>
+            <h2 id="cats-h" class="section-title">
+                Built for the job you actually run
+            </h2>
+            <p class="section-lede">
+                Every category below is manufactured in our own facility, with
+                the spindle, control and guideway options we would put on our
+                own production floor.
+            </p>
+            <ul class="cat-list">
+                {
+                    categories.map((c) => (
+                        <li>
+                            <a href={c.path}>
+                                <>
+                                    <span>{c.label}</span>
+                                    <em>Browse →</em>
+                                </>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    {
+        popular.length > 0 && (
+            <section class="band band-tint" aria-labelledby="best-h">
+                <div class="shell">
+                    <p class="eyebrow">Best sellers</p>
+                    <h2 id="best-h" class="section-title">
+                        Popular models
+                    </h2>
+                    <div class="grid" data-count={popular.length}>
+                        {popular.map((p) => (
+                            <ProductCard product={p} />
+                        ))}
+                    </div>
+                    <p class="more">
+                        <a class="btn btn-ghost btn-sm" href="/shop/">
+                            View all products
+                        </a>
+                    </p>
+                </div>
+            </section>
+        )
+    }
+
+    <section class="band" aria-labelledby="why-h">
+        <div class="shell two">
+            <div>
+                <p class="eyebrow">About QiaoFeng</p>
+                <h2 id="why-h" class="section-title">
+                    Your direct source for precision CNC manufacturing
+                </h2>
+                <p>
+                    QIAOFENG is a manufacturer and innovator of high-precision
+                    CNC machine tools in China. We are dedicated to engineering,
+                    manufacturing and delivering top-tier, high-efficiency
+                    machining solutions to the global market — with the
+                    engineers who build your machine also being the ones who
+                    support it.
+                </p>
+                <ul class="ticks">
+                    <li>Direct factory pricing, no trading-company markup</li>
+                    <li>GD&amp;T and application review before you order</li>
+                    <li>
+                        Installation, training and remote diagnostics included
+                    </li>
+                    <li>
+                        Consumables, tooling and spares supplied for the
+                        machine's life
+                    </li>
+                </ul>
+                <p class="actions">
+                    <a
+                        class="btn btn-wa btn-sm"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank">Get a Quick Quote</a
+                    >
+                    <a class="btn btn-ghost btn-sm" href="/service/"
+                        >How we support you</a
+                    >
+                </p>
+            </div>
+
+            <figure class="frame">
+                <YouTubeEmbed
+                    title="Inside the QiaoFeng CNC machine factory"
+                    alt="QiaoFeng factory tour video"
+                />
+            </figure>
+        </div>
+    </section>
+
+    {
+        latest.length > 0 && (
+            <section class="band band-tint" aria-labelledby="art-h">
+                <div class="shell">
+                    <p class="eyebrow">Useful articles</p>
+                    <h2 id="art-h" class="section-title">
+                        Technical guides from the shop floor
+                    </h2>
+                    <div class="grid" data-count={latest.length}>
+                        {latest.map((a) => (
+                            <ArticleCard article={a} />
+                        ))}
+                    </div>
+                    <p class="more">
+                        <a class="btn btn-ghost btn-sm" href="/blog/">
+                            All articles
+                        </a>
+                    </p>
+                </div>
+            </section>
+        )
+    }
+
+    <section class="band band-dark" aria-labelledby="contact-h">
+        <div class="shell contact">
+            <div>
+                <p class="eyebrow">Contact us</p>
+                <h2 id="contact-h" class="section-title">
+                    Send us your part drawing
+                </h2>
+                <p class="contact-lede">
+                    Tell us the material, part size, tolerance and monthly
+                    volume — we will recommend a configuration and send pricing
+                    on WhatsApp.
+                </p>
+                <p class="actions">
+                    <a
+                        class="btn btn-wa"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        >WhatsApp {siteConfig.whatsapp.display}</a
+                    >
+                    <a
+                        class="btn btn-light btn-sm"
+                        href={`mailto:${siteConfig.email}`}>Email us</a
+                    >
+                </p>
+            </div>
+            <ul class="ways">
+                <li>
+                    <span>Email</span><a href={`mailto:${siteConfig.email}`}
+                        >{siteConfig.email}</a
+                    >
+                </li>
+                <li>
+                    <span>Phone</span><a href={`tel:${siteConfig.phone}`}
+                        >{siteConfig.phoneDisplay}</a
+                    >
+                </li>
+                <li>
+                    <span>Factory</span>{siteConfig.address.street}, {
+                        siteConfig.address.city
+                    }, {siteConfig.address.region}
+                </li>
+                <li><span>Hours</span>{siteConfig.hours}</li>
+            </ul>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    /* ── 色带：全出血，宽度只由内部 .shell 控制一次 ── */
+    .band {
+        padding-block: clamp(2.75rem, 6vw, 5rem);
+    }
+
+    .band-tint {
+        background: var(--color-surface);
+    }
+
+    .band-hero {
+        /* 全屏背景：自己当定位上下文，高度接近一整屏 */
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        min-height: clamp(30rem, 86svh, 46rem);
+        display: flex;
+        align-items: center;
+        background: var(--color-ink);
+        border-bottom: 1px solid var(--color-line);
+        padding-block: clamp(3.5rem, 9vw, 6.5rem);
+    }
+
+    .band-dark {
+        background: #1c1f24;
+        color: #c8ccd3;
+    }
+
+    .band-dark .section-title {
+        color: #fff;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        /* 文案在视频与遮罩之上 */
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-copy {
+        max-width: 40rem;
+    }
+
+    /* 压在视频上，必须用亮色文字 + 投影保证对比度 */
+    .band-hero h1 {
+        color: #fff;
+        text-shadow: 0 2px 18px rgb(0 0 0 / 0.35);
+    }
+
+    .band-hero .eyebrow {
+        color: var(--color-brand-on-dark);
+    }
+
+    h1 {
+        font-size: clamp(2.1rem, 1.4rem + 3.4vw, 3.5rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.9rem;
+    }
+
+    .lede {
+        font-size: 1.06rem;
+        line-height: 1.7;
+        color: var(--color-muted);
+        max-width: 54ch;
+        margin: 0 0 1.6rem;
+    }
+
+    /* hero 的 lede 在视频上，改用半透白字 */
+    .band-hero .lede {
+        color: rgb(255 255 255 / 0.88);
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin: 0;
+    }
+
+    /* 图上压一条型号标签，让全屏视频同时承担导航职责 */
+    .hero-tag {
+        position: absolute;
+        right: clamp(1rem, 3vw, 2rem);
+        bottom: clamp(1rem, 3vw, 2rem);
+        z-index: 1;
+        max-width: min(22rem, calc(100% - 2rem));
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        padding: 0.7rem 0.95rem;
+        border: 1px solid rgb(255 255 255 / 0.18);
+        border-radius: var(--radius);
+        background: rgb(28 31 36 / 0.72);
+        backdrop-filter: blur(8px);
+        color: #fff;
+    }
+
+    .hero-tag:hover {
+        background: rgb(28 31 36 / 0.86);
+        border-color: var(--color-brand);
+    }
+
+    .hero-tag span {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-brand-on-dark);
+        font-weight: 600;
+    }
+
+    .hero-tag strong {
+        font-size: 0.92rem;
+        font-family: var(--font-display);
+        line-height: 1.3;
+    }
+
+    .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(1.25rem, 4vw, 2.75rem);
+        margin: 2rem 0 0;
+        padding-top: 1.5rem;
+        /* 分隔线在深色视频上用半透白，用 --color-line 会几乎看不见 */
+        border-top: 1px solid rgb(255 255 255 / 0.22);
+    }
+
+    .stats div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .stats dt {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem);
+        font-weight: 700;
+        /* 品牌红 #cc0000 在视频上只到 2–3:1，大字号也要提亮才达 AA */
+        color: var(--color-brand-on-dark);
+        line-height: 1;
+    }
+
+    .stats dd {
+        margin: 0.35rem 0 0;
+        font-size: 0.82rem;
+        color: rgb(255 255 255 / 0.82);
+    }
+
+    /* ── 分类列表 ── */
+    .cat-list {
+        list-style: none;
+        margin: 1.5rem 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+        gap: var(--gutter);
+    }
+
+    .cat-list a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.25rem;
+        min-height: 7.5rem;
+        padding: 1.1rem 1.15rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        background: var(--color-paper);
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.98rem;
+        line-height: 1.3;
+        color: var(--color-ink);
+    }
+
+    .cat-list a:hover {
+        border-color: var(--color-brand);
+        color: var(--color-brand);
+    }
+
+    .cat-list em {
+        font-style: normal;
+        font-size: 0.76rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--color-brand);
+    }
+
+    /* ── 网格：列数跟条目数对齐，避免孤儿行与空槽 ── */
+    .grid {
+        display: grid;
+        gap: var(--gutter);
+        margin-top: 1.5rem;
+    }
+
+    /*
+     * auto-fill 会为未使用的轨道留下空位（实测 4 张卡挤成 3 列 + 孤儿行），
+     * 所以按条目数显式给列数：4 项走 4 列、3 项走 3 列，窄屏再降级。
+     */
+    .grid[data-count="4"] {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .grid[data-count="3"] {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (width <= 1080px) {
+        .grid[data-count="4"] {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (width <= 720px) {
+        .grid[data-count="3"],
+        .grid[data-count="4"] {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    .more {
+        margin: 1.75rem 0 0;
+    }
+
+    /* ── 关于区 ── */
+    .two {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+        gap: clamp(1.75rem, 4vw, 3.5rem);
+        align-items: center;
+    }
+
+    .two p:not(.actions, .eyebrow) {
+        color: var(--color-body);
+        line-height: 1.75;
+        margin: 0 0 1.1rem;
+    }
+
+    .ticks {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        display: grid;
+        gap: 0.5rem;
+        font-size: 0.92rem;
+        color: var(--color-body);
+    }
+
+    .ticks li {
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .ticks li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        color: var(--color-brand);
+    }
+
+    .frame {
+        margin: 0;
+    }
+
+    .frame img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-line);
+        display: block;
+        background: var(--color-surface-alt);
+    }
+
+    .frame figcaption {
+        margin-top: 0.6rem;
+        font-size: 0.78rem;
+        color: var(--color-faint);
+    }
+
+    /* ── 联系区 ── */
+    .contact {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        gap: clamp(1.75rem, 4vw, 3.5rem);
+        align-items: start;
+    }
+
+    .contact-lede {
+        color: #aeb4bd;
+        max-width: 48ch;
+        margin: 0 0 1.5rem;
+        line-height: 1.7;
+    }
+
+    .ways {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.9rem;
+        font-size: 0.92rem;
+    }
+
+    .ways li {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .ways span {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #7f8792;
+    }
+
+    .ways a {
+        color: #fff;
+    }
+    .ways a:hover {
+        color: var(--color-brand);
+    }
+
+    @media (width < 960px) {
+        .two,
+        .contact {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        /*
+         * 窄屏不弄全屏：竖屏里把文案压在图上既挤又影响可读性，而且视频本来就不加载。
+         * 让背景退回普通图片（in-flow）排在文案上方，比“假全屏”更稳。
+         */
+        .band-hero {
+            display: block;
+            min-height: 0;
+            background: var(--color-paper);
+            padding-block: clamp(2.5rem, 6vw, 4rem);
+        }
+
+        /*
+         * 必须是 relative 而不是 static：.poster / .vid 自身是 position:absolute，
+         * 一旦父级变成 static，它们的包含块会逃逸到 .band-hero，
+         * 结果图片盖满整段 section、深色文案压在图上且无遮罩（实测对比度 1.1–3.3:1）。
+         */
+        .band-hero :global(.hero-visual.variant-fill) {
+            position: relative;
+            inset: auto;
+            aspect-ratio: 16 / 10;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-line);
+            overflow: hidden;
+            margin-bottom: 1.75rem;
+        }
+
+        .band-hero :global(.hero-visual.variant-fill .scrim) {
+            display: none;
+        }
+
+        /* 回到浅背景，文字恢复深色 */
+        .band-hero h1 {
+            color: var(--color-ink);
+            text-shadow: none;
+        }
+
+        .band-hero .eyebrow {
+            color: var(--color-brand);
+        }
+
+        .band-hero .lede {
+            color: var(--color-muted);
+        }
+
+        .stats {
+            border-top-color: var(--color-line);
+        }
+
+        .stats dt {
+            color: var(--color-brand);
+        }
+
+        .stats dd {
+            color: var(--color-muted);
+        }
+
+        .hero-tag {
+            position: static;
+            max-width: none;
+            margin-top: 1.25rem;
+            background: var(--color-surface);
+            border-color: var(--color-line);
+            color: var(--color-ink);
+        }
+
+        .hero-tag span {
+            color: var(--color-brand);
+        }
+    }
+</style>

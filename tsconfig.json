@@ -1,0 +1,39 @@
+{
+    "extends": "astro/tsconfigs/strict",
+    "include": [
+        ".astro/types.d.ts",
+        "src/**/*",
+        "scripts/**/*"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules",
+        ".cache"
+    ],
+    "compilerOptions": {
+        "types": [
+            "astro/client"
+        ],
+        "verbatimModuleSyntax": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@layouts/*": [
+                "src/layouts/*"
+            ],
+            "@styles/*": [
+                "src/styles/*"
+            ],
+            "@data/*": [
+                "src/data/*"
+            ],
+            "@lib/*": [
+                "src/lib/*"
+            ]
+        }
+    }
+}

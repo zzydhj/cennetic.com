@@ -1,0 +1,158 @@
+{
+  "total": 10,
+  "elementorCss": [
+    {
+      "slug": "cnc-machine-refund-policy",
+      "bytes": 4824,
+      "source": "rest"
+    },
+    {
+      "slug": "home",
+      "bytes": 4746,
+      "source": "rest"
+    }
+  ],
+  "unresolvedLinks": {},
+  "perPage": [
+    {
+      "slug": "privacy-policy",
+      "canonical": "/privacy-policy/",
+      "bodySource": "rest",
+      "bodyChars": 5159,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "cnc-machine-refund-policy",
+      "canonical": "/cnc-machine-refund-policy/",
+      "bodySource": "rest",
+      "bodyChars": 12619,
+      "elementorStyleBlocks": 1,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 1,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "home",
+      "canonical": "/",
+      "bodySource": "rest",
+      "bodyChars": 73871,
+      "elementorStyleBlocks": 2,
+      "demotedH1": 1,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 29,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "about-us",
+      "canonical": "/about-us/",
+      "bodySource": "rest",
+      "bodyChars": 9887,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "blog",
+      "canonical": "/blog/",
+      "bodySource": "rest",
+      "bodyChars": 0,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "contact-us",
+      "canonical": "/contact-us/",
+      "bodySource": "rest",
+      "bodyChars": 22652,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 4,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "shop",
+      "canonical": "/shop/",
+      "bodySource": "rest",
+      "bodyChars": 0,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "products",
+      "canonical": "/products/",
+      "bodySource": "rest",
+      "bodyChars": 0,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "service",
+      "canonical": "/service/",
+      "bodySource": "rest",
+      "bodyChars": 0,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 0,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    },
+    {
+      "slug": "news-and-media",
+      "canonical": "/news-and-media/",
+      "bodySource": "rest",
+      "bodyChars": 17027,
+      "elementorStyleBlocks": 0,
+      "demotedH1": 0,
+      "prosConsNormalized": 0,
+      "faqItems": 0,
+      "imagesRewritten": 12,
+      "imagesDropped": [],
+      "ctaToWhatsapp": 0,
+      "headingsWithoutId": 0
+    }
+  ]
+}

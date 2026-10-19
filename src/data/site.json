@@ -1,0 +1,48 @@
+{
+    "name": "QiaoFeng CNC Machine",
+    "legalName": "Qiaofeng Intelligent Equipment Co., Ltd.",
+    "shortName": "QiaoFeng",
+    "url": "https://qfcncmachine.com",
+    "language": "en",
+    "logo": "/images/site/logo.svg",
+    "description": "China-based source factory for high-precision CNC machine tools: vertical machining centers, drilling and tapping centers, and CNC lathes. Direct-from-factory pricing with 15 years of export experience.",
+    "email": "bella@qfcncmachine.com",
+    "phone": "+8615118243737",
+    "phoneDisplay": "+86 151 1824 3737",
+    "whatsapp": {
+        "number": "8615118243737",
+        "display": "+86 15118243737"
+    },
+    "tawk": {
+        "propertyId": "",
+        "widgetId": ""
+    },
+    "analytics": {
+        "gtagId": "GT-NGWQHJCV"
+    },
+    "address": {
+        "street": "Dalingshan Town",
+        "city": "Dongguan",
+        "region": "Guangdong",
+        "country": "China",
+        "countryCode": "CN"
+    },
+    "ogDefaultImage": "/images/2026/05/10003.webp",
+    "hero": {
+        "_comment": "首页背景视频。poster 是 LCP 元素，视频只在满足条件后淡入叠加。源站原片 10.38MB 无 poster，已压到 0.59MB 并补上 poster。",
+        "video": "/images/site/hero-banner.mp4",
+        "poster": "/images/site/hero-poster.webp",
+        "posterWidth": 1600,
+        "posterHeight": 900,
+        "posterAlt": "QiaoFeng CNC machining center on the factory floor in Dongguan, China"
+    },
+    "youtube": {
+        "_comment": "首页 About 区的工厂介绍视频。源站是 WoodMart wd_video 组件，iframe 的 src 藏在 data-lazy-load 里，只看正文 DOM 会漏。新站用封面门面，点击后才加载第三方脚本。",
+        "factoryVideoId": "XHOmBV4js_E",
+        "poster": "/images/2026/05/10003.webp",
+        "posterWidth": 500,
+        "posterHeight": 400
+    },
+    "hours": "Mon–Sat 9:00–18:00 (GMT+8)",
+    "foundingNote": "750+ factories served across Europe, North America and Southeast Asia"
+}

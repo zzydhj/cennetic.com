@@ -1,0 +1,245 @@
+---
+/**
+ * 站点头部。
+ *
+ * 源站这里加载了 WoodMart 的 headerBuilder / mobileNavigation / menuOffsets /
+ * ajaxSearch / searchFullScreen 等 8 个 JS，还有 WooCommerce 购物车 fragment。
+ * 纯静态 + 去购物车之后，这里只剩下一个真实需求：移动端展开/收起菜单。
+ * 因此只保留一段几行的内联脚本，用原生 aria-expanded 控制。
+ */
+import { siteConfig, nav } from "@lib/catalog.ts";
+
+// 统一成带尾斜杠的站内路径再比对，否则 /blog 与 /blog/ 会被当成两个不同页面
+const currentPath = (() => {
+    const p = Astro.url.pathname;
+    if (p === "/" || p === "") return "/";
+    return p.endsWith("/") ? p : `${p}/`;
+})();
+
+function isActive(path: string): boolean {
+    if (path === "/") return currentPath === "/";
+    return currentPath === path || currentPath.startsWith(path);
+}
+
+const links = nav.primary.filter((l) => l.path !== "/");
+---
+
+<header class="site-header">
+    <div class="shell bar">
+        <a class="brand" href="/" aria-label={`${siteConfig.name} home`}>
+            <span class="brand-mark">QF</span>
+            <span class="brand-text">
+                <strong>{siteConfig.name}</strong>
+                <small>CNC Machine Tool Manufacturer</small>
+            </span>
+        </a>
+
+        <button
+            class="toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+        >
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true"></span>
+        </button>
+
+        <nav id="site-nav" class="nav" aria-label="Main navigation">
+            <a href="/" class={isActive("/") ? "on" : ""}>Home</a>
+            {
+                links.map((l) => (
+                    <a href={l.path} class={isActive(l.path) ? "on" : ""}>
+                        {l.label}
+                    </a>
+                ))
+            }
+            <a
+                class="btn btn-wa btn-sm cta"
+                href={`https://wa.me/${siteConfig.whatsapp.number}`}
+                rel="noopener"
+            >
+                WhatsApp
+            </a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const btn = document.querySelector<HTMLButtonElement>(
+        ".site-header .toggle",
+    );
+    const nav = document.getElementById("site-nav");
+    if (btn && nav) {
+        btn.addEventListener("click", () => {
+            const open = btn.getAttribute("aria-expanded") === "true";
+            btn.setAttribute("aria-expanded", String(!open));
+            nav.classList.toggle("open");
+        });
+    }
+</script>
+
+<style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--color-paper);
+        border-bottom: 1px solid var(--color-line);
+    }
+
+    .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        min-height: 4.25rem;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        color: var(--color-ink);
+        flex-shrink: 0;
+    }
+
+    .brand:hover {
+        color: var(--color-brand);
+    }
+
+    .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: var(--radius-sm);
+        background: var(--color-brand);
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+    }
+
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+    .brand-text strong {
+        font-family: var(--font-display);
+        font-size: 1.02rem;
+    }
+    .brand-text small {
+        font-size: 0.68rem;
+        color: var(--color-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 1.35rem;
+    }
+
+    .nav a {
+        font-family: var(--font-display);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-ink);
+        padding: 0.35rem 0;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+
+    .nav a:hover {
+        color: var(--color-brand);
+    }
+    .nav a.on {
+        color: var(--color-brand);
+        border-bottom-color: var(--color-brand);
+    }
+
+    .nav a.cta {
+        color: #fff;
+        border: none;
+        margin-left: 0.35rem;
+        padding: 0.55rem 1rem;
+        border-radius: var(--radius-sm);
+    }
+
+    .nav a.cta:hover {
+        color: #fff;
+    }
+
+    .toggle {
+        display: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-sm);
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .toggle span[aria-hidden] {
+        position: absolute;
+        inset: 50% 0.6rem auto 0.6rem;
+        height: 2px;
+        background: var(--color-ink);
+        box-shadow:
+            0 -6px 0 var(--color-ink),
+            0 6px 0 var(--color-ink);
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    @media (width <= 960px) {
+        .toggle {
+            display: block;
+        }
+
+        .nav {
+            position: absolute;
+            inset: 100% 0 auto 0;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            background: var(--color-paper);
+            border-bottom: 1px solid var(--color-line);
+            padding: 0.5rem var(--spacing-page) 1rem;
+            display: none;
+        }
+
+        .nav.open {
+            display: flex;
+        }
+
+        .nav a {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-line-soft);
+        }
+
+        .nav a.on {
+            border-bottom-color: var(--color-line-soft);
+        }
+
+        .nav a.cta {
+            margin: 0.85rem 0 0;
+            justify-content: center;
+            border-bottom: none;
+        }
+    }
+</style>

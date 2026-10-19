@@ -1,0 +1,333 @@
+---
+/**
+ * 文章页正文布局。
+ *
+ * 正文以清洗过的 HTML 直接输出（set:html），不走 Markdown 编译 —— 原因见
+ * scripts/migrate/04-articles.ts 顶部：正文含 143 个表格与大量 qf-* 组件类名，
+ * Markdown 往返会丢类名。
+ *
+ * 迁移时已剥掉的「手写目录」在这里按实际标题重新生成，锚点必定对得上；
+ * 已抽走的「作者框」在这里由数据层统一渲染，113 篇共用一份署名记录。
+ */
+import "../styles/article.css";
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import ArticleCard from "@components/ui/ArticleCard.astro";
+import Toc from "@components/ui/Toc.astro";
+import AuthorBox from "@components/ui/AuthorBox.astro";
+import { entryPath, headingsFromHtml, type Article } from "@lib/content.ts";
+import { siteConfig, getAuthor } from "@lib/catalog.ts";
+import { waLinkForArticle } from "@lib/whatsapp.ts";
+
+interface Props {
+    article: Article;
+    /** 正文原始 HTML（entry.body，未经 Markdown 编译） */
+    html: string;
+    related: Article[];
+    categoryName?: string;
+    categoryPath?: string;
+}
+
+const { article, html, related, categoryName, categoryPath } = Astro.props;
+const d = article.data;
+
+const toc = headingsFromHtml(html);
+const author = getAuthor(d.author);
+// 统一由 entryPath 兜底：后台新建的文章可能没填 canonical
+const selfPath = entryPath(d);
+const wa = waLinkForArticle(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    d.heading,
+    siteConfig.url + selfPath,
+);
+
+const crumbs = [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog/" },
+    ...(categoryName && categoryPath
+        ? [{ name: categoryName, path: categoryPath }]
+        : []),
+    { name: d.heading, path: selfPath },
+];
+
+const dateText = d.date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
+const updatedText =
+    d.lastmod && d.lastmod.getTime() - d.date.getTime() > 86400000
+        ? d.lastmod.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+          })
+        : "";
+---
+
+<BaseLayout
+    title={d.title}
+    description={d.description}
+    path={selfPath}
+    robots={d.robots}
+    ogImage={d.hero}
+    ogImageWidth={d.heroWidth}
+    ogImageHeight={d.heroHeight}
+    type="article"
+    publishedTime={d.date.toISOString()}
+    modifiedTime={(d.lastmod ?? d.date).toISOString()}
+    authorName={author?.name}
+    breadcrumb={crumbs}
+    pageType="article"
+    faq={d.faq}
+    preloadLcpImage={d.hero}
+>
+    <div class="post-wrap shell">
+        {
+            /*
+      上一版 TOC 是正文里的行内块，占掉了本就不宽的阅读列；现在移到左侧栏并粘滞，
+      正文宽度不再被目录吃掉。
+    */
+        }
+        {
+            toc.length >= 3 && (
+                <aside class="rail" aria-label="Table of contents">
+                    <Toc items={toc} />
+                </aside>
+            )
+        }
+
+        <article class="post">
+            <header class="post-head">
+                <Breadcrumb items={crumbs} />
+
+                {
+                    d.categories.length > 0 && (
+                        <p class="kicker">
+                            {d.categories.map((slug, i) => (
+                                <>
+                                    {i > 0 && (
+                                        <span aria-hidden="true"> · </span>
+                                    )}
+                                    <a href={`/category/${slug}/`}>
+                                        {slug
+                                            .replace(/-/g, " ")
+                                            .replace(/\b\w/g, (m) =>
+                                                m.toUpperCase(),
+                                            )}
+                                    </a>
+                                </>
+                            ))}
+                        </p>
+                    )
+                }
+
+                <h1>{d.heading}</h1>
+
+                <p class="byline">
+                    <time datetime={d.date.toISOString()}>{dateText}</time>
+                    <span aria-hidden="true">·</span>
+                    <span>{d.readingMinutes} min read</span>
+                    {
+                        updatedText && (
+                            <>
+                                <span aria-hidden="true">·</span>
+                                <span>Updated {updatedText}</span>
+                            </>
+                        )
+                    }
+                </p>
+            </header>
+
+            {
+                d.hero && (
+                    <figure class="hero">
+                        <img
+                            src={d.hero}
+                            alt={d.heroAlt ?? d.heading}
+                            width={d.heroWidth ?? 1200}
+                            height={d.heroHeight ?? 686}
+                            fetchpriority="high"
+                            decoding="async"
+                        />
+                    </figure>
+                )
+            }
+
+            <div class="post-body qf-article-body" set:html={html} />
+
+            <aside class="cta-strip">
+                <p class="cta-title">Need help choosing the right machine?</p>
+                <p class="cta-sub">
+                    Send us your part drawing, materials and tolerance
+                    requirements — we will recommend a configuration based on 15
+                    years of factory experience.
+                </p>
+                <a
+                    class="btn btn-wa"
+                    href={wa}
+                    rel="noopener noreferrer"
+                    target="_blank">Talk to us on WhatsApp</a
+                >
+            </aside>
+
+            {
+                author && (
+                    <AuthorBox
+                        author={author}
+                        readingMinutes={d.readingMinutes}
+                        wordCount={d.wordCount}
+                    />
+                )
+            }
+
+            {
+                related.length > 0 && (
+                    <section class="related" aria-labelledby="related-h">
+                        <h2 id="related-h">Related reading</h2>
+                        <div class="rel-grid">
+                            {related.map((r) => (
+                                <ArticleCard article={r} />
+                            ))}
+                        </div>
+                    </section>
+                )
+            }
+        </article>
+    </div>
+</BaseLayout>
+
+<style>
+    /*
+     * 宽屏：左侧 TOC 栏 + 右侧阅读列。窄屏自动堆叠，TOC 回到正文上方。
+     * 阅读列用 ch 而不是 px 约束：行长跟字号联动，16px 与 17px 下都能保住 65–75 字符。
+     */
+    .post-wrap {
+        display: grid;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: start;
+        padding-top: 0.75rem;
+    }
+
+    @media (width >= 1080px) {
+        .post-wrap {
+            grid-template-columns: 240px minmax(0, 1fr);
+        }
+
+        .rail {
+            position: sticky;
+            top: 5.5rem;
+            max-height: calc(100vh - 7rem);
+            overflow-y: auto;
+        }
+
+        .post {
+            max-width: 76ch;
+        }
+    }
+
+    @media (width < 1080px) {
+        .post {
+            max-width: 72ch;
+        }
+    }
+
+    .post {
+        padding-bottom: 1rem;
+        min-width: 0;
+    }
+
+    .post-head {
+        padding-top: 0.5rem;
+    }
+
+    .kicker {
+        margin: 1.1rem 0 0.5rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .kicker a {
+        color: var(--color-brand);
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 1.3rem + 2.2vw, 2.5rem);
+        line-height: 1.2;
+        margin: 0 0 0.7rem;
+    }
+
+    .byline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 0;
+        font-size: 0.82rem;
+        color: var(--color-muted);
+    }
+
+    .hero {
+        margin: 1.75rem 0 0;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        display: block;
+        background: var(--color-surface-alt);
+    }
+
+    .post-body {
+        margin-top: 1.75rem;
+    }
+
+    /* 迁移正文里的表格在窄屏要能横向滚动，而不是撑破版面 */
+    .post-body :global(table) {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .cta-strip {
+        margin: 2.5rem 0;
+        padding: 1.4rem 1.5rem;
+        border: 1px solid var(--color-line);
+        border-left: 4px solid var(--color-brand);
+        border-radius: var(--radius);
+        background: var(--color-brand-tint);
+    }
+
+    .cta-title {
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--color-ink);
+        margin: 0 0 0.4rem;
+        font-size: 1.05rem;
+    }
+
+    .cta-sub {
+        font-size: 0.88rem;
+        color: var(--color-muted);
+        margin: 0 0 1rem;
+    }
+
+    .related {
+        margin-top: 3rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--color-line);
+    }
+
+    .related h2 {
+        font-size: 1.2rem;
+        margin: 0 0 1.1rem;
+    }
+
+    .rel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+</style>

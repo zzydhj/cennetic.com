@@ -1,0 +1,124 @@
+[
+  {
+    "slug": "cnc-lathes",
+    "name": "CNC Lathes, Swiss-Type & Automatic Lathes",
+    "description": "",
+    "parent": 0,
+    "count": 0,
+    "canonical": "/product-category/cnc-lathes/",
+    "trail": [
+      "cnc-lathes"
+    ],
+    "robots": "follow, noindex",
+    "title": "CNC Lathes, Swiss-Type & Automatic Lathes"
+  },
+  {
+    "slug": "consumables-tooling",
+    "name": "Machine Tool Consumables & Tooling",
+    "description": "",
+    "parent": 0,
+    "count": 0,
+    "canonical": "/product-category/consumables-tooling/",
+    "trail": [
+      "consumables-tooling"
+    ],
+    "robots": "follow, noindex",
+    "title": "Machine Tool Consumables & Tooling"
+  },
+  {
+    "slug": "engraving-edm-wirecut",
+    "name": "Precision Engraving, EDM & Wire Cut Machines",
+    "description": "",
+    "parent": 0,
+    "count": 0,
+    "canonical": "/product-category/engraving-edm-wirecut/",
+    "trail": [
+      "engraving-edm-wirecut"
+    ],
+    "robots": "follow, noindex",
+    "title": "Precision Engraving, EDM & Wire Cut Machines"
+  },
+  {
+    "slug": "machining-centers",
+    "name": "Machining Centers (Milling-Focused)",
+    "description": "",
+    "parent": 0,
+    "count": 4,
+    "canonical": "/product-category/machining-centers/",
+    "trail": [
+      "machining-centers"
+    ],
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "title": "Machining Centers (Milling-Focused)"
+  },
+  {
+    "slug": "vertical-machining-centers",
+    "name": "Vertical Machining Centers (VMC)",
+    "description": "",
+    "parent": "machining-centers",
+    "count": 4,
+    "canonical": "/product-category/machining-centers/vertical-machining-centers/",
+    "trail": [
+      "machining-centers",
+      "vertical-machining-centers"
+    ],
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "title": "Vertical Machining Centers (VMC)"
+  },
+  {
+    "slug": "drilling-tapping-centers-vertical-machining-centers",
+    "name": "Drilling & Tapping Centers",
+    "description": "",
+    "parent": "vertical-machining-centers",
+    "count": 1,
+    "canonical": "/product-category/machining-centers/vertical-machining-centers/drilling-tapping-centers-vertical-machining-centers/",
+    "trail": [
+      "machining-centers",
+      "vertical-machining-centers",
+      "drilling-tapping-centers-vertical-machining-centers"
+    ],
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "title": "Drilling & Tapping Centers"
+  },
+  {
+    "slug": "vertical-machining-centers-3-linear-guideway",
+    "name": "Vertical Machining Centers (3 Linear Guideway)",
+    "description": "",
+    "parent": "vertical-machining-centers",
+    "count": 3,
+    "canonical": "/product-category/machining-centers/vertical-machining-centers/vertical-machining-centers-3-linear-guideway/",
+    "trail": [
+      "machining-centers",
+      "vertical-machining-centers",
+      "vertical-machining-centers-3-linear-guideway"
+    ],
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "title": "Vertical Machining Centers (3 Linear Guideway)"
+  },
+  {
+    "slug": "quality-control-inspection",
+    "name": "Quality Control & Inspection Equipment",
+    "description": "",
+    "parent": 0,
+    "count": 0,
+    "canonical": "/product-category/quality-control-inspection/",
+    "trail": [
+      "quality-control-inspection"
+    ],
+    "robots": "follow, noindex",
+    "title": "Quality Control & Inspection Equipment"
+  },
+  {
+    "slug": "uncategorized",
+    "name": "Uncategorized",
+    "description": "",
+    "parent": 0,
+    "count": 1,
+    "canonical": "/product-category/uncategorized/",
+    "trail": [
+      "uncategorized"
+    ],
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "title": "Uncategorized"
+  }
+]

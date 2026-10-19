@@ -1,0 +1,132 @@
+---
+/**
+ * 404 页。
+ *
+ * 迁移期 404 是要盯的指标，所以这页承担两件事：给出可点的出路（而不是死胡同），
+ * 以及把询盘入口留在原地 —— 落到 404 的用户往往是旧收藏夹或旧外链来的，仍有价值。
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ArticleCard from "@components/ui/ArticleCard.astro";
+import { allArticles } from "@lib/content.ts";
+import { siteConfig } from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+
+export const prerender = true;
+
+const latest = (await allArticles()).slice(0, 3);
+const wa = waLink({
+    number: siteConfig.whatsapp.number,
+    siteUrl: siteConfig.url,
+});
+---
+
+<BaseLayout
+    title="Page Not Found"
+    description="The page you were looking for is no longer here. Browse our CNC machines, guides and contact options instead."
+    path="/404/"
+    robots="noindex, follow"
+    pageType="page"
+>
+    <div class="nf">
+        <p class="code">404</p>
+        <h1>We couldn't find that page</h1>
+        <p class="lede">
+            The address may have changed or the page was removed. Everything
+            below is still live — and if you were looking for a specific
+            machine, message us and we'll send it over.
+        </p>
+
+        <ul class="links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products/">All CNC machines</a></li>
+            <li><a href="/blog/">Technical guides</a></li>
+            <li><a href="/contact-us/">Contact us</a></li>
+        </ul>
+
+        <p class="actions">
+            <a
+                class="btn btn-wa"
+                href={wa}
+                rel="noopener noreferrer"
+                target="_blank">Ask us on WhatsApp</a
+            >
+            <a class="btn btn-ghost" href="mailto:{siteConfig.email}"
+                >Email {siteConfig.email}</a
+            >
+        </p>
+
+        {
+            latest.length > 0 && (
+                <section class="guess" aria-labelledby="guess-h">
+                    <h2 id="guess-h">Recent guides</h2>
+                    <div class="grid">
+                        {latest.map((a) => (
+                            <ArticleCard article={a} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .nf {
+        padding: 2rem 0 1rem;
+    }
+
+    .code {
+        font-family: var(--font-display);
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: var(--color-line);
+        margin: 0;
+        line-height: 1;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+        margin: 0.4rem 0 0.7rem;
+    }
+
+    .lede {
+        color: var(--color-muted);
+        max-width: 62ch;
+        margin: 0 0 1.5rem;
+    }
+
+    .links {
+        list-style: none;
+        margin: 0 0 1.5rem;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.4rem;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 0;
+    }
+
+    .guess {
+        margin-top: 3rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--color-line);
+    }
+    .guess h2 {
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.1rem;
+    }
+</style>

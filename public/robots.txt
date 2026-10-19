@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# 后台是纯静态页，不需要被收录（同时已在 sitemap 的 filter 里排除）
+Disallow: /admin/
+
+Sitemap: https://qfcncmachine.com/sitemap-index.xml

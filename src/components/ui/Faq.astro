@@ -1,0 +1,97 @@
+---
+/**
+ * FAQ 区。
+ *
+ * 问答由迁移阶段从正文 .qf-faq-item 抽出的同一份数据渲染，
+ * 并直接喂给 Seo 组件生成 FAQPage 结构化数据 —— 两者必须同源，
+ * 否则结构化数据与可见内容不一致会被 Google 判为误导（manual action 风险）。
+ *
+ * 用原生 <details> 而非 JS 手风琴：零脚本、键盘可达、默认就能展开/收起。
+ */
+interface Props {
+    items: Array<{ q: string; a: string }>;
+    heading?: string;
+}
+
+const { items, heading = "Frequently Asked Questions" } = Astro.props;
+---
+
+{
+    items.length > 0 && (
+        <section class="faq" aria-labelledby="faq-h">
+            <h2 id="faq-h">{heading}</h2>
+            <div class="list">
+                {items.map((f) => (
+                    <details class="card item">
+                        <summary>{f.q}</summary>
+                        <p class="a">{f.a}</p>
+                    </details>
+                ))}
+            </div>
+        </section>
+    )
+}
+
+<style>
+    .faq {
+        margin: 2.5rem 0 0;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
+    }
+
+    .list {
+        display: grid;
+        gap: 0.6rem;
+    }
+
+    .item {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 0.95rem 2.6rem 0.95rem 1.05rem;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.94rem;
+        color: var(--color-ink);
+        position: relative;
+    }
+
+    /* 去掉浏览器默认三角，换成自绘加号，展开时旋转 */
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary::after {
+        content: "+";
+        position: absolute;
+        right: 1.05rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--color-brand);
+    }
+
+    details[open] summary::after {
+        content: "−";
+    }
+
+    details[open] summary {
+        color: var(--color-brand);
+    }
+
+    .a {
+        margin: 0;
+        padding: 0 1.05rem 1.05rem;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--color-body);
+    }
+</style>

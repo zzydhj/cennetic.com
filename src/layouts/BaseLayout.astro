@@ -1,0 +1,107 @@
+---
+/**
+ * 全站骨架：唯一的 <head> 组装点与 body 外壳。
+ *
+ * 性能取向（这些都是为了达到 Lighthouse ≥95 / SEO 100 的具体手段，不是泛泛优化）：
+ *  - 字体自托管 + preconnect 免除；不再向 fonts.googleapis.com 发阻塞请求
+ *  - 无 jQuery / 无 Elementor / 无 WoodMart JS；仅 Header 与 ContactDock 各一小段脚本
+ *  - CSS 走单一带长期缓存的产物，不再像源站那样把 100KB 样式内联进每个 head
+ *  - LCP 图片由具体页面通过 preloadLcp 显式声明，不靠运行时猜测
+ */
+import '../styles/global.css';
+import Seo from '@components/seo/Seo.astro';
+import Header from '@components/layout/Header.astro';
+import Footer from '@components/layout/Footer.astro';
+import ContactDock from '@components/ui/ContactDock.astro';
+import { siteConfig } from '@lib/catalog.ts';
+import type { SeoInput } from '@lib/seo.ts';
+
+export interface Props extends SeoInput {
+    isHome?: boolean;
+    /** 首屏最大图的 URL，命中时插入 preload 以提前 LCP */
+    preloadLcpImage?: string;
+}
+
+const {
+    isHome = false,
+    preloadLcpImage,
+    ...seo
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={siteConfig.language}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#cc0000" />
+
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/*
+          PNG 图标已补齐并随仓库提交（不在构建里生成：Pages 环境自带的 sharp 不带 librsvg，
+          光栅 SVG 会在那边失败）。之前只挂了引用没文件，等于每页产一个 404。
+        */}
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+
+        {/* 图片在 media 子域时才需要 preconnect；同域托管时不建无用连接 */}
+        {preloadLcpImage && (
+            <link
+                rel="preload"
+                as="image"
+                href={preloadLcpImage}
+                fetchpriority="high"
+            />
+        )}
+
+        <Seo {...seo} isHome={isHome} />
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <Header />
+
+        <main id="main">
+            <slot />
+        </main>
+
+        <Footer />
+        <ContactDock />
+
+        {/* GA4 / Google Tag：延后到空闲时注入，避免第三方脚本压 LCP 与 TBT */}
+        {siteConfig.analytics.gtagId && (
+            <script is:inline define:vars={{ id: siteConfig.analytics.gtagId }}>
+                const boot = () => {
+                    const s = document.createElement('script');
+                    s.async = true;
+                    s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+                    document.head.appendChild(s);
+                    window.dataLayer = window.dataLayer || [];
+                    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+                    window.gtag('js', new Date());
+                    window.gtag('config', id);
+                };
+                if ('requestIdleCallback' in window) requestIdleCallback(boot, { timeout: 5000 });
+                else setTimeout(boot, 3000);
+            </script>
+        )}
+    </body>
+</html>
+
+<style is:global>
+    /*
+     * main 不做任何宽度约束。
+     *
+     * 上一版这里写了 max-width:1200 + padding-inline:40，而各页面内部的 section
+     * 又各自加一层容器，三层边距叠加后 1440 视口的真实内容只剩 1040px（两侧各空 200px），
+     * 而且与 header/footer 的 112px 基线差 80px 对不齐。
+     *
+     * 改成全出血后，宽度只由各布局加一次 .shell，全站共享同一条左右基线；
+     * 同时整条色带（如首页深色联系区）才有可能铺满视口。
+     */
+    main {
+        min-height: 60vh;
+    }
+</style>

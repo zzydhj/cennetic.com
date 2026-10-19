@@ -1,0 +1,76 @@
+/**
+ * 设计令牌 —— 全站品牌视觉的唯一来源。
+ *
+ * 取值来自源站实测：主色 #cc0000（文章正文与按钮高频出现），
+ * 悬停态 #990000，标题墨色 #222，正文 #333。
+ * 字体沿用原站品牌组合 Montserrat（标题）+ Albert Sans（正文），
+ * 但改为自托管子集，不再向 fonts.googleapis.com 发阻塞请求。
+ *
+ * 任何组件都不允许写死颜色或字号，一律引用这里的变量。
+ */
+
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
+@import '@fontsource/albert-sans/400.css';
+@import '@fontsource/albert-sans/600.css';
+@import '@fontsource/albert-sans/700.css';
+
+@theme {
+    /* 品牌色 */
+    --color-brand: #cc0000;
+    --color-brand-dark: #990000;
+    --color-brand-soft: #fdeaea;
+    --color-brand-tint: #fff5f5;
+    /*
+     * 品牌红在深色／视频背景上对比度只有 2–3:1，达不到 AA。
+     * 深色底上一律用这个提亮版，不要把 #cc0000 直接往暗处放。
+     */
+    --color-brand-on-dark: #ff8f8f;
+
+    /* 中性色 */
+    --color-ink: #222222;
+    --color-body: #333333;
+    --color-muted: #666666;
+    --color-faint: #8a8a8a;
+    --color-line: #e5e5e5;
+    --color-line-soft: #f0f0f0;
+    --color-surface: #f7f8fa;
+    --color-surface-alt: #f9f9f9;
+    --color-paper: #ffffff;
+
+    /* 语义色 */
+    --color-good: #1a7f37;
+    --color-good-soft: #ecf7ef;
+    --color-warn: #b06000;
+    --color-warn-soft: #fdf4e6;
+    --color-bad: #cc0000;
+
+    /* 字体 */
+    --font-display: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Albert Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    /* 间距与尺寸 */
+    --spacing-page: clamp(1.25rem, 4vw, 3rem);
+    --gutter: 1.25rem;
+    --radius-sm: 4px;
+    --radius: 8px;
+    --radius-lg: 14px;
+
+    /* 容器：正文最宽读数长度，列表用宽列，超宽区用于图库与大表格 */
+    --container-prose: 720px;
+    --container-wide: 1240px;
+    --container-max: 1440px;
+
+    /* 阴影：克制成一层极淡的分隔，不用原站 Elementor 的多重投影 */
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05);
+    --shadow-float: 0 6px 20px rgb(0 0 0 / 0.18);
+
+    /* 动效 */
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --dur: 180ms;
+}
+
+:root {
+    color-scheme: light;
+}

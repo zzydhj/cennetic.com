@@ -1,0 +1,61 @@
+---
+/**
+ * 文章卡片网格。把「排几列、空态怎么显示」收在这一处，
+ * 避免 /blog/、/category/、首页各写一份出入不大的 grid 规则。
+ */
+import ArticleCard from "./ArticleCard.astro";
+import type { Article } from "@lib/content.ts";
+
+interface Props {
+    articles: Article[];
+    /** 首条放大展示，用于列表首页与分类页顶部 */
+    featureFirst?: boolean;
+    columns?: 3 | 4;
+}
+
+const { articles, featureFirst = false, columns = 4 } = Astro.props;
+const [first, ...rest] = articles;
+---
+
+{
+    articles.length === 0 ? (
+        <p class="empty">No articles published here yet.</p>
+    ) : (
+        <>
+            {featureFirst && first && (
+                <div class="feat">
+                    <ArticleCard article={first} featured />
+                </div>
+            )}
+            <div class:list={["grid", `c${columns}`]}>
+                {(featureFirst ? rest : articles).map((a) => (
+                    <ArticleCard article={a} />
+                ))}
+            </div>
+        </>
+    )
+}
+
+<style>
+    .empty {
+        padding: 2rem 0;
+        color: var(--color-muted);
+        font-size: 0.95rem;
+    }
+
+    .feat {
+        margin-bottom: 1.1rem;
+    }
+
+    .grid {
+        display: grid;
+        gap: 1.1rem;
+    }
+
+    .c3 {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .c4 {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+</style>

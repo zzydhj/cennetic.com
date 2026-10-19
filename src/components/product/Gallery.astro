@@ -1,0 +1,192 @@
+---
+/**
+ * 产品图库。
+ *
+ * 源站这里用 WoodMart 打包的 PhotoSwipe（photoswipe-bundle + callPhotoSwipe +
+ * photoswipeImages 三个脚本）。产品最多 5 张图，为它背一个图库库不值得，
+ * 所以用缩略图切换主图的原生实现：零依赖，键盘可选，图片宽高写死防 CLS。
+ */
+import type { ProductImage } from "@lib/catalog.ts";
+
+interface Props {
+    images: ProductImage[];
+    name: string;
+}
+
+const { images, name } = Astro.props;
+const [main, ...thumbs] = images;
+
+// 同样不写死比例：产品图是 1024x1024 正方形，写 1200/686 会留大片空白
+const ratio =
+    main && main.width && main.height
+        ? `${main.width} / ${main.height}`
+        : "1 / 1";
+---
+
+<figure class="gallery">
+    {
+        main ? (
+            <>
+                <img
+                    id="gallery-main"
+                    src={main.src}
+                    alt={main.alt || name}
+                    width={main.width}
+                    height={main.height}
+                    style={`aspect-ratio: ${ratio}`}
+                    decoding="async"
+                />
+
+                {thumbs.length > 0 && (
+                    <ul class="thumbs">
+                        <li>
+                            <button
+                                type="button"
+                                class="on"
+                                data-src={main.src}
+                                data-alt={main.alt || name}
+                                aria-label={name}
+                            >
+                                <img
+                                    src={main.src}
+                                    alt=""
+                                    width={main.width}
+                                    height={main.height}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </button>
+                        </li>
+                        {thumbs.map((im) => (
+                            <li>
+                                <button
+                                    type="button"
+                                    data-src={im.src}
+                                    data-alt={im.alt || name}
+                                    aria-label={im.alt || name}
+                                >
+                                    <img
+                                        src={im.src}
+                                        alt=""
+                                        width={im.width}
+                                        height={im.height}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </>
+        ) : (
+            <div
+                class="missing"
+                role="img"
+                aria-label={`${name} — no image available`}
+            >
+                <span>QF</span>
+                <p>No photo for this model yet</p>
+            </div>
+        )
+    }
+</figure>
+
+<script>
+    const main = document.getElementById(
+        "gallery-main",
+    ) as HTMLImageElement | null;
+    if (main) {
+        document
+            .querySelectorAll<HTMLButtonElement>(".thumbs button")
+            .forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const src = btn.dataset.src!;
+                    // 只在真的换图时改属性，避免无谓重排
+                    if (main.getAttribute("src") !== src) {
+                        main.src = src;
+                        main.alt = btn.dataset.alt ?? main.alt;
+                    }
+                    document
+                        .querySelectorAll(".thumbs button")
+                        .forEach((b) => b.classList.remove("on"));
+                    btn.classList.add("on");
+                });
+            });
+    }
+</script>
+
+<style>
+    .gallery {
+        margin: 0;
+    }
+
+    img#gallery-main {
+        width: 100%;
+        height: auto;
+        /* aspect-ratio 由内联 style 按主图真实尺寸给定 */
+        object-fit: contain;
+        background: var(--color-surface-alt);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        display: block;
+    }
+
+    .thumbs {
+        list-style: none;
+        margin: 0.6rem 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .thumbs button {
+        display: block;
+        width: 5.2rem;
+        padding: 0;
+        border: 2px solid var(--color-line);
+        border-radius: var(--radius-sm);
+        background: none;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .thumbs button img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+    }
+
+    .thumbs button.on {
+        border-color: var(--color-brand);
+    }
+    .thumbs button:hover {
+        border-color: var(--color-brand-dark);
+    }
+
+    .missing {
+        display: grid;
+        place-items: center;
+        gap: 0.4rem;
+        aspect-ratio: 1 / 1;
+        border: 1px dashed var(--color-line);
+        border-radius: var(--radius);
+        background: var(--color-surface-alt);
+        color: var(--color-faint);
+    }
+
+    .missing span {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-line);
+    }
+
+    .missing p {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+</style>

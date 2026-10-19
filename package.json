@@ -1,0 +1,35 @@
+{
+    "name": "qfcncmachine-static",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "QiaoFeng CNC Machine — static site migrated from WordPress (Astro + Cloudflare Pages + Decap CMS)",
+    "scripts": {
+        "dev": "astro dev",
+        "prebuild": "tsx scripts/migrate/index.ts 01 03 09 --soft",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "migrate": "tsx scripts/migrate/index.ts",
+        "verify:parity": "tsx scripts/verify/parity.ts",
+        "verify:cms": "tsx scripts/verify/cms-fields.ts",
+        "verify": "npm run verify:parity && npm run verify:cms"
+    },
+    "dependencies": {
+        "@astrojs/sitemap": "^3.3.0",
+        "@fontsource/albert-sans": "^5.2.5",
+        "@fontsource/montserrat": "^5.2.5",
+        "astro": "^5.7.13",
+        "sharp": "^0.34.2"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.1.7",
+        "@types/js-yaml": "^4.0.9",
+        "@types/node": "^22.15.0",
+        "cheerio": "^1.1.0",
+        "js-yaml": "^4.1.0",
+        "tailwindcss": "^4.1.7",
+        "tsx": "^4.19.4",
+        "typescript": "^5.8.3"
+    }
+}

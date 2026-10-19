@@ -1,0 +1,190 @@
+---
+/**
+ * 首页背景视频。
+ *
+ * 源站这个视频是 Elementor 的 section 背景，靠 WoodMart 的 videoElement.min.js
+ * 在运行时把 src 注进一个空的 <video> 标签 —— 所以它没有 poster、没有兜底图，
+ * 而且每次访问都要下载 10.38 MB。纯静态化把 JS 全删之后它会直接消失，
+ * 这里用原生方式重做。
+ *
+ * 两种形态：
+ *   fill   = 绝对铺满父 section，文案压在上头（全屏 hero，原站效果）
+ *   framed = 自己撑开高度的一张带框卡片（放在栏位里）
+ *
+ * 性能取向（这是关键，不是可选项）：
+ *   1. LCP 元素是那张 29KB 的 poster <img>，不是视频。
+ *      视频压在 LCP 上正是原站 PageSpeed 差的主因之一。
+ *   2. 视频 preload="none"，只在浏览器空闲后才挂 src。
+ *   3. 四种情况下根本不加载视频：
+ *      prefers-reduced-motion: reduce / Save-Data / 2G 弱网 / 视口 < 960px
+ *   4. 视频解码就绪（playing）后才淡入，poster 始终在底下兜着；
+ *      加载失败也只是看不到视频，不会留空白或闪烁。
+ */
+import { siteConfig } from "@lib/catalog.ts";
+
+interface Props {
+    /**
+     * fill = 铺满父容器（全屏 hero，文字叠在上头）
+     * framed = 带圆角边框的一张卡片（放在栏位里）
+     */
+    variant?: "fill" | "framed";
+}
+
+const { variant = "framed" } = Astro.props;
+const h = siteConfig.hero;
+---
+
+<div class:list={["hero-visual", `variant-${variant}`]}>
+    <img
+        class="poster"
+        src={h.poster}
+        alt={h.posterAlt}
+        width={h.posterWidth}
+        height={h.posterHeight}
+        fetchpriority="high"
+        decoding="async"
+    />
+
+    <video
+        class="vid"
+        aria-hidden="true"
+        role="presentation"
+        tabindex="-1"
+        muted
+        playsinline
+        loop
+        preload="none"
+        data-src={h.video}></video>
+
+    <span class="scrim" aria-hidden="true"></span>
+</div>
+
+<script>
+    /**
+     * 决定是否加载视频。任何一项不满足就保留 poster —— 视频是增强，不是必需内容，
+     * 所以这里宁可保守：拿不到就什么都不做。
+     */
+    function shouldLoadVideo(): boolean {
+        const mm = window.matchMedia;
+        if (mm && mm("(prefers-reduced-motion: reduce)").matches) return false;
+        // 阈值必须与 index.astro 里全屏布局的断点一致（960px）。
+        // 上一版这里是 768，导致 768–960px 区间视频在加载、而窄屏样式已把
+        // scrim 关掉并改用深色文字，结果文字直接压在动态视频上看不清。
+        if (mm && !mm("(min-width: 960px)").matches) return false;
+
+        const conn = (
+            navigator as Navigator & {
+                connection?: { saveData?: boolean; effectiveType?: string };
+            }
+        ).connection;
+        if (conn?.saveData) return false;
+        if (/^2g/.test(conn?.effectiveType ?? "")) return false;
+
+        return true;
+    }
+
+    const boot = () => {
+        const el = document.querySelector(
+            ".hero-visual video.vid",
+        ) as HTMLVideoElement | null;
+        const src = el?.getAttribute("data-src");
+        if (!el || !src) return;
+        const video: HTMLVideoElement = el;
+
+        video.src = src;
+        // 解码出第一帧再淡入，避免露出一个黑帧或跳帧
+        video.addEventListener("playing", () => video.classList.add("ready"));
+        // 加载失败就整个移除，底下 poster 仍在，不会留空白
+        video.addEventListener("error", () => video.remove());
+        video.play().catch(() => video.remove());
+    };
+
+    if (shouldLoadVideo()) {
+        // 空闲后再挂，不与首屏图片和字体抢带宽。
+        // 用 typeof 而不是 "requestIdleCallback" in window：
+        // 后者会让 TS 把 false 分支里的 window 收窄成 never。
+        if (typeof requestIdleCallback === "function") {
+            requestIdleCallback(boot, { timeout: 4000 });
+        } else {
+            globalThis.addEventListener("load", () => setTimeout(boot, 400), {
+                once: true,
+            });
+        }
+    }
+</script>
+
+<style>
+    .hero-visual {
+        position: relative;
+        overflow: hidden;
+        background: var(--color-surface-alt);
+    }
+
+    /* 卡片形态：自己撑开高度，带边框圆角 */
+    .variant-framed {
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-line);
+        aspect-ratio: 16 / 9;
+    }
+
+    /* 全屏形态：绝对铺满父 section，不占文档流高度（高度由父级决定） */
+    .variant-fill {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .poster,
+    .vid {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .vid {
+        opacity: 0;
+        transition: opacity 600ms var(--ease);
+    }
+
+    .vid.ready {
+        opacity: 1;
+    }
+
+    /*
+     * 遮罩：背景是动态画面时没有它，标题随时可能压在浅色机身上看不清。
+     * 左侧压得更深，因为文案在左列。
+     */
+    .scrim {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+            90deg,
+            rgb(18 20 24 / 0.78) 0%,
+            rgb(18 20 24 / 0.52) 45%,
+            rgb(18 20 24 / 0.18) 100%
+        );
+    }
+
+    .variant-framed .scrim {
+        background: linear-gradient(
+            90deg,
+            rgb(18 20 24 / 0.62) 0%,
+            rgb(18 20 24 / 0.28) 46%,
+            rgb(18 20 24 / 0.04) 100%
+        );
+    }
+
+    @media (width < 960px) {
+        /*
+         * 窄屏不加载视频（见脚本条件），只剩 poster；
+         * 且文案排在图片下方而非压在图上，所以遮罩直接隐藏。
+         */
+        .variant-fill .scrim {
+            display: none;
+        }
+    }
+</style>

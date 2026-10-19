@@ -1,0 +1,115 @@
+---
+/**
+ * 作者署名卡。
+ *
+ * 源站把作者框在 104 篇文章正文里各写一遍、且头衔有 11 种互相矛盾的说法
+ * （Founder / Webmaster / Station Master / Site Administrator …）。
+ * 迁移时已全部抽出、归一为 src/data/authors.json 里的一条记录，这里按 slug 取用。
+ * 以后改头衔只需改那一个文件。
+ */
+import type { Author } from "@lib/catalog.ts";
+import { siteConfig } from "@lib/catalog.ts";
+
+interface Props {
+    author: Author;
+    wordCount: number;
+    readingMinutes: number;
+}
+
+const { author, wordCount, readingMinutes } = Astro.props;
+---
+
+<aside class="author" aria-label="About the author">
+    <span class="avatar" aria-hidden="true">{author.avatar}</span>
+
+    <div class="info">
+        <p class="name">
+            {author.name}
+            <span class="role">{author.role}</span>
+        </p>
+        <p class="bio">{author.bio}</p>
+        <p class="meta">
+            <span>{wordCount.toLocaleString("en-US")} words</span>
+            <span aria-hidden="true">·</span>
+            <span>{readingMinutes} min read</span>
+            <span aria-hidden="true">·</span>
+            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </p>
+    </div>
+</aside>
+
+<style>
+    .author {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2.25rem;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        background: var(--color-surface);
+    }
+
+    .avatar {
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--color-brand);
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.15rem;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        min-width: 0;
+    }
+
+    .name {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.98rem;
+        color: var(--color-ink);
+        margin: 0;
+    }
+
+    .role {
+        display: inline;
+        font-weight: 500;
+        font-size: 0.8rem;
+        color: var(--color-muted);
+    }
+
+    .role::before {
+        content: " — ";
+        color: var(--color-faint);
+    }
+
+    .bio {
+        font-size: 0.85rem;
+        line-height: 1.65;
+        color: var(--color-body);
+        margin: 0;
+    }
+
+    .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0.15rem 0 0;
+        font-size: 0.76rem;
+        color: var(--color-faint);
+    }
+
+    @media (width <= 480px) {
+        .author {
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+    }
+</style>

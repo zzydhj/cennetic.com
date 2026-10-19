@@ -1,0 +1,283 @@
+---
+/**
+ * /product/<slug>/ 产品详情页。
+ *
+ * 询盘型展示站，所以这里不输出价格与加购 —— 源站的 WooCommerce 交易链路
+ * 随纯静态化一起下线。转化统一走带型号上下文的 WhatsApp 深链。
+ *
+ * 结构化数据只输出 Product 的基础字段：没有真实报价就不编造 offers/price，
+ * 虚构价格是 Google 结构化数据的手动处罚项。
+ */
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import Gallery from "@components/product/Gallery.astro";
+import SpecTable from "@components/product/SpecTable.astro";
+import ProductCard from "@components/ui/ProductCard.astro";
+import Faq from "@components/ui/Faq.astro";
+import {
+    siteConfig,
+    getProduct,
+    allProducts,
+    categoryAncestors,
+    productCategories,
+} from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+import type { GetStaticPaths } from "astro";
+
+export const prerender = true;
+
+export const getStaticPaths: GetStaticPaths = async () =>
+    allProducts().map((p) => ({ params: { slug: p.slug } }));
+
+const product = getProduct(Astro.params.slug!);
+if (!product) return Astro.redirect("/404/");
+
+const cover = product.images[0];
+const category = product.categories[0];
+const catRecord = productCategories.find((c) => c.slug === category?.slug);
+const ancestors = catRecord ? categoryAncestors(catRecord) : [];
+
+const crumbs = [
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products/" },
+    ...ancestors.map((a) => ({ name: a.name, path: a.canonical })),
+    ...(category && !ancestors.some((a) => a.slug === category.slug)
+        ? [{ name: category.name, path: category.canonical }]
+        : []),
+    { name: product.name, path: product.canonical },
+];
+
+const wa = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    {
+        subject: `${product.name} (${siteConfig.url}${product.canonical})`,
+    },
+);
+
+// 同分类优先，避免相关产品里出现自己
+const others = allProducts()
+    .filter((p) => p.slug !== product.slug)
+    .sort((a, b) => {
+        const an = a.categories.some((c) =>
+            product.categories.some((pc) => pc.slug === c.slug),
+        )
+            ? 0
+            : 1;
+        const bn = b.categories.some((c) =>
+            product.categories.some((pc) => pc.slug === c.slug),
+        )
+            ? 0
+            : 1;
+        return an - bn;
+    })
+    .slice(0, 3);
+
+const description = `${product.name} by QiaoFeng — ${product.summary
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 150)}`;
+---
+
+<BaseLayout
+    title={`${product.name} | QIAOFENG CNC`}
+    description={description.slice(0, 255)}
+    path={product.canonical}
+    ogImage={cover?.src}
+    ogImageWidth={cover?.width}
+    ogImageHeight={cover?.height}
+    breadcrumb={crumbs}
+    pageType="product"
+    product={{
+        name: product.name,
+        description,
+        images: product.images.map((i) => i.src),
+        categories: product.categories.map((c) => c.name),
+    }}
+    preloadLcpImage={cover?.src}
+>
+    <div class="product-page shell">
+        <Breadcrumb items={crumbs} />
+
+        <div class="product">
+            <Gallery images={product.images} name={product.name} />
+
+            <div class="info">
+                <p class="kicker">
+                    {product.categories.map((c) => c.name).join(" · ")}
+                </p>
+                <h1>{product.name}</h1>
+
+                {
+                    product.summary && (
+                        <div class="sum" set:html={product.summary} />
+                    )
+                }
+
+                <p class="actions">
+                    <a
+                        class="btn btn-wa"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank">Get a Quote on WhatsApp</a
+                    >
+                    <a class="btn btn-ghost" href={`mailto:${siteConfig.email}`}
+                        >Email us</a
+                    >
+                </p>
+
+                <ul class="assure">
+                    <li>Direct source factory — no trading-company markup</li>
+                    <li>2-year warranty on all major components</li>
+                    <li>Setup, training and remote diagnostics included</li>
+                </ul>
+            </div>
+        </div>
+
+        {
+            product.specs.length > 0 && (
+                <SpecTable rows={product.specs} name={product.name} />
+            )
+        }
+
+        {
+            product.body && (
+                <section class="detail" aria-labelledby="detail-h">
+                    <h2 id="detail-h">Product details</h2>
+                    <div class="qf-article-body" set:html={product.body} />
+                </section>
+            )
+        }
+
+        {
+            others.length > 0 && (
+                <section class="also" aria-labelledby="also-h">
+                    <h2 id="also-h">Other models</h2>
+                    <div class="grid">
+                        {others.map((p) => (
+                            <ProductCard product={p} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .product-page {
+        padding-top: 0.75rem;
+    }
+
+    .product {
+        display: grid;
+        /* 图库拿到更多空间：机型照片的细节（刀库、卡盘、床身）在小图里看不清楚 */
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: start;
+        margin-top: 1.25rem;
+    }
+
+    /* 宽屏下图库随页滚动保持可见，读参数时不用来回滚 */
+    @media (width >= 1024px) {
+        .product :global(.gallery) {
+            position: sticky;
+            top: 5.5rem;
+        }
+    }
+
+    .kicker {
+        font-family: var(--font-display);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-brand);
+        margin: 0 0 0.5rem;
+    }
+
+    h1 {
+        font-size: clamp(1.6rem, 1.25rem + 1.6vw, 2.3rem);
+        margin: 0 0 0.9rem;
+    }
+
+    .sum {
+        font-size: 0.95rem;
+        color: var(--color-body);
+        line-height: 1.7;
+    }
+
+    .sum :global(p) {
+        margin: 0 0 0.7rem;
+    }
+    .sum :global(strong) {
+        color: var(--color-ink);
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 1.4rem 0 0;
+    }
+
+    .assure {
+        list-style: none;
+        margin: 1.5rem 0 0;
+        padding: 1.1rem 1.15rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        background: var(--color-surface);
+        font-size: 0.85rem;
+        color: var(--color-body);
+        display: grid;
+        gap: 0.45rem;
+    }
+
+    .assure li {
+        padding-left: 1.15rem;
+        position: relative;
+    }
+
+    .assure li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-good);
+        font-weight: 700;
+    }
+
+    .detail,
+    .also {
+        margin-top: 3rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--color-line);
+    }
+
+    .detail h2,
+    .also h2 {
+        font-size: 1.3rem;
+        margin: 0 0 1.1rem;
+    }
+
+    /*
+     * 上一版写死 max-width:900px：既与全站栅格不同宽（左侧对齐、右侧短 220px），
+     * 又在 16px 字号下形成约 113 字符/行。改用 ch 约束行长。
+     */
+    .detail {
+        max-width: 78ch;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+        gap: var(--gutter);
+    }
+
+    @media (width <= 880px) {
+        .product {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+</style>

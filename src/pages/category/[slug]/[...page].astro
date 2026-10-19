@@ -1,0 +1,76 @@
+---
+/**
+ * /category/<slug>/ 及其分页 /category/<slug>/page/N/。
+ *
+ * robots 取自源站清单逐条对齐：实测 Customer Stories（0 篇）在源站是
+ * "follow, noindex"，其余分类是 index —— 这个差别必须保留，
+ * 否则会把一个源站刻意排除的空页重新推给 Google。
+ */
+import { getCollection, type CollectionEntry } from "astro:content";
+import ArchiveLayout from "@layouts/ArchiveLayout.astro";
+import ArticleGrid from "@components/ui/ArticleGrid.astro";
+import { articlesInCategory, paginate, pageCount } from "@lib/content.ts";
+import { siteConfig } from "@lib/catalog.ts";
+
+export const prerender = true;
+
+type Category = CollectionEntry<"blogCategories">;
+
+export async function getStaticPaths() {
+    const cats = (await getCollection("blogCategories")) as Category[];
+    const out: {
+        params: { slug: string; page?: string };
+        props: { cat: Category; n: number; total: number };
+    }[] = [];
+
+    for (const cat of cats) {
+        const posts = await articlesInCategory(cat.data.slug);
+        const pages = Math.max(1, pageCount(posts.length));
+
+        for (let i = 1; i <= pages; i += 1) {
+            out.push({
+                params: {
+                    slug: cat.data.slug,
+                    page: i === 1 ? undefined : `page/${i}`,
+                },
+                props: { cat, n: i, total: posts.length },
+            });
+        }
+    }
+    return out;
+}
+
+const {
+    n = 1,
+    cat,
+    total,
+} = Astro.props as { n: number; cat: Category; total: number };
+const d = cat.data;
+
+const base = `/category/${d.slug}/`;
+const path = n === 1 ? base : `${base}page/${n}/`;
+const posts = await articlesInCategory(d.slug);
+const { items, pagination } = paginate(posts, n, base);
+---
+
+<ArchiveLayout
+    title={n === 1 ? d.title || d.name : `${d.name} - Page ${n}`}
+    description={d.description ||
+        `${d.name} articles from QiaoFeng CNC Machine — practical guides for factory engineers and buyers.`}
+    heading={n === 1 ? d.name : `${d.name} — page ${n}`}
+    path={path}
+    robots={d.robots}
+    crumbs={[
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog/" },
+        { name: d.name, path: base },
+    ]}
+    intro={d.description || undefined}
+    pagination={pagination}
+    basePath={base}
+    total={total}
+    pageType="category"
+    ogImage={siteConfig.ogDefaultImage}
+>
+    <ArticleGrid articles={items} featureFirst={n === 1} columns={3} />
+</ArchiveLayout>

@@ -1,0 +1,159 @@
+---
+/**
+ * 产品卡片。用于 /shop/、/products/、分类页与首页畅销区。
+ *
+ * 图片比例：产品图实测是 1024x1024 正方形（不是文章配图那种 1200x686），
+ * 所以这里用 1:1 容器 + contain：正方形图正好填满不裁，
+ * 万一有非正方形的图也只留同色底边，不会把机身或图上的参数文字切掉。
+ *
+ * 内容克制：卡片只承担「认得出是哪台机器 + 点进去」，
+ * 长描述与规格表属于详情页，堆在卡片里会让列表无法扫读。
+ */
+import type { Product } from "@lib/catalog.ts";
+import { siteConfig } from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+
+interface Props {
+    product: Product;
+    /** 首屏 LCP 卡片可提前加载 */
+    eager?: boolean;
+}
+
+const { product, eager = false } = Astro.props;
+const cover = product.images[0];
+const category = product.categories[0]?.name;
+
+const wa = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    {
+        subject: `${product.name} (${siteConfig.url}${product.canonical})`,
+    },
+);
+---
+
+<article class="card prod">
+    <a class="thumb" href={product.canonical} tabindex="-1" aria-hidden="true">
+        {
+            cover ? (
+                <img
+                    src={cover.src}
+                    alt=""
+                    width={cover.width}
+                    height={cover.height}
+                    loading={eager ? "eager" : "lazy"}
+                    decoding="async"
+                />
+            ) : (
+                <span class="noimg">QF</span>
+            )
+        }
+    </a>
+
+    <div class="body">
+        {category && <span class="cat">{category}</span>}
+        <h3><a href={product.canonical}>{product.name}</a></h3>
+
+        <p class="act">
+            <a class="btn btn-ghost btn-sm" href={product.canonical}
+                >View specs</a
+            >
+            <a
+                class="btn btn-wa btn-sm"
+                href={wa}
+                rel="noopener noreferrer"
+                target="_blank">Get price</a
+            >
+        </p>
+    </div>
+</article>
+
+<style>
+    .prod {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    /* 1:1 正方形容器，跟产品图原生比例一致，不做任何裁切 */
+    .thumb {
+        display: block;
+        flex: 0 0 auto;
+        aspect-ratio: 1 / 1;
+        background: var(--color-surface-alt);
+        overflow: hidden;
+    }
+
+    .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .noimg {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--color-line);
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+        padding: 0.95rem 1rem 1.05rem;
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .cat {
+        font-family: var(--font-display);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--color-brand);
+        /* 分类名有长有短，固定两行高度让各卡标题起线一致 */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 2.1em;
+    }
+
+    h3 {
+        font-size: 1rem;
+        line-height: 1.32;
+        margin: 0;
+        /* 型号名长短差异大，统一截到 3 行，卡片高度才齐平 */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    h3 a {
+        color: var(--color-ink);
+    }
+    h3 a:hover {
+        color: var(--color-brand);
+    }
+
+    .act {
+        display: flex;
+        gap: 0.45rem;
+        margin: auto 0 0;
+        padding-top: 0.75rem;
+    }
+
+    .act :global(.btn) {
+        flex: 1;
+        padding-inline: 0.5rem;
+        white-space: nowrap;
+    }
+</style>

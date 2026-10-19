@@ -1,0 +1,179 @@
+---
+/**
+ * /shop/ 、/products/ 、/service/ 共用的产品全量列表。
+ *
+ * 这三个 URL 在源站都是自动生成的产品循环页（实测 .entry-content 为空），
+ * 所以内容一致、只有标题与定位不同。合成一个组件由三个路由传参调用，
+ * 避免三份几乎相同却会各自漂移的副本。
+ */
+import ArchiveLayout from "@layouts/ArchiveLayout.astro";
+import ProductCard from "@components/ui/ProductCard.astro";
+import { allProducts, productCategories, siteConfig } from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+
+interface Props {
+    slug: "shop" | "products" | "service";
+}
+
+const { slug } = Astro.props;
+
+// 每个 URL 的标题与描述沿用迁移清单里从源站抓到的 <title>，避免排名波动
+const COPY = {
+    shop: {
+        title: "All CNC Machines",
+        heading: "All CNC Machines",
+        description:
+            "Browse every QiaoFeng CNC machine model — vertical machining centers, drilling and tapping centers and more, direct from the source factory.",
+        intro: "Every model below is built in our own factory in Dongguan, Guangdong. Send us your material, part size and tolerance and we will confirm the right configuration on WhatsApp.",
+    },
+    products: {
+        title: "CNC Machines | QiaoFeng Products",
+        heading: "CNC Machine Products",
+        description:
+            "QiaoFeng CNC machine product range: vertical machining centers, drilling and tapping centers, and precision machine tools from a Chinese source factory.",
+        intro: "Our machining center range covers linear-guideway high-speed models through to heavy-duty box-guideway machines for mould and die work.",
+    },
+    service: {
+        title: "CNC Machine Service & Support",
+        heading: "Service & Support",
+        description:
+            "Warranty, installation, training and remote diagnostics for QiaoFeng CNC machines — support from the factory that built your machine.",
+        intro: "Support comes from the engineers who build the machines, not a third-party reseller. Every model includes a 2-year warranty on major components.",
+    },
+} as const;
+
+const c = COPY[slug];
+const products = allProducts();
+const topCats = productCategories.filter(
+    (x) => x.trail.length === 1 && x.slug !== "uncategorized",
+);
+
+const wa = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    {
+        text: "Hi QiaoFeng, I would like a machine recommendation.",
+    },
+);
+---
+
+<ArchiveLayout
+    title={c.title}
+    description={c.description}
+    heading={c.heading}
+    path={`/${slug}/`}
+    crumbs={[
+        { name: "Home", path: "/" },
+        { name: c.heading, path: `/${slug}/` },
+    ]}
+    intro={c.intro}
+    pageType="archive"
+    narrowIntro
+>
+    {
+        products.length > 0 ? (
+            <div class="grid">
+                {products.map((p) => (
+                    <ProductCard product={p} />
+                ))}
+            </div>
+        ) : (
+            <p class="none">
+                Our catalogue is being updated — message us on WhatsApp for
+                current models.
+            </p>
+        )
+    }
+
+    <section class="browse" aria-labelledby="browse-h">
+        <h2 id="browse-h">Browse by category</h2>
+        <ul class="subs">
+            {
+                topCats.map((k) => (
+                    <li>
+                        <a href={k.canonical}>{k.name}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <aside class="strip">
+        <p class="strip-title">Not sure which model fits your work?</p>
+        <a
+            class="btn btn-wa"
+            href={wa}
+            rel="noopener noreferrer"
+            target="_blank">Ask on WhatsApp</a
+        >
+    </aside>
+</ArchiveLayout>
+
+<style>
+    .grid {
+        display: grid;
+        /* 产品只有 4 个：用固定上限而不是 auto-fill，避免宽屏下卡被拉成横条 */
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+        gap: var(--gutter);
+    }
+
+    .none {
+        color: var(--color-muted);
+    }
+
+    .browse {
+        margin-top: 2.75rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-line);
+    }
+
+    .browse h2 {
+        font-size: 1.15rem;
+        margin: 0 0 0.9rem;
+    }
+
+    .subs {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+        gap: 0.75rem;
+    }
+
+    .subs a {
+        display: block;
+        padding: 0.9rem 1.05rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--color-ink);
+    }
+
+    .subs a:hover {
+        border-color: var(--color-brand);
+        color: var(--color-brand);
+    }
+
+    .strip {
+        margin: 2.5rem 0 0;
+        padding: 1.2rem 1.35rem;
+        border: 1px solid var(--color-line);
+        border-left: 4px solid var(--color-brand);
+        border-radius: var(--radius);
+        background: var(--color-brand-tint);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .strip-title {
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--color-ink);
+        margin: 0;
+    }
+</style>

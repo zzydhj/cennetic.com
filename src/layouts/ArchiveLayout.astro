@@ -1,0 +1,133 @@
+---
+/**
+ * 列表页骨架：文章列表、产品分类页、博客分类页共用。
+ *
+ * 分页存在的前提是 URL 与源站逐条对齐 —— /blog/page/N/ 与 /category/x/page/N/
+ * 实测在源站都返回 200 且 index，Google 可能已收录，少建一页就是 404。
+ */
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import Pager from "@components/ui/Pager.astro";
+import Faq from "@components/ui/Faq.astro";
+import type { Crumb } from "@components/ui/Breadcrumb.astro";
+import type { Pagination } from "@lib/content.ts";
+import { siteConfig } from "@lib/catalog.ts";
+
+interface Props {
+    title: string;
+    description: string;
+    heading: string;
+    path: string;
+    crumbs: Crumb[];
+    intro?: string;
+    /** 列表页 own 的 robots，来自源站清单逐条对齐（空分类是 noindex） */
+    robots?: string;
+    pagination?: Pagination;
+    basePath?: string;
+    total?: number;
+    noun?: string;
+    pageType?: "archive" | "category" | "page";
+    ogImage?: string;
+    faq?: Array<{ q: string; a: string }>;
+    /** 列表上方需要限制行长的描述区 */
+    narrowIntro?: boolean;
+}
+
+const {
+    title,
+    description,
+    heading,
+    path,
+    crumbs,
+    intro,
+    robots = "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    pagination,
+    basePath,
+    total,
+    noun = "articles",
+    pageType = "archive",
+    ogImage,
+    faq,
+    narrowIntro = false,
+} = Astro.props;
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    path={path}
+    robots={robots}
+    ogImage={ogImage ?? siteConfig.ogDefaultImage}
+    breadcrumb={crumbs}
+    pageType={pageType}
+    faq={faq}
+>
+    <div class:list={["archive shell", { narrow: narrowIntro }]}>
+        <Breadcrumb items={crumbs} />
+
+        <header class="head">
+            <h1>{heading}</h1>
+            {
+                intro ? (
+                    <p class="intro" set:html={intro} />
+                ) : (
+                    description && <p class="intro">{description}</p>
+                )
+            }
+        </header>
+
+        <slot />
+
+        {faq?.length && <Faq items={faq} />}
+
+        {
+            pagination && basePath && total !== undefined && (
+                <Pager
+                    basePath={basePath}
+                    pagination={pagination}
+                    total={total}
+                    noun={noun}
+                />
+            )
+        }
+    </div>
+</BaseLayout>
+
+<style>
+    .archive {
+        padding-top: 0.75rem;
+    }
+
+    /* 描述区限制行长，不让它在 1160px 宽下撑成一行 120 字 */
+    .head .intro {
+        max-width: 72ch;
+    }
+
+    .narrow .body,
+    .narrow .intro {
+        max-width: var(--container-prose);
+    }
+
+    .head {
+        margin: 1rem 0 1.75rem;
+    }
+
+    h1 {
+        font-size: clamp(1.65rem, 1.3rem + 1.6vw, 2.25rem);
+        margin: 0 0 0.55rem;
+    }
+
+    .intro {
+        font-size: 0.98rem;
+        color: var(--color-muted);
+        max-width: 72ch;
+        margin: 0;
+    }
+
+    .intro :global(p) {
+        margin: 0 0 0.6rem;
+    }
+    .intro :global(a) {
+        text-decoration: underline;
+    }
+</style>

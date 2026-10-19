@@ -1,0 +1,147 @@
+---
+/**
+ * 分页导航。
+ *
+ * 页码用「首页 + 尾段 + 当前邻域」的省略式布局，避免 technical-knowledge
+ * 那种 8 页的情况把整排页码铺开。第 1 页链回列表根路径，与源站 301 行为一致。
+ */
+import { pagePath } from "@lib/content.ts";
+import type { Pagination } from "@lib/content.ts";
+
+interface Props {
+    basePath: string;
+    pagination: Pagination;
+    /** 列表总数，用于「共 N 篇」文案 */
+    total: number;
+    noun?: string;
+}
+
+const { basePath, pagination, total, noun = "articles" } = Astro.props;
+const { current, total: pages } = pagination;
+
+/** 需要显示具体数字的页码集合 */
+function windowed(n: number, size: number): number[] {
+    const set = new Set<number>([1, size, n]);
+    for (let i = n - 1; i <= n + 1; i += 1) {
+        if (i >= 1 && i <= size) set.add(i);
+    }
+    return [...set].sort((a, b) => a - b);
+}
+
+const show =
+    pages > 5
+        ? windowed(current, pages)
+        : Array.from({ length: pages }, (_, i) => i + 1);
+---
+
+{
+    pages > 1 && (
+        <nav class="pager" aria-label="Pagination">
+            <p class="count">
+                Page {current} of {pages} · {total} {noun}
+            </p>
+
+            <ol>
+                {show.map((n, i) => (
+                    <li>
+                        {i > 0 && n - show[i - 1]! > 1 && (
+                            <span class="gap" aria-hidden="true">
+                                …
+                            </span>
+                        )}
+                        <a
+                            href={pagePath(basePath, n)}
+                            aria-current={n === current ? "page" : undefined}
+                            class={n === current ? "on" : ""}
+                        >
+                            {n}
+                        </a>
+                    </li>
+                ))}
+            </ol>
+
+            <div class="adj">
+                {pagination.prev && (
+                    <a href={pagination.prev} rel="prev">
+                        ← Previous
+                    </a>
+                )}
+                {pagination.next && (
+                    <a href={pagination.next} rel="next">
+                        Next →
+                    </a>
+                )}
+            </div>
+        </nav>
+    )
+}
+
+<style>
+    .pager {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        margin: 2.5rem 0 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-line);
+    }
+
+    .count {
+        font-size: 0.82rem;
+        color: var(--color-muted);
+        margin: 0;
+    }
+
+    ol {
+        list-style: none;
+        display: flex;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    a {
+        display: inline-grid;
+        place-items: center;
+        min-width: 2.1rem;
+        height: 2.1rem;
+        padding: 0 0.5rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-sm);
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-ink);
+    }
+
+    a:hover {
+        border-color: var(--color-brand);
+        color: var(--color-brand);
+    }
+    a.on {
+        background: var(--color-brand);
+        border-color: var(--color-brand);
+        color: #fff;
+    }
+    a.on:hover {
+        color: #fff;
+    }
+
+    .gap {
+        color: var(--color-faint);
+        font-size: 0.85rem;
+    }
+
+    .adj {
+        display: flex;
+        gap: 0.5rem;
+    }
+</style>

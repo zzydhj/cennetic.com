@@ -1,0 +1,32 @@
+# 构建产物
+dist/
+.astro/
+
+# 迁移期原始缓存（体积大、可重新抓取，不入库）
+.cache/
+
+# 图片暂存区：待推送到 Cloudflare R2 的源图，不进 Git
+media-staging/
+
+# 由 09 阶段从 media-staging 同步而来（切 R2 后退役），不重复入库
+public/images/
+
+# Pagefind 搜索索引（构建时生成）
+public/pagefind/
+
+# 依赖
+node_modules/
+
+# 环境变量（Decap OAuth token 等）
+.env
+.env.local
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# 日志
+*.log
+npm-debug.log*

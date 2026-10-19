@@ -1,0 +1,207 @@
+---
+/**
+ * YouTube 嵌入（门面模式）。
+ *
+ * 源站首页在 About 区嵌了一个 YouTube 视频（WoodMart 的 wd_video 组件，
+ * video id XHOmBV4js_E）。它是全站第二个视频，且和背景视频一样被懒加载机制
+ * （iframe 的 src 写在 data-lazy-load 里）藏住了，只看正文 DOM 会漏掉。
+ *
+ * 这里不直接放 <iframe>，原因很实际：
+ *   1. YouTube 的 iframe 会拉进约 500KB–1MB 的第三方 JS，直接压垮 LCP 与 TBT；
+ *   2. 用户还没点播放，就已经被 Google 种 cookie / 采集行为 —— 对只做展示的
+ *      询盘站是不必要的隐私面；
+ *   3. 封面图我们本地已经有了（源站用的就是自己 uploads 里的图），不需要再请求 ytimg。
+ *
+ * 所以默认只渲染一张封面 + 播放按钮，点击后才换成真 iframe 并自动播放。
+ * 无 JS 的用户也不会卡死：下方保留一个直链到 YouTube 的普通链接。
+ */
+import { siteConfig } from "@lib/catalog.ts";
+
+interface Props {
+    /** 覆盖站点默认 video id */
+    id?: string;
+    /** 覆盖站点默认封面 */
+    poster?: string;
+    title: string;
+    /** 封面 alt，默认沿用 title */
+    alt?: string;
+}
+
+const {
+    id = siteConfig.youtube.factoryVideoId,
+    poster = siteConfig.youtube.poster,
+    title,
+    alt = title,
+} = Astro.props;
+
+const watchUrl = `https://www.youtube.com/watch?v=${id}`;
+---
+
+<figure class="yt">
+    <button
+        type="button"
+        class="facade"
+        data-yt-id={id}
+        aria-label={`播放视频：${title}`}
+    >
+        <img
+            class="poster"
+            src={poster}
+            alt={alt}
+            width="500"
+            height="400"
+            loading="lazy"
+            decoding="async"
+        />
+        <span class="play" aria-hidden="true">
+            <svg
+                viewBox="0 0 48 32"
+                width="48"
+                height="32"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <path
+                    d="M47 15.5s0-7-1-10c-.5-2-2-3-4-3.5C38 1 24 1 24 1s-14 0-18 1c-2 .5-3.5 1.5-4 3.5-1 3-1 10-1 10s0 7 1 10c.5 2 2 3 4 3.5 4 1 18 1 18 1s14 0 18-1c2-.5 3.5-1.5 4-3.5 1-3 1-10 1-10Z"
+                    fill="#f00"></path>
+                <path d="m19 21 12-7-12-7v14Z" fill="#fff"></path>
+            </svg>
+        </span>
+    </button>
+
+    <figcaption>
+        <span class="cap-title">{title}</span>
+        {/* 无 JS 兜底：仍然可以正常打开视频 */}
+        <a
+            class="cap-link"
+            href={watchUrl}
+            rel="noopener noreferrer"
+            target="_blank">Watch on YouTube</a
+        >
+    </figcaption>
+</figure>
+
+<script>
+    document
+        .querySelectorAll<HTMLButtonElement>(".yt .facade")
+        .forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const id = btn.dataset.ytId;
+                if (!id) return;
+
+                const frame = document.createElement("iframe");
+                // autoplay=1 让用户那一次点击立即生效，不点就永远不加载第三方脚本
+                frame.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+                frame.title = btn.getAttribute("aria-label") ?? "Video player";
+                frame.allow =
+                    "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+                frame.allowFullscreen = true;
+                frame.loading = "lazy";
+
+                const figure = btn.closest(".yt");
+                figure?.classList.add("playing");
+                btn.replaceWith(frame);
+            });
+        });
+</script>
+
+<style>
+    .yt {
+        margin: 0;
+    }
+
+    .facade {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        background: var(--color-surface-alt);
+        overflow: hidden;
+        cursor: pointer;
+        /* 与封面 500x400 同比例，换成 iframe 前后版面不动 */
+        aspect-ratio: 5 / 4;
+    }
+
+    .playing .facade,
+    .yt iframe {
+        aspect-ratio: 16 / 9;
+    }
+
+    .yt iframe {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        background: #000;
+    }
+
+    .poster {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 400ms var(--ease);
+    }
+
+    .facade:hover .poster {
+        transform: scale(1.03);
+    }
+
+    /* 压暗一层，让播放按钮始终清晰 */
+    .facade::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(18 20 24 / 0.22);
+        transition: background-color var(--dur) var(--ease);
+    }
+
+    .facade:hover::after {
+        background: rgb(18 20 24 / 0.1);
+    }
+
+    .play {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        transition: transform var(--dur) var(--ease);
+    }
+
+    .facade:hover .play {
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    .facade:focus-visible {
+        outline: 3px solid var(--color-brand);
+        outline-offset: 3px;
+    }
+
+    figcaption {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1rem;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 0.7rem;
+        font-size: 0.82rem;
+        color: var(--color-muted);
+    }
+
+    .cap-title {
+        font-weight: 600;
+        color: var(--color-ink);
+    }
+
+    .cap-link {
+        color: var(--color-brand);
+    }
+    .cap-link:hover {
+        color: var(--color-brand-dark);
+    }
+</style>

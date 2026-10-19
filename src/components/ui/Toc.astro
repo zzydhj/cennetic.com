@@ -1,0 +1,83 @@
+---
+/**
+ * 文章目录。
+ *
+ * 迁移时把源站手写的 .qf-toc 全部剥掉了（5 处），因为它锚点靠人工维护、容易失配。
+ * 这里改为从正文实际标题反查生成 —— 标题 id 由迁移阶段统一补齐，
+ * 实测 113 篇里「拿不到 id 的标题」为 0，所以目录项必定可跳转。
+ *
+ * 少于 3 个标题时不输出：那样反而稀释正文、给 Google 一堆无意义锚点。
+ */
+interface Props {
+    items: Array<{ id: string; text: string; level: 2 | 3 }>;
+}
+
+const { items } = Astro.props;
+---
+
+{
+    items.length >= 3 && (
+        <nav class="toc" aria-label="Table of contents">
+            <p class="toc-title">Contents</p>
+            <ol>
+                {items.map((h) => (
+                    <li class={h.level === 3 ? "sub" : ""}>
+                        <a href={`#${h.id}`}>{h.text}</a>
+                    </li>
+                ))}
+            </ol>
+        </nav>
+    )
+}
+
+<style>
+    .toc {
+        margin: 1.75rem 0 0;
+        padding: 1rem 1.15rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        background: var(--color-surface);
+    }
+
+    .toc-title {
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin: 0 0 0.55rem;
+    }
+
+    ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.3rem;
+        counter-reset: toc;
+    }
+
+    li {
+        counter-increment: toc;
+        font-size: 0.86rem;
+    }
+
+    /* 二级标题带编号，三级缩进不带 —— 保持层级一眼可辨 */
+    li:not(.sub)::before {
+        content: counter(toc) ". ";
+        color: var(--color-faint);
+    }
+
+    li.sub {
+        padding-left: 1.1rem;
+        font-size: 0.82rem;
+    }
+
+    a {
+        color: var(--color-body);
+    }
+    a:hover {
+        color: var(--color-brand);
+    }
+</style>

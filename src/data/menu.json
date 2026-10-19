@@ -1,0 +1,82 @@
+{
+    "comment": "站点导航。后台 site 集合可编辑；改一处全站生效。path 一律带尾斜杠，与 URL 基线清单保持一致。",
+    "primary": [
+        {
+            "label": "Home",
+            "path": "/"
+        },
+        {
+            "label": "Products",
+            "path": "/products/",
+            "children": [
+                {
+                    "label": "Machining Centers",
+                    "path": "/product-category/machining-centers/"
+                },
+                {
+                    "label": "Vertical Machining Centers",
+                    "path": "/product-category/machining-centers/vertical-machining-centers/"
+                },
+                {
+                    "label": "All Products",
+                    "path": "/shop/"
+                }
+            ]
+        },
+        {
+            "label": "About Us",
+            "path": "/about-us/"
+        },
+        {
+            "label": "Service",
+            "path": "/service/"
+        },
+        {
+            "label": "News & Media",
+            "path": "/news-and-media/"
+        },
+        {
+            "label": "Blog",
+            "path": "/blog/"
+        },
+        {
+            "label": "Contact Us",
+            "path": "/contact-us/"
+        }
+    ],
+    "footer": {
+        "_comment": "产品分类不在这里写：它们以 src/data/product-categories.json 为唯一来源，页脚自动取 depth=1 的项，后台新增分类无需改本文件。",
+        "resources": [
+            {
+                "label": "Buying Guides",
+                "path": "/category/buying-guides/"
+            },
+            {
+                "label": "Technical Knowledge",
+                "path": "/category/technical-knowledge/"
+            },
+            {
+                "label": "Comparisons",
+                "path": "/category/comparisons/"
+            },
+            {
+                "label": "Maintenance & Operations",
+                "path": "/category/maintenance-operations/"
+            },
+            {
+                "label": "Industry Applications",
+                "path": "/category/industry-applications/"
+            }
+        ],
+        "legal": [
+            {
+                "label": "Privacy Policy",
+                "path": "/privacy-policy/"
+            },
+            {
+                "label": "Refund Policy & Warranty",
+                "path": "/cnc-machine-refund-policy/"
+            }
+        ]
+    }
+}

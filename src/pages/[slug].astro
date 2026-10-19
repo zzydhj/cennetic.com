@@ -1,0 +1,94 @@
+---
+/**
+ * 顶级单段路径的唯一入口 —— 同时承接两类内容：
+ *   文章  /<slug>/        （113 篇）
+ *   页面  /about-us/ 等   （非列表型页面）
+ *
+ * 为什么必须合成一条路由：两类内容在源站都是顶级单段路径。若各写一个
+ * [slug].astro 与 [page].astro，Astro 会按文件名顺序静默遮蔽其中一个，
+ * 表现是「某些文章莫名 404」且构建不报错 —— 这类 bug 极难定位，所以不留发生条件。
+ *
+ * 同时断言两边 slug 不重叠：源站靠 WordPress 的命名唯一性保证，
+ * 后台新增时若文章与页面重名，必须让构建失败，而不是悄悄少生成一页。
+ */
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ArticleLayout from "@layouts/ArticleLayout.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import { allArticles, relatedArticles } from "@lib/content.ts";
+
+export const prerender = true;
+
+type ArticleEntry = CollectionEntry<"articles">;
+type PageEntry = CollectionEntry<"pages">;
+
+export async function getStaticPaths() {
+    const [articles, pages] = await Promise.all([
+        getCollection("articles") as Promise<ArticleEntry[]>,
+        getCollection("pages") as Promise<PageEntry[]>,
+    ]);
+
+    const articleBySlug = new Map(articles.map((a) => [a.data.slug, a]));
+    // home 由 src/pages/index.astro 输出；isListing 的页面走各自的列表路由
+    const pageBySlug = new Map(
+        pages
+            .filter((p) => !p.data.isListing && p.data.slug !== "home")
+            .map((p) => [p.data.slug, p]),
+    );
+
+    const collisions = [...pageBySlug.keys()].filter((s) =>
+        articleBySlug.has(s),
+    );
+    if (collisions.length > 0) {
+        throw new Error(
+            `文章与页面 slug 冲突，会有一方被静默覆盖：${collisions.join(", ")}。` +
+                `请重命名 src/content/ 下的其中之一。`,
+        );
+    }
+
+    const pool = await allArticles();
+
+    return [
+        ...[...articleBySlug.entries()].map(([slug, entry]) => ({
+            params: { slug },
+            props: {
+                kind: "article" as const,
+                entry,
+                related: relatedArticles(entry, pool, 4),
+            },
+        })),
+        ...[...pageBySlug.entries()].map(([slug, entry]) => ({
+            params: { slug },
+            props: {
+                kind: "page" as const,
+                entry,
+                related: [] as ArticleEntry[],
+            },
+        })),
+    ];
+}
+
+const { kind, entry, related } = Astro.props as {
+    kind: "article" | "page";
+    entry: ArticleEntry | PageEntry;
+    related: ArticleEntry[];
+};
+
+/**
+ * 正文取 entry.body 原始 HTML 直接渲染，不走 Markdown 编译。
+ * 原因见 content.config.ts 顶部：正文含大量 qf-* 组件类名，Markdown 往返会丢。
+ */
+const html = (entry as unknown as { body?: string }).body?.trim() ?? "";
+---
+
+{
+    kind === "article" ? (
+        <ArticleLayout
+            article={entry as ArticleEntry}
+            html={html}
+            related={related}
+        />
+    ) : (
+        <PageLayout page={entry as PageEntry} html={html} />
+    )
+}

@@ -1,0 +1,29 @@
+# 由 npm run migrate -- 08 依据 migration/url-manifest.json 生成，请勿手改。
+# 想改规则：改源站内容后重跑阶段 02 + 08。
+
+# ── 源站 301 别名（正文写成 /blog/<slug>/ 而实际文章在顶级路径）──
+/blog/cnc-apc-explained/ /cnc-apc-explained/ 301
+/blog/cnc-atc-explained/ /cnc-atc-explained/ 301
+/blog/cnc-tool-length-offset/ /cnc-tool-length-offset/ 301
+/blog/fanuc-robodrill-vs-brother/ /fanuc-robodrill-vs-brother-speedio-unbiased-high-speed-winner/ 301
+/contact/ /contact-us/ 301
+
+# ── 已下线的 WooCommerce 交易路径 → 产品列表 ──
+/cart/ /products/ 301
+/checkout/ /products/ 301
+/my-account/ /products/ 301
+/product-cat/ /products/ 301
+
+# ── 源站图片旧路径 → 新站 /images/ ──
+# Google 已收录这些图片 URL，保留 301 以免图片搜索结果里的图集体失效。
+/wp-content/uploads/:year/:month/:file*  /images/:year/:month/:file*  301
+/wp-content/uploads/:path*  /images/:path*  301
+
+# ── 源站正文链到、但源站自己就已 404 的链接 ──
+# 不重定向（重定向到不相关页会欺骗爬虫），交给 404 页给出出路。
+# dead on source: /blog/automatic-vs-manual-cnc/
+# dead on source: /blog/cnc-milling-vs-drilling/
+# dead on source: /blog/small-vs-large-cnc-machine/
+# dead on source: /blog/vertical-vs-horizontal-cnc/
+
+# Sitemap https://qfcncmachine.com/sitemap-index.xml

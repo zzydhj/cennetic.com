@@ -1,0 +1,179 @@
+---
+/**
+ * 站点页脚。
+ *
+ * 产品分类不在此处硬编码 —— 它们以 product-categories.json 为唯一来源，
+ * 后台新增分类会自动出现在这里，无需改动本文件（见 catalog.ts 的 footerProductCategories）。
+ */
+import { siteConfig, nav, footerProductCategories } from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+
+const wa = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    {
+        text: "Hi QiaoFeng, I would like to discuss a machine requirement.",
+    },
+);
+
+// 当前年份在构建期确定即可：静态站没有运行时，无需为此引入客户端 JS
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+    <div class="shell grid">
+        <section class="about">
+            <h2 class="f-title">{siteConfig.legalName}</h2>
+            <p>{siteConfig.description}</p>
+            <a class="btn btn-wa btn-sm" href={wa} rel="noopener noreferrer"
+                >Get a Quote on WhatsApp</a
+            >
+        </section>
+
+        <nav class="col" aria-label="Product categories">
+            <h2 class="f-title">Products</h2>
+            <ul>
+                {
+                    footerProductCategories.map((c) => (
+                        <li>
+                            <a href={c.path}>{c.label}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <nav class="col" aria-label="Resources">
+            <h2 class="f-title">Resources</h2>
+            <ul>
+                {
+                    nav.footer.resources.map((r) => (
+                        <li>
+                            <a href={r.path}>{r.label}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <section class="col" aria-label="Contact">
+            <h2 class="f-title">Contact</h2>
+            <ul>
+                <li>
+                    <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a
+                    >
+                </li>
+                <li>
+                    <a href={`tel:${siteConfig.phone}`}
+                        >{siteConfig.phoneDisplay}</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href={`https://wa.me/${siteConfig.whatsapp.number}`}
+                        rel="noopener noreferrer"
+                        >WhatsApp {siteConfig.whatsapp.display}</a
+                    >
+                </li>
+                <li>
+                    {siteConfig.address.street}, {siteConfig.address.city}, {
+                        siteConfig.address.region
+                    }, {siteConfig.address.country}
+                </li>
+            </ul>
+            <nav class="legal" aria-label="Legal">
+                <ul>
+                    {
+                        nav.footer.legal.map((l) => (
+                            <li>
+                                <a href={l.path}>{l.label}</a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+        </section>
+    </div>
+
+    <div class="shell base">
+        <span>© {year} {siteConfig.legalName}. All rights reserved.</span>
+        <span>{siteConfig.foundingNote}</span>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        margin-top: 4rem;
+        background: #1c1f24;
+        color: #c8ccd3;
+        padding-top: 3rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .f-title {
+        font-size: 0.95rem;
+        color: #fff;
+        margin: 0 0 0.9rem;
+        letter-spacing: 0.02em;
+    }
+
+    .about p {
+        font-size: 0.875rem;
+        line-height: 1.7;
+        margin: 0 0 1.1rem;
+    }
+
+    .col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .col li {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+    }
+    .col a {
+        color: #c8ccd3;
+    }
+    .col a:hover {
+        color: #fff;
+    }
+
+    .legal {
+        margin-top: 1.25rem;
+    }
+    .legal ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1rem;
+    }
+
+    .base {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.5rem;
+        border-top: 1px solid rgb(255 255 255 / 0.1);
+        padding: 1.1rem 0;
+        font-size: 0.78rem;
+        color: #8b919b;
+    }
+
+    @media (width <= 900px) {
+        .grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+
+    @media (width <= 560px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

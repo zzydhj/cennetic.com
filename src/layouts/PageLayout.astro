@@ -1,0 +1,137 @@
+---
+/**
+ * 普通页面正文布局（About Us / Service / Contact / Privacy / Refund 等）。
+ *
+ * 正文同样是迁移后的 HTML。与文章布局的差别只有两点：
+ * 不生成目录、不显示作者卡与阅读时长 —— 政策页和公司页挂作者署名是不合逻辑的。
+ * isListing 的页面（/shop/ /products/ 等）不走这里，由各自的列表模板处理。
+ */
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import Faq from "@components/ui/Faq.astro";
+import { siteConfig } from "@lib/catalog.ts";
+import { entryPath } from "@lib/content.ts";
+import { waLink } from "@lib/whatsapp.ts";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    page: CollectionEntry<"pages">;
+    /** 正文原始 HTML */
+    html: string;
+    /** 分类式页面（如 /news-and-media/）会在正文后再插列表区 */
+    afterBody?: boolean;
+}
+
+const { page, html, afterBody = false } = Astro.props;
+const d = page.data;
+// 后台新建的页面可能没填 canonical，由 entryPath 按 slug 兜底
+const selfPath = entryPath(d);
+
+const crumbs = [
+    { name: "Home", path: "/" },
+    ...(d.slug === "home" ? [] : [{ name: d.title, path: selfPath }]),
+];
+
+const wa = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    { subject: d.title },
+);
+---
+
+<BaseLayout
+    title={d.title}
+    description={d.description}
+    path={selfPath}
+    robots={d.robots}
+    ogImage={d.hero}
+    breadcrumb={crumbs}
+    pageType="page"
+    faq={d.faq}
+    preloadLcpImage={d.hero}
+>
+    <div class="page shell">
+        <Breadcrumb items={crumbs} />
+
+        <header class="head">
+            <h1>{d.heading}</h1>
+            {d.description && <p class="lede">{d.description}</p>}
+        </header>
+
+        <div class="body qf-article-body" set:html={html} />
+
+        {d.faq?.length && <Faq items={d.faq} />}
+
+        {/* 公司页与联系页是转化位，统一补一条 WhatsApp 出口 */}
+        {
+            !afterBody && (
+                <aside class="strip">
+                    <p class="strip-title">Talk to the factory directly</p>
+                    <a
+                        class="btn btn-wa"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        WhatsApp {siteConfig.whatsapp.display}
+                    </a>
+                </aside>
+            )
+        }
+
+        <slot />
+    </div>
+</BaseLayout>
+
+<style>
+    .page {
+        padding-top: 0.75rem;
+    }
+
+    .head {
+        margin: 1rem 0 1.75rem;
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.4rem);
+        margin: 0 0 0.6rem;
+    }
+
+    .lede {
+        font-size: 1.02rem;
+        color: var(--color-muted);
+        max-width: 70ch;
+        margin: 0;
+    }
+
+    /* 长文限制行长：上一版 880px 在 16px 字号下约 110 字符/行，超出可读范围 */
+    .body {
+        max-width: 72ch;
+    }
+
+    .body :global(table) {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .strip {
+        margin: 2.5rem 0 0;
+        padding: 1.2rem 1.35rem;
+        border: 1px solid var(--color-line);
+        border-left: 4px solid var(--color-brand);
+        border-radius: var(--radius);
+        background: var(--color-brand-tint);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .strip-title {
+        font-family: var(--font-display);
+        font-weight: 700;
+        color: var(--color-ink);
+        margin: 0;
+    }
+</style>

@@ -1,0 +1,178 @@
+---
+/**
+ * 文章列表卡片。
+ *
+ * 图片一律带显式宽高：源站 320 张正文图统一是 1200x686，
+ * 卡片里按比例缩放即可，不会因为图片晚到而把下方内容顶下去（CLS）。
+ * 主图缺失时不输出 img —— 空 alt 的占位图对 SEO 与无障碍都是负分。
+ */
+import { entryPath, type Article } from "@lib/content.ts";
+import { siteConfig } from "@lib/catalog.ts";
+
+interface Props {
+    article: Article;
+    /** first 会放大首条，用于分类页顶部与首页 */
+    featured?: boolean;
+}
+
+const { article, featured = false } = Astro.props;
+const {
+    title,
+    heading,
+    description,
+    hero,
+    heroWidth,
+    heroHeight,
+    date,
+    readingMinutes,
+} = article.data;
+
+// 统一走 entryPath：后台新建的文章可能没填 canonical，直接解构会得到 undefined
+const canonical = entryPath(article.data);
+
+const categoryLabel = article.data.categories
+    .map((slug) =>
+        slug.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase()),
+    )
+    .join(" · ");
+
+const dateText = date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+});
+
+/*
+ * 比例按图片真实宽高算，不写死。产品卡就是因为把文章配图的 1200x686
+ * 当成全站图片比例，才把正方形的产品图裁错了。
+ * 尺寸缺失时退回 16:9，避免拿 0 去除。
+ */
+const ratio =
+    heroWidth && heroHeight ? `${heroWidth} / ${heroHeight}` : "16 / 9";
+---
+
+<article class:list={["card item", { feat: featured }]}>
+    {
+        hero && (
+            <a
+                class="thumb"
+                href={canonical}
+                tabindex="-1"
+                aria-hidden="true"
+                style={`aspect-ratio: ${ratio}`}
+            >
+                <img
+                    src={hero}
+                    alt=""
+                    width={heroWidth ?? undefined}
+                    height={heroHeight ?? undefined}
+                    loading={featured ? "eager" : "lazy"}
+                    decoding="async"
+                />
+            </a>
+        )
+    }
+
+    <div class="body">
+        {categoryLabel && <span class="cat">{categoryLabel}</span>}
+
+        <h3><a href={canonical}>{heading}</a></h3>
+
+        <p class="desc">{description}</p>
+
+        <p class="meta">
+            <time datetime={date.toISOString()}>{dateText}</time>
+            <span aria-hidden="true">·</span>
+            <span>{readingMinutes} min read</span>
+            <span aria-hidden="true">·</span>
+            <span>{siteConfig.shortName}</span>
+        </p>
+    </div>
+</article>
+
+<style>
+    .item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .thumb {
+        display: block;
+        flex: 0 0 auto;
+        background: var(--color-surface-alt);
+        overflow: hidden;
+        /* aspect-ratio 由内联 style 按图片真实尺寸给定 */
+    }
+
+    .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.1rem 1.15rem 1.25rem;
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .cat {
+        font-family: var(--font-display);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-brand);
+    }
+
+    h3 {
+        font-size: 1.06rem;
+        line-height: 1.35;
+        margin: 0;
+    }
+
+    h3 a {
+        color: var(--color-ink);
+    }
+    h3 a:hover {
+        color: var(--color-brand);
+    }
+
+    .desc {
+        font-size: 0.86rem;
+        color: var(--color-muted);
+        line-height: 1.6;
+        margin: 0;
+        /* 描述长度不一，固定 3 行收尾保持列表整齐 */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: auto 0 0;
+        padding-top: 0.6rem;
+        font-size: 0.74rem;
+        color: var(--color-faint);
+    }
+
+    /* 首条：图更大、标题更重，用于列表顶部 */
+    .feat h3 {
+        font-size: 1.3rem;
+    }
+    .feat .desc {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        font-size: 0.92rem;
+    }
+</style>
