@@ -5,13 +5,13 @@ dist/
 # 迁移期原始缓存（体积大、可重新抓取，不入库）
 .cache/
 
-# 图片暂存区：待推送到 Cloudflare R2 的源图，不进 Git
+# 图片暂存区：与 public/images 内容重复，不入 Git（公开图直接存仓库，见下）
 media-staging/
 
-# 由 09 阶段从 media-staging 同步而来（切 R2 后退役），不重复入库
-public/images/
-
-# Pagefind 搜索索引（构建时生成）
+# 站点图片随仓库走：裸 clone 即可构建出完整站点，不再依赖源站在线。
+# 曾经这里被 ignore + 靠 prebuild 从 WordPress 现拉，但那意味着
+# 源站一下线就再也构建不出带图的站点，而且 DNS 切过来之后会变成从自己身上拉图。
+# public/images/
 public/pagefind/
 
 # 依赖

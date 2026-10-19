@@ -6,6 +6,11 @@
  *   media-staging/  WordPress 原图（由 03 抓取，不入 Git）
  *   site-assets/    人工产物（不入源站、也不能重新抓取，**必须入 Git**）
  *
+ * 同步目标 public/images/ **现在是入 Git 的正式内容**，不是可随意重建的中间产物：
+ * 裸 clone 就要能直接构建出带图的站点，而不是依赖源站在线。因此本阶段只在
+ * 显式运行（npm run stage:media）时工作，缺 media-staging 则直接中止，
+ * 避免孤儿清理把仓库里的图删掉。
+ *
  * 为什么要单独分一层：首屏背景视频的 poster 与压缩版 mp4 是我用 ffmpeg 从源站
  * 10.38MB 原片转出来的，它不是 WordPress 媒体库里的东西，prebuild 重跑抓不回来；
  * 而 media-staging/ 与 public/images/ 都在 .gitignore 里。不单独存一份进仓库，
@@ -46,10 +51,15 @@ async function listFiles(dir: string, base = dir): Promise<string[]> {
 export async function stagePublicImages(): Promise<void> {
     step('Phase 5 · 同步图片到 public/images');
 
-    // site-assets 是入 Git 的，裸 clone 也在；media-staging 不在也不能让整个构建崩掉，
-    // 所以只在缺失时警告（由 --soft 决定严格程度交给调用方）。
-    if (!existsSync(STAGING_DIR)) {
-        log(`  ! 缺 ${rel(STAGING_DIR)}，WordPress 原图本轮不同步（执行 npm run migrate -- 03 生成）`);
+    // public/images 现在是入 Git 的正式内容，不再是可重建的中间产物。
+    // 少了 media-staging 就绝不能跑下面的孤儿清理：那样 source 只剩 site-assets
+    // 两项，其余 467 张图全会被当成孤儿删掉，一次误操作就把仓库里的图清空。
+    const stagingPresent = existsSync(STAGING_DIR);
+    if (!stagingPresent) {
+        throw new Error(
+            `缺少 ${rel(STAGING_DIR)}，中止。public/images 已随仓库提交，` +
+                `此时做孤儿清理会把它们误删。如确需重抓：npm run migrate -- 03`,
+        );
     }
 
     await mkdir(PUBLIC_IMAGES, { recursive: true });
