@@ -89,13 +89,25 @@ export async function buildDeployFiles(): Promise<void> {
 /**
  * Cloudflare Pages 的缓存与安全响应头。
  *
- * 缓存分层是实际的 CWV 收益点，不是装饰：
- *   /_astro/*  文件名带内容哈希，改了必改名，所以可放心 immutable 一年；
- *              不这么设的话回访用户会重新下完整个 CSS/JS 包。
- *   /images/*   URL 固定而内容可能被重新上传顶掉，所以给 30 天而不是 immutable，
- *              配 stale-while-revalidate 让用户先拿到旧图、后台再刷。
- *   sitemap    必须短，否则 Google 看不到新发的文章。
- *   HTML       max-age=0 + must-revalidate：发布后不能让用户看到旧页面。
+ * ⚠ 一个不写出来就一定会踩的坑：Cloudflare 对多条命中规则的**同名头是拼接**，
+ * 不是后者覆盖前者（官方原文："If a header is applied twice in the _headers file,
+ * the values are joined with a comma separator"）。
+ *
+ * 所以如果 /* 里写了 Cache-Control，它会被拼到每一条更具体的规则后面，得到：
+ *   public, max-age=0, must-revalidate, public, max-age=31536000, immutable
+ * 而 RFC 9111 规定：同一指令出现多个值时，取**第一个**，或者直接把响应当作过期；
+ * 指令互相冲突时取**最严**的那个。两个条件同时命中——max-age=0 在前、must-revalidate
+ * 更严。结果是看似配了 immutable，实际每次回访仍然回源验证，缓存层完全白做。
+ * 上一版就是这么错的，线上实测才拆穿。
+ *
+ * 正确做法是官方给的撤销语法：在头名前加 `! `（感叹号加空格）先移除继承值，再设新值。
+ * 下面每条带 Cache-Control 的规则都必须以 `! Cache-Control` 开头，一个都不能漏。
+ *
+ * 缓存分层本身：
+ *   /_astro/*   文件名带内容哈希，改了必改名，可放心 immutable 一年
+ *   /images/*   URL 固定但内容可能被重新上传顶掉，给 30 天 + stale-while-revalidate
+ *   sitemap     必须短，否则 Google 看不到新发的文章
+ *   HTML        max-age=0 + must-revalidate：发布后不能让用户看到旧页面
  *
  * 几项故意没加，是取舍不是遗漏：
  *   Content-Security-Policy —— 页面上跑 Tawk.to（注入 script/style/iframe 到多个域名）
@@ -105,10 +117,14 @@ export async function buildDeployFiles(): Promise<void> {
  *   COEP / COOP —— 会让 Tawk 的跳源请求被挡，同上。
  *   X-Frame-Options 用 SAMEORIGIN 不用 DENY：需要允许自家页面嵌自家内容。
  */
+
+/** 撤销由 /* 继承下来的 Cache-Control，再设本规则自己的值 */
+const UNSET_CC = '! Cache-Control';
+
 const HEADER_RULES: Array<{ path: string; headers: string[]; why: string }> = [
     {
         path: '/*',
-        why: '全局安全头 + HTML 不缓存',
+        why: '全局安全头 + HTML 不缓存（作为基线，更具体的规则用 ! 撤销后重设）',
         headers: [
             'X-Content-Type-Options: nosniff',
             'Referrer-Policy: strict-origin-when-cross-origin',
@@ -124,30 +140,65 @@ const HEADER_RULES: Array<{ path: string; headers: string[]; why: string }> = [
     {
         path: '/_astro/*',
         why: '内容哈希资源，immutable 一年',
-        headers: ['Cache-Control: public, max-age=31536000, immutable'],
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=31536000, immutable'],
     },
     {
         path: '/images/*',
-        why: '图片（现 Pages 托管，后续走 R2）',
+        why: '图片与视频（现 Pages 托管，后续走 R2）',
+        // 只撤销 Cache-Control：CORP 已由 /* 全局给出，在这里再写一次会被
+        // 拼接成 "cross-origin, cross-origin"——同一个坑不能踩两遍。
         headers: [
+            UNSET_CC,
             'Cache-Control: public, max-age=2592000, stale-while-revalidate=86400',
-            'Cross-Origin-Resource-Policy: cross-origin',
         ],
     },
     {
+        path: '/uploads/*',
+        why: '后台上传的媒体（与 /images 同级策略）',
+        headers: [
+            UNSET_CC,
+            'Cache-Control: public, max-age=2592000, stale-while-revalidate=86400',
+        ],
+    },
+    {
+        path: '/favicon.svg',
+        why: '图标不随内容变，给长缓存',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=604800'],
+    },
+    {
+        path: '/apple-touch-icon.png',
+        why: '图标长缓存（上一版漏了，它们落在 /* 上被当成 HTML 不缓存）',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=604800'],
+    },
+    {
+        path: '/icon-*.png',
+        why: '图标长缓存',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=604800'],
+    },
+    {
+        path: '/site.webmanifest',
+        why: 'manifest 要长缓存，但改图标时得能生效',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=86400'],
+    },
+    {
         path: '/sitemap-index.xml',
-        why: 'sitemap 要短缓存',
-        headers: ['Cache-Control: public, max-age=3600'],
+        why: 'sitemap 必须短，否则 Google 看不到新文章',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=3600'],
     },
     {
         path: '/sitemap-*.xml',
-        why: 'sitemap 分片要短缓存',
-        headers: ['Cache-Control: public, max-age=3600'],
+        why: 'sitemap 分片同样要短',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=3600'],
     },
     {
         path: '/robots.txt',
         why: 'robots 一天',
-        headers: ['Cache-Control: public, max-age=86400'],
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=86400'],
+    },
+    {
+        path: '/admin/*',
+        why: '后台入口与其静态资源不缓存，避免发布后编辑看到旧配置',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=0, must-revalidate'],
     },
 ];
 
