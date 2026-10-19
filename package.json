@@ -13,6 +13,7 @@
         "stage:media": "tsx scripts/migrate/index.ts 03 09",
         "verify:parity": "tsx scripts/verify/parity.ts",
         "verify:cms": "tsx scripts/verify/cms-fields.ts",
+        "verify:live": "tsx scripts/verify/live.ts",
         "verify": "npm run verify:parity && npm run verify:cms"
     },
     "dependencies": {

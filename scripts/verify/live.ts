@@ -16,20 +16,38 @@ interface Probe {
 }
 
 /** 不发浏览器，直接看响应；手动拦住重定向以便读到 301 的 Location */
-async function probe(path: string): Promise<Probe> {
-    try {
-        const res = await fetch(`${BASE}${path}`, { redirect: 'manual' });
-        const headers: Record<string, string> = {};
-        res.headers.forEach((v, k) => (headers[k.toLowerCase()] = v));
-        await res.body?.cancel();
-        return {
-            status: res.status,
-            location: headers['location'] ?? null,
-            headers,
-        };
-    } catch (e) {
-        return { status: 0, location: null, headers: {} };
+async function probeOnce(path: string): Promise<Probe> {
+    const res = await fetch(`${BASE}${path}`, { redirect: 'manual' });
+    const headers: Record<string, string> = {};
+    res.headers.forEach((v, k) => (headers[k.toLowerCase()] = v));
+    await res.body?.cancel();
+    return {
+        status: res.status,
+        location: headers['location'] ?? null,
+        headers,
+    };
+}
+
+/**
+ * 带重试的 probe。
+ *
+ * 开发机走本地代理（本机 DNS 在做 fake-IP 劫持），偶发连接重置会把
+ * fetch 抛成异常。上一版把这种情况当成站点功能失败报出去，而一个用来
+ * 卡部署的检查如果常喊狼来了，人就会开始忽略它 —— 那它就等于不存在。
+ * 所以只对「压根没拿到响应」重试，拿到状态码（包括 404）就不重试。
+ */
+async function probe(path: string, attempts = 3): Promise<Probe> {
+    let lastError = '';
+    for (let i = 0; i < attempts; i += 1) {
+        try {
+            return await probeOnce(path);
+        } catch (e) {
+            lastError = (e as Error).message;
+            await new Promise((r) => setTimeout(r, 400 * (i + 1)));
+        }
     }
+    console.log(`  ! ${path} 连续 ${attempts} 次请求失败（${lastError}），按失败计入`);
+    return { status: 0, location: null, headers: {} };
 }
 
 let failures = 0;

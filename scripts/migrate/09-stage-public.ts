@@ -58,7 +58,7 @@ export async function stagePublicImages(): Promise<void> {
     if (!stagingPresent) {
         throw new Error(
             `缺少 ${rel(STAGING_DIR)}，中止。public/images 已随仓库提交，` +
-                `此时做孤儿清理会把它们误删。如确需重抓：npm run migrate -- 03`,
+            `此时做孤儿清理会把它们误删。如确需重抓：npm run migrate -- 03`,
         );
     }
 
