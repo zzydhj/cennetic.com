@@ -27,11 +27,22 @@ const links = nav.primary.filter((l) => l.path !== "/");
 <header class="site-header">
     <div class="shell bar">
         <a class="brand" href="/" aria-label={`${siteConfig.name} home`}>
-            <span class="brand-mark">QF</span>
-            <span class="brand-text">
-                <strong>{siteConfig.name}</strong>
-                <small>CNC Machine Tool Manufacturer</small>
-            </span>
+            {
+                /*
+              字标本身已含品牌名（CN + CENNETIC），所以不再另写文字标题；
+              旧版这里是个红底“QF”字母块 + 文字，是 Qiaofeng 时代的残留。
+              SVG 没写 width/height，必须给显式尺寸，否则首帧布局会跳（CLS）。
+            */
+            }
+            <img
+                class="brand-logo"
+                src={siteConfig.logo}
+                alt={siteConfig.name}
+                width="185"
+                height="25"
+                loading="eager"
+                decoding="async"
+            />
         </a>
 
         <button
@@ -98,43 +109,20 @@ const links = nav.primary.filter((l) => l.path !== "/");
     .brand {
         display: flex;
         align-items: center;
-        gap: 0.65rem;
-        color: var(--color-ink);
         flex-shrink: 0;
     }
 
-    .brand:hover {
-        color: var(--color-brand);
+    /* 字标宽高比约 7.5:1（viewBox 1485×197），只给高度即可自适应 */
+    .brand-logo {
+        display: block;
+        height: 1.6rem;
+        width: auto;
     }
 
-    .brand-mark {
-        display: grid;
-        place-items: center;
-        width: 2.4rem;
-        height: 2.4rem;
-        border-radius: var(--radius-sm);
-        background: var(--color-brand);
-        color: #fff;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 0.95rem;
-        letter-spacing: 0.02em;
-    }
-
-    .brand-text {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.15;
-    }
-    .brand-text strong {
-        font-family: var(--font-display);
-        font-size: 1.02rem;
-    }
-    .brand-text small {
-        font-size: 0.68rem;
-        color: var(--color-muted);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+    @media (max-width: 40rem) {
+        .brand-logo {
+            height: 1.35rem;
+        }
     }
 
     .nav {

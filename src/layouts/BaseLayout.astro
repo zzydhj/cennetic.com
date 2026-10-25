@@ -36,11 +36,14 @@ const {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#cc0000" />
 
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/*
-          PNG 图标已补齐并随仓库提交（不在构建里生成：Pages 环境自带的 sharp 不带 librsvg，
-          光栅 SVG 会在那边失败）。之前只挂了引用没文件，等于每页产一个 404。
+          图标全部随仓库提交，不进 R2：manifest 的 icon 受同源限制，/favicon.ico 又是
+          浏览器默认探测路径，而且它们应该跟代码一起回滚。旧版是红底 Q 的 favicon.svg，
+          已随品牌更换删除；现在整套都是新的藏青 CN 字标图标。
         */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />

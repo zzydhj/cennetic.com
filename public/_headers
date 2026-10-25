@@ -22,7 +22,10 @@
   ! Cache-Control
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
-/favicon.svg
+/favicon.ico
+  ! Cache-Control
+  Cache-Control: public, max-age=604800
+/favicon-*.png
   ! Cache-Control
   Cache-Control: public, max-age=604800
 

@@ -224,8 +224,13 @@ const HEADER_RULES: Array<{ path: string; headers: string[]; why: string }> = [
         ],
     },
     {
-        path: '/favicon.svg',
-        why: '图标不随内容变，给长缓存',
+        path: '/favicon.ico',
+        why: '图标不随内容变，给长缓存（旧版只配了 /favicon.svg，换品牌图标后已不存在）',
+        headers: [UNSET_CC, 'Cache-Control: public, max-age=604800'],
+    },
+    {
+        path: '/favicon-*.png',
+        why: '16/32 的 PNG 版 favicon 与 ico 同策略',
         headers: [UNSET_CC, 'Cache-Control: public, max-age=604800'],
     },
     {
