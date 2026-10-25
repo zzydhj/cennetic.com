@@ -319,8 +319,8 @@ async function collect(): Promise<Map<string, string>> {
     }
     out.set('src/data/authors.json', json(authorMap));
 
-    // 站点设置存的是 site.json 原文：只统一收尾换行，其余逐字回写
-    out.set('src/data/site.json', `${String(siteRows[0]!.data).replace(/\s+$/, '')}\n`);
+    // 站点设置存的是 site.json 原文：只统一换行符（LF）与收尾换行，其余逐字回写
+    out.set('src/data/site.json', `${toLf(String(siteRows[0]!.data)).replace(/\s+$/, '')}\n`);
 
     return out;
 }

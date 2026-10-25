@@ -172,8 +172,11 @@ async function main() {
     }));
     await upsert('authors', authorRows, 'slug');
 
-    // site.json 存原文（保键序/4 空格缩进），快照逐字回写；snapshot 侧会统一尾部换行
-    const siteText = readFileSync(join(ROOT, 'src/data/site.json'), 'utf8').replace(/\s+$/, '') + '\n';
+    // site.json 存原文（保键序/4 空格缩进），快照逐字回写；
+    // 但必须归一到 LF：仓库统一存 LF，Windows 工作区残留的 CRLF 不能跟着入库
+    const siteText = readFileSync(join(ROOT, 'src/data/site.json'), 'utf8')
+        .replace(/\r\n/g, '\n')
+        .replace(/\s+$/, '') + '\n';
     await upsert('site_settings', [{ id: true, data: siteText }], 'id');
 
     console.log('\n✓ 灌库完成。抽查建议：Supabase Table Editor 各表行数应为 ' +

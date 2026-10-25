@@ -49,8 +49,8 @@ export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
             res.status === 401 || res.status === 403
                 ? 'GH_API_TOKEN 无效或没有 Actions: write 权限'
                 : res.status === 404
-                  ? '仓库或 workflow 文件名不对（GH_OWNER/GH_REPO/GH_WORKFLOW）；私有仓库需 token 有读仓库权限'
-                  : 'GitHub 拒绝了触发请求';
+                    ? '仓库或 workflow 文件名不对（GH_OWNER/GH_REPO/GH_WORKFLOW）；私有仓库需 token 有读仓库权限'
+                    : 'GitHub 拒绝了触发请求';
         return json({ error: `${hint}（HTTP ${res.status}）：${detail}` }, 502);
     } catch (e) {
         return json({ error: `触发失败：${e instanceof Error ? e.message : String(e)}` }, 500);

@@ -12,11 +12,11 @@ export interface RestClient {
 }
 
 export function createRestClient(baseUrl: string, key: string): RestClient {
+    // 注意：不要把 Accept 放进公共头——写 'json' 会被 PostgREST 拒成 406，各接口自己给完整类型
     const headers = {
         apikey: key,
         Authorization: `Bearer ${key}`,
         'Content-Type': 'application/json',
-        Accept: 'json',
     };
 
     async function list<T>(table: string, query = 'select=*'): Promise<T[]> {
