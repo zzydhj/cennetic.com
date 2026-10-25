@@ -34,6 +34,8 @@ export interface Field {
     /** 占据整行宽度 */
     full?: boolean;
     hint?: string;
+    /** html 字段的示例模板：编辑页提供“查看/插入模板”按钮 */
+    sample?: string;
 }
 
 export interface ListCol {
@@ -57,6 +59,25 @@ export interface Resource {
     listCols: ListCol[];
     fields: Field[];
 }
+
+/** 产品详情 HTML 的示例模板（编辑页“查看/插入模板”用） */
+const PRODUCT_BODY_SAMPLE = `<!-- 不要写 <h1>（页面标题由系统生成）；第一张 <img> 会自动当作列表封面 -->
+<h2>产品亮点</h2>
+<p>用一两句话讲这台机器解决什么问题。</p>
+
+<h2>图片</h2>
+<img src="图片URL" alt="说明" width="1200" height="800" loading="lazy">
+
+<h2>技术参数</h2>
+<table>
+  <tbody>
+    <tr><th>工作台尺寸</th><td>1200 × 500 mm</td></tr>
+    <tr><th>主轴转速</th><td>12000 rpm</td></tr>
+  </tbody>
+</table>
+
+<h2>应用领域</h2>
+<ul><li>汽车零部件</li><li>模具</li></ul>`;
 
 const STATUS: Field = {
     name: 'status',
@@ -156,7 +177,7 @@ export const RESOURCES: Resource[] = [
             { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, help: '列表卡片/详情顶部的一小段介绍，可含简单 HTML。' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'product_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属产品分类，决定产品出现在哪些分类页/导航。' },
             STATUS,
-            { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段 HTML：图集、规格表、描述都写在这里(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。' },
+            { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段 HTML：图集、规格表、描述都写在这里(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。', sample: PRODUCT_BODY_SAMPLE },
         ],
     },
     {

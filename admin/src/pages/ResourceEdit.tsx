@@ -263,6 +263,26 @@ function FieldInput({
                 <div>
                     {label}
                     <Textarea rows={16} mono value={String(value ?? '')} onChange={(e) => onChange(e.target.value)} />
+                    {field.sample && (
+                        <details className="mt-2 rounded-md border border-slate-200 bg-slate-50 p-2 text-xs">
+                            <summary className="cursor-pointer select-none font-medium text-slate-600">
+                                查看 / 插入 HTML 示例模板（不知道怎么写就点这个）
+                            </summary>
+                            <pre className="mt-2 max-h-64 overflow-auto whitespace-pre-wrap rounded bg-white p-2 font-mono text-[11px] leading-relaxed text-slate-600">
+                                {field.sample}
+                            </pre>
+                            <button
+                                type="button"
+                                className="mt-2 rounded bg-brand px-2.5 py-1 text-xs font-medium text-white hover:bg-brand-dark"
+                                onClick={() => {
+                                    if (String(value ?? '').trim() && !confirm('上方已有内容，插入模板会覆盖，继续？')) return;
+                                    onChange(field.sample);
+                                }}
+                            >
+                                插入模板到上方编辑框
+                            </button>
+                        </details>
+                    )}
                 </div>
             );
         case 'textarea':
