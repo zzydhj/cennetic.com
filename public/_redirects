@@ -59,3 +59,6 @@
 # dead on source: /blog/vertical-vs-horizontal-cnc/
 
 # Sitemap https://www.cennetic.com/sitemap-index.xml
+
+# ── 后台 SPA：/admin 下任意前端路由回落到 index.html（200，不改地址栏）──
+/admin/*   /admin/index.html   200

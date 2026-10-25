@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "private": true,
     "type": "module",
-    "description": "Cennetic CNC Machine — static site migrated from WordPress (Astro + Cloudflare Pages + Decap CMS)",
+    "description": "Cennetic CNC Machine — static site (Astro + Cloudflare Pages) with a self-hosted content admin at /admin",
     "scripts": {
         "dev": "astro dev",
-        "build": "astro build",
+        "build": "astro build && npm run build -w admin",
         "preview": "astro preview",
         "astro": "astro",
         "migrate": "tsx scripts/migrate/index.ts",
@@ -14,8 +14,13 @@
         "verify:parity": "tsx scripts/verify/parity.ts",
         "verify:cms": "tsx scripts/verify/cms-fields.ts",
         "verify:live": "tsx scripts/verify/live.ts",
-        "verify": "npm run verify:parity && npm run verify:cms"
+        "verify": "npm run verify:parity && npm run verify:cms",
+        "admin:dev": "npm run dev -w admin",
+        "admin:build": "npm run build -w admin"
     },
+    "workspaces": [
+        "admin"
+    ],
     "dependencies": {
         "@astrojs/sitemap": "^3.3.0",
         "@fontsource/albert-sans": "^5.2.5",
