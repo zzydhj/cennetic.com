@@ -2,12 +2,270 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * 后台的基底样式。
+ * 原则：颜色/阴影/圆角一律走 tailwind.config 里的 token，
+ * 这里只放工具类表达不了的四种质感：画布光晕、噪点、渐变描边、滚动条。
+ */
 :root {
     color-scheme: light;
+    /* 噪点强度：只到 0.035，用于「压平」大面积纯色的塑料感 */
+    --noise: 0.035;
+}
+
+html,
+body,
+#root {
+    height: 100%;
 }
 
 body {
-    @apply bg-slate-100 text-slate-900 antialiased;
-    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-        'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    @apply bg-canvas font-sans text-slate-800 antialiased;
+    background-image: radial-gradient(1100px 520px at 8% -10%, rgba(55, 97, 159, 0.13) 0%, rgba(0, 0, 0, 0) 60%),
+        radial-gradient(820px 420px at 96% 2%, rgba(200, 16, 46, 0.05) 0%, rgba(0, 0, 0, 0) 55%),
+        radial-gradient(900px 560px at 62% 108%, rgba(11, 18, 32, 0.07) 0%, rgba(0, 0, 0, 0) 62%);
+    background-attachment: fixed;
+    font-feature-settings: 'cv11', 'ss01', 'tnum';
+    font-variant-numeric: tabular-nums;
+}
+
+/* 全站极淡噪点：一层 fixed 的 SVG 颗粒，让渐变背景不生硬 */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: var(--noise);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+    @apply bg-brand-200 text-brand-800;
+}
+
+/* 细滚动条：默认大灰条会立刻暴露「模板感」 */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply rounded-full border-[3px] border-solid border-transparent bg-clip-padding;
+    background-color: rgb(203 213 225);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(148 163 184);
+}
+
+/* 深色导航栏内的滚动条反过来走亮色半透明 */
+.scroll-rail {
+    scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+.scroll-rail::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.scroll-rail::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@layer components {
+
+    /* 表头：小字距、灰字、不折行 */
+    .th {
+        @apply whitespace-nowrap px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-400;
+    }
+
+    .td {
+        @apply px-4 py-3 align-middle text-sm;
+    }
+
+    /* 键盘可达性：统一焦点环，不用浏览器默认蓝框 */
+    .focus-ring:focus-visible {
+        @apply outline-none ring-2 ring-brand-300 ring-offset-2 ring-offset-white;
+    }
+
+    /* 渐变描边：::before 挖空法，比 border-image 更好控制圆角 */
+    .edge-grad {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .edge-grad::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(150deg, rgba(255, 255, 255, 0.85) 0%, rgba(138, 169, 216, 0.45) 38%, rgba(255, 255, 255, 0.1) 70%, rgba(227, 201, 138, 0.35) 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    /* 中分割线：两端淡出，代替生硬的 1px 实线 */
+    .hairline {
+        height: 1px;
+        background: linear-gradient(90deg, rgba(203, 213, 225, 0) 0%, rgba(203, 213, 225, 0.9) 12%, rgba(203, 213, 225, 0.9) 88%, rgba(203, 213, 225, 0) 100%);
+    }
+
+    /* 骨架屏：底色 + 一道扫光 */
+    .skeleton {
+        @apply rounded-md bg-slate-200/70;
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 50%, rgba(255, 255, 255, 0) 100%);
+        background-size: 220% 100%;
+        background-repeat: no-repeat;
+        animation: shimmer 1.6s linear infinite;
+    }
+
+    /* 键帽：⌘K / Ctrl K 这类提示 */
+    .kbd {
+        @apply inline-flex h-5 min-w-[1.25rem] items-center justify-center rounded border border-slate-200 bg-slate-50 px-1 font-mono text-[10px] font-semibold text-slate-500 shadow-inner;
+    }
+
+    /* 表格行：hover 时左侧渗出品牌色指示条 */
+    .row-hot {
+        @apply relative transition-colors duration-150;
+    }
+
+    .row-hot:hover {
+        @apply bg-brand-50/45;
+    }
+
+    .row-hot:hover::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        border-radius: 0 2px 2px 0;
+        background: linear-gradient(180deg, #5b83c2, #012760);
+    }
+
+    /* 卡片hover抬升（@apply 不能处理含逗号的任意值，这里直接写 CSS） */
+    .lift {
+        transition:
+            transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+            box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lift:hover {
+        @apply -translate-y-0.5 shadow-lift;
+    }
+
+    /* 正文 HTML 的后台预览：与前台排版无关，只求「看得清层次」 */
+    .html-preview {
+        @apply text-sm leading-relaxed text-slate-700;
+    }
+
+    .html-preview h2 {
+        @apply mb-2 mt-5 border-b border-slate-100 pb-1.5 text-[15px] font-bold tracking-tightest text-slate-900 first:mt-0;
+    }
+
+    .html-preview h3 {
+        @apply mb-1.5 mt-4 text-[13px] font-semibold text-slate-800;
+    }
+
+    .html-preview p {
+        @apply mb-2.5;
+    }
+
+    .html-preview ul,
+    .html-preview ol {
+        @apply mb-2.5 list-disc space-y-1 pl-5;
+    }
+
+    .html-preview ol {
+        @apply list-decimal;
+    }
+
+    .html-preview img {
+        @apply my-3 max-h-64 rounded-lg ring-1 ring-inset ring-slate-200;
+    }
+
+    .html-preview table {
+        @apply my-3 w-full border-collapse text-xs;
+    }
+
+    .html-preview th,
+    .html-preview td {
+        @apply border border-slate-200 px-2.5 py-1.5 text-left;
+    }
+
+    .html-preview th {
+        @apply bg-slate-50 font-semibold text-slate-600;
+    }
+
+    .html-preview a {
+        @apply text-brand-600 underline decoration-brand-200 underline-offset-2;
+    }
+
+    .html-preview code {
+        @apply rounded bg-slate-100 px-1 py-0.5 font-mono text-[11px] text-accent;
+    }
+
+    /* 光泽扫过（发布按钮/品牌板用一次就够） */
+    .shine {
+        @apply relative overflow-hidden;
+    }
+
+    .shine::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+        transform: translateX(-120%);
+        pointer-events: none;
+    }
+
+    .shine:hover::after {
+        animation: sweep 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* 长文摘要截断到两行 */
+    .clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+/* 动画过载保护：系统要求减少动效时全部收敛 */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
 }

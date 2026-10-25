@@ -3,6 +3,11 @@
  * 列表页与编辑页都由它驱动渲染（新增类型＝加配置，不写新代码）。
  * 字段 name 用数据库列名(snake_case)；snapshot 侧负责 snake↔camel 还原。
  */
+import type { IconName } from '../components/Icon';
+
+/** 侧边栏分组（顺序即渲染顺序） */
+export type NavGroup = '内容' | '分类与作者' | '系统';
+
 export type FieldType =
     | 'text'
     | 'textarea'
@@ -40,6 +45,8 @@ export interface Field {
     sample?: string;
     /** image/gallery 字段的最大张数 */
     max?: number;
+    /** json 字段改用专属业务表单渲染（站点设置），仍产出同样的 JSON 文本 */
+    formMode?: boolean;
 }
 
 export interface ListCol {
@@ -58,8 +65,16 @@ export interface Resource {
     ascending?: boolean;
     /** 单例表（如站点设置），无列表、直接编辑唯一行 */
     singleton?: boolean;
+    /** 单例表没有可读的标题列时用它（站点设置的 id 是布尔 true，不能直接当标题显示） */
+    displayName?: string;
     /** 列表页给“预览”按钮，新窗口打开 origin + canonical */
     preview?: boolean;
+    /** 侧边栏分组与图标 */
+    group: NavGroup;
+    icon: IconName;
+    /** 仪表盘与列表页上的一句话说明 */
+    desc?: string;
+    /** 列表页要显示的列；状态列由 StatusBadge 自动追加，这里不要重复写 */
     listCols: ListCol[];
     fields: Field[];
 }
@@ -98,6 +113,9 @@ export const RESOURCES: Resource[] = [
         table: 'articles',
         label: '文章',
         singular: '文章',
+        group: '内容',
+        icon: 'article',
+        desc: '博客与技术文章，前台地址 /<slug>/',
         idField: 'slug',
         titleField: 'title',
         orderBy: 'date',
@@ -105,7 +123,6 @@ export const RESOURCES: Resource[] = [
         preview: true,
         listCols: [
             { name: 'title', label: '标题' },
-            { name: 'status', label: '状态' },
             { name: 'date', label: '日期' },
         ],
         fields: [
@@ -133,13 +150,15 @@ export const RESOURCES: Resource[] = [
         table: 'pages',
         label: '页面',
         singular: '页面',
+        group: '内容',
+        icon: 'page',
+        desc: '关于/联系/政策等固定页，前台地址 /<slug>/',
         idField: 'slug',
         titleField: 'title',
         orderBy: 'menu_order',
         preview: true,
         listCols: [
             { name: 'title', label: '标题' },
-            { name: 'status', label: '状态' },
             { name: 'menu_order', label: '排序' },
         ],
         fields: [
@@ -165,6 +184,9 @@ export const RESOURCES: Resource[] = [
         table: 'products',
         label: '产品',
         singular: '产品',
+        group: '内容',
+        icon: 'product',
+        desc: '机器型号，前台地址 /product/<slug>/',
         idField: 'slug',
         titleField: 'name',
         orderBy: 'name',
@@ -172,14 +194,13 @@ export const RESOURCES: Resource[] = [
         listCols: [
             { name: 'name', label: '名称' },
             { name: 'slug', label: 'Slug' },
-            { name: 'status', label: '状态' },
         ],
         fields: [
             { name: 'slug', label: 'Slug', type: 'text', required: true, help: '产品地址 /product/<slug>/。' },
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true, help: '产品名，也用于列表卡片标题。' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动' },
             { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, help: '列表卡片/详情顶部的一小段介绍，可含简单 HTML。' },
-            { name: 'images', label: '产品主图', type: 'gallery', full: true, max: 5, help: '点击或拖入上传，最多 5 张主图，可左右排序、改 alt、删除；第一张自动作为列表封面。大图会自动压缩。' },
+            { name: 'images', label: '产品主图', type: 'gallery', full: true, max: 5, help: '固定 5 个方格一排，从左往右依次填，没传的位置留空。缩略图按 1:1 居中裁切看版式（不会改原图），建议直接传方图（如 1024×1024）。第一张自动作为列表封面；可左右排序、改 alt、删除，大图自动压缩。' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'product_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属产品分类，决定产品出现在哪些分类页/导航。' },
             STATUS,
             { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段 HTML：图集、规格表、描述都写在这里(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。', sample: PRODUCT_BODY_SAMPLE },
@@ -190,6 +211,8 @@ export const RESOURCES: Resource[] = [
         table: 'blog_categories',
         label: '博客分类',
         singular: '博客分类',
+        group: '分类与作者',
+        icon: 'tag',
         idField: 'slug',
         titleField: 'name',
         orderBy: 'name',
@@ -212,6 +235,8 @@ export const RESOURCES: Resource[] = [
         table: 'product_categories',
         label: '产品分类',
         singular: '产品分类',
+        group: '分类与作者',
+        icon: 'folder',
         idField: 'slug',
         titleField: 'name',
         orderBy: 'canonical',
@@ -237,6 +262,8 @@ export const RESOURCES: Resource[] = [
         table: 'authors',
         label: '作者',
         singular: '作者',
+        group: '分类与作者',
+        icon: 'user',
         idField: 'slug',
         titleField: 'name',
         orderBy: 'name',
@@ -258,15 +285,81 @@ export const RESOURCES: Resource[] = [
         table: 'site_settings',
         label: '站点设置',
         singular: '站点设置',
+        group: '系统',
+        icon: 'settings',
         idField: 'id',
         titleField: 'id',
         orderBy: 'id',
         singleton: true,
+        displayName: '站点设置',
+        desc: '全站共用的一份配置：公司名、网址、联系方式、导航与社交账号。表单里改常用项即可，没列出的字段会原样保留。',
         listCols: [],
         fields: [
-            { name: 'data', label: '站点配置 (site.json)', type: 'json', full: true, help: '全站配置(公司名/联系方式/地址/社交等)，JSON 格式，谨慎修改。' },
+            {
+                name: 'data',
+                label: '站点配置',
+                type: 'json',
+                full: true,
+                formMode: true,
+                help: '前台每个页面都读这里。表单只能改字段的值，改不动结构，语法也永远合法；需要新增字段由开发在代码里加。改完保存再点顶栏「发布上线」才会生效；改错不会弄坏线上，但发布会被回归闸拦下。',
+            },
         ],
     },
 ];
 
+/** 侧边栏与仪表盘用的列表（排除单例的站点设置） */
 export const NAV = RESOURCES.filter((r) => !r.singleton);
+
+/** 按分组输出：只给命令面板当「这是哪一类」的提示用，侧栏已不再分组 */
+export const NAV_GROUPS: Array<{ group: NavGroup; items: Resource[] }> = (['内容', '分类与作者', '系统'] as NavGroup[])
+    .map((g) => ({ group: g, items: RESOURCES.filter((r) => r.group === g && !r.singleton) }))
+    .filter((x) => x.items.length > 0);
+
+export interface RailLink {
+    to: string;
+    label: string;
+    icon: IconName;
+    /** 对应的资源表，用来显示条数与草稿点 */
+    key?: string;
+    /** 全站级入口（站点设置）：用香槟金标识区分 */
+    accent?: boolean;
+    /** 二级入口：站点设置按分组拆出的子页 */
+    children?: RailLink[];
+}
+
+export interface SiteSection {
+    key: string;
+    label: string;
+    icon: IconName;
+    desc: string;
+}
+
+/** 站点设置的二级页：同一行数据按分组拆成独立路由，侧栏在「站点设置」下展开显示 */
+export const SITE_SECTIONS: SiteSection[] = [
+    { key: 'brand', label: '品牌与站点地址', icon: 'factory', desc: '页眉、标题、sitemap 与分享链接都读这一段' },
+    { key: 'contact', label: '联系方式', icon: 'mail', desc: '电话、邮箱、WhatsApp 与结构化地址' },
+    { key: 'inquiry', label: '询盘接收邮箱', icon: 'inbox', desc: '询盘统一转发到这里，后台只存地址' },
+    { key: 'media', label: '图片与首页素材', icon: 'image', desc: 'Logo、分享封面、背景视频与工厂视频' },
+    { key: 'scripts', label: '第三方脚本', icon: 'code', desc: 'GA / Tawk 的 ID，留空即不加载对应脚本' },
+];
+
+const toRailLink = (r: Resource): RailLink => ({ to: `/${r.key}`, label: r.label, icon: r.icon, key: r.key });
+
+/**
+ * 侧栏：全一级平铺，不再分组。顺序：
+ * 仪表盘 → 文章 → 页面 → 产品 → 媒体库 → 博客分类 → 产品分类 → 作者 → 站点设置
+ * 由 NAV 派生而不是写死，以后新增资源会自动排在作者前后这一片里。
+ */
+export const RAIL_LINKS: RailLink[] = [
+    { to: '/', label: '仪表盘', icon: 'dashboard' },
+    ...NAV.slice(0, 3).map(toRailLink),
+    { to: '/media', label: '媒体库', icon: 'image' },
+    ...NAV.slice(3).map(toRailLink),
+    {
+        to: '/site_settings',
+        label: '站点设置',
+        icon: 'settings',
+        accent: true,
+        children: SITE_SECTIONS.map((s) => ({ to: `/site_settings/${s.key}`, label: s.label, icon: s.icon })),
+    },
+];

@@ -7,6 +7,8 @@ export interface UploadedMedia {
     contentType: string;
     width: number;
     height: number;
+    /** 是否已登记进 media_assets（失败不阻断上传，但媒体库会缺这一张） */
+    registered: boolean;
 }
 
 /** 超过任一阈值就压缩：最长边压到 1600px、重编码为 WebP(q≈0.82) */
@@ -56,7 +58,7 @@ async function compressImage(file: File): Promise<{ blob: Blob; width: number; h
     return blob ? { blob, width: w, height: h } : { blob: file, width: w0, height: h0 };
 }
 
-/** 压缩后上传到 R2（经 Pages Function），返回公开 URL 与最终宽高 */
+/** 压缩后上传到 R2（经 Pages Function），并登记进媒体库，返回公开 URL 与最终宽高 */
 export async function uploadImage(file: File): Promise<UploadedMedia> {
     const { blob, width, height } = await compressImage(file);
     const name = blob === file ? file.name : `${(file.name.replace(/\.[^.]+$/, '') || 'image').replace(/[^\w.\-]+/g, '-')}.webp`;
@@ -73,14 +75,38 @@ export async function uploadImage(file: File): Promise<UploadedMedia> {
         }
         throw new Error(detail ? `上传失败：${detail}` : `上传失败（${res.status}）`);
     }
-    const j = (await res.json()) as Omit<UploadedMedia, 'width' | 'height'>;
-    return { ...j, width, height };
+    const j = (await res.json()) as Omit<UploadedMedia, 'width' | 'height' | 'registered'>;
+
+    // 图已经落桶，登记只是「让媒体库看得见」；这步失败不回滚上传，只如实回报
+    const { error } = await supabase.from('media_assets').insert({
+        key: j.key,
+        public_url: j.url,
+        alt: file.name.replace(/\.[^.]+$/, ''),
+        width,
+        height,
+        bytes: j.bytes,
+        mime: j.contentType,
+    });
+    if (error) console.warn('媒体库登记失败：', error.message);
+    return { ...j, width, height, registered: !error };
 }
 
+/** 删 R2 对象。失败必须抛：否则库里删了、桶里还留着一个能访问的孤儿文件 */
 export async function deleteMedia(key: string): Promise<void> {
-    await fetch('/api/media/delete', {
+    const res = await fetch('/api/media/delete', {
         method: 'DELETE',
         headers: { 'content-type': 'application/json', ...(await authHeaders()) },
         body: JSON.stringify({ key }),
     });
+    if (!res.ok) {
+        let detail = '';
+        try {
+            detail = ((await res.json()) as { error?: string }).error ?? '';
+        } catch {
+            /* 非 JSON 响应：本地 vite 没有这个接口时会回到 HTML */
+        }
+        throw new Error(
+            detail || `删除桶内对象失败（${res.status}）；本地 dev 没有 Pages Function，这类操作要到部署环境做`,
+        );
+    }
 }

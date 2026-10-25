@@ -1,49 +1,147 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { triggerPublish } from '../lib/publish';
-import { Button } from './ui';
+import { fetchLatestChange, invalidateReadouts } from '../lib/readouts';
+import { ago } from '../lib/format';
+import { cx } from '../lib/cx';
+import { Icon } from './Icon';
+import { Button, Spinner } from './ui';
+import { ConfirmDialog } from './Overlay';
+import { useToast } from './Toast';
 
-interface Status {
-    ok: boolean;
-    text: string;
-    url?: string;
-}
+/** 本机记录「上一次由这个浏览器触发的发布」时间，用来点亮「改动待发布」 */
+const LS_KEY = 'cennetic:lastPublish';
 
 /**
- * 顶栏「发布」：把 Supabase 里的改动推到线上。
+ * 顶栏「发布上线」：把 Supabase 里的改动推到线上。
  * 链路：本按钮 → /api/publish（Pages Function）→ GitHub Action（快照 + 回归闸 + 提交 main）→ Pages 重建。
+ * 反馈一律走 Toast + 内联进度，不再用 window.confirm/alert。
  */
-export function PublishButton() {
+export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element {
+    const toast = useToast();
+    const [ask, setAsk] = useState(false);
     const [busy, setBusy] = useState(false);
-    const [status, setStatus] = useState<Status | null>(null);
+    const [runUrl, setRunUrl] = useState<string | null>(null);
+    const [lastAt, setLastAt] = useState<string | null>(null);
+    const [latest, setLatest] = useState<string | null>(null);
+
+    useEffect(() => {
+        setLastAt(window.localStorage.getItem(LS_KEY));
+        void fetchLatestChange().then(setLatest);
+    }, []);
+
+    const dirty = !!latest && (!lastAt || latest > lastAt);
 
     async function go(): Promise<void> {
-        if (!confirm('发布会把后台内容快照进仓库并触发线上重建（约 2–4 分钟）。确定发布？')) return;
+        setAsk(false);
         setBusy(true);
-        setStatus(null);
+        setRunUrl(null);
         const r = await triggerPublish('admin');
         setBusy(false);
-        setStatus(r.ok ? { ok: true, text: '已触发，正在生成快照与重建', url: r.runUrl } : { ok: false, text: r.error ?? '发布触发失败' });
+        if (r.ok) {
+            const stamp = new Date().toISOString();
+            window.localStorage.setItem(LS_KEY, stamp);
+            setLastAt(stamp);
+            setRunUrl(r.runUrl ?? null);
+            invalidateReadouts();
+            void fetchLatestChange().then(setLatest);
+            toast.push({
+                tone: 'success',
+                title: '发布已触发',
+                desc: '快照 → 回归闸 → 线上重建，约 2–4 分钟完成',
+                action: r.runUrl ? { label: '查看构建进度', href: r.runUrl } : undefined,
+                duration: 8000,
+            });
+        } else {
+            toast.push({ tone: 'error', title: '发布触发失败', desc: r.error ?? '未知错误' });
+        }
     }
 
     return (
-        <div className="flex items-center gap-2">
-            {status && (
-                <span
-                    className={`max-w-[22rem] truncate text-xs ${status.ok ? 'text-emerald-600' : 'text-red-600'}`}
-                    title={status.text}
-                >
-                    {status.url ? (
-                        <a className="hover:underline" href={status.url} target="_blank" rel="noreferrer">
-                            {status.text}
-                        </a>
-                    ) : (
-                        status.text
-                    )}
+        <div className="flex items-center gap-2.5">
+            {/* 状态胶囊：未发布改动 / 已同步，两种语气 */}
+            <span
+                className={cx(
+                    'hidden items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium ring-1 ring-inset lg:inline-flex',
+                    busy
+                        ? 'bg-brand-50 text-brand-700 ring-brand-100'
+                        : dirty
+                            ? 'bg-amber-50 text-amber-700 ring-amber-100'
+                            : 'bg-emerald-50 text-emerald-700 ring-emerald-100',
+                )}
+                title={dirty ? `最后一次改动：${ago(latest)}` : lastAt ? `上次发布触发于 ${ago(lastAt)}` : '内容与线上一致'}
+            >
+                <span className="relative flex h-1.5 w-1.5">
+                    {(busy || dirty) && <span className="absolute inline-flex h-full w-full rounded-full bg-current opacity-60 animate-ping-soft" />}
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-current" />
                 </span>
-            )}
-            <Button onClick={go} disabled={busy} title="后台改动只有发布后才会出现在前台">
-                {busy ? '发布中…' : '发布上线'}
+                {busy ? '发布流水线运行中' : dirty ? `内容改动待发布${drafts > 0 ? ` · ${drafts} 篇草稿` : ''}` : '内容与线上一致'}
+            </span>
+
+            <Button
+                variant="primary"
+                icon={busy ? undefined : 'rocket'}
+                loading={busy}
+                onClick={() => setAsk(true)}
+                disabled={busy}
+                title="后台改动只有发布后才会出现在前台"
+                className={cx('shine', dirty && !busy && 'ring-2 ring-gold-300/70')}
+            >
+                {busy ? '发布中' : '发布上线'}
             </Button>
+
+            {runUrl && (
+                <a
+                    href={runUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="focus-ring inline-flex h-8 w-8 items-center justify-center rounded-lg text-emerald-600 ring-1 ring-inset ring-emerald-100 transition-colors hover:bg-emerald-50"
+                    title="查看本次构建的 Actions 运行"
+                >
+                    <Icon name="branch" className="h-4 w-4" />
+                </a>
+            )}
+
+            <ConfirmDialog
+                open={ask}
+                onClose={() => setAsk(false)}
+                onConfirm={() => void go()}
+                title="确认发布上线？"
+                desc="会把后台内容快照进仓库并触发线上重建，全程约 2–4 分钟。"
+                confirmLabel="开始发布"
+                tone="primary"
+            >
+                <div className="mt-3 flex items-center gap-1.5 rounded-lg bg-slate-50 px-3 py-2.5 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-100">
+                    <span className="inline-flex items-center gap-1">
+                        <Icon name="database" className="h-3.5 w-3.5 text-brand-500" />
+                        快照写入仓库
+                    </span>
+                    <Icon name="chevronRight" className="h-3 w-3 text-slate-300" />
+                    <span className="inline-flex items-center gap-1">
+                        <Icon name="shield" className="h-3.5 w-3.5 text-brand-500" />
+                        回归闸校验
+                    </span>
+                    <Icon name="chevronRight" className="h-3 w-3 text-slate-300" />
+                    <span className="inline-flex items-center gap-1">
+                        <Icon name="globe" className="h-3.5 w-3.5 text-brand-500" />
+                        Pages 重建
+                    </span>
+                </div>
+                {drafts > 0 && (
+                    <p className="mt-2.5 text-[11px] leading-relaxed text-amber-700">
+                        当前有 {drafts} 篇草稿：它们会写入仓库，但前台列表与 sitemap 只收录已发布内容。
+                    </p>
+                )}
+            </ConfirmDialog>
         </div>
+    );
+}
+
+/** 供其它页面复用的「发布中」小指示 */
+export function Publishing({ label = '发布流水线运行中' }: { label?: string }): JSX.Element {
+    return (
+        <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-medium text-brand-700 ring-1 ring-inset ring-brand-100">
+            <Spinner className="h-3 w-3" />
+            {label}
+        </span>
     );
 }
