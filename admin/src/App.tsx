@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ResourceList from './pages/ResourceList';
 import ResourceEdit from './pages/ResourceEdit';
+import MediaLibrary from './pages/MediaLibrary';
 
 function Gate() {
     const { session, loading } = useAuth();
@@ -24,6 +25,7 @@ export default function App() {
                 <Route element={<Gate />}>
                     <Route element={<Layout />}>
                         <Route index element={<Dashboard />} />
+                        <Route path="media" element={<MediaLibrary />} />
                         {NAV.map((r) => (
                             <Route key={r.key} path={r.key} element={<ResourceList resource={r} />} />
                         ))}

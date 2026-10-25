@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 import { sanitizeHtml } from '../lib/sanitize';
 import type { Field, Resource } from '../lib/resources';
 import { Button, Card, Input, Label, Select, Textarea } from '../components/ui';
+import { ImageField } from '../components/ImageField';
 
 type Row = Record<string, unknown>;
 interface RefOpt {
@@ -17,6 +18,8 @@ function defaults(resource: Resource): Row {
         if (f.type === 'boolean') r[f.name] = false;
         else if (f.type === 'tags') r[f.name] = [];
         else if (f.type === 'json') r[f.name] = f.name === 'data' ? '{}' : '[]';
+        else if (f.type === 'gallery') r[f.name] = [];
+        else if (f.type === 'image') r[f.name] = '';
         else if (f.type === 'ref' && f.multiple) r[f.name] = [];
         else if (f.type === 'select') r[f.name] = f.options?.[0] ?? '';
         else r[f.name] = '';
@@ -297,6 +300,20 @@ function FieldInput({
                 <div>
                     {label}
                     <Input type="number" value={value == null ? '' : String(value)} onChange={(e) => onChange(e.target.value)} />
+                </div>
+            );
+        case 'image':
+            return (
+                <div>
+                    {label}
+                    <ImageField multiple={false} value={value} onChange={onChange} />
+                </div>
+            );
+        case 'gallery':
+            return (
+                <div>
+                    {label}
+                    <ImageField multiple value={value} onChange={onChange} />
                 </div>
             );
         default:

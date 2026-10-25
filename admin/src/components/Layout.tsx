@@ -29,6 +29,9 @@ export default function Layout() {
                             {r.label}
                         </NavLink>
                     ))}
+                    <NavLink to="/media" className={linkCls}>
+                        媒体
+                    </NavLink>
                     <NavLink to="/site_settings" className={linkCls}>
                         站点设置
                     </NavLink>

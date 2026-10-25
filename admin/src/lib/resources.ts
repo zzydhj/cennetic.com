@@ -12,7 +12,9 @@ export type FieldType =
     | 'tags'
     | 'ref'
     | 'select'
-    | 'json';
+    | 'json'
+    | 'image'
+    | 'gallery';
 
 export interface Field {
     name: string;
@@ -114,7 +116,7 @@ export const RESOURCES: Resource[] = [
             { name: 'lastmod', label: '最后修改', type: 'text' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'blog_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属博客分类，决定文章出现在哪些分类页。' },
             { name: 'author', label: '作者', type: 'ref', refTable: 'authors', refValue: 'slug', refLabel: 'name' },
-            { name: 'hero', label: '主图 URL', type: 'text', full: true, help: '文章顶部大图 + 分享缩略图。可粘贴 R2/图片地址。' },
+            { name: 'hero', label: '主图', type: 'image', full: true, help: '上传或填写文章顶部大图/分享图（点上方虚线框即可上传）。' },
             { name: 'hero_alt', label: '主图 alt', type: 'text', help: '图片替代文字，利于 SEO 与无障碍。' },
             { name: 'hero_width', label: '主图宽', type: 'number' },
             { name: 'hero_height', label: '主图高', type: 'number' },
@@ -147,7 +149,7 @@ export const RESOURCES: Resource[] = [
             { name: 'robots', label: 'Robots', type: 'text', full: true },
             { name: 'date', label: '日期', type: 'text' },
             { name: 'lastmod', label: '最后修改', type: 'text' },
-            { name: 'hero', label: '主图 URL', type: 'text', full: true },
+            { name: 'hero', label: '主图', type: 'image', full: true },
             { name: 'menu_order', label: '菜单排序', type: 'number', help: '数字越小越靠前。' },
             { name: 'is_listing', label: '列表页', type: 'boolean', help: '主体是列表的页(如 /blog/ /products/)，正文只当列表上方引言。' },
             { name: 'author', label: '作者', type: 'ref', refTable: 'authors', refValue: 'slug', refLabel: 'name' },
@@ -175,6 +177,7 @@ export const RESOURCES: Resource[] = [
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true, help: '产品名，也用于列表卡片标题。' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动' },
             { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, help: '列表卡片/详情顶部的一小段介绍，可含简单 HTML。' },
+            { name: 'images', label: '产品主图', type: 'gallery', full: true, help: '点击或拖入上传 5–6 张主图，可左右排序、改 alt、删除；第一张自动作为列表封面。' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'product_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属产品分类，决定产品出现在哪些分类页/导航。' },
             STATUS,
             { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段 HTML：图集、规格表、描述都写在这里(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。', sample: PRODUCT_BODY_SAMPLE },
