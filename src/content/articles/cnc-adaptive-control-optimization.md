@@ -80,7 +80,7 @@ sourceId: 7261
     <h2 id="3-real-world-use-cases-global-testimonials">3. Real-World Use Cases &amp; Global Testimonials</h2>
     <p>From high-volume automotive parts to complex aerospace components, CNC adaptive control is transforming production floors across our primary export markets in Europe, the Americas, and Southeast Asia.</p>
 
-    <div class="qf-testimonial"><blockquote>“Machining 6061-T6 engine brackets used to take us 8.5 minutes per part. After integrating QFCNC’s adaptive control, the system automatically pushed feeds up by 35% in light passes. Our cycle time dropped to 6.8 minutes, saving us over $120,000 annually in machine overhead.”</blockquote></div>
+    <div class="qf-testimonial"><blockquote>“Machining 6061-T6 engine brackets used to take us 8.5 minutes per part. After integrating CENNETIC’s adaptive control, the system automatically pushed feeds up by 35% in light passes. Our cycle time dropped to 6.8 minutes, saving us over $120,000 annually in machine overhead.”</blockquote></div>
 
     <div class="qf-testimonial"><blockquote>“We work heavily with P20 hardened steel for injection molds. Tool chipping was a daily nightmare. The CNC adaptive control system catches vibration spikes instantly and slows the feed. Our tool life has nearly doubled, and we’ve eliminated costly manual rework.”</blockquote></div>
 
@@ -111,7 +111,7 @@ sourceId: 7261
 
     <!-- 9. Highlight总结框 -->
     <div class="qf-highlight">
-        <strong>Why Choose QFCNC?</strong> Established in <strong>2010</strong> and located in Dalingshan Town, Dongguan City, QFCNC has successfully served over <strong>750+ global customers</strong>. We stand behind our CNC adaptive control systems and machinery with a solid <strong>2-year warranty</strong> and lifetime technical support, ensuring your investment is fully protected.
+        <strong>Why Choose CENNETIC?</strong> Established in <strong>2010</strong> and located in Dalingshan Town, Dongguan City, CENNETIC has successfully served over <strong>750+ global customers</strong>. We stand behind our CNC adaptive control systems and machinery with a solid <strong>2-year warranty</strong> and lifetime technical support, ensuring your investment is fully protected.
     </div>
 
     <!-- 10. FAQ -->
@@ -131,8 +131,8 @@ sourceId: 7261
         <h3 id="ready-to-optimize-your-cnc-machining">Ready to Optimize Your CNC Machining?</h3>
         <p>Stop wasting cycle time and burning through tools. Contact our engineering team today for a free feasibility analysis and ROI calculation.</p>
         <div class="qf-cta-buttons">
-            <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Adaptive%20Control%3A%20Real-Time%20Feed%20Optimization%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-adaptive-control-optimization%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
-            <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Us</a>
+            <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Adaptive%20Control%3A%20Real-Time%20Feed%20Optimization%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-adaptive-control-optimization%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+            <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Us</a>
             <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 15118243737</a>
         </div>
     </div>

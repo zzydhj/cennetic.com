@@ -1,9 +1,9 @@
 ---
-title: QiaoFeng CNC Machine | CNC Manufacturer In China
+title: Cennetic CNC Machine | CNC Manufacturer In China
 heading: Home
 slug: home
 canonical: /
-description: QiaoFeng CNC Machine, based in China, manufactures high-precision CNC machining centers, lathes, and 5-axis machines. 15+ years, Get a free quote.
+description: Cennetic CNC Machine, based in China, manufactures high-precision CNC machining centers, lathes, and 5-axis machines. 15+ years, Get a free quote.
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2026-06-12T14:41:11'
 lastmod: '2026-07-14T09:56:23'
@@ -14,7 +14,7 @@ isListing: true
 
 
 <div data-elementor-type="wp-page" data-elementor-id="935" class="elementor elementor-935">
-				<div class="wd-negative-gap elementor-element elementor-element-41e3c6da wd-section-stretch e-flex e-con-boxed e-con e-parent" data-id="41e3c6da" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;https:\/\/qfcncmachine.com\/wp-content\/uploads\/2026\/05\/banner.mp4&quot;}">
+				<div class="wd-negative-gap elementor-element elementor-element-41e3c6da wd-section-stretch e-flex e-con-boxed e-con e-parent" data-id="41e3c6da" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;https:\/\/www.cennetic.com\/wp-content\/uploads\/2026\/05\/banner.mp4&quot;}">
 					<div class="e-con-inner">
 		<div class="elementor-background-video-container elementor-hidden-mobile">
 							<video class="elementor-background-video-hosted" role="presentation" autoplay="" muted="" playsinline="" loop=""></video>
@@ -25,7 +25,7 @@ isListing: true
 							<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-white wd-title-style-default wd-title-size-default text-left">
 
 											<div class="title-subtitle subtitle-color-white subtitle-style-default wd-fontsize-xs">
-					Qiaofeng Intelligent Equipment Co., Ltd.				</div>
+					Guangdong Cennetic Intelligent Equipment Co., Ltd.				</div>
 			
 			<div class="liner-continer">
 				<h2 class="woodmart-title-container title wd-fontsize-l" id="high-precision-cnc-machining-solutions">High-Precision CNC Machining Solutions</h2> 
@@ -150,7 +150,7 @@ isListing: true
 	
 <div class="wd-product-wrapper product-wrapper">
 	<div class="wd-product-thumb product-element-top wd-quick-shop">
-		<a href="/product/t-600-high-speed-drilling-and-tapping-center/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="T-600 High-Speed Drilling and Tapping Center | QIAOFENG CNC">
+		<a href="/product/t-600-high-speed-drilling-and-tapping-center/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="T-600 High-Speed Drilling and Tapping Center | CENNETIC CNC">
 					</a>
 
 		
@@ -160,7 +160,7 @@ isListing: true
 	</div>
 
 	<div class="product-element-bottom">
-		<h3 class="wd-entities-title" id="t-600-high-speed-drilling-and-tapping-center-qiaofeng-cnc"><a href="/product/t-600-high-speed-drilling-and-tapping-center/">T-600 High-Speed Drilling and Tapping Center | QIAOFENG CNC</a></h3>										
+		<h3 class="wd-entities-title" id="t-600-high-speed-drilling-and-tapping-center-cennetic-cnc"><a href="/product/t-600-high-speed-drilling-and-tapping-center/">T-600 High-Speed Drilling and Tapping Center | CENNETIC CNC</a></h3>										
 
 		
 				
@@ -172,10 +172,10 @@ isListing: true
 <div class="wd-product-wrapper product-wrapper">
 	<div class="wd-product-thumb product-element-top wd-quick-shop">
 		<a href="/product/jr-v85p-vertical-machining-center-3-axis-linear-guideway-vmc/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="JR-V85P Vertical Machining Center | 3-Axis Linear Guideway">
-			<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle.webp" class="size-large" alt="">		</a>
+			<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle.webp" class="size-large" alt="">		</a>
 
 					<div class="wd-product-img-hover hover-img">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working.webp" class="size-large" alt="">			</div>
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working.webp" class="size-large" alt="">			</div>
 			
 		<div class="wd-buttons wd-pos-r-t">
 						<div class="wd-add-btn wd-action-btn wd-style-icon wd-add-cart-icon"></div>
@@ -194,11 +194,11 @@ isListing: true
 	
 <div class="wd-product-wrapper product-wrapper">
 	<div class="wd-product-thumb product-element-top wd-quick-shop">
-		<a href="/product/l-1060-vertical-machining-center/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="QIAOFENG L-1060 Vertical Machining Center">
-			<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" class="size-large" alt="">		</a>
+		<a href="/product/l-1060-vertical-machining-center/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="CENNETIC L-1060 Vertical Machining Center">
+			<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" class="size-large" alt="">		</a>
 
 					<div class="wd-product-img-hover hover-img">
-				<img loading="lazy" decoding="async" width="600" height="500" src="/images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp" class="size-large" alt="">			</div>
+				<img loading="lazy" decoding="async" width="600" height="500" src="/images/2026/06/cennetic-L1060-z-axis-column-structure.webp" class="size-large" alt="">			</div>
 			
 		<div class="wd-buttons wd-pos-r-t">
 						<div class="wd-add-btn wd-action-btn wd-style-icon wd-add-cart-icon"></div>
@@ -206,7 +206,7 @@ isListing: true
 	</div>
 
 	<div class="product-element-bottom">
-		<h3 class="wd-entities-title" id="qiaofeng-l-1060-vertical-machining-center"><a href="/product/l-1060-vertical-machining-center/">QIAOFENG L-1060 Vertical Machining Center</a></h3>										
+		<h3 class="wd-entities-title" id="cennetic-l-1060-vertical-machining-center"><a href="/product/l-1060-vertical-machining-center/">CENNETIC L-1060 Vertical Machining Center</a></h3>										
 
 		
 				
@@ -217,7 +217,7 @@ isListing: true
 	
 <div class="wd-product-wrapper product-wrapper">
 	<div class="wd-product-thumb product-element-top wd-quick-shop">
-		<a href="/product/v-856-vertical-machining-center/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="V-856 High-Speed Vertical Machining Center | QIAOFENG CNC">
+		<a href="/product/v-856-vertical-machining-center/" class="wd-product-img-link product-image-link" tabindex="-1" aria-label="V-856 High-Speed Vertical Machining Center | CENNETIC CNC">
 					</a>
 
 					<div class="wd-product-img-hover hover-img">
@@ -229,7 +229,7 @@ isListing: true
 	</div>
 
 	<div class="product-element-bottom">
-		<h3 class="wd-entities-title" id="v-856-high-speed-vertical-machining-center-qiaofeng-cnc"><a href="/product/v-856-vertical-machining-center/">V-856 High-Speed Vertical Machining Center | QIAOFENG CNC</a></h3>										
+		<h3 class="wd-entities-title" id="v-856-high-speed-vertical-machining-center-cennetic-cnc"><a href="/product/v-856-vertical-machining-center/">V-856 High-Speed Vertical Machining Center | CENNETIC CNC</a></h3>										
 
 		
 				
@@ -277,14 +277,14 @@ isListing: true
 							<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-white wd-title-style-default wd-title-size-large text-left">
 
 											<div class="title-subtitle subtitle-color-white subtitle-style-default wd-fontsize-xs">
-					ABOUT QIAOFENG				</div>
+					ABOUT CENNETIC				</div>
 			
 			<div class="liner-continer">
 				<h4 class="woodmart-title-container title wd-fontsize-xxl">Your Direct Source for Precision CNC Manufacturing</h4> 
 							</div>
 
 							<div class="title-after_title reset-last-child wd-fontsize-s">
-					<p>QIAOFENG is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies,we are a true source factory dedicated to engineering,manufacturing,and delivering top-tier,high-efficiency machining solutions to the global market.</p>				</div>
+					<p>CENNETIC is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies,we are a true source factory dedicated to engineering,manufacturing,and delivering top-tier,high-efficiency machining solutions to the global market.</p>				</div>
 					</div>
 						</div>
 				</div>
@@ -345,7 +345,7 @@ isListing: true
 											<div class="wd-product wd-loop-item-2118 wd-hover-parent product type-product post-7997 status-publish instock product_cat-drilling-tapping-centers-vertical-machining-centers product_cat-vertical-machining-centers has-post-thumbnail shipping-taxable product-type-simple" data-loop="1" data-id="7997">
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
-			<a href="/product/t-600-high-speed-drilling-and-tapping-center/" class="wd-product-img-link" tabindex="-1" aria-label="T-600 High-Speed Drilling and Tapping Center | QIAOFENG CNC">
+			<a href="/product/t-600-high-speed-drilling-and-tapping-center/" class="wd-product-img-link" tabindex="-1" aria-label="T-600 High-Speed Drilling and Tapping Center | CENNETIC CNC">
 							</a>
 
 			
@@ -371,9 +371,9 @@ isListing: true
 </div>
 
 
-		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="t-600-high-speed-drilling-and-tapping-center-qiaofeng-cnc">
+		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="t-600-high-speed-drilling-and-tapping-center-cennetic-cnc">
 			<a href="/product/t-600-high-speed-drilling-and-tapping-center/">
-				T-600 High-Speed Drilling and Tapping Center | QIAOFENG CNC			</a>
+				T-600 High-Speed Drilling and Tapping Center | CENNETIC CNC			</a>
 		</h3>
 
 		
@@ -393,10 +393,10 @@ isListing: true
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
 			<a href="/product/jr-v85p-vertical-machining-center-3-axis-linear-guideway-vmc/" class="wd-product-img-link" tabindex="-1" aria-label="JR-V85P Vertical Machining Center | 3-Axis Linear Guideway">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle.webp" class="size-large" alt="">			</a>
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle.webp" class="size-large" alt="">			</a>
 
 						<div class="wd-product-img-hover hover-img">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working.webp" class="size-large" alt="">			</div>
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working.webp" class="size-large" alt="">			</div>
 			
 			
 
@@ -441,11 +441,11 @@ isListing: true
 											<div class="wd-product wd-loop-item-2118 wd-hover-parent product type-product post-7757 status-publish last instock product_cat-vertical-machining-centers-3-linear-guideway has-post-thumbnail shipping-taxable product-type-simple" data-loop="3" data-id="7757">
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
-			<a href="/product/l-1060-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="QIAOFENG L-1060 Vertical Machining Center">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" class="size-large" alt="">			</a>
+			<a href="/product/l-1060-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="CENNETIC L-1060 Vertical Machining Center">
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" class="size-large" alt="">			</a>
 
 						<div class="wd-product-img-hover hover-img">
-				<img loading="lazy" decoding="async" width="600" height="500" src="/images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp" class="size-large" alt="">			</div>
+				<img loading="lazy" decoding="async" width="600" height="500" src="/images/2026/06/cennetic-L1060-z-axis-column-structure.webp" class="size-large" alt="">			</div>
 			
 			
 
@@ -469,9 +469,9 @@ isListing: true
 </div>
 
 
-		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="qiaofeng-l-1060-vertical-machining-center">
+		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="cennetic-l-1060-vertical-machining-center">
 			<a href="/product/l-1060-vertical-machining-center/">
-				QIAOFENG L-1060 Vertical Machining Center			</a>
+				CENNETIC L-1060 Vertical Machining Center			</a>
 		</h3>
 
 		
@@ -490,7 +490,7 @@ isListing: true
 											<div class="wd-product wd-loop-item-2118 wd-hover-parent product type-product post-7726 status-publish first instock product_cat-uncategorized product_cat-vertical-machining-centers-3-linear-guideway has-post-thumbnail shipping-taxable product-type-simple" data-loop="4" data-id="7726">
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
-			<a href="/product/v-856-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="V-856 High-Speed Vertical Machining Center | QIAOFENG CNC">
+			<a href="/product/v-856-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="V-856 High-Speed Vertical Machining Center | CENNETIC CNC">
 							</a>
 
 						<div class="wd-product-img-hover hover-img">
@@ -518,9 +518,9 @@ isListing: true
 </div>
 
 
-		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="v-856-high-speed-vertical-machining-center-qiaofeng-cnc">
+		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="v-856-high-speed-vertical-machining-center-cennetic-cnc">
 			<a href="/product/v-856-vertical-machining-center/">
-				V-856 High-Speed Vertical Machining Center | QIAOFENG CNC			</a>
+				V-856 High-Speed Vertical Machining Center | CENNETIC CNC			</a>
 		</h3>
 
 		
@@ -594,7 +594,7 @@ isListing: true
 											<div class="wd-product wd-loop-item-2118 wd-hover-parent product type-product post-7726 status-publish instock product_cat-uncategorized product_cat-vertical-machining-centers-3-linear-guideway has-post-thumbnail shipping-taxable product-type-simple" data-loop="1" data-id="7726">
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
-			<a href="/product/v-856-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="V-856 High-Speed Vertical Machining Center | QIAOFENG CNC">
+			<a href="/product/v-856-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="V-856 High-Speed Vertical Machining Center | CENNETIC CNC">
 							</a>
 
 						<div class="wd-product-img-hover hover-img">
@@ -622,9 +622,9 @@ isListing: true
 </div>
 
 
-		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="v-856-high-speed-vertical-machining-center-qiaofeng-cnc">
+		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="v-856-high-speed-vertical-machining-center-cennetic-cnc">
 			<a href="/product/v-856-vertical-machining-center/">
-				V-856 High-Speed Vertical Machining Center | QIAOFENG CNC			</a>
+				V-856 High-Speed Vertical Machining Center | CENNETIC CNC			</a>
 		</h3>
 
 		
@@ -643,11 +643,11 @@ isListing: true
 											<div class="wd-product wd-loop-item-2118 wd-hover-parent product type-product post-7757 status-publish instock product_cat-vertical-machining-centers-3-linear-guideway has-post-thumbnail shipping-taxable product-type-simple" data-loop="2" data-id="7757">
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
-			<a href="/product/l-1060-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="QIAOFENG L-1060 Vertical Machining Center">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" class="size-large" alt="">			</a>
+			<a href="/product/l-1060-vertical-machining-center/" class="wd-product-img-link" tabindex="-1" aria-label="CENNETIC L-1060 Vertical Machining Center">
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" class="size-large" alt="">			</a>
 
 						<div class="wd-product-img-hover hover-img">
-				<img loading="lazy" decoding="async" width="600" height="500" src="/images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp" class="size-large" alt="">			</div>
+				<img loading="lazy" decoding="async" width="600" height="500" src="/images/2026/06/cennetic-L1060-z-axis-column-structure.webp" class="size-large" alt="">			</div>
 			
 			
 
@@ -671,9 +671,9 @@ isListing: true
 </div>
 
 
-		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="qiaofeng-l-1060-vertical-machining-center">
+		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="cennetic-l-1060-vertical-machining-center">
 			<a href="/product/l-1060-vertical-machining-center/">
-				QIAOFENG L-1060 Vertical Machining Center			</a>
+				CENNETIC L-1060 Vertical Machining Center			</a>
 		</h3>
 
 		
@@ -693,10 +693,10 @@ isListing: true
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
 			<a href="/product/jr-v85p-vertical-machining-center-3-axis-linear-guideway-vmc/" class="wd-product-img-link" tabindex="-1" aria-label="JR-V85P Vertical Machining Center | 3-Axis Linear Guideway">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle.webp" class="size-large" alt="">			</a>
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle.webp" class="size-large" alt="">			</a>
 
 						<div class="wd-product-img-hover hover-img">
-				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working.webp" class="size-large" alt="">			</div>
+				<img loading="lazy" decoding="async" width="1024" height="1024" src="/images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working.webp" class="size-large" alt="">			</div>
 			
 			
 
@@ -741,7 +741,7 @@ isListing: true
 											<div class="wd-product wd-loop-item-2118 wd-hover-parent product type-product post-7997 status-publish first instock product_cat-drilling-tapping-centers-vertical-machining-centers product_cat-vertical-machining-centers has-post-thumbnail shipping-taxable product-type-simple" data-loop="4" data-id="7997">
 	<div class="wd-product-wrapper wd-entry-content">
 			<div class="wd-loop-prod-thumb wd-product-thumb wd-368dd130 wd-hover-zoom">
-			<a href="/product/t-600-high-speed-drilling-and-tapping-center/" class="wd-product-img-link" tabindex="-1" aria-label="T-600 High-Speed Drilling and Tapping Center | QIAOFENG CNC">
+			<a href="/product/t-600-high-speed-drilling-and-tapping-center/" class="wd-product-img-link" tabindex="-1" aria-label="T-600 High-Speed Drilling and Tapping Center | CENNETIC CNC">
 							</a>
 
 			
@@ -767,9 +767,9 @@ isListing: true
 </div>
 
 
-		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="t-600-high-speed-drilling-and-tapping-center-qiaofeng-cnc">
+		<h3 class="wd-loop-prod-title wd-entities-title wd-5342ae28 wd-line-clamp" id="t-600-high-speed-drilling-and-tapping-center-cennetic-cnc">
 			<a href="/product/t-600-high-speed-drilling-and-tapping-center/">
-				T-600 High-Speed Drilling and Tapping Center | QIAOFENG CNC			</a>
+				T-600 High-Speed Drilling and Tapping Center | CENNETIC CNC			</a>
 		</h3>
 
 		
@@ -825,49 +825,49 @@ isListing: true
 							<div class="wd-images-gallery photoswipe-images" style="--wd-align-items:center; --wd-justify-content:center;">
 						<div class="wd-grid-g" style="--wd-col-lg:4;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
 																		<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/10002-1.webp" data-width="500" data-height="400" data-index="1" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/10002-1.webp" data-width="500" data-height="400" data-index="1" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="500" height="400" src="/images/2026/05/10002-1.webp" class="size-full" alt="10002">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/10003-1.webp" data-width="500" data-height="400" data-index="2" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/10003-1.webp" data-width="500" data-height="400" data-index="2" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="500" height="400" src="/images/2026/05/10003-1.webp" class="size-full" alt="10003">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/10004-1.webp" data-width="500" data-height="400" data-index="3" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/10004-1.webp" data-width="500" data-height="400" data-index="3" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="500" height="400" src="/images/2026/05/10004-1.webp" class="size-full" alt="10004">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/10005-1.webp" data-width="500" data-height="400" data-index="4" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/10005-1.webp" data-width="500" data-height="400" data-index="4" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="500" height="400" src="/images/2026/05/10005-1.webp" class="size-full" alt="10005">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_03-11.webp" data-width="986" data-height="990" data-index="5" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_03-11.webp" data-width="986" data-height="990" data-index="5" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="986" height="990" src="/images/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_03-11.webp" class="size-full" alt="nanobanana-edited-2026-05-15T14-04-47-720Z_03-11">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_05-11.webp" data-width="987" data-height="990" data-index="6" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_05-11.webp" data-width="987" data-height="990" data-index="6" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="987" height="990" src="/images/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_05-11.webp" class="size-full" alt="nanobanana-edited-2026-05-15T14-04-47-720Z_05-11">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_09-11.webp" data-width="986" data-height="980" data-index="7" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_09-11.webp" data-width="986" data-height="980" data-index="7" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="986" height="980" src="/images/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_09-11.webp" class="size-full" alt="nanobanana-edited-2026-05-15T14-04-47-720Z_09-11">
 													</a>
 											</div>
 															<div class="wd-gallery-item wd-col">
-													<a href="https://qfcncmachine.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_10-11.webp" data-width="987" data-height="980" data-index="8" data-elementor-open-lightbox="no">
+													<a href="https://www.cennetic.com/wp-content/uploads/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_10-11.webp" data-width="987" data-height="980" data-index="8" data-elementor-open-lightbox="no">
 						
 						<img loading="lazy" decoding="async" width="987" height="980" src="/images/2026/05/nanobanana-edited-2026-05-15T14-04-47-720Z_10-11.webp" class="size-full" alt="nanobanana-edited-2026-05-15T14-04-47-720Z_10-11">
 													</a>
@@ -1091,7 +1091,7 @@ isListing: true
 				<div class="info-box-content">
 					
 											<h4 class="info-box-title title box-title-style-default wd-fontsize-s" data-elementor-setting-key="title">
-								Email: bella@qfcncmachine.com						</h4>
+								Email: bella@cennetic.com						</h4>
 					
 					<div class="info-box-inner reset-last-child" data-elementor-setting-key="content"></div>
 
@@ -1147,7 +1147,7 @@ isListing: true
             
             <div class="fluentform ff-inherit-theme-style fluentform_wrapper_3"><form data-form_id="3" id="fluentform_3" class="frm-fluent-form fluent_form_3 ff-el-form-top ff_form_instance_3_1 ff-form-loading ffs_inherit_theme" data-form_instance="ff_form_instance_3_1" method="POST"><fieldset style="border: none!important;margin: 0!important;padding: 0!important;background-color: transparent!important;box-shadow: none!important;outline: none!important; min-inline-size: 100%;">
                     <legend class="ff_screen_reader_title" style="display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;">Customer Complaint Form (#3)</legend><input type="hidden" name="__fluent_form_embded_post_id" value="7273"><input type="hidden" id="_fluentform_3_fluentformnonce" name="_fluentform_3_fluentformnonce" value="727303c53c"><input type="hidden" name="_wp_http_referer" value="/wp-json/wp/v2/pages?per_page=100&amp;page=1&amp;_embed=1&amp;orderby=id&amp;order=asc"><div data-name="ff_cn_id_1" class="ff-t-container ff-column-container ff_columns_total_2 "><div class="ff-t-cell ff-t-column-1" style="flex-basis: 50%;"><div class="ff-el-group"><div class="ff-el-input--label asterisk-right"><label for="ff_3_input_text" id="label_ff_3_input_text" aria-label="Full Name">Full Name</label></div><div class="ff-el-input--content"><input type="text" name="input_text" class="ff-el-form-control" placeholder="Your Name" data-name="input_text" id="ff_3_input_text" aria-invalid="false" aria-required="false"></div></div></div><div class="ff-t-cell ff-t-column-2" style="flex-basis: 50%;"><div class="ff-el-group"><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for="ff_3_email" id="label_ff_3_email" aria-label="Email">Email</label></div><div class="ff-el-input--content"><input type="email" name="email" id="ff_3_email" class="ff-el-form-control" placeholder="Your Email" data-name="email" aria-invalid="false" aria-required="true"></div></div></div></div><div data-name="ff_cn_id_2" class="ff-t-container ff-column-container ff_columns_total_2 "><div class="ff-t-cell ff-t-column-1" style="flex-basis: 50%;"><div class="ff-el-group"><div class="ff-el-input--label asterisk-right"><label for="ff_3_input_text_1" id="label_ff_3_input_text_1" aria-label="Country">Country</label></div><div class="ff-el-input--content"><input type="text" name="input_text_1" class="ff-el-form-control" placeholder="Your Contry" data-name="input_text_1" id="ff_3_input_text_1" aria-invalid="false" aria-required="false"></div></div></div><div class="ff-t-cell ff-t-column-2" style="flex-basis: 50%;"><div class="ff-el-group"><div class="ff-el-input--label asterisk-right"><label for="ff_3_input_text_2" id="label_ff_3_input_text_2" aria-label="WhatsApp / Phone">WhatsApp / Phone</label></div><div class="ff-el-input--content"><input type="text" name="input_text_2" class="ff-el-form-control" placeholder="+1 12586957423" data-name="input_text_2" id="ff_3_input_text_2" aria-invalid="false" aria-required="false"></div></div></div></div><div class="ff-el-group"><div class="ff-el-input--label asterisk-right"><label for="ff_3_description_1" id="label_ff_3_description_1" aria-label="Message">Message</label></div><div class="ff-el-input--content"><textarea aria-required="false" aria-labelledby="label_ff_3_description_1" name="description_1" id="ff_3_description_1" class="ff-el-form-control" placeholder="Let us know the products, quantities, dimensions, or any questions. For large drawings/specs, paste a cloud-drive link here..." rows="5" cols="2" data-name="description_1"></textarea></div></div><div class="ff-el-group ff-text-center ff_submit_btn_wrapper"><button type="submit" class="ff-btn ff-btn-submit ff-btn-lg ff_btn_no_style wpf_has_custom_css" aria-label="Get A Quick Quote">Get A Quick Quote</button></div></fieldset></form><div id="fluentform_3_errors" class="ff-errors-in-stack ff_form_instance_3_1 ff-form-loading_errors ff_form_instance_3_1_errors"></div></div>            <script type="text/javascript">
-                window.fluent_form_ff_form_instance_3_1 = {"id":"3","ajaxUrl":"https:\/\/qfcncmachine.com\/wp-admin\/admin-ajax.php","settings":{"layout":{"labelPlacement":"top","asteriskPlacement":"asterisk-right","helpMessagePlacement":"with_label","errorMessagePlacement":"inline","cssClassName":""},"restrictions":{"denyEmptySubmission":{"enabled":false}}},"form_instance":"ff_form_instance_3_1","form_id_selector":"fluentform_3","rules":{"input_text":{"required":{"value":false,"message":"This field is required","global_message":"\u8fd9\u662f\u5fc5\u586b\u680f","global":true}},"email":{"required":{"value":true,"message":"This field is required","global":true,"global_message":"\u8fd9\u662f\u5fc5\u586b\u680f"},"email":{"value":true,"message":"This field must contain a valid email","global":true,"global_message":"\u6b64\u5b57\u6bb5\u5fc5\u987b\u5305\u542b\u6709\u6548\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740"}},"input_text_1":{"required":{"value":false,"message":"This field is required","global_message":"\u8fd9\u662f\u5fc5\u586b\u680f","global":true}},"input_text_2":{"required":{"value":false,"message":"This field is required","global_message":"\u8fd9\u662f\u5fc5\u586b\u680f","global":true}},"description_1":{"required":{"value":false,"message":"This field is required","global":true,"global_message":"\u8fd9\u662f\u5fc5\u586b\u680f"}}},"debounce_time":300,"file_upload_settings":[]};
+                window.fluent_form_ff_form_instance_3_1 = {"id":"3","ajaxUrl":"https:\/\/www.cennetic.com\/wp-admin\/admin-ajax.php","settings":{"layout":{"labelPlacement":"top","asteriskPlacement":"asterisk-right","helpMessagePlacement":"with_label","errorMessagePlacement":"inline","cssClassName":""},"restrictions":{"denyEmptySubmission":{"enabled":false}}},"form_instance":"ff_form_instance_3_1","form_id_selector":"fluentform_3","rules":{"input_text":{"required":{"value":false,"message":"This field is required","global_message":"\u8fd9\u662f\u5fc5\u586b\u680f","global":true}},"email":{"required":{"value":true,"message":"This field is required","global":true,"global_message":"\u8fd9\u662f\u5fc5\u586b\u680f"},"email":{"value":true,"message":"This field must contain a valid email","global":true,"global_message":"\u6b64\u5b57\u6bb5\u5fc5\u987b\u5305\u542b\u6709\u6548\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740"}},"input_text_1":{"required":{"value":false,"message":"This field is required","global_message":"\u8fd9\u662f\u5fc5\u586b\u680f","global":true}},"input_text_2":{"required":{"value":false,"message":"This field is required","global_message":"\u8fd9\u662f\u5fc5\u586b\u680f","global":true}},"description_1":{"required":{"value":false,"message":"This field is required","global":true,"global_message":"\u8fd9\u662f\u5fc5\u586b\u680f"}}},"debounce_time":300,"file_upload_settings":[]};
                             </script>
                         </div>
 

@@ -5,7 +5,7 @@
  *   npx tsx scripts/migrate/inspect-articles.ts
  */
 import { readJson, join } from './lib/fs.ts';
-import { API_CACHE_DIR, pathOf } from './lib/config.ts';
+import { API_CACHE_DIR, SRC_ORIGIN, pathOf, isSiteHost } from './lib/config.ts';
 import type { WpPost } from './lib/types.ts';
 import * as cheerio from 'cheerio';
 
@@ -53,7 +53,7 @@ for (const p of posts) {
         if ($(el).attr('srcset') || $(el).attr('sizes')) srcsetCount += 1;
         if (($($(el).attr('loading')).length && $(el).attr('loading') !== 'eager')) lazyCount += 1;
         try {
-            const u = new URL(src.startsWith('http') ? src : `https://qfcncmachine.com${src}`);
+            const u = new URL(src.startsWith('http') ? src : `${SRC_ORIGIN}${src}`);
             imgHosts.set(u.host, (imgHosts.get(u.host) ?? 0) + 1);
             const ext = (u.pathname.match(/\.\w+$/) ?? ['.'])[0]!;
             imgExts.set(ext, (imgExts.get(ext) ?? 0) + 1);
@@ -113,7 +113,7 @@ for (const p of posts) {
         const href = $(el).attr('href')!;
         if (!href.startsWith('http')) return;
         const u = new URL(href);
-        if (u.host !== 'qfcncmachine.com') return;
+        if (!isSiteHost(u.host)) return;
         linkPaths.set(pathOf(u.pathname), (linkPaths.get(pathOf(u.pathname)) ?? 0) + 1);
     });
 }

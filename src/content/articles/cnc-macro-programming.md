@@ -35,7 +35,7 @@ sourceId: 7550
 
 <!-- ============================================================
    CNC Macro Programming: Beginner's Guide to Parametric
-   QiaoFeng | qfcncmachine.com
+   Cennetic | cennetic.com
    ============================================================ -->
 
 
@@ -44,7 +44,7 @@ sourceId: 7550
 <!-- ① 引言段 -->
 
 
-<p><strong>CNC macro programming</strong> — also called parametric programming — is one of the most powerful skills a machinist can master. If you’re a CNC beginner looking to move beyond fixed G-code and unlock true programming flexibility, this guide is for you. At <a href="/" rel="noopener">QiaoFeng</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve seen firsthand how CNC macro programming can cut programming time by up to 70% and reduce setup errors dramatically. Let’s break it all down.</p>
+<p><strong>CNC macro programming</strong> — also called parametric programming — is one of the most powerful skills a machinist can master. If you’re a CNC beginner looking to move beyond fixed G-code and unlock true programming flexibility, this guide is for you. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve seen firsthand how CNC macro programming can cut programming time by up to 70% and reduce setup errors dramatically. Let’s break it all down.</p>
 
 <img decoding="async" src="/images/2026/06/cnc-macro-1.webp" alt="CNC macro programming on control panel with variables" width="1200" height="686" loading="lazy">
 
@@ -168,11 +168,11 @@ M99
 <!-- ⑤ Testimonials -->
 <h2 id="6-what-our-customers-say">6. What Our Customers Say</h2>
 
-<div class="qf-testimonial"><blockquote>“We switched to parametric CNC macro programming on our QiaoFeng machining centers two years ago. For our aerospace bracket families, programming time dropped from 6 hours to under 90 minutes per job. The WHILE loop examples in their documentation were exactly what our team needed to get started fast.”</blockquote></div>
+<div class="qf-testimonial"><blockquote>“We switched to parametric CNC macro programming on our Cennetic machining centers two years ago. For our aerospace bracket families, programming time dropped from 6 hours to under 90 minutes per job. The WHILE loop examples in their documentation were exactly what our team needed to get started fast.”</blockquote></div>
 
-<div class="qf-testimonial"><blockquote>“As a hydraulic fittings shop running 40+ part variants, CNC macro programming was a game-changer. One parametric program now covers our entire flange family. QiaoFeng’s support team walked us through the variable setup — outstanding technical service from a manufacturer that truly understands production needs.”</blockquote></div>
+<div class="qf-testimonial"><blockquote>“As a hydraulic fittings shop running 40+ part variants, CNC macro programming was a game-changer. One parametric program now covers our entire flange family. Cennetic’s support team walked us through the variable setup — outstanding technical service from a manufacturer that truly understands production needs.”</blockquote></div>
 
-<div class="qf-testimonial"><blockquote>“Kami menggunakan mesin QiaoFeng untuk produksi komponen otomotif. Dengan macro programming, satu program bisa menangani 30 variasi ukuran. Waktu setup berkurang 45% dan tingkat kesalahan hampir nol. Sangat direkomendasikan untuk pabrik dengan volume tinggi.”</blockquote></div>
+<div class="qf-testimonial"><blockquote>“Kami menggunakan mesin Cennetic untuk produksi komponen otomotif. Dengan macro programming, satu program bisa menangani 30 variasi ukuran. Waktu setup berkurang 45% dan tingkat kesalahan hampir nol. Sangat direkomendasikan untuk pabrik dengan volume tinggi.”</blockquote></div>
 
 <!-- ⑥ Pros / Cons -->
 <h2 id="7-pros-cons-of-cnc-macro-programming">7. Pros &amp; Cons of CNC Macro Programming</h2>
@@ -238,15 +238,15 @@ M99
   <p>A poorly written WHILE loop — for example, one where the exit condition is never met — will cause the machine to execute indefinitely until the operator presses <strong>Emergency Stop</strong>. Always verify your loop increment logic (<code>#10 = #10 + #11</code>) and ensure the condition will eventually become false. Test on a simulator first, and use a <strong>safety counter variable</strong> as a backup exit condition on critical programs.</p>
 </div>
 
-<img decoding="async" src="/images/2026/06/cnc-macro-3.webp" alt="CNC macro programming beginner learning parametric code on QiaoFeng machine" width="1200" height="686" loading="lazy">
+<img decoding="async" src="/images/2026/06/cnc-macro-3.webp" alt="CNC macro programming beginner learning parametric code on Cennetic machine" width="1200" height="686" loading="lazy">
 
 <!-- ⑨ CTA Box -->
 <div class="qf-cta-box">
   <h3 id="ready-to-master-cnc-macro-programming">Ready to Master CNC Macro Programming?</h3>
-  <p>QiaoFeng has supported 750+ manufacturers in Europe, North America &amp; Southeast Asia since 2010. Our machines come with 2-year warranty and full technical support — including macro programming guidance. Get in touch today.</p>
+  <p>Cennetic has supported 750+ manufacturers in Europe, North America &amp; Southeast Asia since 2010. Our machines come with 2-year warranty and full technical support — including macro programming guidance. Get in touch today.</p>
   <div class="qf-cta-buttons">
-    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Macro%20Programming%3A%20The%20Ultimate%20Beginner's%20Guide%20to%20Parametric%20Programming%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-macro-programming%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
-    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella</a>
+    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Macro%20Programming%3A%20The%20Ultimate%20Beginner's%20Guide%20to%20Parametric%20Programming%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-macro-programming%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
+    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella</a>
     <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">+86 151 1824 3737</a>
   </div>
 </div>

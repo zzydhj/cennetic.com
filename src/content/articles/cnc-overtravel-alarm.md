@@ -47,14 +47,14 @@ sourceId: 7082
     instantly and often requires manual intervention to recover. Understanding
     the difference between soft-limit and hard-limit overtravel alarms — and
     knowing exactly how to reset them on common controllers such as FANUC and
-    Siemens — is critical to minimizing downtime. In this guide, QiaoFeng’s
+    Siemens — is critical to minimizing downtime. In this guide, Cennetic’s
     engineers draw on <strong>15 years of CNC machine manufacturing
     experience</strong> and support for <strong>750+ customers worldwide</strong>
     to walk you through root causes, step-by-step troubleshooting, and
     proven prevention strategies.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-overtravel-alarm-1.webp" alt="QiaoFeng CNC overtravel alarm displayed on FANUC control panel" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-overtravel-alarm-1.webp" alt="Cennetic CNC overtravel alarm displayed on FANUC control panel" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="industry-context-why-cnc-overtravel-alarms-matter">Industry Context: Why CNC Overtravel Alarms Matter</h2>
@@ -131,11 +131,11 @@ sourceId: 7082
   </p>
 
   <!-- 4. MODULE B — CORE FEATURES -->
-  <h2 id="2-core-features-of-qiaofengs-overtravel-protection-system">2. Core Features of QiaoFeng’s Overtravel Protection System</h2>
+  <h2 id="2-core-features-of-cennetics-overtravel-protection-system">2. Core Features of Cennetic’s Overtravel Protection System</h2>
 
   <h3 id="21-dual-redundant-limit-switches">2.1 Dual Redundant Limit Switches</h3>
   <p>
-    QiaoFeng equips each axis with both a mechanical contact switch and an
+    Cennetic equips each axis with both a mechanical contact switch and an
     inductive proximity switch. In a recent case at a Midwest U.S. automotive
     parts plant, a mechanical switch failed due to coolant ingress — but the
     proximity switch triggered the CNC overtravel alarm, preventing a costly
@@ -145,7 +145,7 @@ sourceId: 7082
 
   <h3 id="22-software-limit-monitoring-with-real-time-pre-warning">2.2 Software Limit Monitoring with Real-Time Pre-Warning</h3>
   <p>
-    QiaoFeng controllers continuously compare actual axis position against
+    Cennetic controllers continuously compare actual axis position against
     soft-limit parameters. When an axis approaches within 5% of its programmed
     boundary, the system issues a pre-warning alert — giving the operator time
     to intervene before a full CNC overtravel alarm is triggered. A Texas
@@ -155,7 +155,7 @@ sourceId: 7082
 
   <h3 id="23-auto-recovery-mode-for-soft-overtravel">2.3 Auto-Recovery Mode for Soft Overtravel</h3>
   <p>
-    When a soft overtravel alarm occurs, QiaoFeng’s control allows the
+    When a soft overtravel alarm occurs, Cennetic’s control allows the
     operator to retract the axis in the opposite direction without manual
     cranking. A maintenance engineer at a Canadian mold shop reported that
     this feature cut recovery time from 15 minutes to under 2 minutes.
@@ -167,7 +167,7 @@ sourceId: 7082
     designation, and absolute position data. Maintenance teams can review
     this log to identify recurring patterns — for example, a specific axis
     repeatedly hitting its limit due to a post-processor error — and take
-    targeted corrective action. QiaoFeng machines store up to
+    targeted corrective action. Cennetic machines store up to
     <strong>500 alarm events</strong>.
   </p>
 
@@ -212,7 +212,7 @@ sourceId: 7082
     <p style="font-style:italic;color:#444;margin:0 0 8px 0;">
       “In my 20 years of CNC field service, the number-one cause of hard
       overtravel alarms is neglected limit switches. Regular cleaning and
-      functional testing can prevent roughly 80% of these events. QiaoFeng’s
+      functional testing can prevent roughly 80% of these events. Cennetic’s
       design makes maintenance straightforward — switch locations are
       accessible without removing major guards.”
     </p>
@@ -222,7 +222,7 @@ sourceId: 7082
   </blockquote>
 
   <p>
-    John’s observation aligns with QiaoFeng’s maintenance-first design
+    John’s observation aligns with Cennetic’s maintenance-first design
     philosophy. Our machines include a built-in <strong>monthly limit switch
     test routine</strong> in the control software, which prompts the operator
     to jog each axis to its limit and confirm correct switch activation —
@@ -237,13 +237,13 @@ sourceId: 7082
     A major engine component manufacturer in the U.S. Midwest experienced
     frequent hard overtravel alarms on the Z-axis of their horizontal
     machining center. Root cause: coolant flooding had corroded the standard
-    limit switches. <strong>QiaoFeng’s solution:</strong> replace with sealed
+    limit switches. <strong>Cennetic’s solution:</strong> replace with sealed
     <strong>IP67-rated inductive proximity switches</strong> and add a
     stainless-steel splash guard. After installation, hard overtravel alarms
     on that axis dropped by <strong>90%</strong> over the following quarter.
   </p>
 
-  <div class="qf-testimonial"><blockquote>“We’d been fighting Z-axis overtravel alarms for months before QiaoFeng’s
+  <div class="qf-testimonial"><blockquote>“We’d been fighting Z-axis overtravel alarms for months before Cennetic’s
       team diagnosed the coolant ingress issue. The IP67 switch upgrade was
       straightforward and the results were immediate — we haven’t had a single
       hard overtravel event in four months. The alarm log feature also helped
@@ -255,13 +255,13 @@ sourceId: 7082
     alarms during high-speed trimming of carbon fiber panels. Investigation
     revealed that the post-processor was outputting toolpaths that approached
     within 0.3 mm of the programmed soft limits at feed rates above 8,000
-    mm/min. <strong>QiaoFeng’s service team</strong> recalibrated the soft
+    mm/min. <strong>Cennetic’s service team</strong> recalibrated the soft
     limit parameters, added a 2 mm safety margin, and implemented a software
     check in the post-processor. <strong>Result:</strong> zero CNC overtravel
     alarms in the following quarter.
   </p>
 
-  <div class="qf-testimonial"><blockquote>“QiaoFeng’s remote diagnostics team identified the post-processor issue
+  <div class="qf-testimonial"><blockquote>“Cennetic’s remote diagnostics team identified the post-processor issue
       within two hours of our first support call. The soft-limit recalibration
       and the pre-warning feature have completely eliminated our overtravel
       stoppages. For a production line running 24/7, that reliability is
@@ -269,17 +269,17 @@ sourceId: 7082
 
   <h3 id="53-medical-device-prototyping-vietnam">5.3 Medical Device Prototyping — Vietnam</h3>
   <p>
-    A medical device prototyping lab in Ho Chi Minh City using a QiaoFeng
+    A medical device prototyping lab in Ho Chi Minh City using a Cennetic
     small-format CNC mill reported intermittent hard overtravel alarms on the
     X-axis. On-site inspection revealed a loose limit switch bracket caused
-    by vibration from a nearby press. <strong>QiaoFeng provided</strong> a
+    by vibration from a nearby press. <strong>Cennetic provided</strong> a
     reinforced bracket design with lock-tite fasteners and vibration-damping
     washers. The fix eliminated the problem permanently and the lab has since
     ordered two additional machines.
   </p>
 
   <div class="qf-testimonial"><blockquote>“The random X-axis overtravel alarms were costing us prototype delivery
-      delays. QiaoFeng’s engineer identified the loose bracket in minutes
+      delays. Cennetic’s engineer identified the loose bracket in minutes
       during a video call inspection. The reinforced bracket kit arrived in
       five days and the problem has never returned. Excellent after-sales
       support — exactly what we need as a growing facility.”</blockquote><figcaption>— Nguyen T.H., Production Manager, Medical Device Lab, Ho Chi Minh City, Vietnam</figcaption></div>
@@ -287,7 +287,7 @@ sourceId: 7082
   <img decoding="async" src="/images/2026/06/cnc-overtravel-alarm-3.webp" alt="Monthly CNC limit switch cleaning and inspection to prevent overtravel alarms" width="1200" height="686" loading="lazy">
 
   <!-- 8. PROS / CONS -->
-  <h2 id="6-pros-cons-of-qiaofengs-overtravel-protection-system">6. Pros &amp; Cons of QiaoFeng’s Overtravel Protection System</h2>
+  <h2 id="6-pros-cons-of-cennetics-overtravel-protection-system">6. Pros &amp; Cons of Cennetic’s Overtravel Protection System</h2>
 
   <div class="qf-pros-cons">
     <div class="qf-pros">
@@ -307,20 +307,20 @@ sourceId: 7082
       <ul>
         <li>Initial cost slightly higher than single-switch basic systems</li>
         <li>Proximity switches require periodic calibration (recommended every 6 months)</li>
-        <li>Full alarm log analysis requires familiarity with QiaoFeng’s control interface</li>
+        <li>Full alarm log analysis requires familiarity with Cennetic’s control interface</li>
       </ul>
     </div>
   </div>
 
   <!-- 9. HIGHLIGHT SUMMARY -->
   <div class="qf-highlight">
-    <strong>Bottom line:</strong> The investment in QiaoFeng’s dual-redundancy
+    <strong>Bottom line:</strong> The investment in Cennetic’s dual-redundancy
     overtravel protection system pays for itself with the prevention of a
     single crash event. Combined with the <strong>auto-recovery mode</strong>,
     <strong>real-time pre-warning</strong>, and <strong>comprehensive alarm
     logging</strong>, it is the most complete CNC overtravel alarm management
     solution available in its class. Founded in <strong>2010</strong> and
-    certified under <strong>ISO 9001:2015</strong>, QiaoFeng has supported
+    certified under <strong>ISO 9001:2015</strong>, Cennetic has supported
     <strong>750+ customers</strong> across the USA, Europe, and Southeast Asia.
   </div>
 
@@ -352,7 +352,7 @@ sourceId: 7082
   <p>
     Yes. A degraded limit switch may trigger false CNC overtravel alarms due
     to vibration, coolant ingress, worn contacts, or electrical noise on the
-    signal cable. QiaoFeng recommends replacing limit switches every
+    signal cable. Cennetic recommends replacing limit switches every
     <strong>2 years or 10,000 operating hours</strong>, whichever comes first,
     and performing a functional test monthly.
   </p>
@@ -363,7 +363,7 @@ sourceId: 7082
     (2) inspect switch wiring and connectors for damage every 3 months;
     (3) verify soft-limit parameters match your actual workholding setup
     before each new job; (4) ensure toolpaths maintain at least a 2 mm
-    clearance from soft limits; and (5) use QiaoFeng’s
+    clearance from soft limits; and (5) use Cennetic’s
     <strong>limit preview feature</strong> in simulation mode before running
     new programs.
   </p>
@@ -378,14 +378,14 @@ sourceId: 7082
     your specific FANUC Series parameter manual.
   </p>
 
-  <h3 id="does-qiaofeng-offer-support-for-overtravel-issues">Does QiaoFeng offer support for overtravel issues?</h3>
+  <h3 id="does-cennetic-offer-support-for-overtravel-issues">Does Cennetic offer support for overtravel issues?</h3>
   <p>
-    Yes. QiaoFeng provides <strong>24/7 phone and email support</strong> and
+    Yes. Cennetic provides <strong>24/7 phone and email support</strong> and
     remote diagnostics via screen-sharing. On-site service is available within
     48 hours for critical cases in supported regions. Our technical team has
     resolved over <strong>5,000 overtravel-related incidents</strong> since
     2010. Contact us at
-    <a href="mailto:bella@qfcncmachine.com" rel="noopener">bella@qfcncmachine.com</a>
+    <a href="mailto:bella@cennetic.com" rel="noopener">bella@cennetic.com</a>
     or call <a href="tel:+8615118243737" rel="noopener">+86 151 1824 3737</a>.
   </p>
 
@@ -393,15 +393,15 @@ sourceId: 7082
   <div class="qf-cta-box">
     <h3 id="stop-cnc-overtravel-alarms-from-costing-you-production-time">Stop CNC Overtravel Alarms from Costing You Production Time</h3>
     <p>
-      QiaoFeng’s engineers have resolved 5,000+ overtravel incidents since 2010.
+      Cennetic’s engineers have resolved 5,000+ overtravel incidents since 2010.
       Get a free consultation, download our troubleshooting checklist, or call
       us directly — we respond within 24 hours.
     </p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Overtravel%20Alarm%3A%20Comprehensive%20Guide%20for%20Maintenance%20Engineers%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-overtravel-alarm%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Overtravel%20Alarm%3A%20Comprehensive%20Guide%20for%20Maintenance%20Engineers%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-overtravel-alarm%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">
         Get Free Consultation
       </a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com" rel="noopener">
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com" rel="noopener">
         Email Bella Directly
       </a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737" rel="noopener">

@@ -3,7 +3,7 @@ title: Privacy Policy
 heading: Privacy Policy
 slug: privacy-policy
 canonical: /privacy-policy/
-description: 'Suggested text: Our website address is: https://qfcncmachine.com.'
+description: 'Suggested text: Our website address is: https://www.cennetic.com.'
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2026-04-30T13:54:35'
 lastmod: '2026-06-12T08:01:36'
@@ -16,7 +16,7 @@ isListing: false
 <h2 class="wp-block-heading" id="who-we-are">Who we are</h2>
 
 
-<p class="wp-block-paragraph"><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: https://qfcncmachine.com.</p>
+<p class="wp-block-paragraph"><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: https://www.cennetic.com.</p>
 
 
 <h2 class="wp-block-heading" id="comments">Comments</h2>

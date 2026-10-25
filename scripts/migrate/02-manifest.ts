@@ -11,7 +11,7 @@
  *
  * 输出：migration/url-manifest.json
  */
-import { MIGRATION_DIR, SRC_ORIGIN, SITEMAPS, pathOf, API, API_CACHE_DIR } from './lib/config.ts';
+import { MIGRATION_DIR, SRC_ORIGIN, SITEMAPS, pathOf, API, API_CACHE_DIR, SITE_HOST_PATTERN } from './lib/config.ts';
 import { fetchText, headStatus } from './lib/http.ts';
 import { join, writeJson, readJson, rel, log, step } from './lib/fs.ts';
 import { extractHeadSeo } from './lib/html.ts';
@@ -127,8 +127,10 @@ async function seoFor(url: string): Promise<{ meta: Partial<UrlRecord>; links: s
     const seo = extractHeadSeo(html);
 
     const links: string[] = [];
-    for (const m of html.matchAll(/<a[^>]+href=["']https?:\/\/qfcncmachine\.com([^"'?#]*)[^>]*>/gi)) {
-        const p = m[1];
+    // 旧域名与新域名都要收：品牌迁移前抓的缓存 HTML 里写的是旧域名
+    const selfHosts = new RegExp(`<a[^>]+href=["']https?://(${SITE_HOST_PATTERN})([^"'?#]*)[^>]*>`, 'gi');
+    for (const m of html.matchAll(selfHosts)) {
+        const p = m[2];
         if (!p) continue;
         if (/\.(png|jpe?g|webp|svg|gif|pdf|zip|css|js)$/i.test(p)) continue;
         if (/^\/(wp-json|wp-admin|wp-login|wp-content|wc-api|cart|my-account|checkout|feed)\b/i.test(p)) continue;

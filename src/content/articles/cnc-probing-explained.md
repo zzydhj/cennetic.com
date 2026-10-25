@@ -25,7 +25,7 @@ sourceId: 7554
   <!-- ① 引言段 -->
 
 
-  <p>If you’re new to CNC machining, <strong>CNC probing</strong> is one of the most impactful technologies you can add to your workflow. CNC probing uses a <strong>touch probe</strong> to automatically measure workpiece position, tool offsets, and part dimensions directly on the machine — eliminating manual setup errors and dramatically improving accuracy. At <a href="/" rel="noopener">QiaoFeng</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve helped beginners reduce scrap rates significantly after implementing probing cycles. This guide covers what CNC probing is, how probing cycles work, and why it’s a game-changer for your shop.</p>
+  <p>If you’re new to CNC machining, <strong>CNC probing</strong> is one of the most impactful technologies you can add to your workflow. CNC probing uses a <strong>touch probe</strong> to automatically measure workpiece position, tool offsets, and part dimensions directly on the machine — eliminating manual setup errors and dramatically improving accuracy. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve helped beginners reduce scrap rates significantly after implementing probing cycles. This guide covers what CNC probing is, how probing cycles work, and why it’s a game-changer for your shop.</p>
 
   <img decoding="async" src="/images/2026/06/cnc-probing-explained-1.webp" alt="CNC probing touch probe measuring workpiece on milling machine" width="1200" height="686" loading="lazy">
 
@@ -226,7 +226,7 @@ M99
   <p>A <strong>touch-trigger probe</strong> fires a discrete signal at the moment of contact — ideal for workpiece setting, tool length measurement, and discrete point inspection. A <strong>scanning probe</strong> measures continuously along a surface path — used for complex surface profiling and reverse engineering. For most beginners and production shops, a touch-trigger probe covers 95% of use cases.</p>
 
   <h3 id="q4-what-maintenance-does-a-cnc-touch-probe-require">Q4: What maintenance does a CNC touch probe require?</h3>
-  <p>Very little. Keep the stylus tip clean and free from coolant residue. Replace the battery on wireless models approximately once per year (or when the low-battery indicator triggers). The IP68-sealed body requires no internal cleaning. QiaoFeng machines come with a <strong>2-year warranty</strong> covering manufacturing defects — quality issues are fully supported for repair or replacement.</p>
+  <p>Very little. Keep the stylus tip clean and free from coolant residue. Replace the battery on wireless models approximately once per year (or when the low-battery indicator triggers). The IP68-sealed body requires no internal cleaning. Cennetic machines come with a <strong>2-year warranty</strong> covering manufacturing defects — quality issues are fully supported for repair or replacement.</p>
 
   <h3 id="q5-can-probing-be-used-for-in-process-measurement-during-cut">Q5: Can probing be used for in-process measurement during cutting?</h3>
   <p>Absolutely. This is called <strong>adaptive machining</strong> or in-cycle gauging. The probe measures a feature mid-program, stores the result in a variable, and the macro calculates the required offset correction — all without stopping the machine. This is particularly valuable for tight-tolerance bores, shaft diameters, and thin-wall features where thermal growth affects dimensions.</p>
@@ -239,10 +239,10 @@ M99
   <!-- ⑨ CTA Box -->
   <div class="qf-cta-box">
     <h3 id="ready-to-eliminate-setup-errors-with-cnc-probing">Ready to Eliminate Setup Errors with CNC Probing?</h3>
-    <p>QiaoFeng has been helping 750+ manufacturers across Europe, North America, and Southeast Asia automate their CNC processes since 2010. Our team will help you select the right probing solution and integrate it into your workflow — with 2-year warranty and full technical support included.</p>
+    <p>Cennetic has been helping 750+ manufacturers across Europe, North America, and Southeast Asia automate their CNC processes since 2010. Our team will help you select the right probing solution and integrate it into your workflow — with 2-year warranty and full technical support included.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Probing%20Explained%3A%20A%20Beginner's%20Guide%20to%20Touch%20Probe%20Systems%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-probing-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email: bella@qfcncmachine.com</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Probing%20Explained%3A%20A%20Beginner's%20Guide%20to%20Touch%20Probe%20Systems%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-probing-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email: bella@cennetic.com</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">📞 +86 151 1824 3737</a>
     </div>
   </div>

@@ -1,7 +1,7 @@
 ---
 title: 'CNC Parts Catcher Alarm: Diagnose & Fix Collection Errors'
 heading: 'CNC Parts Catcher Alarm: Diagnose & Fix Collection Errors'
-description: Halt production due to a CNC parts catcher alarm? Learn how to diagnose part collector errors and see QiaoFeng's reliable CNC lathe solutions.
+description: Halt production due to a CNC parts catcher alarm? Learn how to diagnose part collector errors and see Cennetic's reliable CNC lathe solutions.
 slug: cnc-parts-catcher-alarm-troubleshooting
 canonical: /cnc-parts-catcher-alarm-troubleshooting/
 date: '2026-07-20T04:29:40'
@@ -22,7 +22,7 @@ sourceId: 7168
 
 <div class="qf-article-body">
 
-  <p>If you operate a CNC lathe, you have likely encountered a <strong>CNC parts catcher alarm</strong> that abruptly halts production. At QiaoFeng, established in 2010 in Dalingshan Town, Dongguan, we understand the frustration of unexpected downtime. The parts catcher is a critical component for automated machining, and when it fails, it triggers a part collection error that can lead to damaged components or tool collisions. With over 15 years of experience manufacturing robust CNC machines, this guide will help you diagnose and fix common CNC parts catcher faults quickly.</p>
+  <p>If you operate a CNC lathe, you have likely encountered a <strong>CNC parts catcher alarm</strong> that abruptly halts production. At Cennetic, established in 2010 in Dalingshan Town, Dongguan, we understand the frustration of unexpected downtime. The parts catcher is a critical component for automated machining, and when it fails, it triggers a part collection error that can lead to damaged components or tool collisions. With over 15 years of experience manufacturing robust CNC machines, this guide will help you diagnose and fix common CNC parts catcher faults quickly.</p>
 
   <p><img decoding="async" src="/images/2026/06/cnc-parts-catcher-alarm-1.webp" alt="CNC operator troubleshooting parts catcher alarm on machine control panel" width="1200" height="686" loading="lazy"></p>
 
@@ -67,16 +67,16 @@ sourceId: 7168
     <li><strong>Aerospace Components:</strong> A shop machining curved turbine blades encountered a part collector error because the blade’s shape caused it to tip over, missing the sensor’s beam. Adding a custom urethane insert to the tray kept the part upright and resolved the alarm.</li>
   </ol>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-parts-catcher-alarm-2.webp" alt="QiaoFeng CNC lathe parts catcher with sensor array and shock-absorbing tray" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="/images/2026/06/cnc-parts-catcher-alarm-2.webp" alt="Cennetic CNC lathe parts catcher with sensor array and shock-absorbing tray" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="what-our-global-clients-say">What Our Global Clients Say</h2>
-  <p>QiaoFeng exports high-performance CNC lathes primarily to Europe, North America, and Southeast Asia. Our machines are engineered to minimize nuisance alarms and maximize automated runtime.</p>
+  <p>Cennetic exports high-performance CNC lathes primarily to Europe, North America, and Southeast Asia. Our machines are engineered to minimize nuisance alarms and maximize automated runtime.</p>
 
-  <div class="qf-testimonial"><blockquote>“We run lights-out manufacturing for our hydraulic fittings. The parts catcher systems on our QiaoFeng lathes are incredibly reliable. We rarely see a CNC parts catcher alarm, which keeps our overnight production highly profitable.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“We run lights-out manufacturing for our hydraulic fittings. The parts catcher systems on our Cennetic lathes are incredibly reliable. We rarely see a CNC parts catcher alarm, which keeps our overnight production highly profitable.”</blockquote></div>
 
-  <div class="qf-testimonial"><blockquote>“The precision of QiaoFeng’s machines is matched by their robust automation features. When we did face a part collector error due to our own programming mistake, their technical support team helped us resolve it in minutes.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“The precision of Cennetic’s machines is matched by their robust automation features. When we did face a part collector error due to our own programming mistake, their technical support team helped us resolve it in minutes.”</blockquote></div>
 
-  <div class="qf-testimonial"><blockquote>“Since upgrading to QiaoFeng CNC lathes, our scrap rate caused by dropped parts has dropped to zero. The sensors are well-protected from coolant, making maintenance a breeze.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“Since upgrading to Cennetic CNC lathes, our scrap rate caused by dropped parts has dropped to zero. The sensors are well-protected from coolant, making maintenance a breeze.”</blockquote></div>
 
   <h2 id="pros-and-cons-of-automated-parts-catchers">Pros and Cons of Automated Parts Catchers</h2>
   <div class="qf-pros-cons">
@@ -99,7 +99,7 @@ sourceId: 7168
   </div>
 
   <div class="qf-highlight">
-    <strong>The QiaoFeng Guarantee:</strong> Built in Dongguan, our CNC machines are designed for maximum uptime and seamless automation. Every machine we manufacture comes with a standard <strong>2-year warranty</strong>. Please note our refund policy: while we do not support returns without reason, we <strong>fully support refunds or remakes for any verifiable quality issues</strong>. Join our 750+ satisfied clients and experience worry-free machining.
+    <strong>The Cennetic Guarantee:</strong> Built in Dongguan, our CNC machines are designed for maximum uptime and seamless automation. Every machine we manufacture comes with a standard <strong>2-year warranty</strong>. Please note our refund policy: while we do not support returns without reason, we <strong>fully support refunds or remakes for any verifiable quality issues</strong>. Join our 750+ satisfied clients and experience worry-free machining.
   </div>
 
   <h2 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h2>
@@ -110,18 +110,18 @@ sourceId: 7168
   <h3 id="2-how-often-should-i-clean-the-parts-catcher-sensors">2. How often should I clean the parts catcher sensors?</h3>
   <p>We recommend a quick visual inspection and wipe-down of the proximity sensors at the start of every shift. Keeping the sensors free of coolant residue and fine metal chips will prevent 90% of false alarms.</p>
 
-  <h3 id="3-can-qiaofeng-machines-handle-heavy-parts-without-triggerin">3. Can QiaoFeng machines handle heavy parts without triggering an alarm?</h3>
-  <p>Yes. QiaoFeng CNC lathes feature heavy-duty pneumatic parts catchers with adjustable shock absorption. By tuning the air pressure and cushioning, the catcher can safely retrieve heavy components without bouncing or triggering a fault.</p>
+  <h3 id="3-can-cennetic-machines-handle-heavy-parts-without-triggerin">3. Can Cennetic machines handle heavy parts without triggering an alarm?</h3>
+  <p>Yes. Cennetic CNC lathes feature heavy-duty pneumatic parts catchers with adjustable shock absorption. By tuning the air pressure and cushioning, the catcher can safely retrieve heavy components without bouncing or triggering a fault.</p>
 
   <h3 id="4-what-is-your-warranty-and-technical-support-policy">4. What is your warranty and technical support policy?</h3>
-  <p>All QiaoFeng CNC machines come with a comprehensive 2-year warranty. If you experience persistent alarms or mechanical issues, our engineering team provides rapid remote troubleshooting to get your machine back online.</p>
+  <p>All Cennetic CNC machines come with a comprehensive 2-year warranty. If you experience persistent alarms or mechanical issues, our engineering team provides rapid remote troubleshooting to get your machine back online.</p>
 
   <div class="qf-cta-box">
     <h3 id="eliminate-downtime-with-reliable-cnc-lathes">Eliminate Downtime with Reliable CNC Lathes</h3>
-    <p>Tired of constant part collector errors? Upgrade your production line with QiaoFeng’s robust CNC machines, engineered for seamless automation and backed by 15 years of expertise.</p>
+    <p>Tired of constant part collector errors? Upgrade your production line with Cennetic’s robust CNC machines, engineered for seamless automation and backed by 15 years of expertise.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Parts%20Catcher%20Alarm%3A%20Diagnose%20%26%20Fix%20Collection%20Errors%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-parts-catcher-alarm-troubleshooting%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Us</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Parts%20Catcher%20Alarm%3A%20Diagnose%20%26%20Fix%20Collection%20Errors%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-parts-catcher-alarm-troubleshooting%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Us</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 15118243737</a>
     </div>
   </div>

@@ -47,7 +47,7 @@ sourceId: 7538
 <div class="qf-article-body">
 
   <!-- ① 引言段 -->
-  <p>If you’re a CNC beginner diving into thread cutting, mastering the <strong>CNC threading cycle</strong> is your first step toward precision, efficiency, and reduced scrap. At <a href="/" rel="noopener">QiaoFeng CNC</a>, we’ve helped <strong>750+ machinists</strong> across Europe, North America, and Southeast Asia optimize their threading processes since 2010. In this guide, you’ll learn the <strong>CNC threading cycle</strong> definition, the real difference between G76 (multiple-pass) and G92 (simple thread) cycles, complete G-code examples, and real-world case studies that have saved clients up to 30% in cycle time.</p>
+  <p>If you’re a CNC beginner diving into thread cutting, mastering the <strong>CNC threading cycle</strong> is your first step toward precision, efficiency, and reduced scrap. At <a href="/" rel="noopener">Cennetic CNC</a>, we’ve helped <strong>750+ machinists</strong> across Europe, North America, and Southeast Asia optimize their threading processes since 2010. In this guide, you’ll learn the <strong>CNC threading cycle</strong> definition, the real difference between G76 (multiple-pass) and G92 (simple thread) cycles, complete G-code examples, and real-world case studies that have saved clients up to 30% in cycle time.</p>
 
   <img decoding="async" src="/images/2026/06/cnc-threading-cycle-1.webp" alt="CNC threading cycle G76 vs G92 toolpath comparison on CNC lathe" width="1200" height="686" loading="lazy">
 
@@ -181,14 +181,14 @@ G00 X100.0 Z50.0                  ; Retract</code></pre>
   <strong>Solution:</strong> Switched to G76 with a 0.2 mm first-pass depth (Q200), 29° infeed, and a chamfer setting of 10 (one-pitch runout).<br>
   <strong>Result:</strong> Crest tears eliminated entirely. The process passed API 5B certification on the first audit. Tool change frequency reduced by 35%.</p>
 
-  <div class="qf-testimonial"><blockquote>“QiaoFeng’s application team walked us through the G76 parameter block line by line. We’d been fighting crest damage for months. Two days after implementing their recommended settings, we ran 300 couplings without a single rejection. That’s the kind of support you don’t find everywhere.”</blockquote><figcaption>— James R., CNC Supervisor, Oilfield Equipment Manufacturer, Houston, TX, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Cennetic’s application team walked us through the G76 parameter block line by line. We’d been fighting crest damage for months. Two days after implementing their recommended settings, we ran 300 couplings without a single rejection. That’s the kind of support you don’t find everywhere.”</blockquote><figcaption>— James R., CNC Supervisor, Oilfield Equipment Manufacturer, Houston, TX, USA</figcaption></div>
 
   <h3 id="case-3-medical-implant-fine-pitch-threads-vietnam">Case 3 — Medical Implant Fine-Pitch Threads (Vietnam)</h3>
   <p><strong>Pain Point:</strong> A Ho Chi Minh City medical device contract manufacturer needed burr-free 0.5 mm pitch threads on Grade 5 titanium implant components. G92’s constant plunge caused micro-burrs that required costly secondary deburring.<br>
   <strong>Solution:</strong> Implemented G76 with 0° infeed (plunge, optimal for fine pitch), a 0.05 mm finish allowance (R0.05), and an automatic spring pass.<br>
   <strong>Result:</strong> Achieved Class 3A fit with zero burrs. Secondary deburring operation eliminated, saving $0.50 per part. Monthly output increased by 18%.</p>
 
-  <div class="qf-testimonial"><blockquote>“The G76 cycle with the spring pass setting was a game-changer for our titanium threading. We had tried everything to eliminate the micro-burrs — different inserts, slower feeds — but the real fix was in the cycle itself. QiaoFeng’s guidance was precise and practical.”</blockquote><figcaption>— Nguyen T.H., Process Engineer, Medical Device Contract Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“The G76 cycle with the spring pass setting was a game-changer for our titanium threading. We had tried everything to eliminate the micro-burrs — different inserts, slower feeds — but the real fix was in the cycle itself. Cennetic’s guidance was precise and practical.”</blockquote><figcaption>— Nguyen T.H., Process Engineer, Medical Device Contract Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
   <!-- ⑧ Pros/Cons -->
   <h2 id="7-pros-cons-g92-vs-g76-at-a-glance">7. Pros &amp; Cons: G92 vs G76 at a Glance</h2>
@@ -237,14 +237,14 @@ G00 X100.0 Z50.0                  ; Retract</code></pre>
 
   <!-- ⑨ Highlight 总结 -->
   <div class="qf-highlight">
-    <strong>📌 Summary:</strong> For beginners, <strong>start with G92</strong> on simple aluminum or mild steel jobs to build confidence. <strong>Transition to G76</strong> as soon as you move to production quantities, harder materials, or quality-critical applications. QiaoFeng’s application engineers — with over <strong>15 years of CNC threading experience</strong> — recommend G76 as the default <strong>CNC threading cycle</strong> for any thread requiring repeatability or a controlled surface finish.
+    <strong>📌 Summary:</strong> For beginners, <strong>start with G92</strong> on simple aluminum or mild steel jobs to build confidence. <strong>Transition to G76</strong> as soon as you move to production quantities, harder materials, or quality-critical applications. Cennetic’s application engineers — with over <strong>15 years of CNC threading experience</strong> — recommend G76 as the default <strong>CNC threading cycle</strong> for any thread requiring repeatability or a controlled surface finish.
   </div>
 
   <!-- Expert Quote -->
   <blockquote>
     “Many beginners treat G92 and G76 as interchangeable — that’s a costly mistake. G92 is acceptable for soft materials and short runs, but for any production work, G76 is non-negotiable. The variable infeed alone can double your tool life, and the spring pass eliminates an entire finishing operation. Once you understand the P-word structure, G76 is just as fast to program.”
     <br><br>
-    <strong>— Bella, Founder &amp; Senior Applications Engineer, QFCNCMACHINE.COM (15 years CNC industry experience)</strong>
+    <strong>— Bella, Founder &amp; Senior Applications Engineer, CENNETIC.COM (15 years CNC industry experience)</strong>
   </blockquote>
 
   <!-- ⑩ FAQ -->
@@ -288,8 +288,8 @@ G00 X100.0 Z50.0                  ; Retract</code></pre>
     <h2 id="ready-to-optimize-your-cnc-threading-cycle">Ready to Optimize Your CNC Threading Cycle?</h2>
     <p>Our application engineers have helped 750+ machinists across Europe, North America, and Southeast Asia reduce scrap, extend tool life, and cut cycle time. Get a free consultation tailored to your specific material and thread specification.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Threading%20Cycle%3A%20Beginner's%20Guide%20to%20G76%20and%20G92%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-threading-cycle%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Threading%20Cycle%3A%20Beginner's%20Guide%20to%20G76%20and%20G92%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-threading-cycle%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 151 1824 3737</a>
     </div>
   </div>

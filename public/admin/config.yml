@@ -1,11 +1,11 @@
 # ─────────────────────────────────────────────────────────────
 # Decap CMS 内容后台配置
 #
-# 访问路径：https://qfcncmachine.com/admin/
+# 访问路径：https://www.cennetic.com/admin/
 #
 # ── 上线前必须做的一步 ──
 #   1. GitHub → Settings → Developer settings → OAuth Apps → New OAuth App
-#   2. Authorization callback URL 填：https://qfcncmachine.com/admin/auth
+#   2. Authorization callback URL 填：https://www.cennetic.com/admin/auth
 #      （路径必须是 /admin/auth，Decap 硬编码这个回调，改不了）
 #   3. 把生成的 Client ID 填到下面 backend.client_id
 #      不要勾 "Generate a client secret"：implicit 流程用不到 secret，
@@ -31,7 +31,7 @@
 
 backend:
     name: github
-    repo: zzydhj/qfcncmachine.com
+    repo: zzydhj/cennetic.com
     branch: main
     auth_type: implicit
     client_id: REPLACE_WITH_GITHUB_OAUTH_CLIENT_ID
@@ -43,8 +43,8 @@ publish_mode: editorial_workflow
 media_folder: public/uploads
 public_folder: /uploads
 
-site_url: https://qfcncmachine.com
-display_url: https://qfcncmachine.com
+site_url: https://www.cennetic.com
+display_url: https://www.cennetic.com
 logo_url: /favicon.svg
 show_preview_links: true
 

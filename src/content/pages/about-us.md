@@ -3,7 +3,7 @@ title: About Us
 heading: About Us
 slug: about-us
 canonical: /about-us/
-description: "QIAOFENG\_is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source"
+description: "CENNETIC\_is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source"
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2025-12-29T14:41:22'
 lastmod: '2026-05-17T14:53:14'
@@ -39,7 +39,7 @@ High-Precision CNC Solutions</h4>
 
 			
 			<div class="liner-continer">
-				<h4 class="woodmart-title-container title wd-fontsize-l wd-underline-gradient">Welcome to <u>Qiaofeng </u> Intelligent Equipment </h4> 
+				<h4 class="woodmart-title-container title wd-fontsize-l wd-underline-gradient">Welcome to <u>Cennetic </u> Intelligent Equipment </h4> 
 							</div>
 
 					</div>
@@ -66,7 +66,7 @@ High-Precision CNC Solutions</h4>
 				<div class="elementor-widget-container">
 							<div class="wd-text-block reset-last-child text-left">
 			
-			<p><strong>QIAOFENG&nbsp;</strong>is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source factory dedicated to engineering, manufacturing, and delivering top-tier, high-efficiency machining solutions to the global market.</p><p>Backed by state-of-the-art manufacturing facilities and a robust R&amp;D team, we offer a comprehensive product portfolio tailored to your diverse industrial needs. Beyond standalone machines, QIAOFENG excels in providing customized, turnkey production line solutions.</p><p>Driven by our commitment to&nbsp;<span class="text-industrial-800 font-semibold">"Agile Response &amp; Rapid Execution,"</span>&nbsp;we ensure that you always receive the most suitable, cost-effective solutions with fast lead times and comprehensive global support.</p>
+			<p><strong>CENNETIC&nbsp;</strong>is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source factory dedicated to engineering, manufacturing, and delivering top-tier, high-efficiency machining solutions to the global market.</p><p>Backed by state-of-the-art manufacturing facilities and a robust R&amp;D team, we offer a comprehensive product portfolio tailored to your diverse industrial needs. Beyond standalone machines, CENNETIC excels in providing customized, turnkey production line solutions.</p><p>Driven by our commitment to&nbsp;<span class="text-industrial-800 font-semibold">"Agile Response &amp; Rapid Execution,"</span>&nbsp;we ensure that you always receive the most suitable, cost-effective solutions with fast lead times and comprehensive global support.</p>
 					</div>
 						</div>
 				</div>
@@ -85,7 +85,7 @@ High-Precision CNC Solutions</h4>
 
 			
 			<div class="liner-continer">
-				<h4 class="woodmart-title-container title wd-fontsize-l">Why Partner With Qiaofeng?<br>
+				<h4 class="woodmart-title-container title wd-fontsize-l">Why Partner With Cennetic?<br>
 </h4> 
 							</div>
 

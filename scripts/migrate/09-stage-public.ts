@@ -17,7 +17,7 @@
  * 裸 clone 就永远得不到这两个文件 —— 首页会没背景视频。
  *
  * 这是**切到 Cloudflare R2 之前**的临时链路：图片随构建产物一起发边缘节点。
- * 定案是原图存 R2、经 media.qfcncmachine.com 访问，届时本阶段退役，
+ * 定案是原图存 R2、经 media.cennetic.com 访问，届时本阶段退役，
  * 只需把图片 URL 出口（scripts/migrate/lib/images.ts 的 publicPathFromKey）
  * 改成指向 R2 域名，业务代码不用动。
  *

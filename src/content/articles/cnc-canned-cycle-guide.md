@@ -1,7 +1,7 @@
 ---
 title: 'CNC Canned Cycle Guide: G81, G83, G84'
 heading: 'CNC Canned Cycle: Master Fixed Cycles for Beginners'
-description: Master CNC canned cycles (G81-G84) with real G-code examples. Reduce programming time 40-50%. Expert guide from QFCNCMACHINE with 15 years experience.
+description: Master CNC canned cycles (G81-G84) with real G-code examples. Reduce programming time 40-50%. Expert guide from CENNETIC with 15 years experience.
 slug: cnc-canned-cycle-guide
 canonical: /cnc-canned-cycle-guide/
 date: '2026-07-16T11:51:43'
@@ -29,7 +29,7 @@ sourceId: 7542
 <div class="qf-article-body">
 
   <!-- 1. INTRO -->
-  <p>If you’re new to CNC programming, understanding the <strong>CNC canned cycle</strong> — also called a fixed cycle — is one of the most valuable skills you can develop. A canned cycle is a pre-programmed subroutine built into your CNC controller that automates repetitive operations such as drilling, tapping, boring, and reaming. Instead of writing 8–12 lines of G-code for every single hole, you call one cycle code and supply a handful of parameters. At <a href="/" rel="noopener">QFCNCMACHINE</a>, we’ve supported <strong>750+ manufacturers</strong> across Europe, North America, and Southeast Asia since 2010, and canned cycles are consistently among the first techniques our application engineers teach new operators.</p>
+  <p>If you’re new to CNC programming, understanding the <strong>CNC canned cycle</strong> — also called a fixed cycle — is one of the most valuable skills you can develop. A canned cycle is a pre-programmed subroutine built into your CNC controller that automates repetitive operations such as drilling, tapping, boring, and reaming. Instead of writing 8–12 lines of G-code for every single hole, you call one cycle code and supply a handful of parameters. At <a href="/" rel="noopener">CENNETIC</a>, we’ve supported <strong>750+ manufacturers</strong> across Europe, North America, and Southeast Asia since 2010, and canned cycles are consistently among the first techniques our application engineers teach new operators.</p>
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="1-why-cnc-canned-cycles-matter-industry-data">1. Why CNC Canned Cycles Matter: Industry Data</h2>
@@ -170,12 +170,12 @@ sourceId: 7542
   </table>
 
   <div class="qf-highlight">
-    <strong>Important:</strong> Siemens 840D uses named cycle commands (e.g., <strong>CYCLE83</strong>) with keyword parameters rather than address letters. Always consult your machine’s programming manual before transferring programs between controls. All QFCNCMACHINE machining centers support Fanuc, Siemens, Mitsubishi, SYNTEC, and LNC control configurations.
+    <strong>Important:</strong> Siemens 840D uses named cycle commands (e.g., <strong>CYCLE83</strong>) with keyword parameters rather than address letters. Always consult your machine’s programming manual before transferring programs between controls. All CENNETIC machining centers support Fanuc, Siemens, Mitsubishi, SYNTEC, and LNC control configurations.
   </div>
 
   <!-- 7. CASE STUDY -->
   <h2 id="6-real-world-case-study-automotive-component-manufacturer">6. Real-World Case Study: Automotive Component Manufacturer</h2>
-  <p>A mid-sized automotive supplier in the US Midwest faced a critical bottleneck: CNC operators were spending 45+ minutes programming bolt-hole patterns on engine blocks. Each block required 32 holes — a combination of drilling, tapping M10×1.5, and finish boring. After implementing <strong>G81 drilling cycles</strong>, <strong>G84 tapping cycles</strong>, and <strong>G85 boring cycles</strong> on their QFCNCMACHINE vertical machining centers, the results were significant:</p>
+  <p>A mid-sized automotive supplier in the US Midwest faced a critical bottleneck: CNC operators were spending 45+ minutes programming bolt-hole patterns on engine blocks. Each block required 32 holes — a combination of drilling, tapping M10×1.5, and finish boring. After implementing <strong>G81 drilling cycles</strong>, <strong>G84 tapping cycles</strong>, and <strong>G85 boring cycles</strong> on their CENNETIC vertical machining centers, the results were significant:</p>
   <ul>
     <li>Programming time per part: <strong>45 min → 10 min</strong> (78% reduction)</li>
     <li>Scrap rate: <strong>5% → 0.5%</strong> (consistent depth control via R-plane management)</li>
@@ -184,11 +184,11 @@ sourceId: 7542
 
   <h3 id="customer-testimonials">Customer Testimonials</h3>
 
-  <div class="qf-testimonial"><blockquote>“We run a high-mix, low-volume shop in Stuttgart, Germany, producing hydraulic manifold blocks. After switching to QFCNCMACHINE vertical machining centers and adopting G83 peck drilling and G84 tapping cycles, our programming time dropped by nearly half. The consistency across 200+ hole patterns per batch is something we couldn’t achieve before. Bella’s team walked us through the setup remotely — excellent support.”</blockquote><figcaption>— Markus R., Production Manager, Precision Hydraulics GmbH, Stuttgart, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We run a high-mix, low-volume shop in Stuttgart, Germany, producing hydraulic manifold blocks. After switching to CENNETIC vertical machining centers and adopting G83 peck drilling and G84 tapping cycles, our programming time dropped by nearly half. The consistency across 200+ hole patterns per batch is something we couldn’t achieve before. Bella’s team walked us through the setup remotely — excellent support.”</blockquote><figcaption>— Markus R., Production Manager, Precision Hydraulics GmbH, Stuttgart, Germany</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“We manufacture aluminum structural brackets for the aerospace supply chain in California. The G81 and G82 canned cycles on our QFCNCMACHINE VMC cut our per-part programming time from 35 minutes to under 8 minutes. The 2-year warranty and responsive after-sales team gave us the confidence to standardize on QFCNCMACHINE across three of our cells.”</blockquote><figcaption>— David L., CNC Programming Lead, Pacific Aero Components, Los Angeles, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We manufacture aluminum structural brackets for the aerospace supply chain in California. The G81 and G82 canned cycles on our CENNETIC VMC cut our per-part programming time from 35 minutes to under 8 minutes. The 2-year warranty and responsive after-sales team gave us the confidence to standardize on CENNETIC across three of our cells.”</blockquote><figcaption>— David L., CNC Programming Lead, Pacific Aero Components, Los Angeles, USA</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“Kami memproduksi komponen otomotif di Rayong, Thailand, dan sebelumnya menghabiskan banyak waktu untuk pemrograman manual. Dengan siklus G83 dan G84 di mesin QFCNCMACHINE, waktu pemrograman kami berkurang 60% dan tingkat cacat turun drastis. Tim Bella sangat responsif dan profesional — kami sudah memesan mesin kedua.”</blockquote><figcaption>— Somchai P., Factory Director, Thai Precision Auto Parts Co., Ltd., Rayong, Thailand</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Kami memproduksi komponen otomotif di Rayong, Thailand, dan sebelumnya menghabiskan banyak waktu untuk pemrograman manual. Dengan siklus G83 dan G84 di mesin CENNETIC, waktu pemrograman kami berkurang 60% dan tingkat cacat turun drastis. Tim Bella sangat responsif dan profesional — kami sudah memesan mesin kedua.”</blockquote><figcaption>— Somchai P., Factory Director, Thai Precision Auto Parts Co., Ltd., Rayong, Thailand</figcaption></div>
 
   <!-- 8. PROS / CONS -->
   <h2 id="7-pros-cons-of-cnc-canned-cycles">7. Pros &amp; Cons of CNC Canned Cycles</h2>
@@ -238,10 +238,10 @@ sourceId: 7542
   <p><strong>G99</strong> (default on most controls) retracts the tool to the <em>R plane</em> between holes — faster, but the R plane must clear all clamps and fixtures. <strong>G98</strong> retracts to the <em>initial plane</em> (the Z height when the cycle was first called) — slower, but safer when fixtures or clamps protrude above the R plane. Use G99 for flat parts with no obstructions; switch to G98 for the last hole or when traversing over clamps.</p>
 
   <h3 id="can-i-use-canned-cycles-on-any-cnc-machine">Can I use canned cycles on any CNC machine?</h3>
-  <p>All modern CNC controls — Fanuc, Haas, Siemens, Mitsubishi, SYNTEC — support the standard drilling and tapping canned cycles. The G-code numbers are consistent for Fanuc-based controls; Siemens 840D uses named commands (CYCLE81, CYCLE83, etc.) with slightly different syntax. Always verify against your specific machine’s programming manual. All QFCNCMACHINE machining centers ship with full programming documentation and support for your chosen control system.</p>
+  <p>All modern CNC controls — Fanuc, Haas, Siemens, Mitsubishi, SYNTEC — support the standard drilling and tapping canned cycles. The G-code numbers are consistent for Fanuc-based controls; Siemens 840D uses named commands (CYCLE81, CYCLE83, etc.) with slightly different syntax. Always verify against your specific machine’s programming manual. All CENNETIC machining centers ship with full programming documentation and support for your chosen control system.</p>
 
   <h3 id="are-canned-cycles-suitable-for-cnc-beginners">Are canned cycles suitable for CNC beginners?</h3>
-  <p>Absolutely — in fact, canned cycles are the <em>recommended starting point</em> for beginners learning hole-making operations. They reduce the volume of code you need to write and understand, enforce good programming habits (R-plane management, feed rate calculation for tapping), and produce consistent, repeatable results. QFCNCMACHINE provides training templates and remote programming support for all customers.</p>
+  <p>Absolutely — in fact, canned cycles are the <em>recommended starting point</em> for beginners learning hole-making operations. They reduce the volume of code you need to write and understand, enforce good programming habits (R-plane management, feed rate calculation for tapping), and produce consistent, repeatable results. CENNETIC provides training templates and remote programming support for all customers.</p>
 
   <h3 id="what-is-a-common-mistake-when-using-g84-tapping-cycles">What is a common mistake when using G84 tapping cycles?</h3>
   <p>The most common — and costly — mistake is an incorrect feed rate. For rigid tapping with G84, the feed rate <strong>must exactly equal pitch (mm) × spindle speed (RPM)</strong>. For example, an M8×1.25 tap at 500 RPM requires F625 (1.25 × 500). An incorrect F value will cause the tap to either pull out of the thread or break inside the workpiece. Always double-check your F calculation before running a tapping cycle.</p>
@@ -249,10 +249,10 @@ sourceId: 7542
   <!-- 11. CTA -->
   <div class="qf-cta-box">
     <h3 id="ready-to-master-cnc-canned-cycles">Ready to Master CNC Canned Cycles?</h3>
-    <p>Talk to our application engineers at QFCNCMACHINE — 15 years of CNC expertise, 750+ machines installed worldwide, 2-year warranty on every machine. Get a free consultation today.</p>
+    <p>Talk to our application engineers at CENNETIC — 15 years of CNC expertise, 750+ machines installed worldwide, 2-year warranty on every machine. Get a free consultation today.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Canned%20Cycle%3A%20Master%20Fixed%20Cycles%20for%20Beginners%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-canned-cycle-guide%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Canned%20Cycle%3A%20Master%20Fixed%20Cycles%20for%20Beginners%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-canned-cycle-guide%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call: +86 151 1824 3737</a>
     </div>
   </div>

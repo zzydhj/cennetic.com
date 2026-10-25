@@ -1,7 +1,7 @@
 ---
 title: 'CNC Surface Finish Explained: Ra, Rz & RMS Beginner''s Guide'
 heading: 'CNC Surface Finish Explained: Ra, Rz & RMS — A Beginner''s Guide'
-description: Learn CNC surface finish Ra, Rz & RMS in plain English. Compare parameters, measurement methods & real-world applications. Expert guide by QiaoFeng.
+description: Learn CNC surface finish Ra, Rz & RMS in plain English. Compare parameters, measurement methods & real-world applications. Expert guide by Cennetic.
 slug: cnc-surface-finish-explained
 canonical: /cnc-surface-finish-explained/
 date: '2026-06-29T14:24:40'
@@ -28,7 +28,7 @@ sourceId: 7483
      Permalink (28 chr): cnc-surface-finish-explained
      Description (148) : Learn CNC surface finish Ra, Rz & RMS in plain English.
                          Compare parameters, measurement methods & real-world
-                         applications. Expert guide by QiaoFeng.
+                         applications. Expert guide by Cennetic.
      Target KW Density : ~1.25%  (≈19 occurrences / 1,500 words)
      Category          : Technical Knowledge (primary) + Buying Guides (secondary)
 ============================================================ -->
@@ -46,7 +46,7 @@ sourceId: 7483
     titanium medical implant, the <strong>CNC surface finish</strong> you
     call out on the drawing directly determines how the part performs in
     service — and how much it costs to produce. At
-    <a href="/" rel="noopener" target="_blank">QiaoFeng</a>,
+    <a href="/" rel="noopener" target="_blank">Cennetic</a>,
     founded in <strong>2010</strong> in Dongguan, Guangdong, our team has
     spent <strong>15 years</strong> helping <strong>750+ customers</strong>
     across North America, Europe, and Southeast Asia specify, achieve, and
@@ -57,7 +57,7 @@ sourceId: 7483
     right finish specification for any part.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-1.webp" alt="QiaoFeng CNC surface finish measurement with contact profilometer on precision machined part" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-1.webp" alt="Cennetic CNC surface finish measurement with contact profilometer on precision machined part" width="1200" height="686" loading="lazy">
 
   <!-- ② INDUSTRY DATA -->
   <h2 id="why-cnc-surface-finish-specification-is-more-critical-than-e">Why CNC Surface Finish Specification Is More Critical Than Ever</h2>
@@ -155,7 +155,7 @@ sourceId: 7483
     they require before machining.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-2.webp" alt="QiaoFeng CNC surface finish Ra vs Rz parameter diagram showing peak-to-valley measurement" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-2.webp" alt="Cennetic CNC surface finish Ra vs Rz parameter diagram showing peak-to-valley measurement" width="1200" height="686" loading="lazy">
 
   <!-- ④ MEASUREMENT METHODS -->
   <h2 id="2-cnc-surface-finish-measurement-methods">2. CNC Surface Finish Measurement Methods</h2>
@@ -204,7 +204,7 @@ sourceId: 7483
   </table>
 
   <p>
-    For prototype and production orders, QiaoFeng provides a
+    For prototype and production orders, Cennetic provides a
     <strong>measurement report with Ra and Rz values</strong> for all
     critical surfaces, generated using calibrated contact profilometers
     traceable to national standards. Common <strong>CNC surface finish</strong>
@@ -214,11 +214,11 @@ sourceId: 7483
   </p>
 
   <!-- ⑤ CORE CAPABILITIES -->
-  <h2 id="3-qiaofeng-cnc-surface-finish-capabilities">3. QiaoFeng CNC Surface Finish Capabilities</h2>
+  <h2 id="3-cennetic-cnc-surface-finish-capabilities">3. Cennetic CNC Surface Finish Capabilities</h2>
 
   <h3 id="31-precision-ground-tooling">3.1 Precision Ground Tooling</h3>
   <p>
-    QiaoFeng uses diamond-ground carbide and CBN tooling with edge
+    Cennetic uses diamond-ground carbide and CBN tooling with edge
     radii controlled to sub-micron tolerances. Consistent cutting edge
     geometry directly reduces vibration and chatter — the primary causes
     of unexpected <strong>CNC surface finish</strong> degradation. The
@@ -257,13 +257,13 @@ sourceId: 7483
   </p>
 
   <!-- ⑥ COMPARISON TABLE -->
-  <h2 id="4-cnc-surface-finish-qiaofeng-vs-industry-benchmarks">4. CNC Surface Finish: QiaoFeng vs Industry Benchmarks</h2>
+  <h2 id="4-cnc-surface-finish-cennetic-vs-industry-benchmarks">4. CNC Surface Finish: Cennetic vs Industry Benchmarks</h2>
 
   <table class="qf-table">
     <thead>
       <tr>
         <th scope="col">Parameter</th>
-        <th scope="col">QiaoFeng Achievable</th>
+        <th scope="col">Cennetic Achievable</th>
         <th scope="col">Industry Typical</th>
         <th scope="col">Advantage</th>
       </tr>
@@ -324,7 +324,7 @@ sourceId: 7483
     valves. Their previous supplier was delivering bore surfaces at
     <strong>0.8 µm Ra</strong> — too rough to maintain seal integrity
     under 350-bar operating pressure.<br>
-    <strong>Solution:</strong> QiaoFeng used fine-grain carbide tooling
+    <strong>Solution:</strong> Cennetic used fine-grain carbide tooling
     with optimized coolant pressure and a final honing pass to achieve
     a consistent <strong>0.15 µm Ra</strong> on all bore surfaces.<br>
     <strong>Result:</strong> Valves passed <strong>10,000-cycle leak
@@ -335,7 +335,7 @@ sourceId: 7483
 
   <div class="qf-testimonial"><blockquote>“Our previous supplier kept delivering spool bores at 0.8 Ra and
       telling us it was ‘within tolerance.’ It wasn’t — we were getting
-      field leaks at 350 bar. QiaoFeng hit 0.15 Ra consistently from
+      field leaks at 350 bar. Cennetic hit 0.15 Ra consistently from
       the first batch, with a measurement report for every part. Ten
       thousand cycles, zero leaks. Our warranty claim rate dropped 30%
       in six months. That’s the difference between a supplier who
@@ -349,7 +349,7 @@ sourceId: 7483
     injection mold core with deep ribs and radii for an automotive
     interior trim component. Manual polishing was producing inconsistent
     results and adding 3–4 days to the mold delivery schedule.<br>
-    <strong>Solution:</strong> QiaoFeng employed 5-axis ball-end milling
+    <strong>Solution:</strong> Cennetic employed 5-axis ball-end milling
     with 0.01 mm stepovers followed by a single-pass diamond burnishing
     operation — eliminating manual polishing entirely.<br>
     <strong>Result:</strong> Mirror finish achieved in-machine to
@@ -361,11 +361,11 @@ sourceId: 7483
 
   <div class="qf-testimonial"><blockquote>“We were spending 3–4 days on manual polishing for every mold
       core, and the finish was never perfectly consistent between
-      operators. QiaoFeng eliminated polishing completely — Ra 0.04
+      operators. Cennetic eliminated polishing completely — Ra 0.04
       achieved in-machine with their 5-axis process. The mold has run
       500,000 shots without a single surface reject. We saved over
       €42,000 in polishing labor on this one tool alone. We’ve since
-      moved all our mirror-finish cores to QiaoFeng.”</blockquote><figcaption>— Stefan M., Toolroom Manager, Injection Mold Manufacturer,
+      moved all our mirror-finish cores to Cennetic.”</blockquote><figcaption>— Stefan M., Toolroom Manager, Injection Mold Manufacturer,
       Stuttgart, Germany</figcaption></div>
 
   <h3 id="53-titanium-hip-implant-vietnam">5.3 Titanium Hip Implant — Vietnam</h3>
@@ -378,7 +378,7 @@ sourceId: 7483
     Too smooth causes implant micromotion; too rough causes inflammatory
     response. Their existing process was producing results scattered
     between 0.3 and 1.2 µm Ra.<br>
-    <strong>Solution:</strong> QiaoFeng developed a custom toolpath
+    <strong>Solution:</strong> Cennetic developed a custom toolpath
     that varied feed rate across the implant surface geometry, combined
     with in-process probing to verify finish at five checkpoints per
     part.<br>
@@ -392,15 +392,15 @@ sourceId: 7483
   <div class="qf-testimonial"><blockquote>“Holding 0.4 to 0.8 Ra on titanium across a complex implant
       geometry is genuinely difficult — too smooth and you get
       micromotion, too rough and you get inflammation. Our previous
-      process was all over the place, 0.3 to 1.2. QiaoFeng’s custom
+      process was all over the place, 0.3 to 1.2. Cennetic’s custom
       toolpath and in-process probing brought us to 100% conformance
       across 2,000 units. FDA biocompatibility passed with zero
       surface findings. For medical work at this tolerance level,
-      QiaoFeng is the only supplier we trust.”</blockquote><figcaption>— Linh N., Quality &amp; Process Engineering Manager,
+      Cennetic is the only supplier we trust.”</blockquote><figcaption>— Linh N., Quality &amp; Process Engineering Manager,
       Medical Device Contract Manufacturer,
       Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-3.webp" alt="QiaoFeng CNC surface roughness measurement report with profilometer trace and Ra Rz values" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-3.webp" alt="Cennetic CNC surface roughness measurement report with profilometer trace and Ra Rz values" width="1200" height="686" loading="lazy">
 
   <!-- ⑧ PROS / CONS -->
   <h2 id="6-pros-cons-of-specifying-tight-cnc-surface-finish">6. Pros &amp; Cons of Specifying Tight CNC Surface Finish</h2>
@@ -440,7 +440,7 @@ sourceId: 7483
     and <strong>Ra 3.2 µm</strong> for non-critical structural features.
     Reserve <strong>Ra &lt; 0.4 µm</strong> for optical, mirror-mold, and
     medical implant applications where the functional requirement genuinely
-    demands it. QiaoFeng’s engineers will review your drawing and flag any
+    demands it. Cennetic’s engineers will review your drawing and flag any
     over- or under-specified <strong>CNC surface finish</strong> callouts
     before machining begins — at no charge.
   </div>
@@ -483,9 +483,9 @@ sourceId: 7483
     (ASME B46.1), but verify this for your specific material and process.
   </p>
 
-  <h3 id="can-qiaofeng-achieve-mirror-finish-cnc-surface-finish">Can QiaoFeng achieve mirror-finish CNC surface finish?</h3>
+  <h3 id="can-cennetic-achieve-mirror-finish-cnc-surface-finish">Can Cennetic achieve mirror-finish CNC surface finish?</h3>
   <p>
-    Yes. QiaoFeng achieves mirror finishes of <strong>Ra &lt; 0.1 µm</strong>
+    Yes. Cennetic achieves mirror finishes of <strong>Ra &lt; 0.1 µm</strong>
     using diamond turning, CBN finishing, and single-pass diamond
     burnishing. This is standard for optical mold inserts, precision
     optics, and medical implant surfaces. Mirror finishes require
@@ -497,7 +497,7 @@ sourceId: 7483
   <h3 id="how-long-does-it-take-to-machine-a-tight-surface-finish">How long does it take to machine a tight surface finish?</h3>
   <p>
     For standard finishes (<strong>Ra 0.8–3.2 µm</strong>), prototype
-    lead time at QiaoFeng is <strong>3–5 business days</strong>.
+    lead time at Cennetic is <strong>3–5 business days</strong>.
     For fine finishes (<strong>Ra 0.2–0.8 µm</strong>), allow
     <strong>5–7 business days</strong>. For ultra-fine or mirror finishes
     (<strong>Ra &lt; 0.1 µm</strong>), allow <strong>7–10 business
@@ -506,13 +506,13 @@ sourceId: 7483
     within 24 hours of machining completion.
   </p>
 
-  <h3 id="what-warranty-does-qiaofeng-offer">What warranty does QiaoFeng offer?</h3>
+  <h3 id="what-warranty-does-cennetic-offer">What warranty does Cennetic offer?</h3>
   <p>
-    QiaoFeng provides a <strong>2-year warranty</strong> on all CNC
+    Cennetic provides a <strong>2-year warranty</strong> on all CNC
     machined components and machine systems against quality-related
     defects. Parts with documented surface finish non-conformances
     are replaced or reworked at no charge. Contact
-    <a href="mailto:bella@qfcncmachine.com" rel="noopener">bella@qfcncmachine.com</a>
+    <a href="mailto:bella@cennetic.com" rel="noopener">bella@cennetic.com</a>
     for warranty or quality inquiries.
   </p>
 
@@ -526,10 +526,10 @@ sourceId: 7483
       with every order. Our engineers respond within 24 hours.
     </p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Surface%20Finish%20Explained%3A%20Ra%2C%20Rz%20%26%20RMS%20%E2%80%94%20A%20Beginner's%20Guide%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-surface-finish-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Surface%20Finish%20Explained%3A%20Ra%2C%20Rz%20%26%20RMS%20%E2%80%94%20A%20Beginner's%20Guide%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-surface-finish-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">
         Request Free Review &amp; Quote
       </a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com" rel="noopener">
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com" rel="noopener">
         Email Bella Directly
       </a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737" rel="noopener">

@@ -1,12 +1,12 @@
 {
-    "name": "QiaoFeng CNC Machine",
-    "legalName": "Qiaofeng Intelligent Equipment Co., Ltd.",
-    "shortName": "QiaoFeng",
-    "url": "https://qfcncmachine.com",
+    "name": "Cennetic CNC Machine",
+    "legalName": "Guangdong Cennetic Intelligent Equipment Co., Ltd.",
+    "shortName": "Cennetic",
+    "url": "https://www.cennetic.com",
     "language": "en",
     "logo": "/images/site/logo.svg",
     "description": "China-based source factory for high-precision CNC machine tools: vertical machining centers, drilling and tapping centers, and CNC lathes. Direct-from-factory pricing with 15 years of export experience.",
-    "email": "bella@qfcncmachine.com",
+    "email": "bella@cennetic.com",
     "phone": "+8615118243737",
     "phoneDisplay": "+86 151 1824 3737",
     "whatsapp": {
@@ -34,7 +34,7 @@
         "poster": "/images/site/hero-poster.webp",
         "posterWidth": 1600,
         "posterHeight": 900,
-        "posterAlt": "QiaoFeng CNC machining center on the factory floor in Dongguan, China"
+        "posterAlt": "Cennetic CNC machining center on the factory floor in Dongguan, China"
     },
     "youtube": {
         "_comment": "首页 About 区的工厂介绍视频。源站是 WoodMart wd_video 组件，iframe 的 src 藏在 data-lazy-load 里，只看正文 DOM 会漏。新站用封面门面，点击后才加载第三方脚本。",

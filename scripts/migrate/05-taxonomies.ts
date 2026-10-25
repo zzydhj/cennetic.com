@@ -51,7 +51,7 @@ export async function buildTaxonomies(): Promise<void> {
             description: c.description ?? '',
             /**
              * 清掉源站 <title> 自带的品牌后缀：模板会重新拼一次，
-             * 不去就变成「X - Qiaofeng CNC Machine - QiaoFeng CNC Machine」。
+             * 不去就变成「X - Qiaofeng CNC Machine - Cennetic CNC Machine」。
              */
             title: stripSiteSuffix(rec?.title ?? c.name, site.name),
             // 源站清单里没有该分类时，回落到全站默认值
@@ -113,10 +113,10 @@ export async function buildTaxonomies(): Promise<void> {
     }
 }
 
-/** 从 “Name - Qiaofeng CNC Machine” 形式的 <title> 里取出分类名 */
+/** 从 “Name - 品牌后缀” 形式的 <title> 里取出分类名（旧 QiaoFeng 与新 Cennetic 都要剥） */
 function titleToName(title?: string): string {
     if (!title) return '';
-    return decodeEntities(title.replace(/\s*[-|–]\s*Qiao[Ff]eng.*$/u, '').trim());
+    return decodeEntities(title.replace(/\s*[-|–]\s*(?:Qiao[Ff]eng|Cennetic|CENNETIC).*$/u, '').trim());
 }
 
 function decodeEntities(text: string): string {

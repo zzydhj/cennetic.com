@@ -6,7 +6,7 @@
  *      —— 实测发现 /blog/<slug>/ 形态的链接，但文章实际挂在顶级 /<slug>/
  */
 import { readJson, join } from './lib/fs.ts';
-import { API_CACHE_DIR, SRC_ORIGIN } from './lib/config.ts';
+import { API_CACHE_DIR, SRC_ORIGIN, isSiteHost } from './lib/config.ts';
 import { headStatus } from './lib/http.ts';
 import type { WpPost } from './lib/types.ts';
 import * as cheerio from 'cheerio';
@@ -75,7 +75,7 @@ for (const p of posts) {
         if (!href.startsWith('http')) return;
         try {
             const u = new URL(href);
-            if (u.host !== 'qfcncmachine.com') return;
+            if (!isSiteHost(u.host)) return;
             targets.set(u.pathname, (targets.get(u.pathname) ?? 0) + 1);
         } catch { /* 相对链接另计 */ }
     });

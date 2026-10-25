@@ -19,6 +19,49 @@ const PUBLIC_DIR = join(ROOT, 'public');
  */
 const DEAD_TO_PRODUCTS = ['/cart/', '/checkout/', '/my-account/', '/product-cat/'];
 
+/**
+ * 品牌迁移（qfcncmachine.com + QiaoFeng → cennetic.com + Cennetic）留下的旧图文件名。
+ *
+ * 文件名里的品牌字样跟着一起改了，但 Google 图片搜索里已收录的还是旧路径，
+ * 而且上一节那两条 /wp-content/uploads/ 通配 301 只做前缀替换、不会改文件名，
+ * 所以旧名必须在这里逐条显式映射，否则图集体 404。
+ *
+ * 不随 url-manifest 推导：这是人工决策的改名，基线数据里没有这个信息。
+ */
+const IMAGE_RENAMES: Array<[string, string]> = [
+    ['qiaofeng-jr-v85p-cnc-machine-dimensions-three-view-drawing.webp', 'cennetic-jr-v85p-cnc-machine-dimensions-three-view-drawing.webp'],
+    ['qiaofeng-jr-v85p-core-configuration-mitsubishi-m80-bt40-spindle-servo.webp', 'cennetic-jr-v85p-core-configuration-mitsubishi-m80-bt40-spindle-servo.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-100x100.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-100x100.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-300x300.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-300x300.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-430x430.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-430x430.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-700x700.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-700x700.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-768x768.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-768x768.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-800x800.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-800x800.webp'],
+    ['qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working.webp', 'cennetic-jr-v85p-high-precision-machining-cnc-vmc-working.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-100x100.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle-100x100.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-300x300.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle-300x300.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-430x430.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle-430x430.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-700x700.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle-700x700.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-768x768.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle-768x768.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-800x800.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle-800x800.webp'],
+    ['qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle.webp', 'cennetic-jr-v85p-vertical-machining-center-bt40-spindle.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-100x100.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-100x100.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-300x300.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-300x300.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-430x430.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-430x430.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-700x700.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-700x700.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-768x768.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-768x768.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-800x800.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-800x800.webp'],
+    ['qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp', 'cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp'],
+    ['qiaofeng-l1060-spindle-worktable-heavy-duty-base-detail.webp', 'cennetic-l1060-spindle-worktable-heavy-duty-base-detail.webp'],
+    ['qiaofeng-L1060-vertical-machining-center-main.webp', 'cennetic-L1060-vertical-machining-center-main.webp'],
+    ['qiaofeng-L1060-z-axis-column-structure-100x83.webp', 'cennetic-L1060-z-axis-column-structure-100x83.webp'],
+    ['qiaofeng-L1060-z-axis-column-structure-430x358.webp', 'cennetic-L1060-z-axis-column-structure-430x358.webp'],
+    ['qiaofeng-L1060-z-axis-column-structure.webp', 'cennetic-L1060-z-axis-column-structure.webp'],
+];
+
+/** 旧图所在目录（改名只动了文件名，没动年/月目录） */
+const IMAGE_DIRS = ['2026/06'];
+
 export async function buildDeployFiles(): Promise<void> {
     step('Phase 5 · 生成部署文件');
 
@@ -30,7 +73,7 @@ export async function buildDeployFiles(): Promise<void> {
 
     const lines: string[] = [
         '# 由 npm run migrate -- 08 依据 migration/url-manifest.json 生成，请勿手改。',
-        '# 想改规则：改源站内容后重跑阶段 02 + 08。',
+        '# 想改规则：改源站内容后重跑阶段 02 + 08；品牌迁移那节维护在 08 的常量里。',
         '',
         '# ── 源站 301 别名（正文写成 /blog/<slug>/ 而实际文章在顶级路径）──',
     ];
@@ -44,6 +87,23 @@ export async function buildDeployFiles(): Promise<void> {
         '# ── 已下线的 WooCommerce 交易路径 → 产品列表 ──',
     );
     for (const p of DEAD_TO_PRODUCTS) lines.push(`${p} /products/ 301`);
+
+    // ── 品牌迁移 ────────────────────────────────────
+    // 旧域名 qfcncmachine.com → 新域名 www.cennetic.com 的主机级 301 **不能**写在这里：
+    // Pages 的 _redirects 只按路径匹配来源，按整 URL（带主机名）开头的行无效。
+    // 那一步必须在 Cloudflare Zone 层用 Redirect Rule / Bulk Redirects 完成（见部署清单）。
+    // 本节只保留新域名上真正生效的“旧图名 → 新图名”路径 301。
+    lines.push(
+        '',
+        `# ── 品牌迁移：旧图文件名 → 新图文件名（${IMAGE_RENAMES.length} 张，通配规则盖不住改名）──`,
+        '# 前提：qfcncmachine.com 已在 Zone 层整域 301 到 www.cennetic.com 并保留路径；',
+        '# 旧图 URL 先经 /wp-content→/images 通配落到 /images/<旧名>，再由下面规则落到 <新名>。',
+    );
+    for (const dir of IMAGE_DIRS) {
+        for (const [oldName, newName] of IMAGE_RENAMES) {
+            lines.push(`/images/${dir}/${oldName}   /images/${dir}/${newName}   301`);
+        }
+    }
 
     lines.push(
         '',
@@ -81,7 +141,10 @@ export async function buildDeployFiles(): Promise<void> {
     );
 
     log('');
-    log(`✓ ${rel(join(PUBLIC_DIR, '_redirects'))}  —— ${aliases.length} 条别名 + ${DEAD_TO_PRODUCTS.length} 条死路径 + 2 条图片通配`);
+    log(
+        `✓ ${rel(join(PUBLIC_DIR, '_redirects'))}  —— ${aliases.length} 条别名 + ${DEAD_TO_PRODUCTS.length} 条死路径 + ` +
+        `${IMAGE_RENAMES.length * IMAGE_DIRS.length} 条图片改名 + 2 条图片通配（旧域名整域 301 需在 Cloudflare Zone 层配）`,
+    );
     log(`✓ ${rel(join(PUBLIC_DIR, 'robots.txt'))}`);
     log(`  源：${SRC_ORIGIN}（基线生成，勿手改）`);
 }

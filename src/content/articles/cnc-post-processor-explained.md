@@ -1,7 +1,7 @@
 ---
 title: 'CNC Post Processor Explained: Beginner''s Complete Guide'
 heading: 'CNC Post Processor Explained: Beginner''s Complete Guide'
-description: Learn what a CNC post processor is, how it works, and why the right one prevents crashes. Expert guide from QiaoFeng with 15 years of CNC experience.
+description: Learn what a CNC post processor is, how it works, and why the right one prevents crashes. Expert guide from Cennetic with 15 years of CNC experience.
 slug: cnc-post-processor-explained
 canonical: /cnc-post-processor-explained/
 date: '2026-06-28T09:29:59'
@@ -22,15 +22,15 @@ faq:
   - q: Can I use the same post processor for different CNC machines?
     a: Only if the machines have identical controller models, firmware versions, and axis configurations. Even machines from the same manufacturer (e.g., two Fanuc 0i-MF controllers) may differ in optional features like probing cycles or pallet changers. Always use a post specifically configured for each machine model. Using the wrong post is one of the most common causes of machine alarms and crashes.
   - q: How do I verify that my CNC post processor is correct?
-    a: 'Follow this three-step validation process: (1) Run a full machine simulation in your CAM software or a dedicated tool like Vericut to check for collisions and axis over-travel. (2) Perform a dry run on the actual machine with the spindle off and no material — watch every axis movement carefully. (3) Run a first-off part in a soft material (e.g., aluminum or foam) at 50% feed rate before committing to production material. QiaoFeng also offers a free post verification service for all new customers.'
+    a: 'Follow this three-step validation process: (1) Run a full machine simulation in your CAM software or a dedicated tool like Vericut to check for collisions and axis over-travel. (2) Perform a dry run on the actual machine with the spindle off and no material — watch every axis movement carefully. (3) Run a first-off part in a soft material (e.g., aluminum or foam) at 50% feed rate before committing to production material. Cennetic also offers a free post verification service for all new customers.'
   - q: What are the most common CNC post processor errors?
-    a: 'The five most common errors we see are: (1) Missing program end block — machine doesn’t stop cleanly; (2) Incorrect unit mode — G20/G21 mismatch causes wrong feed rates; (3) Wrong arc center format — I/J/K vs. R format incompatibility; (4) Missing coolant-off command — coolant runs indefinitely; (5) Incorrect RTCP/TCPM activation on 5-axis machines — causes positional errors on rotary moves. All of these are eliminated in QiaoFeng’s validated custom posts.'
+    a: 'The five most common errors we see are: (1) Missing program end block — machine doesn’t stop cleanly; (2) Incorrect unit mode — G20/G21 mismatch causes wrong feed rates; (3) Wrong arc center format — I/J/K vs. R format incompatibility; (4) Missing coolant-off command — coolant runs indefinitely; (5) Incorrect RTCP/TCPM activation on 5-axis machines — causes positional errors on rotary moves. All of these are eliminated in Cennetic’s validated custom posts.'
   - q: How often should I update my CNC post processor?
-    a: 'You should update your post whenever you: upgrade your CAM software to a new major version, update your machine controller firmware, add new machine options (probing, pallet changer, through-spindle coolant), or encounter new alarm codes that weren’t present before. QiaoFeng provides lifetime free updates on all custom posts — simply contact us with your firmware version and we’ll issue an updated post within 48 hours.'
-  - q: Does QiaoFeng provide post processors for machines they didn’t manufacture?
-    a: Yes. While we specialize in posts for QiaoFeng machining centers, our engineering team also develops custom posts for third-party machines. We support all major controllers including Fanuc, Heidenhain TNC 320/530/640, Siemens 828D/840D, Mitsubishi M70/M80, Mazatrol, and Haas. Contact us with your machine spec sheet for a free assessment.
-  - q: What is QiaoFeng’s refund and warranty policy for post processors?
-    a: All QiaoFeng custom post processors come with a 2-year warranty. If the post has a verified quality issue (e.g., incorrect G-code output for a documented operation), we will fix it at no charge or issue a full refund. We do not support no-reason returns for correctly functioning posts. Lifetime free updates are included for all customers.
+    a: 'You should update your post whenever you: upgrade your CAM software to a new major version, update your machine controller firmware, add new machine options (probing, pallet changer, through-spindle coolant), or encounter new alarm codes that weren’t present before. Cennetic provides lifetime free updates on all custom posts — simply contact us with your firmware version and we’ll issue an updated post within 48 hours.'
+  - q: Does Cennetic provide post processors for machines they didn’t manufacture?
+    a: Yes. While we specialize in posts for Cennetic machining centers, our engineering team also develops custom posts for third-party machines. We support all major controllers including Fanuc, Heidenhain TNC 320/530/640, Siemens 828D/840D, Mitsubishi M70/M80, Mazatrol, and Haas. Contact us with your machine spec sheet for a free assessment.
+  - q: What is Cennetic’s refund and warranty policy for post processors?
+    a: All Cennetic custom post processors come with a 2-year warranty. If the post has a verified quality issue (e.g., incorrect G-code output for a documented operation), we will fix it at no charge or issue a full refund. We do not support no-reason returns for correctly functioning posts. Lifetime free updates are included for all customers.
 sourceId: 7510
 ---
 
@@ -39,7 +39,7 @@ sourceId: 7510
 
   <!-- 1. 引言段 -->
   <p>Welcome to the complete guide on <strong>CNC post processor explained</strong> — written for beginners and intermediate CNC machinists who want to truly understand this often-overlooked but mission-critical piece of software. A <strong>CNC post processor</strong> is a software translator that converts toolpaths generated in CAM (Computer-Aided Manufacturing) software into G-code that your specific CNC machine can understand and execute. Without the right post processor, your machine may misinterpret axis movements, spindle commands, or coolant cycles — leading to machine crashes, scrapped parts, and costly downtime.</p>
-  <p>At <a href="/" rel="noopener">QiaoFeng CNC</a>, founded in 2010 and trusted by <strong>750+ customers</strong> across Europe, North America, and Southeast Asia, we’ve spent 15 years developing and deploying custom post processors for every major CNC controller on the market. This guide covers the <strong>CNC post processor definition</strong>, how it works, real G-code examples, types, best practices, and how to choose the right one for your machine.</p>
+  <p>At <a href="/" rel="noopener">Cennetic CNC</a>, founded in 2010 and trusted by <strong>750+ customers</strong> across Europe, North America, and Southeast Asia, we’ve spent 15 years developing and deploying custom post processors for every major CNC controller on the market. This guide covers the <strong>CNC post processor definition</strong>, how it works, real G-code examples, types, best practices, and how to choose the right one for your machine.</p>
 
   <!-- 2. 行业数据段 -->
   <h2 id="1-why-cnc-post-processors-matter-more-than-ever">1. Why CNC Post Processors Matter More Than Ever</h2>
@@ -134,13 +134,13 @@ END PGM DRILL_PROG MM</code></pre>
   <p>Every machine controller has unique syntax requirements. A well-built <strong>CNC post processor</strong> lets you configure: absolute (G90) vs. incremental (G91) positioning, decimal place precision, line number format (N10, N20…), program header/footer blocks, and unit mode (G20 inch / G21 metric). Without this flexibility, even minor syntax mismatches can trigger controller alarms that halt production.</p>
 
   <h3 id="52-toolpath-optimization">5.2 Toolpath Optimization</h3>
-  <p>Advanced post processors don’t just translate — they optimize. This includes: suppressing redundant modal G-codes, smoothing arc transitions (G2/G3 vs. linear approximation), minimizing unnecessary Z-retracts between operations, and optimizing rapid traverse paths. In a QiaoFeng case study with a die-cast mold customer in Germany, switching from a generic post to a custom-optimized post reduced cycle time by <strong>22%</strong> on a 5-axis finishing operation — without changing a single toolpath parameter in CAM.</p>
+  <p>Advanced post processors don’t just translate — they optimize. This includes: suppressing redundant modal G-codes, smoothing arc transitions (G2/G3 vs. linear approximation), minimizing unnecessary Z-retracts between operations, and optimizing rapid traverse paths. In a Cennetic case study with a die-cast mold customer in Germany, switching from a generic post to a custom-optimized post reduced cycle time by <strong>22%</strong> on a 5-axis finishing operation — without changing a single toolpath parameter in CAM.</p>
 
   <h3 id="53-safety-checks-collision-avoidance">5.3 Safety Checks &amp; Collision Avoidance</h3>
   <p>A production-grade post processor includes automatic safety logic: enforced safe retract height before all rapid moves, feed rate clamping (maximum feed limit), spindle-on verification before cutting moves, coolant-off commands at program end, and axis over-travel warnings. These checks act as a last line of defense before the code reaches the machine.</p>
 
   <h3 id="54-multi-axis-5-axis-support">5.4 Multi-Axis &amp; 5-Axis Support</h3>
-  <p>For 4-axis and 5-axis machines, the post processor must handle simultaneous rotary axis movements, RTCP (Rotation around Tool Center Point) / TCPM activation and deactivation, gimbal lock avoidance, and smooth rotary axis interpolation. A generic 3-axis post will simply fail on a 5-axis program. QiaoFeng’s 5-axis machines use Heidenhain TNC 640 controllers, and our custom posts fully support all TNC 640 cycle definitions including TCPM (M128/M129), Dynamic Collision Monitoring (DCM), and AFC (Adaptive Feed Control).</p>
+  <p>For 4-axis and 5-axis machines, the post processor must handle simultaneous rotary axis movements, RTCP (Rotation around Tool Center Point) / TCPM activation and deactivation, gimbal lock avoidance, and smooth rotary axis interpolation. A generic 3-axis post will simply fail on a 5-axis program. Cennetic’s 5-axis machines use Heidenhain TNC 640 controllers, and our custom posts fully support all TNC 640 cycle definitions including TCPM (M128/M129), Dynamic Collision Monitoring (DCM), and AFC (Adaptive Feed Control).</p>
 
   <h3 id="55-controller-specific-cycle-support">5.5 Controller-Specific Cycle Support</h3>
   <p>Modern CNC controllers include powerful built-in fixed cycles for drilling, tapping, boring, probing, and pallet changing. A good post processor maps your CAM operations directly to these native cycles rather than outputting inefficient linear approximations. For example, a Heidenhain rigid tapping cycle (CYCL DEF 206) is far more efficient and accurate than a manually interpolated tapping routine.</p>
@@ -149,14 +149,14 @@ END PGM DRILL_PROG MM</code></pre>
 
   <!-- 6. 对比表格 -->
   <h2 id="6-generic-vs-custom-post-processor-full-comparison">6. Generic vs. Custom Post Processor: Full Comparison</h2>
-  <p>One of the most common questions we receive at QiaoFeng is: <em>“Can I just use the free post processor that came with my CAM software?”</em> The answer depends on your machine and the complexity of your work. Here’s a detailed comparison:</p>
+  <p>One of the most common questions we receive at Cennetic is: <em>“Can I just use the free post processor that came with my CAM software?”</em> The answer depends on your machine and the complexity of your work. Here’s a detailed comparison:</p>
 
   <table class="qf-compare-table">
     <thead>
       <tr>
         <th scope="col">Feature</th>
         <th scope="col">Generic / Free Post</th>
-        <th scope="col">Custom Post (QiaoFeng)</th>
+        <th scope="col">Custom Post (Cennetic)</th>
       </tr>
     </thead>
     <tbody>
@@ -203,7 +203,7 @@ END PGM DRILL_PROG MM</code></pre>
       <tr>
         <td>Warranty</td>
         <td>None</td>
-        <td>2-year warranty on all QiaoFeng posts</td>
+        <td>2-year warranty on all Cennetic posts</td>
       </tr>
       <tr>
         <td>Best For</td>
@@ -262,15 +262,15 @@ END PGM DRILL_PROG MM</code></pre>
   <!-- 8. Testimonials -->
   <h2 id="8-what-our-customers-say">8. What Our Customers Say</h2>
 
-  <div class="qf-testimonial"><blockquote>“We’ve been running QiaoFeng’s custom post processor on our 5-axis Heidenhain TNC 640 machining center for eight months. The post handles our complex impeller and turbine blade geometry perfectly — zero crashes since day one. We saw a 15% increase in throughput within the first month, and the cycle time optimization alone paid for the post within two weeks. Their engineering team responded to every question within 24 hours.”</blockquote><figcaption>— Mark T., Senior Process Engineer · Aerospace Components Manufacturer, Stuttgart, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We’ve been running Cennetic’s custom post processor on our 5-axis Heidenhain TNC 640 machining center for eight months. The post handles our complex impeller and turbine blade geometry perfectly — zero crashes since day one. We saw a 15% increase in throughput within the first month, and the cycle time optimization alone paid for the post within two weeks. Their engineering team responded to every question within 24 hours.”</blockquote><figcaption>— Mark T., Senior Process Engineer · Aerospace Components Manufacturer, Stuttgart, Germany</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“We machine high-tolerance orthopedic implants to ISO 13485 standards, so there is zero room for G-code errors. Before switching to QiaoFeng’s custom post, our programmers spent 2–3 hours per week manually editing code. After the switch, that dropped to near zero. The post handles our Siemens 840D controller’s CYCLE800 tilted plane operations flawlessly. Highly recommended for any medical device shop running multi-axis work.”</blockquote><figcaption>— Sarah L., CNC Programming Lead · Medical Device Manufacturer, Minneapolis, United States</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We machine high-tolerance orthopedic implants to ISO 13485 standards, so there is zero room for G-code errors. Before switching to Cennetic’s custom post, our programmers spent 2–3 hours per week manually editing code. After the switch, that dropped to near zero. The post handles our Siemens 840D controller’s CYCLE800 tilted plane operations flawlessly. Highly recommended for any medical device shop running multi-axis work.”</blockquote><figcaption>— Sarah L., CNC Programming Lead · Medical Device Manufacturer, Minneapolis, United States</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“Chúng tôi đã đặt mua ba trung tâm gia công 5 trục từ QiaoFeng cho dây chuyền sản xuất phụ tùng ô tô. Các post processor tùy chỉnh đi kèm hoạt động hoàn hảo với phần mềm CAM Mastercam của chúng tôi ngay từ ngày đầu tiên — không có thời gian chết, không có sự cố, không cần chỉnh sửa thủ công. Đội ngũ kỹ thuật của QiaoFeng rất chuyên nghiệp và hỗ trợ nhanh chóng. Chúng tôi sẽ tiếp tục hợp tác lâu dài.”</blockquote><figcaption>— Thanh N., Production Manager · Automotive Parts Supplier, Ho Chi Minh City, Vietnam</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Chúng tôi đã đặt mua ba trung tâm gia công 5 trục từ Cennetic cho dây chuyền sản xuất phụ tùng ô tô. Các post processor tùy chỉnh đi kèm hoạt động hoàn hảo với phần mềm CAM Mastercam của chúng tôi ngay từ ngày đầu tiên — không có thời gian chết, không có sự cố, không cần chỉnh sửa thủ công. Đội ngũ kỹ thuật của Cennetic rất chuyên nghiệp và hỗ trợ nhanh chóng. Chúng tôi sẽ tiếp tục hợp tác lâu dài.”</blockquote><figcaption>— Thanh N., Production Manager · Automotive Parts Supplier, Ho Chi Minh City, Vietnam</figcaption></div>
 
   <!-- 9. Highlight Box -->
   <div class="qf-highlight-box">
-    🏭 <strong>About QiaoFeng CNC:</strong> Founded in 2010 in <strong>Daling Mountain Town, Dongguan, Guangdong</strong>, QiaoFeng has 15 years of CNC post processor development experience, with <strong>750+ customers</strong> served across Europe, North America, and Southeast Asia. All custom posts come with a <strong>2-year warranty</strong> and <strong>lifetime free updates</strong>. Quality issues are fully covered under our refund policy.
+    🏭 <strong>About Cennetic CNC:</strong> Founded in 2010 in <strong>Daling Mountain Town, Dongguan, Guangdong</strong>, Cennetic has 15 years of CNC post processor development experience, with <strong>750+ customers</strong> served across Europe, North America, and Southeast Asia. All custom posts come with a <strong>2-year warranty</strong> and <strong>lifetime free updates</strong>. Quality issues are fully covered under our refund policy.
   </div>
 
   <!-- 10. FAQ -->
@@ -288,27 +288,27 @@ END PGM DRILL_PROG MM</code></pre>
 
   <div class="qf-faq-item">
     <h3 id="how-do-i-verify-that-my-cnc-post-processor-is-correct">How do I verify that my CNC post processor is correct?</h3>
-    <p>Follow this three-step validation process: (1) Run a full machine simulation in your CAM software or a dedicated tool like Vericut to check for collisions and axis over-travel. (2) Perform a dry run on the actual machine with the spindle off and no material — watch every axis movement carefully. (3) Run a first-off part in a soft material (e.g., aluminum or foam) at 50% feed rate before committing to production material. QiaoFeng also offers a <strong>free post verification service</strong> for all new customers.</p>
+    <p>Follow this three-step validation process: (1) Run a full machine simulation in your CAM software or a dedicated tool like Vericut to check for collisions and axis over-travel. (2) Perform a dry run on the actual machine with the spindle off and no material — watch every axis movement carefully. (3) Run a first-off part in a soft material (e.g., aluminum or foam) at 50% feed rate before committing to production material. Cennetic also offers a <strong>free post verification service</strong> for all new customers.</p>
   </div>
 
   <div class="qf-faq-item">
     <h3 id="what-are-the-most-common-cnc-post-processor-errors">What are the most common CNC post processor errors?</h3>
-    <p>The five most common errors we see are: (1) <strong>Missing program end block</strong> — machine doesn’t stop cleanly; (2) <strong>Incorrect unit mode</strong> — G20/G21 mismatch causes wrong feed rates; (3) <strong>Wrong arc center format</strong> — I/J/K vs. R format incompatibility; (4) <strong>Missing coolant-off command</strong> — coolant runs indefinitely; (5) <strong>Incorrect RTCP/TCPM activation</strong> on 5-axis machines — causes positional errors on rotary moves. All of these are eliminated in QiaoFeng’s validated custom posts.</p>
+    <p>The five most common errors we see are: (1) <strong>Missing program end block</strong> — machine doesn’t stop cleanly; (2) <strong>Incorrect unit mode</strong> — G20/G21 mismatch causes wrong feed rates; (3) <strong>Wrong arc center format</strong> — I/J/K vs. R format incompatibility; (4) <strong>Missing coolant-off command</strong> — coolant runs indefinitely; (5) <strong>Incorrect RTCP/TCPM activation</strong> on 5-axis machines — causes positional errors on rotary moves. All of these are eliminated in Cennetic’s validated custom posts.</p>
   </div>
 
   <div class="qf-faq-item">
     <h3 id="how-often-should-i-update-my-cnc-post-processor">How often should I update my CNC post processor?</h3>
-    <p>You should update your post whenever you: upgrade your CAM software to a new major version, update your machine controller firmware, add new machine options (probing, pallet changer, through-spindle coolant), or encounter new alarm codes that weren’t present before. QiaoFeng provides <strong>lifetime free updates</strong> on all custom posts — simply contact us with your firmware version and we’ll issue an updated post within 48 hours.</p>
+    <p>You should update your post whenever you: upgrade your CAM software to a new major version, update your machine controller firmware, add new machine options (probing, pallet changer, through-spindle coolant), or encounter new alarm codes that weren’t present before. Cennetic provides <strong>lifetime free updates</strong> on all custom posts — simply contact us with your firmware version and we’ll issue an updated post within 48 hours.</p>
   </div>
 
   <div class="qf-faq-item">
-    <h3 id="does-qiaofeng-provide-post-processors-for-machines-they-didn">Does QiaoFeng provide post processors for machines they didn’t manufacture?</h3>
-    <p>Yes. While we specialize in posts for QiaoFeng machining centers, our engineering team also develops custom posts for third-party machines. We support all major controllers including Fanuc, Heidenhain TNC 320/530/640, Siemens 828D/840D, Mitsubishi M70/M80, Mazatrol, and Haas. <a href="/contact-us/" rel="noopener">Contact us</a> with your machine spec sheet for a free assessment.</p>
+    <h3 id="does-cennetic-provide-post-processors-for-machines-they-didn">Does Cennetic provide post processors for machines they didn’t manufacture?</h3>
+    <p>Yes. While we specialize in posts for Cennetic machining centers, our engineering team also develops custom posts for third-party machines. We support all major controllers including Fanuc, Heidenhain TNC 320/530/640, Siemens 828D/840D, Mitsubishi M70/M80, Mazatrol, and Haas. <a href="/contact-us/" rel="noopener">Contact us</a> with your machine spec sheet for a free assessment.</p>
   </div>
 
   <div class="qf-faq-item">
-    <h3 id="what-is-qiaofengs-refund-and-warranty-policy-for-post-proces">What is QiaoFeng’s refund and warranty policy for post processors?</h3>
-    <p>All QiaoFeng custom post processors come with a <strong>2-year warranty</strong>. If the post has a verified quality issue (e.g., incorrect G-code output for a documented operation), we will fix it at no charge or issue a full refund. We do not support no-reason returns for correctly functioning posts. Lifetime free updates are included for all customers.</p>
+    <h3 id="what-is-cennetics-refund-and-warranty-policy-for-post-proces">What is Cennetic’s refund and warranty policy for post processors?</h3>
+    <p>All Cennetic custom post processors come with a <strong>2-year warranty</strong>. If the post has a verified quality issue (e.g., incorrect G-code output for a documented operation), we will fix it at no charge or issue a full refund. We do not support no-reason returns for correctly functioning posts. Lifetime free updates are included for all customers.</p>
   </div>
 
   <!-- 11. CTA Box -->
@@ -316,8 +316,8 @@ END PGM DRILL_PROG MM</code></pre>
     <h3 id="ready-to-eliminate-post-processor-problems-for-good">Ready to Eliminate Post Processor Problems for Good?</h3>
     <p>Get a custom CNC post processor built specifically for your machine and controller — backed by 15 years of experience, 750+ global customers, and a 2-year warranty. Free consultation and post verification for new customers.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Post%20Processor%20Explained%3A%20Beginner's%20Complete%20Guide%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-post-processor-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Post%20Processor%20Explained%3A%20Beginner's%20Complete%20Guide%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-post-processor-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call: +86 151 1824 3737</a>
     </div>
   </div>

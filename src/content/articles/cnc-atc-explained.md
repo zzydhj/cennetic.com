@@ -36,7 +36,7 @@ sourceId: 7558
     automatically swaps cutting tools during a machining cycle without any operator
     intervention, dramatically cutting idle time and boosting throughput. If you are new to
     CNC machining, understanding the CNC ATC definition is the first step toward running
-    efficient, high-quality production. At QiaoFeng — a CNC machine manufacturer based in
+    efficient, high-quality production. At Cennetic — a CNC machine manufacturer based in
     Dalingshantown, Dongguan, Guangdong, founded in 2010 and trusted by 750+ customers
     worldwide — we have seen shops cut non-cutting time by more than 60% simply by switching
     to an ATC-equipped machine.
@@ -61,7 +61,7 @@ sourceId: 7558
     <sup><a href="https://www.marketsandmarkets.com/Market-Reports/cnc-machine-market-117577905.html" rel="noopener" target="_blank">[3]</a></sup>.
   </p>
   <p>
-    These numbers confirm what QiaoFeng’s 750+ customers already know: investing in a
+    These numbers confirm what Cennetic’s 750+ customers already know: investing in a
     CNC ATC system is not a luxury — it is a competitive necessity.
   </p>
 
@@ -134,7 +134,7 @@ sourceId: 7558
   </table>
 
   <p>
-    QiaoFeng’s standard machining centres feature <strong>swing-arm ATC</strong> systems
+    Cennetic’s standard machining centres feature <strong>swing-arm ATC</strong> systems
     for the best balance of speed, capacity, and reliability. Carousel-type machines are
     available for entry-level budgets, while chain-type configurations can be quoted on request
     for high-mix production environments.
@@ -148,16 +148,16 @@ sourceId: 7558
     beginner, a <strong>12–20 tool capacity</strong> covers the vast majority of everyday
     operations — drilling, tapping, reaming, and end-milling in multiple sizes. If you plan
     to run complex multi-feature parts without re-fixturing, consider a 24–30 tool magazine.
-    QiaoFeng offers ATC capacities from <strong>12 to 30 tools</strong> on entry-level and
+    Cennetic offers ATC capacities from <strong>12 to 30 tools</strong> on entry-level and
     mid-range models, with larger chain-type magazines available on request.
   </p>
 
   <!-- 7. Core Features + G-Code Examples -->
-  <h2 id="5-key-features-of-qiaofengs-cnc-atc-system">5. Key Features of QiaoFeng’s CNC ATC System</h2>
+  <h2 id="5-key-features-of-cennetics-cnc-atc-system">5. Key Features of Cennetic’s CNC ATC System</h2>
 
   <h3 id="51-high-speed-tool-change">5.1 High-Speed Tool Change</h3>
   <p>
-    QiaoFeng’s swing-arm ATC achieves chip-to-chip tool change times as low as
+    Cennetic’s swing-arm ATC achieves chip-to-chip tool change times as low as
     <strong>2.5 seconds</strong>. Less idle time means more spindle-on time and faster
     job completion. A small shop running 200 tool changes per shift saves over
     <strong>90 minutes of idle time daily</strong> compared to manual swapping.
@@ -250,11 +250,11 @@ sourceId: 7558
     <strong>Pain Point:</strong> A German prototyping workshop needed to switch between
     drilling, tapping, and milling frequently on small batches. Manual changes took up to
     5 minutes each, severely limiting daily output.<br>
-    <strong>Solution:</strong> After installing a QiaoFeng machining centre with a 16-tool
+    <strong>Solution:</strong> After installing a Cennetic machining centre with a 16-tool
     swing-arm ATC, changeover time dropped to under 3 seconds. The shop now completes
     prototype batches <strong>3× faster</strong> and has taken on 40% more orders.
   </p>
-  <div class="qf-testimonial"><blockquote>“Before the QiaoFeng ATC machine, every tool change meant stopping the spindle and
+  <div class="qf-testimonial"><blockquote>“Before the Cennetic ATC machine, every tool change meant stopping the spindle and
     losing five minutes. Now the machine handles it in under three seconds — we barely
     notice it happening. Our throughput has tripled on small-batch jobs.”</blockquote></div>
 
@@ -263,13 +263,13 @@ sourceId: 7558
     <strong>Pain Point:</strong> A US manufacturer of aluminium electronic enclosures
     required multiple setups for different operations, leading to cumulative positioning
     errors and inconsistent tolerances.<br>
-    <strong>Solution:</strong> With a QiaoFeng 20-tool ATC machine, all operations were
+    <strong>Solution:</strong> With a Cennetic 20-tool ATC machine, all operations were
     programmed in a single setup. Part tolerance improved to <strong>±0.01 mm</strong> and
     cycle time was cut by <strong>40%</strong>, enabling the company to fulfil a major
     defence-sector contract on time.
   </p>
   <div class="qf-testimonial"><blockquote>“We were re-fixturing parts three times per job and still missing tolerance on the
-    final bore. The QiaoFeng ATC machine let us do everything in one setup. Tolerance is
+    final bore. The Cennetic ATC machine let us do everything in one setup. Tolerance is
     now consistently within 0.01 mm and we haven’t had a rejection in four months.”</blockquote></div>
 
   <h3 id="case-3-automotive-components-production-thailand">Case 3 — Automotive Components Production (Thailand)</h3>
@@ -277,13 +277,13 @@ sourceId: 7558
     <strong>Pain Point:</strong> A Thai automotive-components supplier running high-volume
     production needed to reduce idle time between operations to stay competitive on
     per-unit cost.<br>
-    <strong>Solution:</strong> Two QiaoFeng machines with 24-tool ATC systems were
+    <strong>Solution:</strong> Two Cennetic machines with 24-tool ATC systems were
     integrated into the production line. Non-cutting time fell by <strong>62%</strong>,
     and the factory achieved lights-out operation during the night shift within three months
     of installation.
   </p>
-  <div class="qf-testimonial"><blockquote>“เครื่อง QiaoFeng ช่วยให้เราลดเวลาที่ไม่ได้ตัดชิ้นงานลงได้มากกว่า 60% และตอนนี้เราสามารถรันกะกลางคืนแบบไม่มีพนักงานได้แล้ว — คุ้มค่าการลงทุนมาก”
-    (“The QiaoFeng machine helped us cut non-machining time by over 60%, and we can now run the night shift lights-out — a very worthwhile investment.”)</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“เครื่อง Cennetic ช่วยให้เราลดเวลาที่ไม่ได้ตัดชิ้นงานลงได้มากกว่า 60% และตอนนี้เราสามารถรันกะกลางคืนแบบไม่มีพนักงานได้แล้ว — คุ้มค่าการลงทุนมาก”
+    (“The Cennetic machine helped us cut non-machining time by over 60%, and we can now run the night shift lights-out — a very worthwhile investment.”)</blockquote></div>
 
   <img decoding="async" src="/images/2026/06/cnc-atc-explained-3.webp" alt="CNC ATC beginner learning automatic tool changer operation on machining centre" width="1200" height="686" loading="lazy">
 
@@ -318,7 +318,7 @@ sourceId: 7558
   <div class="qf-highlight">
     <strong>Key Takeaway:</strong> For most small and mid-size shops, the productivity gains
     from a CNC ATC system — <strong>faster cycle times, fewer errors, and lights-out
-    capability</strong> — far outweigh the additional upfront investment. With QiaoFeng’s
+    capability</strong> — far outweigh the additional upfront investment. With Cennetic’s
     <strong>2-year warranty</strong> and lifetime technical support, the risk is minimal and
     the ROI is typically achieved within <strong>3–6 months</strong>.
   </div>
@@ -345,7 +345,7 @@ sourceId: 7558
   <p>
     No. Basic maintenance involves periodic lubrication of the arm and magazine, and
     occasional cleaning of the tool-presence sensors. Most users spend around
-    <strong>30 minutes per month</strong> on ATC upkeep. QiaoFeng provides a detailed
+    <strong>30 minutes per month</strong> on ATC upkeep. Cennetic provides a detailed
     maintenance guide and remote technical support as standard.
   </p>
 
@@ -353,23 +353,23 @@ sourceId: 7558
   <p>
     Retrofitting is technically possible but often complex and costly, and may void the
     original machine warranty. It is generally more economical to purchase a new machine
-    with an integrated ATC. QiaoFeng’s machines include ATC as a standard option, ensuring
+    with an integrated ATC. Cennetic’s machines include ATC as a standard option, ensuring
     full compatibility and 2-year warranty coverage.
   </p>
 
-  <h3 id="5-what-is-qiaofengs-warranty-and-return-policy">5. What is QiaoFeng’s warranty and return policy?</h3>
+  <h3 id="5-what-is-cennetics-warranty-and-return-policy">5. What is Cennetic’s warranty and return policy?</h3>
   <p>
-    All QiaoFeng CNC machines come with a <strong>2-year warranty</strong> covering
+    All Cennetic CNC machines come with a <strong>2-year warranty</strong> covering
     manufacturing defects and component failures. Returns are supported for
     <strong>confirmed quality issues</strong>; no-reason returns without a quality defect
     are not accepted. Contact Bella at
-    <a href="mailto:bella@qfcncmachine.com" rel="noopener">bella@qfcncmachine.com</a>
+    <a href="mailto:bella@cennetic.com" rel="noopener">bella@cennetic.com</a>
     for warranty claims or technical queries.
   </p>
 
-  <h3 id="6-which-cnc-controllers-are-compatible-with-qiaofeng-atc-mac">6. Which CNC controllers are compatible with QiaoFeng ATC machines?</h3>
+  <h3 id="6-which-cnc-controllers-are-compatible-with-cennetic-atc-mac">6. Which CNC controllers are compatible with Cennetic ATC machines?</h3>
   <p>
-    QiaoFeng ATC machines are compatible with all major CNC controllers including
+    Cennetic ATC machines are compatible with all major CNC controllers including
     <strong>Fanuc, Siemens, Mitsubishi, and GSK</strong>. The ATC sub-system communicates
     via standard M-code and T-code commands, so existing programmes require minimal
     modification.
@@ -379,15 +379,15 @@ sourceId: 7558
   <div class="qf-cta-box">
     <h3 id="ready-to-upgrade-your-shop-with-a-cnc-atc-machine">Ready to Upgrade Your Shop with a CNC ATC Machine?</h3>
     <p>
-      Get a free consultation from Bella and the QiaoFeng team. We’ll help you select the
+      Get a free consultation from Bella and the Cennetic team. We’ll help you select the
       right ATC type, capacity, and controller for your production needs — backed by
       15 years of CNC expertise and a 2-year warranty.
     </p>
     <div class="qf-cta-btns">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20ATC%20Explained%3A%20A%20Beginner's%20Guide%20to%20Automatic%20Tool%20Changers%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-atc-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20ATC%20Explained%3A%20A%20Beginner's%20Guide%20to%20Automatic%20Tool%20Changers%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-atc-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">
         Get a Free Quote
       </a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com" rel="noopener">
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com" rel="noopener">
         Email Bella
       </a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737" rel="noopener">

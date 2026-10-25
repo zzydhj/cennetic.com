@@ -1,7 +1,7 @@
 ---
 title: 'CNC Feed Rate Explained: IPM, IPR & MMPM For Beginners'
 heading: 'CNC Feed Rate Explained: IPM, IPR & MMPM for Beginners'
-description: 'Learn what CNC feed rate is, compare IPM vs IPR vs MMPM, use our reference table, and avoid the #1 beginner mistake — from QFCNCMachine''s 15-year team.'
+description: 'Learn what CNC feed rate is, compare IPM vs IPR vs MMPM, use our reference table, and avoid the #1 beginner mistake — from Cennetic''s 15-year team.'
 slug: cnc-feed-rate-explained
 canonical: /cnc-feed-rate-explained/
 date: '2026-08-14T13:30:42'
@@ -23,7 +23,7 @@ sourceId: 7449
 
 <!-- ============================================================
      CNC FEED RATE EXPLAINED – FULL FIXED VERSION FOR WORDPRESS
-     QFCNCMachine.com | Author: Bella | Updated: August 2026
+     cennetic.com | Author: Bella | Updated: August 2026
 ============================================================ -->
 
 
@@ -32,7 +32,7 @@ sourceId: 7449
 
   <!-- 1. INTRO -->
   <p>
-    <strong>CNC feed rate</strong> — the speed at which a cutting tool advances through a workpiece — is one of the most critical parameters in CNC machining. Set it too low and your tool rubs instead of cuts, generating heat and premature wear. Set it too high and you risk tool breakage, chatter, and scrapped parts. Whether you are programming your first CNC mill or optimising a production turning cell, understanding <strong>CNC feed rate</strong> in IPM, IPR, and MMPM is the foundation of consistent, cost-effective machining. This guide from <strong>QFCNCMachine</strong> breaks down every key concept — from feed per tooth to feed per revolution — with real formulas, worked examples, and material-specific reference values.
+    <strong>CNC feed rate</strong> — the speed at which a cutting tool advances through a workpiece — is one of the most critical parameters in CNC machining. Set it too low and your tool rubs instead of cuts, generating heat and premature wear. Set it too high and you risk tool breakage, chatter, and scrapped parts. Whether you are programming your first CNC mill or optimising a production turning cell, understanding <strong>CNC feed rate</strong> in IPM, IPR, and MMPM is the foundation of consistent, cost-effective machining. This guide from <strong>Cennetic</strong> breaks down every key concept — from feed per tooth to feed per revolution — with real formulas, worked examples, and material-specific reference values.
   </p>
 
   <p>
@@ -90,7 +90,7 @@ sourceId: 7449
     MMPM = IPM × 25.4 &nbsp;&nbsp;|&nbsp;&nbsp; IPM = MMPM ÷ 25.4
   </div>
   <p>
-    For example, 40 IPM = <strong>1,016 MMPM</strong>. All QFCNCMachine machining centers support seamless switching between IPM and MMPM units, allowing operators to work in their preferred system without manual conversion.
+    For example, 40 IPM = <strong>1,016 MMPM</strong>. All Cennetic machining centers support seamless switching between IPM and MMPM units, allowing operators to work in their preferred system without manual conversion.
   </p>
 
   <h3 id="25-feed-per-tooth-fpt-the-key-to-tool-life">2.5 Feed Per Tooth (FPT): The Key to Tool Life</h3>
@@ -241,7 +241,7 @@ sourceId: 7449
   <p>
     Doubling the feed rate to 40 IPM produced thick, curling chips, eliminated tool breakage entirely, and improved surface finish. The operator reported zero broken end mills across the following 3-month production period.
   </p>
-  <div class="qf-testimonial"><blockquote>“I was breaking a 1/8″ end mill every other session and couldn’t figure out why. Bella’s team walked me through the chip load calculation — turns out I was running at half the correct feed rate. After adjusting to 40 IPM, I haven’t broken a single tool in three months. The formula is simple once someone explains it properly. QFCNCMachine’s support was patient and genuinely helpful for a beginner like me.”</blockquote><figcaption>— Tyler M., Hobbyist CNC Operator, Portland, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“I was breaking a 1/8″ end mill every other session and couldn’t figure out why. Bella’s team walked me through the chip load calculation — turns out I was running at half the correct feed rate. After adjusting to 40 IPM, I haven’t broken a single tool in three months. The formula is simple once someone explains it properly. Cennetic’s support was patient and genuinely helpful for a beginner like me.”</blockquote><figcaption>— Tyler M., Hobbyist CNC Operator, Portland, USA</figcaption></div>
 
   <h3 id="42-surface-finish-nightmare-in-4140-steel-germany">4.2 Surface Finish Nightmare in 4140 Steel (Germany)</h3>
   <p>
@@ -257,7 +257,7 @@ sourceId: 7449
   <p>
     Switching from 7.5 IPM (the incorrect IPR-derived value) to 24 IPM improved surface finish from Ra 3.2 µm to Ra 1.6 µm and extended tool life by over 50% by ensuring proper chip formation rather than rubbing.
   </p>
-  <div class="qf-testimonial"><blockquote>“We were applying turning logic to a milling operation — using IPR instead of calculating proper IPM from feed per tooth. The result was a terrible surface finish and tools burning out in under an hour. QFCNCMachine’s technical team identified the error immediately and gave us the correct formula. After switching to 24 IPM, our surface finish halved in roughness value and tool life more than doubled. A simple fix that saved us significant tooling cost every month.”</blockquote><figcaption>— Stefan W., CNC Programmer, Precision Job Shop, Hamburg, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We were applying turning logic to a milling operation — using IPR instead of calculating proper IPM from feed per tooth. The result was a terrible surface finish and tools burning out in under an hour. Cennetic’s technical team identified the error immediately and gave us the correct formula. After switching to 24 IPM, our surface finish halved in roughness value and tool life more than doubled. A simple fix that saved us significant tooling cost every month.”</blockquote><figcaption>— Stefan W., CNC Programmer, Precision Job Shop, Hamburg, Germany</figcaption></div>
 
   <h3 id="43-chatter-in-thin-wall-aluminium-pockets-malaysia">4.3 Chatter in Thin-Wall Aluminium Pockets (Malaysia)</h3>
   <p>
@@ -272,7 +272,7 @@ sourceId: 7449
   <p>
     The lower RPM reduced the excitation frequency away from the part’s natural resonance frequency, eliminating chatter. At 72 IPM, all wall thickness measurements passed CMM inspection within ±0.03 mm — well within tolerance.
   </p>
-  <div class="qf-testimonial"><blockquote>“Chatter on thin-wall aluminium was our biggest quality problem — we were scrapping nearly one in five parts due to wall thickness variation. QFCNCMachine’s applications team diagnosed the issue as resonance at our original RPM and showed us how to recalculate feed at a lower speed to maintain chip load. The fix took 10 minutes to implement. Our scrap rate on thin-wall parts dropped from around 20% to under 3%, and every part now passes CMM first time. The technical support alone has paid for itself many times over.”</blockquote><figcaption>— Ahmad F., Manufacturing Engineer, Aerospace Subcontractor, Penang, Malaysia</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Chatter on thin-wall aluminium was our biggest quality problem — we were scrapping nearly one in five parts due to wall thickness variation. Cennetic’s applications team diagnosed the issue as resonance at our original RPM and showed us how to recalculate feed at a lower speed to maintain chip load. The fix took 10 minutes to implement. Our scrap rate on thin-wall parts dropped from around 20% to under 3%, and every part now passes CMM first time. The technical support alone has paid for itself many times over.”</blockquote><figcaption>— Ahmad F., Manufacturing Engineer, Aerospace Subcontractor, Penang, Malaysia</figcaption></div>
 
   <!-- 6. PROS / CONS -->
   <h2 id="5-pros-cons-of-each-cnc-feed-rate-unit">5. Pros &amp; Cons of Each CNC Feed Rate Unit</h2>
@@ -341,7 +341,7 @@ sourceId: 7449
 
   <!-- 7. HIGHLIGHT -->
   <div class="qf-highlight">
-    <strong>Expert Summary:</strong> For <strong>CNC milling</strong>, always programme in <strong>IPM</strong> (or MMPM for metric) using the formula IPM = RPM × teeth × FPT. For <strong>CNC turning</strong>, use <strong>IPR</strong> to maintain consistent chip thickness across changing diameters. The single most common beginner mistake is running feed rate too <em>low</em> — not too high — which causes rubbing, heat buildup, and premature tool failure. Start with the tool manufacturer’s recommended FPT, verify chip appearance (aim for curled, coloured chips — not dust or long stringy chips), and adjust from there. QFCNCMachine’s engineering team can review your specific material and tooling combination and recommend starting parameters before your first cut.
+    <strong>Expert Summary:</strong> For <strong>CNC milling</strong>, always programme in <strong>IPM</strong> (or MMPM for metric) using the formula IPM = RPM × teeth × FPT. For <strong>CNC turning</strong>, use <strong>IPR</strong> to maintain consistent chip thickness across changing diameters. The single most common beginner mistake is running feed rate too <em>low</em> — not too high — which causes rubbing, heat buildup, and premature tool failure. Start with the tool manufacturer’s recommended FPT, verify chip appearance (aim for curled, coloured chips — not dust or long stringy chips), and adjust from there. Cennetic’s engineering team can review your specific material and tooling combination and recommend starting parameters before your first cut.
   </div>
 
   <p>
@@ -376,18 +376,18 @@ sourceId: 7449
     FPT is the single most critical factor for tool life. <strong>Too low FPT</strong> (below ~0.001″ for most carbide tools) causes the cutting edge to rub rather than shear, generating heat that accelerates crater wear and coating breakdown. <strong>Too high FPT</strong> overloads the cutting edge, causing micro-chipping or catastrophic breakage. The optimal FPT varies by tool material (carbide vs HSS), coating (TiAlN, TiCN, uncoated), workpiece material hardness, and machine rigidity. Always start at the lower end of the manufacturer’s recommended range and increase in 10% increments while monitoring chip colour and appearance.
   </p>
 
-  <h3 id="what-is-the-warranty-and-return-policy-for-qfcncmachine-equi">What is the warranty and return policy for QFCNCMachine equipment?</h3>
+  <h3 id="what-is-the-warranty-and-return-policy-for-cennetic-equi">What is the warranty and return policy for Cennetic equipment?</h3>
   <p>
-    All QFCNCMachine machining centers come with a <strong>2-year warranty</strong> covering manufacturing defects and component failures under normal operating conditions. In the event of a confirmed quality issue, we support full replacement or refund. Please note that returns without a quality-related reason are not supported — our team will work with you to diagnose and resolve any performance issues before a return is considered. Contact Bella directly at <a href="mailto:bella@qfcncmachine.com" rel="noopener">bella@qfcncmachine.com</a> or <a href="tel:+8615118243737" rel="noopener">+86 151 1824 3737</a> for any warranty or after-sales enquiry.
+    All Cennetic machining centers come with a <strong>2-year warranty</strong> covering manufacturing defects and component failures under normal operating conditions. In the event of a confirmed quality issue, we support full replacement or refund. Please note that returns without a quality-related reason are not supported — our team will work with you to diagnose and resolve any performance issues before a return is considered. Contact Bella directly at <a href="mailto:bella@cennetic.com" rel="noopener">bella@cennetic.com</a> or <a href="tel:+8615118243737" rel="noopener">+86 151 1824 3737</a> for any warranty or after-sales enquiry.
   </p>
 
   <!-- 9. CTA BOX -->
   <div class="qf-cta-box">
     <h3 id="ready-to-optimise-your-cnc-feed-rate">Ready to Optimise Your CNC Feed Rate?</h3>
-    <p>With <strong>15+ years of CNC machining experience</strong> and <strong>750+ customers</strong> across Europe, North America, and Southeast Asia since 2010, QFCNCMachine’s engineering team can help you select the right machine, set up your first job, and dial in feeds and speeds for your specific material and tooling. All machines come with a <strong>2-year warranty</strong> and full after-sales support from our Dongguan facility.</p>
+    <p>With <strong>15+ years of CNC machining experience</strong> and <strong>750+ customers</strong> across Europe, North America, and Southeast Asia since 2010, Cennetic’s engineering team can help you select the right machine, set up your first job, and dial in feeds and speeds for your specific material and tooling. All machines come with a <strong>2-year warranty</strong> and full after-sales support from our Dongguan facility.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Feed%20Rate%20Explained%3A%20IPM%2C%20IPR%20%26%20MMPM%20for%20Beginners%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-feed-rate-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Feed%20Rate%20Explained%3A%20IPM%2C%20IPR%20%26%20MMPM%20for%20Beginners%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-feed-rate-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call: +86 151 1824 3737</a>
     </div>
   </div>

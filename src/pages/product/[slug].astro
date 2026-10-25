@@ -72,7 +72,7 @@ const others = allProducts()
     })
     .slice(0, 3);
 
-const description = `${product.name} by QiaoFeng — ${product.summary
+const description = `${product.name} by Cennetic — ${product.summary
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim()
@@ -80,7 +80,7 @@ const description = `${product.name} by QiaoFeng — ${product.summary
 ---
 
 <BaseLayout
-    title={`${product.name} | QIAOFENG CNC`}
+    title={`${product.name} | CENNETIC CNC`}
     description={description.slice(0, 255)}
     path={product.canonical}
     ogImage={cover?.src}

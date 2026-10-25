@@ -19,7 +19,7 @@ sourceId: 7459
 
 <!-- ============================================================
      CNC STEPOVER – FULL FIXED VERSION FOR WORDPRESS HTML BLOCK
-     QFCNCMachine.com | Author: Bella | Updated: August 2026
+     cennetic.com | Author: Bella | Updated: August 2026
 ============================================================ -->
 
 
@@ -204,19 +204,19 @@ sourceId: 7459
   <p>
     A European aerospace subcontractor machining Ti-6Al-4V structural brackets was experiencing tool breakage at 45% stepover during roughing. After switching to a HEM strategy at 12% radial engagement with 1.8× Ø axial depth on a QF-850 5-axis machining center, cycle time dropped by 28% and tool life extended from 55 minutes to over 110 minutes per edge — consistent with published HEM benchmarks.
   </p>
-  <div class="qf-testimonial"><blockquote>“We had been fighting chatter and tool breakage for months on our titanium brackets. After QFCNCMachine’s team recommended the HEM stepover strategy and we switched to their 5-axis center, our scrap rate dropped from 12% to under 2% within the first month. The machine rigidity makes all the difference.”</blockquote><figcaption>— Thomas B., Manufacturing Engineer, Aerospace Tier-2 Supplier, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We had been fighting chatter and tool breakage for months on our titanium brackets. After Cennetic’s team recommended the HEM stepover strategy and we switched to their 5-axis center, our scrap rate dropped from 12% to under 2% within the first month. The machine rigidity makes all the difference.”</blockquote><figcaption>— Thomas B., Manufacturing Engineer, Aerospace Tier-2 Supplier, Germany</figcaption></div>
 
   <h3 id="62-automotive-mould-steel-cavity-north-america">6.2 Automotive — Mould Steel Cavity (North America)</h3>
   <p>
     A US-based injection mould maker machining H13 tool steel (48 HRC) cavities needed Ra ≤ 0.4 µm without hand-polishing. Using a 3-stage strategy — roughing at 40% stepover, semi-finishing at 20%, finishing at 5% — on a QF-1060 vertical machining center with TiAlN-coated 6 mm ball-nose end mills, the customer achieved Ra 0.35 µm directly off the machine, eliminating one polishing shift per week.
   </p>
-  <div class="qf-testimonial"><blockquote>“The combination of the right stepover strategy and QFCNCMachine’s rigid spindle gave us mirror-quality cavities straight off the machine. We eliminated hand-polishing on 80% of our moulds. The 2-year warranty gave us confidence to commit to a multi-machine order.”</blockquote><figcaption>— David R., Operations Manager, Precision Mould &amp; Die, Michigan, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“The combination of the right stepover strategy and Cennetic’s rigid spindle gave us mirror-quality cavities straight off the machine. We eliminated hand-polishing on 80% of our moulds. The 2-year warranty gave us confidence to commit to a multi-machine order.”</blockquote><figcaption>— David R., Operations Manager, Precision Mould &amp; Die, Michigan, USA</figcaption></div>
 
   <h3 id="63-medical-implant-grade-components-southeast-asia">6.3 Medical — Implant Grade Components (Southeast Asia)</h3>
   <p>
     A Malaysian contract manufacturer producing 316L stainless steel orthopaedic components required Ra ≤ 0.2 µm and full dimensional traceability. A finishing stepover of 4% (0.4 mm on a 10 mm ball-nose) combined with a 0.15 mm axial DOC achieved Ra 0.18 µm consistently across a 500-piece production run on a QF-650 machining center, meeting ISO 13485 surface quality requirements.
   </p>
-  <div class="qf-testimonial"><blockquote>“Surface finish consistency was our biggest challenge before working with QFCNCMachine. With the recommended 4% finishing stepover and their machine’s thermal compensation, we now hit Ra 0.18 µm on every single part. Our medical client audits have been flawless since the switch.”</blockquote><figcaption>— Nurul A., Quality Manager, Medical Device Contract Manufacturer, Kuala Lumpur, Malaysia</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Surface finish consistency was our biggest challenge before working with Cennetic. With the recommended 4% finishing stepover and their machine’s thermal compensation, we now hit Ra 0.18 µm on every single part. Our medical client audits have been flawless since the switch.”</blockquote><figcaption>— Nurul A., Quality Manager, Medical Device Contract Manufacturer, Kuala Lumpur, Malaysia</figcaption></div>
 
   <!-- 8. PROS / CONS -->
   <h2 id="7-pros-cons-of-high-vs-low-stepover">7. Pros &amp; Cons of High vs. Low Stepover</h2>
@@ -297,16 +297,16 @@ sourceId: 7459
 
   <h3 id="how-does-machine-rigidity-affect-optimal-stepover">How does machine rigidity affect optimal stepover?</h3>
   <p>
-    Machine rigidity is a critical limiting factor. A rigid, well-damped machining center (such as a Fanuc or Siemens-controlled vertical machining center with box-way construction) can sustain higher stepover values without chatter. On lighter-duty or older machines, reduce stepover by 10–15% from the recommended baseline to compensate for reduced structural damping. At QFCNCMACHINE, our machining centers are engineered with high-rigidity cast iron bases specifically to support aggressive stepover strategies in production environments.
+    Machine rigidity is a critical limiting factor. A rigid, well-damped machining center (such as a Fanuc or Siemens-controlled vertical machining center with box-way construction) can sustain higher stepover values without chatter. On lighter-duty or older machines, reduce stepover by 10–15% from the recommended baseline to compensate for reduced structural damping. At CENNETIC, our machining centers are engineered with high-rigidity cast iron bases specifically to support aggressive stepover strategies in production environments.
   </p>
 
   <!-- 11. CTA BOX -->
   <div class="qf-cta-box">
     <h3 id="ready-to-optimise-your-cnc-stepover-strategy">Ready to Optimise Your CNC Stepover Strategy?</h3>
-    <p>Our engineering team — with 15+ years of CNC machining experience — can help you select the right machine and cutting parameters for your specific material and tolerance requirements. 750+ customers across Europe, North America, and Southeast Asia trust QFCNCMACHINE for precision results. All machines come with a <strong>2-year warranty</strong>.</p>
+    <p>Our engineering team — with 15+ years of CNC machining experience — can help you select the right machine and cutting parameters for your specific material and tolerance requirements. 750+ customers across Europe, North America, and Southeast Asia trust CENNETIC for precision results. All machines come with a <strong>2-year warranty</strong>.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Stepover%3A%20Complete%20Guide%20to%20Roughing%20%26%20Finishing%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-stepover-guide%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Stepover%3A%20Complete%20Guide%20to%20Roughing%20%26%20Finishing%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-stepover-guide%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call: +86 151 1824 3737</a>
     </div>
   </div>

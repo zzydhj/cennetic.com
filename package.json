@@ -1,9 +1,9 @@
 {
-    "name": "qfcncmachine-static",
+    "name": "cennetic-static",
     "version": "1.0.0",
     "private": true,
     "type": "module",
-    "description": "QiaoFeng CNC Machine — static site migrated from WordPress (Astro + Cloudflare Pages + Decap CMS)",
+    "description": "Cennetic CNC Machine — static site migrated from WordPress (Astro + Cloudflare Pages + Decap CMS)",
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",

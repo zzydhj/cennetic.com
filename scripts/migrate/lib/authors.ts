@@ -40,7 +40,7 @@ export interface CanonicalAuthor {
     avatar: string;
 }
 
-/** 去掉署名行里嵌入的公司链接文字，避免把 "QiaoFeng CNC Machine" 混进职位 */
+/** 去掉署名行里嵌入的公司链接文字，避免把源站的“QiaoFeng CNC Machine”混进职位 */
 function cleanByline(text: string): string {
     return text.replace(/\s+/g, ' ').trim();
 }
@@ -56,6 +56,7 @@ export function parseByline(raw: string): { name: string; role: string } {
         .replace(/^Author:?\s+/i, '')
         .replace(/^By\s+/i, '');
 
+    // 源站实测写法（旧品牌域名，管道只按分隔符切，不依赖这个字样）：
     // "Bella — Founder & CNC Specialist, QFCNCMACHINE.COM"
     // "Bella | QFCNCMACHINE.COM Webmaster"
     const sep = s.match(/^(.+?)\s*(?:[—–|]| - )\s*(.+)$/);
@@ -176,7 +177,7 @@ export function canonicalize(variants: AuthorVariant[]): { author: CanonicalAuth
     // Station Master / Site Administrator 一类属于角色错标，宁可回落到 Founder
     const ROLE_DENY = /station master|site administrator|site owner|webmaster/i;
     const roles = rank((v) => v.role, mine).filter(([r]) => !ROLE_DENY.test(r));
-    const role = roles[0]?.[0] ?? 'Founder, QiaoFeng CNC Machine';
+    const role = roles[0]?.[0] ?? 'Founder, Cennetic CNC Machine';
 
     // 取最高频简介：它必须是跨主题都成立的通用自我描述
     const bios = rank((v) => v.bio, mine);

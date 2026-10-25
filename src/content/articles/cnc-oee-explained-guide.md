@@ -75,9 +75,9 @@ sourceId: 7499
   </table>
 
   <h2 id="real-world-scenarios-cnc-oee-explained-in-action">Real-World Scenarios: CNC OEE Explained in Action</h2>
-  <p>At QiaoFeng, we have served over <strong>750+ clients</strong> globally since our establishment in 2010. Having CNC OEE explained and implemented has transformed their operations. Here is what our clients from different regions have to say:</p>
+  <p>At Cennetic, we have served over <strong>750+ clients</strong> globally since our establishment in 2010. Having CNC OEE explained and implemented has transformed their operations. Here is what our clients from different regions have to say:</p>
 
-  <div class="qf-testimonial"><blockquote>“Before tracking OEE, we thought our setup times were normal. Once we analyzed the Availability data, we implemented SMED techniques and cut changeovers by 30%. QiaoFeng’s machines and guidance were game-changers for our auto parts production.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“Before tracking OEE, we thought our setup times were normal. Once we analyzed the Availability data, we implemented SMED techniques and cut changeovers by 30%. Cennetic’s machines and guidance were game-changers for our auto parts production.”</blockquote></div>
 
   <div class="qf-testimonial"><blockquote>“Quality is non-negotiable in aerospace. OEE tracking helped us pinpoint a recurring performance drop that was causing a 5% scrap rate. Fixing a worn spindle bearing brought our quality up to 99.8%.”</blockquote></div>
 
@@ -103,10 +103,10 @@ sourceId: 7499
     </div>
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-oee-explained-2.webp" alt="QiaoFeng CNC machine operator with CNC OEE explained display showing 85%" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-oee-explained-2.webp" alt="Cennetic CNC machine operator with CNC OEE explained display showing 85%" width="1200" height="686" loading="lazy">
 
   <div class="qf-highlight">
-    <strong>Why Choose QiaoFeng?</strong> Based in Dalingshan Town, Dongguan City, we have been manufacturing premium CNC machines since 2010. We offer a solid <strong>2-year warranty</strong> on our machines. We stand by our quality: we support refunds for any confirmed quality issues (no-reason returns are not supported).
+    <strong>Why Choose Cennetic?</strong> Based in Dalingshan Town, Dongguan City, we have been manufacturing premium CNC machines since 2010. We offer a solid <strong>2-year warranty</strong> on our machines. We stand by our quality: we support refunds for any confirmed quality issues (no-reason returns are not supported).
   </div>
 
   <h3 id="faq-cnc-oee-explained-for-beginners">FAQ: CNC OEE Explained for Beginners</h3>
@@ -119,14 +119,14 @@ sourceId: 7499
   <p><strong>Why is quality part of OEE?</strong><br>
   Producing defective parts wastes time and materials. Even if a machine runs fast with high uptime, poor quality lowers your effective output. Including quality ensures you focus on making good, sellable parts.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-oee-explained-3.webp" alt="OEE improvement chart for QiaoFeng CNC machines after having CNC OEE explained" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-oee-explained-3.webp" alt="OEE improvement chart for Cennetic CNC machines after having CNC OEE explained" width="1200" height="686" loading="lazy">
 
   <div class="qf-cta-box">
     <h3 id="ready-to-optimize-your-cnc-production">Ready to Optimize Your CNC Production?</h3>
-    <p>Now that you have CNC OEE explained, it’s time to take action. Contact QiaoFeng today to discuss how our high-efficiency CNC machines can boost your shop’s profitability.</p>
+    <p>Now that you have CNC OEE explained, it’s time to take action. Contact Cennetic today to discuss how our high-efficiency CNC machines can boost your shop’s profitability.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20OEE%20Explained%3A%20A%20Beginner's%20Guide%20to%20Efficiency%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-oee-explained-guide%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Us</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20OEE%20Explained%3A%20A%20Beginner's%20Guide%20to%20Efficiency%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-oee-explained-guide%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Us</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 15118243737</a>
     </div>
   </div>

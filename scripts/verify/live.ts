@@ -7,7 +7,7 @@
  *
  *   npx tsx scripts/verify/live.ts [baseUrl]
  */
-const BASE = (process.argv[2] ?? 'https://qfcncmachine-com.pages.dev').replace(/\/$/, '');
+const BASE = (process.argv[2] ?? 'https://cennetic-com.pages.dev').replace(/\/$/, '');
 
 interface Probe {
     status: number;

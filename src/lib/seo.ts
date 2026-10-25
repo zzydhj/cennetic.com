@@ -198,7 +198,7 @@ export function buildJsonLd(input: SeoInput): Record<string, unknown> {
             description: input.product.description,
             image: input.product.images,
             sku: input.product.sku || undefined,
-            brand: { '@type': 'Brand', name: 'QIAOFENG' },
+            brand: { '@type': 'Brand', name: 'CENNETIC' },
             manufacturer: { '@id': `${ORIGIN}/#organization` },
             category: input.product.categories,
             url,

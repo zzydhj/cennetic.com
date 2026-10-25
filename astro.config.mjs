@@ -11,7 +11,7 @@ const alias = (p) => fileURLToPath(new URL(`./src/${p}`, import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://qfcncmachine.com/',
+  site: 'https://www.cennetic.com/',
 
   output: 'static',
 

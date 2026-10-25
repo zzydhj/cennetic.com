@@ -1,7 +1,7 @@
 ---
 title: 'CNC Setup Time: How To Reduce Changeover & Boost OEE'
 heading: 'CNC Setup Time: How to Reduce Changeover & Boost OEE'
-description: Learn what CNC setup time is, how SMED works, and proven strategies to cut changeover by 73%. Expert guide by QiaoFeng — 15 years CNC experience.
+description: Learn what CNC setup time is, how SMED works, and proven strategies to cut changeover by 73%. Expert guide by Cennetic — 15 years CNC experience.
 slug: cnc-setup-time
 canonical: /cnc-setup-time/
 date: '2026-08-14T11:03:23'
@@ -24,7 +24,7 @@ sourceId: 7491
 <div class="qf-article-body">
 
   <!-- 1. 引言段 -->
-  <p><strong>CNC setup time</strong> is the single largest drain on productivity in high-mix, low-volume manufacturing — and for most job shops, it is also the most controllable variable on the factory floor. At <a href="/" rel="noopener">QiaoFeng Intelligent Equipment</a>, founded in 2010 and based in Dalingshan, Dongguan, Guangdong, China, we have helped 750+ manufacturers across the US, Europe, and Southeast Asia cut changeover times by an average of 73% using proven SMED methodology and purpose-built machine features. This comprehensive guide defines CNC setup time, explains the SMED process step by step, and gives you actionable strategies to slash changeover — backed by real-world case studies and authoritative industry data.</p>
+  <p><strong>CNC setup time</strong> is the single largest drain on productivity in high-mix, low-volume manufacturing — and for most job shops, it is also the most controllable variable on the factory floor. At <a href="/" rel="noopener">Cennetic Intelligent Equipment</a>, founded in 2010 and based in Dalingshan, Dongguan, Guangdong, China, we have helped 750+ manufacturers across the US, Europe, and Southeast Asia cut changeover times by an average of 73% using proven SMED methodology and purpose-built machine features. This comprehensive guide defines CNC setup time, explains the SMED process step by step, and gives you actionable strategies to slash changeover — backed by real-world case studies and authoritative industry data.</p>
 
   <img decoding="async" src="/images/2026/06/cnc-setup-time-1.webp" alt="CNC setup time reduction using quick-change tooling on VMC machining center" width="1200" height="686" loading="lazy">
 
@@ -84,15 +84,15 @@ sourceId: 7491
   </ul>
 
   <!-- 4. 对比表格 -->
-  <h2 id="3-cnc-setup-time-comparison-qiaofeng-vmc-850-vs-industry-ave">3. CNC Setup Time Comparison: QiaoFeng VMC-850 vs. Industry Average</h2>
+  <h2 id="3-cnc-setup-time-comparison-cennetic-vmc-850-vs-industry-ave">3. CNC Setup Time Comparison: Cennetic VMC-850 vs. Industry Average</h2>
 
-  <p>The following comparison is based on QiaoFeng internal production data (2024) and published industry benchmarks from job shop surveys. “Industry Average” reflects typical performance in unoptimized high-mix CNC job shops prior to SMED implementation.</p>
+  <p>The following comparison is based on Cennetic internal production data (2024) and published industry benchmarks from job shop surveys. “Industry Average” reflects typical performance in unoptimized high-mix CNC job shops prior to SMED implementation.</p>
 
   <table class="qf-table">
     <thead>
       <tr>
         <th scope="col">Parameter</th>
-        <th scope="col">QiaoFeng VMC-850</th>
+        <th scope="col">Cennetic VMC-850</th>
         <th scope="col">Industry Average (Unoptimized)</th>
       </tr>
     </thead>
@@ -146,19 +146,19 @@ sourceId: 7491
   <h2 id="4-real-world-case-studies-cnc-setup-time-reduction-in-action">4. Real-World Case Studies: CNC Setup Time Reduction in Action</h2>
 
   <h3 id="case-1-high-mix-aerospace-job-shop-usa-90-min-12-min">Case 1 — High-Mix Aerospace Job Shop (USA): 90 min → 12 min</h3>
-  <p>A Midwest aerospace job shop running 50+ part numbers per week was averaging <strong>90-minute setup times</strong>, causing chronic late deliveries and expensive overtime. After implementing SMED with QiaoFeng’s quick-change pallet system and transitioning to offline DNC programming, average setup dropped to <strong>12 minutes</strong>. On-time delivery improved from 70% to 98%, and the shop won a major defense subcontract requiring 24-hour turnaround capability.</p>
+  <p>A Midwest aerospace job shop running 50+ part numbers per week was averaging <strong>90-minute setup times</strong>, causing chronic late deliveries and expensive overtime. After implementing SMED with Cennetic’s quick-change pallet system and transitioning to offline DNC programming, average setup dropped to <strong>12 minutes</strong>. On-time delivery improved from 70% to 98%, and the shop won a major defense subcontract requiring 24-hour turnaround capability.</p>
 
-  <div class="qf-testimonial"><blockquote>“Before QiaoFeng, our setups were killing us — 90 minutes every changeover on a 50-part-number mix. After switching to their VMC-850 with the dual-pallet system and running SMED, we’re consistently under 15 minutes. Our OEE went from 58% to 84% in six months. That’s the difference between losing bids and winning them.”</blockquote><figcaption>— Derek M., Operations Manager, Aerospace Job Shop, Ohio, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Before Cennetic, our setups were killing us — 90 minutes every changeover on a 50-part-number mix. After switching to their VMC-850 with the dual-pallet system and running SMED, we’re consistently under 15 minutes. Our OEE went from 58% to 84% in six months. That’s the difference between losing bids and winning them.”</blockquote><figcaption>— Derek M., Operations Manager, Aerospace Job Shop, Ohio, USA</figcaption></div>
 
   <h3 id="case-2-automotive-tier-1-supplier-germany-2-hrs-15-min">Case 2 — Automotive Tier 1 Supplier (Germany): 2 hrs → 15 min</h3>
-  <p>A German Tier 1 supplier of precision brake components needed to change fixtures every 200 parts. Traditional changeover required <strong>2 hours</strong> of machine downtime. By adopting QiaoFeng’s hydraulic zero-point clamping system and pre-heated die protocols, changeover was reduced to <strong>15 minutes</strong>. This enabled a shift from 2,000-piece batch runs to 200-piece runs, reducing finished goods inventory by 40% and freeing up €180,000 in working capital annually.</p>
+  <p>A German Tier 1 supplier of precision brake components needed to change fixtures every 200 parts. Traditional changeover required <strong>2 hours</strong> of machine downtime. By adopting Cennetic’s hydraulic zero-point clamping system and pre-heated die protocols, changeover was reduced to <strong>15 minutes</strong>. This enabled a shift from 2,000-piece batch runs to 200-piece runs, reducing finished goods inventory by 40% and freeing up €180,000 in working capital annually.</p>
 
-  <div class="qf-testimonial"><blockquote>“We were locked into large batch sizes because our changeover cost was too high. QiaoFeng’s hydraulic clamping solution changed everything. We now run smaller, more flexible batches, our inventory is down 40%, and our customers get faster delivery. The ROI on the machine paid back in under 14 months.”</blockquote><figcaption>— Klaus W., Plant Manager, Automotive Components Manufacturer, Bavaria, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We were locked into large batch sizes because our changeover cost was too high. Cennetic’s hydraulic clamping solution changed everything. We now run smaller, more flexible batches, our inventory is down 40%, and our customers get faster delivery. The ROI on the machine paid back in under 14 months.”</blockquote><figcaption>— Klaus W., Plant Manager, Automotive Components Manufacturer, Bavaria, Germany</figcaption></div>
 
   <h3 id="case-3-medical-device-manufacturer-vietnam-45-min-8-min">Case 3 — Medical Device Manufacturer (Vietnam): 45 min → 8 min</h3>
-  <p>A Ho Chi Minh City manufacturer of surgical instrument components faced <strong>45-minute setups</strong> for runs as short as 5 pieces — making short-run production economically unviable. After implementing QiaoFeng’s offline tool presetter and automated probing routines, setup time dropped to <strong>8 minutes</strong>. Scrap rates fell from 5% to 0.5% due to consistent, repeatable offset entry, and the factory was able to take on 30% more customer orders without adding headcount.</p>
+  <p>A Ho Chi Minh City manufacturer of surgical instrument components faced <strong>45-minute setups</strong> for runs as short as 5 pieces — making short-run production economically unviable. After implementing Cennetic’s offline tool presetter and automated probing routines, setup time dropped to <strong>8 minutes</strong>. Scrap rates fell from 5% to 0.5% due to consistent, repeatable offset entry, and the factory was able to take on 30% more customer orders without adding headcount.</p>
 
-  <div class="qf-testimonial"><blockquote>“Short runs used to be a money-loser for us because setup took longer than the actual machining. QiaoFeng’s presetter and probing routines solved that completely. Now 8-minute setups mean even 5-piece jobs are profitable. Our scrap rate dropped from 5% to under 1% — that alone covers the machine cost.”</blockquote><figcaption>— Linh T., Manufacturing Director, Surgical Instruments Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Short runs used to be a money-loser for us because setup took longer than the actual machining. Cennetic’s presetter and probing routines solved that completely. Now 8-minute setups mean even 5-piece jobs are profitable. Our scrap rate dropped from 5% to under 1% — that alone covers the machine cost.”</blockquote><figcaption>— Linh T., Manufacturing Director, Surgical Instruments Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
   <img decoding="async" src="/images/2026/06/cnc-setup-time-3.webp" alt="CNC setup time OEE improvement dashboard showing changeover reduction results" width="1200" height="686" loading="lazy">
 
@@ -192,7 +192,7 @@ sourceId: 7491
 
   <!-- 7. Highlight 总结框 -->
   <div class="qf-highlight">
-    <strong>Bottom Line:</strong> A typical 10-machine job shop implementing SMED with QiaoFeng equipment recovers <strong>1,650+ hours of machine time per year</strong>. At a conservative $50/hour machine rate, that is <strong>$82,500 in recovered capacity annually</strong> — before accounting for new business won through faster turnaround. The question is not whether you can afford to implement SMED. It is whether you can afford not to.
+    <strong>Bottom Line:</strong> A typical 10-machine job shop implementing SMED with Cennetic equipment recovers <strong>1,650+ hours of machine time per year</strong>. At a conservative $50/hour machine rate, that is <strong>$82,500 in recovered capacity annually</strong> — before accounting for new business won through faster turnaround. The question is not whether you can afford to implement SMED. It is whether you can afford not to.
   </div>
 
   <!-- 8. FAQ -->
@@ -205,24 +205,24 @@ sourceId: 7491
   <p>Time the complete changeover from the last good part of Job A to the first good part of Job B. Use a stopwatch, video recording, or machine monitoring software. Break the process into individual steps (remove tooling, clean table, load program, set offsets, test cut, first-piece inspection) and record each duration separately. This granular baseline reveals exactly where time is being lost and which steps offer the greatest reduction opportunity.</p>
 
   <h3 id="what-is-a-realistic-cnc-setup-time-target-for-a-job-shop">What is a realistic CNC setup time target for a job shop?</h3>
-  <p>For most job shops, a realistic initial target is <strong>under 20 minutes</strong> after a first round of SMED implementation. With dedicated quick-change hardware and mature procedures, <strong>sub-10 minutes</strong> (the SMED target) is achievable. World-class operations with zero-point clamping and automated probing regularly achieve <strong>under 5 minutes</strong>. QiaoFeng’s VMC series is designed to support sub-10-minute setups out of the box.</p>
+  <p>For most job shops, a realistic initial target is <strong>under 20 minutes</strong> after a first round of SMED implementation. With dedicated quick-change hardware and mature procedures, <strong>sub-10 minutes</strong> (the SMED target) is achievable. World-class operations with zero-point clamping and automated probing regularly achieve <strong>under 5 minutes</strong>. Cennetic’s VMC series is designed to support sub-10-minute setups out of the box.</p>
 
   <h3 id="does-reducing-cnc-setup-time-affect-part-quality">Does reducing CNC setup time affect part quality?</h3>
-  <p>When implemented correctly, reducing setup time <em>improves</em> quality. Standardized setup procedures eliminate operator-to-operator variation. Automated probing ensures consistent, repeatable work offsets every time. Offline tool presetters eliminate manual tool length measurement errors. QiaoFeng customers consistently report lower scrap rates after SMED implementation — as seen in the medical device case study above, where scrap dropped from 5% to 0.5%.</p>
+  <p>When implemented correctly, reducing setup time <em>improves</em> quality. Standardized setup procedures eliminate operator-to-operator variation. Automated probing ensures consistent, repeatable work offsets every time. Offline tool presetters eliminate manual tool length measurement errors. Cennetic customers consistently report lower scrap rates after SMED implementation — as seen in the medical device case study above, where scrap dropped from 5% to 0.5%.</p>
 
-  <h3 id="what-is-qiaofengs-warranty-and-return-policy">What is QiaoFeng’s warranty and return policy?</h3>
-  <p>All QiaoFeng CNC machines and machined parts come with a <strong>2-year warranty</strong>. We fully support returns and refunds for any confirmed quality issue — if a part or machine does not conform to agreed specifications, we will replace or refund at no cost. We do not support no-reason returns for products that meet the specified technical requirements. For any quality concerns, contact us directly at <a href="mailto:bella@qfcncmachine.com" rel="noopener">bella@qfcncmachine.com</a>.</p>
+  <h3 id="what-is-cennetics-warranty-and-return-policy">What is Cennetic’s warranty and return policy?</h3>
+  <p>All Cennetic CNC machines and machined parts come with a <strong>2-year warranty</strong>. We fully support returns and refunds for any confirmed quality issue — if a part or machine does not conform to agreed specifications, we will replace or refund at no cost. We do not support no-reason returns for products that meet the specified technical requirements. For any quality concerns, contact us directly at <a href="mailto:bella@cennetic.com" rel="noopener">bella@cennetic.com</a>.</p>
 
-  <h3 id="how-long-does-smed-implementation-take-and-what-support-does">How long does SMED implementation take, and what support does QiaoFeng offer?</h3>
-  <p>A basic SMED implementation — documenting current state, separating internal/external tasks, and introducing quick-change tooling — typically takes <strong>4–8 weeks</strong> for a single machine cell. Full shop-wide rollout across 10+ machines may take 3–6 months. QiaoFeng offers on-site SMED consulting, operator training, and retrofit kit recommendations to accelerate your implementation. Contact us for a free setup time audit tailored to your specific machine mix and part variety.</p>
+  <h3 id="how-long-does-smed-implementation-take-and-what-support-does">How long does SMED implementation take, and what support does Cennetic offer?</h3>
+  <p>A basic SMED implementation — documenting current state, separating internal/external tasks, and introducing quick-change tooling — typically takes <strong>4–8 weeks</strong> for a single machine cell. Full shop-wide rollout across 10+ machines may take 3–6 months. Cennetic offers on-site SMED consulting, operator training, and retrofit kit recommendations to accelerate your implementation. Contact us for a free setup time audit tailored to your specific machine mix and part variety.</p>
 
   <!-- 9. CTA Box -->
   <div class="qf-cta-box">
     <h3 id="ready-to-cut-your-cnc-setup-time-by-73">Ready to Cut Your CNC Setup Time by 73%?</h3>
-    <p>QiaoFeng has helped 750+ manufacturers since 2010 slash changeover times and boost OEE. Our VMC series comes standard with dual-pallet changers, automated probing, and DNC networking — everything you need for sub-12-minute setups. Based in Dongguan, Guangdong. 2-year warranty on all machines. Free setup time audit for new inquiries.</p>
+    <p>Cennetic has helped 750+ manufacturers since 2010 slash changeover times and boost OEE. Our VMC series comes standard with dual-pallet changers, automated probing, and DNC networking — everything you need for sub-12-minute setups. Based in Dongguan, Guangdong. 2-year warranty on all machines. Free setup time audit for new inquiries.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Setup%20Time%3A%20How%20to%20Reduce%20Changeover%20%26%20Boost%20OEE%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-setup-time%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Setup Audit</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Setup%20Time%3A%20How%20to%20Reduce%20Changeover%20%26%20Boost%20OEE%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-setup-time%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Setup Audit</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 151 1824 3737</a>
     </div>
   </div>

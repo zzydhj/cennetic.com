@@ -171,14 +171,14 @@ isListing: true
 					<div class="wd-post-thumb entry-header">
 									<div class="wd-post-img post-img-wrapp">
 						<img loading="lazy" decoding="async" width="1200" height="686" src="/images/2026/06/cnc-quantum-computing-1.webp" class="size-large" alt="">					</div>
-										<a class="wd-fill" tabindex="-1" href="/cnc-quantum-computing/" aria-label="Link on post CNC Quantum Computing: Hybrid AI Optimization | QFCNC"></a>
+										<a class="wd-fill" tabindex="-1" href="/cnc-quantum-computing/" aria-label="Link on post CNC Quantum Computing: Hybrid AI Optimization | CENNETIC"></a>
 				
 							</div>
 		
 		<div class="wd-post-content article-body-container">
 			
-							<h3 class="wd-post-title wd-entities-title title post-title" id="cnc-quantum-computing-hybrid-ai-optimization-qfcnc">
-					<a href="/cnc-quantum-computing/" rel="bookmark">CNC Quantum Computing: Hybrid AI Optimization | QFCNC</a>
+							<h3 class="wd-post-title wd-entities-title title post-title" id="cnc-quantum-computing-hybrid-ai-optimization-cennetic">
+					<a href="/cnc-quantum-computing/" rel="bookmark">CNC Quantum Computing: Hybrid AI Optimization | CENNETIC</a>
 				</h3>
 			
 			

@@ -1,7 +1,7 @@
 ---
 title: 'CNC Glossary A-Z: Complete CNC Terms For Beginners'
 heading: 'CNC Glossary A-Z: Complete CNC Terminology List for Beginners'
-description: Master every CNC machining term with our complete CNC glossary A-Z. 50+ definitions explained for beginners — by QFCNCMACHINE, est. 2010.
+description: Master every CNC machining term with our complete CNC glossary A-Z. 50+ definitions explained for beginners — by CENNETIC, est. 2010.
 slug: cnc-glossary-a-z
 canonical: /cnc-glossary-a-z/
 date: '2026-08-16T10:02:57'
@@ -32,7 +32,7 @@ sourceId: 7415
 
   <!-- ===== 1. INTRO ===== -->
   <p>
-    Welcome to the most complete <strong>CNC glossary A-Z</strong> for beginners on the web. Whether you’re a hobbyist just starting out, a purchasing agent evaluating machines, or a technician looking to sharpen your vocabulary, this comprehensive <strong>CNC terminology list</strong> covers 50+ essential <strong>CNC machining terms</strong> — from Axis to Zero Point — with plain-English definitions, real-world examples, and practical tips. Built on <strong>15 years of hands-on CNC manufacturing experience</strong> at <a href="/" rel="noopener">QFCNCMACHINE</a> (est. 2010, Dongguan, China), and grounded in ISO 9001:2015 standards, this glossary is the reference guide we wish we’d had when we started.
+    Welcome to the most complete <strong>CNC glossary A-Z</strong> for beginners on the web. Whether you’re a hobbyist just starting out, a purchasing agent evaluating machines, or a technician looking to sharpen your vocabulary, this comprehensive <strong>CNC terminology list</strong> covers 50+ essential <strong>CNC machining terms</strong> — from Axis to Zero Point — with plain-English definitions, real-world examples, and practical tips. Built on <strong>15 years of hands-on CNC manufacturing experience</strong> at <a href="/" rel="noopener">CENNETIC</a> (est. 2010, Dongguan, China), and grounded in ISO 9001:2015 standards, this glossary is the reference guide we wish we’d had when we started.
   </p>
   <p>
     Understanding <strong>CNC definitions</strong> is the first step to mastering CNC machining. Use the A–Z quick-jump navigation below to find any term instantly.
@@ -584,11 +584,11 @@ sourceId: 7415
   <!-- ===== 7. TESTIMONIALS ===== -->
   <h2 id="6-what-our-customers-say">6. What Our Customers Say</h2>
 
-  <div class="qf-testimonial"><blockquote>“I was completely new to CNC when I started my small parts business in Ohio. QFCNCMACHINE’s glossary was the first resource that actually explained terms like ‘work offset’ and ‘cutter compensation’ in plain English — not just textbook definitions. Within two weeks I went from crashing tools to running consistent jobs. I keep it bookmarked and refer to it constantly.”</blockquote><figcaption>— Kevin M., Small Business Owner, Ohio, USA · Precision Parts &amp; Prototyping</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“I was completely new to CNC when I started my small parts business in Ohio. Cennetic’s glossary was the first resource that actually explained terms like ‘work offset’ and ‘cutter compensation’ in plain English — not just textbook definitions. Within two weeks I went from crashing tools to running consistent jobs. I keep it bookmarked and refer to it constantly.”</blockquote><figcaption>— Kevin M., Small Business Owner, Ohio, USA · Precision Parts &amp; Prototyping</figcaption></div>
 
   <div class="qf-testimonial"><blockquote>“As a CNC trainer at a vocational college in Stuttgart, I recommend this glossary to every new student on day one. The A-Z format with real-world examples makes abstract concepts like ‘interpolation’ and ‘tramming’ immediately understandable. It’s become a standard reference in our curriculum alongside our official textbooks.”</blockquote><figcaption>— Thomas W., CNC Instructor, Stuttgart, Germany · Vocational Engineering College</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“Our mold shop in Penang supplies injection mold tooling to electronics OEMs across Southeast Asia. Miscommunication with customers about tolerances and surface finish specs used to cost us rework time every month. After sharing QFCNCMACHINE’s glossary with our sales and engineering teams, everyone speaks the same language. Rejection rates on first-article submissions dropped noticeably within the first quarter.”</blockquote><figcaption>— Lim C.H., Technical Director, Penang, Malaysia · Precision Mold &amp; Die Manufacturing</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Our mold shop in Penang supplies injection mold tooling to electronics OEMs across Southeast Asia. Miscommunication with customers about tolerances and surface finish specs used to cost us rework time every month. After sharing Cennetic’s glossary with our sales and engineering teams, everyone speaks the same language. Rejection rates on first-article submissions dropped noticeably within the first quarter.”</blockquote><figcaption>— Lim C.H., Technical Director, Penang, Malaysia · Precision Mold &amp; Die Manufacturing</figcaption></div>
 
   <!-- ===== 8. PROS / CONS ===== -->
   <h2 id="7-pros-and-cons-of-learning-cnc-terminology">7. Pros and Cons of Learning CNC Terminology</h2>
@@ -639,16 +639,16 @@ sourceId: 7415
   <h3 id="is-this-cnc-glossary-suitable-for-advanced-users-too">Is this CNC glossary suitable for advanced users too?</h3>
   <p>Yes. While designed with beginners in mind, this glossary includes advanced terms such as <strong>GD&amp;T, Kinematic Model, Probing, Nesting, Post-Processor,</strong> and <strong>Pallet Changers</strong> that even experienced machinists and engineers reference regularly. It serves as a comprehensive quick-reference for all skill levels.</p>
 
-  <h3 id="what-is-qfcncmachines-warranty-and-return-policy">What is QFCNCMACHINE’s warranty and return policy?</h3>
-  <p>All QFCNCMACHINE equipment comes with a <strong>2-year manufacturer’s warranty</strong> covering defects in materials and workmanship. Returns are supported for confirmed quality issues. We do not support no-reason returns without a verified quality defect. Contact us at <a href="mailto:bella@qfcncmachine.com" rel="noopener">bella@qfcncmachine.com</a> or <a href="tel:+8615118243737" rel="noopener">+86 151 1824 3737</a> for any after-sales support.</p>
+  <h3 id="what-is-cennetics-warranty-and-return-policy">What is Cennetic’s warranty and return policy?</h3>
+  <p>All CENNETIC equipment comes with a <strong>2-year manufacturer’s warranty</strong> covering defects in materials and workmanship. Returns are supported for confirmed quality issues. We do not support no-reason returns without a verified quality defect. Contact us at <a href="mailto:bella@cennetic.com" rel="noopener">bella@cennetic.com</a> or <a href="tel:+8615118243737" rel="noopener">+86 151 1824 3737</a> for any after-sales support.</p>
 
   <!-- ===== 11. CTA BOX ===== -->
   <div class="qf-cta-box">
     <h3 id="ready-to-put-your-cnc-knowledge-into-practice">Ready to Put Your CNC Knowledge Into Practice?</h3>
-    <p>QFCNCMACHINE has been supplying precision CNC equipment to 750+ customers across Europe, North America, and Southeast Asia since 2010. Talk to our team for a personalized machine recommendation — or just ask us anything about CNC terminology.</p>
+    <p>CENNETIC has been supplying precision CNC equipment to 750+ customers across Europe, North America, and Southeast Asia since 2010. Talk to our team for a personalized machine recommendation — or just ask us anything about CNC terminology.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Glossary%20A-Z%3A%20Complete%20CNC%20Terminology%20List%20for%20Beginners%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-glossary-a-z%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com" rel="noopener">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Glossary%20A-Z%3A%20Complete%20CNC%20Terminology%20List%20for%20Beginners%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-glossary-a-z%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com" rel="noopener">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737" rel="noopener">📞 +86 151 1824 3737</a>
     </div>
   </div>

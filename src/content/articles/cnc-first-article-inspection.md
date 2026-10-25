@@ -1,7 +1,7 @@
 ---
 title: CNC First Article Inspection Explained – Complete FAIR Guide
 heading: CNC First Article Inspection Explained – Complete FAIR Guide
-description: Learn what CNC first article inspection (FAIR) is, how the process works, and why it reduces defects. Expert guide by QiaoFeng with 15+ years of CNC
+description: Learn what CNC first article inspection (FAIR) is, how the process works, and why it reduces defects. Expert guide by Cennetic with 15+ years of CNC
 slug: cnc-first-article-inspection
 canonical: /cnc-first-article-inspection/
 date: '2026-08-14T10:58:23'
@@ -23,7 +23,7 @@ sourceId: 7495
 <div class="qf-article-body">
 
   <!-- 1. 引言段 -->
-  <p><strong>CNC first article inspection</strong> (FAIR) is the single most important quality gate in precision manufacturing. Whether you’re a quality engineer setting up a new production line or a procurement manager evaluating a CNC supplier, understanding the FAIR process can mean the difference between a flawless production run and a costly batch of scrap. At <a href="/" rel="noopener">QiaoFeng Intelligent Equipment</a>, founded in 2010 and headquartered in Dalingshan, Dongguan, Guangdong, China, we have delivered precision CNC solutions to 750+ manufacturers across the US, Europe, and Southeast Asia — and 100% first article inspection is built into every order we fulfill.</p>
+  <p><strong>CNC first article inspection</strong> (FAIR) is the single most important quality gate in precision manufacturing. Whether you’re a quality engineer setting up a new production line or a procurement manager evaluating a CNC supplier, understanding the FAIR process can mean the difference between a flawless production run and a costly batch of scrap. At <a href="/" rel="noopener">Cennetic Intelligent Equipment</a>, founded in 2010 and headquartered in Dalingshan, Dongguan, Guangdong, China, we have delivered precision CNC solutions to 750+ manufacturers across the US, Europe, and Southeast Asia — and 100% first article inspection is built into every order we fulfill.</p>
 
   <img decoding="async" src="/images/2026/06/cnc-first-article-explained-1.webp" alt="CNC first article inspection process with micrometer and CAD drawing" width="1200" height="686" loading="lazy">
 
@@ -51,7 +51,7 @@ sourceId: 7495
   <img decoding="async" src="/images/2026/06/cnc-first-article-explained-2.webp" alt="CNC first article inspection using CMM coordinate measuring machine" width="1200" height="686" loading="lazy">
 
   <h2 id="2-the-complete-fair-process-5-key-steps">2. The Complete FAIR Process: 5 Key Steps</h2>
-  <p>Understanding the step-by-step FAIR workflow helps both buyers and manufacturers align expectations and avoid delays. Here is how QiaoFeng executes the process:</p>
+  <p>Understanding the step-by-step FAIR workflow helps both buyers and manufacturers align expectations and avoid delays. Here is how Cennetic executes the process:</p>
 
   <h3 id="step-1-planning-document-review">Step 1 — Planning &amp; Document Review</h3>
   <p>Before any cutting begins, our quality engineers review all design documents: engineering drawings, 3D CAD models, material certifications, and customer-specific requirements. Critical-to-quality (CTQ) dimensions are identified and highlighted. Measurement equipment is selected and verified for calibration status.</p>
@@ -74,7 +74,7 @@ sourceId: 7495
   <p>All measurement results are recorded in a formal First Article Inspection Report (FAIR), showing nominal values, actual measured values, tolerances, and pass/fail status for each feature. Any out-of-tolerance condition triggers an immediate nonconformance record with root-cause analysis.</p>
 
   <h3 id="step-5-approval-production-release">Step 5 — Approval &amp; Production Release</h3>
-  <p>The completed FAIR report is reviewed and signed off by QiaoFeng’s quality engineering team. For customer-submitted drawings, a copy is sent to the customer for approval. Only after formal sign-off is the production order released for full-quantity manufacturing.</p>
+  <p>The completed FAIR report is reviewed and signed off by Cennetic’s quality engineering team. For customer-submitted drawings, a copy is sent to the customer for approval. Only after formal sign-off is the production order released for full-quantity manufacturing.</p>
 
   <!-- 4. 对比表格 -->
   <h2 id="3-fair-vs-regular-inspection-vs-ppap-key-differences">3. FAIR vs. Regular Inspection vs. PPAP: Key Differences</h2>
@@ -129,18 +129,18 @@ sourceId: 7495
 
   <!-- 5. 案例 + Testimonials -->
   <h2 id="4-real-world-case-study-aerospace-titanium-bracket">4. Real-World Case Study: Aerospace Titanium Bracket</h2>
-  <p>A QiaoFeng client producing titanium structural brackets for a commercial aircraft subassembly was experiencing a <strong>15% rejection rate</strong> due to out-of-tolerance hole positions. The root cause — identified only after implementing our FAIR process — was a fixture offset error that had gone undetected during regular sampling inspection.</p>
+  <p>A Cennetic client producing titanium structural brackets for a commercial aircraft subassembly was experiencing a <strong>15% rejection rate</strong> due to out-of-tolerance hole positions. The root cause — identified only after implementing our FAIR process — was a fixture offset error that had gone undetected during regular sampling inspection.</p>
   <p>After correcting the fixture and re-running the first article, all 24 hole positions passed within ±0.01mm tolerance. The rejection rate dropped to <strong>0.5%</strong>, and the client saved an estimated <strong>$50,000+ annually</strong> in rework and scrap costs. This case demonstrates that FAIR is not a bureaucratic formality — it is a direct cost-saving tool.</p>
 
   <h3 id="what-our-clients-say">What Our Clients Say</h3>
 
-  <div class="qf-testimonial"><blockquote>“We source precision aluminum housings from QiaoFeng for our industrial automation equipment. Their FAIR report gave us complete confidence before we committed to a 2,000-piece production run. Zero defects on delivery — exactly what we needed.”</blockquote><figcaption>— James R., Procurement Manager, Midwest USA (Industrial Automation)</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We source precision aluminum housings from Cennetic for our industrial automation equipment. Their FAIR report gave us complete confidence before we committed to a 2,000-piece production run. Zero defects on delivery — exactly what we needed.”</blockquote><figcaption>— James R., Procurement Manager, Midwest USA (Industrial Automation)</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“As a medical device manufacturer in Germany, we operate under strict ISO 13485 requirements. QiaoFeng’s first article inspection documentation met every requirement our quality auditors checked. The CMM reports were detailed, clear, and traceable.”</blockquote><figcaption>— Dr. Markus B., Quality Director, Bavaria, Germany (Medical Devices)</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“As a medical device manufacturer in Germany, we operate under strict ISO 13485 requirements. Cennetic’s first article inspection documentation met every requirement our quality auditors checked. The CMM reports were detailed, clear, and traceable.”</blockquote><figcaption>— Dr. Markus B., Quality Director, Bavaria, Germany (Medical Devices)</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“We were struggling with inconsistent part quality from our previous supplier. After switching to QiaoFeng and receiving their FAIR report on the first batch, we could see immediately that every dimension was within spec. Lead time was fast and communication was excellent.”</blockquote><figcaption>— Thanh N., Engineering Lead, Ho Chi Minh City, Vietnam (Electronics Manufacturing)</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We were struggling with inconsistent part quality from our previous supplier. After switching to Cennetic and receiving their FAIR report on the first batch, we could see immediately that every dimension was within spec. Lead time was fast and communication was excellent.”</blockquote><figcaption>— Thanh N., Engineering Lead, Ho Chi Minh City, Vietnam (Electronics Manufacturing)</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-first-article-explained-3.webp" alt="QiaoFeng CNC workshop team reviewing first article inspection FAIR report" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="/images/2026/06/cnc-first-article-explained-3.webp" alt="Cennetic CNC workshop team reviewing first article inspection FAIR report" width="1200" height="686" loading="lazy">
 
   <!-- 6. Pros / Cons -->
   <h2 id="5-pros-cons-of-implementing-fair-in-your-supply-chain">5. Pros &amp; Cons of Implementing FAIR in Your Supply Chain</h2>
@@ -171,7 +171,7 @@ sourceId: 7495
 
   <!-- 7. Highlight 总结框 -->
   <div class="qf-highlight">
-    <strong>Bottom Line:</strong> For any part with tight tolerances, critical functions, or regulated industry requirements, the cost of <strong>not</strong> performing a CNC first article inspection is almost always higher than the cost of performing one. QiaoFeng includes a <strong>free FAIR report</strong> with every new part program — no extra charge.
+    <strong>Bottom Line:</strong> For any part with tight tolerances, critical functions, or regulated industry requirements, the cost of <strong>not</strong> performing a CNC first article inspection is almost always higher than the cost of performing one. Cennetic includes a <strong>free FAIR report</strong> with every new part program — no extra charge.
   </div>
 
   <!-- 8. FAQ -->
@@ -181,7 +181,7 @@ sourceId: 7495
   <p>FAIR (First Article Inspection Report) is a comprehensive, 100% feature check of the very first part produced from a new setup — covering every dimension, tolerance, and specification on the drawing. Regular in-process inspections typically sample random parts during production and may only check selected features. FAIR is mandated by AS9102 for aerospace and ISO 13485 for medical devices, and is considered best practice across all precision manufacturing industries.</p>
 
   <h3 id="how-long-does-a-cnc-first-article-inspection-take">How long does a CNC first article inspection take?</h3>
-  <p>Inspection time depends on part complexity and the number of features. Simple turned parts with 10–15 dimensions may be completed in 2–4 hours. Complex prismatic parts with GD&amp;T callouts, multiple datum references, and tight positional tolerances may require 1–2 full working days. At QiaoFeng, we typically complete FAIR within <strong>24 hours</strong> for standard parts, and provide the report digitally for customer review.</p>
+  <p>Inspection time depends on part complexity and the number of features. Simple turned parts with 10–15 dimensions may be completed in 2–4 hours. Complex prismatic parts with GD&amp;T callouts, multiple datum references, and tight positional tolerances may require 1–2 full working days. At Cennetic, we typically complete FAIR within <strong>24 hours</strong> for standard parts, and provide the report digitally for customer review.</p>
 
   <h3 id="do-i-need-a-fair-for-every-production-order">Do I need a FAIR for every production order?</h3>
   <p>FAIR is essential whenever a new CNC program is introduced, a design change is made, a new machine or fixture is used, or production is restarted after a long gap. For repeat orders with no changes to drawing, material, process, or equipment, a reduced inspection plan may be acceptable. However, many regulated industries (aerospace, medical, defense) mandate FAIR for every new production lot regardless of repeat status.</p>
@@ -189,19 +189,19 @@ sourceId: 7495
   <h3 id="what-happens-if-the-first-article-fails-inspection">What happens if the first article fails inspection?</h3>
   <p>If the first article fails, production is immediately halted. A nonconformance report (NCR) is raised, and root-cause analysis is performed to identify whether the issue is a program error, fixture misalignment, tool wear, material deviation, or operator error. The issue is corrected, and a new first article is produced and fully re-inspected. Only after a clean pass is production released. This process prevents any defective parts from entering the production batch.</p>
 
-  <h3 id="what-is-qiaofengs-warranty-and-return-policy-for-machined-pa">What is QiaoFeng’s warranty and return policy for machined parts?</h3>
-  <p>QiaoFeng offers a <strong>2-year warranty</strong> on all machined parts and CNC machine tools. Returns and refunds are supported for any confirmed quality issue — if parts do not conform to the agreed drawing and inspection report, we will replace or refund at no cost to you. We do not support no-reason returns for parts that meet the specified drawing requirements.</p>
+  <h3 id="what-is-cennetics-warranty-and-return-policy-for-machined-pa">What is Cennetic’s warranty and return policy for machined parts?</h3>
+  <p>Cennetic offers a <strong>2-year warranty</strong> on all machined parts and CNC machine tools. Returns and refunds are supported for any confirmed quality issue — if parts do not conform to the agreed drawing and inspection report, we will replace or refund at no cost to you. We do not support no-reason returns for parts that meet the specified drawing requirements.</p>
 
-  <h3 id="which-industries-and-countries-does-qiaofeng-primarily-serve">Which industries and countries does QiaoFeng primarily serve?</h3>
-  <p>QiaoFeng has served 750+ manufacturers since 2010, with primary export markets in <strong>North America, Europe (Germany, UK, France), and Southeast Asia (Vietnam, Thailand, Malaysia, Singapore)</strong>. Key industries include aerospace &amp; defense, medical devices, industrial automation, electronics, and automotive components.</p>
+  <h3 id="which-industries-and-countries-does-cennetic-primarily-serve">Which industries and countries does Cennetic primarily serve?</h3>
+  <p>Cennetic has served 750+ manufacturers since 2010, with primary export markets in <strong>North America, Europe (Germany, UK, France), and Southeast Asia (Vietnam, Thailand, Malaysia, Singapore)</strong>. Key industries include aerospace &amp; defense, medical devices, industrial automation, electronics, and automotive components.</p>
 
   <!-- 9. CTA Box -->
   <div class="qf-cta-box">
     <h3 id="ready-to-eliminate-defects-with-professional-fair">Ready to Eliminate Defects with Professional FAIR?</h3>
-    <p>Get a free CNC first article inspection report with your first order. Our AS9102-trained team in Dongguan, Guangdong delivers precision parts with full FAIR documentation — typically within 24 hours. 750+ manufacturers trust QiaoFeng. 2-year warranty included.</p>
+    <p>Get a free CNC first article inspection report with your first order. Our AS9102-trained team in Dongguan, Guangdong delivers precision parts with full FAIR documentation — typically within 24 hours. 750+ manufacturers trust Cennetic. 2-year warranty included.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20First%20Article%20Inspection%20Explained%20%E2%80%93%20Complete%20FAIR%20Guide%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-first-article-inspection%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free FAIR Quote</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20First%20Article%20Inspection%20Explained%20%E2%80%93%20Complete%20FAIR%20Guide%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-first-article-inspection%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free FAIR Quote</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 151 1824 3737</a>
     </div>
   </div>

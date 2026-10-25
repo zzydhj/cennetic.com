@@ -1,7 +1,7 @@
 ---
 title: 'CNC Work Coordinate Explained: Beginner''s Guide To G54–G59'
 heading: 'CNC Work Coordinate Explained: Beginner''s Guide to G54–G59'
-description: Learn what CNC work coordinates are, how G54–G59 work, and how to set part zero correctly. Expert beginner's guide from QiaoFeng CNC.
+description: Learn what CNC work coordinates are, how G54–G59 work, and how to set part zero correctly. Expert beginner's guide from Cennetic CNC.
 slug: cnc-work-coordinate-explained
 canonical: /cnc-work-coordinate-explained/
 date: '2026-06-28T10:46:41'
@@ -20,17 +20,17 @@ faq:
   - q: What is the difference between G54 and G55 in CNC machining?
     a: G54 and G55 are both CNC work coordinate offsets, but they store completely independent origin points. Think of them as separate memory slots — G54 might store the zero for part 1 in your left vise, while G55 stores the zero for part 2 in your right vise. You switch between them during a program by simply calling G54 or G55. The machine instantly shifts its reference frame to the new origin. In practice, most Fanuc and Haas machines provide six standard slots (G54–G59), while Fanuc’s extended system (G54.1 P1–P48) provides up to 48 additional offsets for complex pallet setups.
   - q: How do I set a CNC work coordinate on my machine?
-    a: 'The standard process is: (1) Mount and square your part. (2) Use an edge finder or touch probe to locate the part edges in X and Y. (3) Touch off the top surface for Z zero. (4) Navigate to the Work Offset page on your controller and enter the measured MCS values into the G54 register. (5) Verify by commanding G54 G0 X0 Y0 with the spindle off and confirming visual alignment. (6) Perform a dry run at reduced feed before cutting. Many modern controllers — including those on QiaoFeng machines — support automatic probing cycles that complete steps 2–4 in under 60 seconds.'
+    a: 'The standard process is: (1) Mount and square your part. (2) Use an edge finder or touch probe to locate the part edges in X and Y. (3) Touch off the top surface for Z zero. (4) Navigate to the Work Offset page on your controller and enter the measured MCS values into the G54 register. (5) Verify by commanding G54 G0 X0 Y0 with the spindle off and confirming visual alignment. (6) Perform a dry run at reduced feed before cutting. Many modern controllers — including those on Cennetic machines — support automatic probing cycles that complete steps 2–4 in under 60 seconds.'
   - q: Can I use G54–G59 with 4th and 5th axis CNC machines?
-    a: Yes. CNC work coordinates apply to all axes, including rotary A, B, and C axes. For 4-axis and 5-axis setups, you typically set the work coordinate origin at the center of rotation of the rotary table or trunnion. This ensures that when the table rotates, the part’s geometry remains accurately referenced to the tool. On 5-axis machines with RTCP (Rotation around Tool Center Point) or TCPM mode, the work coordinate system works in conjunction with the kinematic model to maintain accurate tool positioning throughout complex simultaneous moves. QiaoFeng’s 5-axis machines fully support this workflow on both Heidenhain TNC 640 and Siemens 840D controllers.
+    a: Yes. CNC work coordinates apply to all axes, including rotary A, B, and C axes. For 4-axis and 5-axis setups, you typically set the work coordinate origin at the center of rotation of the rotary table or trunnion. This ensures that when the table rotates, the part’s geometry remains accurately referenced to the tool. On 5-axis machines with RTCP (Rotation around Tool Center Point) or TCPM mode, the work coordinate system works in conjunction with the kinematic model to maintain accurate tool positioning throughout complex simultaneous moves. Cennetic’s 5-axis machines fully support this workflow on both Heidenhain TNC 640 and Siemens 840D controllers.
   - q: What happens if I accidentally call the wrong work offset (e.g., G55 instead of G54)?
     a: 'The machine will move to a completely different position — wherever G55’s offset values point. If G55 is set to a different part location, the tool may rapid directly into a clamp, fixture riser, or the machine table. This is one of the most common causes of machine crashes in job shops. Prevention strategies include: (1) Always perform a dry run with spindle off before cutting. (2) Use setup sheets that clearly label which offset corresponds to which fixture. (3) Some controllers allow you to name offsets (e.g., “VISE-L” for G54) — use this feature. (4) Implement a pre-run checklist that requires the operator to verify active offset before pressing cycle start.'
   - q: Do I need to clear CNC work coordinate offsets between jobs?
     a: 'It is not mandatory, but it is strongly recommended best practice. Leaving stale offsets from a previous job in G54–G59 creates risk — especially if a different operator runs the machine on the next shift without checking. The safest workflow is to: (1) Overwrite all used offsets with new values at the start of each job setup. (2) Zero out any offsets that are not used in the current job. (3) Document all offset values on your setup sheet so they can be quickly re-entered if needed. Some shops also use a “clear offsets” macro that zeros all G54–G59 registers at the start of every shift as a safety reset.'
   - q: What is G53 and how is it different from G54?
     a: G53 is a special non-modal G-code that commands the machine to move in Machine Coordinate System (MCS) coordinates — bypassing all work offsets entirely. It is typically used to move to a safe tool change position or machine home position that is defined in absolute machine coordinates. Unlike G54–G59, G53 is non-modal (it only applies to the single block it appears in) and does not change the active work offset. After a G53 move, the machine reverts to whichever work offset (G54, G55, etc.) was active before. Use G53 for tool changes and safe retracts; use G54–G59 for all part-relative positioning.
-  - q: What is QiaoFeng’s warranty and refund policy for CNC machines?
-    a: All QiaoFeng CNC machines come with a comprehensive 2-year warranty covering manufacturing defects and quality issues. If a verified quality problem arises, we support full refunds or replacement. We do not offer no-reason returns for correctly functioning machines. Our engineering team provides post-delivery support including work coordinate setup guidance, post processor configuration, and operator training resources. Contact us for full warranty terms.
+  - q: What is Cennetic’s warranty and refund policy for CNC machines?
+    a: All Cennetic CNC machines come with a comprehensive 2-year warranty covering manufacturing defects and quality issues. If a verified quality problem arises, we support full refunds or replacement. We do not offer no-reason returns for correctly functioning machines. Our engineering team provides post-delivery support including work coordinate setup guidance, post processor configuration, and operator training resources. Contact us for full warranty terms.
 sourceId: 7514
 ---
 
@@ -38,7 +38,7 @@ sourceId: 7514
 <div class="qf-article-body">
 
   <!-- 1. 引言段 -->
-  <p>If you’re new to CNC machining, understanding the <strong>CNC work coordinate</strong> system is one of the most critical skills you need to master. Also known as “fixture offsets” or “part zero,” the <strong>CNC work coordinate</strong> tells the machine exactly where your part is located on the table — without it, even perfectly written G-code will cut in the wrong place, crash into clamps, or produce scrap. At <a href="/" rel="noopener">QiaoFeng CNC</a>, founded in 2010 and trusted by <strong>750+ customers</strong> across Europe, North America, and Southeast Asia, we’ve spent 15 years helping machinists master this foundational concept. In this guide, we’ll cover the complete <strong>CNC work coordinate definition</strong>, explain G54 through G59 in plain language, show you real G-code examples, and walk you through setting part zero step by step.</p>
+  <p>If you’re new to CNC machining, understanding the <strong>CNC work coordinate</strong> system is one of the most critical skills you need to master. Also known as “fixture offsets” or “part zero,” the <strong>CNC work coordinate</strong> tells the machine exactly where your part is located on the table — without it, even perfectly written G-code will cut in the wrong place, crash into clamps, or produce scrap. At <a href="/" rel="noopener">Cennetic CNC</a>, founded in 2010 and trusted by <strong>750+ customers</strong> across Europe, North America, and Southeast Asia, we’ve spent 15 years helping machinists master this foundational concept. In this guide, we’ll cover the complete <strong>CNC work coordinate definition</strong>, explain G54 through G59 in plain language, show you real G-code examples, and walk you through setting part zero step by step.</p>
 
   <!-- 2. 行业数据段 -->
   <h2 id="1-why-cnc-work-coordinates-are-more-important-than-ever">1. Why CNC Work Coordinates Are More Important Than Ever</h2>
@@ -181,7 +181,7 @@ M99                          (Return to main program)</code></pre>
 
   <h3 id="61-multiple-parts-on-one-table">6.1 Multiple Parts on One Table</h3>
   <p><strong>Pain point:</strong> You have a large machine table and need to machine 6 identical brackets per cycle. Setting each part’s zero manually takes time and invites human error.</p>
-  <p><strong>Solution:</strong> Use G54 for part 1, G55 for part 2, G56 for part 3, and so on. Each offset stores the exact table location of that part. Once programmed, the machine automatically moves to each part’s <strong>CNC work coordinate</strong> origin and runs the same subprogram. At QiaoFeng, we’ve seen shops reduce setup time by <strong>40% per shift</strong> using this multi-offset strategy.</p>
+  <p><strong>Solution:</strong> Use G54 for part 1, G55 for part 2, G56 for part 3, and so on. Each offset stores the exact table location of that part. Once programmed, the machine automatically moves to each part’s <strong>CNC work coordinate</strong> origin and runs the same subprogram. At Cennetic, we’ve seen shops reduce setup time by <strong>40% per shift</strong> using this multi-offset strategy.</p>
 
   <h3 id="62-fixture-offsets-for-complex-jigs">6.2 Fixture Offsets for Complex Jigs</h3>
   <p><strong>Pain point:</strong> A custom fixture holds a turbine blade at a 15-degree angle. Finding the part zero manually on an angled surface is tedious and error-prone.</p>
@@ -252,11 +252,11 @@ M99                          (Return to main program)</code></pre>
   <!-- 7. Testimonials -->
   <h2 id="8-what-our-customers-say-about-cnc-work-coordinate-setup">8. What Our Customers Say About CNC Work Coordinate Setup</h2>
 
-  <div class="qf-testimonial"><blockquote>“Before we standardized our G54–G59 offset strategy, our setup time for a 6-part pallet was nearly 3 hours. After QiaoFeng’s engineering team helped us implement a structured work coordinate workflow with probing cycles, we cut that to under 45 minutes. The productivity gain was immediate and measurable. Their machines and support are genuinely world-class.”</blockquote><figcaption>— Thomas B., Manufacturing Engineer · Precision Automotive Components Supplier, Bavaria, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Before we standardized our G54–G59 offset strategy, our setup time for a 6-part pallet was nearly 3 hours. After Cennetic’s engineering team helped us implement a structured work coordinate workflow with probing cycles, we cut that to under 45 minutes. The productivity gain was immediate and measurable. Their machines and support are genuinely world-class.”</blockquote><figcaption>— Thomas B., Manufacturing Engineer · Precision Automotive Components Supplier, Bavaria, Germany</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“We run a mixed production floor machining aerospace brackets and medical housings on the same machines. Managing multiple fixture offsets used to be a source of constant errors. QiaoFeng’s 5-axis machining centers have an intuitive offset management interface, and their team provided us with a complete work coordinate setup guide tailored to our Heidenhain controller. Zero offset-related crashes in 14 months of production.”</blockquote><figcaption>— Jennifer K., CNC Programming Supervisor · Aerospace &amp; Medical Contract Manufacturer, Ontario, Canada</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We run a mixed production floor machining aerospace brackets and medical housings on the same machines. Managing multiple fixture offsets used to be a source of constant errors. Cennetic’s 5-axis machining centers have an intuitive offset management interface, and their team provided us with a complete work coordinate setup guide tailored to our Heidenhain controller. Zero offset-related crashes in 14 months of production.”</blockquote><figcaption>— Jennifer K., CNC Programming Supervisor · Aerospace &amp; Medical Contract Manufacturer, Ontario, Canada</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“Chúng tôi sản xuất linh kiện điện tử chính xác cho các khách hàng Nhật Bản và Hàn Quốc, yêu cầu dung sai rất chặt chẽ. Hệ thống tọa độ làm việc trên máy phay CNC của QiaoFeng giúp chúng tôi thiết lập G54 đến G57 một cách nhanh chóng và chính xác cho từng ca sản xuất. Kể từ khi sử dụng máy của QiaoFeng, tỷ lệ phế phẩm do lỗi offset đã giảm xuống gần bằng 0.”</blockquote><figcaption>— Minh P., Production Director · Electronics Precision Parts Manufacturer, Hanoi, Vietnam</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Chúng tôi sản xuất linh kiện điện tử chính xác cho các khách hàng Nhật Bản và Hàn Quốc, yêu cầu dung sai rất chặt chẽ. Hệ thống tọa độ làm việc trên máy phay CNC của Cennetic giúp chúng tôi thiết lập G54 đến G57 một cách nhanh chóng và chính xác cho từng ca sản xuất. Kể từ khi sử dụng máy của Cennetic, tỷ lệ phế phẩm do lỗi offset đã giảm xuống gần bằng 0.”</blockquote><figcaption>— Minh P., Production Director · Electronics Precision Parts Manufacturer, Hanoi, Vietnam</figcaption></div>
 
   <!-- 8. Pros/Cons -->
   <h2 id="9-pros-cons-using-multiple-cnc-work-coordinate-offsets">9. Pros &amp; Cons: Using Multiple CNC Work Coordinate Offsets</h2>
@@ -286,7 +286,7 @@ M99                          (Return to main program)</code></pre>
 
   <!-- 9. Highlight Box -->
   <div class="qf-highlight-box">
-    🏭 <strong>About QiaoFeng CNC:</strong> Founded in <strong>2010</strong> in Daling Mountain Town, Dongguan, Guangdong, QiaoFeng has 15 years of CNC manufacturing and applications experience, serving <strong>750+ customers</strong> across Europe, North America, and Southeast Asia. All machines come with a <strong>2-year warranty</strong>. Quality issues are fully covered under our refund policy. Our engineering team provides hands-on work coordinate setup support for every machine we deliver.
+    🏭 <strong>About Cennetic CNC:</strong> Founded in <strong>2010</strong> in Daling Mountain Town, Dongguan, Guangdong, Cennetic has 15 years of CNC manufacturing and applications experience, serving <strong>750+ customers</strong> across Europe, North America, and Southeast Asia. All machines come with a <strong>2-year warranty</strong>. Quality issues are fully covered under our refund policy. Our engineering team provides hands-on work coordinate setup support for every machine we deliver.
   </div>
 
   <img decoding="async" src="/images/2026/06/cnc-work-coordinate-explained-3.webp" alt="CNC work coordinate setup using dial indicator to measure part zero on machine table" width="1200" height="686" loading="lazy">
@@ -301,12 +301,12 @@ M99                          (Return to main program)</code></pre>
 
   <div class="qf-faq-item">
     <h3 id="how-do-i-set-a-cnc-work-coordinate-on-my-machine">How do I set a CNC work coordinate on my machine?</h3>
-    <p>The standard process is: (1) Mount and square your part. (2) Use an edge finder or touch probe to locate the part edges in X and Y. (3) Touch off the top surface for Z zero. (4) Navigate to the Work Offset page on your controller and enter the measured MCS values into the G54 register. (5) Verify by commanding <code>G54 G0 X0 Y0</code> with the spindle off and confirming visual alignment. (6) Perform a dry run at reduced feed before cutting. Many modern controllers — including those on QiaoFeng machines — support automatic probing cycles that complete steps 2–4 in under 60 seconds.</p>
+    <p>The standard process is: (1) Mount and square your part. (2) Use an edge finder or touch probe to locate the part edges in X and Y. (3) Touch off the top surface for Z zero. (4) Navigate to the Work Offset page on your controller and enter the measured MCS values into the G54 register. (5) Verify by commanding <code>G54 G0 X0 Y0</code> with the spindle off and confirming visual alignment. (6) Perform a dry run at reduced feed before cutting. Many modern controllers — including those on Cennetic machines — support automatic probing cycles that complete steps 2–4 in under 60 seconds.</p>
   </div>
 
   <div class="qf-faq-item">
     <h3 id="can-i-use-g54g59-with-4th-and-5th-axis-cnc-machines">Can I use G54–G59 with 4th and 5th axis CNC machines?</h3>
-    <p>Yes. <strong>CNC work coordinates</strong> apply to all axes, including rotary A, B, and C axes. For 4-axis and 5-axis setups, you typically set the work coordinate origin at the center of rotation of the rotary table or trunnion. This ensures that when the table rotates, the part’s geometry remains accurately referenced to the tool. On 5-axis machines with RTCP (Rotation around Tool Center Point) or TCPM mode, the work coordinate system works in conjunction with the kinematic model to maintain accurate tool positioning throughout complex simultaneous moves. QiaoFeng’s 5-axis machines fully support this workflow on both Heidenhain TNC 640 and Siemens 840D controllers.</p>
+    <p>Yes. <strong>CNC work coordinates</strong> apply to all axes, including rotary A, B, and C axes. For 4-axis and 5-axis setups, you typically set the work coordinate origin at the center of rotation of the rotary table or trunnion. This ensures that when the table rotates, the part’s geometry remains accurately referenced to the tool. On 5-axis machines with RTCP (Rotation around Tool Center Point) or TCPM mode, the work coordinate system works in conjunction with the kinematic model to maintain accurate tool positioning throughout complex simultaneous moves. Cennetic’s 5-axis machines fully support this workflow on both Heidenhain TNC 640 and Siemens 840D controllers.</p>
   </div>
 
   <div class="qf-faq-item">
@@ -325,17 +325,17 @@ M99                          (Return to main program)</code></pre>
   </div>
 
   <div class="qf-faq-item">
-    <h3 id="what-is-qiaofengs-warranty-and-refund-policy-for-cnc-machine">What is QiaoFeng’s warranty and refund policy for CNC machines?</h3>
-    <p>All QiaoFeng CNC machines come with a comprehensive <strong>2-year warranty</strong> covering manufacturing defects and quality issues. If a verified quality problem arises, we support full refunds or replacement. We do not offer no-reason returns for correctly functioning machines. Our engineering team provides post-delivery support including work coordinate setup guidance, post processor configuration, and operator training resources. <a href="/contact-us/" rel="noopener">Contact us</a> for full warranty terms.</p>
+    <h3 id="what-is-cennetics-warranty-and-refund-policy-for-cnc-machine">What is Cennetic’s warranty and refund policy for CNC machines?</h3>
+    <p>All Cennetic CNC machines come with a comprehensive <strong>2-year warranty</strong> covering manufacturing defects and quality issues. If a verified quality problem arises, we support full refunds or replacement. We do not offer no-reason returns for correctly functioning machines. Our engineering team provides post-delivery support including work coordinate setup guidance, post processor configuration, and operator training resources. <a href="/contact-us/" rel="noopener">Contact us</a> for full warranty terms.</p>
   </div>
 
   <!-- 11. CTA Box -->
   <div class="qf-cta-box">
-    <h3 id="ready-to-master-cnc-work-coordinates-on-a-qiaofeng-machine">Ready to Master CNC Work Coordinates on a QiaoFeng Machine?</h3>
+    <h3 id="ready-to-master-cnc-work-coordinates-on-a-cennetic-machine">Ready to Master CNC Work Coordinates on a Cennetic Machine?</h3>
     <p>Get a CNC machining center built for precision, reliability, and ease of setup — backed by 15 years of experience, 750+ global customers, and a 2-year warranty. Free consultation and setup support included for all new customers.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Work%20Coordinate%20Explained%3A%20Beginner's%20Guide%20to%20G54%E2%80%93G59%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-work-coordinate-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Work%20Coordinate%20Explained%3A%20Beginner's%20Guide%20to%20G54%E2%80%93G59%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-work-coordinate-explained%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call: +86 151 1824 3737</a>
     </div>
   </div>

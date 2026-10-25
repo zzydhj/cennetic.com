@@ -26,7 +26,7 @@ export interface WaOptions {
 export function waLink(cfg: WaConfig, opts: WaOptions = {}): string {
     const parts: string[] = [];
 
-    if (opts.subject) parts.push(`Hi QiaoFeng, I'm interested in ${opts.subject}.`);
+    if (opts.subject) parts.push(`Hi Cennetic, I'm interested in ${opts.subject}.`);
     if (opts.text) parts.push(opts.text);
     parts.push(`${cfg.siteUrl}/`);
 
@@ -40,7 +40,7 @@ export function waLink(cfg: WaConfig, opts: WaOptions = {}): string {
  */
 export function waLinkForArticle(cfg: WaConfig, articleTitle: string, articleUrl: string): string {
     const text = encodeURIComponent(
-        `Hi QiaoFeng, I just read "${articleTitle}" on ${articleUrl} and would like your recommendation.`,
+        `Hi Cennetic, I just read "${articleTitle}" on ${articleUrl} and would like your recommendation.`,
     );
     return `https://wa.me/${cfg.number}?text=${text}`;
 }

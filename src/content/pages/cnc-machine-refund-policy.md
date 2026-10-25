@@ -1,9 +1,9 @@
 ---
-title: CNC Machine Refund Policy & Warranty Terms | QiaoFeng
-heading: CNC Machine Refund Policy & Warranty Terms | QiaoFeng
+title: CNC Machine Refund Policy & Warranty Terms | Cennetic
+heading: CNC Machine Refund Policy & Warranty Terms | Cennetic
 slug: cnc-machine-refund-policy
 canonical: /cnc-machine-refund-policy/
-description: QiaoFeng's CNC machine refund policy and 2-year warranty explained. Quality-issue refunds supported, free return shipping. Read full terms before purchasing.
+description: Cennetic's CNC machine refund policy and 2-year warranty explained. Quality-issue refunds supported, free return shipping. Read full terms before purchasing.
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2026-06-12T08:01:56'
 lastmod: '2026-06-17T14:41:58'
@@ -18,7 +18,7 @@ isListing: false
   <p class="qf-last-updated">Last Updated: June 2026 &nbsp;|&nbsp; Effective Date: June 1, 2026</p>
 
   <!-- ✅ 正文开头加入完整 Focus Keyword -->
-  <p>This page outlines QiaoFeng’s <strong>CNC machine refund policy</strong>, warranty terms, and after-sales conditions that govern all purchases made through qfcncmachine.com. By placing an order with us, you agree to the terms outlined below. If you have any questions, please <a href="/contact-us/">contact us</a> before purchasing.</p>
+  <p>This page outlines Cennetic’s <strong>CNC machine refund policy</strong>, warranty terms, and after-sales conditions that govern all purchases made through cennetic.com. By placing an order with us, you agree to the terms outlined below. If you have any questions, please <a href="/contact-us/">contact us</a> before purchasing.</p>
 
   <div class="qf-toc">
     <h4>📋 Table of Contents</h4>
@@ -35,7 +35,7 @@ isListing: false
   </div>
 
   <h2 id="terms-orders">1. Order &amp; Payment Terms</h2>
-  <p>All orders placed through QiaoFeng CNC are subject to confirmation and availability. We reserve the right to decline or cancel any order at our discretion prior to production commencement.</p>
+  <p>All orders placed through Cennetic CNC are subject to confirmation and availability. We reserve the right to decline or cancel any order at our discretion prior to production commencement.</p>
   <ul>
     <li>Orders are confirmed only upon receipt of the agreed deposit or full payment.</li>
     <li>Pricing is quoted in USD unless otherwise agreed in writing.</li>
@@ -49,7 +49,7 @@ isListing: false
   </div>
 
   <h3 id="standard-non-custom-orders">Standard (Non-Custom) Orders</h3>
-  <p>Standard in-stock orders may be cancelled before shipment. Please contact us as soon as possible at <a href="mailto:bella@qfcncmachine.com">bella@qfcncmachine.com</a> or <a href="tel:+8615118243737">+86 151 1824 3737</a>.</p>
+  <p>Standard in-stock orders may be cancelled before shipment. Please contact us as soon as possible at <a href="mailto:bella@cennetic.com">bella@cennetic.com</a> or <a href="tel:+8615118243737">+86 151 1824 3737</a>.</p>
 
   <h3 id="custom-made-to-order-machines">Custom / Made-to-Order Machines</h3>
   <table class="qf-policy-table">
@@ -71,7 +71,7 @@ isListing: false
   </table>
 
   <h2 id="terms-shipping">3. Shipping &amp; Delivery</h2>
-  <p>QiaoFeng CNC ships globally, with primary export markets in Europe, the Americas, and Southeast Asia. All shipments are covered by cargo insurance to protect against transit damage.</p>
+  <p>Cennetic CNC ships globally, with primary export markets in Europe, the Americas, and Southeast Asia. All shipments are covered by cargo insurance to protect against transit damage.</p>
   <ul>
     <li><strong>Transit Damage:</strong> All shipments are covered by logistics insurance. If your machine arrives damaged, please document the damage with photos/video immediately upon receipt and contact us within <strong>3 business days</strong> of delivery.</li>
     <li><strong>Delivery Timeframes:</strong> Estimated delivery times are provided at order confirmation and vary by destination country and shipping method.</li>
@@ -79,12 +79,12 @@ isListing: false
     <li><strong>Risk of Loss:</strong> Title and risk of loss pass to the buyer upon handover to the freight carrier, except where transit insurance claims apply.</li>
   </ul>
   <div class="qf-success">
-    <strong>✔ Transit Insurance Covered:</strong> In the event of shipping damage, QiaoFeng will assist you in filing an insurance claim and arranging replacement parts or a replacement unit as quickly as possible.
+    <strong>✔ Transit Insurance Covered:</strong> In the event of shipping damage, Cennetic will assist you in filing an insurance claim and arranging replacement parts or a replacement unit as quickly as possible.
   </div>
 
   <h2 id="terms-warranty">4. Warranty Policy</h2>
   <div class="qf-highlight">
-    <strong>QiaoFeng CNC provides a 2-year limited warranty</strong> on all machines, covering manufacturing defects and component failures under normal operating conditions.
+    <strong>Cennetic CNC provides a 2-year limited warranty</strong> on all machines, covering manufacturing defects and component failures under normal operating conditions.
   </div>
 
   <h3 id="warranty-coverage">Warranty Coverage</h3>
@@ -134,13 +134,13 @@ isListing: false
   <h3 id="how-to-submit-a-refund-request">How to Submit a Refund Request</h3>
   <ol class="qf-steps">
     <li><strong>Document the Issue</strong> — Take clear photos and/or video showing the quality defect or damage. This is required to process your claim.</li>
-    <li><strong>Contact Us Within 7 Days</strong> — Email <a href="mailto:bella@qfcncmachine.com">bella@qfcncmachine.com</a> with your order number, a description of the issue, and your photo/video evidence.</li>
+    <li><strong>Contact Us Within 7 Days</strong> — Email <a href="mailto:bella@cennetic.com">bella@cennetic.com</a> with your order number, a description of the issue, and your photo/video evidence.</li>
     <li><strong>Await Review</strong> — Our after-sales team will review your submission and respond within <strong>3 business days</strong> with a resolution plan.</li>
-    <li><strong>Return Arrangement (if applicable)</strong> — If a return is required, QiaoFeng will cover all return shipping costs. Do not ship the item back before receiving written authorization from us.</li>
+    <li><strong>Return Arrangement (if applicable)</strong> — If a return is required, Cennetic will cover all return shipping costs. Do not ship the item back before receiving written authorization from us.</li>
     <li><strong>Refund Processed</strong> — Once the returned item is received and inspected, your refund will be processed within <strong>15 business days</strong> to your original payment method.</li>
   </ol>
   <div class="qf-success">
-    <strong>✔ Return Shipping:</strong> For all approved quality-related returns, QiaoFeng CNC covers 100% of the return shipping costs.
+    <strong>✔ Return Shipping:</strong> For all approved quality-related returns, Cennetic CNC covers 100% of the return shipping costs.
   </div>
 
   <h2 id="terms-aftersales">6. After-Sales Support</h2>
@@ -154,11 +154,11 @@ isListing: false
   </div>
   <div class="qf-policy-card">
     <h3 id="transit-damage-claims">📦 Transit Damage Claims</h3>
-    <p>All QiaoFeng shipments are covered by cargo insurance. If your machine is damaged during transit, please photograph the damage immediately and contact us within <strong>3 business days</strong> of delivery. We will handle the insurance claim and arrange a replacement or repair as quickly as possible.</p>
+    <p>All Cennetic shipments are covered by cargo insurance. If your machine is damaged during transit, please photograph the damage immediately and contact us within <strong>3 business days</strong> of delivery. We will handle the insurance claim and arrange a replacement or repair as quickly as possible.</p>
   </div>
 
   <h2 id="terms-liability">7. Limitation of Liability</h2>
-  <p>To the maximum extent permitted by applicable law, QiaoFeng CNC’s total liability for any claim shall not exceed the original purchase price paid for the product in question. QiaoFeng CNC shall not be liable for:</p>
+  <p>To the maximum extent permitted by applicable law, Cennetic CNC’s total liability for any claim shall not exceed the original purchase price paid for the product in question. Cennetic CNC shall not be liable for:</p>
   <ul>
     <li>Indirect, incidental, or consequential damages arising from the use or inability to use our products</li>
     <li>Loss of production, revenue, or profit resulting from machine downtime</li>
@@ -171,8 +171,8 @@ isListing: false
     <h3 class="qf-cta-title" id="have-questions-about-our-policy">Have Questions About Our Policy?</h3>
     <p class="qf-cta-subtitle">Our team is ready to clarify any terms before you purchase. Reach out anytime.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I'm%20interested%20in%20CNC%20Machine%20Refund%20Policy%20%26%20Warranty%20Terms%20%7C%20QiaoFeng.%20https%3A%2F%2Fqfcncmachine.com%2F" target="_blank" rel="noopener noreferrer">Contact Us</a>
-      <a class="qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">bella@qfcncmachine.com</a>
+      <a class="qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I'm%20interested%20in%20CNC%20Machine%20Refund%20Policy%20%26%20Warranty%20Terms%20%7C%20Cennetic.%20https%3A%2F%2Fcennetic.com%2F" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      <a class="qf-cta-btn-secondary" href="mailto:bella@cennetic.com">bella@cennetic.com</a>
       <a class="qf-cta-btn-secondary" href="tel:+8615118243737">+86 151 1824 3737</a>
     </div>
   </div>
@@ -180,9 +180,9 @@ isListing: false
   <h2 id="terms-contact">8. Contact Us</h2>
   <p>For all warranty claims, refund requests, after-sales support, or general inquiries, please contact our team:</p>
   <ul>
-    <li>📧 <strong>Email:</strong> <a href="mailto:bella@qfcncmachine.com">bella@qfcncmachine.com</a></li>
+    <li>📧 <strong>Email:</strong> <a href="mailto:bella@cennetic.com">bella@cennetic.com</a></li>
     <li>📞 <strong>Phone / WhatsApp:</strong> <a href="tel:+8615118243737">+86 151 1824 3737</a></li>
-    <li>🌐 <strong>Website:</strong> <a href="/contact-us/" target="_blank" rel="noopener noreferrer">qfcncmachine.com/contact-us</a></li>
+    <li>🌐 <strong>Website:</strong> <a href="/contact-us/" target="_blank" rel="noopener noreferrer">cennetic.com/contact-us</a></li>
     <li>🏭 <strong>Factory Address:</strong> Dalingshan Town, Dongguan, Guangdong, China</li>
   </ul>
   <p>We aim to respond to all inquiries within <strong>1 business day</strong>.</p>

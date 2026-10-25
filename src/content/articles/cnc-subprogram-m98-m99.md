@@ -47,7 +47,7 @@ Checklist      :
 <!-- ① 引言段 -->
 
 
-<p>A <strong>CNC subprogram</strong> is one of the most powerful tools in a machinist’s programming arsenal. If you’re new to <strong>CNC subprogram</strong> programming, mastering <strong>M98</strong> (call subprogram) and <strong>M99</strong> (return from subprogram) can cut your programming time by up to 40% and dramatically reduce on-machine errors. At <a href="/" rel="noopener">QiaoFeng CNC</a> — a Dongguan-based manufacturer with 15+ years of experience serving 750+ clients across Europe, North America, and Southeast Asia — we use <strong>CNC subprogram</strong> techniques every day. This guide explains everything a beginner needs to know.</p>
+<p>A <strong>CNC subprogram</strong> is one of the most powerful tools in a machinist’s programming arsenal. If you’re new to <strong>CNC subprogram</strong> programming, mastering <strong>M98</strong> (call subprogram) and <strong>M99</strong> (return from subprogram) can cut your programming time by up to 40% and dramatically reduce on-machine errors. At <a href="/" rel="noopener">Cennetic CNC</a> — a Dongguan-based manufacturer with 15+ years of experience serving 750+ clients across Europe, North America, and Southeast Asia — we use <strong>CNC subprogram</strong> techniques every day. This guide explains everything a beginner needs to know.</p>
 
 <img decoding="async" src="/images/2026/06/cnc-subprogram-1.webp" alt="CNC subprogram M98 M99 example on controller" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
@@ -73,7 +73,7 @@ Checklist      :
 <p>Write a <strong>CNC subprogram</strong> once and call it from multiple main programs. A standard bolt-hole drilling pattern, for example, can be stored as a single subprogram and reused across every new job — saving hours of repetitive coding.</p>
 
 <h3 id="32-modularity">3.2 Modularity</h3>
-<p>Break complex machining sequences into smaller, manageable subprograms. This allows different operators to develop and test separate modules simultaneously. One QiaoFeng client reduced setup time by 25% after modularizing their 5-axis milling routines.</p>
+<p>Break complex machining sequences into smaller, manageable subprograms. This allows different operators to develop and test separate modules simultaneously. One Cennetic client reduced setup time by 25% after modularizing their 5-axis milling routines.</p>
 
 <h3 id="33-ease-of-maintenance">3.3 Ease of Maintenance</h3>
 <p>When a tool or process changes, update only the <strong>CNC subprogram</strong> — not every main program that uses it. Switching from a 10 mm to a 12 mm drill? Edit one subprogram, and all jobs that call it are instantly updated.</p>
@@ -204,7 +204,7 @@ Checklist      :
 
 <h3 id="72-standardised-tool-change-sequences">7.2 Standardised Tool Change Sequences</h3>
 <p><strong>Pain Point:</strong> Every tool change requires a fixed sequence — retract to safe Z, stop spindle, change tool, restart spindle.<br>
-<strong>Solution:</strong> Encapsulate the entire sequence in a <strong>CNC subprogram</strong> and call it before each new tool. One QiaoFeng customer reported a 20% reduction in cycle time and zero tool-crash incidents after implementing this approach.</p>
+<strong>Solution:</strong> Encapsulate the entire sequence in a <strong>CNC subprogram</strong> and call it before each new tool. One Cennetic customer reported a 20% reduction in cycle time and zero tool-crash incidents after implementing this approach.</p>
 
 <h3 id="73-family-of-parts-programming">7.3 Family-of-Parts Programming</h3>
 <p><strong>Pain Point:</strong> Machining similar parts with slight dimensional variations requires separate full programs.<br>
@@ -216,13 +216,13 @@ Checklist      :
 <!-- ⑦ Testimonials -->
 <h2 id="8-what-our-customers-say">8. What Our Customers Say</h2>
 
-<div class="qf-testimonial"><blockquote>“We switched to CNC subprogram-based programming for our hydraulic valve body line six months ago. Setup time dropped by 30% and our operators stopped making copy-paste errors entirely. QiaoFeng’s training support made the transition seamless.”</blockquote><figcaption>— Marcus T., Production Manager, Precision Hydraulics GmbH · Stuttgart, Germany</figcaption></div>
+<div class="qf-testimonial"><blockquote>“We switched to CNC subprogram-based programming for our hydraulic valve body line six months ago. Setup time dropped by 30% and our operators stopped making copy-paste errors entirely. Cennetic’s training support made the transition seamless.”</blockquote><figcaption>— Marcus T., Production Manager, Precision Hydraulics GmbH · Stuttgart, Germany</figcaption></div>
 
-<div class="qf-testimonial"><blockquote>“As a mid-size aerospace parts shop in California, reducing programming errors is critical for us. After implementing M98/M99 CNC subprogram structures on our QiaoFeng machining centers, our first-article pass rate improved from 82% to 97%. Highly recommend.”</blockquote><figcaption>— David R., CNC Programming Lead, Pacific Aero Components · Los Angeles, USA</figcaption></div>
+<div class="qf-testimonial"><blockquote>“As a mid-size aerospace parts shop in California, reducing programming errors is critical for us. After implementing M98/M99 CNC subprogram structures on our Cennetic machining centers, our first-article pass rate improved from 82% to 97%. Highly recommend.”</blockquote><figcaption>— David R., CNC Programming Lead, Pacific Aero Components · Los Angeles, USA</figcaption></div>
 
-<div class="qf-testimonial"><blockquote>“Kami menggunakan mesin QiaoFeng untuk produksi komponen otomotif. Dengan CNC subprogram, satu operator kini bisa mengelola tiga mesin sekaligus. Efisiensi produksi kami naik 35% dalam tiga bulan pertama.”</blockquote><figcaption>— Andi S., Kepala Produksi, PT Maju Teknik Mandiri · Bekasi, Indonesia</figcaption></div>
+<div class="qf-testimonial"><blockquote>“Kami menggunakan mesin Cennetic untuk produksi komponen otomotif. Dengan CNC subprogram, satu operator kini bisa mengelola tiga mesin sekaligus. Efisiensi produksi kami naik 35% dalam tiga bulan pertama.”</blockquote><figcaption>— Andi S., Kepala Produksi, PT Maju Teknik Mandiri · Bekasi, Indonesia</figcaption></div>
 
-<img decoding="async" src="/images/2026/06/cnc-subprogram-2.webp" alt="CNC subprogram programming on computer with QiaoFeng machine" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+<img decoding="async" src="/images/2026/06/cnc-subprogram-2.webp" alt="CNC subprogram programming on computer with Cennetic machine" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
 <!-- ⑧ Pros / Cons -->
 <h2 id="9-pros-cons-of-using-cnc-subprograms">9. Pros &amp; Cons of Using CNC Subprograms</h2>
@@ -282,10 +282,10 @@ Checklist      :
 <!-- ⑪ CTA Box -->
 <div class="qf-cta-box">
   <h3 id="ready-to-boost-your-cnc-efficiency">Ready to Boost Your CNC Efficiency?</h3>
-  <p>QiaoFeng has helped 750+ manufacturers across Europe, North America, and Southeast Asia master CNC subprogram programming and cut programming time by up to 40%. Founded in 2010 and based in Daling Mountain, Dongguan, Guangdong — we combine 15 years of hands-on CNC expertise with world-class machine quality and a 2-year warranty on every machine.</p>
+  <p>Cennetic has helped 750+ manufacturers across Europe, North America, and Southeast Asia master CNC subprogram programming and cut programming time by up to 40%. Founded in 2010 and based in Daling Mountain, Dongguan, Guangdong — we combine 15 years of hands-on CNC expertise with world-class machine quality and a 2-year warranty on every machine.</p>
   <div class="qf-cta-buttons">
-    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Subprogram%20M98%20M99%3A%20Complete%20Beginner's%20Guide%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-subprogram-m98-m99%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Subprogram%20M98%20M99%3A%20Complete%20Beginner's%20Guide%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-subprogram-m98-m99%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
     <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 151 1824 3737</a>
   </div>
 </div>

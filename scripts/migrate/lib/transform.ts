@@ -8,15 +8,13 @@
  */
 import type { CheerioAPI } from 'cheerio';
 import * as cheerio from 'cheerio';
-import { SRC_ORIGIN, SITE_ORIGIN, pathOf } from './config.ts';
+import { SRC_ORIGIN, pathOf, isSiteHost } from './config.ts';
 import { renameTag } from './html.ts';
 import { lookup, type MediaEntry } from './images.ts';
 import type { AuthorVariant } from './authors.ts';
 import { readAuthorBox, canonicalize } from './authors.ts';
 import type { RuleBucket } from './css-merge.ts';
 import { absorb } from './css-merge.ts';
-
-const HOST = new URL(SITE_ORIGIN).host;
 
 /**
  * 当 REST 的 content.rendered 为空时，从阶段 02 已缓存的整页 HTML 里抽取正文区。
@@ -55,19 +53,27 @@ export function extractRenderedBody(pageHtml: string): string {
 /**
  * 去掉源站 <title> 自带的站点后缀。
  *
- * 必须去：新站模板会按自己的规则重新拼品牌名，不去就会出「X - Qiaofeng CNC Machine - QiaoFeng CNC Machine」
+ * 必须去：新站模板会按自己的规则重新拼品牌名，不去就会出「X - Qiaofeng CNC Machine - Cennetic CNC Machine」
  * 这种双品牌标题（实测分类页全部命中），还会把长度顶到 90+ 字而被 Google 截断。
+ *
+ * 旧品牌后缀一个都不能删：源站抓回来的 title 里写的就是旧品牌，
+ * 换成新域名后那些字面量就不存在于任何真实数据里，剩下只有重复项。
  *
  * 三个阶段（文章/分类/页面）共用这一份实现，避免各自写一份逐期漂移。
  */
 export function stripSiteSuffix(title: string, siteName: string): string {
     const suffixes = [
         ` - ${siteName}`,
+        // 源站（WordPress + WoodMart）实际使用的旧品牌后缀
         ' - Qiaofeng CNC Machine',
         ' - QiaoFeng CNC Machine',
         ' | Qiaofeng CNC Machine',
         ' | QiaoFeng CNC Machine',
         ' | QFCNCMACHINE',
+        // 品牌迁移后重跑管道可能碰到的新品牌后缀
+        ' - Cennetic CNC Machine',
+        ' | Cennetic CNC Machine',
+        ' | Cennetic',
     ];
     let t = title;
     for (const s of suffixes) {
@@ -287,7 +293,8 @@ export function rewriteLinks($: CheerioAPI, ctx: LinkContext): LinkStat {
         try {
             if (href.startsWith('http')) {
                 const u = new URL(href);
-                if (u.host !== HOST) {
+                // 新旧域名及其 www 变体都算自家，否则旧域名内链会被当外链留着绝对地址
+                if (!isSiteHost(u.host)) {
                     const rel = $a.attr('rel') ?? '';
                     if (!/\bnoopener\b/.test(rel)) $a.attr('rel', `${rel} noopener noreferrer`.trim());
                     return;

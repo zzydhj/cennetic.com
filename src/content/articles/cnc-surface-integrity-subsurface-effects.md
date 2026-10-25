@@ -23,7 +23,7 @@ sourceId: 7229
 <div class="qf-article-body">
 
 
-<p><strong>CNC surface integrity</strong> is the foundation of how a machined component performs and how long it survives in service. At <a href="/" rel="noopener">QiaoFeng</a>, we have seen first-hand that subsurface damage, work hardening, and residual stress can quietly decide whether a part lasts for years or fails early. This guide explains the science behind CNC surface integrity and the practical levers process engineers can pull to control it.</p>
+<p><strong>CNC surface integrity</strong> is the foundation of how a machined component performs and how long it survives in service. At <a href="/" rel="noopener">Cennetic</a>, we have seen first-hand that subsurface damage, work hardening, and residual stress can quietly decide whether a part lasts for years or fails early. This guide explains the science behind CNC surface integrity and the practical levers process engineers can pull to control it.</p>
 
 <h2 id="1-understanding-cnc-surface-integrity">1. Understanding CNC Surface Integrity</h2>
 <p>Surface integrity refers to the topological, mechanical, and metallurgical state of a machined surface. For process engineers, it is not only about roughness — subsurface alterations such as microcracks, phase transformations, work-hardened layers, and residual stress distributions directly influence fatigue life and corrosion resistance. The landmark CIRP keynote review by Jawahir et al. documents how surface and subsurface conditions left by machining are a primary driver of fatigue strength and functional performance, which is why many fatigue-critical failures trace back to surface and subsurface condition rather than bulk material defects.</p>
@@ -35,7 +35,7 @@ sourceId: 7229
 <h2 id="3-the-critical-subsurface-effects">3. The Critical Subsurface Effects</h2>
 
 <h3 id="subsurface-damage">Subsurface Damage</h3>
-<p>Subsurface damage shows up as microcracks, voids, and dislocation pile-ups beneath the machined surface. As reviewed in the CIRP literature, these defects act as stress concentrators that can measurably reduce fatigue strength. In one titanium alloy impeller we evaluated, uncontrolled subsurface damage was associated with a clear drop in fatigue life on bench testing. QiaoFeng’s optimized toolpath and finishing strategies are designed to minimize this damaged layer rather than mask it with a smooth finish.</p>
+<p>Subsurface damage shows up as microcracks, voids, and dislocation pile-ups beneath the machined surface. As reviewed in the CIRP literature, these defects act as stress concentrators that can measurably reduce fatigue strength. In one titanium alloy impeller we evaluated, uncontrolled subsurface damage was associated with a clear drop in fatigue life on bench testing. Cennetic’s optimized toolpath and finishing strategies are designed to minimize this damaged layer rather than mask it with a smooth finish.</p>
 
 <h3 id="cnc-work-hardening">CNC Work Hardening</h3>
 <p>Work hardening raises surface hardness but can create a brittle layer prone to cracking. In stainless steel 316L, an overly aggressive feed produced a deep, heavily deformed layer that became a corrosion-initiation site in a chemical-handling component. By tuning cutting parameters, we typically aim for a controlled, shallow work-hardened layer (on the order of 0.05 mm in many stainless jobs) that improves wear resistance without sacrificing ductility — exact targets are always set per material and load case.</p>
@@ -57,14 +57,14 @@ sourceId: 7229
 </table>
 
 <h2 id="5-real-world-case-and-customer-testimonials">5. Real-World Case and Customer Testimonials</h2>
-<p>A European aerospace manufacturer experienced repeated fatigue failures in an aluminum 7075-T6 bracket. Cross-sectioning revealed subsurface microcracks and a tensile residual-stress condition left by aggressive roughing. After switching to QiaoFeng’s high-speed finishing with controlled chip load and a compressive-favoring strategy, the detectable subsurface damage was eliminated and the surface state moved into compression. The redesigned process more than doubled the validated cycle life in their fatigue qualification — a strong example of CNC surface integrity decided at the machining stage rather than after the fact.</p>
+<p>A European aerospace manufacturer experienced repeated fatigue failures in an aluminum 7075-T6 bracket. Cross-sectioning revealed subsurface microcracks and a tensile residual-stress condition left by aggressive roughing. After switching to Cennetic’s high-speed finishing with controlled chip load and a compressive-favoring strategy, the detectable subsurface damage was eliminated and the surface state moved into compression. The redesigned process more than doubled the validated cycle life in their fatigue qualification — a strong example of CNC surface integrity decided at the machining stage rather than after the fact.</p>
 <p><img decoding="async" src="/images/2026/06/cnc-surface-integrity-3.webp" alt="CNC surface integrity case study aerospace bracket failure" width="1200" height="686" loading="lazy"></p>
 
-<div class="qf-testimonial"><blockquote>“QiaoFeng helped us close out a recurring fatigue issue on a structural bracket. Their team measured residual stress and reworked the finishing strategy instead of just polishing the surface. Our parts now pass qualification with margin to spare.”</blockquote></div>
+<div class="qf-testimonial"><blockquote>“Cennetic helped us close out a recurring fatigue issue on a structural bracket. Their team measured residual stress and reworked the finishing strategy instead of just polishing the surface. Our parts now pass qualification with margin to spare.”</blockquote></div>
 
-<div class="qf-testimonial"><blockquote>“For our medical implant components, subsurface condition is everything. QiaoFeng delivered consistent, documented surface integrity batch after batch, and their reporting made our FDA-related audits much easier.”</blockquote></div>
+<div class="qf-testimonial"><blockquote>“For our medical implant components, subsurface condition is everything. Cennetic delivered consistent, documented surface integrity batch after batch, and their reporting made our FDA-related audits much easier.”</blockquote></div>
 
-<div class="qf-testimonial"><blockquote>“We export precision parts across the region, and lead time plus consistency matter. QiaoFeng’s controlled work-hardening process solved our corrosion complaints on stainless fittings, and communication has been excellent throughout.”</blockquote></div>
+<div class="qf-testimonial"><blockquote>“We export precision parts across the region, and lead time plus consistency matter. Cennetic’s controlled work-hardening process solved our corrosion complaints on stainless fittings, and communication has been excellent throughout.”</blockquote></div>
 
 <h2 id="6-practical-strategies-for-process-engineers">6. Practical Strategies for Process Engineers</h2>
 <p>To optimize CNC surface integrity, the most influential parameters are:</p>
@@ -74,7 +74,7 @@ sourceId: 7229
 <li><strong>Tool Geometry:</strong> A small honed edge radius and positive rake reduce microcrack formation and limit deformed-layer depth in hardened steels.</li>
 <li><strong>Coolant Strategy:</strong> High-pressure coolant directed at the tool–chip interface lowers heat-affected-zone depth and helps steer the surface toward a compressive state.</li>
 </ul>
-<p>QiaoFeng’s process planning simulates these effects so you can predict the likely surface integrity outcome before committing to a production run.</p>
+<p>Cennetic’s process planning simulates these effects so you can predict the likely surface integrity outcome before committing to a production run.</p>
 
 <h2 id="7-pros-and-cons-of-prioritizing-surface-integrity">7. Pros and Cons of Prioritizing Surface Integrity</h2>
 <div class="qf-pros-cons">
@@ -108,7 +108,7 @@ sourceId: 7229
 <p>Surface roughness is a geometric measure of surface texture, while surface integrity covers both topography and the subsurface material state. Two parts with identical roughness can have very different fatigue lives because of subsurface damage or residual stress, so engineers should consider both.</p>
 
 <h3 id="how-can-i-measure-subsurface-damage-in-house">How can I measure subsurface damage in-house?</h3>
-<p>Non-destructive methods such as eddy current testing and ultrasonic microscopy can flag subsurface anomalies. For quantitative analysis, destructive cross-sectioning with etching reveals microcracks and deformed layers, and X-ray diffraction is the standard for residual-stress measurement. QiaoFeng can advise on a suitable inspection plan for your parts.</p>
+<p>Non-destructive methods such as eddy current testing and ultrasonic microscopy can flag subsurface anomalies. For quantitative analysis, destructive cross-sectioning with etching reveals microcracks and deformed layers, and X-ray diffraction is the standard for residual-stress measurement. Cennetic can advise on a suitable inspection plan for your parts.</p>
 
 <h3 id="what-cutting-parameters-minimize-tensile-residual-stress">What cutting parameters minimize tensile residual stress?</h3>
 <p>As a general direction, sharp tools with positive rake, moderate cutting speeds, and effective coolant tend to favor a compressive surface state. However, residual stress results from competing thermal and mechanical effects, so the same parameter set will not behave identically across materials. Treat published values as starting points and confirm with measurement on your own material.</p>
@@ -116,14 +116,14 @@ sourceId: 7229
 <h3 id="can-cnc-surface-integrity-be-improved-after-machining">Can CNC surface integrity be improved after machining?</h3>
 <p>Yes. Shot peening, laser shock peening, and low-plasticity burnishing can introduce compressive residual stress and mitigate minor subsurface damage. These are secondary processes, though — the most cost-effective approach is to get integrity right during machining.</p>
 
-<h3 id="what-guarantee-does-qiaofeng-offer-on-machined-parts">What guarantee does QiaoFeng offer on machined parts?</h3>
-<p>QiaoFeng backs its work with a 2-year warranty. Where there is a genuine quality defect, we support replacement or refund; we do not offer no-reason refunds in the absence of a quality issue. This keeps expectations clear for our customers across Europe, the Americas, and Southeast Asia.</p>
+<h3 id="what-guarantee-does-cennetic-offer-on-machined-parts">What guarantee does Cennetic offer on machined parts?</h3>
+<p>Cennetic backs its work with a 2-year warranty. Where there is a genuine quality defect, we support replacement or refund; we do not offer no-reason refunds in the absence of a quality issue. This keeps expectations clear for our customers across Europe, the Americas, and Southeast Asia.</p>
 
 <div class="qf-cta">
 <h2 id="take-control-of-your-surface-integrity-today">Take Control of Your Surface Integrity Today</h2>
-<p>Don’t let hidden subsurface defects compromise your components. Get a personalized surface integrity audit and see how QiaoFeng’s machining can improve your part reliability.</p>
-<a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Surface%20Integrity%3A%20The%20Hidden%20Subsurface%20Effects%20Every%20Process%20Engineer%20Must%20Master%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-surface-integrity-subsurface-effects%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Request a Consultation</a>
-<a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email bella@qfcncmachine.com</a>
+<p>Don’t let hidden subsurface defects compromise your components. Get a personalized surface integrity audit and see how Cennetic’s machining can improve your part reliability.</p>
+<a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Surface%20Integrity%3A%20The%20Hidden%20Subsurface%20Effects%20Every%20Process%20Engineer%20Must%20Master%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-surface-integrity-subsurface-effects%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Request a Consultation</a>
+<a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email bella@cennetic.com</a>
 <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 151 1824 3737</a>
 </div>
 

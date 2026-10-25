@@ -31,7 +31,7 @@ export interface MediaManifest {
     generatedAt: string;
     /** uploads 根前缀，便于以后整仓切到 R2 */
     uploadsPrefix: string;
-    /** 对外基址；上线 R2 后改为 https://media.qfcncmachine.com */
+    /** 对外基址；上线 R2 后改为 https://media.cennetic.com */
     baseUrl: string;
     total: number;
     failed: number;

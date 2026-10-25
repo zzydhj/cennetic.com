@@ -1,7 +1,7 @@
 ---
 title: 'CNC Step Test: Machine Geometry Verification Guide'
 heading: 'CNC Step Test: Machine Geometry Verification Guide'
-description: Learn how the CNC step test ensures machine geometry verification for energy engineers. Discover QiaoFeng's precision machining solutions and 2-year warranty.
+description: Learn how the CNC step test ensures machine geometry verification for energy engineers. Discover Cennetic's precision machining solutions and 2-year warranty.
 slug: cnc-step-test-geometry-verification
 canonical: /cnc-step-test-geometry-verification/
 date: '2026-07-20T04:06:10'
@@ -22,7 +22,7 @@ sourceId: 7300
 
 <div class="qf-article-body">
 
-  <p>For energy engineers, precision is non-negotiable. The <strong>CNC step test</strong> is a critical procedure to verify machine geometry, alignment, and squareness—ensuring your CNC machine delivers repeatable accuracy for complex components. Established in 2010 in Dalingshan Town, Dongguan, QiaoFeng has spent over 15 years perfecting our quality control processes. We know that a poorly aligned machine can cause severe production bottlenecks; performing a rigorous step test before shipment reduces these risks to near zero.</p>
+  <p>For energy engineers, precision is non-negotiable. The <strong>CNC step test</strong> is a critical procedure to verify machine geometry, alignment, and squareness—ensuring your CNC machine delivers repeatable accuracy for complex components. Established in 2010 in Dalingshan Town, Dongguan, Cennetic has spent over 15 years perfecting our quality control processes. We know that a poorly aligned machine can cause severe production bottlenecks; performing a rigorous step test before shipment reduces these risks to near zero.</p>
 
   <p><img decoding="async" src="/images/2026/06/cnc-step-test-1.webp" alt="CNC step test procedure with dial indicator on granite surface plate" width="1200" height="686" loading="lazy"></p>
 
@@ -30,7 +30,7 @@ sourceId: 7300
   <p>According to a 2024 report by Mordor Intelligence, the demand for high-precision machining centers in the energy sector is growing rapidly, driven by the need for tighter tolerances in renewable energy components. To meet these demands, machine geometry must be flawless. The CNC step test, guided by international standards like ISO 230-2 and ASME B5.54, is the most reliable method to detect microscopic deviations in pitch, roll, and yaw.</p>
 
   <h2 id="core-features-of-the-cnc-step-test-procedure">Core Features of the CNC Step Test Procedure</h2>
-  <p>QiaoFeng’s certified technicians perform a comprehensive CNC step test on every machine before it leaves our Dongguan facility. This process involves:</p>
+  <p>Cennetic’s certified technicians perform a comprehensive CNC step test on every machine before it leaves our Dongguan facility. This process involves:</p>
   <ul>
     <li><strong>Precision Measurement:</strong> Using advanced laser interferometers, the step test measures linear displacement along each axis, detecting errors as small as 1 micron.</li>
     <li><strong>Geometric Error Detection:</strong> It identifies squareness, straightness, and parallelism errors that traditional visual inspections miss.</li>
@@ -81,13 +81,13 @@ sourceId: 7300
   </table>
 
   <h2 id="what-our-global-clients-say">What Our Global Clients Say</h2>
-  <p>Since 2010, QiaoFeng has exported high-precision CNC machines and parts primarily to Europe, North America, and Southeast Asia. Here is what our clients have to say:</p>
+  <p>Since 2010, Cennetic has exported high-precision CNC machines and parts primarily to Europe, North America, and Southeast Asia. Here is what our clients have to say:</p>
 
-  <div class="qf-testimonial"><blockquote>“The geometric accuracy of the machines we received from QiaoFeng is outstanding. Their detailed CNC step test reports gave us the confidence to immediately put the machines into production for our wind turbine components.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“The geometric accuracy of the machines we received from Cennetic is outstanding. Their detailed CNC step test reports gave us the confidence to immediately put the machines into production for our wind turbine components.”</blockquote></div>
 
-  <div class="qf-testimonial"><blockquote>“We manufacture critical aerospace and energy valves. QiaoFeng’s strict adherence to ISO testing standards ensures every machine we buy from them holds the tight tolerances we need. Their 2-year warranty is just the cherry on top.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“We manufacture critical aerospace and energy valves. Cennetic’s strict adherence to ISO testing standards ensures every machine we buy from them holds the tight tolerances we need. Their 2-year warranty is just the cherry on top.”</blockquote></div>
 
-  <div class="qf-testimonial"><blockquote>“Before partnering with QiaoFeng, we struggled with machine repeatability. The machines verified by their CNC step test have completely solved our heat exchanger plate alignment issues.”</blockquote></div>
+  <div class="qf-testimonial"><blockquote>“Before partnering with Cennetic, we struggled with machine repeatability. The machines verified by their CNC step test have completely solved our heat exchanger plate alignment issues.”</blockquote></div>
 
   <p><img decoding="async" src="/images/2026/06/cnc-step-test-3.webp" alt="CNC step test data analysis software for machine alignment" width="1200" height="686" loading="lazy"></p>
 
@@ -113,7 +113,7 @@ sourceId: 7300
   </div>
 
   <div class="qf-highlight">
-    <strong>The QiaoFeng Guarantee:</strong> Located in Dongguan, QiaoFeng brings 15 years of manufacturing excellence to your production floor. Every machine we sell undergoes a rigorous CNC step test and comes with a standard <strong>2-year warranty</strong>. Please note our refund policy: while we do not support returns without reason, we <strong>fully support refunds or remakes for any quality issues</strong>. Join our 750+ satisfied clients today.
+    <strong>The Cennetic Guarantee:</strong> Located in Dongguan, Cennetic brings 15 years of manufacturing excellence to your production floor. Every machine we sell undergoes a rigorous CNC step test and comes with a standard <strong>2-year warranty</strong>. Please note our refund policy: while we do not support returns without reason, we <strong>fully support refunds or remakes for any quality issues</strong>. Join our 750+ satisfied clients today.
   </div>
 
   <h2 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h2>
@@ -121,7 +121,7 @@ sourceId: 7300
   <h3 id="1-what-exactly-is-a-cnc-step-test">1. What exactly is a CNC step test?</h3>
   <p>A CNC step test is a diagnostic procedure that measures a machine’s positioning accuracy and repeatability. By moving each axis to predefined positions and recording deviations using a laser interferometer, it verifies the machine’s geometric integrity.</p>
 
-  <h3 id="2-how-does-qiaofeng-ensure-the-accuracy-of-this-test">2. How does QiaoFeng ensure the accuracy of this test?</h3>
+  <h3 id="2-how-does-cennetic-ensure-the-accuracy-of-this-test">2. How does Cennetic ensure the accuracy of this test?</h3>
   <p>At our Dongguan facility, our engineers with over 15 years of experience conduct the CNC step test in a temperature-controlled environment before any machine is shipped, ensuring the data is highly accurate and reliable.</p>
 
   <h3 id="3-can-the-cnc-step-test-fix-existing-alignment-issues">3. Can the CNC step test fix existing alignment issues?</h3>
@@ -132,10 +132,10 @@ sourceId: 7300
 
   <div class="qf-cta-box">
     <h3 id="ensure-peak-accuracy-for-your-energy-components">Ensure Peak Accuracy for Your Energy Components</h3>
-    <p>Don’t let machine geometry errors cause costly downtime. Partner with QiaoFeng for CNC machines and machining services backed by rigorous testing and a 2-year warranty.</p>
+    <p>Don’t let machine geometry errors cause costly downtime. Partner with Cennetic for CNC machines and machining services backed by rigorous testing and a 2-year warranty.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Step%20Test%3A%20Machine%20Geometry%20Verification%20Guide%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-step-test-geometry-verification%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Us</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Step%20Test%3A%20Machine%20Geometry%20Verification%20Guide%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-step-test-geometry-verification%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Quote</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Us</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 15118243737</a>
     </div>
   </div>

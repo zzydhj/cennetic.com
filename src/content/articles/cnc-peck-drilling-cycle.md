@@ -1,7 +1,7 @@
 ---
 title: 'CNC Peck Drilling Cycle: G73 & G83 Complete Guide'
 heading: 'CNC Peck Drilling Cycle: What It Is and How to Use G73 & G83'
-description: Master the CNC peck drilling cycle with G73 & G83. Learn peck depth settings, chip control tips, and real use cases. Expert guide by QiaoFeng.
+description: Master the CNC peck drilling cycle with G73 & G83. Learn peck depth settings, chip control tips, and real use cases. Expert guide by Cennetic.
 slug: cnc-peck-drilling-cycle
 canonical: /cnc-peck-drilling-cycle/
 date: '2026-06-29T15:42:57'
@@ -29,7 +29,7 @@ sourceId: 7526
      Permalink        : cnc-peck-drilling-cycle  (23 chr)
      Description(159) : Master the CNC peck drilling cycle with G73 & G83.
                         Learn peck depth settings, chip control tips, and
-                        real use cases. Expert guide by QiaoFeng.
+                        real use cases. Expert guide by Cennetic.
      Keyword Density  : ~1.25%  (≈20 occurrences / ~1,600 words)
      Category         : Technical Knowledge (primary)
                         Maintenance & Operations (secondary)
@@ -50,7 +50,7 @@ sourceId: 7526
 
 
   <!-- 1. 引言段 -->
-  <p>The <strong>CNC peck drilling cycle</strong> is one of the most essential techniques every CNC operator and programmer needs to master. By drilling in controlled incremental steps, peck drilling breaks chips, clears debris, and prevents tool breakage — especially in deep or difficult holes. At <a href="/" rel="noopener">QiaoFeng</a>, founded in 2010 and serving 750+ industrial clients from our facility in Dalingshan, Dongguan, we have spent 15 years helping manufacturers across the USA, Europe, and Southeast Asia optimize their drilling operations using cycles like G73 and G83. This guide covers everything you need to know.</p>
+  <p>The <strong>CNC peck drilling cycle</strong> is one of the most essential techniques every CNC operator and programmer needs to master. By drilling in controlled incremental steps, peck drilling breaks chips, clears debris, and prevents tool breakage — especially in deep or difficult holes. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ industrial clients from our facility in Dalingshan, Dongguan, we have spent 15 years helping manufacturers across the USA, Europe, and Southeast Asia optimize their drilling operations using cycles like G73 and G83. This guide covers everything you need to know.</p>
 
   <!-- 2. 行业数据段 -->
   <h2 id="1-why-the-cnc-peck-drilling-cycle-matters-industry-context">1. Why the CNC Peck Drilling Cycle Matters: Industry Context</h2>
@@ -103,11 +103,11 @@ sourceId: 7526
 
   <h3 id="51-deep-hole-drilling-in-aerospace-components-usa">5.1 Deep Hole Drilling in Aerospace Components — USA</h3>
   <p>A Tier 1 aerospace supplier in Ohio faced frequent drill breakage when machining 250 mm deep holes in Ti-6Al-4V titanium alloy landing gear components. By switching to the <strong>G83 CNC peck drilling cycle</strong> with a peck depth of 0.5× drill diameter and through-spindle coolant, they reduced tool breakage by <strong>60%</strong> and improved hole straightness to within ±0.02 mm. Annual tooling cost savings exceeded $72,000.</p>
-  <div class="qf-testimonial"><blockquote>“We were snapping drills every other hour on our titanium deep-hole jobs. After implementing G83 with the parameters QiaoFeng recommended, we’ve gone weeks without a single breakage. The chip evacuation is night and day compared to what we were doing before.”</blockquote><figcaption>— Process Engineer, Aerospace Landing Gear Components Supplier, Ohio, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We were snapping drills every other hour on our titanium deep-hole jobs. After implementing G83 with the parameters Cennetic recommended, we’ve gone weeks without a single breakage. The chip evacuation is night and day compared to what we were doing before.”</blockquote><figcaption>— Process Engineer, Aerospace Landing Gear Components Supplier, Ohio, USA</figcaption></div>
 
   <h3 id="52-high-speed-aluminum-drilling-for-automotive-production-ge">5.2 High-Speed Aluminum Drilling for Automotive Production — Germany</h3>
   <p>A Tier 1 automotive supplier in Bavaria needed to drill 5,000 holes per shift in aluminum engine block castings. Using the <strong>G73 high-speed peck drilling cycle</strong> with a peck depth of 0.2 inches and a 0.02-inch retract, they achieved a <strong>30% reduction in cycle time</strong> while maintaining Ra surface finish below 1.6 µm. The optimized Q value balanced speed with reliable chip breaking across all three production shifts.</p>
-  <div class="qf-testimonial"><blockquote>“Switching from continuous drilling to G73 peck cycle cut our per-hole cycle time from 4.2 seconds to 2.9 seconds. On 5,000 holes a shift, that adds up to nearly two extra hours of capacity per day. QiaoFeng’s parameter guidance made the transition seamless.”</blockquote><figcaption>— Production Manager, Automotive Engine Components Plant, Bavaria, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Switching from continuous drilling to G73 peck cycle cut our per-hole cycle time from 4.2 seconds to 2.9 seconds. On 5,000 holes a shift, that adds up to nearly two extra hours of capacity per day. Cennetic’s parameter guidance made the transition seamless.”</blockquote><figcaption>— Production Manager, Automotive Engine Components Plant, Bavaria, Germany</figcaption></div>
 
   <h3 id="53-hardened-steel-mold-drilling-vietnam">5.3 Hardened Steel Mold Drilling — Vietnam</h3>
   <p>A precision mold manufacturer in Ho Chi Minh City struggled with chip welding and inconsistent hole tolerances when drilling 60 HRC tool steel. Implementing the <strong>G83 CNC peck drilling cycle</strong> with a dwell at the bottom of each peck allowed chips to break cleanly before retract. The result was a <strong>50% increase in tool life</strong> and consistent hole tolerances within ±0.025 mm, meeting their export customers’ drawing requirements.</p>
@@ -166,16 +166,16 @@ sourceId: 7526
   <h3 id="how-do-i-program-g73-and-g83-on-a-fanuc-control">How do I program G73 and G83 on a Fanuc control?</h3>
   <p>For G73: <code>G73 X___ Y___ Z___ R___ Q___ F___ ;</code> — Q is the peck depth (incremental, positive value), R is the retract plane height above the workpiece. For G83: <code>G83 X___ Y___ Z___ R___ Q___ F___ ;</code> — same parameters, but the cycle retracts to the R-plane after every peck. Always cancel the canned cycle with <code>G80</code> after the last hole. Refer to your specific Fanuc series manual for modal behavior differences.</p>
 
-  <h3 id="what-are-qiaofengs-warranty-and-return-policies">What are QiaoFeng’s warranty and return policies?</h3>
-  <p>All QiaoFeng CNC machines come with a <strong>2-year warranty</strong> covering manufacturing defects and quality-related issues. Refunds are supported for verified quality problems. Returns without a quality-related reason are not accepted. Our after-sales engineering team in Dongguan provides remote diagnostics and on-site support throughout the warranty period.</p>
+  <h3 id="what-are-cennetics-warranty-and-return-policies">What are Cennetic’s warranty and return policies?</h3>
+  <p>All Cennetic CNC machines come with a <strong>2-year warranty</strong> covering manufacturing defects and quality-related issues. Refunds are supported for verified quality problems. Returns without a quality-related reason are not accepted. Our after-sales engineering team in Dongguan provides remote diagnostics and on-site support throughout the warranty period.</p>
 
   <!-- 9. CTA Box -->
   <div class="qf-cta-box">
-    <h3 id="optimize-your-drilling-operations-with-qiaofeng">Optimize Your Drilling Operations with QiaoFeng</h3>
+    <h3 id="optimize-your-drilling-operations-with-cennetic">Optimize Your Drilling Operations with Cennetic</h3>
     <p>Get expert advice on G73 &amp; G83 parameter setup for your specific material and machine. Our engineers respond within 24 hours. Trusted by 750+ clients across the USA, Europe, and Southeast Asia since 2010.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Peck%20Drilling%20Cycle%3A%20What%20It%20Is%20and%20How%20to%20Use%20G73%20%26%20G83%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-peck-drilling-cycle%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com" rel="noopener">Email Bella</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Peck%20Drilling%20Cycle%3A%20What%20It%20Is%20and%20How%20to%20Use%20G73%20%26%20G83%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-peck-drilling-cycle%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com" rel="noopener">Email Bella</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737" rel="noopener">+86 151 1824 3737</a>
     </div>
   </div>

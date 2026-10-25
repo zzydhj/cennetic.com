@@ -1,5 +1,5 @@
 # 由 npm run migrate -- 08 依据 migration/url-manifest.json 生成，请勿手改。
-# 想改规则：改源站内容后重跑阶段 02 + 08。
+# 想改规则：改源站内容后重跑阶段 02 + 08；品牌迁移那节维护在 08 的常量里。
 
 # ── 源站 301 别名（正文写成 /blog/<slug>/ 而实际文章在顶级路径）──
 /blog/cnc-apc-explained/ /cnc-apc-explained/ 301
@@ -14,6 +14,38 @@
 /my-account/ /products/ 301
 /product-cat/ /products/ 301
 
+# ── 品牌迁移：旧图文件名 → 新图文件名（28 张，通配规则盖不住改名）──
+# 前提：qfcncmachine.com 已在 Zone 层整域 301 到 www.cennetic.com 并保留路径；
+# 旧图 URL 先经 /wp-content→/images 通配落到 /images/<旧名>，再由下面规则落到 <新名>。
+/images/2026/06/qiaofeng-jr-v85p-cnc-machine-dimensions-three-view-drawing.webp   /images/2026/06/cennetic-jr-v85p-cnc-machine-dimensions-three-view-drawing.webp   301
+/images/2026/06/qiaofeng-jr-v85p-core-configuration-mitsubishi-m80-bt40-spindle-servo.webp   /images/2026/06/cennetic-jr-v85p-core-configuration-mitsubishi-m80-bt40-spindle-servo.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-100x100.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-100x100.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-300x300.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-300x300.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-430x430.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-430x430.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-700x700.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-700x700.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-768x768.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-768x768.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-800x800.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-800x800.webp   301
+/images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-100x100.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle-100x100.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-300x300.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle-300x300.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-430x430.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle-430x430.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-700x700.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle-700x700.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-768x768.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle-768x768.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle-800x800.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle-800x800.webp   301
+/images/2026/06/qiaofeng-jr-v85p-vertical-machining-center-bt40-spindle.webp   /images/2026/06/cennetic-jr-v85p-vertical-machining-center-bt40-spindle.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-100x100.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-100x100.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-300x300.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-300x300.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-430x430.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-430x430.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-700x700.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-700x700.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-768x768.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-768x768.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view-800x800.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view-800x800.webp   301
+/images/2026/06/qiaofeng-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp   /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp   301
+/images/2026/06/qiaofeng-l1060-spindle-worktable-heavy-duty-base-detail.webp   /images/2026/06/cennetic-l1060-spindle-worktable-heavy-duty-base-detail.webp   301
+/images/2026/06/qiaofeng-L1060-vertical-machining-center-main.webp   /images/2026/06/cennetic-L1060-vertical-machining-center-main.webp   301
+/images/2026/06/qiaofeng-L1060-z-axis-column-structure-100x83.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure-100x83.webp   301
+/images/2026/06/qiaofeng-L1060-z-axis-column-structure-430x358.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure-430x358.webp   301
+/images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure.webp   301
+
 # ── 源站图片旧路径 → 新站 /images/ ──
 # Google 已收录这些图片 URL，保留 301 以免图片搜索结果里的图集体失效。
 /wp-content/uploads/:year/:month/:file*  /images/:year/:month/:file*  301
@@ -26,4 +58,4 @@
 # dead on source: /blog/small-vs-large-cnc-machine/
 # dead on source: /blog/vertical-vs-horizontal-cnc/
 
-# Sitemap https://qfcncmachine.com/sitemap-index.xml
+# Sitemap https://www.cennetic.com/sitemap-index.xml

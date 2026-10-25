@@ -5,11 +5,38 @@
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, join as join_ } from 'node:path';
 
-/** 源 WordPress 站点（不带尾斜杠） */
+/**
+ * 源 WordPress 站点（不带尾斜杠）。
+ *
+ * 故意保留旧域名：WordPress 源站与它的 /wp-json、/wp-content/uploads 只存在于
+ * qfcncmachine.com。新域名 www.cennetic.com 上是 Astro 静态站，没有这些端点，
+ * 把它改成新域名等于让整条管道去抓自己的 404 页。
+ */
 export const SRC_ORIGIN = 'https://qfcncmachine.com';
 
-/** 目标站点 */
-export const SITE_ORIGIN = 'https://qfcncmachine.com';
+/** 目标站点（品牌迁移后的正式域名） */
+export const SITE_ORIGIN = 'https://www.cennetic.com';
+
+/**
+ * 旧品牌域名（不带 www），品牌迁移前线上收录用的就是它。
+ * 源站正文、缓存 HTML、已收录 URL 里大量存在，管道判定“本站链接”时必须同时认识两个域名。
+ */
+export const LEGACY_DOMAIN = 'qfcncmachine.com';
+
+/** 本站域名集合：新旧域名及其 www 变体 */
+export const SITE_HOSTS = new Set(
+    [new URL(SITE_ORIGIN).host, LEGACY_DOMAIN].flatMap((h) => [h, `www.${h}`, h.replace(/^www\./, '')]),
+);
+
+/** 是否本站链接（区分新旧域名与 www 变体） */
+export function isSiteHost(host: string): boolean {
+    return SITE_HOSTS.has(host);
+}
+
+/** 新旧域名的正则交替式，供直接拼进抢 HTML 的正则（已转义点号） */
+export const SITE_HOST_PATTERN = [...SITE_HOSTS]
+    .map((h) => h.replace(/\./g, '\\.'))
+    .join('|');
 
 const here = dirname(fileURLToPath(import.meta.url));
 

@@ -35,7 +35,7 @@ Keyword Density : aim for ~1.25%  (~22 occurrences in ~1,800 words)
 
 
 <!-- ── 1. Introduction ── -->
-<p>If you’re a <strong>CNC beginner</strong>, the term <strong>CNC tapping cycle</strong> might sound intimidating — but mastering it is essential for creating accurate internal threads in machined parts. In this guide, we break down the complete <strong>CNC tapping cycle definition</strong>, explain the <strong>G84 right-hand tap</strong> and <strong>G74 left-hand tap</strong> canned cycles, walk through real G-code examples, and show you how to run a <strong>CNC rigid tapping cycle</strong> with confidence. Whether you’re programming a vertical machining center or a CNC lathe, this guide from <a href="/" rel="noopener">QiaoFeng</a> will help you tap like a pro.</p>
+<p>If you’re a <strong>CNC beginner</strong>, the term <strong>CNC tapping cycle</strong> might sound intimidating — but mastering it is essential for creating accurate internal threads in machined parts. In this guide, we break down the complete <strong>CNC tapping cycle definition</strong>, explain the <strong>G84 right-hand tap</strong> and <strong>G74 left-hand tap</strong> canned cycles, walk through real G-code examples, and show you how to run a <strong>CNC rigid tapping cycle</strong> with confidence. Whether you’re programming a vertical machining center or a CNC lathe, this guide from <a href="/" rel="noopener">Cennetic</a> will help you tap like a pro.</p>
 
 <img decoding="async" src="/images/2026/06/cnc-tapping-cycle-1.webp" alt="CNC tapping cycle in action with G84 rigid tapping" width="1200" height="686" loading="lazy">
 
@@ -128,24 +128,24 @@ G80</code></pre>
 
 <h3 id="case-1-automotive-engine-block-threading-usa">Case 1 — Automotive Engine Block Threading (USA)</h3>
 <p><strong>Pain point:</strong> A Tier 1 automotive supplier in Michigan was experiencing 12% tap breakage on cast iron engine blocks due to inconsistent feed rates on an aging floating-holder setup.</p>
-<p><strong>Solution:</strong> Upgrading to a QiaoFeng VMC with built-in rigid tapping and programming G84 at 800 RPM (F800, pitch 1.0 mm) with a P200 dwell dropped breakage to under 2%, saving approximately $50,000 annually in tooling costs.</p>
+<p><strong>Solution:</strong> Upgrading to a Cennetic VMC with built-in rigid tapping and programming G84 at 800 RPM (F800, pitch 1.0 mm) with a P200 dwell dropped breakage to under 2%, saving approximately $50,000 annually in tooling costs.</p>
 <p><strong>Result:</strong> Tap breakage reduced from 12% → 2%; annual tooling savings ~$50,000.</p>
 
-<div class="qf-testimonial"><blockquote>“We switched to rigid tapping on QiaoFeng’s VMC and the difference was immediate. Tap breakage on our cast iron blocks dropped from double digits to almost zero within the first week. The machine’s control interface made G84 setup straightforward even for our junior programmers.”</blockquote><figcaption>— David R., Manufacturing Engineer, Tier 1 Automotive Supplier, Michigan, USA</figcaption></div>
+<div class="qf-testimonial"><blockquote>“We switched to rigid tapping on Cennetic’s VMC and the difference was immediate. Tap breakage on our cast iron blocks dropped from double digits to almost zero within the first week. The machine’s control interface made G84 setup straightforward even for our junior programmers.”</blockquote><figcaption>— David R., Manufacturing Engineer, Tier 1 Automotive Supplier, Michigan, USA</figcaption></div>
 
 <h3 id="case-2-aerospace-left-hand-threads-germany">Case 2 — Aerospace Left-Hand Threads (Germany)</h3>
 <p><strong>Pain point:</strong> A German aerospace sub-contractor needed M8 left-hand threads on titanium fuel system brackets to prevent loosening under vibration. Deep blind holes (50 mm) caused chip packing with conventional tapping.</p>
 <p><strong>Solution:</strong> Using G74 with peck tapping (G84.2, Q5 mm increments) and high-pressure through-spindle coolant at 250 RPM achieved full chip evacuation. 100% thread acceptance on first-article inspection.</p>
 <p><strong>Result:</strong> 100% thread pass rate; zero rework on titanium parts.</p>
 
-<div class="qf-testimonial"><blockquote>“The G74 peck tapping cycle on the QiaoFeng machine handled our titanium left-hand threads perfectly. Chip evacuation was clean and every part passed our CMM inspection on the first run. Excellent rigidity and thermal stability throughout long production shifts.”</blockquote><figcaption>— Klaus M., CNC Process Engineer, Aerospace Sub-contractor, Bavaria, Germany</figcaption></div>
+<div class="qf-testimonial"><blockquote>“The G74 peck tapping cycle on the Cennetic machine handled our titanium left-hand threads perfectly. Chip evacuation was clean and every part passed our CMM inspection on the first run. Excellent rigidity and thermal stability throughout long production shifts.”</blockquote><figcaption>— Klaus M., CNC Process Engineer, Aerospace Sub-contractor, Bavaria, Germany</figcaption></div>
 
 <h3 id="case-3-high-volume-electronics-enclosures-vietnam">Case 3 — High-Volume Electronics Enclosures (Vietnam)</h3>
 <p><strong>Pain point:</strong> A consumer electronics contract manufacturer in Ho Chi Minh City needed to tap 800+ M3 holes per hour in 6061 aluminum enclosures with zero defects for a major OEM customer.</p>
-<p><strong>Solution:</strong> Three QiaoFeng VMCs running G84 rigid tapping at 8,000 RPM with through-spindle mist coolant achieved a cycle time of 0.45 seconds per hole. Inline thread gauging confirmed 100% pass rate over a 3-month production run.</p>
+<p><strong>Solution:</strong> Three Cennetic VMCs running G84 rigid tapping at 8,000 RPM with through-spindle mist coolant achieved a cycle time of 0.45 seconds per hole. Inline thread gauging confirmed 100% pass rate over a 3-month production run.</p>
 <p><strong>Result:</strong> 1,000+ holes/hour across the cell; zero defect shipments for 90 consecutive days.</p>
 
-<div class="qf-testimonial"><blockquote>“QiaoFeng’s machines gave us the speed and reliability we needed for our OEM contract. Running G84 at high RPM on aluminum with mist coolant, we hit our takt time targets from day one. After-sales support from Bella’s team was also very responsive whenever we had parameter questions.”</blockquote><figcaption>— Nguyen T.H., Production Manager, Electronics Contract Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
+<div class="qf-testimonial"><blockquote>“Cennetic’s machines gave us the speed and reliability we needed for our OEM contract. Running G84 at high RPM on aluminum with mist coolant, we hit our takt time targets from day one. After-sales support from Bella’s team was also very responsive whenever we had parameter questions.”</blockquote><figcaption>— Nguyen T.H., Production Manager, Electronics Contract Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
 <img decoding="async" src="/images/2026/06/cnc-tapping-cycle-3.webp" alt="Comparison of broken tap and successful CNC tapping cycle result" width="1200" height="686" loading="lazy">
 
@@ -200,15 +200,15 @@ G80</code></pre>
 <p>Yes. Program a bottom dwell (P word, e.g., P200 for 0.2 seconds) to allow the spindle to fully reverse before retracting. Ensure the drilled hole depth is at least 2–3 thread pitches deeper than the required thread engagement length to avoid the tap bottoming out. For deep blind holes, use G84.2 (peck tapping) with a Q increment to clear chips in stages.</p>
 
 <h3 id="which-cnc-controllers-support-rigid-tapping">Which CNC controllers support rigid tapping?</h3>
-<p>Most modern controllers support rigid tapping natively: Fanuc (M29 S___ before G84), Haas (G84 with RIGID TAP enabled in settings), Siemens (CYCLE84), and Mitsubishi (G84 with rigid tap parameter). Older controls may require a firmware upgrade or a floating holder as an alternative. QiaoFeng machines ship with Fanuc-compatible controls with rigid tapping pre-enabled.</p>
+<p>Most modern controllers support rigid tapping natively: Fanuc (M29 S___ before G84), Haas (G84 with RIGID TAP enabled in settings), Siemens (CYCLE84), and Mitsubishi (G84 with rigid tap parameter). Older controls may require a firmware upgrade or a floating holder as an alternative. Cennetic machines ship with Fanuc-compatible controls with rigid tapping pre-enabled.</p>
 
 <!-- ── 9. CTA ── -->
 <div class="qf-cta-box">
   <h2 id="ready-to-eliminate-tap-breakage">Ready to Eliminate Tap Breakage?</h2>
-  <p>QiaoFeng has delivered precision CNC machines to 750+ customers across the USA, Europe, and Southeast Asia since 2010. Every machine ships with rigid tapping pre-enabled, a 2-year warranty, and free remote programming support. Talk to our team today.</p>
+  <p>Cennetic has delivered precision CNC machines to 750+ customers across the USA, Europe, and Southeast Asia since 2010. Every machine ships with rigid tapping pre-enabled, a 2-year warranty, and free remote programming support. Talk to our team today.</p>
   <div class="qf-cta-buttons">
-    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Tapping%20Cycle%3A%20Beginner's%20Guide%20to%20G84%20%26%20G74%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-tapping-cycle%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">Email Bella Directly</a>
+    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Tapping%20Cycle%3A%20Beginner's%20Guide%20to%20G84%20%26%20G74%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-tapping-cycle%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">Email Bella Directly</a>
     <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">Call +86 151 1824 3737</a>
   </div>
 </div>

@@ -1,6 +1,6 @@
 ---
 title: 'CNC Boring Cycle Guide: G85 G86 G87 G88 G89'
-heading: 'CNC Boring Cycle Guide: G85 G86 G87 G88 G89 | QFCNCMACHINE'
+heading: 'CNC Boring Cycle Guide: G85 G86 G87 G88 G89 | Cennetic'
 description: Master CNC boring cycles G85-G89 for precision bore finishing. Reduce errors 40%, improve tolerance 35%. Expert guide with real cases & FAQ.
 slug: cnc-boring-cycle-guide
 canonical: /cnc-boring-cycle-guide/
@@ -29,7 +29,7 @@ sourceId: 7530
   
 
   <!-- 1. INTRO -->
-  <p>Welcome to our comprehensive guide on the <strong>CNC boring cycle</strong>, designed specifically for CNC beginners and intermediate machinists. Whether you’re just starting or looking to refine your skills, understanding the <strong>CNC boring cycle</strong> — including G85, G86, G87, G88, and G89 — is crucial for achieving precision bore finishing in modern manufacturing. At <a href="/" rel="noopener">QFCNCMACHINE</a>, we’ve supported <strong>750+ manufacturers</strong> across Europe, North America, and Southeast Asia since 2010, and mastering <strong>CNC boring cycles</strong> is consistently among the top skills our application engineers teach to new operators.</p>
+  <p>Welcome to our comprehensive guide on the <strong>CNC boring cycle</strong>, designed specifically for CNC beginners and intermediate machinists. Whether you’re just starting or looking to refine your skills, understanding the <strong>CNC boring cycle</strong> — including G85, G86, G87, G88, and G89 — is crucial for achieving precision bore finishing in modern manufacturing. At <a href="/" rel="noopener">CENNETIC</a>, we’ve supported <strong>750+ manufacturers</strong> across Europe, North America, and Southeast Asia since 2010, and mastering <strong>CNC boring cycles</strong> is consistently among the top skills our application engineers teach to new operators.</p>
 
   <img decoding="async" src="/images/2026/06/cnc-boring-cycle-1.webp" alt="CNC boring cycle G86 operation on vertical machining center" width="1200" height="686" loading="lazy">
 
@@ -168,7 +168,7 @@ sourceId: 7530
   <h2 id="case-studies">5. Real-World Case Studies &amp; Customer Testimonials</h2>
 
   <h3 id="case-study-automotive-engine-block-manufacturing">Case Study: Automotive Engine Block Manufacturing</h3>
-  <p>A leading automotive parts manufacturer in Michigan, USA, faced challenges achieving consistent cylinder bore tolerances (±0.01mm) on cast iron engine blocks. After implementing <strong>G86 boring cycles</strong> on their QFCNCMACHINE vertical machining centers, results were dramatic:</p>
+  <p>A leading automotive parts manufacturer in Michigan, USA, faced challenges achieving consistent cylinder bore tolerances (±0.01mm) on cast iron engine blocks. After implementing <strong>G86 boring cycles</strong> on their CENNETIC vertical machining centers, results were dramatic:</p>
   <ul>
     <li>Bore tolerance consistency: <strong>±0.025mm → ±0.008mm</strong></li>
     <li>Surface finish: <strong>Ra 2.5 μm → Ra 1.2 μm</strong></li>
@@ -176,11 +176,11 @@ sourceId: 7530
     <li>Scrap rate: <strong>4.2% → 0.8%</strong></li>
   </ul>
 
-  <div class="qf-testimonial"><blockquote>“The G86 boring cycle revolutionized our production line. We reduced cycle time by 25% while maintaining tolerances within 0.01mm. The spindle-stop feature eliminated drag marks completely, and our engine performance metrics improved significantly. For beginners, understanding the feed rate and spindle stop sequence is the key to success. QFCNCMACHINE’s technical support was exceptional throughout the implementation.”</blockquote><figcaption>— Michael T., Senior Machinist, Detroit Precision Automotive, Michigan, USA</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“The G86 boring cycle revolutionized our production line. We reduced cycle time by 25% while maintaining tolerances within 0.01mm. The spindle-stop feature eliminated drag marks completely, and our engine performance metrics improved significantly. For beginners, understanding the feed rate and spindle stop sequence is the key to success. Cennetic’s technical support was exceptional throughout the implementation.”</blockquote><figcaption>— Michael T., Senior Machinist, Detroit Precision Automotive, Michigan, USA</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“We manufacture hydraulic manifold blocks for industrial equipment in Stuttgart, Germany. Before adopting G89 boring cycles with dwell, we struggled with chip packing in blind valve seats, causing frequent tool breakage. After switching to QFCNCMACHINE equipment and implementing G89 with 1.5-second dwell, tool life increased by 60% and our scrap rate dropped from 6% to under 1%. Bella’s team provided remote training that was invaluable.”</blockquote><figcaption>— Klaus M., Production Engineer, Hydraulik Präzision GmbH, Stuttgart, Germany</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“We manufacture hydraulic manifold blocks for industrial equipment in Stuttgart, Germany. Before adopting G89 boring cycles with dwell, we struggled with chip packing in blind valve seats, causing frequent tool breakage. After switching to CENNETIC equipment and implementing G89 with 1.5-second dwell, tool life increased by 60% and our scrap rate dropped from 6% to under 1%. Bella’s team provided remote training that was invaluable.”</blockquote><figcaption>— Klaus M., Production Engineer, Hydraulik Präzision GmbH, Stuttgart, Germany</figcaption></div>
 
-  <div class="qf-testimonial"><blockquote>“Our aerospace component facility in Bangkok, Thailand, produces titanium bearing housings with extremely tight tolerances. We implemented G87 back boring cycles to machine bottom faces without repositioning, which cut our setup time by 30% and eliminated alignment errors. The 2-year warranty and responsive after-sales support from QFCNCMACHINE gave us confidence to expand to three more machines.”</blockquote><figcaption>— Somchai W., Quality Manager, Thai Aerospace Precision Co., Ltd., Bangkok, Thailand</figcaption></div>
+  <div class="qf-testimonial"><blockquote>“Our aerospace component facility in Bangkok, Thailand, produces titanium bearing housings with extremely tight tolerances. We implemented G87 back boring cycles to machine bottom faces without repositioning, which cut our setup time by 30% and eliminated alignment errors. The 2-year warranty and responsive after-sales support from CENNETIC gave us confidence to expand to three more machines.”</blockquote><figcaption>— Somchai W., Quality Manager, Thai Aerospace Precision Co., Ltd., Bangkok, Thailand</figcaption></div>
 
   <img decoding="async" src="/images/2026/06/cnc-boring-cycle-3.webp" alt="Precision measurement of CNC boring cycle finished hole" width="1200" height="686" loading="lazy">
 
@@ -225,19 +225,19 @@ sourceId: 7530
   <p><strong>G85</strong> feeds in and retracts at the same feed rate, making it suitable for rough boring where surface finish is less critical. <strong>G86</strong> stops the spindle at the bottom before retracting at rapid rate, which prevents spiral drag lines on the bore surface. G86 is the preferred <strong>CNC boring cycle</strong> for finish boring operations requiring Ra &lt;1.6 μm surface finish and ±0.01mm tolerance. Beginners should start with G86 for higher quality bores in bearing housings, hydraulic components, and precision bushings.</p>
 
   <h3 id="can-i-use-g87-back-boring-on-a-standard-milling-machine">Can I use G87 back boring on a standard milling machine?</h3>
-  <p>Yes, but only if your machine supports the <strong>G87 boring cycle</strong> and you have a compatible back boring head. G87 requires a special boring bar that can offset radially at the bottom of the bore to machine the bottom face. Not all CNC controls support G87 — check your machine’s programming manual for compatibility. All QFCNCMACHINE vertical machining centers support G87 and we can recommend compatible boring heads for your application.</p>
+  <p>Yes, but only if your machine supports the <strong>G87 boring cycle</strong> and you have a compatible back boring head. G87 requires a special boring bar that can offset radially at the bottom of the bore to machine the bottom face. Not all CNC controls support G87 — check your machine’s programming manual for compatibility. All CENNETIC vertical machining centers support G87 and we can recommend compatible boring heads for your application.</p>
 
   <h3 id="how-do-i-select-the-correct-feed-rate-for-a-boring-cycle">How do I select the correct feed rate for a boring cycle?</h3>
-  <p>Feed rate for <strong>CNC boring cycles</strong> depends on material, tool diameter, and desired finish. General guidelines: <strong>Steel:</strong> 0.05-0.15 mm/rev; <strong>Aluminum:</strong> 0.1-0.3 mm/rev; <strong>Cast iron:</strong> 0.08-0.18 mm/rev; <strong>Stainless steel/Titanium:</strong> 0.03-0.10 mm/rev. Always start conservative and increase gradually. For finish boring (G86), use the lower end of the range. Monitor surface finish and adjust. QFCNCMACHINE provides cutting parameter tables with every machine.</p>
+  <p>Feed rate for <strong>CNC boring cycles</strong> depends on material, tool diameter, and desired finish. General guidelines: <strong>Steel:</strong> 0.05-0.15 mm/rev; <strong>Aluminum:</strong> 0.1-0.3 mm/rev; <strong>Cast iron:</strong> 0.08-0.18 mm/rev; <strong>Stainless steel/Titanium:</strong> 0.03-0.10 mm/rev. Always start conservative and increase gradually. For finish boring (G86), use the lower end of the range. Monitor surface finish and adjust. CENNETIC provides cutting parameter tables with every machine.</p>
 
   <h3 id="what-maintenance-is-required-for-boring-tools">What maintenance is required for boring tools?</h3>
-  <p>Regular maintenance is critical for consistent <strong>boring cycle</strong> performance: (1) Check insert wear every 100-200 cycles depending on material; (2) Clean tool holders and tapers after each shift; (3) Ensure proper coolant flow — clogged coolant passages cause heat buildup and poor finish; (4) Check boring bar runout monthly (should be &lt;0.005mm); (5) Replace dull inserts immediately — they cause chatter, poor finish, and dimensional errors. QFCNCMACHINE offers a 2-year warranty on all boring tools and holders.</p>
+  <p>Regular maintenance is critical for consistent <strong>boring cycle</strong> performance: (1) Check insert wear every 100-200 cycles depending on material; (2) Clean tool holders and tapers after each shift; (3) Ensure proper coolant flow — clogged coolant passages cause heat buildup and poor finish; (4) Check boring bar runout monthly (should be &lt;0.005mm); (5) Replace dull inserts immediately — they cause chatter, poor finish, and dimensional errors. CENNETIC offers a 2-year warranty on all boring tools and holders.</p>
 
   <h3 id="is-there-a-risk-of-tool-collision-during-boring-cycles">Is there a risk of tool collision during boring cycles?</h3>
-  <p>Yes, especially with <strong>G87 back boring</strong> if the tool offset or retract sequence is programmed incorrectly. Always simulate the program in your CNC control before running on the actual part. Use a collision detection system if available. Set conservative R-plane heights (at least 2-5mm above the workpiece) during initial testing. For G86, ensure the spindle orientation stop is functioning correctly — a failed orientation can cause the tool to drag on retract. All QFCNCMACHINE machines include built-in simulation and collision detection features.</p>
+  <p>Yes, especially with <strong>G87 back boring</strong> if the tool offset or retract sequence is programmed incorrectly. Always simulate the program in your CNC control before running on the actual part. Use a collision detection system if available. Set conservative R-plane heights (at least 2-5mm above the workpiece) during initial testing. For G86, ensure the spindle orientation stop is functioning correctly — a failed orientation can cause the tool to drag on retract. All CENNETIC machines include built-in simulation and collision detection features.</p>
 
   <h3 id="can-i-use-boring-cycles-for-materials-like-titanium-or-incon">Can I use boring cycles for materials like titanium or Inconel?</h3>
-  <p>Yes, but with modified parameters. For difficult-to-machine materials, use <strong>G89 boring cycle</strong> with extended dwell (1500-3000ms) to allow heat dissipation and chip clearance. Reduce feed rate by 40-50% compared to steel (e.g., 0.03-0.06 mm/rev for titanium). Use carbide inserts with TiAlN coating. Increase coolant pressure (70+ bar if available). Expect tool life to be 50-70% shorter than with steel. QFCNCMACHINE application engineers can provide detailed cutting parameters for exotic materials.</p>
+  <p>Yes, but with modified parameters. For difficult-to-machine materials, use <strong>G89 boring cycle</strong> with extended dwell (1500-3000ms) to allow heat dissipation and chip clearance. Reduce feed rate by 40-50% compared to steel (e.g., 0.03-0.06 mm/rev for titanium). Use carbide inserts with TiAlN coating. Increase coolant pressure (70+ bar if available). Expect tool life to be 50-70% shorter than with steel. CENNETIC application engineers can provide detailed cutting parameters for exotic materials.</p>
 
   <h3 id="what-is-the-typical-tolerance-achievable-with-g86-boring">What is the typical tolerance achievable with G86 boring?</h3>
   <p>With proper setup, <strong>G86 boring cycle</strong> can consistently achieve <strong>±0.01mm (±0.0004″)</strong> tolerance on bore diameter and <strong>±0.02mm</strong> on depth. Surface finish of <strong>Ra 0.8-1.6 μm</strong> is standard. Key factors: (1) Rigid machine and workholding; (2) Sharp inserts; (3) Proper feed rate (0.05-0.10 mm/rev for finish); (4) Adequate coolant flow; (5) Thermal stability (allow machine to warm up 30 min before precision work). For even tighter tolerances (±0.005mm), consider honing or grinding as a secondary operation after boring.</p>
@@ -245,10 +245,10 @@ sourceId: 7530
   <!-- 10. CTA -->
   <div class="qf-cta-box">
     <h3 id="ready-to-master-cnc-boring-cycles">Ready to Master CNC Boring Cycles?</h3>
-    <p>Talk to our application engineers at QFCNCMACHINE — 15 years of CNC expertise, 750+ machines installed worldwide, 2-year warranty on every machine. Get a free consultation and cutting parameter guide today.</p>
+    <p>Talk to our application engineers at CENNETIC — 15 years of CNC expertise, 750+ machines installed worldwide, 2-year warranty on every machine. Get a free consultation and cutting parameter guide today.</p>
     <div class="qf-cta-buttons">
-      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22CNC%20Boring%20Cycle%20Guide%3A%20G85%20G86%20G87%20G88%20G89%20%7C%20QFCNCMACHINE%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fcnc-boring-cycle-guide%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
-      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com" rel="noopener">Email Bella Directly</a>
+      <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22CNC%20Boring%20Cycle%20Guide%3A%20G85%20G86%20G87%20G88%20G89%20%7C%20CENNETIC%22%20on%20https%3A%2F%2Fcennetic.com%2Fcnc-boring-cycle-guide%2F%20and%20would%20like%20your%20recommendation." rel="noopener noreferrer" target="_blank">Get a Free Consultation</a>
+      <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com" rel="noopener">Email Bella Directly</a>
       <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737" rel="noopener">Call: +86 151 1824 3737</a>
     </div>
   </div>

@@ -22,7 +22,7 @@ sourceId: 7427
 
 <div class="qf-article-body">
 
-<p>If you are new to CNC machining, you may have heard the term “DNC” and wondered what it means. Getting <strong>DNC explained</strong> simply is the first step to unlocking higher efficiency in your workshop. Direct Numerical Control (DNC) is a system that connects multiple CNC machines to a central computer, allowing you to transfer programs, monitor operations, and manage production without walking each program over on a USB drive. At <a href="/" target="_blank" rel="noopener">QiaoFeng</a>, established in 2010 in Dalingshan Town, Dongguan, China, we have helped over 750+ clients across the US, Europe, and Southeast Asia implement DNC solutions to streamline their production.</p>
+<p>If you are new to CNC machining, you may have heard the term “DNC” and wondered what it means. Getting <strong>DNC explained</strong> simply is the first step to unlocking higher efficiency in your workshop. Direct Numerical Control (DNC) is a system that connects multiple CNC machines to a central computer, allowing you to transfer programs, monitor operations, and manage production without walking each program over on a USB drive. At <a href="/" target="_blank" rel="noopener">Cennetic</a>, established in 2010 in Dalingshan Town, Dongguan, China, we have helped over 750+ clients across the US, Europe, and Southeast Asia implement DNC solutions to streamline their production.</p>
 
 <img decoding="async" src="/images/2026/06/dnc-explained-1.webp" alt="DNC explained: CNC DNC system interface showing machine status" width="1200" height="686" loading="lazy">
 
@@ -32,7 +32,7 @@ sourceId: 7427
 
 <h2 id="2-what-is-dnc-direct-numerical-control-explained">2. What Is DNC? Direct Numerical Control Explained</h2>
 <p>Direct Numerical Control (DNC) is a manufacturing automation method where a central computer controls and communicates with multiple CNC machines. Unlike standalone CNC operations, where each machine runs from its own limited memory, a DNC system streams G-code directly to the machine controller. This eliminates memory limitations, reduces downtime, and allows real-time monitoring of every machine on the network.</p>
-<p>Since our establishment in 2010 in Dongguan, China, QiaoFeng CNC has integrated DNC capabilities into our manufacturing solutions, helping over 750+ clients globally transition from manual file transfers to seamless, centralized control.</p>
+<p>Since our establishment in 2010 in Dongguan, China, Cennetic CNC has integrated DNC capabilities into our manufacturing solutions, helping over 750+ clients globally transition from manual file transfers to seamless, centralized control.</p>
 
 <h2 id="3-dnc-vs-cnc-what-is-the-difference">3. DNC vs CNC: What Is the Difference?</h2>
 <p>Many beginners confuse DNC with CNC. CNC (Computer Numerical Control) refers to the machine’s ability to execute programmed commands autonomously. DNC, on the other hand, is the network that feeds programs to multiple CNCs from a central source. Think of CNC as the worker and DNC as the foreman who distributes tasks.</p>
@@ -60,11 +60,11 @@ sourceId: 7427
 <img decoding="async" src="/images/2026/06/dnc-explained-2.webp" alt="CNC operator using DNC system to transfer G-code program" width="1200" height="686" loading="lazy">
 
 <h2 id="5-real-world-use-cases-client-success">5. Real-World Use Cases &amp; Client Success</h2>
-<p>At QiaoFeng, our machines and DNC solutions are exported primarily to Europe, the Americas, and Southeast Asia. Here is how our clients across different regions have benefited from implementing DNC:</p>
+<p>At Cennetic, our machines and DNC solutions are exported primarily to Europe, the Americas, and Southeast Asia. Here is how our clients across different regions have benefited from implementing DNC:</p>
 
-<div class="qf-testimonial"><blockquote>“Before implementing a DNC network with our QiaoFeng machines, our operators in Ohio wasted hours manually loading programs. We run 12 CNC machines across two shifts, and the manual transfer process was causing 45 minutes of idle time per machine per shift. Now, we push updates directly from the engineering office. Our scrap rate dropped by 80% within three months, and we recovered the DNC investment in under 8 months.”</blockquote><figcaption>— Mark T., Production Manager, Automotive Parts Supplier, Ohio, USA</figcaption></div>
+<div class="qf-testimonial"><blockquote>“Before implementing a DNC network with our Cennetic machines, our operators in Ohio wasted hours manually loading programs. We run 12 CNC machines across two shifts, and the manual transfer process was causing 45 minutes of idle time per machine per shift. Now, we push updates directly from the engineering office. Our scrap rate dropped by 80% within three months, and we recovered the DNC investment in under 8 months.”</blockquote><figcaption>— Mark T., Production Manager, Automotive Parts Supplier, Ohio, USA</figcaption></div>
 
-<div class="qf-testimonial"><blockquote>“As a precision engineering shop in Bavaria, we deal with massive 5-axis G-code files for aerospace components. Our older machines only had 128KB of memory, making it impossible to run complex programs without DNC drip-feeding. QiaoFeng helped us set up a networked DNC system that streams programs directly. The stability is outstanding, and we have eliminated all memory-related stoppages. It has been running 18 months without a single network failure.”</blockquote><figcaption>— Lukas M., Lead CNC Programmer, Precision Engineering GmbH, Bavaria, Germany</figcaption></div>
+<div class="qf-testimonial"><blockquote>“As a precision engineering shop in Bavaria, we deal with massive 5-axis G-code files for aerospace components. Our older machines only had 128KB of memory, making it impossible to run complex programs without DNC drip-feeding. Cennetic helped us set up a networked DNC system that streams programs directly. The stability is outstanding, and we have eliminated all memory-related stoppages. It has been running 18 months without a single network failure.”</blockquote><figcaption>— Lukas M., Lead CNC Programmer, Precision Engineering GmbH, Bavaria, Germany</figcaption></div>
 
 <div class="qf-testimonial"><blockquote>“Managing 30 CNC machines across different shifts at our electronics plant in Ho Chi Minh City was a nightmare before DNC. Operators were using USB drives, and we had version control issues almost weekly. The centralized DNC dashboard allows us to monitor OEE in real-time. Changeovers now take 2 minutes instead of 15. Our overall equipment effectiveness improved by 22% in the first quarter alone.”</blockquote><figcaption>— Nguyen V., Factory Director, Electronics Manufacturing, Ho Chi Minh City, Vietnam</figcaption></div>
 
@@ -92,32 +92,32 @@ sourceId: 7427
   </div>
 </div>
 
-<div class="qf-highlight-box"><strong>Bottom Line:</strong> Having <strong>DNC explained</strong> clearly shows that while it requires an upfront investment, the ROI is typically achieved within 6–12 months through reduced setup time, lower scrap rates, and increased machine utilization. QiaoFeng offers comprehensive training and support to ease this transition. All our CNC machines come with a standard <strong>2-year warranty</strong>. Refunds are fully supported for verified quality issues; no-reason returns are not accepted.</div>
+<div class="qf-highlight-box"><strong>Bottom Line:</strong> Having <strong>DNC explained</strong> clearly shows that while it requires an upfront investment, the ROI is typically achieved within 6–12 months through reduced setup time, lower scrap rates, and increased machine utilization. Cennetic offers comprehensive training and support to ease this transition. All our CNC machines come with a standard <strong>2-year warranty</strong>. Refunds are fully supported for verified quality issues; no-reason returns are not accepted.</div>
 
 <img decoding="async" src="/images/2026/06/dnc-explained-3.webp" alt="DNC network diagram connecting server to CNC machines" width="1200" height="686" loading="lazy">
 
 <h2 id="7-frequently-asked-questions-about-dnc">7. Frequently Asked Questions About DNC</h2>
 <h3 id="is-dnc-compatible-with-older-cnc-machines">Is DNC compatible with older CNC machines?</h3>
-<p>Yes, most DNC systems support legacy machines through RS-232 serial ports or Ethernet adapters. We have successfully integrated DNC with Fanuc, Siemens, Mitsubishi, and Heidenhain controllers. QiaoFeng’s team can assess your existing machine fleet and recommend the right connectivity solution.</p>
+<p>Yes, most DNC systems support legacy machines through RS-232 serial ports or Ethernet adapters. We have successfully integrated DNC with Fanuc, Siemens, Mitsubishi, and Heidenhain controllers. Cennetic’s team can assess your existing machine fleet and recommend the right connectivity solution.</p>
 
-<h3 id="what-is-qiaofengs-warranty-and-refund-policy">What is QiaoFeng’s warranty and refund policy?</h3>
-<p>QiaoFeng provides a standard <strong>2-year warranty</strong> on all our CNC machines. Regarding refunds, we do not support returns without a valid reason. However, if there is a verified quality issue, we fully support refunds and replacements to protect your investment. Please visit our <a href="/contact-us/" target="_blank" rel="noopener">Contact &amp; Support page</a> for full policy details.</p>
+<h3 id="what-is-cennetics-warranty-and-refund-policy">What is Cennetic’s warranty and refund policy?</h3>
+<p>Cennetic provides a standard <strong>2-year warranty</strong> on all our CNC machines. Regarding refunds, we do not support returns without a valid reason. However, if there is a verified quality issue, we fully support refunds and replacements to protect your investment. Please visit our <a href="/contact-us/" target="_blank" rel="noopener">Contact &amp; Support page</a> for full policy details.</p>
 
 <h3 id="do-i-need-special-software-on-each-cnc-machine">Do I need special software on each CNC machine?</h3>
 <p>No. The DNC software runs on the central computer server. Each CNC machine only needs a communication port (RS-232 or Ethernet) and a compatible protocol. Most modern CNC controllers support DNC communication out of the box.</p>
 
 <h3 id="how-long-does-it-take-to-set-up-a-dnc-system">How long does it take to set up a DNC system?</h3>
-<p>A typical DNC deployment for a 5–10 machine workshop takes 2–5 days, including server setup, network cabling, machine connectivity testing, and operator training. QiaoFeng provides on-site commissioning support for all DNC installations.</p>
+<p>A typical DNC deployment for a 5–10 machine workshop takes 2–5 days, including server setup, network cabling, machine connectivity testing, and operator training. Cennetic provides on-site commissioning support for all DNC installations.</p>
 
 <h3 id="what-industries-benefit-most-from-dnc">What industries benefit most from DNC?</h3>
 <p>DNC is most valuable in automotive parts manufacturing, aerospace components, precision engineering, electronics manufacturing, and any shop running 3 or more CNC machines with frequent program changes. The more machines and the more complex the programs, the faster the ROI.</p>
 
 <div class="qf-cta-box">
   <h2 id="ready-to-transform-your-cnc-shop">Ready to Transform Your CNC Shop?</h2>
-  <p>Get a free consultation from QiaoFeng’s application engineers. We will assess your current setup, recommend the right DNC configuration, and provide a detailed ROI projection — at no cost and no obligation. Trusted by 750+ industrial clients across Europe, the USA, and Southeast Asia since 2010.</p>
+  <p>Get a free consultation from Cennetic’s application engineers. We will assess your current setup, recommend the right DNC configuration, and provide a detailed ROI projection — at no cost and no obligation. Trusted by 750+ industrial clients across Europe, the USA, and Southeast Asia since 2010.</p>
   <div class="qf-cta-buttons">
-    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20QiaoFeng%2C%20I%20just%20read%20%22DNC%20Explained%3A%20What%20Is%20Direct%20Numerical%20Control%20%26%20Why%20It%20Matters%20for%20Your%20Workshop%22%20on%20https%3A%2F%2Fqfcncmachine.com%2Fdnc-explained-direct-numerical-control%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Consultation</a>
-    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@qfcncmachine.com">bella@qfcncmachine.com</a>
+    <a class="qf-cta-btn qf-cta-btn-primary" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%20just%20read%20%22DNC%20Explained%3A%20What%20Is%20Direct%20Numerical%20Control%20%26%20Why%20It%20Matters%20for%20Your%20Workshop%22%20on%20https%3A%2F%2Fcennetic.com%2Fdnc-explained-direct-numerical-control%2F%20and%20would%20like%20your%20recommendation." target="_blank" rel="noopener noreferrer">Get a Free Consultation</a>
+    <a class="qf-cta-btn qf-cta-btn-secondary" href="mailto:bella@cennetic.com">bella@cennetic.com</a>
     <a class="qf-cta-btn qf-cta-btn-secondary" href="tel:+8615118243737">+86 151 1824 3737</a>
   </div>
 </div>
