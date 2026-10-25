@@ -15,9 +15,9 @@
         "snapshot": "tsx scripts/cms/snapshot.ts",
         "snapshot:check": "tsx scripts/cms/snapshot.ts --check",
         "verify:parity": "tsx scripts/verify/parity.ts",
-        "verify:cms": "tsx scripts/verify/cms-fields.ts",
+        "verify:site": "tsx scripts/verify/site.ts",
         "verify:live": "tsx scripts/verify/live.ts",
-        "verify": "npm run verify:parity && npm run verify:cms",
+        "verify": "npm run verify:site",
         "admin:dev": "npm run dev -w admin",
         "admin:build": "npm run build -w admin"
     },

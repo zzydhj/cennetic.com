@@ -6,7 +6,9 @@
 # 需要的仓库 Secrets：
 #   SUPABASE_URL          https://xxxx.supabase.co
 #   SUPABASE_SECRET_KEY   sb_secret_xxx（service/secret key，只有本 Action 能用）
-# 说明：本 Action 提交前必须过 build + verify:parity，坏快照绝不进 main。
+# 说明：本 Action 提交前必须过 build + verify:site，坏快照绝不进 main。
+#       verify:site 只校“本站自洽”（canonical/H1/sitemap/_redirects），
+#       不再拿旧站 URL 清单当尺子 —— 新建文章与下架旧文章都能正常发布。
 # ============================================================================
 name: Content snapshot
 
@@ -59,10 +61,10 @@ jobs:
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: npm run snapshot
 
-      - name: 回归闸（整站构建 + URL/canonical/H1 结构对账）
+      - name: 回归闸（整站构建 + 自洽校验）
         run: |
           npm run build
-          npm run verify:parity
+          npm run verify:site
 
       - name: 提交并推送（无变化则跳过）
         run: |
