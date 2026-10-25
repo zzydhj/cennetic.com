@@ -153,7 +153,8 @@ async function main() {
                 summary: p.summary ?? '',
                 body: p.body ?? '',
                 images: p.images ?? [],
-                categories: p.categories ?? [],
+                // 分类存 slug 数组（与后台多选一致）；snapshot 侧再展开成 {slug,name,canonical}
+                categories: (p.categories ?? []).map((c: { slug: string }) => c.slug),
                 specs: p.specs ?? [],
                 status: 'published',
             };

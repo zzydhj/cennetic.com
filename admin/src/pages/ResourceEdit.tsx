@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import { sanitizeHtml } from '../lib/sanitize';
 import type { Field, Resource } from '../lib/resources';
 import { Button, Card, Input, Label, Select, Textarea } from '../components/ui';
 
@@ -89,6 +90,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }) {
                 v = f.name === 'data' ? trimmed : trimmed ? JSON.parse(trimmed) : [];
             }
             if (f.type === 'number') v = v === '' || v == null ? null : Number(v);
+            if (f.type === 'html' && typeof v === 'string') v = sanitizeHtml(v);
             payload[f.name] = v ?? null;
         }
         if (resource.singleton) payload.id = true;
@@ -163,6 +165,16 @@ function FieldInput({
             {field.label}
             {field.required && <span className="text-red-500"> *</span>}
             {field.hint && <span className="ml-2 text-xs font-normal text-slate-400">{field.hint}</span>}
+            {field.help && (
+                <span className="group relative ml-1.5 inline-flex align-middle">
+                    <span className="inline-flex h-4 w-4 cursor-help items-center justify-center rounded-full bg-slate-300 text-[10px] font-bold text-white">
+                        ?
+                    </span>
+                    <span className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-1 hidden w-64 -translate-x-1/2 rounded-md bg-slate-800 px-2.5 py-1.5 text-xs font-normal leading-relaxed text-white shadow-lg group-hover:block">
+                        {field.help}
+                    </span>
+                </span>
+            )}
         </Label>
     );
 
