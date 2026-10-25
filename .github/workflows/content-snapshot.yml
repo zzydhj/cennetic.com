@@ -45,6 +45,14 @@ jobs:
       - name: 安装依赖
         run: npm ci
 
+      - name: 变量注入自检（只报有无，不报内容）
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          node -e "const k=['SUPABASE_URL','SUPABASE_SECRET_KEY'];let bad=0;for(const n of k){const v=process.env[n];if(!v){console.log('❌ '+n+' 未注入（去 Settings→Secrets and variables→Actions 核对名字）');bad++}else{console.log('✓ '+n+' 已注入，'+v.length+' 字符，开头：'+(n==='SUPABASE_URL'?v:v.slice(0,10)+'…'))}}process.exit(bad?1:0)"
+          npx tsx --version
+
       - name: 从 Supabase 生成内容快照
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -69,3 +77,17 @@ jobs:
           git add -A
           git commit -m "内容发布：Supabase 快照（${{ github.event.inputs.reason || 'manual' }}）"
           git push origin HEAD:main
+
+      # 失败时把原因重跑一遍写到 Summary 顶部，非技术同事不用再去翻日志
+      - name: 失败原因写到 Summary
+        if: failure()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          {
+            echo "### ❌ 本次发布未完成，原因如下（只读校验，不会改任何文件）"
+            echo '```'
+            npm run snapshot:check 2>&1 | tail -n 40 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
