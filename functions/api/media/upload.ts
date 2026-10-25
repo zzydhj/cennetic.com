@@ -1,7 +1,7 @@
 /**
  * Pages Function：接收图片文件 → 用 R2 绑定写入桶 → 返回公开 URL。
  * 部署需在 Pages 项目配 R2 绑定（变量名 MEDIA → 桶 cennetic-com）与
- * 环境变量 SUPABASE_URL / SUPABASE_ANON_KEY（用于校验调用者是已登录用户）。
+ * 环境变量 VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY（用于校验调用者是已登录用户）。
  * 密钥/凭据都不进前端：浏览器只把文件 POST 到这里。
  */
 interface R2ObjectLike {
@@ -27,6 +27,9 @@ async function requireUser(ctx: FnCtx): Promise<Response | null> {
     return r.ok ? null : json({ error: 'unauthorized' }, 401);
 }
 
+/** 服务端硬闸：单文件最大 8MB（前端已压缩，此处防绕过接口） */
+const MAX_UPLOAD_BYTES = 8 * 1024 * 1024;
+
 function makeKey(name: string): string {
     const safe = (name || 'image').toLowerCase().replace(/[^\w.\-]+/g, '-').replace(/^-+|-+$/g, '') || 'image';
     const now = new Date();
@@ -45,6 +48,8 @@ export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
         const form = await ctx.request.formData();
         const file = form.get('file');
         if (!file || typeof file === 'string') return json({ error: 'no file' }, 400);
+        if (!file.type.startsWith('image/')) return json({ error: '只能上传图片文件' }, 400);
+        if (file.size > MAX_UPLOAD_BYTES) return json({ error: `文件过大（${Math.round(file.size / 1024 / 1024)}MB，上限 8MB）` }, 413);
 
         const buf = await file.arrayBuffer();
         const key = makeKey(file.name);

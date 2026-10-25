@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { uploadMedia, imageDims } from '../lib/media';
+import { uploadImage } from '../lib/media';
 
 interface Img {
     src: string;
@@ -15,15 +15,18 @@ function toList(value: unknown, multiple: boolean): Img[] {
 }
 
 /**
- * 图片选择器：点选或拖拽上传到 R2，缩略图预览、排序、改 alt、删除。
+ * 图片选择器：点选或拖拽上传到 R2（超过 400KB/长边 1600px 自动压缩为 WebP），
+ * 缩略图预览、排序、改 alt、删除；multiple 时可用 max 限制张数。
  * multiple=true → 值是 Img[]（如产品图集）；false → 值是 url 字符串（如文章主图）。
  */
 export function ImageField({
     multiple,
+    max,
     value,
     onChange,
 }: {
     multiple: boolean;
+    max?: number;
     value: unknown;
     onChange: (v: unknown) => void;
 }) {
@@ -31,17 +34,27 @@ export function ImageField({
     const [err, setErr] = useState<string | null>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const list = toList(value, multiple);
+    const atMax = multiple && !!max && list.length >= max;
 
     async function handleFiles(files: FileList | File[]): Promise<void> {
         setErr(null);
+        const picked = Array.from(files).filter((f) => f.type.startsWith('image/'));
+        let todo = picked;
+        if (multiple && max) {
+            const room = max - list.length;
+            if (room <= 0) {
+                setErr(`最多 ${max} 张`);
+                return;
+            }
+            todo = picked.slice(0, room);
+            if (picked.length > room) setErr(`已达上限 ${max} 张，多余的已忽略`);
+        }
         setBusy(true);
         const acc: Img[] = multiple ? [...list] : [];
         try {
-            for (const f of Array.from(files)) {
-                if (!f.type.startsWith('image/')) continue;
-                const { width, height } = await imageDims(f);
-                const up = await uploadMedia(f);
-                const img: Img = { src: up.url, alt: f.name.replace(/\.[^.]+$/, ''), width, height };
+            for (const f of todo) {
+                const up = await uploadImage(f);
+                const img: Img = { src: up.url, alt: f.name.replace(/\.[^.]+$/, ''), width: up.width, height: up.height };
                 if (multiple) {
                     acc.push(img);
                     onChange(acc);
@@ -71,15 +84,25 @@ export function ImageField({
     return (
         <div>
             <div
-                onClick={() => inputRef.current?.click()}
+                onClick={() => !atMax && inputRef.current?.click()}
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={(e) => {
                     e.preventDefault();
-                    if (e.dataTransfer.files) void handleFiles(e.dataTransfer.files);
+                    if (!atMax && e.dataTransfer.files) void handleFiles(e.dataTransfer.files);
                 }}
-                className="cursor-pointer rounded-md border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500 hover:border-brand"
+                className={
+                    atMax
+                        ? 'rounded-md border-2 border-dashed border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-400'
+                        : 'cursor-pointer rounded-md border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500 hover:border-brand'
+                }
             >
-                {busy ? '上传中…' : multiple ? '点击或拖入图片上传（可多张，第一张作列表封面）' : '点击或拖入图片上传'}
+                {busy
+                    ? '上传中…（大图会先自动压缩）'
+                    : atMax
+                      ? `已达上限 ${max} 张，如需替换请先删除`
+                      : multiple
+                        ? `点击或拖入图片上传（最多 ${max ?? '多'} 张${multiple && max ? `，已传 ${list.length}/${max}` : ''}，第一张作列表封面）`
+                        : '点击或拖入图片上传（替换现有图片）'}
             </div>
             <input
                 ref={inputRef}

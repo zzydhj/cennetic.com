@@ -38,6 +38,8 @@ export interface Field {
     hint?: string;
     /** html 字段的示例模板：编辑页提供“查看/插入模板”按钮 */
     sample?: string;
+    /** image/gallery 字段的最大张数 */
+    max?: number;
 }
 
 export interface ListCol {
@@ -177,7 +179,7 @@ export const RESOURCES: Resource[] = [
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true, help: '产品名，也用于列表卡片标题。' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动' },
             { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, help: '列表卡片/详情顶部的一小段介绍，可含简单 HTML。' },
-            { name: 'images', label: '产品主图', type: 'gallery', full: true, help: '点击或拖入上传 5–6 张主图，可左右排序、改 alt、删除；第一张自动作为列表封面。' },
+            { name: 'images', label: '产品主图', type: 'gallery', full: true, max: 5, help: '点击或拖入上传，最多 5 张主图，可左右排序、改 alt、删除；第一张自动作为列表封面。大图会自动压缩。' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'product_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属产品分类，决定产品出现在哪些分类页/导航。' },
             STATUS,
             { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段 HTML：图集、规格表、描述都写在这里(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。', sample: PRODUCT_BODY_SAMPLE },

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { uploadMedia, deleteMedia, imageDims } from '../lib/media';
+import { uploadImage, deleteMedia } from '../lib/media';
 import { Button, Card } from '../components/ui';
 
 interface MediaRow {
@@ -31,11 +31,18 @@ export default function MediaLibrary() {
         try {
             for (const f of Array.from(files)) {
                 if (!f.type.startsWith('image/')) continue;
-                const { width, height } = await imageDims(f);
-                const up = await uploadMedia(f);
+                const up = await uploadImage(f);
                 const { error } = await supabase
                     .from('media_assets')
-                    .insert({ key: up.key, public_url: up.url, alt: f.name.replace(/\.[^.]+$/, ''), width, height, bytes: up.bytes, mime: up.contentType });
+                    .insert({
+                        key: up.key,
+                        public_url: up.url,
+                        alt: f.name.replace(/\.[^.]+$/, ''),
+                        width: up.width,
+                        height: up.height,
+                        bytes: up.bytes,
+                        mime: up.contentType,
+                    });
                 if (error) throw new Error(error.message);
             }
             load();
@@ -74,7 +81,7 @@ export default function MediaLibrary() {
                 </div>
             </div>
             {err && <p className="mb-3 text-sm text-red-600">{err}</p>}
-            <p className="mb-4 text-sm text-slate-500">上传后点“复制链接”，写 Blog/产品时把链接粘贴到正文即可。</p>
+            <p className="mb-4 text-sm text-slate-500">上传后点“复制链接”，写 Blog/产品时把链接粘贴到正文即可。图片超过 400KB 或长边超过 1600px 会自动压缩为 WebP。</p>
             {rows.length === 0 ? (
                 <p className="text-slate-400">还没有图片。</p>
             ) : (

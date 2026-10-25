@@ -313,7 +313,7 @@ function FieldInput({
             return (
                 <div>
                     {label}
-                    <ImageField multiple value={value} onChange={onChange} />
+                    <ImageField multiple max={field.max} value={value} onChange={onChange} />
                 </div>
             );
         default:
