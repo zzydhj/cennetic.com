@@ -39,16 +39,21 @@ function makeKey(name: string): string {
 export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
     const denied = await requireUser(ctx);
     if (denied) return denied;
+    if (!ctx.env.MEDIA) return json({ error: 'R2 绑定 MEDIA 未注入本部署（加绑定后需重新构建一次）' }, 500);
 
-    const form = await ctx.request.formData();
-    const file = form.get('file');
-    if (!file || typeof file === 'string') return json({ error: 'no file' }, 400);
+    try {
+        const form = await ctx.request.formData();
+        const file = form.get('file');
+        if (!file || typeof file === 'string') return json({ error: 'no file' }, 400);
 
-    const buf = await file.arrayBuffer();
-    const key = makeKey(file.name);
-    const contentType = file.type || 'application/octet-stream';
-    await ctx.env.MEDIA.put(key, buf, { httpMetadata: { contentType } });
+        const buf = await file.arrayBuffer();
+        const key = makeKey(file.name);
+        const contentType = file.type || 'application/octet-stream';
+        await ctx.env.MEDIA.put(key, buf, { httpMetadata: { contentType } });
 
-    const base = (ctx.env.R2_PUBLIC_BASE || 'https://media.cennetic.com').replace(/\/+$/, '');
-    return json({ key, url: `${base}/${key}`, bytes: buf.byteLength, contentType });
+        const base = (ctx.env.R2_PUBLIC_BASE || 'https://media.cennetic.com').replace(/\/+$/, '');
+        return json({ key, url: `${base}/${key}`, bytes: buf.byteLength, contentType });
+    } catch (e) {
+        return json({ error: e instanceof Error ? e.message : String(e) }, 500);
+    }
 };

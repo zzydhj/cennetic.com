@@ -18,7 +18,15 @@ export async function uploadMedia(file: File): Promise<UploadedMedia> {
     const fd = new FormData();
     fd.append('file', file);
     const res = await fetch('/api/media/upload', { method: 'POST', headers: await authHeaders(), body: fd });
-    if (!res.ok) throw new Error(`上传失败（${res.status}）`);
+    if (!res.ok) {
+        let detail = '';
+        try {
+            detail = ((await res.json()) as { error?: string }).error ?? '';
+        } catch {
+            /* 非 JSON 响应 */
+        }
+        throw new Error(detail ? `上传失败：${detail}` : `上传失败（${res.status}）`);
+    }
     return (await res.json()) as UploadedMedia;
 }
 
