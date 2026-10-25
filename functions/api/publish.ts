@@ -36,6 +36,8 @@ export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
             headers: {
                 Authorization: `Bearer ${GH_API_TOKEN}`,
                 'Content-Type': 'application/json',
+                // GitHub REST 强制要求 User-Agent，缺了就一律 403；Workers 的 fetch 不会自动带
+                'User-Agent': 'cennetic-admin-publish',
                 'X-GitHub-Api-Version': '2022-11-28',
             },
             body: JSON.stringify({ ref: 'main', inputs: { reason } }),
@@ -45,12 +47,11 @@ export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
             return json({ ok: true, runUrl: `https://github.com/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW}` });
         }
         const detail = (await res.text()).slice(0, 300);
-        const hint =
-            res.status === 401 || res.status === 403
-                ? 'GH_API_TOKEN 无效或没有 Actions: write 权限'
-                : res.status === 404
-                    ? '仓库或 workflow 文件名不对（GH_OWNER/GH_REPO/GH_WORKFLOW）；私有仓库需 token 有读仓库权限'
-                    : 'GitHub 拒绝了触发请求';
+        let hint: string;
+        if (/user-agent/i.test(detail)) hint = 'GitHub 要求请求带 User-Agent 头';
+        else if (res.status === 401 || res.status === 403) hint = 'GH_API_TOKEN 无效、已过期，或没有目标仓库的 Actions: write 权限';
+        else if (res.status === 404) hint = '仓库或 workflow 文件名不对（GH_OWNER/GH_REPO/GH_WORKFLOW）；私有仓库需 token 有读仓库权限';
+        else hint = 'GitHub 拒绝了触发请求';
         return json({ error: `${hint}（HTTP ${res.status}）：${detail}` }, 502);
     } catch (e) {
         return json({ error: `触发失败：${e instanceof Error ? e.message : String(e)}` }, 500);
