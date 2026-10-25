@@ -1,35 +1,16 @@
 /**
  * Pages Function：接收图片文件 → 用 R2 绑定写入桶 → 返回公开 URL。
+ * 浏览器端已按需压缩（见 admin/src/lib/media.ts），这里只做鉴权与落库桶。
  * 部署需在 Pages 项目配 R2 绑定（变量名 MEDIA → 桶 cennetic-com）与
- * 环境变量 VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY（用于校验调用者是已登录用户）。
+ * 环境变量 VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY（校验调用者是已登录用户）。
  * 密钥/凭据都不进前端：浏览器只把文件 POST 到这里。
  */
-interface R2ObjectLike {
-    put: (key: string, data: ArrayBuffer, opts: unknown) => Promise<unknown>;
-    delete: (key: string) => Promise<unknown>;
-}
-interface FnCtx {
-    request: Request;
-    env: { MEDIA: R2ObjectLike; R2_PUBLIC_BASE?: string; VITE_SUPABASE_URL?: string; VITE_SUPABASE_ANON_KEY?: string };
-}
-
-const json = (data: unknown, status = 200): Response =>
-    new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } });
-
-/** 校验请求携带的 Supabase 用户 JWT；无/无效则返回 401 */
-async function requireUser(ctx: FnCtx): Promise<Response | null> {
-    const { request, env } = ctx;
-    const token = (request.headers.get('authorization') || '').replace(/^Bearer\s+/i, '');
-    if (!token || !env.VITE_SUPABASE_URL || !env.VITE_SUPABASE_ANON_KEY) return json({ error: 'unauthorized' }, 401);
-    const r = await fetch(`${env.VITE_SUPABASE_URL}/auth/v1/user`, {
-        headers: { apikey: env.VITE_SUPABASE_ANON_KEY, Authorization: `Bearer ${token}` },
-    });
-    return r.ok ? null : json({ error: 'unauthorized' }, 401);
-}
+import { json, requireUser, type FnCtx } from '../../_lib/auth';
 
 /** 服务端硬闸：单文件最大 8MB（前端已压缩，此处防绕过接口） */
 const MAX_UPLOAD_BYTES = 8 * 1024 * 1024;
 
+/** uploads/年/月/随机-安全文件名 */
 function makeKey(name: string): string {
     const safe = (name || 'image').toLowerCase().replace(/[^\w.\-]+/g, '-').replace(/^-+|-+$/g, '') || 'image';
     const now = new Date();

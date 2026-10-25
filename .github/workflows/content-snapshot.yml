@@ -1,0 +1,71 @@
+# ============================================================================
+# 内容发布：Supabase → git 快照 → 回归闸 → 提交 main → Pages 自动重建
+#
+# 触发方式：后台「发布」按钮（Pages Function /api/publish → workflow_dispatch），
+#          或在本仓库 Actions 页手动 Run workflow。
+# 需要的仓库 Secrets：
+#   SUPABASE_URL          https://xxxx.supabase.co
+#   SUPABASE_SECRET_KEY   sb_secret_xxx（service/secret key，只有本 Action 能用）
+# 说明：本 Action 提交前必须过 build + verify:parity，坏快照绝不进 main。
+# ============================================================================
+name: Content snapshot
+
+run-name: 内容快照 · ${{ github.event.inputs.reason || 'manual' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 触发来源（写进 commit 信息）
+        required: false
+        default: admin
+
+# 同一时间只跑一次：两次快照并发会互相覆盖提交
+concurrency:
+  group: content-snapshot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 从 Supabase 生成内容快照
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: npm run snapshot
+
+      - name: 回归闸（整站构建 + URL/canonical/H1 结构对账）
+        run: |
+          npm run build
+          npm run verify:parity
+
+      - name: 提交并推送（无变化则跳过）
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "内容无变化，不提交。"
+            exit 0
+          fi
+          echo "本次发布变更："
+          git status --porcelain | head -50
+          git config user.name "cennetic-cms"
+          git config user.email "cms@cennetic.com"
+          git add -A
+          git commit -m "内容发布：Supabase 快照（${{ github.event.inputs.reason || 'manual' }}）"
+          git push origin HEAD:main

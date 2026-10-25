@@ -26,7 +26,10 @@ export function toFrontmatter(obj: Frontmatter): string {
         lineWidth: -1,
         noRefs: true,
         sortKeys: false,
-        quotingType: '"',
+        // 单引号：仓库里现有 113+10 个 .md 是 js-yaml 3.x（默认单引号）产出的，
+        // 升到 4.x 后 quotingType='"' 会把每个需转义的标量改成双引号，
+        // 快照与文件的字节比对就会全文飘红。语义完全等价，这里钉住单引号。
+        quotingType: "'",
         forceQuotes: false,
     });
 

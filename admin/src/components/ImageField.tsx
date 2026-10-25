@@ -99,10 +99,10 @@ export function ImageField({
                 {busy
                     ? '上传中…（大图会先自动压缩）'
                     : atMax
-                      ? `已达上限 ${max} 张，如需替换请先删除`
-                      : multiple
-                        ? `点击或拖入图片上传（最多 ${max ?? '多'} 张${multiple && max ? `，已传 ${list.length}/${max}` : ''}，第一张作列表封面）`
-                        : '点击或拖入图片上传（替换现有图片）'}
+                        ? `已达上限 ${max} 张，如需替换请先删除`
+                        : multiple
+                            ? `点击或拖入图片上传（最多 ${max ?? '多'} 张${multiple && max ? `，已传 ${list.length}/${max}` : ''}，第一张作列表封面）`
+                            : '点击或拖入图片上传（替换现有图片）'}
             </div>
             <input
                 ref={inputRef}

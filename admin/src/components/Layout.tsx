@@ -2,6 +2,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { NAV } from '../lib/resources';
 import { useAuth } from '../lib/auth';
 import { Button } from './ui';
+import { PublishButton } from './PublishButton';
 
 const linkCls = ({ isActive }: { isActive: boolean }): string =>
     `block rounded-md px-3 py-2 text-sm font-medium ${isActive ? 'bg-brand text-white' : 'text-slate-600 hover:bg-slate-100'
@@ -41,6 +42,7 @@ export default function Layout() {
                 <header className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3">
                     <span className="text-sm text-slate-500">内容管理后台</span>
                     <div className="flex items-center gap-3">
+                        <PublishButton />
                         <span className="text-sm text-slate-500">{session?.user.email}</span>
                         <Button variant="ghost" onClick={onLogout}>
                             退出

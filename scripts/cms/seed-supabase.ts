@@ -1,72 +1,44 @@
 /**
  * 一次性灌库：把当前 git 里的内容（src/content + src/data）写入 Supabase。
  * 运行：npx tsx scripts/cms/seed-supabase.ts
- * 前置：1) 已在 Supabase SQL Editor 执行 supabase/schema.sql；2) .env 内已填 SUPABASE_SECRET_KEY。
+ * 前置：1) 已在 Supabase SQL Editor 执行 supabase/schema.sql 与 migrations/ 内的增量；
+ *       2) .env 内已填 SUPABASE_URL 与 SUPABASE_SECRET_KEY。
  *
  * 设计：
  *  - 用 PostgREST 的 upsert（Prefer: resolution=merge-duplicates + on_conflict=slug），可反复跑幂等。
  *  - 用 service/secret key 绕 RLS；camelCase(frontmatter) → snake_case(列) 的映射集中在本文件。
+ *  - 日期与站点数据存「原文」，正文存 trim 后的 HTML；与 snapshot.ts 的还原规则一一对应。
  *  - 任何一步失败即 fail-loud 退出，不留半成品。
  */
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { load as loadYaml } from 'js-yaml';
+import { ROOT, loadEnvFile, requireEnv } from './lib/env.ts';
+import { createRestClient } from './lib/rest.ts';
 
-const ROOT = process.cwd();
+loadEnvFile();
 
-// ── .env 载入（无第三方依赖）───────────────────────────────────────────────
-(function loadEnv() {
-    const p = join(ROOT, '.env');
-    if (!existsSync(p)) throw new Error('缺少 .env（参考 .env.example）');
-    for (const line of readFileSync(p, 'utf8').split(/\r?\n/)) {
-        const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)$/);
-        if (!m) continue;
-        process.env[m[1]!] ??= m[2]!.trim();
-    }
-})();
+const URL_BASE = requireEnv('SUPABASE_URL');
+const SECRET = requireEnv('SUPABASE_SECRET_KEY');
+const rest = createRestClient(URL_BASE, SECRET);
 
-const URL_BASE = process.env.SUPABASE_URL!;
-const SECRET = process.env.SUPABASE_SECRET_KEY!;
-if (!URL_BASE || !SECRET) throw new Error('SUPABASE_URL / SUPABASE_SECRET_KEY 未设置');
-
-const HEADERS = {
-    apikey: SECRET,
-    Authorization: `Bearer ${SECRET}`,
-    'Content-Type': 'application/json',
-    Prefer: 'resolution=merge-duplicates,return=minimal',
-};
-
-/** ISO 字符串/Date → 统一 ISO；空值→null */
-function iso(v: unknown): string | null {
+/** 日期等文本列：原样保留裸 ISO 串，绝不 new Date()（否则时区会漂 8h） */
+function raw(v: unknown): string | null {
     if (v == null || v === '') return null;
-    if (v instanceof Date) return v.toISOString();
-    const d = new Date(String(v));
-    return Number.isNaN(d.getTime()) ? null : d.toISOString();
+    if (v instanceof Date) return v.toISOString().replace(/\.000Z$/, '');
+    return String(v);
 }
 
 /** 解析 .md 的 YAML frontmatter + HTML 正文 */
 function parseMd(abs: string): { data: Record<string, unknown>; body: string } {
-    const raw = readFileSync(abs, 'utf8');
-    const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-    if (!m) return { data: {}, body: raw };
-    return { data: (loadYaml(m[1]!) as Record<string, unknown>) ?? {}, body: m[2] ?? '' };
+    const rawText = readFileSync(abs, 'utf8');
+    const m = rawText.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+    if (!m) return { data: {}, body: rawText.trim() };
+    return { data: (loadYaml(m[1]!) as Record<string, unknown>) ?? {}, body: (m[2] ?? '').trim() };
 }
 
 async function upsert(table: string, rows: Record<string, unknown>[], onConflict: string): Promise<void> {
-    if (rows.length === 0) {
-        console.log(`  · ${table}: 0 行，跳过`);
-        return;
-    }
-    const res = await fetch(`${URL_BASE}/rest/v1/${table}?on_conflict=${onConflict}`, {
-        method: 'POST',
-        headers: HEADERS,
-        body: JSON.stringify(rows),
-    });
-    if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`${table} upsert 失败 HTTP ${res.status}: ${text}`);
-    }
-    console.log(`  ✓ ${table}: ${rows.length} 行`);
+    await rest.upsert(table, rows, onConflict);
 }
 
 function listMd(dir: string): string[] {
@@ -85,9 +57,9 @@ function buildArticles() {
             heading: data.heading,
             description: data.description,
             canonical: data.canonical ?? null,
-            date: iso(data.date) ?? new Date().toISOString(),
-            lastmod: iso(data.lastmod) ?? iso(data.date) ?? new Date().toISOString(),
-            modified: iso(data.modified),
+            date: raw(data.date) ?? new Date().toISOString(),
+            lastmod: raw(data.lastmod) ?? raw(data.date) ?? new Date().toISOString(),
+            modified: raw(data.modified),
             categories: (data.categories as string[]) ?? [],
             author: data.author ?? null,
             hero: data.hero ?? null,
@@ -116,8 +88,8 @@ function buildPages() {
             description: data.description ?? '',
             canonical: data.canonical ?? null,
             robots: data.robots,
-            date: iso(data.date),
-            lastmod: iso(data.lastmod),
+            date: raw(data.date),
+            lastmod: raw(data.lastmod),
             hero: data.hero ?? null,
             menu_order: data.menuOrder ?? 0,
             is_listing: data.isListing ?? false,
@@ -200,8 +172,9 @@ async function main() {
     }));
     await upsert('authors', authorRows, 'slug');
 
-    const site = readJson('src/data/site.json');
-    await upsert('site_settings', [{ id: true, data: site }], 'id');
+    // site.json 存原文（保键序/4 空格缩进），快照逐字回写；snapshot 侧会统一尾部换行
+    const siteText = readFileSync(join(ROOT, 'src/data/site.json'), 'utf8').replace(/\s+$/, '') + '\n';
+    await upsert('site_settings', [{ id: true, data: siteText }], 'id');
 
     console.log('\n✓ 灌库完成。抽查建议：Supabase Table Editor 各表行数应为 ' +
         `articles=${articles.length} pages=${pages.length} products=${productRows.length} ` +
