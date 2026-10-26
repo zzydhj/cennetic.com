@@ -14,6 +14,7 @@ import Gallery from "@components/product/Gallery.astro";
 import SpecTable from "@components/product/SpecTable.astro";
 import ProductCard from "@components/ui/ProductCard.astro";
 import Faq from "@components/ui/Faq.astro";
+import ProductCompanySections from "@components/product/ProductCompanySections.astro";
 /* 详情区是迁移 HTML（qf-* 类名），基础排版靠这层样式 */
 import "../../styles/article.css";
 import {
@@ -156,6 +157,15 @@ const description = `${product.name} by Cennetic — ${product.summary
             /* 问答区与 FAQPage 结构化数据同源（faq 字段），与文章/页面同一套 Faq 组件 */
         }
         {(product.faq?.length ?? 0) > 0 && <Faq items={product.faq!} />}
+
+        {
+            /*
+          公司通版内容区:与型号无关的工厂自我介绍(承诺/系列/车间/检测/全球合作/CTA),
+          做成共享组件构建时渲染进每个产品页 —— 单一事实源、不写进各 products.body、
+          零运行时。解决详情页内容太薄的问题。
+        */
+        }
+        <ProductCompanySections productName={product.name} />
 
         {
             others.length > 0 && (

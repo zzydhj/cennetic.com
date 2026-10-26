@@ -1,0 +1,621 @@
+---
+/**
+ * 产品详情页 · 公司通版内容区(单一事实源)。
+ *
+ * 来源:迁移源站(qfcncmachine.com,即 CENNETIC 品牌升级前的原站)产品页
+ * 「Full Specifications」以下的所有区块 —— 这些与公司具体型号无关,是工厂自我介绍,
+ * 因此做成一个共享组件,构建时渲染进每个产品页,而不是复制进 21+ 条 products.body:
+ *   好处:一处维护、DB 不膨胀、构建只是多渲染一段静态标记(零运行时、零额外请求)。
+ *
+ * 品牌:源站文案里的 QIAOFENG 一律改挂 CENNETIC(与整站品牌升级一致);
+ * 联系方式全部走本站(site.json 的 WhatsApp / 联系页),不残留源站号码与链接。
+ * 数字口径与本站 About 对齐(不新造与站内冲突的数据)。
+ * 样式复用 page.css 的 pg-* 全局层 + 本组件作用域内的少量图片卡/图集样式。
+ */
+import { siteConfig } from "@lib/catalog.ts";
+import { waLink } from "@lib/whatsapp.ts";
+import "../../styles/page.css";
+
+const { productName } = Astro.props as { productName: string };
+
+const img = (name: string) => `/images/site/company/${name}`;
+const quote = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    {
+        subject: `${productName} — factory quote (${siteConfig.url}/contact-us/)`,
+    },
+);
+const tour = waLink(
+    { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
+    { subject: `Virtual factory tour request (${siteConfig.url})` },
+);
+
+// WHY PARTNER —— 五条承诺(标题 + 括注)
+const promises: Array<[string, string]> = [
+    [
+        "Turnkey Machining Solutions",
+        "Covering VMC, HMC, 5-Axis, CNC Lathes & Grinding Machines",
+    ],
+    [
+        "Rigorous Quality Control",
+        "100% Laser Interferometer & Ballbar tested before delivery + Full QC Reports",
+    ],
+    [
+        "Global Engineering Support",
+        "Overseas installation, training, and fast spare parts dispatch",
+    ],
+    [
+        "24/7 Expert Technical Assistance",
+        "Direct support from experienced mechanical engineers, not just sales",
+    ],
+    [
+        "Flexible OEM/ODM Customization",
+        "Tailored machine configurations, sheet metal design & brand identity",
+    ],
+];
+const badges = [
+    "CE Certified",
+    "ISO 9001",
+    "15+ Years Experience",
+    "Factory Direct",
+];
+
+// 产品系列 —— 四组 12 类(图 + 标题 + Best for + 三条要点)
+interface RangeCard {
+    img: string;
+    title: string;
+    best: string;
+    points: string[];
+}
+interface RangeGroup {
+    label: string;
+    cards: RangeCard[];
+}
+const range: RangeGroup[] = [
+    {
+        label: "CNC Machining Centers (Milling Solutions)",
+        cards: [
+            {
+                img: "vmc.webp",
+                title: "VMC (Vertical Machining Center)",
+                best: "Complex surfaces & high-precision parts",
+                points: [
+                    "Flexible 3+2 axis configuration.",
+                    "Vertical spindle for excellent cutting rigidity.",
+                    "High-speed ATC (Automatic Tool Changer).",
+                ],
+            },
+            {
+                img: "hmc.webp",
+                title: "HMC (Horizontal Machining Center)",
+                best: "Box-type parts & mass production",
+                points: [
+                    "Horizontal spindle design.",
+                    "Outstanding chip evacuation performance.",
+                    "Ideal for heavy-duty continuous cutting.",
+                ],
+            },
+            {
+                img: "gmc.webp",
+                title: "GMC (Gantry Machining Center)",
+                best: "Heavy & oversized workpieces",
+                points: [
+                    "Ultra-large span bridge structure.",
+                    "Exceptional stability and vibration absorption.",
+                    "Perfect for aerospace and large mold industries.",
+                ],
+            },
+            {
+                img: "5axis.webp",
+                title: "5-Axis Machining Center",
+                best: "Arbitrary complex spatial surfaces",
+                points: [
+                    "Ultimate precision and surface finish.",
+                    "Complete multi-sided machining in a single setup.",
+                    "Significantly reduces fixture costs and clamping errors.",
+                ],
+            },
+        ],
+    },
+    {
+        label: "CNC Lathes (Turning Solutions)",
+        cards: [
+            {
+                img: "turn-mill.webp",
+                title: "Turn-Mill Center",
+                best: "Multi-process complex components",
+                points: [
+                    "Integrates turning and milling capabilities.",
+                    "One setup for complete machining.",
+                    "Drastically reduces handling time and errors.",
+                ],
+            },
+            {
+                img: "gang-tool-lathe.webp",
+                title: "Gang Tool Lathe",
+                best: "Mass production of small/micro parts",
+                points: [
+                    "Lightning-fast tool change mechanism.",
+                    "Compact footprint saves factory space.",
+                    "The ultimate profit-maker for high-volume orders.",
+                ],
+            },
+            {
+                img: "slant-bed-lathe.webp",
+                title: "Slant Bed CNC Lathe",
+                best: "Medium to large precision parts",
+                points: [
+                    "45°/60° slant bed design.",
+                    "Perfect chip flow and ergonomic access.",
+                    "High structural rigidity for heavy cutting.",
+                ],
+            },
+        ],
+    },
+    {
+        label: "Precision Grinding & EDM Equipment",
+        cards: [
+            {
+                img: "grinding.webp",
+                title: "Milling & Grinding Machines",
+                best: "High-precision surface treatments",
+                points: [
+                    "Covers universal milling to precision grinding.",
+                    "Ensures superior surface flatness and finish.",
+                    "Stable hydraulic and spindle systems.",
+                ],
+            },
+            {
+                img: "edm.webp",
+                title: "EDM & WEDM Series",
+                best: "Ultra-hard materials & complex cavities",
+                points: [
+                    "High-precision electrical discharge machining.",
+                    "Perfect for precise contour cutting.",
+                    "Low wire consumption and high efficiency.",
+                ],
+            },
+        ],
+    },
+    {
+        label: "Precision Measurement Equipment (Metrology Solutions)",
+        cards: [
+            {
+                img: "vmm.webp",
+                title: "Vision Measurement Machine (VMM)",
+                best: "High-precision 2D/2.5D dimensional inspection",
+                points: [
+                    "Advanced optical system for accurate non-contact measurement.",
+                    "Automated edge detection and programmable lighting.",
+                    "Ideal for flat parts, stamped components, and PCBs.",
+                ],
+            },
+            {
+                img: "instant-vision.webp",
+                title: "Instant Vision Measuring System",
+                best: "Rapid batch inspection of small and micro parts",
+                points: [
+                    "One-shot measurement of multiple dimensions in seconds.",
+                    "Double telecentric lens eliminates distortion and operator errors.",
+                    "Significantly boosts QA efficiency for high-volume production.",
+                ],
+            },
+            {
+                img: "cmm.webp",
+                title: "Coordinate Measuring Machine (CMM)",
+                best: "Complex 3D spatial geometry and GD&T inspection",
+                points: [
+                    "High-precision tactile probing for full 3D analysis.",
+                    "Ultra-stable granite structure ensures measurement accuracy.",
+                    "Perfect for aerospace, automotive, and precision mold parts.",
+                ],
+            },
+        ],
+    },
+];
+
+// 图集
+const workshop = [
+    {
+        img: "vertical-machining-center-workshop.webp",
+        alt: "Vertical machining center on the assembly floor",
+    },
+    {
+        img: "turret-milling-machine-workshop.webp",
+        alt: "Turret milling machine assembly",
+    },
+    { img: "machining-center-workshop.webp", alt: "Machining center workshop" },
+    { img: "workshop-detail-1.webp", alt: "Factory workshop detail" },
+    { img: "workshop-detail-2.webp", alt: "Factory workshop detail" },
+    { img: "workshop-detail-3.webp", alt: "Factory workshop detail" },
+    { img: "workshop-detail-4.webp", alt: "Factory workshop detail" },
+    { img: "workshop-detail-5.webp", alt: "Factory workshop detail" },
+    { img: "workshop-detail-6.webp", alt: "Factory workshop detail" },
+];
+const balance = [
+    { img: "balance-point-detection.webp", cap: "Balance Point Detection" },
+    {
+        img: "precision-weight-calibration.webp",
+        cap: "Precision Weight Calibration",
+    },
+    {
+        img: "digital-waveform-verification.webp",
+        cap: "Digital Waveform Verification",
+    },
+];
+const laser = Array.from({ length: 6 }, (_, i) => ({
+    img: `laser-calibration-${i + 1}.webp`,
+    alt: "Laser interferometer calibration on the assembly line",
+}));
+const global = [
+    {
+        img: "technical-discussion-1.webp",
+        cap: "Technical discussion with European clients",
+    },
+    { img: "client-visit.webp", cap: "" },
+    { img: "client-visit-2.webp", cap: "" },
+    {
+        img: "machine-inspection.webp",
+        cap: "On-site machine inspection & testing",
+    },
+    { img: "client-visit-3.webp", cap: "" },
+    { img: "client-visit-4.webp", cap: "" },
+    { img: "client-visit-5.webp", cap: "" },
+    {
+        img: "strategic-cooperation.webp",
+        cap: "Strategic cooperation agreement signing",
+    },
+    { img: "client-visit-6.webp", cap: "" },
+    { img: "client-visit-7.webp", cap: "" },
+    { img: "client-visit8.webp", cap: "" },
+];
+---
+
+<div class="company">
+    <!-- 收尾前的转化带 -->
+    <section class="pg-cta mid">
+        <div>
+            <h2>Ready to Upgrade Your Machining Capability?</h2>
+            <p>
+                Get a customized quote for the {productName} — our engineers respond
+                within 24 hours.
+            </p>
+        </div>
+        <div class="pg-cta-actions">
+            <a
+                class="btn btn-wa"
+                href={quote}
+                rel="noopener noreferrer"
+                target="_blank">Request Factory Quote</a
+            >
+        </div>
+    </section>
+
+    <!-- WHY PARTNER -->
+    <section class="pg-section">
+        <p class="pg-eyebrow">Why partner with Cennetic?</p>
+        <h2>Your Trusted Source for Precision Machining.</h2>
+        <ul class="pg-checks">
+            {
+                promises.map(([t, s]) => (
+                    <li>
+                        <strong>{t}</strong> <span>({s})</span>
+                    </li>
+                ))
+            }
+        </ul>
+        <ul class="pg-badges">{badges.map((b) => <li>{b}</li>)}</ul>
+        <div class="pg-hero-cta">
+            <a class="btn btn-primary" href="/contact-us/"
+                >Request Factory Quote</a
+            >
+        </div>
+    </section>
+
+    <!-- 产品系列 -->
+    <section class="pg-section tint">
+        <p class="pg-eyebrow">What we build</p>
+        <h2>One Factory, the Full Machining Lineup.</h2>
+        {
+            range.map((g) => (
+                <div class="range-group">
+                    <h3 class="range-label">{g.label}</h3>
+                    <div class="pg-cards">
+                        {g.cards.map((c) => (
+                            <div class="pg-card rc">
+                                <img
+                                    src={img(c.img)}
+                                    alt={c.title}
+                                    width="220"
+                                    height="200"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <h3>{c.title}</h3>
+                                <p class="best">
+                                    <span>Best for:</span> {c.best}
+                                </p>
+                                <ul class="rc-list">
+                                    {c.points.map((p) => (
+                                        <li>{p}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))
+        }
+    </section>
+
+    <!-- 车间图集 -->
+    <section class="pg-section">
+        <p class="pg-eyebrow">Inside the factory</p>
+        <h2>Our Production Floor.</h2>
+        <div class="gallery">
+            {
+                workshop.map((w) => (
+                    <figure>
+                        <img
+                            src={img(w.img)}
+                            alt={w.alt}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </figure>
+                ))
+            }
+        </div>
+    </section>
+
+    <!-- 检测协议 -->
+    <section class="pg-section tint">
+        <p class="pg-eyebrow">Rigorous inspection protocols</p>
+        <h2>Data-Driven Precision. 100% Tested Before Delivery.</h2>
+        <div class="inspect">
+            <div class="inspect-block">
+                <h3>Spindle Dynamic Balancing</h3>
+                <p>
+                    Every spindle undergoes a strict dynamic balancing process
+                    to eliminate micro-vibrations, ensuring flawless surface
+                    finishes and extending tool life during high-speed
+                    machining.
+                </p>
+                <div class="gallery small">
+                    {
+                        balance.map((b) => (
+                            <figure>
+                                <>
+                                    <img
+                                        src={img(b.img)}
+                                        alt={b.cap}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <figcaption>{b.cap}</figcaption>
+                                </>
+                            </figure>
+                        ))
+                    }
+                </div>
+            </div>
+            <div class="inspect-block">
+                <h3>3-Axis Laser Calibration</h3>
+                <p class="sub-cap">100% inspected. No exceptions.</p>
+                <p>
+                    We don't rely on random batch testing. Every machine is
+                    strictly calibrated using advanced laser interferometers to
+                    guarantee micro-level positioning accuracy and repeatability
+                    across the X, Y, and Z axes.
+                </p>
+                <div class="gallery small">
+                    {
+                        laser.map((l) => (
+                            <figure>
+                                <img
+                                    src={img(l.img)}
+                                    alt={l.alt}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </figure>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 全球合作 -->
+    <section class="pg-section">
+        <p class="pg-eyebrow">Global partnerships</p>
+        <h2>Trusted by Factories Worldwide.</h2>
+        <p>
+            Delivering high-precision CNC solutions to manufacturers across
+            Europe, North America and Southeast Asia. We warmly welcome clients
+            from all over the world to visit our manufacturing facility.
+        </p>
+        <div class="gallery">
+            {
+                global.map((g) => (
+                    <figure>
+                        <img
+                            src={img(g.img)}
+                            alt={
+                                g.cap || "Client visiting the Cennetic factory"
+                            }
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        {g.cap && <figcaption>{g.cap}</figcaption>}
+                    </figure>
+                ))
+            }
+        </div>
+    </section>
+
+    <!-- 虚拟看厂 CTA -->
+    <section class="pg-cta">
+        <div>
+            <h2>Book a Virtual Factory Tour Today!</h2>
+            <p>
+                Can't visit in person? Let our engineers show you around via
+                live video.
+            </p>
+        </div>
+        <div class="pg-cta-actions">
+            <a
+                class="btn btn-wa"
+                href={tour}
+                rel="noopener noreferrer"
+                target="_blank">Arrange a Tour</a
+            >
+            <a class="btn btn-ghost" href="/contact-us/">Contact Us</a>
+        </div>
+    </section>
+</div>
+
+<style>
+    .company {
+        margin-top: 3rem;
+    }
+
+    /* 中部转化带:比收尾带稍紧 */
+    .pg-cta.mid {
+        margin-top: 0;
+    }
+
+    .pg-checks strong {
+        color: var(--color-ink);
+    }
+    .pg-checks span {
+        color: var(--color-muted);
+        font-size: 0.92em;
+    }
+
+    /* 五条承诺:宽屏铺成多列,别只占左半区(覆盖 page.css 的单列默认) */
+    .company .pg-checks {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+        column-gap: 2rem;
+    }
+
+    /* 系列卡宽度统一:用 auto-fill 而非 pg-cards 默认的 auto-fit,
+       否则只有 2 张卡的分组会被拉伸成超宽卡,与邻组不对齐 */
+    .company .pg-cards {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+    }
+
+    /* 系列卡:小插画按原尺寸居中,垫浅底,不拉伸 */
+    .range-group {
+        margin-top: 1.8rem;
+    }
+    .range-group:first-of-type {
+        margin-top: 0.4rem;
+    }
+    .range-label {
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        margin: 0 0 0.2rem;
+        color: var(--color-ink);
+    }
+    .rc {
+        display: flex;
+        flex-direction: column;
+    }
+    .rc img {
+        align-self: center;
+        height: 150px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        margin-bottom: 0.9rem;
+        padding: 0.5rem;
+        background: var(--color-surface);
+        border-radius: var(--radius);
+    }
+    .rc h3 {
+        font-size: 1rem;
+    }
+    .best {
+        font-size: 0.88rem;
+        color: var(--color-body);
+        margin: 0 0 0.6rem !important;
+    }
+    .best span {
+        font-weight: 700;
+        color: var(--color-brand);
+    }
+    .rc-list {
+        list-style: none;
+        margin: auto 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+        line-height: 1.55;
+        color: var(--color-body);
+    }
+    .rc-list li {
+        position: relative;
+        padding-left: 1.05rem;
+    }
+    .rc-list li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--color-brand);
+    }
+
+    /* 图集网格:自适应列,figure 垫底防 CLS 用 aspect-ratio */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+    }
+    .gallery.small {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+    }
+    .gallery figure {
+        margin: 0;
+    }
+    .gallery img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: var(--radius);
+        background: var(--color-surface);
+    }
+    .gallery figcaption {
+        margin-top: 0.4rem;
+        font-size: 0.8rem;
+        color: var(--color-muted);
+    }
+
+    .inspect {
+        display: grid;
+        gap: clamp(1.5rem, 3vw, 2.6rem);
+        grid-template-columns: 1fr;
+        margin-top: 1.2rem;
+    }
+    @media (width >=900px) {
+        .inspect {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .inspect-block h3 {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        margin: 0 0 0.5rem;
+    }
+    .sub-cap {
+        font-family: var(--font-display);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-brand);
+        font-size: 0.82rem;
+        margin-bottom: 0.4rem !important;
+    }
+</style>
