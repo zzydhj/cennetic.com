@@ -18,6 +18,7 @@ export type FieldType =
     | 'ref'
     | 'select'
     | 'json'
+    | 'faq'
     | 'image'
     | 'gallery';
 
@@ -43,6 +44,8 @@ export interface Field {
     hint?: string;
     /** html 字段的示例模板：编辑页提供“查看/插入模板”按钮 */
     sample?: string;
+    /** html 字段用矮版编辑区：简介这类一两句的字段不占一整屏 */
+    compact?: boolean;
     /** image/gallery 字段的最大张数 */
     max?: number;
     /** json 字段改用专属业务表单渲染（站点设置），仍产出同样的 JSON 文本 */
@@ -141,8 +144,8 @@ export const RESOURCES: Resource[] = [
             { name: 'hero_height', label: '主图高', type: 'number' },
             STATUS,
             { name: 'robots', label: 'Robots', type: 'text', full: true, help: '搜索引擎指令。收录=follow, index…；想隐藏该页加 noindex。一般留默认。' },
-            { name: 'faq', label: 'FAQ', type: 'json', full: true, hint: '[{"q":"","a":""}]', help: '结构化问答，可生成搜索富摘要。JSON 数组，每项含 q(问) 与 a(答)。' },
-            { name: 'body', label: '正文 (HTML)', type: 'html', full: true, help: '文章正文，直接写/粘 HTML。保存时会自动过滤脚本等不安全内容。' },
+            { name: 'faq', label: 'FAQ 问答', type: 'faq', full: true, help: '逐条填问答：保存后可能以可展开问答下拉出现在 Google 搜索结果下方，页面也会渲染问答区。不用写任何代码，不需要就留空。' },
+            { name: 'body', label: '正文 (HTML)', type: 'html', full: true, help: '默认纯文本模式：直接写字，空一行=新段落，系统自动包段落标签；带表格/样式的旧正文会自动切源码模式。保存时自动过滤不安全内容。' },
         ],
     },
     {
@@ -175,8 +178,8 @@ export const RESOURCES: Resource[] = [
             { name: 'is_listing', label: '列表页', type: 'boolean', help: '主体是列表的页(如 /blog/ /products/)，正文只当列表上方引言。' },
             { name: 'author', label: '作者', type: 'ref', refTable: 'authors', refValue: 'slug', refLabel: 'name' },
             STATUS,
-            { name: 'faq', label: 'FAQ', type: 'json', full: true },
-            { name: 'body', label: '正文 (HTML)', type: 'html', full: true, help: '页面正文 HTML，保存时自动过滤不安全内容。' },
+            { name: 'faq', label: 'FAQ 问答', type: 'faq', full: true, help: '逐条填问答：保存后可能以可展开问答下拉出现在 Google 搜索结果下方，页面也会渲染问答区。不用写任何代码，不需要就留空。' },
+            { name: 'body', label: '正文 (HTML)', type: 'html', full: true, help: '默认纯文本模式：直接写字，空一行=新段落，系统自动包段落标签；带表格/样式的内容会自动切源码模式。保存时自动过滤不安全内容。' },
         ],
     },
     {
@@ -199,11 +202,12 @@ export const RESOURCES: Resource[] = [
             { name: 'slug', label: 'Slug', type: 'text', required: true, help: '产品地址 /product/<slug>/。' },
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true, help: '产品名，也用于列表卡片标题。' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动' },
-            { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, help: '列表卡片/详情顶部的一小段介绍，可含简单 HTML。' },
+            { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, compact: true, help: '列表卡片/详情顶部的一小段介绍。纯文本直接写即可，系统自动包段落；也可含简单 HTML。' },
             { name: 'images', label: '产品主图', type: 'gallery', full: true, max: 5, help: '固定 5 个方格一排，从左往右依次填，没传的位置留空。缩略图按 1:1 居中裁切看版式（不会改原图），建议直接传方图（如 1024×1024）。第一张自动作为列表封面；可左右排序、改 alt、删除，大图自动压缩。' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'product_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属产品分类，决定产品出现在哪些分类页/导航。' },
             STATUS,
-            { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段 HTML：图集、规格表、描述都写在这里(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。', sample: PRODUCT_BODY_SAMPLE },
+            { name: 'body', label: '详情 (HTML)', type: 'html', full: true, help: '产品详情整段：新内容用纯文本模式直接写(空一行=新段落)，整段 <style> CSS 也会原样保留；带图集/规格表的存量详情在源码模式(可让 AI 生成后粘贴)。前台列表封面会自动取这里第一张图。保存时自动过滤不安全内容。', sample: PRODUCT_BODY_SAMPLE },
+            { name: 'faq', label: 'FAQ 问答', type: 'faq', full: true, help: '逐条填问答：保存后产品页底部会渲染问答区，并可能以可展开问答下拉出现在 Google 搜索结果下方。不用写任何代码，不需要就留空。' },
         ],
     },
     {

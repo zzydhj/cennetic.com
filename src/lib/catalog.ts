@@ -36,6 +36,8 @@ export interface Product {
     images: ProductImage[];
     categories: Array<{ slug: string; name: string; canonical: string }>;
     specs: Array<{ name: string; values: string[] }>;
+    /** 问答区 + FAQPage 结构化数据；快照对空值省略此键，故可选 */
+    faq?: Array<{ q: string; a: string }>;
 }
 
 export interface Author {

@@ -72,6 +72,7 @@ interface ProductRow {
     images: Json[] | null;
     categories: string[] | null;
     specs: Json[] | null;
+    faq: Json[] | null;
 }
 
 interface BlogCategoryRow {
@@ -277,6 +278,7 @@ async function collect(): Promise<Map<string, string>> {
             // 库里只存 slug（后台是多选勾选），名称回落到产品分类表
             categories: (p.categories ?? []).map((slug) => ({ slug, name: prodCatName.get(slug) ?? slug })),
             specs: specsOf(p.specs),
+            faq: faqOf(p.faq),
             unusedImages: [],
         }));
     }

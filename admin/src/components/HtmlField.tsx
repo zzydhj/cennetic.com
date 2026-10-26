@@ -1,8 +1,10 @@
 /**
- * 正文 HTML 编辑器：工具条 + 等宽文本域 + 可选渲染预览。
+ * 正文编辑器：纯文本模式（空行分段、系统自动包 <p>）与源码模式（完整 HTML）二选一，
+ * 外加固定高度的渲染预览——编辑区与预览区同高，切换不跳版。
+ * 存量迁移正文含表格/样式等复杂结构：这类内容锁定纯文本模式，避免段落化破坏结构。
  * 保存时仍由页面统一走 sanitizeHtml，这里的预览也先过一遍，避免「所见非所得」。
  */
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { sanitizeHtml } from '../lib/sanitize';
 import { stripHtml } from '../lib/format';
 import { cx } from '../lib/cx';
@@ -10,40 +12,96 @@ import { Icon } from './Icon';
 import { Button, Switch, Textarea } from './ui';
 import { MediaPicker } from './MediaPicker';
 
+/** 编辑区与预览区共用的固定高度：切换预览、切换模式都不跳版；compact 给简介这类短字段 */
+const PANE_H = 'h-[26rem]';
+const PANE_H_SM = 'h-40';
+
+/** 只允许 p / br / img（插图插入的）/ style（整段 CSS）算「简单内容」；出现其它标签（表格/标题等）即复杂结构 */
+const COMPLEX_TAG = /<(?!\/?(p|br|img|style)\b)[^>]*>/i;
+
+/** 纯文本 → HTML：空行分段包 <p>，段内换行变 <br>；以 < 开头的块与整段 <style> 原样保留 */
+function textToHtml(plain: string): string {
+    /* 先摘出整段 CSS：里面有空行也不能被切成段落 */
+    const styles: string[] = [];
+    const stripped = plain.replace(/<style[\s\S]*?<\/style>/gi, (m) => {
+        styles.push(m);
+        return `\u0000STYLE${styles.length - 1}\u0000`;
+    });
+    const html = stripped
+        .split(/\n{2,}/)
+        .filter((b) => b.trim() !== '')
+        .map((b) => (b.trimStart().startsWith('<') ? b : `<p>${b.replace(/\n/g, '<br>')}</p>`))
+        .join('\n');
+    return html.replace(/(?:<p>)?\u0000STYLE(\d+)\u0000(?:<\/p>)?/g, (_, i: string) => styles[Number(i)] ?? '');
+}
+
+/** HTML → 纯文本：只拆 p/br，其余标签原样留着（复杂内容本就不该进纯文本模式） */
+function htmlToText(html: string): string {
+    return html
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/p\s*>/gi, '\n\n')
+        .replace(/<p(\s[^>]*)?>/gi, '')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+}
+
 export function HtmlField({
     value,
     onChange,
-    rows = 16,
     sample,
     help,
+    compact,
 }: {
     value: unknown;
     onChange: (v: string) => void;
-    rows?: number;
     /** 可选的 HTML 示例模板（产品详情用） */
     sample?: string;
     /** 字段说明，展示在工具条下方一行，不再靠悬停气泡 */
     help?: string;
+    /** 矮版编辑区：简介这类一两句的字段不用占一整屏 */
+    compact?: boolean;
 }): JSX.Element {
     const text = String(value ?? '');
     const ref = useRef<HTMLTextAreaElement>(null);
     const [preview, setPreview] = useState(false);
     const [pick, setPick] = useState(false);
     const [showSample, setShowSample] = useState(false);
+    /* 纯文本模式自己的草稿：显示不走 value 反推，避免输入过程中的往返抖动 */
+    const [plain, setPlain] = useState(() => htmlToText(text));
+    const [mode, setMode] = useState<'plain' | 'html'>(() => (COMPLEX_TAG.test(text) ? 'html' : 'plain'));
+
+    /* 外部改动（载入、放弃改动、插模板）同步进来：复杂内容强制回源码模式，简单内容刷新纯文本草稿 */
+    useEffect(() => {
+        if (COMPLEX_TAG.test(text)) {
+            if (mode === 'plain') setMode('html');
+            return;
+        }
+        if (mode === 'plain' && textToHtml(plain) !== text) setPlain(htmlToText(text));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [text]);
+
+    const canPlain = !COMPLEX_TAG.test(text);
+    const paneH = compact ? PANE_H_SM : PANE_H;
 
     const stat = useMemo(() => {
-        const plain = stripHtml(text);
+        const p = stripHtml(text);
         return {
-            words: plain ? plain.split(/\s+/).length : 0,
-            chars: plain.length,
+            words: p ? p.split(/\s+/).length : 0,
+            chars: p.length,
             imgs: (text.match(/<img\b/gi) ?? []).length,
             links: (text.match(/<a\b[^>]+href=["'](?!https?:\/\/)[^"']*["']/gi) ?? []).length,
             tables: (text.match(/<table\b/gi) ?? []).length,
         };
     }, [text]);
 
-    /** 在光标处插入，插完把光标落到插入内容之后 */
+    /** 源码模式在光标处插入；纯文本模式追加成独立一段（插的是标签，不是文字） */
     function insert(snippet: string): void {
+        if (mode === 'plain') {
+            const next = plain ? `${plain.replace(/\n+$/, '')}\n\n${snippet}` : snippet;
+            setPlain(next);
+            onChange(textToHtml(next));
+            return;
+        }
         const el = ref.current;
         if (!el) {
             onChange(text + snippet);
@@ -59,13 +117,45 @@ export function HtmlField({
         });
     }
 
+    const toPlain = (): void => {
+        if (!canPlain) return;
+        setPlain(htmlToText(text));
+        setMode('plain');
+    };
+    const toHtml = (): void => {
+        onChange(textToHtml(plain));
+        setMode('html');
+    };
+
     return (
         <div className="overflow-hidden rounded-lg border border-slate-200/90 bg-white shadow-inner transition-shadow focus-within:shadow-card focus-within:border-brand-300">
             {/* 工具条 */}
             <div className="flex flex-wrap items-center gap-1.5 border-b border-slate-100 bg-[linear-gradient(180deg,#fcfdff,#f5f7fb)] px-2 py-1.5">
-                <span className="mr-1 flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-                    <Icon name="code" className="h-3.5 w-3.5" />
-                    HTML
+                <span className="mr-0.5 flex items-center gap-0.5 rounded-md bg-slate-200/70 p-0.5">
+                    <button
+                        type="button"
+                        onClick={toPlain}
+                        disabled={!canPlain}
+                        title={canPlain ? '像写字一样输入：空行分段，系统自动包段落标签；整段 <style> CSS 也会原样保留' : '含表格等复杂结构，只能源码模式编辑，避免改坏'}
+                        className={cx(
+                            'rounded px-2 py-1 text-[11px] font-medium transition-colors',
+                            mode === 'plain' ? 'bg-white text-brand-700 shadow-sm' : 'text-slate-500 hover:text-slate-700',
+                            !canPlain && 'cursor-not-allowed opacity-40 hover:text-slate-500',
+                        )}
+                    >
+                        纯文本
+                    </button>
+                    <button
+                        type="button"
+                        onClick={toHtml}
+                        title="直接编辑 HTML 源码（表格、样式、图集这类复杂内容用这个）"
+                        className={cx(
+                            'rounded px-2 py-1 text-[11px] font-medium transition-colors',
+                            mode === 'html' ? 'bg-white text-brand-700 shadow-sm' : 'text-slate-500 hover:text-slate-700',
+                        )}
+                    >
+                        源码
+                    </button>
                 </span>
                 <Button size="sm" variant="secondary" icon="image" onClick={() => setPick(true)}>
                     插图
@@ -110,6 +200,7 @@ export function HtmlField({
                             onClick={() => {
                                 if (text.trim() && !confirm('上方已有内容，插入模板会覆盖，继续？')) return;
                                 onChange(sample);
+                                if (COMPLEX_TAG.test(sample)) setMode('html');
                                 setShowSample(false);
                             }}
                         >
@@ -127,17 +218,26 @@ export function HtmlField({
 
             {preview ? (
                 <div
-                    className={cx('html-preview max-h-[560px] overflow-y-auto bg-white px-4 py-3.5')}
+                    className={cx('html-preview overflow-y-auto bg-white px-4 py-3.5', paneH)}
                     dangerouslySetInnerHTML={{ __html: sanitizeHtml(text) }}
+                />
+            ) : mode === 'plain' ? (
+                <Textarea
+                    value={plain}
+                    onChange={(e) => {
+                        setPlain(e.target.value);
+                        onChange(textToHtml(e.target.value));
+                    }}
+                    placeholder="直接写字：空一行就是新段落，系统自动包段落标签；插图点上方按钮。"
+                    className={cx('resize-none rounded-none border-0 bg-white shadow-none focus:shadow-none', paneH)}
                 />
             ) : (
                 <Textarea
                     ref={ref}
                     mono
-                    rows={rows}
                     value={text}
                     onChange={(e) => onChange(e.target.value)}
-                    className="resize-y rounded-none border-0 bg-white shadow-none focus:shadow-none"
+                    className={cx('resize-none rounded-none border-0 bg-white shadow-none focus:shadow-none', paneH)}
                     spellCheck={false}
                 />
             )}

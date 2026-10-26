@@ -95,6 +95,7 @@ create table if not exists public.products (
   images       jsonb not null default '[]'::jsonb,      -- [{src,alt,width,height}]
   categories   jsonb not null default '[]'::jsonb,      -- [{slug,name,canonical}]
   specs        jsonb not null default '[]'::jsonb,      -- [{name,values[]}]
+  faq          jsonb not null default '[]'::jsonb,      -- [{q,a}] → 问答区 + FAQPage 结构化数据（迁移 0003）
   status       text not null default 'draft' check (status in ('draft','published')),
   created_at   timestamptz not null default now(),
   updated_at   timestamptz not null default now()

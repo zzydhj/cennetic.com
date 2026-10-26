@@ -29,7 +29,7 @@ import { SeoPreview } from '../components/SeoPreview';
 import { useToast } from '../components/Toast';
 
 type Row = Record<string, unknown>;
-type Section = 'base' | 'media' | 'taxo' | 'body' | 'adv' | 'config';
+type Section = 'base' | 'media' | 'taxo' | 'body' | 'faq' | 'seo' | 'adv' | 'config';
 
 /** 分区归属：按字段名与类型集中判定，页面只负责渲染顺序 */
 const MEDIA_NAMES = new Set(['hero', 'hero_alt', 'hero_width', 'hero_height', 'images', 'avatar']);
@@ -39,7 +39,9 @@ const TAXO_NAMES = new Set(['categories', 'author', 'parent', 'trail']);
 function sectionOf(f: Field): Section {
     if (f.formMode) return 'config';
     if (f.type === 'image' || f.type === 'gallery' || MEDIA_NAMES.has(f.name)) return 'media';
-    if (f.type === 'html' || f.name === 'faq') return 'body';
+    if (f.type === 'html') return 'body';
+    if (f.type === 'faq' || f.name === 'faq') return 'faq';
+    if (f.name === 'robots') return 'seo';
     if (f.type === 'ref' || TAXO_NAMES.has(f.name)) return 'taxo';
     if (f.type === 'json' || ADV_NAMES.has(f.name)) return 'adv';
     return 'base';
@@ -49,8 +51,10 @@ const SECTION_META: Record<Section, { title: string; icon: IconName; desc: strin
     base: { title: '基础信息', icon: 'article', desc: '标题、地址与时间，决定这条内容「是什么」' },
     media: { title: '图片与媒体', icon: 'image', desc: '主图 / 图集：上传即自动压缩为 WebP' },
     taxo: { title: '归类与关联', icon: 'folder', desc: '决定这条内容出现在哪些分类页与作者页' },
-    body: { title: '正文与结构化数据', icon: 'code', desc: '正文 HTML 保存时自动过滤不安全内容' },
-    adv: { title: '高级设置', icon: 'settings', desc: '发布状态、SEO 指令与排序，一般保持默认' },
+    body: { title: '正文内容', icon: 'code', desc: '访客点进页面后看到的内容：简介 / 正文 / 详情 HTML，保存时自动过滤不安全内容' },
+    faq: { title: 'FAQ 问答', icon: 'help', desc: '逐条填问答；可能以问答下拉出现在 Google 搜索结果下方' },
+    seo: { title: '搜索结果表现', icon: 'search', desc: '这条页面在 Google 结果里的样子：蓝标题、两行描述、是否收录' },
+    adv: { title: '高级设置', icon: 'settings', desc: '发布状态与排序，一般保持默认' },
     config: { title: '站点配置', icon: 'globe', desc: '全站共用的一份配置；表单只改值，没列出的字段原样保留' },
 };
 
@@ -60,6 +64,7 @@ function defaults(resource: Resource): Row {
         if (f.type === 'boolean') r[f.name] = false;
         else if (f.type === 'tags') r[f.name] = [];
         else if (f.type === 'json') r[f.name] = f.name === 'data' ? '{}' : '[]';
+        else if (f.type === 'faq') r[f.name] = [];
         else if (f.type === 'gallery') r[f.name] = [];
         else if (f.type === 'image') r[f.name] = '';
         else if (f.type === 'ref' && f.multiple) r[f.name] = [];
@@ -156,6 +161,12 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                 // data 列是 text（存 site.json 原文）；其余 json 列存解析后的对象/数组
                 v = f.name === 'data' ? trimmed : trimmed ? JSON.parse(trimmed) : [];
             }
+            if (f.type === 'faq' && Array.isArray(v)) {
+                /* 只保留问答两全的条目：编辑器里的半成品行不进库，避免前台/结构化数据出现空壳 */
+                v = (v as Array<Record<string, unknown>>).filter(
+                    (x) => x && typeof x.q === 'string' && x.q.trim() && typeof x.a === 'string' && x.a.trim(),
+                );
+            }
             if (f.type === 'number') v = v === '' || v == null ? null : Number(v);
             if (f.type === 'html' && typeof v === 'string') v = sanitizeHtml(v);
             payload[f.name] = v ?? null;
@@ -187,18 +198,19 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
         nav(`/${resource.key}`);
     }
 
-    const sections = useMemo(() => {
-        const order: Section[] = ['config', 'base', 'media', 'taxo', 'body', 'adv'];
-        return order
-            .map((s) => ({ key: s, fields: resource.fields.filter((f) => sectionOf(f) === s) }))
-            .filter((g) => g.fields.length > 0);
-    }, [resource]);
-
     const statusField = resource.fields.find((f) => f.name === 'status');
     const seoTitle = String(form.title ?? form.name ?? '');
     const seoDesc = stripHtml(String(form.description ?? form.summary ?? ''));
     const seoPath = String(form.canonical ?? '') || (resource.key === 'products' ? `/product/${String(form.slug ?? '')}/` : `/${String(form.slug ?? '')}/`);
     const hasSeo = !resource.singleton && (resource.fields.some((f) => f.name === 'title') || resource.fields.some((f) => f.name === 'name'));
+
+    const sections = useMemo(() => {
+        const order: Section[] = ['config', 'base', 'media', 'taxo', 'body', 'faq', 'seo', 'adv'];
+        return order
+            .map((s) => ({ key: s, fields: resource.fields.filter((f) => sectionOf(f) === s) }))
+            /* 搜索结果表现组承载 Google 实时预览：没有 robots 字段的类型（产品/分类）也保留这一组 */
+            .filter((g) => g.fields.length > 0 || (g.key === 'seo' && hasSeo));
+    }, [resource, hasSeo]);
 
     const required = resource.fields.filter((f) => f.required);
     const missing = required.filter((f) => !String(form[f.name] ?? '').trim());
@@ -308,10 +320,17 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                             desc={SECTION_META[g.key].desc}
                             tone={g.key === 'adv' ? 'slate' : g.key === 'body' ? 'green' : 'brand'}
                             actions={
-                                <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
-                                    <Icon name="list" className="h-3.5 w-3.5" />
-                                    {g.fields.length} 个字段
-                                </span>
+                                g.key === 'seo' ? (
+                                    <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
+                                        <Icon name="eye" className="h-3.5 w-3.5" />
+                                        Google 结果实时预览
+                                    </span>
+                                ) : (
+                                    <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
+                                        <Icon name="list" className="h-3.5 w-3.5" />
+                                        {g.fields.length} 个字段
+                                    </span>
+                                )
                             }
                             bodyClassName={g.key === 'body' ? 'p-4' : 'p-5'}
                         >
@@ -327,6 +346,21 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                                     />
                                 ))}
                             </div>
+                            {g.key === 'seo' && hasSeo && (
+                                <div className="mt-4 space-y-2 border-t border-slate-100 pt-4">
+                                    <p className="text-[11px] leading-relaxed text-slate-500">
+                                        下面是这条页面目前在 Google 结果里的样子，随输入实时变：蓝标题来自「SEO 标题 / 标题」字段，灰两行来自「摘要 / 描述」字段，结果下方的问答下拉来自「FAQ 问答」组。
+                                    </p>
+                                    <SeoPreview
+                                        title={seoTitle}
+                                        description={seoDesc}
+                                        path={seoPath}
+                                        brand="CENNETIC"
+                                        hero={heroSrc || null}
+                                        heroAlt={String(form.hero_alt ?? '')}
+                                    />
+                                </div>
+                            )}
                             {gi === 0 && !resource.singleton && (
                                 <p className="mt-4 flex items-start gap-1.5 rounded-lg bg-brand-50/70 px-3 py-2 text-[11px] leading-relaxed text-brand-700 ring-1 ring-inset ring-brand-100">
                                     <Icon name="alert" className="mt-px h-3.5 w-3.5 shrink-0" />
@@ -405,19 +439,6 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                                         </Button>
                                     )}
                                 </div>
-                            </SectionCard>
-                        )}
-
-                        {hasSeo && !resource.singleton && (
-                            <SectionCard icon="search" title="前台表现预览" desc="随输入实时更新">
-                                <SeoPreview
-                                    title={seoTitle}
-                                    description={seoDesc}
-                                    path={seoPath}
-                                    brand="CENNETIC"
-                                    hero={heroSrc || null}
-                                    heroAlt={String(form.hero_alt ?? '')}
-                                />
                             </SectionCard>
                         )}
 

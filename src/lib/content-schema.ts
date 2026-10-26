@@ -97,6 +97,7 @@ export const productSchema = z.object({
     images: z.array(productImageSchema).default([]),
     categories: z.array(productCategoryRefSchema).default([]),
     specs: z.array(productSpecSchema).default([]),
+    faq: z.array(faqItemSchema).optional(),
 });
 
 /** 产品分类（src/data/product-categories.json，数组） */

@@ -88,6 +88,7 @@ const description = `${product.name} by Cennetic — ${product.summary
     ogImageHeight={cover?.height}
     breadcrumb={crumbs}
     pageType="product"
+    faq={product.faq}
     product={{
         name: product.name,
         description,
@@ -148,6 +149,11 @@ const description = `${product.name} by Cennetic — ${product.summary
                 </section>
             )
         }
+
+        {
+            /* 问答区与 FAQPage 结构化数据同源（faq 字段），与文章/页面同一套 Faq 组件 */
+        }
+        {(product.faq?.length ?? 0) > 0 && <Faq items={product.faq!} />}
 
         {
             others.length > 0 && (

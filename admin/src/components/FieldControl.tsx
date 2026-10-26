@@ -10,6 +10,7 @@ import { Field as FormField, Input, Select, Switch, Textarea, Tooltip } from './
 import { ImageField } from './ImageField';
 import { HtmlField } from './HtmlField';
 import { JsonField } from './JsonField';
+import { FaqField } from './FaqField';
 import { SiteConfigField } from './SiteConfigField';
 
 export interface RefOption {
@@ -81,12 +82,15 @@ export function FieldControl({
                     />
                 );
             }
+            case 'faq':
+                /* 问答逐条输入框：运营不接触 JSON 原文 */
+                return <FaqField value={value} onChange={onChange} />;
             case 'json':
-                /* 站点配置走专属表单；其余结构化数组（FAQ 等）仍是 JSON 编辑 */
+                /* 站点配置走专属表单；其余结构化数组仍是 JSON 编辑（FAQ 已拆为专属问答输入框） */
                 if (field.formMode) return <SiteConfigField value={value} onChange={onChange} section={section} />;
                 return <JsonField value={value} onChange={onChange} label={field.name === 'data' ? '顶层键' : '条目'} rows={10} />;
             case 'html':
-                return <HtmlField value={value} onChange={onChange} sample={field.sample} help={field.help} rows={16} />;
+                return <HtmlField value={value} onChange={onChange} sample={field.sample} help={field.help} compact={field.compact} />;
             case 'textarea':
                 return <Textarea rows={4} value={String(value ?? '')} onChange={(e) => onChange(e.target.value)} />;
             case 'number':

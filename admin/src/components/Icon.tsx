@@ -67,6 +67,7 @@ export type IconName =
     | 'trendDown'
     | 'gauge'
     | 'dot'
+    | 'help'
     /* 方向 */
     | 'chevronLeft'
     | 'chevronRight'
@@ -76,6 +77,7 @@ export type IconName =
     | 'dots';
 
 const paths: Record<IconName, string> = {
+    help: 'M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM9.3 9a2.8 2.8 0 0 1 5.4 1c0 1.8-2.7 2.3-2.7 3.9M12 17h.01',
     dashboard: 'M4 5h7v6H4zM13 5h7v4h-7zM13 11h7v8h-7zM4 13h7v6H4z',
     article: 'M7 3h7l4 4v14H7zM14 3v4h4M10 12h7M10 16h7',
     page: 'M6 3h9l3 3v15H6zM15 3v3h3M9 11h6M9 15h4',
