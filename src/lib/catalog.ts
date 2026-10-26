@@ -102,3 +102,46 @@ export function categoryAncestors(cat: ProductCategory): ProductCategory[] {
     }
     return out;
 }
+
+/* ── 页眉 Mega Menu ──────────────────────────────────────────────
+ * 分类清单里的 count 是旧的、不随产品增减自动更新，所以这里按实际产品
+ * 派生计数（含所有后代分类），并只保留有货的顶层分类 —— 后台新增产品后
+ * 面板会自动长出新分类，无需改代码。
+ */
+export interface MegaLink {
+    name: string;
+    path: string;
+    count: number;
+}
+export interface MegaColumn extends MegaLink {
+    slug: string;
+    descendants: MegaLink[];
+}
+
+function descendantCats(slug: string): ProductCategory[] {
+    return childCategories(slug).flatMap((k) => [k, ...descendantCats(k.slug)]);
+}
+
+function countIn(slug: string): number {
+    const slugs = new Set([slug, ...descendantCats(slug).map((c) => c.slug)]);
+    return allProducts().filter((p) => p.categories.some((c) => slugs.has(c.slug))).length;
+}
+
+/** 顶层分类列（有货的），按产品数降序 */
+export function megaMenu(): MegaColumn[] {
+    return productCategories
+        .filter((c) => c.trail.length === 1 && c.slug !== 'uncategorized')
+        .map((c) => ({
+            slug: c.slug,
+            name: c.name,
+            path: c.canonical,
+            count: countIn(c.slug),
+            descendants: descendantCats(c.slug).map((d) => ({
+                name: d.name,
+                path: d.canonical,
+                count: countIn(d.slug),
+            })),
+        }))
+        .filter((col) => col.count > 0)
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
