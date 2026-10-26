@@ -1,7 +1,7 @@
 ---
 /**
- * /news-and-media/ —— 源站这里既有 Elementor 正文（17027 字），
- * 又带一批文章卡片。所以正文作引言区，下面按日期出最新列表。
+ * /news-and-media/ —— 源站正文是 Elementor 残骸（面包屑+重复标题+WP 文章循环），
+ * 没有可保留的引言内容，故不再渲染正文；引言职责归 description，列表由本站组件出。
  * 分页沿用源站的归档行为：本页面列最新 12 篇，完整翻页入口指向 /blog/。
  */
 import { getCollection } from "astro:content";
@@ -16,8 +16,6 @@ const entry = (await getCollection("pages")).find(
     (p) => p.data.slug === "news-and-media",
 );
 const d = entry?.data;
-const html =
-    (entry as unknown as { body?: string } | undefined)?.body?.trim() ?? "";
 
 const posts = await allArticles();
 const latest = posts.slice(0, 12);
@@ -38,8 +36,6 @@ const latest = posts.slice(0, 12);
     pageType="archive"
     ogImage={d?.hero ?? siteConfig.ogDefaultImage}
 >
-    {html && <div class="intro qf-article-body" set:html={html} />}
-
     <section class="latest" aria-labelledby="latest-h">
         <h2 id="latest-h">Latest from the factory</h2>
         <ArticleGrid articles={latest} columns={3} />
@@ -50,15 +46,6 @@ const latest = posts.slice(0, 12);
 </ArchiveLayout>
 
 <style>
-    .intro {
-        margin-bottom: 2.5rem;
-    }
-
-    .intro :global(img) {
-        max-width: 100%;
-        height: auto;
-    }
-
     .latest {
         padding-top: 1.75rem;
         border-top: 1px solid var(--color-line);

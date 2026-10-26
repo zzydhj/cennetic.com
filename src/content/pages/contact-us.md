@@ -3,7 +3,7 @@ title: Contact Us
 heading: Contact Us
 slug: contact-us
 canonical: /contact-us/
-description: "Phone: +86 1511824 3737Email:\_bella@gfcncmachine.com"
+description: Reach the Cennetic factory directly by phone, email or WhatsApp — sales and engineering reply within one working day.
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2025-12-29T14:41:43'
 lastmod: '2026-07-14T09:43:56'
@@ -83,7 +83,7 @@ isListing: false
 				<div class="info-box-content">
 					
 					
-					<div class="info-box-inner reset-last-child" data-elementor-setting-key="content"><p><span style="color: #333333;"><strong>Phone:</strong></span> +86 1511824 3737<br><span style="color: #333333;"><strong>Email:</strong></span>&nbsp;bella@gfcncmachine.com</p>
+					<div class="info-box-inner reset-last-child" data-elementor-setting-key="content"><p><span style="color: #333333;"><strong>Phone:</strong></span> +86 1511824 3737<br><span style="color: #333333;"><strong>Email:</strong></span>&nbsp;bella@cennetic.com</p>
 </div>
 
 									</div>

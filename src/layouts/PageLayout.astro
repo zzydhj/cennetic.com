@@ -9,6 +9,8 @@
 import BaseLayout from "./BaseLayout.astro";
 import Breadcrumb from "@components/ui/Breadcrumb.astro";
 import Faq from "@components/ui/Faq.astro";
+/* 页面正文与文章同源（迁移 HTML + qf-* 类名），缺了这层样式正文会裸奔 */
+import "../styles/article.css";
 import { siteConfig } from "@lib/catalog.ts";
 import { entryPath } from "@lib/content.ts";
 import { waLink } from "@lib/whatsapp.ts";

@@ -130,3 +130,116 @@
         transition: none !important;
     }
 }
+
+/* ── 9. 页面兼容层 ──
+   源站「页面」（About/Contact/News 等）正文是 Elementor + WoodMart 组件树，
+   而源站主题样式从未随迁移带过来（生成层只合并了文章内联 CSS）。
+   这里补「能读、能看、跟品牌一致」的最小集合，不复刻源站主题：
+   布局靠 flex 流式兜底，组件按语义重绘，垃圾节点直接隐藏。 */
+
+/* WP 面包屑：站内有自己的 Breadcrumb 组件，正文里这份永远隐藏 */
+.qf-article-body .wd-el-breadcrumbs,
+.qf-article-body .wd-breadcrumbs {
+    display: none;
+}
+
+/* Elementor 容器：默认竖排流式；并列的子容器宽度够时自动并排（响应式） */
+.qf-article-body .e-con,
+.qf-article-body .e-con-inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.qf-article-body .e-con>.e-con {
+    flex: 1 1 320px;
+}
+
+.qf-article-body .elementor-widget {
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.qf-article-body .e-con-boxed {
+    margin-inline: auto;
+}
+
+/* WoodMart 标题：源站拿 h4 当区块标题，归一到品牌标题层级 */
+.qf-article-body .title-wrapper .title {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 1.1rem + 1vw, 1.7rem);
+    color: var(--color-ink);
+    margin: 1.6rem 0 0.8rem;
+}
+
+/* 图标列表：星形图标回到行内尺寸；源站用换行分隔标题与描述，pre-line 保留 */
+.qf-article-body .wd-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.qf-article-body .wd-list li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+}
+
+.qf-article-body .wd-icon {
+    color: var(--color-brand);
+    display: inline-flex;
+    flex: none;
+    margin-top: 0.15rem;
+}
+
+.qf-article-body .e-font-icon-svg {
+    width: 1.05em;
+    height: 1.05em;
+    fill: currentColor;
+}
+
+.qf-article-body .wd-list-content {
+    white-space: pre-line;
+}
+
+/* 联系卡片：四张信息卡统一成品牌卡 */
+.qf-article-body .wd-info-box {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    padding: 1.1rem 1.2rem;
+}
+
+/* 手风琴：源站靠 JS 开合，静态站不跑脚本 → 全部展开，内容可读优先 */
+.qf-article-body .wd-accordion-item {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    padding: 0.9rem 1.1rem;
+    margin: 0 0 0.7rem;
+}
+
+.qf-article-body .wd-accordion-title {
+    font-weight: 600;
+    color: var(--color-ink);
+}
+
+.qf-article-body .wd-accordion-opener {
+    display: none;
+}
+
+/* WP 表单（FluentForm）在静态站没有提交后端：整块隐藏，
+   转化统一走页面底部的 WhatsApp/邮件出口，不留填了没反应的死表单 */
+.qf-article-body form {
+    display: none;
+}
+
+/* 新闻页正文里内嵌的 WP 文章循环：本站有自己的列表组件，循环残骸全隐藏 */
+.qf-article-body .blog-post-loop,
+.qf-article-body .blog-design-masonry,
+.qf-article-body .wd-post,
+.qf-article-body .wd-entities-title {
+    display: none;
+}

@@ -3,7 +3,7 @@ title: News & Media
 heading: News Media
 slug: news-and-media
 canonical: /news-and-media/
-description: 'Home页面 Elementor #2399 Review of the new MacBook Pro on the powerful M3 chip series What’s New in PlayStation 5 Slim and Release Date Top 5 Most Powerful'
+description: Company news, product releases and media coverage from the Cennetic factory in Dongguan, China.
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2026-05-17T08:59:09'
 lastmod: '2026-05-17T09:04:00'
