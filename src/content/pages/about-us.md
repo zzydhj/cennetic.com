@@ -1,9 +1,9 @@
 ---
 title: About Us
-heading: About Us
+heading: Empowering Manufacturing with High-Precision CNC Solutions
 slug: about-us
 canonical: /about-us/
-description: "CENNETIC\_is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source."
+description: CENNETIC is a true source factory for high-precision CNC machine tools in Dongguan, China — factory-direct pricing, OEM/ODM capability and turnkey production lines for buyers worldwide.
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2025-12-29T14:41:22'
 lastmod: '2026-05-17T14:53:14'
@@ -13,138 +13,79 @@ isListing: false
 ---
 
 
-<div data-elementor-type="wp-page" data-elementor-id="937" class="elementor elementor-937">
-				<div class="wd-negative-gap elementor-element elementor-element-9830ea1 e-flex e-con-boxed e-con e-parent" data-id="9830ea1" data-element_type="container" data-e-type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-cb8db02 wd-el-breadcrumbs text-left elementor-widget elementor-widget-wd_element_breadcrumbs" data-id="cb8db02" data-element_type="widget" data-e-type="widget" data-widget_type="wd_element_breadcrumbs.default">
-				<div class="elementor-widget-container">
-					<nav class="wd-breadcrumbs"><a href="/">Home</a><span class="wd-delimiter">/</span><span class="wd-last">Page</span></nav>				</div>
-				</div>
-				<div class="elementor-element elementor-element-bf07e1d wd-width-100 elementor-widget elementor-widget-wd_title" data-id="bf07e1d" data-element_type="widget" data-e-type="widget" data-widget_type="wd_title.default">
-				<div class="elementor-widget-container">
-							<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
+<div class="pg-page">
+  <div class="pg-stats">
+    <div><b>15+</b><span>Years of CNC manufacturing</span></div>
+    <div><b>750+</b><span>Factories served worldwide</span></div>
+    <div><b>40+</b><span>Countries exported</span></div>
+    <div><b>100%</b><span>Laser-calibrated before shipment</span></div>
+  </div>
+  <ul class="pg-badges">
+    <li>ISO 9001:2015</li>
+    <li>CE Certified</li>
+    <li>OEM &amp; ODM</li>
+    <li>Factory-Direct Pricing</li>
+    <li>Turnkey Production Lines</li>
+  </ul>
 
-			
-			<div class="liner-continer">
-				<h4 class="woodmart-title-container title wd-fontsize-l">Empowering Manufacturing with<br>
-High-Precision CNC Solutions</h4> 
-							</div>
+  <section class="pg-section pg-2col">
+    <div>
+      <p class="pg-eyebrow">Who We Are</p>
+      <h2>A True Source Factory, Not Just a Trading Company</h2>
+      <p><strong>CENNETIC</strong> is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source factory dedicated to engineering, manufacturing, and delivering top-tier, high-efficiency machining solutions to the global market.</p>
+      <p>Backed by state-of-the-art manufacturing facilities and a robust R&amp;D team, we offer a comprehensive product portfolio tailored to your diverse industrial needs. Beyond standalone machines, CENNETIC excels in providing customized, turnkey production line solutions.</p>
+      <p>Driven by our commitment to "Agile Response &amp; Rapid Execution," we ensure that you always receive the most suitable, cost-effective solutions with fast lead times and comprehensive global support.</p>
+    </div>
+    <div>
+      <p class="pg-eyebrow">What You Get</p>
+      <ul class="pg-checks">
+        <li><strong>Turnkey production lines</strong> — our engineering team works closely with you to optimize machining processes, ensuring maximum production efficiency and a rapid ROI.</li>
+        <li><strong>Factory-direct &amp; OEM/ODM</strong> — factory-direct pricing and highly flexible OEM/ODM capabilities tailored to your brand.</li>
+        <li><strong>Rigorous quality assurance</strong> — every machine is 100% laser calibrated before leaving our facility, guaranteeing micron-level precision.</li>
+        <li><strong>Global after-sales</strong> — standard warranty on all machines, lifetime technical support, rapid spare parts delivery and 24/7 online troubleshooting.</li>
+      </ul>
+    </div>
+  </section>
 
-					</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-41ba557 wd-width-100 elementor-widget elementor-widget-wd_title" data-id="41ba557" data-element_type="widget" data-e-type="widget" data-widget_type="wd_title.default">
-				<div class="elementor-widget-container">
-							<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
+  <section class="pg-section tint">
+    <p class="pg-eyebrow">Product Range</p>
+    <h2>Five Product Lines, One Responsible Factory</h2>
+    <div class="pg-cards">
+      <div class="pg-card"><h3><a href="/product-category/machining-centers/">Machining Centers (Milling-Focused)</a></h3><p>Vertical machining centers for drilling, tapping and milling — view models &amp; specifications.</p></div>
+      <div class="pg-card"><h3><a href="/product-category/cnc-lathes/">CNC Lathes, Swiss-Type &amp; Automatic Lathes</a></h3><p>Precision turning from standard CNC lathes to Swiss-type and automatic machines.</p></div>
+      <div class="pg-card"><h3><a href="/product-category/engraving-edm-wirecut/">Precision Engraving, EDM &amp; Wire Cut Machines</a></h3><p>Engraving, EDM and wire cutting for fine-feature and hard-material work.</p></div>
+      <div class="pg-card"><h3><a href="/product-category/consumables-tooling/">Machine Tool Consumables &amp; Tooling</a></h3><p>Consumables and tooling that keep your machines running at specification.</p></div>
+      <div class="pg-card"><h3><a href="/product-category/quality-control-inspection/">Quality Control &amp; Inspection Equipment</a></h3><p>Inspection equipment to verify what your machines produce.</p></div>
+    </div>
+  </section>
 
-			
-			<div class="liner-continer">
-				<h4 class="woodmart-title-container title wd-fontsize-l wd-underline-gradient">Welcome to <u>Cennetic </u> Intelligent Equipment </h4> 
-							</div>
+  <section class="pg-section pg-2col">
+    <div>
+      <p class="pg-eyebrow">Quality &amp; Compliance</p>
+      <h2>Certified Processes, Calibrated Machines</h2>
+      <p>Our manufacturing operations are certified under <strong>ISO 9001:2015</strong>, and our machines comply with <strong>CE</strong> directives for international deployment. Every machine undergoes rigorous multi-step inspections — including 100% laser calibration and ball-bar testing — before leaving our facility in Dalingshan, Dongguan.</p>
+      <p>Standard CNC lathes and milling machines typically ship in <strong>30–45 days</strong>; customized equipment and complete turnkey production lines are scheduled up front (60–90 days depending on complexity).</p>
+    </div>
+    <div>
+      <p class="pg-eyebrow">At a Glance</p>
+      <ul class="pg-badges">
+        <li>ISO 9001:2015</li>
+        <li>CE</li>
+        <li>Ball-bar tested</li>
+        <li>Micron-level accuracy</li>
+        <li>30–45 days standard lead time</li>
+      </ul>
+    </div>
+  </section>
 
-					</div>
-						</div>
-				</div>
-					</div>
-				</div>
-		<div class="wd-negative-gap elementor-element elementor-element-0c57fbf e-flex e-con-boxed e-con e-parent" data-id="0c57fbf" data-element_type="container" data-e-type="container">
-					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-ef02c9a e-con-full e-flex e-con e-child" data-id="ef02c9a" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-f1dd1cb wd-width-100 elementor-widget elementor-widget-wd_title" data-id="f1dd1cb" data-element_type="widget" data-e-type="widget" data-widget_type="wd_title.default">
-				<div class="elementor-widget-container">
-							<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
-
-			
-			<div class="liner-continer">
-				<h4 class="woodmart-title-container title wd-fontsize-l">A True Source Factory, Not Just a Trading Company</h4> 
-							</div>
-
-					</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-3900838 elementor-widget elementor-widget-wd_text_block" data-id="3900838" data-element_type="widget" data-e-type="widget" data-widget_type="wd_text_block.default">
-				<div class="elementor-widget-container">
-							<div class="wd-text-block reset-last-child text-left">
-			
-			<p><strong>CENNETIC&nbsp;</strong>is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source factory dedicated to engineering, manufacturing, and delivering top-tier, high-efficiency machining solutions to the global market.</p><p>Backed by state-of-the-art manufacturing facilities and a robust R&amp;D team, we offer a comprehensive product portfolio tailored to your diverse industrial needs. Beyond standalone machines, CENNETIC excels in providing customized, turnkey production line solutions.</p><p>Driven by our commitment to&nbsp;<span class="text-industrial-800 font-semibold">"Agile Response &amp; Rapid Execution,"</span>&nbsp;we ensure that you always receive the most suitable, cost-effective solutions with fast lead times and comprehensive global support.</p>
-					</div>
-						</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-28638f7 e-con-full e-flex e-con e-child" data-id="28638f7" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				</div>
-					</div>
-				</div>
-		<div class="wd-negative-gap elementor-element elementor-element-6627e46 e-flex e-con-boxed e-con e-parent" data-id="6627e46" data-element_type="container" data-e-type="container">
-					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-4a16ced e-con-full color-scheme-light e-flex e-con e-child" data-id="4a16ced" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-5101b90 e-con-full e-flex e-con e-child" data-id="5101b90" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-84a7c7c wd-width-100 elementor-widget elementor-widget-wd_title" data-id="84a7c7c" data-element_type="widget" data-e-type="widget" data-widget_type="wd_title.default">
-				<div class="elementor-widget-container">
-							<div class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
-
-			
-			<div class="liner-continer">
-				<h4 class="woodmart-title-container title wd-fontsize-l">Why Partner With Cennetic?<br>
-</h4> 
-							</div>
-
-					</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-a550dce elementor-widget elementor-widget-wd_list" data-id="a550dce" data-element_type="widget" data-e-type="widget" data-widget_type="wd_list.default">
-				<div class="elementor-widget-container">
-							<ul class="wd-list color-scheme- wd-fontsize-xs wd-type-icon wd-style-default text-left">
-											<li class="elementor-repeater-item-8d09354">
-											<span class="wd-icon"><svg class="e-font-icon-svg e-fas-star" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg></span>					
-					<span class="wd-list-content list-content">
-													Turnkey Production Line
-Our engineering team works closely with you to optimize machining processes, ensuring maximum production efficiency and a rapid ROI.											</span>
-				</li>
-											<li class="elementor-repeater-item-4119949">
-											<span class="wd-icon"><svg class="e-font-icon-svg e-fas-star" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg></span>					
-					<span class="wd-list-content list-content">
-													Factory-Direct &amp; OEM/ODM
-Gain access to factory-direct pricing and highly flexible OEM/ODM capabilities tailored to your brand.											</span>
-				</li>
-											<li class="elementor-repeater-item-448d47d">
-											<span class="wd-icon"><svg class="e-font-icon-svg e-fas-star" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg></span>					
-					<span class="wd-list-content list-content">
-													Rigorous Quality Assurance
-Every machine is 100% laser calibrated before leaving our facility, guaranteeing micron-level precision.											</span>
-				</li>
-					</ul>
-
-						</div>
-				</div>
-		<div class="elementor-element elementor-element-f471899 e-con-full e-flex e-con e-child" data-id="f471899" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-09a9a0e elementor-widget elementor-widget-wd_button" data-id="09a9a0e" data-element_type="widget" data-e-type="widget" data-widget_type="wd_button.default">
-				<div class="elementor-widget-container">
-							<div class="wd-button-wrapper text-center">
-			<a class="btn btn-style-default btn-shape-round btn-size-default btn-color-primary btn-icon-pos-right" href="#">
-				<span class="wd-btn-text" data-elementor-setting-key="text">
-					Get A Quick Quote				</span>
-
-							</a>
-		</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-d97f377 elementor-widget elementor-widget-wd_button" data-id="d97f377" data-element_type="widget" data-e-type="widget" data-widget_type="wd_button.default">
-				<div class="elementor-widget-container">
-							<div class="wd-button-wrapper text-center">
-			<a class="btn btn-style-default btn-shape-round btn-size-default btn-color-black btn-icon-pos-right" href="#">
-				<span class="wd-btn-text" data-elementor-setting-key="text">
-					Discover More Products				</span>
-
-							</a>
-		</div>
-						</div>
-				</div>
-				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-4628d48 e-con-full e-flex e-con e-child" data-id="4628d48" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				</div>
-					</div>
-				</div>
-				</div>
+  <section class="pg-cta">
+    <div>
+      <h2>Ready to Work With a Real Factory?</h2>
+      <p>Send us your part drawings, materials and tolerance requirements — we will recommend a configuration based on 15 years of factory experience.</p>
+    </div>
+    <div class="pg-cta-actions">
+      <a class="btn btn-wa" href="https://wa.me/8615118243737?text=Hi%20Cennetic%2C%20I%27d%20like%20a%20quote%20for%20a%20CNC%20machine." rel="noopener noreferrer" target="_blank">Get a Quick Quote</a>
+      <a class="btn btn-ghost" href="/contact-us/">Send an Inquiry</a>
+    </div>
+  </section>
+</div>
