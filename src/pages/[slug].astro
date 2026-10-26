@@ -29,10 +29,18 @@ export async function getStaticPaths() {
     ]);
 
     const articleBySlug = new Map(articles.map((a) => [a.data.slug, a]));
-    // home 由 src/pages/index.astro 输出；isListing 的页面走各自的列表路由
+    // home 由 src/pages/index.astro 输出；isListing 的页面走各自的列表路由；
+    // contact-us 由静态路由 src/pages/contact-us.astro 接管 —— 若不排除，
+    // 同一路径会被渲染两次，HTML 虽被新版覆盖但样式清单错拿旧版渲染的，
+    // 表现是询盘表单样式整体丢失（构建日志可见 /contact-us/ 出现两次）。
     const pageBySlug = new Map(
         pages
-            .filter((p) => !p.data.isListing && p.data.slug !== "home")
+            .filter(
+                (p) =>
+                    !p.data.isListing &&
+                    p.data.slug !== "home" &&
+                    p.data.slug !== "contact-us",
+            )
             .map((p) => [p.data.slug, p]),
     );
 
