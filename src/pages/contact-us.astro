@@ -1,0 +1,27 @@
+---
+/**
+ * /contact-us/ —— 独立路由模板。
+ *
+ * 为什么不让 [slug].astro 兜：联系页要在 hero 与正文之间插入询盘表单组件
+ * （带客户端脚本，组装内容后唤起 WhatsApp/mailto），纯静态组合的通用布局
+ * 提供不了这个插槽内容。Astro 路由优先级：静态段路由赢过 [slug] 动态路由，
+ * 两者共存不会互相遮蔽（与 /news-and-media/ 独立模板同一先例）。
+ * 页面正文/FAQ/标题仍来自内容集合，后台编辑照常生效。
+ */
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import InquiryForm from "@components/ui/InquiryForm.astro";
+
+export const prerender = true;
+
+const entry = (await getCollection("pages")).find(
+    (p) => p.data.slug === "contact-us",
+);
+if (!entry) throw new Error("内容集合里找不到 contact-us 页面");
+
+const html = (entry as unknown as { body?: string }).body?.trim() ?? "";
+---
+
+<PageLayout page={entry} html={html}>
+    <InquiryForm />
+</PageLayout>

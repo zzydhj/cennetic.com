@@ -57,10 +57,10 @@
     --radius: 8px;
     --radius-lg: 14px;
 
-    /* 容器：正文最宽读数长度，列表用宽列，超宽区用于图库与大表格 */
+    /* 容器：正文最宽读数长度；站宽按用户要求统一 1400px（头部/正文/页脚同宽） */
     --container-prose: 720px;
-    --container-wide: 1240px;
-    --container-max: 1440px;
+    --container-wide: 1400px;
+    --container-max: 1400px;
 
     /* 阴影：克制成一层极淡的分隔，不用原站 Elementor 的多重投影 */
     --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05);

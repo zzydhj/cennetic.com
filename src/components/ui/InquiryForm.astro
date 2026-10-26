@@ -1,0 +1,232 @@
+---
+/**
+ * 询盘表单（联系页专用）。
+ *
+ * 静态站没有提交后端，所以不做「填了没反应」的死表单：
+ * 提交时在客户端把字段组装成一段询盘文本，唤起 WhatsApp 并预填好内容；
+ * 旁边再给一个「生成邮件草稿」按钮，走 mailto 把同样的内容放进邮件正文。
+ * 两条出口都是用户自己的客户端动作，不经过任何第三方服务，也不收集数据。
+ * 表单字段沿用源站 FluentForm 的口径（姓名/邮箱/国家/电话/留言），老用户无学习成本。
+ */
+import { siteConfig } from "@lib/catalog.ts";
+
+const waNumber = siteConfig.whatsapp.number;
+const email = siteConfig.inquiryEmail;
+---
+
+<section class="inquiry" aria-labelledby="inquiry-h">
+    <div class="box">
+        <div class="intro">
+            <h2 id="inquiry-h">Send Us an Inquiry</h2>
+            <p>
+                Tell us your requirements — the green button opens WhatsApp with
+                your message ready to send. No account, no waiting for a form
+                queue: it lands straight on our sales engineer's phone.
+            </p>
+        </div>
+
+        <form id="inquiry-form">
+            <div class="row">
+                <div class="field">
+                    <label for="iq-name">Full Name *</label>
+                    <input
+                        id="iq-name"
+                        name="name"
+                        type="text"
+                        required
+                        autocomplete="name"
+                        placeholder="Your name"
+                    />
+                </div>
+                <div class="field">
+                    <label for="iq-email">Email *</label>
+                    <input
+                        id="iq-email"
+                        name="email"
+                        type="email"
+                        required
+                        autocomplete="email"
+                        placeholder="you@company.com"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="field">
+                    <label for="iq-country">Country</label>
+                    <input
+                        id="iq-country"
+                        name="country"
+                        type="text"
+                        autocomplete="country-name"
+                        placeholder="Your country"
+                    />
+                </div>
+                <div class="field">
+                    <label for="iq-phone">WhatsApp / Phone</label>
+                    <input
+                        id="iq-phone"
+                        name="phone"
+                        type="text"
+                        autocomplete="tel"
+                        placeholder="+1 234 567 890"
+                    />
+                </div>
+            </div>
+            <div class="field">
+                <label for="iq-msg">Message *</label>
+                <textarea
+                    id="iq-msg"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Products, quantities, dimensions or any questions. For large drawings or specs, paste a cloud-drive link here."
+                ></textarea>
+            </div>
+            <div class="actions">
+                <button class="btn btn-wa" type="submit">
+                    Send via WhatsApp
+                </button>
+                <button class="btn btn-ghost" type="button" id="iq-mail">
+                    Generate Email Draft
+                </button>
+            </div>
+            <p class="hint">
+                * Required fields. Prefer email? Write to
+                <a href={`mailto:${email}`}>{email}</a> — we reply within one working
+                day.
+            </p>
+        </form>
+    </div>
+</section>
+
+<script define:vars={{ waNumber, email }}>
+    /* 组装询盘文本：空字段跳过，不留空行噪声 */
+    function compose(form) {
+        const fd = new FormData(form);
+        const get = (k) => String(fd.get(k) ?? "").trim();
+        const lines = [
+            `Name: ${get("name")}`,
+            `Email: ${get("email")}`,
+            get("country") ? `Country: ${get("country")}` : "",
+            get("phone") ? `WhatsApp/Phone: ${get("phone")}` : "",
+            "",
+            get("message"),
+        ];
+        return lines.filter((l) => l !== "").join("\n");
+    }
+
+    const form = document.getElementById("inquiry-form");
+    const mailBtn = document.getElementById("iq-mail");
+
+    form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(
+            compose(form),
+        )}`;
+        window.open(url, "_blank", "noopener");
+    });
+
+    mailBtn?.addEventListener("click", () => {
+        if (!form.reportValidity()) return;
+        const body = compose(form).replace(/\n/g, "%0D%0A");
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+            "Inquiry from cennetic.com",
+        )}&body=${body}`;
+    });
+</script>
+
+<style>
+    .inquiry {
+        margin: 1.75rem 0 0;
+    }
+
+    .box {
+        display: grid;
+        gap: clamp(1.4rem, 3vw, 2.6rem);
+        padding: clamp(1.5rem, 3vw, 2.4rem);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        background: var(--color-surface);
+    }
+
+    @media (width >= 900px) {
+        .box {
+            grid-template-columns: 0.8fr 1.2fr;
+            align-items: start;
+        }
+    }
+
+    .intro h2 {
+        font-size: clamp(1.3rem, 1.05rem + 1.1vw, 1.7rem);
+        margin: 0 0 0.6rem;
+    }
+
+    .intro p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--color-muted);
+    }
+
+    form {
+        display: grid;
+        gap: 0.9rem;
+    }
+
+    .row {
+        display: grid;
+        gap: 0.9rem;
+    }
+
+    @media (width >= 640px) {
+        .row {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .field {
+        display: grid;
+        gap: 0.35rem;
+    }
+
+    label {
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--color-ink);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.65rem 0.8rem;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-sm);
+        background: var(--color-paper);
+        font: inherit;
+        color: var(--color-body);
+    }
+
+    input:focus-visible,
+    textarea:focus-visible {
+        outline: 2px solid var(--color-brand);
+        outline-offset: 1px;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 7.5rem;
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    .hint {
+        margin: 0;
+        font-size: 0.82rem;
+        color: var(--color-muted);
+    }
+</style>

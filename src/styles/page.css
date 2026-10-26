@@ -1,0 +1,254 @@
+/**
+ * 页面营销版式 · 分区组件层
+ *
+ * 公司页/联系页改版参考 friwaychem.com 的工厂营销页结构：
+ * Hero 带（引导词+大标题+双 CTA）→ 数据条 → 徽章 pill → 多个分区
+ * （引导词+标题+正文+清单/卡片网格）→ 收尾 CTA 带。
+ *
+ * 类名前缀 pg-*：正文 HTML 由后台编辑（set:html 输出，拿不到 Astro 作用域属性），
+ * 所以这一层必须是全局样式；与 article.css 的迁移兼容层互不干涉 ——
+ * 老页面（政策页等）不带 pg-page 标记，走 PageLayout 的阅读列，不受影响。
+ */
+
+/* ── Hero 带：PageLayout 宽版模式渲染，圆角色块而非全幅出血，
+     在 1400 容器里更克制，也避免负边距溢出滚动条 ── */
+.pg-hero {
+    margin: 0.9rem 0 0;
+    padding: clamp(2rem, 4vw, 3.2rem) clamp(1.5rem, 3vw, 2.8rem);
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-lg);
+}
+
+/* 选择器带两层 class，压过 PageLayout 作用域里的 h1/.lede 基础字号 */
+.pg-hero .pg-h1 {
+    font-size: clamp(1.9rem, 1.3rem + 2.6vw, 2.9rem);
+    line-height: 1.16;
+    max-width: 30ch;
+}
+
+.pg-hero .pg-lede {
+    margin: 1rem 0 0;
+    max-width: 64ch;
+    font-size: 1.05rem;
+    color: var(--color-muted);
+}
+
+.pg-hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+}
+
+/* ── 数据条：四格等分，细线分隔，一眼扫完工厂体量 ── */
+.pg-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    margin: 1.75rem 0 0;
+    background: var(--color-line);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.pg-stats>div {
+    background: var(--color-paper);
+    padding: 1.05rem 1.2rem;
+}
+
+.pg-stats b {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    line-height: 1.2;
+    color: var(--color-ink);
+}
+
+.pg-stats span {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+/* ── 徽章 pill：认证与能力标签 ── */
+.pg-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pg-badges li {
+    padding: 0.42rem 0.95rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: var(--color-surface);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--color-ink);
+}
+
+/* ── 分区：引导词 + 标题 + 内容；tint 变体垫浅色底区分节奏 ── */
+.pg-section {
+    padding: clamp(2.2rem, 4vw, 3.4rem) 0 0;
+}
+
+.pg-section.tint {
+    padding: clamp(1.8rem, 3.5vw, 2.8rem) clamp(1.4rem, 3vw, 2.4rem);
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+}
+
+.pg-section.tint+.pg-section.tint {
+    margin-top: 1.2rem;
+}
+
+.pg-eyebrow {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+}
+
+.pg-section h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.45rem, 1.1rem + 1.6vw, 2.05rem);
+    max-width: 36ch;
+}
+
+/* 正文段落限行长：分区可以通栏，行不能通栏 */
+.pg-section p {
+    margin: 0 0 1rem;
+    max-width: 78ch;
+}
+
+/* ── 双列分区：窄屏自动堆叠 ── */
+.pg-2col {
+    display: grid;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+
+@media (width >=900px) {
+    .pg-2col {
+        grid-template-columns: 1.15fr 0.85fr;
+    }
+}
+
+/* ── 清单：品牌红圆勾 ── */
+.pg-checks {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pg-checks li {
+    position: relative;
+    padding-left: 1.75rem;
+    max-width: 60ch;
+}
+
+.pg-checks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.12rem;
+    width: 1.15rem;
+    height: 1.15rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-brand);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* ── 卡片网格：信息卡/产品线卡通用 ── */
+.pg-cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    margin: 1.2rem 0 0;
+}
+
+.pg-card {
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius);
+    background: var(--color-paper);
+}
+
+.pg-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.02rem;
+}
+
+.pg-card p {
+    margin: 0;
+    max-width: none;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-body);
+}
+
+/* ── 收尾 CTA 带：墨底反白，与文章页 cta-strip 的浅底区分层级 ── */
+.pg-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    align-items: center;
+    justify-content: space-between;
+    margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+    padding: clamp(1.8rem, 3.5vw, 2.8rem);
+    border-radius: var(--radius-lg);
+    background: var(--color-ink);
+}
+
+.pg-cta h2 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(1.4rem, 1.1rem + 1.4vw, 1.9rem);
+    color: #fff;
+}
+
+.pg-cta p {
+    margin: 0;
+    max-width: 56ch;
+    color: rgb(255 255 255 / 0.78);
+}
+
+.pg-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+/* 墨底上的 ghost 按钮要反白描边，全局 .btn-ghost 的红描边在这里看不见 */
+.pg-cta .btn-ghost {
+    border-color: rgb(255 255 255 / 0.55);
+    color: #fff;
+}
+
+.pg-cta .btn-ghost:hover {
+    background: #fff;
+    border-color: #fff;
+    color: var(--color-ink);
+}
+
+/* ── 备注行：卡片/表单下方的补充说明 ── */
+.pg-note {
+    margin: 1.4rem 0 0;
+    max-width: 78ch;
+    font-size: 0.95rem;
+    color: var(--color-muted);
+}

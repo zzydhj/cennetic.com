@@ -11,6 +11,8 @@ import Breadcrumb from "@components/ui/Breadcrumb.astro";
 import Faq from "@components/ui/Faq.astro";
 /* 页面正文与文章同源（迁移 HTML + qf-* 类名），缺了这层样式正文会裸奔 */
 import "../styles/article.css";
+/* 营销页分区组件（pg-*）：正文带 pg-page 标记的页面走宽版版式 */
+import "../styles/page.css";
 import { siteConfig } from "@lib/catalog.ts";
 import { entryPath } from "@lib/content.ts";
 import { waLink } from "@lib/whatsapp.ts";
@@ -28,6 +30,13 @@ const { page, html, afterBody = false } = Astro.props;
 const d = page.data;
 // 后台新建的页面可能没填 canonical，由 entryPath 按 slug 兜底
 const selfPath = entryPath(d);
+
+/*
+ * 宽版模式开关：正文以 <div class="pg-page"> 开头的页面（About/Contact 等营销页）
+ * 走 friway 式宽版版式（hero 带 + 通栏分区）；其余页面（政策页等纯长文）
+ * 仍走 76ch 阅读列，两者共用这一个布局，靠内容标记自选。
+ */
+const wide = /class="pg-page"/.test(html);
 
 const crumbs = [
     { name: "Home", path: "/" },
@@ -54,19 +63,53 @@ const wa = waLink(
     <div class="page shell">
         <Breadcrumb items={crumbs} />
 
-        <header class="head">
-            <h1>{d.heading}</h1>
-            {d.description && <p class="lede">{d.description}</p>}
-        </header>
+        {
+            wide ? (
+                <header class="pg-hero">
+                    <h1 class="pg-h1">{d.heading}</h1>
+                    {d.description && <p class="pg-lede">{d.description}</p>}
+                    <div class="pg-hero-cta">
+                        <a
+                            class="btn btn-primary"
+                            href={wa}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            Get a Quick Quote
+                        </a>
+                        <a class="btn btn-ghost" href="/products/">
+                            Browse Products
+                        </a>
+                    </div>
+                </header>
+            ) : (
+                <header class="head col">
+                    <h1>{d.heading}</h1>
+                    {d.description && <p class="lede">{d.description}</p>}
+                </header>
+            )
+        }
 
-        <div class="body qf-article-body" set:html={html} />
+        {/* 联系页路由模板在这里注入询盘表单（hero 与正文之间） */}
+        <slot />
 
-        {d.faq?.length && <Faq items={d.faq} />}
+        <div
+            class={wide ? "body qf-article-body" : "body qf-article-body col"}
+            set:html={html}
+        />
+
+        {
+            d.faq?.length && (
+                <div class={wide ? "faq-wrap" : "col"}>
+                    <Faq items={d.faq} />
+                </div>
+            )
+        }
 
         {/* 公司页与联系页是转化位，统一补一条 WhatsApp 出口 */}
         {
             !afterBody && (
-                <aside class="strip">
+                <aside class={wide ? "strip" : "strip col"}>
                     <p class="strip-title">Talk to the factory directly</p>
                     <a
                         class="btn btn-wa"
@@ -79,14 +122,22 @@ const wa = waLink(
                 </aside>
             )
         }
-
-        <slot />
     </div>
 </BaseLayout>
 
 <style>
     .page {
         padding-top: 0.75rem;
+    }
+
+    /* 阅读列：与文章页 .post 同宽，标题/正文/卡片左边缘对齐；宽版模式不用它 */
+    .col {
+        max-width: 76ch;
+    }
+
+    /* 宽版模式的 FAQ 区限宽：通栏手风琴在 1400 容器里行太长 */
+    .faq-wrap {
+        max-width: 880px;
     }
 
     .head {
@@ -105,11 +156,7 @@ const wa = waLink(
         margin: 0;
     }
 
-    /* 长文限制行长：上一版 880px 在 16px 字号下约 110 字符/行，超出可读范围 */
-    .body {
-        max-width: 72ch;
-    }
-
+    /* 迁移层的居中与内垫已由 article.css 统一归零，限宽交给 .col */
     .body :global(table) {
         display: block;
         overflow-x: auto;

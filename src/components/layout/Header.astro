@@ -38,8 +38,8 @@ const links = nav.primary.filter((l) => l.path !== "/");
                 class="brand-logo"
                 src={siteConfig.logo}
                 alt={siteConfig.name}
-                width="185"
-                height="25"
+                width="241"
+                height="32"
                 loading="eager"
                 decoding="async"
             />
@@ -115,13 +115,13 @@ const links = nav.primary.filter((l) => l.path !== "/");
     /* 字标宽高比约 7.5:1（viewBox 1485×197），只给高度即可自适应 */
     .brand-logo {
         display: block;
-        height: 1.6rem;
+        height: 2rem;
         width: auto;
     }
 
     @media (max-width: 40rem) {
         .brand-logo {
-            height: 1.35rem;
+            height: 1.6rem;
         }
     }
 
