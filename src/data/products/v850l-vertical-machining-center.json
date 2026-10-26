@@ -1,0 +1,65 @@
+{
+  "slug": "v850l-vertical-machining-center",
+  "name": "CENNETIC V850L Vertical Machining Center",
+  "canonical": "/product/v850l-vertical-machining-center/",
+  "summary": "<p>The V850L is a versatile 850 mm-travel vertical machining center for general-purpose milling of prismatic parts.</p>",
+  "body": "<p>The V850L is a versatile 850 mm-travel vertical machining center for general-purpose milling of prismatic parts.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Spindle</td><td>1</td><td>pcs</td><td>JCT (Taiwan)</td></tr><tr><td rowspan=\"1\">Screw bearing</td><td>6</td><td>set</td><td>FAG/BSB</td></tr><tr><td rowspan=\"1\">Ball screw</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">Coupling</td><td>3</td><td>set</td><td>Runde</td></tr><tr><td rowspan=\"1\">Linear guideway</td><td>3</td><td>set</td><td>HIWIN (Taiwan)</td></tr><tr><td rowspan=\"1\">Tool Magazine</td><td>1</td><td>set</td><td>OKADA (Taiwan)</td></tr><tr><td rowspan=\"1\">System</td><td>1</td><td>set</td><td>TaiwanSyntec/Mitsubishi</td></tr><tr><td rowspan=\"1\">Motor</td><td>4</td><td>set</td><td>JapanSyntec/Mitsubishi</td></tr><tr><td rowspan=\"1\">Lubrication system</td><td>1</td><td>set</td><td>Hoval</td></tr><tr><td rowspan=\"1\">Telescopic cover</td><td>3</td><td>set</td><td>Hongwang/Aipai'er</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/v850l-vertical-machining-center/01.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/02.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 2",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/03.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 3",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/04.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 4",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/05.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 5",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/06.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 6",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/07.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 7",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v850l-vertical-machining-center/08.webp",
+      "alt": "CENNETIC V850L Vertical Machining Center — view 8",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "machining-centers",
+      "name": "Machining Centers (Milling-Focused)"
+    }
+  ],
+  "specs": [],
+  "unusedImages": []
+}

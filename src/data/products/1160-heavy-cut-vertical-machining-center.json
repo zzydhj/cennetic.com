@@ -1,0 +1,65 @@
+{
+  "slug": "1160-heavy-cut-vertical-machining-center",
+  "name": "CENNETIC 1160 Heavy-Cut Vertical Machining Center",
+  "canonical": "/product/1160-heavy-cut-vertical-machining-center/",
+  "summary": "<p>The 1160 is a heavy-cut vertical machining center for large steel parts and mold bases, with a stiff column and wide table.</p>",
+  "body": "<p>The 1160 is a heavy-cut vertical machining center for large steel parts and mold bases, with a stiff column and wide table.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Spindle</td><td>1</td><td>pcs</td><td>Taida</td></tr><tr><td rowspan=\"1\">Screw bearing</td><td>6</td><td>set</td><td>FAG/BSB</td></tr><tr><td rowspan=\"1\">Ball screw</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">Coupling</td><td>3</td><td>set</td><td>Japan</td></tr><tr><td rowspan=\"1\">Linear guideway</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">System</td><td>1</td><td>set</td><td>Mitsubishi (Japan)</td></tr><tr><td rowspan=\"1\">Motor</td><td>4</td><td>set</td><td>Mitsubishi (Japan)</td></tr><tr><td rowspan=\"1\">Lubrication system</td><td>1</td><td>set</td><td>Hoval</td></tr><tr><td rowspan=\"1\">Telescopic cover</td><td>3</td><td>set</td><td>Hongwang/Aipai'er</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/01.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/02.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 2",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/03.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 3",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/04.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 4",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/05.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 5",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/06.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 6",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/07.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 7",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/1160-heavy-cut-vertical-machining-center/08.webp",
+      "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 8",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "machining-centers",
+      "name": "Machining Centers (Milling-Focused)"
+    }
+  ],
+  "specs": [],
+  "unusedImages": []
+}

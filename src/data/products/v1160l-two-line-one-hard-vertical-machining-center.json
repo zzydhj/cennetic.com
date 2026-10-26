@@ -1,0 +1,72 @@
+{
+  "slug": "v1160l-two-line-one-hard-vertical-machining-center",
+  "name": "CENNETIC V1160L High-Rigidity Vertical Machining Center",
+  "canonical": "/product/v1160l-two-line-one-hard-vertical-machining-center/",
+  "summary": "<p>The V1160L is a high-rigidity vertical machining center with an enlarged guideway layout for stable heavy machining and accurate finishing.</p>",
+  "body": "<p>The V1160L is a high-rigidity vertical machining center with an enlarged guideway layout for stable heavy machining and accurate finishing.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Lubrication Circuit</td><td>Hoval</td><td>Auto lubrication</td></tr><tr><td>Ball Screw</td><td>HIWIN (Taiwan)Ball screw</td><td>C3 ground ball screw4012</td></tr><tr><td>Linear Guideway</td><td>HIWIN (Taiwan)Linear guideway</td><td>X/Z: MSR45/ Z: Box-way slideway</td></tr><tr><td>Spindle</td><td>TaizhengMechanical spindle</td><td>BBT50-8000rpm</td></tr><tr><td rowspan=\"3\">Electrical</td><td>Feed-motor type</td><td>TaiwanSyntecX,Yservo</td><td>5.9 kW 28.4 N·m 3000 rpm</td></tr><tr><td>Feed-motor type</td><td>TaiwanSyntecZ-axis servo (braked)</td><td>5.9 kW 28.4 N·m 3000 rpm</td></tr><tr><td>Spindle motor</td><td>Servo spindle motor</td><td>8000rpm/15-18.5 kW</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>TaiwanSyntec</td><td>22MA</td></tr><tr><td rowspan=\"1\">Tool Change</td><td>Pneumatic tool changer</td><td>Dejier (Taiwan)Disc-type</td><td>BT50 24 tools</td></tr><tr><td rowspan=\"1\">Appearance</td><td>Sheet-metal Enclosure</td><td>Full enclosure</td><td>Ivory + dark grey</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>RGB electric oiler</td><td>Electric oiler</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td></tr><tr><td rowspan=\"1\">Oil cooler</td><td></td><td>ChienKuan</td></tr><tr><td rowspan=\"5\">Accessories</td><td>Tool holders / collets</td><td>BT40-ER32</td><td>5 pcs each</td></tr><tr><td>Tools</td><td>1 set</td></tr><tr><td>Clamp plates</td><td>1 set</td></tr><tr><td>Tool rack</td><td>1 pcs</td></tr><tr><td>Manual</td><td>1 set (incl. USB manual)</td></tr><tr><td rowspan=\"4\">Service</td><td>Freight</td><td>in-province</td><td></td></tr><tr><td>Packing</td><td>Dedicated transport</td><td></td></tr><tr><td>Warranty</td><td>1 yr</td><td></td></tr><tr><td>Training</td><td>On-site</td><td></td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/01.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/02.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 2",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/03.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 3",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/04.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 4",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/05.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 5",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/06.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 6",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/07.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 7",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/08.webp",
+      "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 8",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "machining-centers",
+      "name": "Machining Centers (Milling-Focused)"
+    }
+  ],
+  "specs": [
+    {
+      "name": "Tool magazine",
+      "values": [
+        "1 set"
+      ]
+    }
+  ],
+  "unusedImages": []
+}

@@ -1,5 +1,18 @@
 [
   {
+    "slug": "5-axis-machining-centers",
+    "name": "5-Axis Machining Centers",
+    "description": "Trunnion, gantry and compact 5-axis machining centers for simultaneous multi-face and complex-contour machining.",
+    "parent": 0,
+    "count": 0,
+    "canonical": "/product-category/5-axis-machining-centers/",
+    "trail": [
+      "5-axis-machining-centers"
+    ],
+    "robots": "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+    "title": "5-Axis Machining Centers"
+  },
+  {
     "slug": "cnc-lathes",
     "name": "CNC Lathes, Swiss-Type & Automatic Lathes",
     "description": "",

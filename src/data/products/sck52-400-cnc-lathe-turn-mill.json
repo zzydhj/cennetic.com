@@ -1,0 +1,84 @@
+{
+  "slug": "sck52-400-cnc-lathe-turn-mill",
+  "name": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center",
+  "canonical": "/product/sck52-400-cnc-lathe-turn-mill/",
+  "summary": "<p>The SCK52-400 is a CNC lathe with turn-mill capability for combined turning and milling of rotational parts in one chucking.</p>",
+  "body": "<p>The SCK52-400 is a CNC lathe with turn-mill capability for combined turning and milling of rotational parts in one chucking.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Max. swing over bed</td><td>Max. swing over bed</td><td>mm</td><td>Φ420</td></tr><tr><td rowspan=\"1\">Max. cutting length</td><td>Max. cutting length</td><td>mm</td><td>300</td></tr><tr><td rowspan=\"1\">Max. swing over carriage</td><td>Max. swing over carriage</td><td>mm</td><td>Φ200</td></tr><tr><td rowspan=\"1\">Spindle head type</td><td>Spindle head type</td><td>A2-6</td></tr><tr><td rowspan=\"1\">Spindle bore diameter</td><td>Spindle bore diameter</td><td>mm</td><td>Φ66(Φ79)</td></tr><tr><td rowspan=\"1\">Max. bar capacity</td><td>Max. bar capacity</td><td>mm</td><td>Φ52(Φ65)</td></tr><tr><td rowspan=\"1\">Spindle speed range</td><td>Spindle speed range</td><td>r/min</td><td>0-4500</td></tr><tr><td rowspan=\"1\">Main-motor power</td><td>Main-motor power</td><td>kw</td><td>11 kW</td></tr><tr><td rowspan=\"1\">Chuck Diameter</td><td>Chuck Diameter</td><td>inch</td><td>8”</td></tr><tr><td rowspan=\"1\">X/Z-axis rapid rate</td><td>X/Z-axis rapid rate</td><td>m/min</td><td>24/26</td></tr><tr><td rowspan=\"1\">X-axis travel</td><td>X-axis travel</td><td>mm</td><td>250</td></tr><tr><td rowspan=\"1\">Z-axis travel</td><td>Z-axis travel</td><td>mm</td><td>350</td></tr><tr><td rowspan=\"1\">Tailstock body travel</td><td>Tailstock body travel</td><td>mm</td><td>—</td></tr><tr><td rowspan=\"1\">Tailstock quill travel</td><td>Tailstock quill travel</td><td>mm</td><td>—</td></tr><tr><td rowspan=\"1\">Turret type</td><td>Turret type</td><td>Servo turret</td><td>100</td></tr><tr><td rowspan=\"1\">Machining accuracy</td><td>Machining accuracy</td><td>IT6</td></tr><tr><td rowspan=\"2\">Positioning Accuracy</td><td>X-axis</td><td>mm</td><td>0.005</td></tr><tr><td>Z-axis</td><td>mm</td><td>0.005</td></tr><tr><td rowspan=\"2\">Repeatability</td><td>X-axis</td><td>mm</td><td>0.002</td></tr><tr><td>Z-axis</td><td>mm</td><td>0.002</td></tr><tr><td rowspan=\"1\">Machine Weight</td><td>main unit</td><td>kg</td><td>3300</td></tr><tr><td rowspan=\"1\">Machine outline</td><td>L x W x H</td><td>mm</td><td>2280x1680x1730</td></tr></tbody></table>\n<h2>About this model</h2><p>This CNC Lathe / Turn-Mill Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/01.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/02.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 2",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/03.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 3",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/04.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 4",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/05.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 5",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/06.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 6",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/07.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 7",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/sck52-400-cnc-lathe-turn-mill/08.webp",
+      "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 8",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "cnc-lathes",
+      "name": "CNC Lathes, Swiss-Type & Automatic Lathes"
+    }
+  ],
+  "specs": [
+    {
+      "name": "X-axis travel",
+      "values": [
+        "250"
+      ]
+    },
+    {
+      "name": "Z-axis travel",
+      "values": [
+        "350"
+      ]
+    },
+    {
+      "name": "Spindle speed",
+      "values": [
+        "0-4500"
+      ]
+    }
+  ],
+  "unusedImages": []
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "w650l-vertical-machining-center",
+  "name": "CENNETIC W650L Vertical Machining Center",
+  "canonical": "/product/w650l-vertical-machining-center/",
+  "summary": "<p>The W650L is a rigid vertical machining center for efficient roughing and finishing across a broad working range.</p>",
+  "body": "<p>The W650L is a rigid vertical machining center for efficient roughing and finishing across a broad working range.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"7\">Bed</td><td>Casting</td><td>Resin-sand casting</td><td>W650L</td></tr><tr><td>Lubrication Circuit</td><td>Automatic</td><td>BAOTNBTA-C2Poil pump</td></tr><tr><td>Ball Screw</td><td>Ball screw</td><td>X,Y,Z:C3 grade4012</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)X,Y,:RG35</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)Z:RG45</td></tr><tr><td>Spindle</td><td>Belt-drive spindle</td><td>10000rpm</td></tr><tr><td>Spindle</td><td>Direct-drive spindle</td><td>12000rpm</td></tr><tr><td rowspan=\"4\">Electrical</td><td>Feed-motor type</td><td>Servo motor</td><td>X,Y:2.4 kW</td></tr><tr><td>Feed-motor type</td><td>Servo motor</td><td>Z:3.9 kW</td></tr><tr><td>Spindle motor</td><td>belt</td><td>7.5-11 kW</td></tr><tr><td>Spindle motor</td><td>Direct drive</td><td>5.5-7.5 kW</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>CNC System</td><td>22MA</td></tr><tr><td rowspan=\"2\">Tool Change</td><td>Pneumatic tool changer</td><td>Umbrella-type</td><td>BT40 16 tools</td></tr><tr><td>Pneumatic tool changer</td><td>Arm-type</td><td>BT40 24 tools</td></tr><tr><td rowspan=\"1\">Appearance</td><td>Sheet-metal Enclosure</td><td>Full enclosure</td><td>White + black + blue</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>Electric oiler</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td></tr><tr><td rowspan=\"3\">Accessories</td><td>Tool Holder</td><td>BT40</td><td>5 pcs</td></tr><tr><td>Collet</td><td>ER32</td><td>5 pcs</td></tr><tr><td>Tool kit</td><td>1 set</td></tr><tr><td rowspan=\"1\">Service</td><td>Warranty</td><td>1 yr</td><td>1 yr</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/w650l-vertical-machining-center/01.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/02.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 2",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/03.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 3",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/04.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 4",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/05.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 5",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/06.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 6",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/07.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 7",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/w650l-vertical-machining-center/08.webp",
+      "alt": "CENNETIC W650L Vertical Machining Center — view 8",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "machining-centers",
+      "name": "Machining Centers (Milling-Focused)"
+    }
+  ],
+  "specs": [],
+  "unusedImages": []
+}

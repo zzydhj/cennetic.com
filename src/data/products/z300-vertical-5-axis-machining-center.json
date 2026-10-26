@@ -1,0 +1,66 @@
+{
+  "slug": "z300-vertical-5-axis-machining-center",
+  "name": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center",
+  "canonical": "/product/z300-vertical-5-axis-machining-center/",
+  "summary": "<p>The Z300 is a high-rigidity 5-axis machining center for accurate multi-axis machining of structural and prismatic parts in a single setup.</p>",
+  "body": "<p>The Z300 is a high-rigidity 5-axis machining center for accurate multi-axis machining of structural and prismatic parts in a single setup.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Worktable</td><td>Max. machining dia.</td><td>mm</td><td>Φ390</td></tr><tr><td>Swing diameter</td><td>mm</td><td>Ф400</td></tr><tr><td>Faceplate diameter</td><td>mm</td><td>300</td></tr><tr><td>Workpiece load</td><td>KG</td><td>Vertical: 60 kg/Horizontal: 70 kg</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>170-720</td></tr><tr><td rowspan=\"5\">Travel Range</td><td>Machining Range</td><td>mm</td><td>500*500*400</td></tr><tr><td>Rotary axis C</td><td>deg</td><td>0-360</td></tr><tr><td>Swing axis A</td><td>deg</td><td>±110</td></tr><tr><td>Spindle nose to 5-axis faceplate</td><td>mm</td><td>120-520</td></tr><tr><td>Spindle center to rotary-table center (axis 90°)</td><td>mm</td><td>(200)-220</td></tr><tr><td rowspan=\"11\">Bed</td><td>Spindle</td><td>Spindle</td><td>Spindle</td></tr><tr><td>Direct-drive mechanical spindle</td><td>BT30</td></tr><tr><td>Speed range</td><td>r/min</td><td>0-20000</td></tr><tr><td>Screw / guideway</td><td>Screw / guideway</td><td>Screw / guideway</td></tr><tr><td>Roller-screw dia. / pitch</td><td>mm</td><td>X/Y: 30 , Z:35</td></tr><tr><td>Guideway width</td><td>mm</td><td>X,Y,Z:C3 grade3216</td></tr><tr><td>Tool Magazine</td><td>Tool Magazine</td><td>Tool Magazine</td></tr><tr><td>Magazine capacity (arm-type)</td><td>T</td><td>21/30</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>75/150</td></tr><tr><td>Max. tool diameter</td><td>mm</td><td>80</td></tr><tr><td>Tool-to-Tool Time</td><td>sec</td><td>1.2</td></tr><tr><td rowspan=\"3\">Electrical</td><td>Spindle Power</td><td>KW</td><td>5.5 kW/24000 rpm</td></tr><tr><td>X/Y-axis motor</td><td>KW</td><td>X/Y absolute 1.8 kW</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>Z absolute 2.9 kW braked motor</td></tr><tr><td rowspan=\"3\">clamping system</td><td>ACrotary table</td><td>DD (direct-drive)</td><td>HoZhuangDZDC300</td></tr><tr><td>C-axis</td><td>Pneumatic brake</td></tr><tr><td>A-axis</td><td>Pneumatic brake</td></tr><tr><td rowspan=\"3\">Feed rate / rapid traverse</td><td>X/Y/Z rapid traverse rate</td><td>mm/min</td><td>30000</td></tr><tr><td>Rotary axis C</td><td>rpm</td><td>200</td></tr><tr><td>Swing axis A</td><td>rpm</td><td>250</td></tr><tr><td rowspan=\"3\">Positioning Accuracy</td><td>X/Y/Z axis</td><td>mm</td><td>±0.005/300</td></tr><tr><td>Rotary axis C</td><td>‘’</td><td>±10(20)</td></tr><tr><td>Swing axis A</td><td>‘’</td><td>±10(20)</td></tr><tr><td rowspan=\"3\">Repeatability</td><td>X/Y/Z axis</td><td>mm</td><td>±0.005</td></tr><tr><td>Rotary axis C</td><td>‘’</td><td>±2(4)</td></tr><tr><td>Swing axis A</td><td>‘’</td><td>±2(4)</td></tr><tr><td rowspan=\"6\">Others</td><td>Working voltage &amp; frequency</td><td>V/Hz</td><td>380/50</td></tr><tr><td>Input power</td><td>KW</td><td>16</td></tr><tr><td>Control voltage</td><td>V</td><td>DC24</td></tr><tr><td>Working air pressure</td><td>bar</td><td>6</td></tr><tr><td>Machine Weight</td><td>kg</td><td>3500</td></tr><tr><td>Machine size (L×W×H)</td><td>mm</td><td>1900x2400x2600</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT250)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (HovalAuto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball screw (X,Y,Z:C3 grade3216)</li><li><strong>Bed</strong> — Linear Guideway — HIWIN (Taiwan)Ball guideway (X/Y: 30 , Z:35)</li><li><strong>Bed</strong> — Spindle — Dejiu (Taiwan)直联Spindle (BT30-20000rpm)</li><li><strong>Electrical</strong> — Feed-motor type — HNC (X/Y absolute 1.8 kW)</li><li><strong>Electrical</strong> — Feed-motor type — HNC (Z absolute 2.9 kW braked motor)</li><li><strong>Electrical</strong> — Spindle motor — HNC (5.5 kW/24000 rpm)</li><li><strong>System</strong> — CNC: HNC (Huazhong) (HNC-818D-12)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — SFG arm-typeArm-type magazine (BT30 30 toolsArm-type magazine)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Half enclosure (Ivory + dark grey)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp (LED)</li><li><strong>rotary table</strong> —  (HoZhuangDZDC300)</li><li><strong>Service</strong> — Freight — in-province</li><li><strong>Service</strong> — Packing — Simple packing</li><li><strong>Service</strong> — Warranty — 1 year</li><li><strong>Service</strong> — Training — on-site</li></ul><h3>Optional equipment</h3><ul><li><strong>Accessories</strong> — Tool holders & collets — BT30-ER32-70L (5 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 pcs)</li><li><strong>Accessories</strong> — Clamp plates (1 set)</li><li><strong>Accessories</strong> — Tool rack, wash gun, air gun (1 pcs each)</li><li><strong>Accessories</strong> — Manual (1 set)</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/z300-vertical-5-axis-machining-center/01.webp",
+      "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/z300-vertical-5-axis-machining-center/02.webp",
+      "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 2",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/z300-vertical-5-axis-machining-center/03.webp",
+      "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 3",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/z300-vertical-5-axis-machining-center/04.webp",
+      "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 4",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/z300-vertical-5-axis-machining-center/05.webp",
+      "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 5",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/z300-vertical-5-axis-machining-center/06.webp",
+      "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 6",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "5-axis-machining-centers",
+      "name": "5-Axis Machining Centers"
+    }
+  ],
+  "specs": [
+    {
+      "name": "Spindle power",
+      "values": [
+        "5.5 kW/24000 rpm"
+      ]
+    },
+    {
+      "name": "Tool magazine",
+      "values": [
+        "21/30"
+      ]
+    }
+  ],
+  "unusedImages": []
+}

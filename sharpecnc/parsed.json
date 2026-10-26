@@ -1,0 +1,5345 @@
+[
+  {
+    "url": "https://www.sharpecnc.com/product_view_278_291.html",
+    "nameZh": "650雕铣机 小型雕刻机650 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/2022122292830854.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2022525163327889.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_275_292.html",
+    "nameZh": "玻璃械具卧式加工中心 卧式加工中心HMC450 卧式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20221129152710925.jpg",
+      "/uFile/116849/product/202191621424203.jpg",
+      "/uFile/116849/product/2022530104016333.png"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "树脂砂铸件工艺",
+        "value": "HT250"
+      },
+      {
+        "group": "床身",
+        "item": "油路",
+        "unit": "RGB 电动注油器",
+        "value": "河谷"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "台湾上银滚珠丝杆",
+        "value": "XYZ:3616"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "台湾上银线性导轨",
+        "value": "XYZ：RG35（滚柱）"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "台湾丹铨机械主轴",
+        "value": "BT40-150/8000rpm"
+      },
+      {
+        "group": "床身",
+        "item": "转台",
+        "unit": "联顺转台",
+        "value": "400mm×400mm（五度一分）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代进给电机",
+        "value": "XY:2.4KW/11.5N.m Z:3.9KW/18.6N.m C:1.7KW/8N.m"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机",
+        "unit": "台湾新代主轴电机",
+        "value": "15KW/70-100N.m"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "台湾新代",
+        "value": "22MA"
+      },
+      {
+        "group": "换刀",
+        "item": "气动换刀装置",
+        "unit": "台湾冈田刀库",
+        "value": "圆盘 32 把"
+      },
+      {
+        "group": "外观",
+        "item": "钣金",
+        "unit": "全防护式",
+        "value": "米白色+灰黑色"
+      },
+      {
+        "group": "过滤器",
+        "item": "",
+        "unit": "合一过滤器",
+        "value": "70KG 22L/min"
+      },
+      {
+        "group": "排屑机",
+        "item": "",
+        "unit": "瑞科排屑机",
+        "value": "链式"
+      },
+      {
+        "group": "配件",
+        "item": "刀柄、嗦嘴",
+        "unit": "BT40-ER25",
+        "value": "各6个"
+      },
+      {
+        "group": "配件",
+        "item": "月牙扳手",
+        "unit": "",
+        "value": "1 套"
+      },
+      {
+        "group": "配件",
+        "item": "锁刀座",
+        "unit": "BT40",
+        "value": "1 个"
+      },
+      {
+        "group": "配件",
+        "item": "对刀仪",
+        "unit": "",
+        "value": "1 个"
+      },
+      {
+        "group": "服务",
+        "item": "货运",
+        "unit": "省外",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "包装",
+        "unit": "木架包装",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "保修",
+        "unit": "1 年",
+        "value": ""
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_279_272.html",
+    "nameZh": "高刚性车铣复合SCK5075 数控车床 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20221230165942143.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202212115655668.png",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/20233291656950.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202191621424203.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/202321617207901.png",
+      "/uFile/116849/product/2021916205930107.jpg",
+      "/uFile/116849/product/2025813202657565.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2022122292830116.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_289_291.html",
+    "nameZh": "高刚性二线一硬数控加工中心V1160L 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/2025526143812973.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/s202662142133833.png"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "树脂砂铸件工艺",
+        "value": "HT250"
+      },
+      {
+        "group": "床身",
+        "item": "油路",
+        "unit": "河谷",
+        "value": "自动注油"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "台湾上银滚珠丝杆",
+        "value": "C3级磨制滚珠丝杆4012"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "台湾上银线性导轨",
+        "value": "X/Z：MSR45/ Z: 滑动导轨"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "台正机械主轴",
+        "value": "BBT50-8000rpm"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代X,Y伺服",
+        "value": "5.9KW 28.4 N.M 3000转"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代Z轴伺服（刹车）",
+        "value": "5.9KW 28.4 N.M 3000转"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机",
+        "unit": "伺服主轴电机",
+        "value": "8000rpm/15-18.5KW"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "台湾新代",
+        "value": "22MA"
+      },
+      {
+        "group": "换刀",
+        "item": "气动换刀装置",
+        "unit": "台湾德杰圆盘式",
+        "value": "BT50 24把刀"
+      },
+      {
+        "group": "外观",
+        "item": "钣金",
+        "unit": "全防护式",
+        "value": "米白色+灰黑色"
+      },
+      {
+        "group": "润滑",
+        "item": "电子注油器",
+        "unit": "RGB电动注油器",
+        "value": "电动注油器"
+      },
+      {
+        "group": "照明",
+        "item": "长条型照明灯",
+        "unit": "",
+        "value": "LED"
+      },
+      {
+        "group": "油冷机",
+        "item": "",
+        "unit": "",
+        "value": "乾冠"
+      },
+      {
+        "group": "配件",
+        "item": "刀柄/嗦嘴",
+        "unit": "BT40-ER32",
+        "value": "各5个"
+      },
+      {
+        "group": "配件",
+        "item": "工具",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "配件",
+        "item": "压板压规",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "配件",
+        "item": "锁刀架",
+        "unit": "",
+        "value": "1个"
+      },
+      {
+        "group": "配件",
+        "item": "说明书",
+        "unit": "",
+        "value": "1套（含U盘电子档）"
+      },
+      {
+        "group": "服务",
+        "item": "货运",
+        "unit": "省内",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "包装",
+        "unit": "专车运输",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "保修",
+        "unit": "1年",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "培训",
+        "unit": "上门",
+        "value": ""
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_298_291.html",
+    "nameZh": "高刚性立式加工中心M6 模具加工中心 数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20260602141842923.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202252392018137.png"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "",
+        "value": "HT300"
+      },
+      {
+        "group": "床身",
+        "item": "工作台尺寸",
+        "unit": "mm",
+        "value": "1300*610"
+      },
+      {
+        "group": "床身",
+        "item": "允许最大荷重(均匀分布）",
+        "unit": "kg",
+        "value": "1200"
+      },
+      {
+        "group": "床身",
+        "item": "T型槽尺寸",
+        "unit": "宽度-距离-数目",
+        "value": "18mm-125mm-5"
+      },
+      {
+        "group": "行程 范围",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "1100"
+      },
+      {
+        "group": "行程 范围",
+        "item": "Y轴行程",
+        "unit": "mm",
+        "value": "600"
+      },
+      {
+        "group": "行程 范围",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "510"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴传动方式",
+        "unit": "-",
+        "value": "皮带式传动（直连）"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴中心到立柱导轨面距离",
+        "unit": "mm",
+        "value": "686"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴端面至工作台面距离",
+        "unit": "最小-最大",
+        "value": "150mm-660mm"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴",
+        "unit": "锥孔（7：24）",
+        "value": "外径150mm/BT40"
+      },
+      {
+        "group": "主轴",
+        "item": "转数范围",
+        "unit": "r/min",
+        "value": "皮带：0-8000/直连：0-12000"
+      },
+      {
+        "group": "丝杆 导轨",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "C3级磨制滚珠丝杆4010"
+      },
+      {
+        "group": "丝杆 导轨",
+        "item": "线轨宽度",
+        "unit": "",
+        "value": "X,Y滚柱45/Z:55"
+      },
+      {
+        "group": "刀库",
+        "item": "最大刀具长度",
+        "unit": "mm",
+        "value": "300"
+      },
+      {
+        "group": "刀库",
+        "item": "最大刀具重量",
+        "unit": "kg",
+        "value": "7"
+      },
+      {
+        "group": "刀库",
+        "item": "圆盘式",
+        "unit": "把",
+        "value": "32"
+      },
+      {
+        "group": "刀库",
+        "item": "最大刀盘直径",
+        "unit": "mm",
+        "value": "φ100"
+      },
+      {
+        "group": "刀库",
+        "item": "圆盘式",
+        "unit": "s",
+        "value": "1.1-2.9"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机功率",
+        "unit": "额定功率/最高功率",
+        "value": "皮带：11-15KW/直连：7.5-11KW"
+      },
+      {
+        "group": "电气",
+        "item": "输出扭矩",
+        "unit": "额定扭矩-最高扭矩",
+        "value": "69.4/94.6"
+      },
+      {
+        "group": "电气",
+        "item": "X轴",
+        "unit": "KW/N.m",
+        "value": "5.9KW/28.4N.m（新代AM28)"
+      },
+      {
+        "group": "电气",
+        "item": "Y轴",
+        "unit": "KW/N.m",
+        "value": "5.9KW/28.4N.m（新代AM28)"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴",
+        "unit": "KW/N.m",
+        "value": "5.9KW/28.4N.m（新代AM28)带刹车"
+      },
+      {
+        "group": "速度",
+        "item": "XYZ快速移动速度",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "速度",
+        "item": "切削进给速度范围",
+        "unit": "mm/min",
+        "value": "1-10000"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.003/300"
+      },
+      {
+        "group": "",
+        "item": "定位精度（ X/Y/Z）",
+        "unit": "",
+        "value": "±0.005/300"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "法那科/三菱/新代",
+        "value": "0i-MF5 Plus/M80/22MA"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "外形(长×宽×高)",
+        "unit": "mm",
+        "value": "3000*3288*3287"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约8000"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆/THK",
+        "spec": "滚珠丝杆4010",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 台湾上银/THK线性导轨",
+        "spec": "XY：RG45（珠柱）/Z:55",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 台湾丹铨",
+        "spec": "外径150mm/BT40-8000转",
+        "std": false
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 法那科/三菱/新代",
+        "spec": "5.9KW/28.4N.m（新代AM28)",
+        "std": false
+      },
+      {
+        "category": "电气",
+        "item": "主轴 — 法那科/三菱/新代",
+        "spec": "11-15KW/69.4/94.6",
+        "std": false
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 法那科/三菱/新代",
+        "spec": "0i-MF5 Plus/M80/22MA",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 台湾冈田",
+        "spec": "圆盘式BT40-32把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "米白色+灰黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — BT40-ER32",
+        "spec": "各10个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_285_290.html",
+    "nameZh": "高刚性五轴数控加工中心M5-5 立加五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/20231122091414201.jpg",
+      "/uFile/116849/product/2023424165327551.jpg",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023424165823751.jpg"
+    ],
+    "specs": [
+      {
+        "group": "工作台",
+        "item": "最大工件回转直径",
+        "unit": "mm",
+        "value": "Ф550"
+      },
+      {
+        "group": "工作台",
+        "item": "台面（直径）",
+        "unit": "mm",
+        "value": "Ф400"
+      },
+      {
+        "group": "工作台",
+        "item": "载重",
+        "unit": "KG",
+        "value": "倾斜：200 水平260"
+      },
+      {
+        "group": "工作台",
+        "item": "主轴端面至工作台距离（A轴位于0度位置时）",
+        "unit": "mm",
+        "value": "170-720"
+      },
+      {
+        "group": "行程范围",
+        "item": "加工范围",
+        "unit": "mm",
+        "value": "650*400*500"
+      },
+      {
+        "group": "行程范围",
+        "item": "工作台最大行程－X轴",
+        "unit": "mm",
+        "value": "1000"
+      },
+      {
+        "group": "行程范围",
+        "item": "滑座最大行程－Y轴",
+        "unit": "mm",
+        "value": "520"
+      },
+      {
+        "group": "行程范围",
+        "item": "主轴箱最大行程－Z轴",
+        "unit": "",
+        "value": "600"
+      },
+      {
+        "group": "行程范围",
+        "item": "主轴中心到立柱导轨面距离",
+        "unit": "",
+        "value": "582"
+      },
+      {
+        "group": "行程范围",
+        "item": "A轴90度主轴中心至盘面距离",
+        "unit": "",
+        "value": "273"
+      },
+      {
+        "group": "行程范围",
+        "item": "A轴负90度主轴中心至盘面距离",
+        "unit": "度",
+        "value": "358"
+      },
+      {
+        "group": "行程范围",
+        "item": "主轴端面至盘面距离",
+        "unit": "度",
+        "value": "562"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴传动方式",
+        "unit": "-",
+        "value": "电主轴"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴",
+        "unit": "锥孔（7：24）",
+        "value": "HSK-A63"
+      },
+      {
+        "group": "主轴",
+        "item": "转数范围",
+        "unit": "r/min",
+        "value": "0-18000"
+      },
+      {
+        "group": "主轴",
+        "item": "输出额定扭矩",
+        "unit": "N.m",
+        "value": "39.6"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴额定功率",
+        "unit": "kw",
+        "value": "15KW（能效因数88%）"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "X,Y,Z：40/10 4040/1040mm/12mm"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "线轨宽度",
+        "unit": "",
+        "value": "XYZ:45 滚柱"
+      },
+      {
+        "group": "刀库",
+        "item": "刀柄规格",
+        "unit": "",
+        "value": "HSKA63"
+      },
+      {
+        "group": "刀库",
+        "item": "刀库容量（链式刀库）",
+        "unit": "T",
+        "value": "48/32"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大直径邻刀/邻空刀",
+        "unit": "mm",
+        "value": "75/150"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大长度",
+        "unit": "mm",
+        "value": "250"
+      },
+      {
+        "group": "刀库",
+        "item": "换刀时间(刀对刀)",
+        "unit": "s",
+        "value": "2.9"
+      },
+      {
+        "group": "电气",
+        "item": "电主轴功率",
+        "unit": "KW",
+        "value": "15KW（能效因数88%"
+      },
+      {
+        "group": "电气",
+        "item": "X轴电机",
+        "unit": "KW",
+        "value": "3.0 （能效因数98%）"
+      },
+      {
+        "group": "电气",
+        "item": "Y轴电机",
+        "unit": "KW",
+        "value": "3.0 （能效因数98%）"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴电机（刹车）",
+        "unit": "KW",
+        "value": "3.0 （能效因数98%）"
+      },
+      {
+        "group": "电气",
+        "item": "AC转台",
+        "unit": "DD",
+        "value": "RDDS400"
+      },
+      {
+        "group": "速度",
+        "item": "XYZ快速移动速度",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "速度",
+        "item": "回转轴C",
+        "unit": "mm/min",
+        "value": "20000"
+      },
+      {
+        "group": "速度",
+        "item": "摆动轴A",
+        "unit": "mm/min",
+        "value": "10000"
+      },
+      {
+        "group": "机床精度",
+        "item": "定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": ""
+      },
+      {
+        "group": "机床精度",
+        "item": "摆动轴A轴定位精度",
+        "unit": "··",
+        "value": "±5"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C轴定位精度",
+        "unit": "``",
+        "value": "±5"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "",
+        "value": "Lynuc N3E"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "外形(长×宽×高)",
+        "unit": "mm",
+        "value": "2850*2900*2600"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约7800"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆",
+        "spec": "滚珠丝杆4012",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 德国英钠线性导轨",
+        "spec": "XYZ：RG45（珠柱）",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 速锋高速电主轴",
+        "spec": "HSKA63",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "AC转台 — 豪迈",
+        "spec": "RDDS400",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 图科",
+        "spec": "XYZ：3.0KW",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴 — 速锋高速电主轴",
+        "spec": "15KW",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 上海铼钠克",
+        "spec": "Lynuc N3E",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 常州方冠伺服刀库",
+        "spec": "链式48把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "白色+黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "主轴油冷",
+        "item": "主轴油冷 — 铨冠",
+        "spec": "74/min",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — HSKA63",
+        "spec": "各6个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座 — HSKA63",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "对刀仪",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_290_289.html",
+    "nameZh": "高刚性重切天车式五轴加工中心C400 天车五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/2025610172444481.jpg",
+      "/uFile/116849/product/202571916756385.jpg",
+      "/uFile/116849/product/s2025830161944875.png"
+    ],
+    "specs": [
+      {
+        "group": "行程范围",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "500mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Y轴行程",
+        "unit": "mm",
+        "value": "625mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "400mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "回转轴C",
+        "unit": "度",
+        "value": "0-360"
+      },
+      {
+        "group": "行程范围",
+        "item": "摆动轴A",
+        "unit": "度",
+        "value": "±110"
+      },
+      {
+        "group": "行程范围",
+        "item": "最大工件回转直径",
+        "unit": "mm",
+        "value": "450"
+      },
+      {
+        "group": "工作台",
+        "item": "装夹面（直径）",
+        "unit": "mm",
+        "value": "400"
+      },
+      {
+        "group": "工作台",
+        "item": "工作台最大负载",
+        "unit": "KG",
+        "value": "300"
+      },
+      {
+        "group": "工作台",
+        "item": "主轴端面至工作台距离（A轴位于0度位置时）",
+        "unit": "mm",
+        "value": "45-445"
+      },
+      {
+        "group": "主轴",
+        "item": "外圆直径",
+        "unit": "mm",
+        "value": "150"
+      },
+      {
+        "group": "主轴",
+        "item": "最高转速",
+        "unit": "rpm",
+        "value": "18000"
+      },
+      {
+        "group": "主轴",
+        "item": "使用电压",
+        "unit": "V",
+        "value": "380"
+      },
+      {
+        "group": "主轴",
+        "item": "冷却方式",
+        "unit": "",
+        "value": "油冷"
+      },
+      {
+        "group": "主轴",
+        "item": "轴端连接",
+        "unit": "V",
+        "value": "HSK-A63"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "X,Y,Z：Ф40mm/10mm"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "线轨宽度",
+        "unit": "mm",
+        "value": "XYZ:45 滚珠"
+      },
+      {
+        "group": "刀库",
+        "item": "刀柄规格",
+        "unit": "T",
+        "value": "HSK-A63"
+      },
+      {
+        "group": "刀库",
+        "item": "刀库容量",
+        "unit": "把",
+        "value": "24"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大直径邻刀/邻空刀",
+        "unit": "mm",
+        "value": "75/150"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大长度",
+        "unit": "mm",
+        "value": "250"
+      },
+      {
+        "group": "刀库",
+        "item": "换刀时间(刀对刀)",
+        "unit": "s",
+        "value": "2.9"
+      },
+      {
+        "group": "电气",
+        "item": "电主轴功率",
+        "unit": "KW",
+        "value": "20"
+      },
+      {
+        "group": "电气",
+        "item": "X/Y轴电机",
+        "unit": "KW",
+        "value": "2.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴电机（刹车）",
+        "unit": "KW",
+        "value": "5.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "AC转台",
+        "unit": "DD",
+        "value": "RDDS400"
+      },
+      {
+        "group": "速度",
+        "item": "XYZ切削进给速度范围",
+        "unit": "mm/min",
+        "value": "24000"
+      },
+      {
+        "group": "速度",
+        "item": "回转轴C",
+        "unit": "度/min.rpm",
+        "value": "30"
+      },
+      {
+        "group": "速度",
+        "item": "摆动A轴",
+        "unit": "度/min.rpm",
+        "value": "30"
+      },
+      {
+        "group": "机床精度",
+        "item": "定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.01/300"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.006"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.004"
+      },
+      {
+        "group": "机床精度",
+        "item": "三轴（XYZ）光栅（禹衡光学）",
+        "unit": "mm",
+        "value": "±0.003"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "台湾新代",
+        "value": "220MA-5"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "外形(长×宽×高)",
+        "unit": "mm",
+        "value": "2810X4100X3200"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约8000"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆",
+        "spec": "滚珠丝杆4010",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 德国英钠线性导轨",
+        "spec": "XYZ：RG45（珠珠）",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — ABIG（爱贝克）永磁同步高速电主轴",
+        "spec": "HSK-A63",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "AC转台 — 西尔普双DD大力矩电机",
+        "spec": "RDDS400",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 台湾新代",
+        "spec": "XY：2.9KW Z:5.9KW",
+        "std": false
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 台湾新代",
+        "spec": "220MA-5(15寸)",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 中置伺服刀库",
+        "spec": "HSK A63刀柄 24把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "米白色+灰黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "排屑机",
+        "item": "螺杆排屑机 — 乾冠",
+        "spec": "螺杆排屑机+外置链式",
+        "std": true
+      },
+      {
+        "category": "光栅",
+        "item": "全闭环 — XYZ",
+        "spec": "禹衡光学",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — HSKA63",
+        "spec": "各6个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座 — HSKA63",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "U盘电子档",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "对刀仪",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "木架包装",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_281_272.html",
+    "nameZh": "高速钻攻中心T850 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20233291655296.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/202321617207901.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202212115655668.png",
+      "/uFile/116849/product/2025813202657565.png",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/20221230165942805.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202252392018137.png"
+    ],
+    "specs": [
+      {
+        "group": "工作台尺寸",
+        "item": "工作台尺寸",
+        "unit": "mm",
+        "value": "1000*500"
+      },
+      {
+        "group": "行程",
+        "item": "左右（X）",
+        "unit": "mm",
+        "value": "800"
+      },
+      {
+        "group": "行程",
+        "item": "前后（Y）",
+        "unit": "mm",
+        "value": "500"
+      },
+      {
+        "group": "行程",
+        "item": "上下（Z）",
+        "unit": "mm",
+        "value": "420"
+      },
+      {
+        "group": "工作台T型槽数-尺寸",
+        "item": "工作台T型槽数-尺寸",
+        "unit": "mm",
+        "value": "5-18-100"
+      },
+      {
+        "group": "允许最大荷重",
+        "item": "允许最大荷重",
+        "unit": "kg",
+        "value": "300"
+      },
+      {
+        "group": "主轴鼻端面至工作台距离",
+        "item": "主轴鼻端面至工作台距离",
+        "unit": "mm",
+        "value": "150-570"
+      },
+      {
+        "group": "主轴中心至机身端面距离",
+        "item": "主轴中心至机身端面距离",
+        "unit": "mm",
+        "value": "420"
+      },
+      {
+        "group": "主轴转速",
+        "item": "主轴转速",
+        "unit": "rpm",
+        "value": "50-20000"
+      },
+      {
+        "group": "主轴锥度",
+        "item": "主轴锥度",
+        "unit": "#",
+        "value": "BT-30"
+      },
+      {
+        "group": "主轴功率",
+        "item": "主轴功率",
+        "unit": "kw",
+        "value": "7.5"
+      },
+      {
+        "group": "X轴快速移动率",
+        "item": "X轴快速移动率",
+        "unit": "mm/min",
+        "value": "48000"
+      },
+      {
+        "group": "Y轴快速移动率",
+        "item": "Y轴快速移动率",
+        "unit": "mm/min",
+        "value": "48000"
+      },
+      {
+        "group": "Z轴快速移动率",
+        "item": "Z轴快速移动率",
+        "unit": "mm/min",
+        "value": "48000"
+      },
+      {
+        "group": "切削速率",
+        "item": "切削速率",
+        "unit": "mm/min",
+        "value": "1-20000"
+      },
+      {
+        "group": "三轴电机功率(X/Y/Z)",
+        "item": "三轴电机功率(X/Y/Z)",
+        "unit": "kw",
+        "value": "2.4/2.4/3.9"
+      },
+      {
+        "group": "丝杆参数(X/Y/Z)",
+        "item": "丝杆参数(X/Y/Z)",
+        "unit": "mm",
+        "value": "3616/P3"
+      },
+      {
+        "group": "线性导轨(X/Y/Z)",
+        "item": "线性导轨(X/Y/Z)",
+        "unit": "",
+        "value": "PMI-MSA30（X/Y） 35mm（Z）"
+      },
+      {
+        "group": "刀库形式",
+        "item": "刀库形式",
+        "unit": "",
+        "value": "台湾圣杰21把刀臂式"
+      },
+      {
+        "group": "控制系统",
+        "item": "控制系统",
+        "unit": "",
+        "value": "新代22MA"
+      },
+      {
+        "group": "刀具重量",
+        "item": "刀具重量",
+        "unit": "Kg",
+        "value": "4"
+      },
+      {
+        "group": "刀具长度",
+        "item": "刀具长度",
+        "unit": "mm",
+        "value": "170"
+      },
+      {
+        "group": "最大刀径（满刀/邻空刀）",
+        "item": "最大刀径（满刀/邻空刀）",
+        "unit": "mm",
+        "value": "65/75"
+      },
+      {
+        "group": "水箱容量",
+        "item": "水箱容量",
+        "unit": "L",
+        "value": "100"
+      },
+      {
+        "group": "气压需求",
+        "item": "气压需求",
+        "unit": "Kg/cm²",
+        "value": "0.6MPA"
+      },
+      {
+        "group": "总耗电功率",
+        "item": "总耗电功率",
+        "unit": "kw",
+        "value": "14"
+      },
+      {
+        "group": "定位精度",
+        "item": "定位精度",
+        "unit": "mm",
+        "value": "±0.01/300"
+      },
+      {
+        "group": "重复精度",
+        "item": "重复精度",
+        "unit": "mm",
+        "value": "±0.01"
+      },
+      {
+        "group": "最大负重",
+        "item": "最大负重",
+        "unit": "Kg",
+        "value": "230"
+      },
+      {
+        "group": "机械重量（大约）",
+        "item": "机械重量（大约）",
+        "unit": "Kg",
+        "value": "3800"
+      },
+      {
+        "group": "外形尺寸（长×宽×高）",
+        "item": "外形尺寸（长×宽×高）",
+        "unit": "mm",
+        "value": "2500*2550*2700"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_294_291.html",
+    "nameZh": "高效率，高刚性双主轴加工中心W560L 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/202518195843878.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/s202662142133833.png"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "树脂砂铸件工艺",
+        "value": "HT250"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "台湾上银滚珠丝杆",
+        "value": "X,Y，Z ：C3级4012"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "台湾上银滚柱线性导轨",
+        "value": "X,Y, Z:RG45"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "台湾丹铨机械主轴",
+        "value": "中心距560/BT40-8000rpm（2条）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代",
+        "value": "X,Y:AM18-3.9KW、18.6N.M"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代伺服刹车",
+        "value": "Z:AM18-3.9KW、18.6N.M"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机",
+        "unit": "台湾新代主轴电机",
+        "value": "S08-M7.5-10B4-0A0 8000rpm/5.5-7.5KW（2个）"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "台湾新代",
+        "value": "220MA-5铣床控制器"
+      },
+      {
+        "group": "换刀",
+        "item": "气动换刀装置",
+        "unit": "台湾冈田圆盘式刀库",
+        "value": "BT40 24把（2个）"
+      },
+      {
+        "group": "外观",
+        "item": "钣金",
+        "unit": "全防护式",
+        "value": "米白色+灰黑色"
+      },
+      {
+        "group": "润滑",
+        "item": "电子注油器",
+        "unit": "RGB电动注油器",
+        "value": "电动注油器"
+      },
+      {
+        "group": "照明",
+        "item": "长条型照明灯",
+        "unit": "",
+        "value": "LED"
+      },
+      {
+        "group": "排屑机",
+        "item": "",
+        "unit": "乾冠",
+        "value": "链板排屑机"
+      },
+      {
+        "group": "配件",
+        "item": "刀柄/嗦嘴",
+        "unit": "BT40-ER32-70L",
+        "value": "每台机各20个"
+      },
+      {
+        "group": "配件",
+        "item": "工具",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "配件",
+        "item": "压板压规",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "配件",
+        "item": "锁刀架",
+        "unit": "",
+        "value": "1个"
+      },
+      {
+        "group": "配件",
+        "item": "说明书",
+        "unit": "",
+        "value": "含U盘电子档"
+      },
+      {
+        "group": "服务",
+        "item": "货运",
+        "unit": "省外（内）",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "包装",
+        "unit": "专车运输",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "保修",
+        "unit": "1年",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "培训",
+        "unit": "上门",
+        "value": ""
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_288_291.html",
+    "nameZh": "高效率，高刚性双主轴加工中心W560L 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/202518195843878.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2022525163327889.jpg"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "树脂砂铸件工艺",
+        "value": "HT250"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "台湾上银滚珠丝杆",
+        "value": "X,Y，Z ：C3级4012"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "台湾上银滚柱线性导轨",
+        "value": "X,Y, Z:RG45"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "台湾丹铨机械主轴",
+        "value": "中心距560/BT40-8000rpm（2条）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代",
+        "value": "X,Y:AM18-3.9KW、18.6N.M"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "台湾新代伺服刹车",
+        "value": "Z:AM18-3.9KW、18.6N.M"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机",
+        "unit": "台湾新代主轴电机",
+        "value": "S08-M7.5-10B4-0A0 8000rpm/5.5-7.5KW（2个）"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "台湾新代",
+        "value": "220MA-5铣床控制器"
+      },
+      {
+        "group": "换刀",
+        "item": "气动换刀装置",
+        "unit": "台湾冈田圆盘式刀库",
+        "value": "BT40 24把（2个）"
+      },
+      {
+        "group": "外观",
+        "item": "钣金",
+        "unit": "全防护式",
+        "value": "米白色+灰黑色"
+      },
+      {
+        "group": "润滑",
+        "item": "电子注油器",
+        "unit": "RGB电动注油器",
+        "value": "电动注油器"
+      },
+      {
+        "group": "照明",
+        "item": "长条型照明灯",
+        "unit": "",
+        "value": "LED"
+      },
+      {
+        "group": "排屑机",
+        "item": "",
+        "unit": "乾冠",
+        "value": "链板排屑机"
+      },
+      {
+        "group": "配件",
+        "item": "刀柄/嗦嘴",
+        "unit": "BT40-ER32-70L",
+        "value": "每台机各20个"
+      },
+      {
+        "group": "配件",
+        "item": "工具",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "配件",
+        "item": "压板压规",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "配件",
+        "item": "锁刀架",
+        "unit": "",
+        "value": "1个"
+      },
+      {
+        "group": "配件",
+        "item": "说明书",
+        "unit": "",
+        "value": "含U盘电子档"
+      },
+      {
+        "group": "服务",
+        "item": "货运",
+        "unit": "省外（内）",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "包装",
+        "unit": "专车运输",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "保修",
+        "unit": "1年",
+        "value": ""
+      },
+      {
+        "group": "服务",
+        "item": "培训",
+        "unit": "上门",
+        "value": ""
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_286_291.html",
+    "nameZh": "模具加工中心M5A 数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20231122092421857.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2022126144741610.jpg"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "",
+        "value": "HT300"
+      },
+      {
+        "group": "床身",
+        "item": "工作台尺寸",
+        "unit": "mm",
+        "value": "1200*530"
+      },
+      {
+        "group": "床身",
+        "item": "允许最大荷重(均匀分布）",
+        "unit": "kg",
+        "value": "1200"
+      },
+      {
+        "group": "床身",
+        "item": "T型槽尺寸",
+        "unit": "宽度-距离-数目",
+        "value": "18mm-100mm-5"
+      },
+      {
+        "group": "行程范围",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "1000"
+      },
+      {
+        "group": "行程范围",
+        "item": "Y轴行程",
+        "unit": "mm",
+        "value": "520"
+      },
+      {
+        "group": "行程范围",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "600"
+      },
+      {
+        "group": "行程范围",
+        "item": "工作台最大行程－X轴",
+        "unit": "mm",
+        "value": "1000"
+      },
+      {
+        "group": "行程范围",
+        "item": "滑座最大行程－Y轴",
+        "unit": "mm",
+        "value": "520"
+      },
+      {
+        "group": "行程范围",
+        "item": "主轴中心到立柱导轨面距离",
+        "unit": "mm",
+        "value": "582"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴传动方式",
+        "unit": "-",
+        "value": "皮带式传动（直连）"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴端面至工作台面距离",
+        "unit": "最小-最大",
+        "value": "150mm-750mm"
+      },
+      {
+        "group": "主轴",
+        "item": "主轴",
+        "unit": "锥孔（7：24）",
+        "value": "外径150mm/BT40"
+      },
+      {
+        "group": "主轴",
+        "item": "转数范围",
+        "unit": "r/min",
+        "value": "皮带：0-8000/直连：0-12000"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "C3级磨制滚珠丝杆4010"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "线轨宽度",
+        "unit": "",
+        "value": "X,Y,Z滚柱45"
+      },
+      {
+        "group": "刀库",
+        "item": "最大刀具长度",
+        "unit": "mm",
+        "value": "300"
+      },
+      {
+        "group": "刀库",
+        "item": "最大刀具重量",
+        "unit": "kg",
+        "value": "7"
+      },
+      {
+        "group": "刀库",
+        "item": "圆盘式",
+        "unit": "把",
+        "value": "32/24"
+      },
+      {
+        "group": "刀库",
+        "item": "最大刀盘直径",
+        "unit": "mm",
+        "value": "φ100"
+      },
+      {
+        "group": "刀库",
+        "item": "圆盘式",
+        "unit": "s",
+        "value": "1.1-2.9"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机功率",
+        "unit": "额定功率/最高功率",
+        "value": "皮带：11-15KW/直连：7.5-11KW"
+      },
+      {
+        "group": "电气",
+        "item": "输出扭矩",
+        "unit": "额定扭矩-最高扭矩",
+        "value": "皮带：52.5-98.5N.m/直连：35.8-70N.m"
+      },
+      {
+        "group": "电气",
+        "item": "X轴",
+        "unit": "KW/N.m",
+        "value": "3.0 /20"
+      },
+      {
+        "group": "电气",
+        "item": "Y轴",
+        "unit": "KW/N.m",
+        "value": "3.0 /20"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴",
+        "unit": "KW/N.m",
+        "value": "3.0 /20"
+      },
+      {
+        "group": "速度",
+        "item": "XYZ快速移动速度",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "速度",
+        "item": "切削进给速度范围",
+        "unit": "mm/min",
+        "value": "1-10000"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "法那科/三菱",
+        "value": "0i-MF5 Plus/M80"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "外形(长×宽×高)",
+        "unit": "mm",
+        "value": "2850*2900*2600"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约7500"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆",
+        "spec": "滚珠丝杆4010",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 德国英钠线性导轨",
+        "spec": "XYZ：RG45（珠柱）",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 台湾数格/丹铨",
+        "spec": "外径150mm/BT40",
+        "std": false
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 法那科/三菱",
+        "spec": "XYZ：3.0KW/20N.m",
+        "std": false
+      },
+      {
+        "category": "电气",
+        "item": "主轴 — 法那科/三菱",
+        "spec": "11-15KW/52.5-98.5N.m",
+        "std": false
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 法那科/三菱",
+        "spec": "0i-MF5 Plus/M80",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 台湾冈田",
+        "spec": "圆盘式BT40-24把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "白色+黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "主轴油冷",
+        "item": "主轴油冷 — 铨冠",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — BT40-ER32",
+        "spec": "各10个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_295_295.html",
+    "nameZh": "逆向插补Y车铣复合52iY 动力刀塔车铣复合机 车铣复合中心",
+    "images": [
+      "/uFile/116849/product/20251113135227319.jpg",
+      "/uFile/116849/product/20251113135227595.png",
+      "/uFile/116849/product/20251113135228098.png"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_297_294.html",
+    "nameZh": "数控车床，车铣复合SCK5075 数控车床 刀塔式数控车床 车铣复合中心",
+    "images": [
+      "/uFile/116849/product/20251113140027562.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_292_272.html",
+    "nameZh": "数控车床，车铣复合SCK52-400 数控车床 数控加工中心",
+    "images": [
+      "/uFile/116849/product/2025813202657386.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/202321617207901.png",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2021916205930107.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202212115655668.png",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/20221230165942805.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg"
+    ],
+    "specs": [
+      {
+        "group": "床身上最大回转直径",
+        "item": "床身上最大回转直径",
+        "unit": "mm",
+        "value": "Φ420"
+      },
+      {
+        "group": "最大切削长度",
+        "item": "最大切削长度",
+        "unit": "mm",
+        "value": "300"
+      },
+      {
+        "group": "滑板上最大回转直径",
+        "item": "滑板上最大回转直径",
+        "unit": "mm",
+        "value": "Φ200"
+      },
+      {
+        "group": "主轴头型式",
+        "item": "主轴头型式",
+        "unit": "",
+        "value": "A2-6"
+      },
+      {
+        "group": "主轴孔直径",
+        "item": "主轴孔直径",
+        "unit": "mm",
+        "value": "Φ66(Φ79)"
+      },
+      {
+        "group": "最大通过棒料直径",
+        "item": "最大通过棒料直径",
+        "unit": "mm",
+        "value": "Φ52(Φ65)"
+      },
+      {
+        "group": "主轴转速范围",
+        "item": "主轴转速范围",
+        "unit": "r/min",
+        "value": "0-4500"
+      },
+      {
+        "group": "主电机功率",
+        "item": "主电机功率",
+        "unit": "kw",
+        "value": "11KW"
+      },
+      {
+        "group": "卡盘直径",
+        "item": "卡盘直径",
+        "unit": "inch",
+        "value": "8”"
+      },
+      {
+        "group": "X/Z轴快移速度",
+        "item": "X/Z轴快移速度",
+        "unit": "m/min",
+        "value": "24/26"
+      },
+      {
+        "group": "X轴行程",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "250"
+      },
+      {
+        "group": "Z轴行程",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "350"
+      },
+      {
+        "group": "尾座体行程",
+        "item": "尾座体行程",
+        "unit": "mm",
+        "value": "无"
+      },
+      {
+        "group": "尾座套筒行程",
+        "item": "尾座套筒行程",
+        "unit": "mm",
+        "value": "无"
+      },
+      {
+        "group": "刀架型式",
+        "item": "刀架型式",
+        "unit": "伺服刀塔",
+        "value": "100"
+      },
+      {
+        "group": "加工精度",
+        "item": "加工精度",
+        "unit": "",
+        "value": "IT6"
+      },
+      {
+        "group": "定位精度",
+        "item": "X轴",
+        "unit": "mm",
+        "value": "0.005"
+      },
+      {
+        "group": "定位精度",
+        "item": "Z轴",
+        "unit": "mm",
+        "value": "0.005"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "X轴",
+        "unit": "mm",
+        "value": "0.002"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "Z轴",
+        "unit": "mm",
+        "value": "0.002"
+      },
+      {
+        "group": "机床重量",
+        "item": "主机",
+        "unit": "kg",
+        "value": "3300"
+      },
+      {
+        "group": "机床外形",
+        "item": "L x W x H",
+        "unit": "mm",
+        "value": "2280x1680x1730"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_296_296.html",
+    "nameZh": "数控排刀机SCK-46/52L 排刀式数控车床 车铣复合中心",
+    "images": [
+      "/uFile/116849/product/20251113135714900.png"
+    ],
+    "specs": [
+      {
+        "group": "床身上最大回转直径",
+        "item": "床身上最大回转直径",
+        "unit": "mm",
+        "value": "Φ420"
+      },
+      {
+        "group": "最大切削长度",
+        "item": "最大切削长度",
+        "unit": "mm",
+        "value": "300"
+      },
+      {
+        "group": "滑板上最大回转直径",
+        "item": "滑板上最大回转直径",
+        "unit": "mm",
+        "value": "Φ200"
+      },
+      {
+        "group": "主轴头型式",
+        "item": "主轴头型式",
+        "unit": "",
+        "value": "A2-6"
+      },
+      {
+        "group": "主轴孔直径",
+        "item": "主轴孔直径",
+        "unit": "mm",
+        "value": "Φ66(Φ79)"
+      },
+      {
+        "group": "最大通过棒料直径",
+        "item": "最大通过棒料直径",
+        "unit": "mm",
+        "value": "Φ52(Φ65)"
+      },
+      {
+        "group": "主轴转速范围",
+        "item": "主轴转速范围",
+        "unit": "r/min",
+        "value": "0-4500"
+      },
+      {
+        "group": "主电机功率",
+        "item": "主电机功率",
+        "unit": "kw",
+        "value": "11KW"
+      },
+      {
+        "group": "卡盘直径",
+        "item": "卡盘直径",
+        "unit": "inch",
+        "value": "8”"
+      },
+      {
+        "group": "X/Z轴快移速度",
+        "item": "X/Z轴快移速度",
+        "unit": "m/min",
+        "value": "24/26"
+      },
+      {
+        "group": "X轴行程",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "250"
+      },
+      {
+        "group": "Z轴行程",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "350"
+      },
+      {
+        "group": "尾座体行程",
+        "item": "尾座体行程",
+        "unit": "mm",
+        "value": "无"
+      },
+      {
+        "group": "尾座套筒行程",
+        "item": "尾座套筒行程",
+        "unit": "mm",
+        "value": "无"
+      },
+      {
+        "group": "刀架型式",
+        "item": "刀架型式",
+        "unit": "伺服刀塔",
+        "value": "100"
+      },
+      {
+        "group": "加工精度",
+        "item": "加工精度",
+        "unit": "",
+        "value": "IT6"
+      },
+      {
+        "group": "定位精度",
+        "item": "X轴",
+        "unit": "mm",
+        "value": "0.005"
+      },
+      {
+        "group": "定位精度",
+        "item": "Z轴",
+        "unit": "mm",
+        "value": "0.005"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "X轴",
+        "unit": "mm",
+        "value": "0.002"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "Z轴",
+        "unit": "mm",
+        "value": "0.002"
+      },
+      {
+        "group": "机床重量",
+        "item": "主机",
+        "unit": "kg",
+        "value": "3300"
+      },
+      {
+        "group": "机床外形",
+        "item": "L x W x H",
+        "unit": "mm",
+        "value": "2280x1680x1730"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_273_292.html",
+    "nameZh": "卧式加工中心HMC500 卧式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20220530103651971.jpg",
+      "/uFile/116849/product/20220530103954164.png",
+      "/uFile/116849/product/202191621424203.jpg",
+      "/uFile/116849/product/20221129152711835.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_264_290.html",
+    "nameZh": "小型五轴加工中心FA200 立加五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/20210916204831401.jpg",
+      "/uFile/116849/product/20210916204834277.jpg",
+      "/uFile/116849/product/20210916205100623.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023424165823751.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2023112291418532.jpg",
+      "/uFile/116849/product/2023424165327551.jpg"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "树脂砂铸件工艺",
+        "value": "HT250"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "滚珠丝杆",
+        "value": "台湾LSK律廷丝杆C3级磨制滚珠丝杆2510"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "线性导轨",
+        "value": "台湾上银X,Y，Z:HG30"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "高速电主轴",
+        "value": "华雕BT30 24000rpm"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "X轴伺服",
+        "value": "日本安川750W"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "Y轴伺服",
+        "value": "日本安川750W(2个）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "Z轴伺服（刹车）",
+        "value": "日本安川850W（刹车）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "A轴",
+        "value": "日本安川850W"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "C轴",
+        "value": "日本安川750W"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "五轴系统",
+        "value": "台湾新代200MA-5/铼钠克N3 LYNUC"
+      },
+      {
+        "group": "换刀",
+        "item": "自动换刀装置",
+        "unit": "伺服刀库",
+        "value": "圣德刀库"
+      },
+      {
+        "group": "换刀",
+        "item": "自动换刀装置",
+        "unit": "16把刀",
+        "value": "圣德刀库"
+      },
+      {
+        "group": "润滑",
+        "item": "电子注油器",
+        "unit": "电动注油器",
+        "value": "河谷"
+      },
+      {
+        "group": "照明",
+        "item": "长条型照明灯",
+        "unit": "LED",
+        "value": "沃德 LED"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_265_290.html",
+    "nameZh": "小型五轴加工中心FA200-5 立加五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/20210916205253470.jpg",
+      "/uFile/116849/product/20210916205256657.jpg",
+      "/uFile/116849/product/2023424165823751.jpg",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023424165327551.jpg",
+      "/uFile/116849/product/2023112291418532.jpg"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸铁",
+        "unit": "树脂砂铸件工艺",
+        "value": "HT250"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "滚珠丝杆",
+        "value": "C3级磨制滚珠丝杆3210"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "线性导轨",
+        "value": "台湾上银X：RG30；Y：RG45;Z:HG25"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "高速电主轴",
+        "value": "顺源ISO20 4KW/ 40000rpm"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "X轴伺服",
+        "value": "日本安川1.8KW"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "Y轴伺服",
+        "value": "日本安川1.3KW(2个）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "Z轴伺服（刹车）",
+        "value": "日本安川850W（刹车）(5个）"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "A轴",
+        "value": "日本安川1.3W"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "C轴",
+        "value": "日本安川750W"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "五轴系统",
+        "value": "芯衍数控"
+      },
+      {
+        "group": "换刀",
+        "item": "自动换刀装置",
+        "unit": "9把刀",
+        "value": "圣德刀库"
+      },
+      {
+        "group": "换刀",
+        "item": "自动换刀装置",
+        "unit": "9把刀",
+        "value": "圣德刀库"
+      },
+      {
+        "group": "润滑",
+        "item": "电子注油器",
+        "unit": "电动注油器",
+        "value": "宝腾BAOTN"
+      },
+      {
+        "group": "照明",
+        "item": "长条型照明灯",
+        "unit": "LED",
+        "value": "沃德 LED"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_277_291.html",
+    "nameZh": "重切削1160模具加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/2022126144740664.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202191620325842.jpg"
+    ],
+    "specs": [
+      {
+        "group": "主轴",
+        "item": "1",
+        "unit": "支",
+        "value": "台大"
+      },
+      {
+        "group": "丝杠轴承",
+        "item": "6",
+        "unit": "套",
+        "value": "FAG/BSB"
+      },
+      {
+        "group": "滚珠丝杠",
+        "item": "3",
+        "unit": "套",
+        "value": "HIWIN"
+      },
+      {
+        "group": "联轴器",
+        "item": "3",
+        "unit": "套",
+        "value": "日本"
+      },
+      {
+        "group": "直线导轨",
+        "item": "3",
+        "unit": "套",
+        "value": "HIWIN"
+      },
+      {
+        "group": "系统",
+        "item": "1",
+        "unit": "套",
+        "value": "日本三菱"
+      },
+      {
+        "group": "电机",
+        "item": "4",
+        "unit": "套",
+        "value": "日本三菱"
+      },
+      {
+        "group": "润滑系统",
+        "item": "1",
+        "unit": "套",
+        "value": "河谷"
+      },
+      {
+        "group": "伸缩护罩",
+        "item": "3",
+        "unit": "套",
+        "value": "鸿旺/爱派尔"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_274_291.html",
+    "nameZh": "重型1165L数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20221121192630052.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/202191016460738.jpg"
+    ],
+    "specs": [
+      {
+        "group": "主轴",
+        "item": "1",
+        "unit": "支",
+        "value": "台湾丹铨"
+      },
+      {
+        "group": "丝杠轴承",
+        "item": "6",
+        "unit": "套",
+        "value": "日本NSK、德国FAG、日本THT"
+      },
+      {
+        "group": "滚珠丝杠",
+        "item": "3",
+        "unit": "套",
+        "value": "HIWIN"
+      },
+      {
+        "group": "联轴器",
+        "item": "3",
+        "unit": "套",
+        "value": "润德"
+      },
+      {
+        "group": "直线导轨",
+        "item": "3",
+        "unit": "套",
+        "value": "HIWIN"
+      },
+      {
+        "group": "刀库",
+        "item": "1",
+        "unit": "套",
+        "value": "台湾北钜"
+      },
+      {
+        "group": "系统",
+        "item": "1",
+        "unit": "套",
+        "value": "三菱、新代"
+      },
+      {
+        "group": "电机",
+        "item": "4",
+        "unit": "套",
+        "value": "三菱、新代"
+      },
+      {
+        "group": "润滑系统",
+        "item": "1",
+        "unit": "套",
+        "value": "河谷"
+      },
+      {
+        "group": "伸缩护罩",
+        "item": "3",
+        "unit": "套",
+        "value": "鸿旺/爱派尔"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 河谷",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银滚珠丝杆",
+        "spec": "R40-12K5-FDC",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 台湾上银线性导轨",
+        "spec": "X,Y,Z：HGH45CA",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 台湾丹铨机械主轴",
+        "spec": "BT40（150）-12000rpm",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — X,Y伺服",
+        "spec": "3.9KW AM18 18.6NM 4000转",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — Z轴伺服（刹车）",
+        "spec": "5.9KW AM28 28.4NM 4000转",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴电机 — 伺服主轴电机",
+        "spec": "7.5-11KW/12000转",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 台湾新代",
+        "spec": "22MA",
+        "std": true
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 台湾北钜",
+        "spec": "BT40 24把刀",
+        "std": true
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "米白色+天蓝色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "LED",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — BT40-ER32",
+        "spec": "各10个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "锁刀架",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "1套(含U盘)",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省外",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 2年",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_293_289.html",
+    "nameZh": "C300-5 天车式五轴加工中心 天车五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/2025830161944875.png",
+      "/uFile/116849/product/202571916756385.jpg",
+      "/uFile/116849/product/2025610172444324.jpg"
+    ],
+    "specs": [
+      {
+        "group": "行程范围",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "400mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Y轴行程",
+        "unit": "mm",
+        "value": "520mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "330mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "回转轴C",
+        "unit": "度",
+        "value": "0-360"
+      },
+      {
+        "group": "行程范围",
+        "item": "摆动轴A",
+        "unit": "度",
+        "value": "-110/+30"
+      },
+      {
+        "group": "工作台",
+        "item": "装夹面（直径）",
+        "unit": "mm",
+        "value": "320"
+      },
+      {
+        "group": "工作台",
+        "item": "工作台最大回转直径",
+        "unit": "mm",
+        "value": "520"
+      },
+      {
+        "group": "工作台",
+        "item": "工作台最大负载",
+        "unit": "KG",
+        "value": "100"
+      },
+      {
+        "group": "工作台",
+        "item": "主轴端面至工作台距离（A轴位于0度位置时）",
+        "unit": "mm",
+        "value": "115-445"
+      },
+      {
+        "group": "主轴",
+        "item": "外圆直径",
+        "unit": "mm",
+        "value": "125"
+      },
+      {
+        "group": "主轴",
+        "item": "最高转速",
+        "unit": "rpm",
+        "value": "24000/30000"
+      },
+      {
+        "group": "主轴",
+        "item": "使用电压",
+        "unit": "V",
+        "value": "380"
+      },
+      {
+        "group": "主轴",
+        "item": "冷却方式",
+        "unit": "",
+        "value": "油冷"
+      },
+      {
+        "group": "主轴",
+        "item": "轴端连接",
+        "unit": "V",
+        "value": "BT30"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "滚珠螺杆直径/螺距",
+        "unit": "mm",
+        "value": "X,Y,Z：Ф32mm/10mm"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "线轨宽度",
+        "unit": "",
+        "value": "XYZ:35 滚柱"
+      },
+      {
+        "group": "刀库",
+        "item": "刀柄规格",
+        "unit": "T",
+        "value": "BT30"
+      },
+      {
+        "group": "刀库",
+        "item": "刀库容量",
+        "unit": "把",
+        "value": "28"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大直径邻刀/邻空刀",
+        "unit": "mm",
+        "value": "50"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大长度",
+        "unit": "mm",
+        "value": "150"
+      },
+      {
+        "group": "刀库",
+        "item": "换刀时间(刀对刀)",
+        "unit": "s",
+        "value": "2.9"
+      },
+      {
+        "group": "电气",
+        "item": "电主轴功率",
+        "unit": "KW",
+        "value": "12.5"
+      },
+      {
+        "group": "电气",
+        "item": "X/Y轴电机",
+        "unit": "KW",
+        "value": "2.4KW"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴电机（刹车）",
+        "unit": "KW",
+        "value": "3.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "AC转台",
+        "unit": "/",
+        "value": "DTR320C-500"
+      },
+      {
+        "group": "最高速度",
+        "item": "XYZ切削进给速度范围",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "最高速度",
+        "item": "回转轴C",
+        "unit": "rpm",
+        "value": "350"
+      },
+      {
+        "group": "最高速度",
+        "item": "摆动A轴",
+        "unit": "rpm",
+        "value": "150"
+      },
+      {
+        "group": "机床精度",
+        "item": "定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.01/300"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.006"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.004"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "",
+        "value": "220MA-5 PLUS"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "外形(长×宽×高)",
+        "unit": "mm",
+        "value": "2230*1650*2630"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约4500"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT250",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆",
+        "spec": "滚珠丝杆3210",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 台湾上银线性导轨",
+        "spec": "XYZ：RG35（滚珠）",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 江苏荣华永磁同步高速电主轴",
+        "spec": "BT30",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "AC转台 — 蓝蓝科技双DD大力矩电机",
+        "spec": "DTR320C-500",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 台湾新代新代",
+        "spec": "XY:2.4KW /Z:3.9KW",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴 — 永磁同步高速电主轴",
+        "spec": "12.5KW",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 台湾新代",
+        "spec": "220MA-5 PLUS",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 链式伺服刀库",
+        "spec": "BT30刀柄28把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "米白色+灰黑色",
+        "std": false
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "MWD-F3-282",
+        "std": true
+      },
+      {
+        "category": "排屑机",
+        "item": "排屑机 — 乾冠",
+        "spec": "",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "刀柄/嗦嘴 — BBT30",
+        "spec": "各6个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座 — BT30",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "U盘电子档",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "对刀仪",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "木架包装",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_291_289.html",
+    "nameZh": "C600 天车式五轴加工中心 天车五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/20250719160728626.jpg",
+      "/uFile/116849/product/20250719163116286.jpg",
+      "/uFile/116849/product/20250719163116822.jpg",
+      "/uFile/116849/product/20250719163117369.jpg",
+      "/uFile/116849/product/2025610172444324.jpg",
+      "/uFile/116849/product/s2025830161944875.png"
+    ],
+    "specs": [
+      {
+        "group": "行程范围",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "585mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Y轴行程",
+        "unit": "mm",
+        "value": "780mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "400mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "回转轴C",
+        "unit": "度",
+        "value": "0-360"
+      },
+      {
+        "group": "行程范围",
+        "item": "摆动轴A",
+        "unit": "度",
+        "value": "±95"
+      },
+      {
+        "group": "工作台",
+        "item": "装夹面（直径）",
+        "unit": "mm",
+        "value": "400"
+      },
+      {
+        "group": "工作台",
+        "item": "工作台最大负载",
+        "unit": "KG",
+        "value": "300"
+      },
+      {
+        "group": "工作台",
+        "item": "主轴端面至工作台距离（A轴位于0度位置时）",
+        "unit": "mm",
+        "value": "47-457"
+      },
+      {
+        "group": "主轴",
+        "item": "外圆直径",
+        "unit": "mm",
+        "value": "150"
+      },
+      {
+        "group": "主轴",
+        "item": "最高转速",
+        "unit": "rpm",
+        "value": "18000"
+      },
+      {
+        "group": "主轴",
+        "item": "使用电压",
+        "unit": "V",
+        "value": "380"
+      },
+      {
+        "group": "主轴",
+        "item": "冷却方式",
+        "unit": "",
+        "value": "油冷"
+      },
+      {
+        "group": "主轴",
+        "item": "轴端连接",
+        "unit": "V",
+        "value": "HSK-A63"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "X,Y,Z：Ф40mm/10mm"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "线轨宽度",
+        "unit": "",
+        "value": "XYZ:45 滚珠"
+      },
+      {
+        "group": "刀库",
+        "item": "刀柄规格",
+        "unit": "T",
+        "value": "HSK-A63"
+      },
+      {
+        "group": "刀库",
+        "item": "刀库容量",
+        "unit": "把",
+        "value": "24"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大直径邻刀/邻空刀",
+        "unit": "mm",
+        "value": "75/150"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大长度",
+        "unit": "mm",
+        "value": "220"
+      },
+      {
+        "group": "刀库",
+        "item": "换刀时间(刀对刀)",
+        "unit": "s",
+        "value": "2.9"
+      },
+      {
+        "group": "电气",
+        "item": "电主轴功率",
+        "unit": "KW",
+        "value": "15"
+      },
+      {
+        "group": "电气",
+        "item": "X/Y轴电机",
+        "unit": "KW",
+        "value": "2.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴电机（刹车）",
+        "unit": "KW",
+        "value": "2.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "AC转台",
+        "unit": "DD",
+        "value": "RDDS400"
+      },
+      {
+        "group": "速度",
+        "item": "XYZ切削进给速度范围",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "速度",
+        "item": "回转轴C",
+        "unit": "度/min.rpm",
+        "value": "30"
+      },
+      {
+        "group": "速度",
+        "item": "摆动A轴",
+        "unit": "度/min.rpm",
+        "value": "30"
+      },
+      {
+        "group": "机床精度",
+        "item": "定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.01/300"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.006"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.004"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "",
+        "value": "220MA-5"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "占地面积（长*宽*高）",
+        "unit": "mm",
+        "value": "4200*3150*3200"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约8000"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆",
+        "spec": "滚珠丝杆4010",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 德国英钠线性导轨",
+        "spec": "XYZ：45（滚珠）",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — ABIG永磁同步高速电主轴",
+        "spec": "HSK-A63",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "AC转台 — 西尔普双DD大力矩电机",
+        "spec": "RDDS400",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 德国力式乐",
+        "spec": "XYZ：2.9KW",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴 — ABIG永磁同步高速电主轴",
+        "spec": "15KW",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 新代",
+        "spec": "220MA-5",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 中置伺服刀库",
+        "spec": "A63刀柄24把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "白色+黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "MWD-F3-282",
+        "std": true
+      },
+      {
+        "category": "排屑机",
+        "item": "螺杆排屑机 — 乾冠",
+        "spec": "80外径",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — HSKA63",
+        "spec": "各6个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座 — HSKA63",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "U盘电子档",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "对刀仪",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "木架包装",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_276_272.html",
+    "nameZh": "CNC数控车床 高刚性数控车床SCK5075 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20221201150648550.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025813202657565.png",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2021916205930107.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202321617207901.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/20233291656950.png",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2021916203854749.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_282_288.html",
+    "nameZh": "FA400 龙门五轴加工中心 龙门五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/2023112291459560.jpg"
+    ],
+    "specs": [
+      {
+        "group": "行程范围",
+        "item": "X轴行程",
+        "unit": "mm",
+        "value": "550mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Y轴行程",
+        "unit": "mm",
+        "value": "750mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "Z轴行程",
+        "unit": "mm",
+        "value": "400mm"
+      },
+      {
+        "group": "行程范围",
+        "item": "回转轴C",
+        "unit": "度",
+        "value": "0-360"
+      },
+      {
+        "group": "行程范围",
+        "item": "摆动轴A",
+        "unit": "度",
+        "value": "±100"
+      },
+      {
+        "group": "工作台",
+        "item": "装夹面（直径）",
+        "unit": "mm",
+        "value": "400"
+      },
+      {
+        "group": "工作台",
+        "item": "工作台最大负载",
+        "unit": "KG",
+        "value": "300"
+      },
+      {
+        "group": "工作台",
+        "item": "主轴端面至工作台距离（A轴位于0度位置时）",
+        "unit": "mm",
+        "value": "150-550"
+      },
+      {
+        "group": "主轴",
+        "item": "外圆直径",
+        "unit": "mm",
+        "value": "150"
+      },
+      {
+        "group": "主轴",
+        "item": "最高转速",
+        "unit": "rpm",
+        "value": "18000"
+      },
+      {
+        "group": "主轴",
+        "item": "使用电压",
+        "unit": "V",
+        "value": "380"
+      },
+      {
+        "group": "主轴",
+        "item": "冷却方式",
+        "unit": "",
+        "value": "油冷"
+      },
+      {
+        "group": "主轴",
+        "item": "轴端连接",
+        "unit": "V",
+        "value": "SHKA63"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "X,Y,Z：Ф40mm/12mm"
+      },
+      {
+        "group": "丝杆导轨",
+        "item": "线轨宽度",
+        "unit": "",
+        "value": "XYZ:45 滚柱"
+      },
+      {
+        "group": "刀库",
+        "item": "刀柄规格",
+        "unit": "T",
+        "value": "SHKA63"
+      },
+      {
+        "group": "刀库",
+        "item": "刀库容量",
+        "unit": "把",
+        "value": "32"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大直径邻刀/邻空刀",
+        "unit": "mm",
+        "value": "75/150"
+      },
+      {
+        "group": "刀库",
+        "item": "刀具最大长度",
+        "unit": "mm",
+        "value": "250"
+      },
+      {
+        "group": "刀库",
+        "item": "换刀时间(刀对刀)",
+        "unit": "s",
+        "value": "2.9"
+      },
+      {
+        "group": "电气",
+        "item": "电主轴功率",
+        "unit": "KW",
+        "value": "15"
+      },
+      {
+        "group": "电气",
+        "item": "X/Y轴电机",
+        "unit": "KW",
+        "value": "2.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴电机（刹车）",
+        "unit": "KW",
+        "value": "2.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "AC转台",
+        "unit": "DD",
+        "value": "RDDS400"
+      },
+      {
+        "group": "速度",
+        "item": "XYZ切削进给速度范围",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "速度",
+        "item": "回转轴C",
+        "unit": "度/min.rpm",
+        "value": "30"
+      },
+      {
+        "group": "速度",
+        "item": "摆动A轴",
+        "unit": "度/min.rpm",
+        "value": "30"
+      },
+      {
+        "group": "机床精度",
+        "item": "定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.01/300"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.006"
+      },
+      {
+        "group": "机床精度",
+        "item": "重复定位精度（X/Y/Z)",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "机床精度",
+        "item": "回转轴C/摆动轴A",
+        "unit": "度",
+        "value": "±0.004"
+      },
+      {
+        "group": "其他",
+        "item": "数控系统",
+        "unit": "",
+        "value": "Lynch N3"
+      },
+      {
+        "group": "其他",
+        "item": "所需气压",
+        "unit": "",
+        "value": "6 kgf/cm²"
+      },
+      {
+        "group": "其他",
+        "item": "外形(长×宽×高)",
+        "unit": "mm",
+        "value": "2750*2600*3050"
+      },
+      {
+        "group": "其他",
+        "item": "整机重量",
+        "unit": "kg",
+        "value": "约8000"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银丝杆",
+        "spec": "滚珠丝杆4012",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 德国英钠线性导轨",
+        "spec": "XYZ：RG45（珠柱）",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 速锋高速电主轴",
+        "spec": "HSKA63",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "AC转台 — 豪迈",
+        "spec": "RDDS400",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 日本安川",
+        "spec": "XYZ：2.9KW",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴 — 速锋高速电主轴",
+        "spec": "15KW",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 上海",
+        "spec": "Lynch N3",
+        "std": false
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 方冠伺服刀库",
+        "spec": "链式48把",
+        "std": false
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "白色+黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "MWD-F3-282",
+        "std": true
+      },
+      {
+        "category": "排屑机",
+        "item": "螺杆排屑机 — 乾冠",
+        "spec": "80外径",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄\\嗦嘴 — HSKA63",
+        "spec": "各6个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "工具",
+        "spec": "1套",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "锁刀座 — HSKA63",
+        "spec": "1个",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "U盘电子档",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "对刀仪",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内（外）",
+        "spec": "省内（外）",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "上门",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "木架包装",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "1年",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_268_292.html",
+    "nameZh": "HMC850卧式加工中心 卧式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/202191621423968.jpg",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/20221129152711835.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_280_272.html",
+    "nameZh": "SCK-50BY数控车床 车铣复合 带尾顶数控车床 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20230216172719577.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191621424203.jpg",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916205930107.jpg",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/20233291656950.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202212115655668.png",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2025813202657565.png",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2025526143813743.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_272_291.html",
+    "nameZh": "V1270L数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20220525163536420.png",
+      "/uFile/116849/product/20220525163640815.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021916204337456.jpg"
+    ],
+    "specs": [],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_260_291.html",
+    "nameZh": "V850L数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20210916202549817.jpg",
+      "/uFile/116849/product/20210916202552868.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/s202662142133833.png"
+    ],
+    "specs": [
+      {
+        "group": "主轴",
+        "item": "1",
+        "unit": "支",
+        "value": "台湾健椿"
+      },
+      {
+        "group": "丝杠轴承",
+        "item": "6",
+        "unit": "套",
+        "value": "FAG/BSB"
+      },
+      {
+        "group": "滚珠丝杠",
+        "item": "3",
+        "unit": "套",
+        "value": "HIWIN"
+      },
+      {
+        "group": "联轴器",
+        "item": "3",
+        "unit": "套",
+        "value": "润德"
+      },
+      {
+        "group": "直线导轨",
+        "item": "3",
+        "unit": "套",
+        "value": "台湾HIWIN"
+      },
+      {
+        "group": "刀库",
+        "item": "1",
+        "unit": "套",
+        "value": "台湾岡田"
+      },
+      {
+        "group": "系统",
+        "item": "1",
+        "unit": "套",
+        "value": "台湾新代/三菱"
+      },
+      {
+        "group": "电机",
+        "item": "4",
+        "unit": "套",
+        "value": "日本新代/三菱"
+      },
+      {
+        "group": "润滑系统",
+        "item": "1",
+        "unit": "套",
+        "value": "河谷"
+      },
+      {
+        "group": "伸缩护罩",
+        "item": "3",
+        "unit": "套",
+        "value": "鸿旺/爱派尔"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_270_291.html",
+    "nameZh": "V856L数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20220523092004194.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2021910152037711.jpg"
+    ],
+    "specs": [
+      {
+        "group": "主轴",
+        "item": "1",
+        "unit": "支",
+        "value": "台湾德玖"
+      },
+      {
+        "group": "丝杠轴承",
+        "item": "6",
+        "unit": "套",
+        "value": "FAG/BSB"
+      },
+      {
+        "group": "滚珠丝杠",
+        "item": "3",
+        "unit": "套",
+        "value": "PMI/HIWIN"
+      },
+      {
+        "group": "联轴器",
+        "item": "3",
+        "unit": "套",
+        "value": "尚工/摩根"
+      },
+      {
+        "group": "直线导轨",
+        "item": "3",
+        "unit": "套",
+        "value": "PMI/HIWIN"
+      },
+      {
+        "group": "刀库",
+        "item": "1",
+        "unit": "套",
+        "value": "台湾北钜"
+      },
+      {
+        "group": "系统",
+        "item": "1",
+        "unit": "套",
+        "value": "新代/三菱"
+      },
+      {
+        "group": "电机",
+        "item": "4",
+        "unit": "套",
+        "value": "新代/三菱"
+      },
+      {
+        "group": "润滑系统",
+        "item": "1",
+        "unit": "套",
+        "value": "河谷/宝腾"
+      },
+      {
+        "group": "伸缩护罩",
+        "item": "3",
+        "unit": "套",
+        "value": "爱派尔/保祥"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_283_290.html",
+    "nameZh": "W650L 重型五轴加工中心 立加五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/2023424165327440.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023112291418532.jpg",
+      "/uFile/116849/product/2023424165823751.jpg",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/202191620550181.jpg"
+    ],
+    "specs": [],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT250",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "河谷自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银滚珠丝杆",
+        "spec": "X,Y，Z ：C3级4012",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 台湾上银滚柱线性导轨",
+        "spec": "X,Y：RG35, Z:RG45",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 台湾丹铨机械主轴",
+        "spec": "BT40-10000rpm",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 图科",
+        "spec": "X、Y 2.4KW/3000转/11.5N.M",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 图科",
+        "spec": "Z：3.9KW/3000LFN /18.6N.M",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴电机 — 超同步伺服主轴电机",
+        "spec": "7.5-11KW /10000转",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 上海铼钠克",
+        "spec": "Lynch N3",
+        "std": true
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 台湾冈田圆盘式刀库",
+        "spec": "BT40 24把",
+        "std": true
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "米白色+灰黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "LED",
+        "std": true
+      },
+      {
+        "category": "五轴DD",
+        "item": "豪迈科技",
+        "spec": "双轴双臂RDDS200",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "刀柄，嗦嘴 — BT40-ER32-70L",
+        "spec": "各5个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "工具",
+        "spec": "1套",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "锁刀架",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "含U盘电子档",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省外（内）",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_255_291.html",
+    "nameZh": "W650L数控加工中心 立式加工中心 数控加工中心",
+    "images": [
+      "/uFile/116849/product/20210916195659414.jpg",
+      "/uFile/116849/product/20210916195705579.jpg",
+      "/uFile/116849/product/20210916195937368.jpg",
+      "/uFile/116849/product/20210916195949959.jpg",
+      "/uFile/116849/product/20210916195950240.jpg",
+      "/uFile/116849/product/20210916195950756.jpg",
+      "/uFile/116849/product/20210916195951256.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2021916203854749.jpg"
+    ],
+    "specs": [
+      {
+        "group": "床身",
+        "item": "铸件",
+        "unit": "树脂砂铸造",
+        "value": "W650L"
+      },
+      {
+        "group": "床身",
+        "item": "油路",
+        "unit": "自动",
+        "value": "宝腾BTA-C2P油泵"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆",
+        "unit": "滚珠丝杆",
+        "value": "X,Y,Z:C3级4012"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "线性导轨",
+        "value": "台湾上银X,Y,:RG35"
+      },
+      {
+        "group": "床身",
+        "item": "导轨",
+        "unit": "线性导轨",
+        "value": "台湾上银Z:RG45"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "皮带主轴",
+        "value": "10000rpm"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "直连主轴",
+        "value": "12000rpm"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "伺服电机",
+        "value": "X,Y:2.4KW"
+      },
+      {
+        "group": "电气",
+        "item": "进给电机类型",
+        "unit": "伺服电机",
+        "value": "Z:3.9KW"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机",
+        "unit": "皮带",
+        "value": "7.5-11KW"
+      },
+      {
+        "group": "电气",
+        "item": "主轴电机",
+        "unit": "直连",
+        "value": "5.5-7.5KW"
+      },
+      {
+        "group": "系统",
+        "item": "工业系统",
+        "unit": "数控系统",
+        "value": "22MA"
+      },
+      {
+        "group": "换刀",
+        "item": "气动换刀装置",
+        "unit": "斗笠式",
+        "value": "BT40 16把"
+      },
+      {
+        "group": "换刀",
+        "item": "气动换刀装置",
+        "unit": "机械臂式",
+        "value": "BT40 24把"
+      },
+      {
+        "group": "外观",
+        "item": "钣金",
+        "unit": "全防护式",
+        "value": "白色+黑色+蓝色"
+      },
+      {
+        "group": "润滑",
+        "item": "电子注油器",
+        "unit": "",
+        "value": "电动注油器"
+      },
+      {
+        "group": "照明",
+        "item": "长条型照明灯",
+        "unit": "",
+        "value": "LED"
+      },
+      {
+        "group": "配件",
+        "item": "刀柄",
+        "unit": "BT40",
+        "value": "5个"
+      },
+      {
+        "group": "配件",
+        "item": "嗦嘴",
+        "unit": "ER32",
+        "value": "5个"
+      },
+      {
+        "group": "配件",
+        "item": "工具包",
+        "unit": "",
+        "value": "1套"
+      },
+      {
+        "group": "服务",
+        "item": "保修",
+        "unit": "1年",
+        "value": "1年"
+      }
+    ],
+    "config": []
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_287_290.html",
+    "nameZh": "Z300高刚性五轴加工中心 立加五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/2024410143347615.png",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2023112291418532.jpg",
+      "/uFile/116849/product/2023424165327551.jpg",
+      "/uFile/116849/product/2023424165823751.jpg"
+    ],
+    "specs": [
+      {
+        "group": "工作台",
+        "item": "最大工件加工直径",
+        "unit": "mm",
+        "value": "Φ390"
+      },
+      {
+        "group": "工作台",
+        "item": "回转直径",
+        "unit": "mm",
+        "value": "Ф400"
+      },
+      {
+        "group": "工作台",
+        "item": "花盘直径",
+        "unit": "mm",
+        "value": "300"
+      },
+      {
+        "group": "工作台",
+        "item": "工件负载重量",
+        "unit": "KG",
+        "value": "垂直：60KG/水平：70KG"
+      },
+      {
+        "group": "工作台",
+        "item": "主轴端面至工作台距离（A轴位于0度位置时）",
+        "unit": "mm",
+        "value": "170-720"
+      },
+      {
+        "group": "行程范围",
+        "item": "加工范围",
+        "unit": "mm",
+        "value": "500*500*400"
+      },
+      {
+        "group": "行程范围",
+        "item": "回转轴C",
+        "unit": "度",
+        "value": "0-360"
+      },
+      {
+        "group": "行程范围",
+        "item": "摆动轴A",
+        "unit": "度",
+        "value": "±110"
+      },
+      {
+        "group": "行程范围",
+        "item": "主轴端面至五轴盘面距离",
+        "unit": "mm",
+        "value": "120-520"
+      },
+      {
+        "group": "行程范围",
+        "item": "主轴中心至转盘中心（轴旋转90度）",
+        "unit": "mm",
+        "value": "(200)-220"
+      },
+      {
+        "group": "床身",
+        "item": "主轴",
+        "unit": "主轴",
+        "value": "主轴"
+      },
+      {
+        "group": "床身",
+        "item": "直联机械主轴",
+        "unit": "",
+        "value": "BT30"
+      },
+      {
+        "group": "床身",
+        "item": "转数范围",
+        "unit": "r/min",
+        "value": "0-20000"
+      },
+      {
+        "group": "床身",
+        "item": "丝杆/导轨",
+        "unit": "丝杆/导轨",
+        "value": "丝杆/导轨"
+      },
+      {
+        "group": "床身",
+        "item": "滚柱螺杆直径/螺距",
+        "unit": "mm",
+        "value": "X、Y：30 , Z:35"
+      },
+      {
+        "group": "床身",
+        "item": "线轨宽度",
+        "unit": "mm",
+        "value": "X,Y,Z:C3级3216"
+      },
+      {
+        "group": "床身",
+        "item": "刀库",
+        "unit": "刀库",
+        "value": "刀库"
+      },
+      {
+        "group": "床身",
+        "item": "刀库容量（夹臂式刀库）",
+        "unit": "T",
+        "value": "21/30"
+      },
+      {
+        "group": "床身",
+        "item": "刀具最大直径邻刀/邻空刀",
+        "unit": "mm",
+        "value": "75/150"
+      },
+      {
+        "group": "床身",
+        "item": "刀具最大直径",
+        "unit": "mm",
+        "value": "80"
+      },
+      {
+        "group": "床身",
+        "item": "换刀时间",
+        "unit": "sec",
+        "value": "1.2"
+      },
+      {
+        "group": "电气",
+        "item": "主轴功率",
+        "unit": "KW",
+        "value": "5.5KW/24000转"
+      },
+      {
+        "group": "电气",
+        "item": "X轴/Y轴电机",
+        "unit": "KW",
+        "value": "X、Y轴绝对值1.8KW"
+      },
+      {
+        "group": "电气",
+        "item": "Z轴电机（刹车）",
+        "unit": "KW",
+        "value": "Z轴绝对值2.9KW电机带刹车"
+      },
+      {
+        "group": "锁紧系统",
+        "item": "AC转台",
+        "unit": "DD",
+        "value": "昊志DZDC300"
+      },
+      {
+        "group": "锁紧系统",
+        "item": "C轴",
+        "unit": "",
+        "value": "气刹"
+      },
+      {
+        "group": "锁紧系统",
+        "item": "A轴",
+        "unit": "",
+        "value": "气刹"
+      },
+      {
+        "group": "进给速度/快速移动",
+        "item": "XYZ快速移动速度",
+        "unit": "mm/min",
+        "value": "30000"
+      },
+      {
+        "group": "进给速度/快速移动",
+        "item": "回转轴C",
+        "unit": "转/min",
+        "value": "200"
+      },
+      {
+        "group": "进给速度/快速移动",
+        "item": "摆动轴A",
+        "unit": "转/min",
+        "value": "250"
+      },
+      {
+        "group": "定位精度",
+        "item": "X/Y/Z轴",
+        "unit": "mm",
+        "value": "±0.005/300"
+      },
+      {
+        "group": "定位精度",
+        "item": "回转轴C",
+        "unit": "‘’",
+        "value": "±10（20）"
+      },
+      {
+        "group": "定位精度",
+        "item": "摆动轴A",
+        "unit": "‘’",
+        "value": "±10（20）"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "X/Y/Z轴",
+        "unit": "mm",
+        "value": "±0.005"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "回转轴C",
+        "unit": "‘’",
+        "value": "±2（4）"
+      },
+      {
+        "group": "重复定位精度",
+        "item": "摆动轴A",
+        "unit": "‘’",
+        "value": "±2（4）"
+      },
+      {
+        "group": "其他",
+        "item": "工作电压和频率",
+        "unit": "V/Hz",
+        "value": "380/50"
+      },
+      {
+        "group": "其他",
+        "item": "输入功率",
+        "unit": "KW",
+        "value": "16"
+      },
+      {
+        "group": "其他",
+        "item": "控制电压",
+        "unit": "V",
+        "value": "DC24"
+      },
+      {
+        "group": "其他",
+        "item": "工作气压",
+        "unit": "bar",
+        "value": "6"
+      },
+      {
+        "group": "其他",
+        "item": "机床重量",
+        "unit": "kg",
+        "value": "3500"
+      },
+      {
+        "group": "其他",
+        "item": "机床尺寸（长宽高）",
+        "unit": "mm",
+        "value": "1900x2400x2600"
+      }
+    ],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "HT250",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "河谷自动注油",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银滚珠丝杆",
+        "spec": "X,Y,Z:C3级3216",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 台湾上银滚珠导轨",
+        "spec": "X、Y：30 , Z:35",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — 台湾德九直联主轴",
+        "spec": "BT30-20000rpm",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 华中",
+        "spec": "X、Y轴绝对值1.8KW",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 华中",
+        "spec": "Z轴绝对值2.9KW电机带刹车",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴电机 — 华中",
+        "spec": "5.5KW/24000转",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 华中",
+        "spec": "HNC-818D-12",
+        "std": true
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 台湾圣杰夹臂式刀库",
+        "spec": "BT30 30把夹臂式刀库",
+        "std": true
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 半防护式",
+        "spec": "米白色+灰黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "LED",
+        "std": true
+      },
+      {
+        "category": "转台",
+        "item": "",
+        "spec": "昊志DZDC300",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄、嗦嘴 — BT30-ER32-70L",
+        "spec": "各5个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "压板压规",
+        "spec": "1套",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "锁刀架，冲水枪，气枪",
+        "spec": "各1个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "1套",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省内",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 简易包装",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "培训 — 上门",
+        "spec": "",
+        "std": true
+      }
+    ]
+  },
+  {
+    "url": "https://www.sharpecnc.com/product_view_284_290.html",
+    "nameZh": "Z600L+ RDDS200五轴钻攻中心 立加五轴加工中心 五轴加工中心",
+    "images": [
+      "/uFile/116849/product/2023424165822544.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023112291418532.jpg",
+      "/uFile/116849/product/2023424165327551.jpg"
+    ],
+    "specs": [],
+    "config": [
+      {
+        "category": "床身",
+        "item": "铸铁 — 树脂砂铸件工艺",
+        "spec": "球墨H300",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "油路 — 自动",
+        "spec": "河谷",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "丝杆 — 台湾上银滚珠丝杆",
+        "spec": "XY:28*12/16 Z:32*12/16",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "导轨 — 台湾上银线性导轨",
+        "spec": "滚珠30",
+        "std": true
+      },
+      {
+        "category": "床身",
+        "item": "主轴 — Speedcn",
+        "spec": "直结式BT30 20000rpm",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 图科",
+        "spec": "X、Y 1.8KW/3000转/11.5N.M",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "进给电机类型 — 图科",
+        "spec": "Z： 2.9KW/3000LFN /18.6N.M",
+        "std": true
+      },
+      {
+        "category": "电气",
+        "item": "主轴电机 — 益准伺服主轴电机",
+        "spec": "3.7KW 24000转",
+        "std": true
+      },
+      {
+        "category": "系统",
+        "item": "工业系统 — 上海铼钠克",
+        "spec": "N3ME",
+        "std": true
+      },
+      {
+        "category": "换刀",
+        "item": "气动换刀装置 — 台湾怡泰刀库",
+        "spec": "BT30 21把伺服夹臂式刀库",
+        "std": true
+      },
+      {
+        "category": "外观",
+        "item": "钣金 — 全防护式",
+        "spec": "米白色+灰黑色",
+        "std": true
+      },
+      {
+        "category": "润滑",
+        "item": "电子注油器 — RGB电动注油器",
+        "spec": "电动注油器",
+        "std": true
+      },
+      {
+        "category": "照明",
+        "item": "长条型照明灯",
+        "spec": "日光灯",
+        "std": true
+      },
+      {
+        "category": "油冷机",
+        "item": "",
+        "spec": "乾冠",
+        "std": true
+      },
+      {
+        "category": "配件",
+        "item": "刀柄、嗦嘴 — BT30-ER32",
+        "spec": "10个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "工具包",
+        "spec": "1套",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "压板压规",
+        "spec": "每台1套",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "锁刀架",
+        "spec": "1个",
+        "std": false
+      },
+      {
+        "category": "配件",
+        "item": "说明书",
+        "spec": "含U盘电子档",
+        "std": false
+      },
+      {
+        "category": "服务",
+        "item": "货运 — 省外",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "包装 — 木架包装",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "保修 — 1年",
+        "spec": "",
+        "std": true
+      },
+      {
+        "category": "服务",
+        "item": "服务 — 上门",
+        "spec": "",
+        "std": true
+      }
+    ]
+  }
+]

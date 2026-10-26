@@ -1,0 +1,59 @@
+{
+  "slug": "fa200-5-compact-5-axis-machining-center",
+  "name": "CENNETIC FA200-5 Compact 5-Axis Machining Center",
+  "canonical": "/product/fa200-5-compact-5-axis-machining-center/",
+  "summary": "<p>The FA200-5 is a compact 5-axis machining center for high-precision 5-sided and simultaneous 5-axis work on small components.</p>",
+  "body": "<p>The FA200-5 is a compact 5-axis machining center for high-precision 5-sided and simultaneous 5-axis work on small components.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Ball Screw</td><td>Ball screw</td><td>C3 ground ball screw3210</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)X: RG30；Y: RG45;Z:HG25</td></tr><tr><td>Spindle</td><td>High-speed motor spindle</td><td>ShunyuanISO20 4 kW/ 40000rpm</td></tr><tr><td rowspan=\"5\">Electrical</td><td>Feed-motor type</td><td>X-axis servo</td><td>Yaskawa (Japan)1.8 kW</td></tr><tr><td>Feed-motor type</td><td>Y-axis servo</td><td>Yaskawa (Japan)1.3 kW(2 pcs)</td></tr><tr><td>Feed-motor type</td><td>Z-axis servo (braked)</td><td>Yaskawa (Japan)850W(brake)(5 pcs)</td></tr><tr><td>Feed-motor type</td><td>A-axis</td><td>Yaskawa (Japan)1.3W</td></tr><tr><td>Feed-motor type</td><td>C-axis</td><td>Yaskawa (Japan)750W</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>5-axis system</td><td>Xinyan CNC</td></tr><tr><td rowspan=\"2\">Tool Change</td><td>Automatic tool changer (ATC)</td><td>9 tools</td><td>Shengde magazine</td></tr><tr><td>Automatic tool changer (ATC)</td><td>9 tools</td><td>Shengde magazine</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>Electric oiler</td><td>BAOTNBAOTN</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td><td>WOER LED</td></tr></tbody></table>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+  "images": [
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/01.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 1",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/02.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 2",
+      "width": 800,
+      "height": 800
+    },
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/03.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 3",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/04.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 4",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/05.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 5",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/06.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 6",
+      "width": 400,
+      "height": 400
+    },
+    {
+      "src": "/images/products/fa200-5-compact-5-axis-machining-center/07.webp",
+      "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 7",
+      "width": 400,
+      "height": 400
+    }
+  ],
+  "categories": [
+    {
+      "slug": "5-axis-machining-centers",
+      "name": "5-Axis Machining Centers"
+    }
+  ],
+  "specs": [],
+  "unusedImages": []
+}

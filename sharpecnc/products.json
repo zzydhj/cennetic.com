@@ -1,0 +1,1867 @@
+[
+  {
+    "slug": "c600-trunnion-5-axis-machining-center",
+    "name": "CENNETIC C600 Trunnion 5-Axis Machining Center",
+    "model": "C600",
+    "type": "5axis",
+    "summary": "<p>The C600 is a trunnion-type 5-axis machining center built for simultaneous 5-face machining of complex parts. Its A/C rotary table suits aerospace, automotive and mold components that need tight angular accuracy in a single setup.</p>",
+    "body": "<p>The C600 is a trunnion-type 5-axis machining center built for simultaneous 5-face machining of complex parts. Its A/C rotary table suits aerospace, automotive and mold components that need tight angular accuracy in a single setup.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Travel Range</td><td>X-axis travel</td><td>mm</td><td>585mm</td></tr><tr><td>Y-axis travel</td><td>mm</td><td>780mm</td></tr><tr><td>Z-axis travel</td><td>mm</td><td>400mm</td></tr><tr><td>Rotary axis C</td><td>deg</td><td>0-360</td></tr><tr><td>Swing axis A</td><td>deg</td><td>±95</td></tr><tr><td rowspan=\"3\">Worktable</td><td>Clamping face (diameter)</td><td>mm</td><td>400</td></tr><tr><td>Max. Worktable Load</td><td>KG</td><td>300</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>47-457</td></tr><tr><td rowspan=\"5\">Spindle</td><td>Outer diameter</td><td>mm</td><td>150</td></tr><tr><td>Max. Spindle Speed</td><td>rpm</td><td>18000</td></tr><tr><td>Power Supply</td><td>V</td><td>380</td></tr><tr><td>Spindle Cooling</td><td>Oil cooling</td></tr><tr><td>Spindle taper</td><td>V</td><td>HSK-A63</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Roller-screw dia. / pitch</td><td>mm</td><td>X,Y,Z: Ф40mm/10mm</td></tr><tr><td>Guideway width</td><td>XYZ:45 ball</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Tool-holder spec</td><td>T</td><td>HSK-A63</td></tr><tr><td>Magazine Capacity</td><td>tools</td><td>24</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>75/150</td></tr><tr><td>Max. tool length</td><td>mm</td><td>220</td></tr><tr><td>Tool-to-tool change time</td><td>s</td><td>2.9</td></tr><tr><td rowspan=\"4\">Electrical</td><td>Spindle Motor Power</td><td>KW</td><td>15</td></tr><tr><td>X/Y-axis motor</td><td>KW</td><td>2.9 kW</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>2.9 kW</td></tr><tr><td>ACrotary table</td><td>DD (direct-drive)</td><td>RDD (direct-drive)S400</td></tr><tr><td rowspan=\"3\">Speed</td><td>X/Y/Z cutting feed rate range</td><td>mm/min</td><td>30000</td></tr><tr><td>Rotary axis C</td><td>deg/min / rpm</td><td>30</td></tr><tr><td>Swing axis A</td><td>deg/min / rpm</td><td>30</td></tr><tr><td rowspan=\"4\">Accuracy</td><td>Positioning accuracy (X/Y/Z)</td><td>mm</td><td>±0.01/300</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.006</td></tr><tr><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.005</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.004</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>220MA-5</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Footprint (L×W×H)</td><td>mm</td><td>4200*3150*3200</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 8000</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw (Ball screw4010)</li><li><strong>Bed</strong> — Linear Guideway — INA (Germany)Linear guideway (XYZ: 45(ball))</li><li><strong>Bed</strong> — Spindle — ABIGPM synchronous high-speed motor spindle (HSK-A63)</li><li><strong>Bed</strong> — ACrotary table — Dual-DD (direct-drive) high-torque motors (RDD (direct-drive)S400)</li><li><strong>Electrical</strong> — Feed-motor type — Rexroth (Germany) (XYZ: 2.9 kW)</li><li><strong>Electrical</strong> — Spindle — ABIGPM synchronous high-speed motor spindle (15 kW)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (White + black)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp (MWD-F3-282)</li><li><strong>Chip Conveyor</strong> — Screw chip conveyor — ChienKuan (80OD)</li><li><strong>Accessories</strong> — Tool holders / collets — HSKA63 (6 pcs each)</li><li><strong>Accessories</strong> — Tools (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand — HSKA63 (1 pcs)</li><li><strong>Accessories</strong> — Manual (USB e-document)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Packing — Wooden-crate packing (Wooden-crate packing)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>System</strong> — CNC: Syntec (220MA-5)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — center-mount servo magazine (A63Tool Holder24 tools)</li><li><strong>Accessories</strong> — Tool setter (1 pcs)</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "585mm"
+        ]
+      },
+      {
+        "name": "Y-axis travel",
+        "values": [
+          "780mm"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "400mm"
+        ]
+      },
+      {
+        "name": "Spindle speed",
+        "values": [
+          "18000"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "15"
+        ]
+      },
+      {
+        "name": "Tool magazine",
+        "values": [
+          "24"
+        ]
+      },
+      {
+        "name": "Positioning accuracy",
+        "values": [
+          "±0.01/300"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.005"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/c600-trunnion-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC C600 Trunnion 5-Axis Machining Center — view 1",
+        "width": 1600,
+        "height": 2155
+      },
+      {
+        "src": "/images/products/c600-trunnion-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC C600 Trunnion 5-Axis Machining Center — view 2",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/images/products/c600-trunnion-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC C600 Trunnion 5-Axis Machining Center — view 3",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/images/products/c600-trunnion-5-axis-machining-center/04.webp",
+        "alt": "CENNETIC C600 Trunnion 5-Axis Machining Center — view 4",
+        "width": 1600,
+        "height": 1600
+      },
+      {
+        "src": "/images/products/c600-trunnion-5-axis-machining-center/05.webp",
+        "alt": "CENNETIC C600 Trunnion 5-Axis Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/c600-trunnion-5-axis-machining-center/06.webp",
+        "alt": "CENNETIC C600 Trunnion 5-Axis Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20250719160728626.jpg",
+      "/uFile/116849/product/20250719163116286.jpg",
+      "/uFile/116849/product/20250719163116822.jpg",
+      "/uFile/116849/product/20250719163117369.jpg",
+      "/uFile/116849/product/2025610172444324.jpg",
+      "/uFile/116849/product/s2025830161944875.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_291_289.html",
+    "faq": []
+  },
+  {
+    "slug": "c400-trunnion-5-axis-machining-center",
+    "name": "CENNETIC C400 Heavy-Duty Trunnion 5-Axis Machining Center",
+    "model": "C400",
+    "type": "5axis",
+    "summary": "<p>The C400 is a high-rigidity trunnion 5-axis machining center designed for heavy cutting on tough materials, combining a robust cast bed with direct-drive rotary axes for accurate multi-axis profiling.</p>",
+    "body": "<p>The C400 is a high-rigidity trunnion 5-axis machining center designed for heavy cutting on tough materials, combining a robust cast bed with direct-drive rotary axes for accurate multi-axis profiling.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"6\">Travel Range</td><td>X-axis travel</td><td>mm</td><td>500mm</td></tr><tr><td>Y-axis travel</td><td>mm</td><td>625mm</td></tr><tr><td>Z-axis travel</td><td>mm</td><td>400mm</td></tr><tr><td>Rotary axis C</td><td>deg</td><td>0-360</td></tr><tr><td>Swing axis A</td><td>deg</td><td>±110</td></tr><tr><td>Max. workpiece swing dia.</td><td>mm</td><td>450</td></tr><tr><td rowspan=\"3\">Worktable</td><td>Clamping face (diameter)</td><td>mm</td><td>400</td></tr><tr><td>Max. Worktable Load</td><td>KG</td><td>300</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>45-445</td></tr><tr><td rowspan=\"5\">Spindle</td><td>Outer diameter</td><td>mm</td><td>150</td></tr><tr><td>Max. Spindle Speed</td><td>rpm</td><td>18000</td></tr><tr><td>Power Supply</td><td>V</td><td>380</td></tr><tr><td>Spindle Cooling</td><td>Oil cooling</td></tr><tr><td>Spindle taper</td><td>V</td><td>HSK-A63</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Roller-screw dia. / pitch</td><td>mm</td><td>X,Y,Z: Ф40mm/10mm</td></tr><tr><td>Guideway width</td><td>mm</td><td>XYZ:45 ball</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Tool-holder spec</td><td>T</td><td>HSK-A63</td></tr><tr><td>Magazine Capacity</td><td>tools</td><td>24</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>75/150</td></tr><tr><td>Max. tool length</td><td>mm</td><td>250</td></tr><tr><td>Tool-to-tool change time</td><td>s</td><td>2.9</td></tr><tr><td rowspan=\"4\">Electrical</td><td>Spindle Motor Power</td><td>KW</td><td>20</td></tr><tr><td>X/Y-axis motor</td><td>KW</td><td>2.9 kW</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>5.9 kW</td></tr><tr><td>ACrotary table</td><td>DD (direct-drive)</td><td>RDD (direct-drive)S400</td></tr><tr><td rowspan=\"3\">Speed</td><td>X/Y/Z cutting feed rate range</td><td>mm/min</td><td>24000</td></tr><tr><td>Rotary axis C</td><td>deg/min / rpm</td><td>30</td></tr><tr><td>Swing axis A</td><td>deg/min / rpm</td><td>30</td></tr><tr><td rowspan=\"5\">Accuracy</td><td>Positioning accuracy (X/Y/Z)</td><td>mm</td><td>±0.01/300</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.006</td></tr><tr><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.005</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.004</td></tr><tr><td>3-axis linear scales (Optodiode/Yuheng)</td><td>mm</td><td>±0.003</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>TaiwanSyntec</td><td>220MA-5</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Dimensions (L×W×H)</td><td>mm</td><td>2810X4100X3200</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 8000</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw (Ball screw4010)</li><li><strong>Bed</strong> — Linear Guideway — INA (Germany)Linear guideway (XYZ: RG45(ball))</li><li><strong>Bed</strong> — Spindle — ABIGPM synchronous high-speed motor spindle (HSK-A63)</li><li><strong>Bed</strong> — ACrotary table — Dual-DD (direct-drive) high-torque motors (RDD (direct-drive)S400)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (Ivory + dark grey)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Chip Conveyor</strong> — Screw chip conveyor — ChienKuan (Screw chip conveyor+外置Chain-type)</li><li><strong>Linear scale</strong> — Full closed-loop — X/Y/Z (Yuheng Optics)</li><li><strong>Accessories</strong> — Tool holders / collets — HSKA63 (6 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand — HSKA63 (1 pcs)</li><li><strong>Accessories</strong> — Manual (USB e-document)</li><li><strong>Accessories</strong> — Tool setter (1 pcs)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Packing — Wooden-crate packing (Wooden-crate packing)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>Electrical</strong> — Feed-motor type — TaiwanSyntec (XY: 2.9 kW Z:5.9 kW)</li><li><strong>System</strong> — CNC: Syntec (Taiwan) (220MA-5(15-in))</li><li><strong>Tool Change</strong> — Pneumatic tool changer — center-mount servo magazine (HSK A63Tool Holder 24 tools)</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "500mm"
+        ]
+      },
+      {
+        "name": "Y-axis travel",
+        "values": [
+          "625mm"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "400mm"
+        ]
+      },
+      {
+        "name": "Spindle speed",
+        "values": [
+          "18000"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "20"
+        ]
+      },
+      {
+        "name": "Tool magazine",
+        "values": [
+          "24"
+        ]
+      },
+      {
+        "name": "Positioning accuracy",
+        "values": [
+          "±0.01/300"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.005"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/c400-trunnion-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC C400 Heavy-Duty Trunnion 5-Axis Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/c400-trunnion-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC C400 Heavy-Duty Trunnion 5-Axis Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/c400-trunnion-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC C400 Heavy-Duty Trunnion 5-Axis Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2025610172444481.jpg",
+      "/uFile/116849/product/202571916756385.jpg",
+      "/uFile/116849/product/s2025830161944875.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_290_289.html",
+    "faq": []
+  },
+  {
+    "slug": "c300-5-trunnion-5-axis-machining-center",
+    "name": "CENNETIC C300-5 Trunnion 5-Axis Machining Center",
+    "model": "C300-5",
+    "type": "5axis",
+    "summary": "<p>The C300-5 is a compact trunnion 5-axis machining center for precise simultaneous 5-axis machining of small-to-medium parts, ideal for impellers, fittings and multi-face components.</p>",
+    "body": "<p>The C300-5 is a compact trunnion 5-axis machining center for precise simultaneous 5-axis machining of small-to-medium parts, ideal for impellers, fittings and multi-face components.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Travel Range</td><td>X-axis travel</td><td>mm</td><td>400mm</td></tr><tr><td>Y-axis travel</td><td>mm</td><td>520mm</td></tr><tr><td>Z-axis travel</td><td>mm</td><td>330mm</td></tr><tr><td>Rotary axis C</td><td>deg</td><td>0-360</td></tr><tr><td>Swing axis A</td><td>deg</td><td>-110/+30</td></tr><tr><td rowspan=\"4\">Worktable</td><td>Clamping face (diameter)</td><td>mm</td><td>320</td></tr><tr><td>Max. table swing dia.</td><td>mm</td><td>520</td></tr><tr><td>Max. Worktable Load</td><td>KG</td><td>100</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>115-445</td></tr><tr><td rowspan=\"5\">Spindle</td><td>Outer diameter</td><td>mm</td><td>125</td></tr><tr><td>Max. Spindle Speed</td><td>rpm</td><td>24000/30000</td></tr><tr><td>Power Supply</td><td>V</td><td>380</td></tr><tr><td>Spindle Cooling</td><td>Oil cooling</td></tr><tr><td>Spindle taper</td><td>V</td><td>BT30</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Ball-screw dia. / pitch</td><td>mm</td><td>X,Y,Z: Ф32mm/10mm</td></tr><tr><td>Guideway width</td><td>XYZ:35 roller</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Tool-holder spec</td><td>T</td><td>BT30</td></tr><tr><td>Magazine Capacity</td><td>tools</td><td>28</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>50</td></tr><tr><td>Max. tool length</td><td>mm</td><td>150</td></tr><tr><td>Tool-to-tool change time</td><td>s</td><td>2.9</td></tr><tr><td rowspan=\"4\">Electrical</td><td>Spindle Motor Power</td><td>KW</td><td>12.5</td></tr><tr><td>X/Y-axis motor</td><td>KW</td><td>2.4 kW</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>3.9 kW</td></tr><tr><td>ACrotary table</td><td>/</td><td>DTR320C-500</td></tr><tr><td rowspan=\"3\">Max. speed</td><td>X/Y/Z cutting feed rate range</td><td>mm/min</td><td>30000</td></tr><tr><td>Rotary axis C</td><td>rpm</td><td>350</td></tr><tr><td>Swing axis A</td><td>rpm</td><td>150</td></tr><tr><td rowspan=\"4\">Accuracy</td><td>Positioning accuracy (X/Y/Z)</td><td>mm</td><td>±0.01/300</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.006</td></tr><tr><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.005</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.004</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>220MA-5 PLUS</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Dimensions (L×W×H)</td><td>mm</td><td>2230*1650*2630</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 4500</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT250)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw (Ball screw3210)</li><li><strong>Bed</strong> — Linear Guideway — HIWIN (Taiwan)Linear guideway (XYZ: RG35(ball))</li><li><strong>Bed</strong> — Spindle — Ronghua (Jiangsu)PM synchronous high-speed motor spindle (BT30)</li><li><strong>Bed</strong> — ACrotary table — Lanlan TechDual-DD (direct-drive) high-torque motors (DTR320C-500)</li><li><strong>Electrical</strong> — Feed-motor type — TaiwanSyntecSyntec (XY:2.4 kW /Z:3.9 kW)</li><li><strong>Electrical</strong> — Spindle — PM synchronous high-speed motor spindle (12.5 kW)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp (MWD-F3-282)</li><li><strong>Accessories</strong> — Tool holders / collets — BBT30 (6 pcs each)</li><li><strong>Accessories</strong> — Tools (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand — BT30 (1 pcs)</li><li><strong>Accessories</strong> — Manual (USB e-document)</li><li><strong>Accessories</strong> — Tool setter (1 pcs)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Packing — Wooden-crate packing (Wooden-crate packing)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>System</strong> — CNC: Syntec (Taiwan) (220MA-5 PLUS)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — Chain-type servo magazine (BT30Tool Holder28 tools)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (Ivory + dark grey)</li><li><strong>Chip Conveyor</strong> — Chip Conveyor — ChienKuan</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "400mm"
+        ]
+      },
+      {
+        "name": "Y-axis travel",
+        "values": [
+          "520mm"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "330mm"
+        ]
+      },
+      {
+        "name": "Spindle speed",
+        "values": [
+          "24000/30000"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "12.5"
+        ]
+      },
+      {
+        "name": "Tool magazine",
+        "values": [
+          "28"
+        ]
+      },
+      {
+        "name": "Positioning accuracy",
+        "values": [
+          "±0.01/300"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.005"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/c300-5-trunnion-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC C300-5 Trunnion 5-Axis Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/c300-5-trunnion-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC C300-5 Trunnion 5-Axis Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/c300-5-trunnion-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC C300-5 Trunnion 5-Axis Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2025830161944875.png",
+      "/uFile/116849/product/202571916756385.jpg",
+      "/uFile/116849/product/2025610172444324.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_293_289.html",
+    "faq": []
+  },
+  {
+    "slug": "m5-5-vertical-5-axis-machining-center",
+    "name": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center",
+    "model": "M5-5",
+    "type": "5axis",
+    "summary": "<p>The M5-5 is a high-rigidity 5-axis machining center that adds continuous rotary axes to a vertical machining platform, delivering complex-contour capability without leaving the machine.</p>",
+    "body": "<p>The M5-5 is a high-rigidity 5-axis machining center that adds continuous rotary axes to a vertical machining platform, delivering complex-contour capability without leaving the machine.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Worktable</td><td>Max. workpiece swing dia.</td><td>mm</td><td>Ф550</td></tr><tr><td>Table (diameter)</td><td>mm</td><td>Ф400</td></tr><tr><td>Load capacity</td><td>KG</td><td>Tilt: 200 Horizontal260</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>170-720</td></tr><tr><td rowspan=\"8\">Travel Range</td><td>Machining Range</td><td>mm</td><td>650*400*500</td></tr><tr><td>Table travel – X-axis</td><td>mm</td><td>1000</td></tr><tr><td>Saddle travel – Y-axis</td><td>mm</td><td>520</td></tr><tr><td>Headstock travel – Z-axis</td><td>600</td></tr><tr><td>Spindle center to column guideway</td><td>582</td></tr><tr><td>Spindle center to faceplate (A at 90°)</td><td>273</td></tr><tr><td>Spindle center to faceplate (A at −90°)</td><td>deg</td><td>358</td></tr><tr><td>Spindle nose to faceplate</td><td>deg</td><td>562</td></tr><tr><td rowspan=\"5\">Spindle</td><td>Spindle drive type</td><td>-</td><td>Built-in Motor Spindle</td></tr><tr><td>Spindle</td><td>Taper bore (7:24)</td><td>HSK-A63</td></tr><tr><td>Speed range</td><td>r/min</td><td>0-18000</td></tr><tr><td>Rated output torque</td><td>N.m</td><td>39.6</td></tr><tr><td>Spindle rated power</td><td>kw</td><td>15 kW(efficiency88%)</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Roller-screw dia. / pitch</td><td>mm</td><td>X,Y,Z: 40/10 4040/1040mm/12mm</td></tr><tr><td>Guideway width</td><td>XYZ:45 roller</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Tool-holder spec</td><td>HSKA63</td></tr><tr><td>Magazine capacity (chain-type)</td><td>T</td><td>48/32</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>75/150</td></tr><tr><td>Max. tool length</td><td>mm</td><td>250</td></tr><tr><td>Tool-to-tool change time</td><td>s</td><td>2.9</td></tr><tr><td rowspan=\"5\">Electrical</td><td>Spindle Motor Power</td><td>KW</td><td>15 kW(efficiency88%</td></tr><tr><td>X-axis motor</td><td>KW</td><td>3.0 (98% efficiency)</td></tr><tr><td>Y-axis motor</td><td>KW</td><td>3.0 (98% efficiency)</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>3.0 (98% efficiency)</td></tr><tr><td>ACrotary table</td><td>DD (direct-drive)</td><td>RDD (direct-drive)S400</td></tr><tr><td rowspan=\"3\">Speed</td><td>X/Y/Z rapid traverse rate</td><td>mm/min</td><td>30000</td></tr><tr><td>Rotary axis C</td><td>mm/min</td><td>20000</td></tr><tr><td>Swing axis A</td><td>mm/min</td><td>10000</td></tr><tr><td rowspan=\"4\">Accuracy</td><td>Positioning accuracy (X/Y/Z)</td><td>mm</td><td></td></tr><tr><td>A-axis positioning accuracy</td><td>··</td><td>±5</td></tr><tr><td>C-axis positioning accuracy</td><td>``</td><td>±5</td></tr><tr><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.005</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>Lynuc N3E</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Dimensions (L×W×H)</td><td>mm</td><td>2850*2900*2600</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 7800</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw (Ball screw4012)</li><li><strong>Bed</strong> — Linear Guideway — INA (Germany)Linear guideway (XYZ: RG45(roller))</li><li><strong>Bed</strong> — Spindle — SufengHigh-speed motor spindle (HSKA63)</li><li><strong>Bed</strong> — ACrotary table — Haomai (RDD (direct-drive)S400)</li><li><strong>Electrical</strong> — Feed-motor type — Tuko (XYZ: 3.0 kW)</li><li><strong>Electrical</strong> — Spindle — SufengHigh-speed motor spindle (15 kW)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (White + black)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp</li><li><strong>Spindle oil cooling</strong> — Spindle oil cooling — Chuanguan (74/min)</li><li><strong>Accessories</strong> — Tool holders / collets — HSKA63 (6 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand — HSKA63 (1 pcs)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>System</strong> — CNC: RNC (Shanghai) (Lynuc N3E)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — Changzhou FangguanServo magazine (Chain-type48 tools)</li><li><strong>Accessories</strong> — Tool setter (1 pcs)</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "Spindle power",
+        "values": [
+          "15 kW(efficiency88%"
+        ]
+      },
+      {
+        "name": "Tool magazine",
+        "values": [
+          "48/32"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.005"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/m5-5-vertical-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center — view 1",
+        "width": 1600,
+        "height": 1048
+      },
+      {
+        "src": "/images/products/m5-5-vertical-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5-5-vertical-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5-5-vertical-5-axis-machining-center/04.webp",
+        "alt": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5-5-vertical-5-axis-machining-center/05.webp",
+        "alt": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5-5-vertical-5-axis-machining-center/06.webp",
+        "alt": "CENNETIC M5-5 High-Rigidity 5-Axis Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20231122091414201.jpg",
+      "/uFile/116849/product/2023424165327551.jpg",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023424165823751.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_285_290.html",
+    "faq": []
+  },
+  {
+    "slug": "z300-vertical-5-axis-machining-center",
+    "name": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center",
+    "model": "Z300",
+    "type": "5axis",
+    "summary": "<p>The Z300 is a high-rigidity 5-axis machining center for accurate multi-axis machining of structural and prismatic parts in a single setup.</p>",
+    "body": "<p>The Z300 is a high-rigidity 5-axis machining center for accurate multi-axis machining of structural and prismatic parts in a single setup.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Worktable</td><td>Max. machining dia.</td><td>mm</td><td>Φ390</td></tr><tr><td>Swing diameter</td><td>mm</td><td>Ф400</td></tr><tr><td>Faceplate diameter</td><td>mm</td><td>300</td></tr><tr><td>Workpiece load</td><td>KG</td><td>Vertical: 60 kg/Horizontal: 70 kg</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>170-720</td></tr><tr><td rowspan=\"5\">Travel Range</td><td>Machining Range</td><td>mm</td><td>500*500*400</td></tr><tr><td>Rotary axis C</td><td>deg</td><td>0-360</td></tr><tr><td>Swing axis A</td><td>deg</td><td>±110</td></tr><tr><td>Spindle nose to 5-axis faceplate</td><td>mm</td><td>120-520</td></tr><tr><td>Spindle center to rotary-table center (axis 90°)</td><td>mm</td><td>(200)-220</td></tr><tr><td rowspan=\"11\">Bed</td><td>Spindle</td><td>Spindle</td><td>Spindle</td></tr><tr><td>Direct-drive mechanical spindle</td><td>BT30</td></tr><tr><td>Speed range</td><td>r/min</td><td>0-20000</td></tr><tr><td>Screw / guideway</td><td>Screw / guideway</td><td>Screw / guideway</td></tr><tr><td>Roller-screw dia. / pitch</td><td>mm</td><td>X/Y: 30 , Z:35</td></tr><tr><td>Guideway width</td><td>mm</td><td>X,Y,Z:C3 grade3216</td></tr><tr><td>Tool Magazine</td><td>Tool Magazine</td><td>Tool Magazine</td></tr><tr><td>Magazine capacity (arm-type)</td><td>T</td><td>21/30</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>75/150</td></tr><tr><td>Max. tool diameter</td><td>mm</td><td>80</td></tr><tr><td>Tool-to-Tool Time</td><td>sec</td><td>1.2</td></tr><tr><td rowspan=\"3\">Electrical</td><td>Spindle Power</td><td>KW</td><td>5.5 kW/24000 rpm</td></tr><tr><td>X/Y-axis motor</td><td>KW</td><td>X/Y absolute 1.8 kW</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>Z absolute 2.9 kW braked motor</td></tr><tr><td rowspan=\"3\">clamping system</td><td>ACrotary table</td><td>DD (direct-drive)</td><td>HoZhuangDZDC300</td></tr><tr><td>C-axis</td><td>Pneumatic brake</td></tr><tr><td>A-axis</td><td>Pneumatic brake</td></tr><tr><td rowspan=\"3\">Feed rate / rapid traverse</td><td>X/Y/Z rapid traverse rate</td><td>mm/min</td><td>30000</td></tr><tr><td>Rotary axis C</td><td>rpm</td><td>200</td></tr><tr><td>Swing axis A</td><td>rpm</td><td>250</td></tr><tr><td rowspan=\"3\">Positioning Accuracy</td><td>X/Y/Z axis</td><td>mm</td><td>±0.005/300</td></tr><tr><td>Rotary axis C</td><td>‘’</td><td>±10(20)</td></tr><tr><td>Swing axis A</td><td>‘’</td><td>±10(20)</td></tr><tr><td rowspan=\"3\">Repeatability</td><td>X/Y/Z axis</td><td>mm</td><td>±0.005</td></tr><tr><td>Rotary axis C</td><td>‘’</td><td>±2(4)</td></tr><tr><td>Swing axis A</td><td>‘’</td><td>±2(4)</td></tr><tr><td rowspan=\"6\">Others</td><td>Working voltage &amp; frequency</td><td>V/Hz</td><td>380/50</td></tr><tr><td>Input power</td><td>KW</td><td>16</td></tr><tr><td>Control voltage</td><td>V</td><td>DC24</td></tr><tr><td>Working air pressure</td><td>bar</td><td>6</td></tr><tr><td>Machine Weight</td><td>kg</td><td>3500</td></tr><tr><td>Machine size (L×W×H)</td><td>mm</td><td>1900x2400x2600</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT250)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (HovalAuto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball screw (X,Y,Z:C3 grade3216)</li><li><strong>Bed</strong> — Linear Guideway — HIWIN (Taiwan)Ball guideway (X/Y: 30 , Z:35)</li><li><strong>Bed</strong> — Spindle — Dejiu (Taiwan)直联Spindle (BT30-20000rpm)</li><li><strong>Electrical</strong> — Feed-motor type — HNC (X/Y absolute 1.8 kW)</li><li><strong>Electrical</strong> — Feed-motor type — HNC (Z absolute 2.9 kW braked motor)</li><li><strong>Electrical</strong> — Spindle motor — HNC (5.5 kW/24000 rpm)</li><li><strong>System</strong> — CNC: HNC (Huazhong) (HNC-818D-12)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — SFG arm-typeArm-type magazine (BT30 30 toolsArm-type magazine)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Half enclosure (Ivory + dark grey)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp (LED)</li><li><strong>rotary table</strong> —  (HoZhuangDZDC300)</li><li><strong>Service</strong> — Freight — in-province</li><li><strong>Service</strong> — Packing — Simple packing</li><li><strong>Service</strong> — Warranty — 1 year</li><li><strong>Service</strong> — Training — on-site</li></ul><h3>Optional equipment</h3><ul><li><strong>Accessories</strong> — Tool holders & collets — BT30-ER32-70L (5 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 pcs)</li><li><strong>Accessories</strong> — Clamp plates (1 set)</li><li><strong>Accessories</strong> — Tool rack, wash gun, air gun (1 pcs each)</li><li><strong>Accessories</strong> — Manual (1 set)</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "Spindle power",
+        "values": [
+          "5.5 kW/24000 rpm"
+        ]
+      },
+      {
+        "name": "Tool magazine",
+        "values": [
+          "21/30"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/z300-vertical-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/z300-vertical-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/z300-vertical-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/z300-vertical-5-axis-machining-center/04.webp",
+        "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/z300-vertical-5-axis-machining-center/05.webp",
+        "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/z300-vertical-5-axis-machining-center/06.webp",
+        "alt": "CENNETIC Z300 High-Rigidity 5-Axis Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2024410143347615.png",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2023112291418532.jpg",
+      "/uFile/116849/product/2023424165327551.jpg",
+      "/uFile/116849/product/2023424165823751.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_287_290.html",
+    "faq": []
+  },
+  {
+    "slug": "fa200-compact-5-axis-machining-center",
+    "name": "CENNETIC FA200 Compact 5-Axis Machining Center",
+    "model": "FA200",
+    "type": "5axis",
+    "summary": "<p>The FA200 is a compact 5-axis machining center that brings simultaneous 5-axis machining to small parts and tight production floors.</p>",
+    "body": "<p>The FA200 is a compact 5-axis machining center that brings simultaneous 5-axis machining to small parts and tight production floors.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Ball Screw</td><td>Ball screw</td><td>LSK (Taiwan)Ball ScrewC3 ground ball screw2510</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)X,Y, Z:HG30</td></tr><tr><td>Spindle</td><td>High-speed motor spindle</td><td>HuadiaoBT30 24000rpm</td></tr><tr><td rowspan=\"5\">Electrical</td><td>Feed-motor type</td><td>X-axis servo</td><td>Yaskawa (Japan)750W</td></tr><tr><td>Feed-motor type</td><td>Y-axis servo</td><td>Yaskawa (Japan)750W(2 pcs)</td></tr><tr><td>Feed-motor type</td><td>Z-axis servo (braked)</td><td>Yaskawa (Japan)850W(brake)</td></tr><tr><td>Feed-motor type</td><td>A-axis</td><td>Yaskawa (Japan)850W</td></tr><tr><td>Feed-motor type</td><td>C-axis</td><td>Yaskawa (Japan)750W</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>5-axis system</td><td>TaiwanSyntec200MA-5/RNCN3 LYNUC</td></tr><tr><td rowspan=\"2\">Tool Change</td><td>Automatic tool changer (ATC)</td><td>Servo magazine</td><td>Shengde magazine</td></tr><tr><td>Automatic tool changer (ATC)</td><td>16 tools</td><td>Shengde magazine</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>Electric oiler</td><td>Hoval</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td><td>WOER LED</td></tr></tbody></table>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 2",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 3",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/04.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/05.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/06.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/07.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-compact-5-axis-machining-center/08.webp",
+        "alt": "CENNETIC FA200 Compact 5-Axis Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20210916204831401.jpg",
+      "/uFile/116849/product/20210916204834277.jpg",
+      "/uFile/116849/product/20210916205100623.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023424165823751.jpg",
+      "/uFile/116849/product/202191620550181.jpg",
+      "/uFile/116849/product/2023112291418532.jpg",
+      "/uFile/116849/product/2023424165327551.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_264_290.html",
+    "faq": []
+  },
+  {
+    "slug": "fa200-5-compact-5-axis-machining-center",
+    "name": "CENNETIC FA200-5 Compact 5-Axis Machining Center",
+    "model": "FA200-5",
+    "type": "5axis",
+    "summary": "<p>The FA200-5 is a compact 5-axis machining center for high-precision 5-sided and simultaneous 5-axis work on small components.</p>",
+    "body": "<p>The FA200-5 is a compact 5-axis machining center for high-precision 5-sided and simultaneous 5-axis work on small components.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Ball Screw</td><td>Ball screw</td><td>C3 ground ball screw3210</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)X: RG30；Y: RG45;Z:HG25</td></tr><tr><td>Spindle</td><td>High-speed motor spindle</td><td>ShunyuanISO20 4 kW/ 40000rpm</td></tr><tr><td rowspan=\"5\">Electrical</td><td>Feed-motor type</td><td>X-axis servo</td><td>Yaskawa (Japan)1.8 kW</td></tr><tr><td>Feed-motor type</td><td>Y-axis servo</td><td>Yaskawa (Japan)1.3 kW(2 pcs)</td></tr><tr><td>Feed-motor type</td><td>Z-axis servo (braked)</td><td>Yaskawa (Japan)850W(brake)(5 pcs)</td></tr><tr><td>Feed-motor type</td><td>A-axis</td><td>Yaskawa (Japan)1.3W</td></tr><tr><td>Feed-motor type</td><td>C-axis</td><td>Yaskawa (Japan)750W</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>5-axis system</td><td>Xinyan CNC</td></tr><tr><td rowspan=\"2\">Tool Change</td><td>Automatic tool changer (ATC)</td><td>9 tools</td><td>Shengde magazine</td></tr><tr><td>Automatic tool changer (ATC)</td><td>9 tools</td><td>Shengde magazine</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>Electric oiler</td><td>BAOTNBAOTN</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td><td>WOER LED</td></tr></tbody></table>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/02.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 2",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/03.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/04.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/05.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/06.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/fa200-5-compact-5-axis-machining-center/07.webp",
+        "alt": "CENNETIC FA200-5 Compact 5-Axis Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20210916205253470.jpg",
+      "/uFile/116849/product/20210916205256657.jpg",
+      "/uFile/116849/product/2023424165823751.jpg",
+      "/uFile/116849/product/2021916204942542.jpg",
+      "/uFile/116849/product/2024410143347202.png",
+      "/uFile/116849/product/2023424165327551.jpg",
+      "/uFile/116849/product/2023112291418532.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_265_290.html",
+    "faq": []
+  },
+  {
+    "slug": "fa400-gantry-5-axis-machining-center",
+    "name": "CENNETIC FA400 Gantry 5-Axis Machining Center",
+    "model": "FA400",
+    "type": "5axis",
+    "summary": "<p>The FA400 is a gantry-type 5-axis machining center for large, heavy multi-axis parts, using a rigid gantry frame to hold accuracy over a big working envelope.</p>",
+    "body": "<p>The FA400 is a gantry-type 5-axis machining center for large, heavy multi-axis parts, using a rigid gantry frame to hold accuracy over a big working envelope.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Travel Range</td><td>X-axis travel</td><td>mm</td><td>550mm</td></tr><tr><td>Y-axis travel</td><td>mm</td><td>750mm</td></tr><tr><td>Z-axis travel</td><td>mm</td><td>400mm</td></tr><tr><td>Rotary axis C</td><td>deg</td><td>0-360</td></tr><tr><td>Swing axis A</td><td>deg</td><td>±100</td></tr><tr><td rowspan=\"3\">Worktable</td><td>Clamping face (diameter)</td><td>mm</td><td>400</td></tr><tr><td>Max. Worktable Load</td><td>KG</td><td>300</td></tr><tr><td>Spindle nose to table (A at 0°)</td><td>mm</td><td>150-550</td></tr><tr><td rowspan=\"5\">Spindle</td><td>Outer diameter</td><td>mm</td><td>150</td></tr><tr><td>Max. Spindle Speed</td><td>rpm</td><td>18000</td></tr><tr><td>Power Supply</td><td>V</td><td>380</td></tr><tr><td>Spindle Cooling</td><td>Oil cooling</td></tr><tr><td>Spindle taper</td><td>V</td><td>SHKA63</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Roller-screw dia. / pitch</td><td>mm</td><td>X,Y,Z: Ф40mm/12mm</td></tr><tr><td>Guideway width</td><td>XYZ:45 roller</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Tool-holder spec</td><td>T</td><td>SHKA63</td></tr><tr><td>Magazine Capacity</td><td>tools</td><td>32</td></tr><tr><td>Max. tool dia. (adjacent tool/empty)</td><td>mm</td><td>75/150</td></tr><tr><td>Max. tool length</td><td>mm</td><td>250</td></tr><tr><td>Tool-to-tool change time</td><td>s</td><td>2.9</td></tr><tr><td rowspan=\"4\">Electrical</td><td>Spindle Motor Power</td><td>KW</td><td>15</td></tr><tr><td>X/Y-axis motor</td><td>KW</td><td>2.9 kW</td></tr><tr><td>Z-axis motor (braked)</td><td>KW</td><td>2.9 kW</td></tr><tr><td>ACrotary table</td><td>DD (direct-drive)</td><td>RDD (direct-drive)S400</td></tr><tr><td rowspan=\"3\">Speed</td><td>X/Y/Z cutting feed rate range</td><td>mm/min</td><td>30000</td></tr><tr><td>Rotary axis C</td><td>deg/min / rpm</td><td>30</td></tr><tr><td>Swing axis A</td><td>deg/min / rpm</td><td>30</td></tr><tr><td rowspan=\"4\">Accuracy</td><td>Positioning accuracy (X/Y/Z)</td><td>mm</td><td>±0.01/300</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.006</td></tr><tr><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.005</td></tr><tr><td>Rotary C / swing A axis</td><td>deg</td><td>±0.004</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>Lynch N3</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Dimensions (L×W×H)</td><td>mm</td><td>2750*2600*3050</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 8000</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw (Ball screw4012)</li><li><strong>Bed</strong> — Linear Guideway — INA (Germany)Linear guideway (XYZ: RG45(roller))</li><li><strong>Bed</strong> — Spindle — SufengHigh-speed motor spindle (HSKA63)</li><li><strong>Bed</strong> — ACrotary table — Haomai (RDD (direct-drive)S400)</li><li><strong>Electrical</strong> — Feed-motor type — Yaskawa (Japan) (XYZ: 2.9 kW)</li><li><strong>Electrical</strong> — Spindle — SufengHigh-speed motor spindle (15 kW)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (White + black)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp (MWD-F3-282)</li><li><strong>Chip Conveyor</strong> — Screw chip conveyor — ChienKuan (80OD)</li><li><strong>Accessories</strong> — Tool holders / collets — HSKA63 (6 pcs each)</li><li><strong>Accessories</strong> — Tools (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand — HSKA63 (1 pcs)</li><li><strong>Accessories</strong> — Manual (USB e-document)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Packing — Wooden-crate packing (Wooden-crate packing)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>System</strong> — CNC: Shanghai RNC (Lynch N3)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — FangguanServo magazine (Chain-type48 tools)</li><li><strong>Accessories</strong> — Tool setter (1 pcs)</li></ul>\n<h2>About this model</h2><p>This 5-Axis Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "550mm"
+        ]
+      },
+      {
+        "name": "Y-axis travel",
+        "values": [
+          "750mm"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "400mm"
+        ]
+      },
+      {
+        "name": "Spindle speed",
+        "values": [
+          "18000"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "15"
+        ]
+      },
+      {
+        "name": "Tool magazine",
+        "values": [
+          "32"
+        ]
+      },
+      {
+        "name": "Positioning accuracy",
+        "values": [
+          "±0.01/300"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.005"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "5-axis-machining-centers",
+        "name": "5-Axis Machining Centers",
+        "canonical": "/product-category/5-axis-machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/fa400-gantry-5-axis-machining-center/01.webp",
+        "alt": "CENNETIC FA400 Gantry 5-Axis Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2023112291459560.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_282_288.html",
+    "faq": []
+  },
+  {
+    "slug": "m6-vertical-machining-center",
+    "name": "CENNETIC M6 High-Rigidity Vertical Machining Center",
+    "model": "M6",
+    "type": "vertical",
+    "summary": "<p>The M6 is a high-rigidity vertical machining center for mold and general parts machining, built for stable finishing and heavy cuts.</p>",
+    "body": "<p>The M6 is a high-rigidity vertical machining center for mold and general parts machining, built for stable finishing and heavy cuts.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Bed</td><td>Cast Iron</td><td>HT300</td></tr><tr><td>Worktable Size</td><td>mm</td><td>1300*610</td></tr><tr><td>Max. load (evenly distributed)</td><td>kg</td><td>1200</td></tr><tr><td>T-slot size</td><td>Width–pitch–no.</td><td>18mm-125mm-5</td></tr><tr><td rowspan=\"3\">travel range</td><td>X-axis travel</td><td>mm</td><td>1100</td></tr><tr><td>Y-axis travel</td><td>mm</td><td>600</td></tr><tr><td>Z-axis travel</td><td>mm</td><td>510</td></tr><tr><td rowspan=\"5\">Spindle</td><td>Spindle drive type</td><td>-</td><td>Belt drive (direct)</td></tr><tr><td>Spindle center to column guideway</td><td>mm</td><td>686</td></tr><tr><td>Spindle nose to table surface</td><td>Min.–max.</td><td>150mm-660mm</td></tr><tr><td>Spindle</td><td>Taper bore (7:24)</td><td>OD150mm/BT40</td></tr><tr><td>Speed range</td><td>r/min</td><td>Belt: 0-8000/Direct: 0-12000</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Roller-screw dia. / pitch</td><td>mm</td><td>C3 ground ball screw4010</td></tr><tr><td>Guideway width</td><td>X,Yroller45/Z:55</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Max. tool length</td><td>mm</td><td>300</td></tr><tr><td>Max. tool weight</td><td>kg</td><td>7</td></tr><tr><td>Disc-type</td><td>tools</td><td>32</td></tr><tr><td>Max. tool disc diameter</td><td>mm</td><td>φ100</td></tr><tr><td>Disc-type</td><td>s</td><td>1.1-2.9</td></tr><tr><td rowspan=\"5\">Electrical</td><td>Spindle motor power</td><td>Rated / max. power</td><td>Belt: 11-15 kW/Direct: 7.5-11 kW</td></tr><tr><td>Output torque</td><td>Rated / max. torque</td><td>69.4/94.6</td></tr><tr><td>X-axis</td><td>KW/N.m</td><td>5.9 kW/28.4 N·m(SyntecAM28)</td></tr><tr><td>Y-axis</td><td>KW/N.m</td><td>5.9 kW/28.4 N·m(SyntecAM28)</td></tr><tr><td>Z-axis</td><td>KW/N.m</td><td>5.9 kW/28.4 N·m(SyntecAM28)with brake</td></tr><tr><td rowspan=\"2\">Speed</td><td>X/Y/Z rapid traverse rate</td><td>mm/min</td><td>30000</td></tr><tr><td>Cutting feed rate range</td><td>mm/min</td><td>1-10000</td></tr><tr><td rowspan=\"1\">Accuracy</td><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.003/300</td></tr><tr><td rowspan=\"1\"></td><td>Positioning accuracy (X/Y/Z)</td><td>±0.005/300</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>FANUC/Mitsubishi/Syntec</td><td>0i-MF5 Plus/M80/22MA</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Dimensions (L×W×H)</td><td>mm</td><td>3000*3288*3287</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 8000</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw/THK (Ball screw4010)</li><li><strong>Bed</strong> — Linear Guideway — HIWIN (Taiwan)/THKLinear guideway (XY: RG45(roller)/Z:55)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (Ivory + dark grey)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp</li><li><strong>Accessories</strong> — Tool holders / collets — BT40-ER32 (10 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand (1 pcs)</li><li><strong>Accessories</strong> — Manual (1 set)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>Bed</strong> — Spindle — DANQUAN (Taiwan) (OD150mm/BT40-8000 rpm)</li><li><strong>Electrical</strong> — Feed-motor type — FANUC/Mitsubishi/Syntec (5.9 kW/28.4 N·m(SyntecAM28))</li><li><strong>Electrical</strong> — Spindle — FANUC/Mitsubishi/Syntec (11-15 kW/69.4/94.6)</li><li><strong>System</strong> — CNC: FANUC / Mitsubishi / Syntec (0i-MF5 Plus/M80/22MA)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — OKADA (Taiwan) (Disc-typeBT40-32 tools)</li></ul>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "1100"
+        ]
+      },
+      {
+        "name": "Y-axis travel",
+        "values": [
+          "600"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "510"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "Belt: 11-15 kW/Direct: 7.5-11 kW"
+        ]
+      },
+      {
+        "name": "Positioning accuracy",
+        "values": [
+          "±0.005/300"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.003/300"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/m6-vertical-machining-center/01.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 1",
+        "width": 1183,
+        "height": 981
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/02.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/03.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/04.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/05.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/06.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/07.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m6-vertical-machining-center/08.webp",
+        "alt": "CENNETIC M6 High-Rigidity Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20260602141842923.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202252392018137.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_298_291.html",
+    "faq": []
+  },
+  {
+    "slug": "m5a-mold-vertical-machining-center",
+    "name": "CENNETIC M5A Mold Vertical Machining Center",
+    "model": "M5A",
+    "type": "vertical",
+    "summary": "<p>The M5A is a mold-oriented vertical machining center balancing high-speed contouring with the rigidity needed for die and mold work.</p>",
+    "body": "<p>The M5A is a mold-oriented vertical machining center balancing high-speed contouring with the rigidity needed for die and mold work.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Bed</td><td>Cast Iron</td><td>HT300</td></tr><tr><td>Worktable Size</td><td>mm</td><td>1200*530</td></tr><tr><td>Max. load (evenly distributed)</td><td>kg</td><td>1200</td></tr><tr><td>T-slot size</td><td>Width–pitch–no.</td><td>18mm-100mm-5</td></tr><tr><td rowspan=\"6\">Travel Range</td><td>X-axis travel</td><td>mm</td><td>1000</td></tr><tr><td>Y-axis travel</td><td>mm</td><td>520</td></tr><tr><td>Z-axis travel</td><td>mm</td><td>600</td></tr><tr><td>Table travel – X-axis</td><td>mm</td><td>1000</td></tr><tr><td>Saddle travel – Y-axis</td><td>mm</td><td>520</td></tr><tr><td>Spindle center to column guideway</td><td>mm</td><td>582</td></tr><tr><td rowspan=\"4\">Spindle</td><td>Spindle drive type</td><td>-</td><td>Belt drive (direct)</td></tr><tr><td>Spindle nose to table surface</td><td>Min.–max.</td><td>150mm-750mm</td></tr><tr><td>Spindle</td><td>Taper bore (7:24)</td><td>OD150mm/BT40</td></tr><tr><td>Speed range</td><td>r/min</td><td>Belt: 0-8000/Direct: 0-12000</td></tr><tr><td rowspan=\"2\">Screw / guideway</td><td>Roller-screw dia. / pitch</td><td>mm</td><td>C3 ground ball screw4010</td></tr><tr><td>Guideway width</td><td>X,Y,Zroller45</td></tr><tr><td rowspan=\"5\">Tool Magazine</td><td>Max. tool length</td><td>mm</td><td>300</td></tr><tr><td>Max. tool weight</td><td>kg</td><td>7</td></tr><tr><td>Disc-type</td><td>tools</td><td>32/24</td></tr><tr><td>Max. tool disc diameter</td><td>mm</td><td>φ100</td></tr><tr><td>Disc-type</td><td>s</td><td>1.1-2.9</td></tr><tr><td rowspan=\"5\">Electrical</td><td>Spindle motor power</td><td>Rated / max. power</td><td>Belt: 11-15 kW/Direct: 7.5-11 kW</td></tr><tr><td>Output torque</td><td>Rated / max. torque</td><td>Belt: 52.5-98.5 N·m/Direct: 35.8-70 N·m</td></tr><tr><td>X-axis</td><td>KW/N.m</td><td>3.0 /20</td></tr><tr><td>Y-axis</td><td>KW/N.m</td><td>3.0 /20</td></tr><tr><td>Z-axis</td><td>KW/N.m</td><td>3.0 /20</td></tr><tr><td rowspan=\"2\">Speed</td><td>X/Y/Z rapid traverse rate</td><td>mm/min</td><td>30000</td></tr><tr><td>Cutting feed rate range</td><td>mm/min</td><td>1-10000</td></tr><tr><td rowspan=\"1\">Accuracy</td><td>Repeatability (X/Y/Z)</td><td>mm</td><td>±0.005</td></tr><tr><td rowspan=\"4\">Others</td><td>CNC System</td><td>FANUC/Mitsubishi</td><td>0i-MF5 Plus/M80</td></tr><tr><td>Air Pressure</td><td>6 kgf/cm²</td></tr><tr><td>Dimensions (L×W×H)</td><td>mm</td><td>2850*2900*2600</td></tr><tr><td>Machine Weight</td><td>kg</td><td>approx. 7500</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Lubrication Circuit — Automatic (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball Screw (Ball screw4010)</li><li><strong>Bed</strong> — Linear Guideway — INA (Germany)Linear guideway (XYZ: RG45(roller))</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (White + black)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp</li><li><strong>Spindle oil cooling</strong> — Spindle oil cooling — Chuanguan</li><li><strong>Accessories</strong> — Tool holders / collets — BT40-ER32 (10 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 set)</li><li><strong>Accessories</strong> — Tool-holder stand (1 pcs)</li><li><strong>Accessories</strong> — Manual (1 set)</li><li><strong>Service</strong> — Freight — in/out province (in/out province)</li><li><strong>Service</strong> — Training — on-site (On-site)</li><li><strong>Service</strong> — Warranty — 1 year (1 yr)</li></ul><h3>Optional equipment</h3><ul><li><strong>Bed</strong> — Spindle — Suge (Taiwan)/丹铨 (OD150mm/BT40)</li><li><strong>Electrical</strong> — Feed-motor type — FANUC/Mitsubishi (XYZ: 3.0 kW/20 N·m)</li><li><strong>Electrical</strong> — Spindle — FANUC/Mitsubishi (11-15 kW/52.5-98.5 N·m)</li><li><strong>System</strong> — CNC: FANUC / Mitsubishi (0i-MF5 Plus/M80)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — OKADA (Taiwan) (Disc-typeBT40-24 tools)</li></ul>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "1000"
+        ]
+      },
+      {
+        "name": "Y-axis travel",
+        "values": [
+          "520"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "600"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "Belt: 11-15 kW/Direct: 7.5-11 kW"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.005"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/01.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 1",
+        "width": 1600,
+        "height": 1069
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/02.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/03.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/04.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/05.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/06.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/07.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/m5a-mold-vertical-machining-center/08.webp",
+        "alt": "CENNETIC M5A Mold Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20231122092421857.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2022126144741610.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_286_291.html",
+    "faq": []
+  },
+  {
+    "slug": "1160-heavy-cut-vertical-machining-center",
+    "name": "CENNETIC 1160 Heavy-Cut Vertical Machining Center",
+    "model": "1160",
+    "type": "vertical",
+    "summary": "<p>The 1160 is a heavy-cut vertical machining center for large steel parts and mold bases, with a stiff column and wide table.</p>",
+    "body": "<p>The 1160 is a heavy-cut vertical machining center for large steel parts and mold bases, with a stiff column and wide table.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Spindle</td><td>1</td><td>pcs</td><td>Taida</td></tr><tr><td rowspan=\"1\">Screw bearing</td><td>6</td><td>set</td><td>FAG/BSB</td></tr><tr><td rowspan=\"1\">Ball screw</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">Coupling</td><td>3</td><td>set</td><td>Japan</td></tr><tr><td rowspan=\"1\">Linear guideway</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">System</td><td>1</td><td>set</td><td>Mitsubishi (Japan)</td></tr><tr><td rowspan=\"1\">Motor</td><td>4</td><td>set</td><td>Mitsubishi (Japan)</td></tr><tr><td rowspan=\"1\">Lubrication system</td><td>1</td><td>set</td><td>Hoval</td></tr><tr><td rowspan=\"1\">Telescopic cover</td><td>3</td><td>set</td><td>Hongwang/Aipai'er</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/01.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/02.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/03.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/04.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/05.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/06.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/07.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1160-heavy-cut-vertical-machining-center/08.webp",
+        "alt": "CENNETIC 1160 Heavy-Cut Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2022126144740664.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202191620325842.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_277_291.html",
+    "faq": []
+  },
+  {
+    "slug": "1165l-heavy-duty-vertical-machining-center",
+    "name": "CENNETIC 1165L Heavy-Duty Vertical Machining Center",
+    "model": "1165L",
+    "type": "vertical",
+    "summary": "<p>The 1165L is a heavy-duty vertical machining center engineered for aggressive material removal on large workpieces.</p>",
+    "body": "<p>The 1165L is a heavy-duty vertical machining center engineered for aggressive material removal on large workpieces.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Spindle</td><td>1</td><td>pcs</td><td>DANQUAN (Taiwan)</td></tr><tr><td rowspan=\"1\">Screw bearing</td><td>6</td><td>set</td><td>NSK / FAG / THK bearings</td></tr><tr><td rowspan=\"1\">Ball screw</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">Coupling</td><td>3</td><td>set</td><td>Runde</td></tr><tr><td rowspan=\"1\">Linear guideway</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">Tool Magazine</td><td>1</td><td>set</td><td>SFG (Taiwan)</td></tr><tr><td rowspan=\"1\">System</td><td>1</td><td>set</td><td>Mitsubishi/Syntec</td></tr><tr><td rowspan=\"1\">Motor</td><td>4</td><td>set</td><td>Mitsubishi/Syntec</td></tr><tr><td rowspan=\"1\">Lubrication system</td><td>1</td><td>set</td><td>Hoval</td></tr><tr><td rowspan=\"1\">Telescopic cover</td><td>3</td><td>set</td><td>Hongwang/Aipai'er</td></tr></tbody></table>\n<h2>Equipment</h2>\n<h3>Standard equipment</h3><ul><li><strong>Bed</strong> — Cast Iron — Resin-sand casting (HT300)</li><li><strong>Bed</strong> — Lubrication Circuit — Hoval (Auto lubrication)</li><li><strong>Bed</strong> — Ball Screw — HIWIN (Taiwan)Ball screw (R40-12K5-FDC)</li><li><strong>Bed</strong> — Linear Guideway — HIWIN (Taiwan)Linear guideway (X,Y,Z: HGH45CA)</li><li><strong>Bed</strong> — Spindle — DANQUAN (Taiwan)Mechanical spindle (BT40(150)-12000rpm)</li><li><strong>Electrical</strong> — Feed-motor type — X,Yservo (3.9 kW AM18 18.6 N·m 4000 rpm)</li><li><strong>Electrical</strong> — Feed-motor type — Z-axis servo (braked) (5.9 kW AM28 28.4 N·m 4000 rpm)</li><li><strong>Electrical</strong> — Spindle motor — Servo spindle motor (7.5-11 kW/12000 rpm)</li><li><strong>System</strong> — CNC: Syntec (Taiwan) (22MA)</li><li><strong>Tool Change</strong> — Pneumatic tool changer — SFG (Taiwan) (BT40 24 tools)</li><li><strong>Appearance</strong> — Sheet-metal Enclosure — Full enclosure (Ivory + sky blue)</li><li><strong>Lubrication</strong> — Electric oiler — RGB electric oiler (Electric oiler)</li><li><strong>Lighting</strong> — Linear work lamp (LED)</li><li><strong>Service</strong> — Freight — out-of-province</li><li><strong>Service</strong> — Packing — Wooden-crate packing</li><li><strong>Service</strong> — Warranty — 2 years</li><li><strong>Service</strong> — Training — on-site</li></ul><h3>Optional equipment</h3><ul><li><strong>Accessories</strong> — Tool holders / collets — BT40-ER32 (10 pcs each)</li><li><strong>Accessories</strong> — Tool kit (1 pcs)</li><li><strong>Accessories</strong> — Tool rack (1 pcs)</li><li><strong>Accessories</strong> — Manual (1 set (incl. USB))</li></ul>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/01.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 1",
+        "width": 800,
+        "height": 724
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/02.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/03.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/04.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/05.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/06.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/07.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/1165l-heavy-duty-vertical-machining-center/08.webp",
+        "alt": "CENNETIC 1165L Heavy-Duty Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20221121192630052.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/202191016460738.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_274_291.html",
+    "faq": []
+  },
+  {
+    "slug": "v1160l-two-line-one-hard-vertical-machining-center",
+    "name": "CENNETIC V1160L High-Rigidity Vertical Machining Center",
+    "model": "V1160L",
+    "type": "vertical",
+    "summary": "<p>The V1160L is a high-rigidity vertical machining center with an enlarged guideway layout for stable heavy machining and accurate finishing.</p>",
+    "body": "<p>The V1160L is a high-rigidity vertical machining center with an enlarged guideway layout for stable heavy machining and accurate finishing.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"5\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Lubrication Circuit</td><td>Hoval</td><td>Auto lubrication</td></tr><tr><td>Ball Screw</td><td>HIWIN (Taiwan)Ball screw</td><td>C3 ground ball screw4012</td></tr><tr><td>Linear Guideway</td><td>HIWIN (Taiwan)Linear guideway</td><td>X/Z: MSR45/ Z: Box-way slideway</td></tr><tr><td>Spindle</td><td>TaizhengMechanical spindle</td><td>BBT50-8000rpm</td></tr><tr><td rowspan=\"3\">Electrical</td><td>Feed-motor type</td><td>TaiwanSyntecX,Yservo</td><td>5.9 kW 28.4 N·m 3000 rpm</td></tr><tr><td>Feed-motor type</td><td>TaiwanSyntecZ-axis servo (braked)</td><td>5.9 kW 28.4 N·m 3000 rpm</td></tr><tr><td>Spindle motor</td><td>Servo spindle motor</td><td>8000rpm/15-18.5 kW</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>TaiwanSyntec</td><td>22MA</td></tr><tr><td rowspan=\"1\">Tool Change</td><td>Pneumatic tool changer</td><td>Dejier (Taiwan)Disc-type</td><td>BT50 24 tools</td></tr><tr><td rowspan=\"1\">Appearance</td><td>Sheet-metal Enclosure</td><td>Full enclosure</td><td>Ivory + dark grey</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>RGB electric oiler</td><td>Electric oiler</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td></tr><tr><td rowspan=\"1\">Oil cooler</td><td></td><td>ChienKuan</td></tr><tr><td rowspan=\"5\">Accessories</td><td>Tool holders / collets</td><td>BT40-ER32</td><td>5 pcs each</td></tr><tr><td>Tools</td><td>1 set</td></tr><tr><td>Clamp plates</td><td>1 set</td></tr><tr><td>Tool rack</td><td>1 pcs</td></tr><tr><td>Manual</td><td>1 set (incl. USB manual)</td></tr><tr><td rowspan=\"4\">Service</td><td>Freight</td><td>in-province</td><td></td></tr><tr><td>Packing</td><td>Dedicated transport</td><td></td></tr><tr><td>Warranty</td><td>1 yr</td><td></td></tr><tr><td>Training</td><td>On-site</td><td></td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "Tool magazine",
+        "values": [
+          "1 set"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/01.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/02.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/03.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/04.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/05.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/06.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/07.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v1160l-two-line-one-hard-vertical-machining-center/08.webp",
+        "alt": "CENNETIC V1160L High-Rigidity Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2025526143812973.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/s202662142133833.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_289_291.html",
+    "faq": []
+  },
+  {
+    "slug": "v850l-vertical-machining-center",
+    "name": "CENNETIC V850L Vertical Machining Center",
+    "model": "V850L",
+    "type": "vertical",
+    "summary": "<p>The V850L is a versatile 850 mm-travel vertical machining center for general-purpose milling of prismatic parts.</p>",
+    "body": "<p>The V850L is a versatile 850 mm-travel vertical machining center for general-purpose milling of prismatic parts.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Spindle</td><td>1</td><td>pcs</td><td>JCT (Taiwan)</td></tr><tr><td rowspan=\"1\">Screw bearing</td><td>6</td><td>set</td><td>FAG/BSB</td></tr><tr><td rowspan=\"1\">Ball screw</td><td>3</td><td>set</td><td>HIWIN</td></tr><tr><td rowspan=\"1\">Coupling</td><td>3</td><td>set</td><td>Runde</td></tr><tr><td rowspan=\"1\">Linear guideway</td><td>3</td><td>set</td><td>HIWIN (Taiwan)</td></tr><tr><td rowspan=\"1\">Tool Magazine</td><td>1</td><td>set</td><td>OKADA (Taiwan)</td></tr><tr><td rowspan=\"1\">System</td><td>1</td><td>set</td><td>TaiwanSyntec/Mitsubishi</td></tr><tr><td rowspan=\"1\">Motor</td><td>4</td><td>set</td><td>JapanSyntec/Mitsubishi</td></tr><tr><td rowspan=\"1\">Lubrication system</td><td>1</td><td>set</td><td>Hoval</td></tr><tr><td rowspan=\"1\">Telescopic cover</td><td>3</td><td>set</td><td>Hongwang/Aipai'er</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/v850l-vertical-machining-center/01.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/02.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 2",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/03.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/04.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/05.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/06.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/07.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v850l-vertical-machining-center/08.webp",
+        "alt": "CENNETIC V850L Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20210916202549817.jpg",
+      "/uFile/116849/product/20210916202552868.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/s202662142133833.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_260_291.html",
+    "faq": []
+  },
+  {
+    "slug": "v856l-vertical-machining-center",
+    "name": "CENNETIC V856L Vertical Machining Center",
+    "model": "V856L",
+    "type": "vertical",
+    "summary": "<p>The V856L is a vertical machining center offering a wide table and strong Z-axis for mixed mold and part work.</p>",
+    "body": "<p>The V856L is a vertical machining center offering a wide table and strong Z-axis for mixed mold and part work.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Spindle</td><td>1</td><td>pcs</td><td>TaiwanDejiu</td></tr><tr><td rowspan=\"1\">Screw bearing</td><td>6</td><td>set</td><td>FAG/BSB</td></tr><tr><td rowspan=\"1\">Ball screw</td><td>3</td><td>set</td><td>PMI/HIWIN</td></tr><tr><td rowspan=\"1\">Coupling</td><td>3</td><td>set</td><td>Shanggong / Morgan</td></tr><tr><td rowspan=\"1\">Linear guideway</td><td>3</td><td>set</td><td>PMI/HIWIN</td></tr><tr><td rowspan=\"1\">Tool Magazine</td><td>1</td><td>set</td><td>SFG (Taiwan)</td></tr><tr><td rowspan=\"1\">System</td><td>1</td><td>set</td><td>Syntec/Mitsubishi</td></tr><tr><td rowspan=\"1\">Motor</td><td>4</td><td>set</td><td>Syntec/Mitsubishi</td></tr><tr><td rowspan=\"1\">Lubrication system</td><td>1</td><td>set</td><td>Hoval/BAOTN</td></tr><tr><td rowspan=\"1\">Telescopic cover</td><td>3</td><td>set</td><td>Aipai'er/Baoxiang</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/v856l-vertical-machining-center/01.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 1",
+        "width": 764,
+        "height": 760
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/02.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/03.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/04.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/05.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/06.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/07.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/v856l-vertical-machining-center/08.webp",
+        "alt": "CENNETIC V856L Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20220523092004194.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2021910152037711.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_270_291.html",
+    "faq": []
+  },
+  {
+    "slug": "w560l-dual-spindle-machining-center",
+    "name": "CENNETIC W560L High-Efficiency Machining Center",
+    "model": "W560L",
+    "type": "vertical",
+    "summary": "<p>The W560L is a high-efficiency, high-rigidity machining center designed for fast production cycles on steel and cast parts.</p>",
+    "body": "<p>The W560L is a high-efficiency, high-rigidity machining center designed for fast production cycles on steel and cast parts.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"4\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Ball Screw</td><td>HIWIN (Taiwan)Ball screw</td><td>X,Y, Z : C3 grade4012</td></tr><tr><td>Linear Guideway</td><td>HIWIN (Taiwan)Roller linear guideway</td><td>X,Y, Z:RG45</td></tr><tr><td>Spindle</td><td>DANQUAN (Taiwan)Mechanical spindle</td><td>center distance560/BT40-8000rpm(2 pcs)</td></tr><tr><td rowspan=\"3\">Electrical</td><td>Feed-motor type</td><td>TaiwanSyntec</td><td>X,Y:AM18-3.9 kW/18.6 N·m</td></tr><tr><td>Feed-motor type</td><td>TaiwanSyntecservobrake</td><td>Z:AM18-3.9 kW/18.6 N·m</td></tr><tr><td>Spindle motor</td><td>TaiwanSyntecSpindle motor</td><td>S08-M7.5-10B4-0A0 8000rpm/5.5-7.5 kW(2 pcs)</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>TaiwanSyntec</td><td>220MA-5milling controller</td></tr><tr><td rowspan=\"1\">Tool Change</td><td>Pneumatic tool changer</td><td>OKADA (Taiwan)Disc-type magazine</td><td>BT40 24 tools(2 pcs)</td></tr><tr><td rowspan=\"1\">Appearance</td><td>Sheet-metal Enclosure</td><td>Full enclosure</td><td>Ivory + dark grey</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>RGB electric oiler</td><td>Electric oiler</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td></tr><tr><td rowspan=\"1\">Chip Conveyor</td><td></td><td>ChienKuan</td><td>Chip conveyor (scraper)</td></tr><tr><td rowspan=\"5\">Accessories</td><td>Tool holders / collets</td><td>BT40-ER32-70L</td><td>per machine, each20 pcs</td></tr><tr><td>Tools</td><td>1 set</td></tr><tr><td>Clamp plates</td><td>1 set</td></tr><tr><td>Tool rack</td><td>1 pcs</td></tr><tr><td>Manual</td><td>incl. USB e-document</td></tr><tr><td rowspan=\"4\">Service</td><td>Freight</td><td>in/out province</td><td></td></tr><tr><td>Packing</td><td>Dedicated transport</td><td></td></tr><tr><td>Warranty</td><td>1 yr</td><td></td></tr><tr><td>Training</td><td>On-site</td><td></td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "Tool magazine",
+        "values": [
+          "1 set"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/01.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/02.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/03.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/04.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/05.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/06.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/07.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/w560l-dual-spindle-machining-center/08.webp",
+        "alt": "CENNETIC W560L High-Efficiency Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/202518195843878.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/s202662142133833.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_294_291.html",
+    "faq": []
+  },
+  {
+    "slug": "w650l-vertical-machining-center",
+    "name": "CENNETIC W650L Vertical Machining Center",
+    "model": "W650L",
+    "type": "vertical",
+    "summary": "<p>The W650L is a rigid vertical machining center for efficient roughing and finishing across a broad working range.</p>",
+    "body": "<p>The W650L is a rigid vertical machining center for efficient roughing and finishing across a broad working range.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"7\">Bed</td><td>Casting</td><td>Resin-sand casting</td><td>W650L</td></tr><tr><td>Lubrication Circuit</td><td>Automatic</td><td>BAOTNBTA-C2Poil pump</td></tr><tr><td>Ball Screw</td><td>Ball screw</td><td>X,Y,Z:C3 grade4012</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)X,Y,:RG35</td></tr><tr><td>Linear Guideway</td><td>Linear guideway</td><td>HIWIN (Taiwan)Z:RG45</td></tr><tr><td>Spindle</td><td>Belt-drive spindle</td><td>10000rpm</td></tr><tr><td>Spindle</td><td>Direct-drive spindle</td><td>12000rpm</td></tr><tr><td rowspan=\"4\">Electrical</td><td>Feed-motor type</td><td>Servo motor</td><td>X,Y:2.4 kW</td></tr><tr><td>Feed-motor type</td><td>Servo motor</td><td>Z:3.9 kW</td></tr><tr><td>Spindle motor</td><td>belt</td><td>7.5-11 kW</td></tr><tr><td>Spindle motor</td><td>Direct drive</td><td>5.5-7.5 kW</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>CNC System</td><td>22MA</td></tr><tr><td rowspan=\"2\">Tool Change</td><td>Pneumatic tool changer</td><td>Umbrella-type</td><td>BT40 16 tools</td></tr><tr><td>Pneumatic tool changer</td><td>Arm-type</td><td>BT40 24 tools</td></tr><tr><td rowspan=\"1\">Appearance</td><td>Sheet-metal Enclosure</td><td>Full enclosure</td><td>White + black + blue</td></tr><tr><td rowspan=\"1\">Lubrication</td><td>Electric oiler</td><td>Electric oiler</td></tr><tr><td rowspan=\"1\">Lighting</td><td>Linear work lamp</td><td>LED</td></tr><tr><td rowspan=\"3\">Accessories</td><td>Tool Holder</td><td>BT40</td><td>5 pcs</td></tr><tr><td>Collet</td><td>ER32</td><td>5 pcs</td></tr><tr><td>Tool kit</td><td>1 set</td></tr><tr><td rowspan=\"1\">Service</td><td>Warranty</td><td>1 yr</td><td>1 yr</td></tr></tbody></table>\n<h2>About this model</h2><p>This Vertical Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/w650l-vertical-machining-center/01.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/02.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 2",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/03.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 3",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/04.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 4",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/05.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 5",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/06.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 6",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/07.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 7",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/w650l-vertical-machining-center/08.webp",
+        "alt": "CENNETIC W650L Vertical Machining Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20210916195659414.jpg",
+      "/uFile/116849/product/20210916195705579.jpg",
+      "/uFile/116849/product/20210916195937368.jpg",
+      "/uFile/116849/product/20210916195949959.jpg",
+      "/uFile/116849/product/20210916195950240.jpg",
+      "/uFile/116849/product/20210916195950756.jpg",
+      "/uFile/116849/product/20210916195951256.jpg",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/2021916203854749.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_255_291.html",
+    "faq": []
+  },
+  {
+    "slug": "hmc450-horizontal-machining-center",
+    "name": "CENNETIC HMC450 Horizontal Machining Center",
+    "model": "HMC450",
+    "type": "horizontal",
+    "summary": "<p>The HMC450 is a horizontal machining center for multi-face box-type parts, using a rotary table to machine four sides plus top in fewer setups.</p>",
+    "body": "<p>The HMC450 is a horizontal machining center for multi-face box-type parts, using a rotary table to machine four sides plus top in fewer setups.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"6\">Bed</td><td>Cast Iron</td><td>Resin-sand casting</td><td>HT250</td></tr><tr><td>Lubrication Circuit</td><td>RGB Electric oiler</td><td>Hoval</td></tr><tr><td>Ball Screw</td><td>HIWIN (Taiwan)Ball screw</td><td>XYZ:3616</td></tr><tr><td>Linear Guideway</td><td>HIWIN (Taiwan)Linear guideway</td><td>XYZ: RG35(roller)</td></tr><tr><td>Spindle</td><td>DANQUAN (Taiwan)Mechanical spindle</td><td>BT40-150/8000rpm</td></tr><tr><td>rotary table</td><td>Lianshun rotary table</td><td>400mm×400mm(5-axis trunnion)</td></tr><tr><td rowspan=\"2\">Electrical</td><td>Feed-motor type</td><td>TaiwanSyntecfeed motor</td><td>XY:2.4 kW/11.5 N·m Z:3.9 kW/18.6 N·m C:1.7 kW/8 N·m</td></tr><tr><td>Spindle motor</td><td>TaiwanSyntecSpindle motor</td><td>15 kW/70-100 N·m</td></tr><tr><td rowspan=\"1\">System</td><td>CNC system</td><td>TaiwanSyntec</td><td>22MA</td></tr><tr><td rowspan=\"1\">Tool Change</td><td>Pneumatic tool changer</td><td>OKADA (Taiwan)Tool Magazine</td><td>disc 32 tools</td></tr><tr><td rowspan=\"1\">Appearance</td><td>Sheet-metal Enclosure</td><td>Full enclosure</td><td>Ivory + dark grey</td></tr><tr><td rowspan=\"1\">Filter</td><td></td><td>Combined filter</td><td>70 kg 22L/min</td></tr><tr><td rowspan=\"1\">Chip Conveyor</td><td></td><td>RuikeChip Conveyor</td><td>Chain-type</td></tr><tr><td rowspan=\"4\">Accessories</td><td>Tool holders &amp; collets</td><td>BT40-ER25</td><td>6 pcs each</td></tr><tr><td>Hook spanner</td><td>1 set</td></tr><tr><td>Tool-holder stand</td><td>BT40</td><td>1 pcs</td></tr><tr><td>Tool setter</td><td>1 pcs</td></tr><tr><td rowspan=\"3\">Service</td><td>Freight</td><td>out-of-province</td><td></td></tr><tr><td>Packing</td><td>Wooden-crate packing</td><td></td></tr><tr><td>Warranty</td><td>1 yr</td><td></td></tr></tbody></table>\n<h2>About this model</h2><p>This Horizontal Machining Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/hmc450-horizontal-machining-center/01.webp",
+        "alt": "CENNETIC HMC450 Horizontal Machining Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/hmc450-horizontal-machining-center/02.webp",
+        "alt": "CENNETIC HMC450 Horizontal Machining Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/hmc450-horizontal-machining-center/03.webp",
+        "alt": "CENNETIC HMC450 Horizontal Machining Center — view 3",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20221129152710925.jpg",
+      "/uFile/116849/product/202191621424203.jpg",
+      "/uFile/116849/product/2022530104016333.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_275_292.html",
+    "faq": []
+  },
+  {
+    "slug": "t850-high-speed-drilling-tapping-center",
+    "name": "CENNETIC T850 High-Speed Drilling & Tapping Center",
+    "model": "T850",
+    "type": "drilltap",
+    "summary": "<p>The T850 is a high-speed drilling and tapping center for fast hole-making and light milling on aluminum and small steel parts in high-volume production.</p>",
+    "body": "<p>The T850 is a high-speed drilling and tapping center for fast hole-making and light milling on aluminum and small steel parts in high-volume production.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Worktable Size</td><td>Worktable Size</td><td>mm</td><td>1000*500</td></tr><tr><td rowspan=\"3\">travel</td><td>Left–right (X)</td><td>mm</td><td>800</td></tr><tr><td>Front–back (Y)</td><td>mm</td><td>500</td></tr><tr><td>Up–down (Z)</td><td>mm</td><td>420</td></tr><tr><td rowspan=\"1\">Table T-slots – size</td><td>Table T-slots – size</td><td>mm</td><td>5-18-100</td></tr><tr><td rowspan=\"1\">Max. load</td><td>Max. load</td><td>kg</td><td>300</td></tr><tr><td rowspan=\"1\">Spindle nose to table</td><td>Spindle nose to table</td><td>mm</td><td>150-570</td></tr><tr><td rowspan=\"1\">Spindle center to machine front</td><td>Spindle center to machine front</td><td>mm</td><td>420</td></tr><tr><td rowspan=\"1\">Spindle Speed</td><td>Spindle Speed</td><td>rpm</td><td>50-20000</td></tr><tr><td rowspan=\"1\">Spindle taper</td><td>Spindle taper</td><td>#</td><td>BT-30</td></tr><tr><td rowspan=\"1\">Spindle Power</td><td>Spindle Power</td><td>kw</td><td>7.5</td></tr><tr><td rowspan=\"1\">X-axis rapid rate</td><td>X-axis rapid rate</td><td>mm/min</td><td>48000</td></tr><tr><td rowspan=\"1\">Y-axis rapid rate</td><td>Y-axis rapid rate</td><td>mm/min</td><td>48000</td></tr><tr><td rowspan=\"1\">Z-axis rapid rate</td><td>Z-axis rapid rate</td><td>mm/min</td><td>48000</td></tr><tr><td rowspan=\"1\">cutting rate</td><td>cutting rate</td><td>mm/min</td><td>1-20000</td></tr><tr><td rowspan=\"1\">Axis motor power (X/Y/Z)</td><td>Axis motor power (X/Y/Z)</td><td>kw</td><td>2.4/2.4/3.9</td></tr><tr><td rowspan=\"1\">Screw spec (X/Y/Z)</td><td>Screw spec (X/Y/Z)</td><td>mm</td><td>3616/P3</td></tr><tr><td rowspan=\"1\">Linear guideway(X/Y/Z)</td><td>Linear guideway(X/Y/Z)</td><td>PMI-MSA30(X/Y) 35mm(Z)</td></tr><tr><td rowspan=\"1\">Magazine type</td><td>Magazine type</td><td>SFG arm-type21 toolsarm-type</td></tr><tr><td rowspan=\"1\">Control System</td><td>Control System</td><td>Syntec22MA</td></tr><tr><td rowspan=\"1\">Tool weight</td><td>Tool weight</td><td>Kg</td><td>4</td></tr><tr><td rowspan=\"1\">Tool length</td><td>Tool length</td><td>mm</td><td>170</td></tr><tr><td rowspan=\"1\">Max. tool dia. (full/adjacent empty)</td><td>Max. tool dia. (full/adjacent empty)</td><td>mm</td><td>65/75</td></tr><tr><td rowspan=\"1\">Coolant tank capacity</td><td>Coolant tank capacity</td><td>L</td><td>100</td></tr><tr><td rowspan=\"1\">Air pressure requirement</td><td>Air pressure requirement</td><td>Kg/cm²</td><td>0.6MPA</td></tr><tr><td rowspan=\"1\">Total power consumption</td><td>Total power consumption</td><td>kw</td><td>14</td></tr><tr><td rowspan=\"1\">Positioning Accuracy</td><td>Positioning Accuracy</td><td>mm</td><td>±0.01/300</td></tr><tr><td rowspan=\"1\">Repeatability</td><td>Repeatability</td><td>mm</td><td>±0.01</td></tr><tr><td rowspan=\"1\">max. load</td><td>max. load</td><td>Kg</td><td>230</td></tr><tr><td rowspan=\"1\">Machine weight (approx.)</td><td>Machine weight (approx.)</td><td>Kg</td><td>3800</td></tr><tr><td rowspan=\"1\">Dimensions (L×W×H)</td><td>Dimensions (L×W×H)</td><td>mm</td><td>2500*2550*2700</td></tr></tbody></table>\n<h2>About this model</h2><p>This Drilling & Tapping Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "Spindle speed",
+        "values": [
+          "50-20000"
+        ]
+      },
+      {
+        "name": "Spindle power",
+        "values": [
+          "7.5"
+        ]
+      },
+      {
+        "name": "Positioning accuracy",
+        "values": [
+          "±0.01/300"
+        ]
+      },
+      {
+        "name": "Repeatability",
+        "values": [
+          "±0.01"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "machining-centers",
+        "name": "Machining Centers (Milling-Focused)",
+        "canonical": "/product-category/machining-centers/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/01.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/02.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/03.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/04.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/05.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/06.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/07.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/t850-high-speed-drilling-tapping-center/08.webp",
+        "alt": "CENNETIC T850 High-Speed Drilling & Tapping Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20233291655296.png",
+      "/uFile/116849/product/202191016460738.jpg",
+      "/uFile/116849/product/2022525163327889.jpg",
+      "/uFile/116849/product/202321617207901.png",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/202212115655668.png",
+      "/uFile/116849/product/2025813202657565.png",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/2021916203854749.jpg",
+      "/uFile/116849/product/2021910164419136.jpg",
+      "/uFile/116849/product/20221230165942805.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202252392018137.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_281_272.html",
+    "faq": []
+  },
+  {
+    "slug": "sck52-400-cnc-lathe-turn-mill",
+    "name": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center",
+    "model": "SCK52-400",
+    "type": "lathe",
+    "summary": "<p>The SCK52-400 is a CNC lathe with turn-mill capability for combined turning and milling of rotational parts in one chucking.</p>",
+    "body": "<p>The SCK52-400 is a CNC lathe with turn-mill capability for combined turning and milling of rotational parts in one chucking.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Max. swing over bed</td><td>Max. swing over bed</td><td>mm</td><td>Φ420</td></tr><tr><td rowspan=\"1\">Max. cutting length</td><td>Max. cutting length</td><td>mm</td><td>300</td></tr><tr><td rowspan=\"1\">Max. swing over carriage</td><td>Max. swing over carriage</td><td>mm</td><td>Φ200</td></tr><tr><td rowspan=\"1\">Spindle head type</td><td>Spindle head type</td><td>A2-6</td></tr><tr><td rowspan=\"1\">Spindle bore diameter</td><td>Spindle bore diameter</td><td>mm</td><td>Φ66(Φ79)</td></tr><tr><td rowspan=\"1\">Max. bar capacity</td><td>Max. bar capacity</td><td>mm</td><td>Φ52(Φ65)</td></tr><tr><td rowspan=\"1\">Spindle speed range</td><td>Spindle speed range</td><td>r/min</td><td>0-4500</td></tr><tr><td rowspan=\"1\">Main-motor power</td><td>Main-motor power</td><td>kw</td><td>11 kW</td></tr><tr><td rowspan=\"1\">Chuck Diameter</td><td>Chuck Diameter</td><td>inch</td><td>8”</td></tr><tr><td rowspan=\"1\">X/Z-axis rapid rate</td><td>X/Z-axis rapid rate</td><td>m/min</td><td>24/26</td></tr><tr><td rowspan=\"1\">X-axis travel</td><td>X-axis travel</td><td>mm</td><td>250</td></tr><tr><td rowspan=\"1\">Z-axis travel</td><td>Z-axis travel</td><td>mm</td><td>350</td></tr><tr><td rowspan=\"1\">Tailstock body travel</td><td>Tailstock body travel</td><td>mm</td><td>—</td></tr><tr><td rowspan=\"1\">Tailstock quill travel</td><td>Tailstock quill travel</td><td>mm</td><td>—</td></tr><tr><td rowspan=\"1\">Turret type</td><td>Turret type</td><td>Servo turret</td><td>100</td></tr><tr><td rowspan=\"1\">Machining accuracy</td><td>Machining accuracy</td><td>IT6</td></tr><tr><td rowspan=\"2\">Positioning Accuracy</td><td>X-axis</td><td>mm</td><td>0.005</td></tr><tr><td>Z-axis</td><td>mm</td><td>0.005</td></tr><tr><td rowspan=\"2\">Repeatability</td><td>X-axis</td><td>mm</td><td>0.002</td></tr><tr><td>Z-axis</td><td>mm</td><td>0.002</td></tr><tr><td rowspan=\"1\">Machine Weight</td><td>main unit</td><td>kg</td><td>3300</td></tr><tr><td rowspan=\"1\">Machine outline</td><td>L x W x H</td><td>mm</td><td>2280x1680x1730</td></tr></tbody></table>\n<h2>About this model</h2><p>This CNC Lathe / Turn-Mill Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "250"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "350"
+        ]
+      },
+      {
+        "name": "Spindle speed",
+        "values": [
+          "0-4500"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "cnc-lathes",
+        "name": "CNC Lathes, Swiss-Type & Automatic Lathes",
+        "canonical": "/product-category/cnc-lathes/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/01.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 1",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/02.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 2",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/03.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 3",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/04.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 4",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/05.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 5",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/06.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 6",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/07.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 7",
+        "width": 400,
+        "height": 400
+      },
+      {
+        "src": "/images/products/sck52-400-cnc-lathe-turn-mill/08.webp",
+        "alt": "CENNETIC SCK52-400 CNC Lathe / Turn-Mill Center — view 8",
+        "width": 400,
+        "height": 400
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/2025813202657386.png",
+      "/uFile/116849/product/202518195843409.jpg",
+      "/uFile/116849/product/2021916204337456.jpg",
+      "/uFile/116849/product/2021910152037711.jpg",
+      "/uFile/116849/product/202321617207901.png",
+      "/uFile/116849/product/2022521163343534.png",
+      "/uFile/116849/product/202191620325842.jpg",
+      "/uFile/116849/product/2021916205930107.jpg",
+      "/uFile/116849/product/s202662142133833.png",
+      "/uFile/116849/product/2022126144741610.jpg",
+      "/uFile/116849/product/2022122292830116.jpg",
+      "/uFile/116849/product/20221121192637289.png",
+      "/uFile/116849/product/2025526143813743.jpg",
+      "/uFile/116849/product/202252392018137.png",
+      "/uFile/116849/product/202212115655668.png",
+      "/uFile/116849/product/2023112292425448.jpg",
+      "/uFile/116849/product/2022530104016333.png",
+      "/uFile/116849/product/20221129152711835.jpg",
+      "/uFile/116849/product/20221230165942805.jpg",
+      "/uFile/116849/product/202252316360579.png",
+      "/uFile/116849/product/202191016460738.jpg"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_292_272.html",
+    "faq": []
+  },
+  {
+    "slug": "sck-46-52l-cnc-lathe",
+    "name": "CENNETIC SCK-46/52L CNC Lathe",
+    "model": "SCK-46/52L",
+    "type": "lathe",
+    "summary": "<p>The SCK-46/52L is a compact CNC lathe for efficient turning of small-to-medium rotational parts.</p>",
+    "body": "<p>The SCK-46/52L is a compact CNC lathe for efficient turning of small-to-medium rotational parts.</p>\n<h2>Technical specifications</h2>\n<table><thead><tr><th>Item</th><th>Unit</th><th>Spec</th></tr></thead><tbody><tr><td rowspan=\"1\">Max. swing over bed</td><td>Max. swing over bed</td><td>mm</td><td>Φ420</td></tr><tr><td rowspan=\"1\">Max. cutting length</td><td>Max. cutting length</td><td>mm</td><td>300</td></tr><tr><td rowspan=\"1\">Max. swing over carriage</td><td>Max. swing over carriage</td><td>mm</td><td>Φ200</td></tr><tr><td rowspan=\"1\">Spindle head type</td><td>Spindle head type</td><td>A2-6</td></tr><tr><td rowspan=\"1\">Spindle bore diameter</td><td>Spindle bore diameter</td><td>mm</td><td>Φ66(Φ79)</td></tr><tr><td rowspan=\"1\">Max. bar capacity</td><td>Max. bar capacity</td><td>mm</td><td>Φ52(Φ65)</td></tr><tr><td rowspan=\"1\">Spindle speed range</td><td>Spindle speed range</td><td>r/min</td><td>0-4500</td></tr><tr><td rowspan=\"1\">Main-motor power</td><td>Main-motor power</td><td>kw</td><td>11 kW</td></tr><tr><td rowspan=\"1\">Chuck Diameter</td><td>Chuck Diameter</td><td>inch</td><td>8”</td></tr><tr><td rowspan=\"1\">X/Z-axis rapid rate</td><td>X/Z-axis rapid rate</td><td>m/min</td><td>24/26</td></tr><tr><td rowspan=\"1\">X-axis travel</td><td>X-axis travel</td><td>mm</td><td>250</td></tr><tr><td rowspan=\"1\">Z-axis travel</td><td>Z-axis travel</td><td>mm</td><td>350</td></tr><tr><td rowspan=\"1\">Tailstock body travel</td><td>Tailstock body travel</td><td>mm</td><td>—</td></tr><tr><td rowspan=\"1\">Tailstock quill travel</td><td>Tailstock quill travel</td><td>mm</td><td>—</td></tr><tr><td rowspan=\"1\">Turret type</td><td>Turret type</td><td>Servo turret</td><td>100</td></tr><tr><td rowspan=\"1\">Machining accuracy</td><td>Machining accuracy</td><td>IT6</td></tr><tr><td rowspan=\"2\">Positioning Accuracy</td><td>X-axis</td><td>mm</td><td>0.005</td></tr><tr><td>Z-axis</td><td>mm</td><td>0.005</td></tr><tr><td rowspan=\"2\">Repeatability</td><td>X-axis</td><td>mm</td><td>0.002</td></tr><tr><td>Z-axis</td><td>mm</td><td>0.002</td></tr><tr><td rowspan=\"1\">Machine Weight</td><td>main unit</td><td>kg</td><td>3300</td></tr><tr><td rowspan=\"1\">Machine outline</td><td>L x W x H</td><td>mm</td><td>2280x1680x1730</td></tr></tbody></table>\n<h2>About this model</h2><p>This CNC Lathe / Turn-Mill Center is manufactured by our partner factory in Dongguan, China, and supplied direct by CENNETIC with factory-direct pricing, a standard warranty and remote setup support. Specifications are representative and can be confirmed against your machining requirements before order.</p>",
+    "specs": [
+      {
+        "name": "X-axis travel",
+        "values": [
+          "250"
+        ]
+      },
+      {
+        "name": "Z-axis travel",
+        "values": [
+          "350"
+        ]
+      },
+      {
+        "name": "Spindle speed",
+        "values": [
+          "0-4500"
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "slug": "cnc-lathes",
+        "name": "CNC Lathes, Swiss-Type & Automatic Lathes",
+        "canonical": "/product-category/cnc-lathes/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/images/products/sck-46-52l-cnc-lathe/01.webp",
+        "alt": "CENNETIC SCK-46/52L CNC Lathe — view 1",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "sourceImages": [
+      "/uFile/116849/product/20251113135714900.png"
+    ],
+    "url": "https://www.sharpecnc.com/product_view_296_296.html",
+    "faq": []
+  }
+]
