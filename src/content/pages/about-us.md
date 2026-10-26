@@ -3,7 +3,7 @@ title: About Us
 heading: About Us
 slug: about-us
 canonical: /about-us/
-description: "CENNETIC\_is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source"
+description: "CENNETIC\_is a premier manufacturer and innovator of high-precision CNC machine tools in China. Unlike traditional trading companies, we are a true source."
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
 date: '2025-12-29T14:41:22'
 lastmod: '2026-05-17T14:53:14'
