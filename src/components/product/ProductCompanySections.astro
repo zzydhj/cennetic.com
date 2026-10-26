@@ -1,20 +1,18 @@
 ---
 /**
- * 产品详情页 · 公司通版内容区(单一事实源)。
+ * 产品详情页 · 公司通版内容区(单一事实源,固化在代码里)。
  *
- * 来源:迁移源站(qfcncmachine.com,即 CENNETIC 品牌升级前的原站)产品页
- * 「Full Specifications」以下的所有区块 —— 这些与公司具体型号无关,是工厂自我介绍,
- * 因此做成一个共享组件,构建时渲染进每个产品页,而不是复制进 21+ 条 products.body:
- *   好处:一处维护、DB 不膨胀、构建只是多渲染一段静态标记(零运行时、零额外请求)。
+ * 运营在后台只能编辑「产品参数」(specs / body / summary / images);
+ * 这一段与具体型号无关的工厂自我介绍不属于任何 products.body,而是构建时
+ * 渲染进每个产品页的共享组件 —— 一处维护、DB 不膨胀、零运行时。
  *
- * 品牌:源站文案里的 QIAOFENG 一律改挂 CENNETIC(与整站品牌升级一致);
- * 联系方式全部走本站(site.json 的 WhatsApp / 联系页),不残留源站号码与链接。
- * 数字口径与本站 About 对齐(不新造与站内冲突的数据)。
- * 样式复用 page.css 的 pg-* 全局层 + 本组件作用域内的少量图片卡/图集样式。
+ * 版式按迁移源站(qfcncmachine.com,即 CENNETIC 品牌升级前的原站)产品页
+ * 「Full Specifications」以下的真实设计 1:1 复刻:背景图横幅 + 深色分组标题条 +
+ * 图左文右/上图下文混合卡片 + 车间大图带字幕 + 居中检测协议 + Bento 客户墙 + 红色 CTA。
+ * 品牌一律改挂 CENNETIC(用本站 --color-brand,不残留乔锋红/号码/链接)。
  */
 import { siteConfig } from "@lib/catalog.ts";
 import { waLink } from "@lib/whatsapp.ts";
-import "../../styles/page.css";
 
 const { productName } = Astro.props as { productName: string };
 
@@ -53,32 +51,34 @@ const promises: Array<[string, string]> = [
         "Tailored machine configurations, sheet metal design & brand identity",
     ],
 ];
-const badges = [
-    "CE Certified",
-    "ISO 9001",
-    "15+ Years Experience",
-    "Factory Direct",
+type Badge = { kind: "ce" | "shield" | "factory"; label: string };
+const badges: Badge[] = [
+    { kind: "ce", label: "CE / ISO 9001" },
+    { kind: "shield", label: "15+ Years Experience" },
+    { kind: "factory", label: "Factory Direct" },
 ];
 
-// 产品系列 —— 四组 12 类(图 + 标题 + Best for + 三条要点)
-interface RangeCard {
+// 产品系列 —— 4 组。h = 两列横向卡(图左文右);v = 三列竖向卡(上图下文)
+interface Card {
     img: string;
     title: string;
     best: string;
     points: string[];
 }
-interface RangeGroup {
-    label: string;
-    cards: RangeCard[];
+interface Group {
+    title: string;
+    layout: "h" | "v";
+    cards: Card[];
 }
-const range: RangeGroup[] = [
+const groups: Group[] = [
     {
-        label: "CNC Machining Centers (Milling Solutions)",
+        title: "CNC Machining Centers (Milling Solutions)",
+        layout: "h",
         cards: [
             {
                 img: "vmc.webp",
                 title: "VMC (Vertical Machining Center)",
-                best: "Complex surfaces & high-precision parts",
+                best: "Complex surfaces & high-precision parts.",
                 points: [
                     "Flexible 3+2 axis configuration.",
                     "Vertical spindle for excellent cutting rigidity.",
@@ -88,7 +88,7 @@ const range: RangeGroup[] = [
             {
                 img: "hmc.webp",
                 title: "HMC (Horizontal Machining Center)",
-                best: "Box-type parts & mass production",
+                best: "Box-type parts & mass production.",
                 points: [
                     "Horizontal spindle design.",
                     "Outstanding chip evacuation performance.",
@@ -98,7 +98,7 @@ const range: RangeGroup[] = [
             {
                 img: "gmc.webp",
                 title: "GMC (Gantry Machining Center)",
-                best: "Heavy & oversized workpieces",
+                best: "Heavy & oversized workpieces.",
                 points: [
                     "Ultra-large span bridge structure.",
                     "Exceptional stability and vibration absorption.",
@@ -108,7 +108,7 @@ const range: RangeGroup[] = [
             {
                 img: "5axis.webp",
                 title: "5-Axis Machining Center",
-                best: "Arbitrary complex spatial surfaces",
+                best: "Arbitrary complex spatial surfaces.",
                 points: [
                     "Ultimate precision and surface finish.",
                     "Complete multi-sided machining in a single setup.",
@@ -118,12 +118,13 @@ const range: RangeGroup[] = [
         ],
     },
     {
-        label: "CNC Lathes (Turning Solutions)",
+        title: "CNC Lathes (Turning Solutions)",
+        layout: "v",
         cards: [
             {
                 img: "turn-mill.webp",
                 title: "Turn-Mill Center",
-                best: "Multi-process complex components",
+                best: "Multi-process complex components.",
                 points: [
                     "Integrates turning and milling capabilities.",
                     "One setup for complete machining.",
@@ -133,7 +134,7 @@ const range: RangeGroup[] = [
             {
                 img: "gang-tool-lathe.webp",
                 title: "Gang Tool Lathe",
-                best: "Mass production of small/micro parts",
+                best: "Mass production of small/micro parts.",
                 points: [
                     "Lightning-fast tool change mechanism.",
                     "Compact footprint saves factory space.",
@@ -143,7 +144,7 @@ const range: RangeGroup[] = [
             {
                 img: "slant-bed-lathe.webp",
                 title: "Slant Bed CNC Lathe",
-                best: "Medium to large precision parts",
+                best: "Medium to large precision parts.",
                 points: [
                     "45°/60° slant bed design.",
                     "Perfect chip flow and ergonomic access.",
@@ -153,12 +154,13 @@ const range: RangeGroup[] = [
         ],
     },
     {
-        label: "Precision Grinding & EDM Equipment",
+        title: "Precision Grinding & EDM Equipment",
+        layout: "h",
         cards: [
             {
                 img: "grinding.webp",
                 title: "Milling & Grinding Machines",
-                best: "High-precision surface treatments",
+                best: "High-precision surface treatments.",
                 points: [
                     "Covers universal milling to precision grinding.",
                     "Ensures superior surface flatness and finish.",
@@ -168,7 +170,7 @@ const range: RangeGroup[] = [
             {
                 img: "edm.webp",
                 title: "EDM & WEDM Series",
-                best: "Ultra-hard materials & complex cavities",
+                best: "Ultra-hard materials & complex cavities.",
                 points: [
                     "High-precision electrical discharge machining.",
                     "Perfect for precise contour cutting.",
@@ -178,12 +180,13 @@ const range: RangeGroup[] = [
         ],
     },
     {
-        label: "Precision Measurement Equipment (Metrology Solutions)",
+        title: "Precision Measurement Equipment (Metrology Solutions)",
+        layout: "v",
         cards: [
             {
                 img: "vmm.webp",
                 title: "Vision Measurement Machine (VMM)",
-                best: "High-precision 2D/2.5D dimensional inspection",
+                best: "High-precision 2D/2.5D dimensional inspection.",
                 points: [
                     "Advanced optical system for accurate non-contact measurement.",
                     "Automated edge detection and programmable lighting.",
@@ -193,7 +196,7 @@ const range: RangeGroup[] = [
             {
                 img: "instant-vision.webp",
                 title: "Instant Vision Measuring System",
-                best: "Rapid batch inspection of small and micro parts",
+                best: "Rapid batch inspection of small and micro parts.",
                 points: [
                     "One-shot measurement of multiple dimensions in seconds.",
                     "Double telecentric lens eliminates distortion and operator errors.",
@@ -203,7 +206,7 @@ const range: RangeGroup[] = [
             {
                 img: "cmm.webp",
                 title: "Coordinate Measuring Machine (CMM)",
-                best: "Complex 3D spatial geometry and GD&T inspection",
+                best: "Complex 3D spatial geometry and GD&T inspection.",
                 points: [
                     "High-precision tactile probing for full 3D analysis.",
                     "Ultra-stable granite structure ensures measurement accuracy.",
@@ -214,24 +217,24 @@ const range: RangeGroup[] = [
     },
 ];
 
-// 图集
-const workshop = [
+// 车间:3 张全幅大图(带字幕)+ 6 张细节图(两列)
+const workshopBig = [
     {
         img: "vertical-machining-center-workshop.webp",
-        alt: "Vertical machining center on the assembly floor",
+        cap: "Vertical Machining Center",
     },
     {
         img: "turret-milling-machine-workshop.webp",
-        alt: "Turret milling machine assembly",
+        cap: "Turret Milling Machine",
     },
-    { img: "machining-center-workshop.webp", alt: "Machining center workshop" },
-    { img: "workshop-detail-1.webp", alt: "Factory workshop detail" },
-    { img: "workshop-detail-2.webp", alt: "Factory workshop detail" },
-    { img: "workshop-detail-3.webp", alt: "Factory workshop detail" },
-    { img: "workshop-detail-4.webp", alt: "Factory workshop detail" },
-    { img: "workshop-detail-5.webp", alt: "Factory workshop detail" },
-    { img: "workshop-detail-6.webp", alt: "Factory workshop detail" },
+    { img: "machining-center-workshop.webp", cap: "Machining Center Workshop" },
 ];
+const workshopGrid = Array.from({ length: 6 }, (_, i) => ({
+    img: `workshop-detail-${i + 1}.webp`,
+    alt: "Cennetic factory workshop",
+}));
+
+// 检测:主轴动平衡(3 图带字幕)+ 三轴激光校准(6 图)
 const balance = [
     { img: "balance-point-detection.webp", cap: "Balance Point Detection" },
     {
@@ -245,25 +248,29 @@ const balance = [
 ];
 const laser = Array.from({ length: 6 }, (_, i) => ({
     img: `laser-calibration-${i + 1}.webp`,
-    alt: "Laser interferometer calibration on the assembly line",
+    alt: "Laser interferometer calibration",
 }));
-const global = [
+
+// 全球合作:Bento(4 列,首图 2×2 大图,余下 1×1,含 3 条字幕)
+const bento = [
     {
         img: "technical-discussion-1.webp",
-        cap: "Technical discussion with European clients",
+        cap: "Technical discussion with European clients.",
+        span: true,
     },
     { img: "client-visit.webp", cap: "" },
     { img: "client-visit-2.webp", cap: "" },
     {
         img: "machine-inspection.webp",
-        cap: "On-site machine inspection & testing",
+        cap: "On-site machine inspection & testing.",
     },
     { img: "client-visit-3.webp", cap: "" },
     { img: "client-visit-4.webp", cap: "" },
     { img: "client-visit-5.webp", cap: "" },
     {
         img: "strategic-cooperation.webp",
-        cap: "Strategic cooperation agreement signing",
+        cap: "Strategic cooperation agreement signing.",
+        span: true,
     },
     { img: "client-visit-6.webp", cap: "" },
     { img: "client-visit-7.webp", cap: "" },
@@ -272,75 +279,132 @@ const global = [
 ---
 
 <div class="company">
-    <!-- 收尾前的转化带 -->
-    <section class="pg-cta mid">
-        <div>
-            <h2>Ready to Upgrade Your Machining Capability?</h2>
+    <!-- ① 红色转化条 -->
+    <section class="cta-strip">
+        <div class="cta-txt">
+            <h3>Ready to Upgrade Your Machining Capability?</h3>
             <p>
                 Get a customized quote for the {productName} — our engineers respond
                 within 24 hours.
             </p>
         </div>
-        <div class="pg-cta-actions">
-            <a
-                class="btn btn-wa"
-                href={quote}
-                rel="noopener noreferrer"
-                target="_blank">Request Factory Quote</a
-            >
+        <a
+            class="btn-white"
+            href={quote}
+            rel="noopener noreferrer"
+            target="_blank">Request Factory Quote</a
+        >
+    </section>
+
+    <!-- ② WHY PARTNER 横幅(背景图 + 深色渐变遮罩) -->
+    <section class="banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <img
+                class="banner-logo"
+                src={siteConfig.logo}
+                alt={siteConfig.name}
+                width="241"
+                height="32"
+            />
+            <h2 class="banner-title">
+                Why Partner with Cennetic?<br />Your Trusted Source for<br
+                />Precision Machining.
+            </h2>
+            <ul class="features">
+                {
+                    promises.map(([t, s]) => (
+                        <li>
+                            <svg
+                                class="ck"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" />
+                            </svg>
+                            <span class="ft">
+                                <>
+                                    <strong>{t}</strong>
+                                    <span>{s}</span>
+                                </>
+                            </span>
+                        </li>
+                    ))
+                }
+            </ul>
+            <div class="banner-bottom">
+                <a class="btn-red" href="/contact-us/">Request Factory Quote</a>
+                <ul class="trust">
+                    {
+                        badges.map((b) => (
+                            <li class="badge">
+                                {b.kind === "ce" ? (
+                                    <span class="badge-ico ce">CE</span>
+                                ) : b.kind === "shield" ? (
+                                    <svg
+                                        class="badge-ico"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5z" />
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        class="badge-ico"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path d="M2 20h20v-2H2zm2-3V9l5 3V9l5 3V6h4v11z" />
+                                    </svg>
+                                )}
+                                <span class="badge-txt">{b.label}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- WHY PARTNER -->
-    <section class="pg-section">
-        <p class="pg-eyebrow">Why partner with Cennetic?</p>
-        <h2>Your Trusted Source for Precision Machining.</h2>
-        <ul class="pg-checks">
-            {
-                promises.map(([t, s]) => (
-                    <li>
-                        <strong>{t}</strong> <span>({s})</span>
-                    </li>
-                ))
-            }
-        </ul>
-        <ul class="pg-badges">{badges.map((b) => <li>{b}</li>)}</ul>
-        <div class="pg-hero-cta">
-            <a class="btn btn-primary" href="/contact-us/"
-                >Request Factory Quote</a
-            >
-        </div>
-    </section>
-
-    <!-- 产品系列 -->
-    <section class="pg-section tint">
-        <p class="pg-eyebrow">What we build</p>
-        <h2>One Factory, the Full Machining Lineup.</h2>
+    <!-- ③ 产品系列目录 -->
+    <section class="catalog">
         {
-            range.map((g) => (
-                <div class="range-group">
-                    <h3 class="range-label">{g.label}</h3>
-                    <div class="pg-cards">
+            groups.map((g) => (
+                <div class="group">
+                    <h3 class="grp-title">{g.title}</h3>
+                    <div
+                        class:list={[
+                            "cards",
+                            g.layout === "h" ? "cols-2" : "cols-3",
+                        ]}
+                    >
                         {g.cards.map((c) => (
-                            <div class="pg-card rc">
-                                <img
-                                    src={img(c.img)}
-                                    alt={c.title}
-                                    width="220"
-                                    height="200"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <h3>{c.title}</h3>
-                                <p class="best">
-                                    <span>Best for:</span> {c.best}
-                                </p>
-                                <ul class="rc-list">
-                                    {c.points.map((p) => (
-                                        <li>{p}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <article
+                                class:list={[
+                                    "card",
+                                    g.layout === "h" ? "h" : "v",
+                                ]}
+                            >
+                                <div class="card-img">
+                                    <img
+                                        src={img(c.img)}
+                                        alt={c.title}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="card-body">
+                                    <h4>{c.title}</h4>
+                                    <p class="best">
+                                        <strong>Best for:</strong> {c.best}
+                                    </p>
+                                    <ul>
+                                        {c.points.map((p) => (
+                                            <li>{p}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </article>
                         ))}
                     </div>
                 </div>
@@ -348,97 +412,113 @@ const global = [
         }
     </section>
 
-    <!-- 车间图集 -->
-    <section class="pg-section">
-        <p class="pg-eyebrow">Inside the factory</p>
-        <h2>Our Production Floor.</h2>
-        <div class="gallery">
+    <!-- ④ 车间:全幅大图带字幕 + 细节网格 -->
+    <section class="block">
+        <div class="blk-head">
+            <p class="eyebrow">Inside the factory</p>
+            <h2 class="big-title">Our Production Floor</h2>
+        </div>
+        <div class="wbig-stack">
             {
-                workshop.map((w) => (
-                    <figure>
+                workshopBig.map((w) => (
+                    <figure class="wbig">
+                        <img
+                            src={img(w.img)}
+                            alt={w.cap}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <figcaption>{w.cap}</figcaption>
+                    </figure>
+                ))
+            }
+        </div>
+        <div class="wgrid">
+            {
+                workshopGrid.map((w) => (
+                    <div class="wcell">
                         <img
                             src={img(w.img)}
                             alt={w.alt}
                             loading="lazy"
                             decoding="async"
                         />
-                    </figure>
+                    </div>
                 ))
             }
         </div>
     </section>
 
-    <!-- 检测协议 -->
-    <section class="pg-section tint">
-        <p class="pg-eyebrow">Rigorous inspection protocols</p>
-        <h2>Data-Driven Precision. 100% Tested Before Delivery.</h2>
-        <div class="inspect">
-            <div class="inspect-block">
-                <h3>Spindle Dynamic Balancing</h3>
-                <p>
-                    Every spindle undergoes a strict dynamic balancing process
-                    to eliminate micro-vibrations, ensuring flawless surface
-                    finishes and extending tool life during high-speed
-                    machining.
-                </p>
-                <div class="gallery small">
-                    {
-                        balance.map((b) => (
-                            <figure>
-                                <>
-                                    <img
-                                        src={img(b.img)}
-                                        alt={b.cap}
-                                        loading="lazy"
-                                        decoding="async"
-                                    />
-                                    <figcaption>{b.cap}</figcaption>
-                                </>
-                            </figure>
-                        ))
-                    }
-                </div>
-            </div>
-            <div class="inspect-block">
-                <h3>3-Axis Laser Calibration</h3>
-                <p class="sub-cap">100% inspected. No exceptions.</p>
-                <p>
-                    We don't rely on random batch testing. Every machine is
-                    strictly calibrated using advanced laser interferometers to
-                    guarantee micro-level positioning accuracy and repeatability
-                    across the X, Y, and Z axes.
-                </p>
-                <div class="gallery small">
-                    {
-                        laser.map((l) => (
-                            <figure>
-                                <img
-                                    src={img(l.img)}
-                                    alt={l.alt}
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                            </figure>
-                        ))
-                    }
-                </div>
-            </div>
+    <!-- ⑤ 检测协议 -->
+    <section class="block inspect">
+        <h2 class="big-title">Rigorous Inspection Protocols</h2>
+        <p class="big-sub">
+            Data-Driven Precision. 100% Tested Before Delivery.
+        </p>
+
+        <h3 class="sec-title">Spindle Dynamic Balancing</h3>
+        <p class="sec-desc">
+            Every spindle undergoes a strict dynamic balancing process to
+            eliminate micro-vibrations, ensuring flawless surface finishes and
+            extending tool life during high-speed machining.
+        </p>
+        <div class="img-cards">
+            {
+                balance.map((b) => (
+                    <figure class="img-card">
+                        <div class="img-box">
+                            <img
+                                src={img(b.img)}
+                                alt={b.cap}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+                        <figcaption>{b.cap}</figcaption>
+                    </figure>
+                ))
+            }
+        </div>
+
+        <h3 class="sec-title center">3-Axis Laser Calibration</h3>
+        <p class="red-line">100% Inspected. No Exceptions.</p>
+        <p class="sec-desc center">
+            We don't rely on random batch testing. Every machine is strictly
+            calibrated using advanced laser interferometers to guarantee
+            micro-level positioning accuracy and repeatability across the X, Y,
+            and Z axes.
+        </p>
+        <div class="img-cards">
+            {
+                laser.map((l) => (
+                    <div class="img-box">
+                        <img
+                            src={img(l.img)}
+                            alt={l.alt}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </div>
+                ))
+            }
         </div>
     </section>
 
-    <!-- 全球合作 -->
-    <section class="pg-section">
-        <p class="pg-eyebrow">Global partnerships</p>
-        <h2>Trusted by Factories Worldwide.</h2>
-        <p>
-            Delivering high-precision CNC solutions to manufacturers across
-            Europe, North America and Southeast Asia. We warmly welcome clients
-            from all over the world to visit our manufacturing facility.
-        </p>
-        <div class="gallery">
+    <!-- ⑥ 全球合作 Bento -->
+    <section class="block partners">
+        <div class="ph-head">
+            <h2 class="ph-title">Global Partnerships</h2>
+            <p class="ph-sub">
+                Delivering high-precision CNC solutions to manufacturers across
+                Europe, North America and Southeast Asia. We warmly welcome
+                clients from all over the world to visit our manufacturing
+                facility.
+            </p>
+        </div>
+        <div class="bento">
             {
-                global.map((g) => (
-                    <figure>
+                bento.map((g) => (
+                    <figure class:list={["bitem", g.span && "big"]}>
                         <img
                             src={img(g.img)}
                             alt={
@@ -454,168 +534,576 @@ const global = [
         </div>
     </section>
 
-    <!-- 虚拟看厂 CTA -->
-    <section class="pg-cta">
-        <div>
-            <h2>Book a Virtual Factory Tour Today!</h2>
-            <p>
-                Can't visit in person? Let our engineers show you around via
-                live video.
-            </p>
-        </div>
-        <div class="pg-cta-actions">
-            <a
-                class="btn btn-wa"
-                href={tour}
-                rel="noopener noreferrer"
-                target="_blank">Arrange a Tour</a
-            >
-            <a class="btn btn-ghost" href="/contact-us/">Contact Us</a>
-        </div>
+    <!-- ⑦ 虚拟看厂 红色横幅 -->
+    <section class="tour">
+        <h2>Book a Virtual Factory Tour Today!</h2>
+        <p>
+            Can't visit in person? Let our engineers show you around via live
+            video.
+        </p>
+        <a class="btn-white" href={tour} rel="noopener noreferrer" target="_blank">Arrange a Tour</a>
     </section>
 </div>
 
 <style>
     .company {
         margin-top: 3rem;
+        display: grid;
+        gap: clamp(2rem, 4vw, 3rem);
     }
 
-    /* 中部转化带:比收尾带稍紧 */
-    .pg-cta.mid {
-        margin-top: 0;
-    }
-
-    .pg-checks strong {
-        color: var(--color-ink);
-    }
-    .pg-checks span {
-        color: var(--color-muted);
-        font-size: 0.92em;
-    }
-
-    /* 五条承诺:宽屏铺成多列,别只占左半区(覆盖 page.css 的单列默认) */
-    .company .pg-checks {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-        column-gap: 2rem;
-    }
-
-    /* 系列卡宽度统一:用 auto-fill 而非 pg-cards 默认的 auto-fit,
-       否则只有 2 张卡的分组会被拉伸成超宽卡,与邻组不对齐 */
-    .company .pg-cards {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
-    }
-
-    /* 系列卡:小插画按原尺寸居中,垫浅底,不拉伸 */
-    .range-group {
-        margin-top: 1.8rem;
-    }
-    .range-group:first-of-type {
-        margin-top: 0.4rem;
-    }
-    .range-label {
-        font-family: var(--font-display);
-        font-size: 1.05rem;
-        margin: 0 0 0.2rem;
-        color: var(--color-ink);
-    }
-    .rc {
+    /* ── ① 红色转化条 ── */
+    .cta-strip {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        background: var(--color-brand);
+        border-radius: var(--radius-lg);
+        padding: clamp(1.5rem, 3vw, 2.2rem) clamp(1.5rem, 3.5vw, 2.6rem);
+        box-shadow: var(--shadow-card);
     }
-    .rc img {
-        align-self: center;
-        height: 150px;
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-        margin-bottom: 0.9rem;
-        padding: 0.5rem;
-        background: var(--color-surface);
-        border-radius: var(--radius);
+    .cta-txt h3 {
+        margin: 0 0 0.35rem;
+        color: #fff;
+        font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+        font-weight: 800;
     }
-    .rc h3 {
-        font-size: 1rem;
+    .cta-txt p {
+        margin: 0;
+        color: rgb(255 255 255 / 0.88);
+        font-size: 0.98rem;
+        max-width: 60ch;
     }
-    .best {
-        font-size: 0.88rem;
-        color: var(--color-body);
-        margin: 0 0 0.6rem !important;
-    }
-    .best span {
-        font-weight: 700;
+    .btn-white {
+        background: #fff;
         color: var(--color-brand);
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.03em;
+        padding: 0.95rem 1.9rem;
+        border-radius: var(--radius-sm);
+        white-space: nowrap;
+        flex-shrink: 0;
     }
-    .rc-list {
+    .btn-white:hover {
+        background: var(--color-brand-tint);
+    }
+
+    /* ── ② WHY 横幅 ── */
+    .banner {
+        position: relative;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        color: #fff;
+        background: url("/images/site/company/cnc-working.webp") right center /
+            cover no-repeat;
+        background-color: var(--color-ink);
+    }
+    .banner-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to right,
+            rgb(18 22 30 / 0.96) 0%,
+            rgb(18 22 30 / 0.9) 55%,
+            rgb(18 22 30 / 0.35) 100%
+        );
+    }
+    .banner-content {
+        position: relative;
+        padding: clamp(2rem, 4vw, 3.2rem);
+        max-width: 860px;
+    }
+    .banner-logo {
+        height: 34px;
+        width: auto;
+        margin-bottom: 1.6rem;
+        filter: brightness(0) invert(1);
+    }
+    .banner-title {
+        margin: 0 0 1.8rem;
+        font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    .features {
         list-style: none;
-        margin: auto 0 0;
+        margin: 0 0 2rem;
         padding: 0;
         display: grid;
+        gap: 1.1rem;
+    }
+    .features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.9rem;
+    }
+    .ck {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        margin-top: 2px;
+        fill: var(--color-brand-on-dark);
+    }
+    .ft {
+        display: block;
+    }
+    .ft strong {
+        display: block;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.15rem;
+    }
+    .ft span {
+        display: block;
+        font-size: 0.9rem;
+        color: rgb(255 255 255 / 0.72);
+        line-height: 1.45;
+    }
+    .banner-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+    }
+    .btn-red {
+        background: var(--color-brand);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.98rem;
+        padding: 0.95rem 1.9rem;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-card);
+    }
+    .btn-red:hover {
+        background: var(--color-brand-dark);
+    }
+    .trust {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.9rem;
+    }
+    .badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 0.35rem;
-        font-size: 0.85rem;
-        line-height: 1.55;
-        color: var(--color-body);
+        text-align: center;
     }
-    .rc-list li {
-        position: relative;
-        padding-left: 1.05rem;
+    .badge-ico {
+        width: 28px;
+        height: 28px;
+        fill: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .rc-list li::before {
-        content: "–";
-        position: absolute;
-        left: 0;
-        color: var(--color-brand);
+    .badge-ico.ce {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.35rem;
+        color: #fff;
+    }
+    .badge-txt {
+        font-size: 0.78rem;
+        color: rgb(255 255 255 / 0.9);
+        white-space: nowrap;
     }
 
-    /* 图集网格:自适应列,figure 垫底防 CLS 用 aspect-ratio */
-    .gallery {
+    /* ── ③ 产品系列目录 ── */
+    .catalog {
+        background: var(--color-surface);
+        border-radius: var(--radius-lg);
+        padding: clamp(1.4rem, 3vw, 2.2rem);
+    }
+    .group + .group {
+        margin-top: 2.4rem;
+    }
+    .grp-title {
+        display: flex;
+        align-items: center;
+        margin: 0 0 1.2rem;
+        padding: 0.85rem 1.3rem;
+        background: var(--color-ink);
+        color: #fff;
+        font-family: var(--font-display);
+        font-size: clamp(1.1rem, 1rem + 0.6vw, 1.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        border-radius: var(--radius);
+    }
+    .grp-title::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 1.5em;
+        background: #fff;
+        margin-right: 0.9rem;
+        border-radius: 2px;
+    }
+    .cards {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
-        gap: 0.8rem;
-        margin-top: 1.2rem;
+        gap: 1.25rem;
     }
-    .gallery.small {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+    .cols-2 {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .gallery figure {
+    .cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card {
+        display: flex;
+        background: var(--color-paper);
+        border: 0; /* 覆盖 global.css 同名 .card 的 1px 描边(此处要无描边卡) */
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        box-shadow: var(--shadow-card);
+    }
+    .card.h {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.4rem;
+    }
+    .card.v {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .card-img {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card.h .card-img {
+        width: 38%;
+    }
+    .card.v .card-img {
+        width: 100%;
+        height: 190px;
+    }
+    .card.v .card-img img {
+        max-height: 190px; /* 不超出图框,避免溢出到下方正文 */
+    }
+    .card-img img {
+        max-width: 100%;
+        max-height: 220px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    .card-body {
+        flex: 1;
+        min-width: 0;
+    }
+    .card-body h4 {
+        margin: 0 0 0.55rem;
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--color-ink);
+        line-height: 1.25;
+    }
+    .best {
+        margin: 0 0 0.8rem;
+        font-size: 0.92rem;
+        color: var(--color-ink);
+    }
+    .best strong {
+        font-weight: 700;
+    }
+    .card-body ul {
+        list-style: none;
         margin: 0;
+        padding: 0;
     }
-    .gallery img {
+    .card-body li {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 0.4rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        color: var(--color-body);
+    }
+    .card-body li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--color-ink);
+        font-weight: 700;
+    }
+
+    /* ── ④ 车间 ── */
+    .block {
+        /* 通用白底块 */
+    }
+    .blk-head {
+        text-align: center;
+        margin-bottom: 1.8rem;
+    }
+    .blk-head .eyebrow {
+        margin: 0 0 0.4rem;
+    }
+    .wbig-stack {
+        display: grid;
+        gap: 1.25rem;
+    }
+    .wbig {
+        position: relative;
+        margin: 0;
+        aspect-ratio: 2.2 / 1;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        background: var(--color-surface);
+    }
+    .wbig img {
         width: 100%;
         height: 100%;
-        aspect-ratio: 4 / 3;
         object-fit: cover;
+        display: block;
+    }
+    .wbig figcaption {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgb(0 0 0 / 0.72);
+        color: #fff;
+        text-align: center;
+        padding: 0.9rem;
+        font-size: clamp(1rem, 0.9rem + 0.6vw, 1.4rem);
+        font-weight: 600;
+    }
+    .wgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    .wcell {
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
         border-radius: var(--radius);
         background: var(--color-surface);
     }
-    .gallery figcaption {
-        margin-top: 0.4rem;
-        font-size: 0.8rem;
-        color: var(--color-muted);
+    .wcell img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
+    /* ── ⑤ 检测协议 ── */
     .inspect {
-        display: grid;
-        gap: clamp(1.5rem, 3vw, 2.6rem);
-        grid-template-columns: 1fr;
-        margin-top: 1.2rem;
+        text-align: left;
     }
-    @media (width >=900px) {
-        .inspect {
-            grid-template-columns: 1fr 1fr;
+    .big-title {
+        text-align: center;
+        margin: 0 0 0.4rem;
+        font-size: clamp(1.6rem, 1.2rem + 2vw, 2.6rem);
+        font-weight: 900;
+        color: var(--color-ink);
+    }
+    .big-sub {
+        text-align: center;
+        margin: 0 0 2.4rem;
+        font-size: clamp(1rem, 0.9rem + 0.6vw, 1.3rem);
+        font-weight: 500;
+        color: var(--color-muted);
+    }
+    .sec-title {
+        margin: 0 0 0.6rem;
+        font-size: clamp(1.2rem, 1rem + 0.8vw, 1.7rem);
+        font-weight: 900;
+        color: var(--color-ink);
+        text-align: center;
+    }
+    .sec-title.center {
+        text-align: center;
+        margin-top: 2.4rem;
+    }
+    .sec-desc {
+        margin: 0 0 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--color-body);
+        max-width: 80ch;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sec-desc.center {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .red-line {
+        text-align: center;
+        margin: 0 0 0.8rem;
+        font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2.1rem);
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        color: var(--color-brand);
+    }
+    .img-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+    }
+    .img-card {
+        margin: 0;
+    }
+    .img-box {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-sm);
+        background: var(--color-surface);
+    }
+    .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .img-card figcaption {
+        margin-top: 0.6rem;
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--color-ink);
+    }
+
+    /* ── ⑥ 全球合作 Bento ── */
+    .ph-head {
+        text-align: center;
+        margin-bottom: 2.2rem;
+    }
+    .ph-title {
+        display: inline-block;
+        position: relative;
+        margin: 0 0 1.2rem;
+        padding-bottom: 0.6rem;
+        font-size: clamp(1.6rem, 1.2rem + 2.2vw, 2.8rem);
+        font-weight: 900;
+        color: var(--color-ink);
+    }
+    .ph-title::after {
+        content: "";
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+        width: 90%;
+        height: 5px;
+        background: var(--color-brand);
+        border-radius: 2px;
+    }
+    .ph-sub {
+        margin: 0 auto;
+        max-width: 70ch;
+        font-size: 1.02rem;
+        color: var(--color-muted);
+        line-height: 1.5;
+    }
+    .bento {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+    .bitem {
+        position: relative;
+        margin: 0;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+        background: var(--color-surface);
+    }
+    .bitem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .bitem figcaption {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: rgb(0 0 0 / 0.72);
+        color: #fff;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    /* ── ⑦ 虚拟看厂横幅 ── */
+    .tour {
+        background: var(--color-brand);
+        color: #fff;
+        text-align: center;
+        padding: clamp(1.8rem, 3.5vw, 2.6rem);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-card);
+    }
+    .tour h2 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.3rem, 1rem + 1.4vw, 1.9rem);
+        font-weight: 900;
+        color: #fff;
+    }
+    .tour p {
+        margin: 0;
+        font-size: 1.05rem;
+        color: rgb(255 255 255 / 0.9);
+    }
+    .tour .btn-white {
+        margin-top: 1.2rem;
+        display: inline-block;
+    }
+
+    /* ── 响应式 ── */
+    @media (width <= 900px) {
+        .cols-3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .bento {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .img-cards {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
-    .inspect-block h3 {
-        font-family: var(--font-display);
-        font-size: 1.1rem;
-        margin: 0 0 0.5rem;
-    }
-    .sub-cap {
-        font-family: var(--font-display);
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: var(--color-brand);
-        font-size: 0.82rem;
-        margin-bottom: 0.4rem !important;
+    @media (width <= 640px) {
+        .cols-2,
+        .cols-3 {
+            grid-template-columns: 1fr;
+        }
+        .card.h {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .card.h .card-img {
+            width: 100%;
+        }
+        .wgrid,
+        .img-cards {
+            grid-template-columns: 1fr;
+        }
+        .banner-bottom {
+            gap: 1.2rem;
+        }
+        .cta-strip {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 </style>
