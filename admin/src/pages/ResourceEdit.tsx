@@ -204,6 +204,9 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
     const missing = required.filter((f) => !String(form[f.name] ?? '').trim());
     const bodyChars = stripHtml(String(form.body ?? '')).length;
     const heroSrc = typeof form.hero === 'string' ? form.hero : (Array.isArray(form.images) ? String((form.images as Array<{ src?: string }>)[0]?.src ?? '') : '');
+    /* 自检读数只展示该类型真实存在的字段：否则站点设置这类配置页会摆出「正文 0 字 / 未设置主图」的误导读数 */
+    const hasBodyField = resource.fields.some((f) => f.name === 'body');
+    const hasHeroField = resource.fields.some((f) => f.name === 'hero' || f.name === 'images');
 
     /* 站点设置只认已知的二级段，乱输地址就回到第一组（放在所有 hook 之后） */
     if (resource.singleton && !siteSection) return <Navigate to={`/${resource.key}/${SITE_SECTIONS[0]!.key}`} replace />;
@@ -348,48 +351,62 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                 {/* 右：常驻决策栏 */}
                 <aside className="space-y-5 xl:col-span-4">
                     <div className="sticky top-[88px] space-y-5">
-                        <SectionCard
-                            icon="rocket"
-                            tone="gold"
-                            title="发布这条内容"
-                            desc="状态决定是否上前台，改动仍需点顶栏发布"
-                        >
-                            {statusField ? (
-                                <>
-                                    <SegmentedControl<'draft' | 'published'>
-                                        value={form.status === 'published' ? 'published' : 'draft'}
-                                        onChange={(v) => setVal('status', v)}
-                                        options={[
-                                            { value: 'draft', label: '草稿', icon: 'pencil' },
-                                            { value: 'published', label: '已发布', icon: 'globe' },
-                                        ]}
-                                    />
-                                    <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-                                        {form.status === 'published'
-                                            ? '已发布：下次发布流水线跑完后，前台列表、sitemap 与分类页都会收录它。'
-                                            : '草稿：只存在于后台，前台与 sitemap 都不会出现，可放心反复编辑。'}
-                                    </p>
-                                </>
-                            ) : (
+                        {resource.singleton ? (
+                            /* 单例配置没有状态/草稿概念，保存只放顶栏一处：这里再摆一个保存按钮会让人以为要点两次 */
+                            <SectionCard
+                                icon="rocket"
+                                tone="gold"
+                                title="改动如何生效"
+                                desc="保存只进内容库，上线仍需点顶栏发布"
+                            >
                                 <p className="text-[11px] leading-relaxed text-slate-500">
-                                    该类型没有草稿概念，保存后下次发布即生效。
+                                    站点设置全站唯一，没有草稿/状态概念：表单改的就是这一份配置本身。保存后点顶栏「发布上线」快照进仓库并重建前台。本页保存入口只有右上角一个。
                                 </p>
-                            )}
-                            <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
-                                <Button icon="check" loading={saving} onClick={() => void save()}>
-                                    {isNew ? '创建立即返回' : '保存'}
-                                </Button>
-                                {resource.preview && !isNew && (
-                                    <Button
-                                        variant="secondary"
-                                        icon="external"
-                                        onClick={() => window.open(window.location.origin + seoPath, '_blank', 'noopener')}
-                                    >
-                                        前台预览
-                                    </Button>
+                            </SectionCard>
+                        ) : (
+                            <SectionCard
+                                icon="rocket"
+                                tone="gold"
+                                title="发布这条内容"
+                                desc="状态决定是否上前台，改动仍需点顶栏发布"
+                            >
+                                {statusField ? (
+                                    <>
+                                        <SegmentedControl<'draft' | 'published'>
+                                            value={form.status === 'published' ? 'published' : 'draft'}
+                                            onChange={(v) => setVal('status', v)}
+                                            options={[
+                                                { value: 'draft', label: '草稿', icon: 'pencil' },
+                                                { value: 'published', label: '已发布', icon: 'globe' },
+                                            ]}
+                                        />
+                                        <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+                                            {form.status === 'published'
+                                                ? '已发布：下次发布流水线跑完后，前台列表、sitemap 与分类页都会收录它。'
+                                                : '草稿：只存在于后台，前台与 sitemap 都不会出现，可放心反复编辑。'}
+                                        </p>
+                                    </>
+                                ) : (
+                                    <p className="text-[11px] leading-relaxed text-slate-500">
+                                        该类型没有草稿概念，保存后下次发布即生效。
+                                    </p>
                                 )}
-                            </div>
-                        </SectionCard>
+                                <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
+                                    <Button icon="check" loading={saving} onClick={() => void save()}>
+                                        {isNew ? '创建立即返回' : '保存'}
+                                    </Button>
+                                    {resource.preview && !isNew && (
+                                        <Button
+                                            variant="secondary"
+                                            icon="external"
+                                            onClick={() => window.open(window.location.origin + seoPath, '_blank', 'noopener')}
+                                        >
+                                            前台预览
+                                        </Button>
+                                    )}
+                                </div>
+                            </SectionCard>
+                        )}
 
                         {hasSeo && !resource.singleton && (
                             <SectionCard icon="search" title="前台表现预览" desc="随输入实时更新">
@@ -404,52 +421,61 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                             </SectionCard>
                         )}
 
-                        <SectionCard
-                            icon="shield"
-                            title="保存前自检"
-                            desc={`${required.length} 个必填项 · ${sections.length} 个分区`}
-                            actions={
-                                missing.length === 0 ? (
-                                    <Badge tone="green" icon="checkCircle">
-                                        可保存
-                                    </Badge>
-                                ) : (
-                                    <Badge tone="red" icon="alert">
-                                        缺 {missing.length} 项
-                                    </Badge>
-                                )
-                            }
-                            bodyClassName="p-4"
-                        >
-                            <ul className="space-y-1.5">
-                                {required.map((f) => {
-                                    const ok = !!String(form[f.name] ?? '').trim();
-                                    return (
-                                        <li key={f.name} className="flex items-center gap-2 text-[12px]">
-                                            <Icon
-                                                name={ok ? 'checkCircle' : 'dot'}
-                                                className={cx('h-3.5 w-3.5 shrink-0', ok ? 'text-emerald-500' : 'text-slate-300')}
-                                            />
-                                            <span className={cx('min-w-0 flex-1 truncate', ok ? 'text-slate-600' : 'font-medium text-slate-800')}>
-                                                {f.label}
+                        {/* 没有必填项、也没有正文/主图可读时（如站点设置），整张自检卡只是噪音，不渲染 */}
+                        {(required.length > 0 || hasBodyField || hasHeroField) && (
+                            <SectionCard
+                                icon="shield"
+                                title="保存前自检"
+                                desc={`${required.length} 个必填项 · ${sections.length} 个分区`}
+                                actions={
+                                    missing.length === 0 ? (
+                                        <Badge tone="green" icon="checkCircle">
+                                            可保存
+                                        </Badge>
+                                    ) : (
+                                        <Badge tone="red" icon="alert">
+                                            缺 {missing.length} 项
+                                        </Badge>
+                                    )
+                                }
+                                bodyClassName="p-4"
+                            >
+                                <ul className="space-y-1.5">
+                                    {required.map((f) => {
+                                        const ok = !!String(form[f.name] ?? '').trim();
+                                        return (
+                                            <li key={f.name} className="flex items-center gap-2 text-[12px]">
+                                                <Icon
+                                                    name={ok ? 'checkCircle' : 'dot'}
+                                                    className={cx('h-3.5 w-3.5 shrink-0', ok ? 'text-emerald-500' : 'text-slate-300')}
+                                                />
+                                                <span className={cx('min-w-0 flex-1 truncate', ok ? 'text-slate-600' : 'font-medium text-slate-800')}>
+                                                    {f.label}
+                                                </span>
+                                                {!ok && <span className="shrink-0 text-[10px] font-semibold uppercase text-accent">必填</span>}
+                                            </li>
+                                        );
+                                    })}
+                                    {required.length === 0 && <li className="text-[12px] text-slate-400">该类型没有强制必填项</li>}
+                                </ul>
+                                {(hasBodyField || hasHeroField) && (
+                                    <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3 text-[11px]">
+                                        {hasBodyField && (
+                                            <span className="flex items-center gap-1.5 text-slate-500">
+                                                <Icon name="code" className="h-3.5 w-3.5 text-slate-400" />
+                                                正文 {bodyChars} 字
                                             </span>
-                                            {!ok && <span className="shrink-0 text-[10px] font-semibold uppercase text-accent">必填</span>}
-                                        </li>
-                                    );
-                                })}
-                                {required.length === 0 && <li className="text-[12px] text-slate-400">该类型没有强制必填项</li>}
-                            </ul>
-                            <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3 text-[11px]">
-                                <span className="flex items-center gap-1.5 text-slate-500">
-                                    <Icon name="code" className="h-3.5 w-3.5 text-slate-400" />
-                                    正文 {bodyChars} 字
-                                </span>
-                                <span className="flex items-center gap-1.5 text-slate-500">
-                                    <Icon name="image" className="h-3.5 w-3.5 text-slate-400" />
-                                    {heroSrc ? '已设置主图' : '未设置主图'}
-                                </span>
-                            </div>
-                        </SectionCard>
+                                        )}
+                                        {hasHeroField && (
+                                            <span className="flex items-center gap-1.5 text-slate-500">
+                                                <Icon name="image" className="h-3.5 w-3.5 text-slate-400" />
+                                                {heroSrc ? '已设置主图' : '未设置主图'}
+                                            </span>
+                                        )}
+                                    </div>
+                                )}
+                            </SectionCard>
+                        )}
 
                         {!isNew && !resource.singleton && (
                             <Card className="border-accent/20 p-4">
