@@ -15,7 +15,7 @@
   {
     "slug": "cnc-lathes",
     "name": "CNC Lathes, Swiss-Type & Automatic Lathes",
-    "description": "",
+    "description": "CNC turning centres, turn-mill machines and Swiss-type lathes for rotational and combined turning-milling parts.",
     "parent": 0,
     "count": 0,
     "canonical": "/product-category/cnc-lathes/",
@@ -54,7 +54,7 @@
   {
     "slug": "machining-centers",
     "name": "Machining Centers (Milling-Focused)",
-    "description": "",
+    "description": "Vertical and universal machining centres for milling-focused work — VMCs, drilling & tapping centres and mold machines.",
     "parent": 0,
     "count": 4,
     "canonical": "/product-category/machining-centers/",

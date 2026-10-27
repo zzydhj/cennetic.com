@@ -7,7 +7,8 @@
  * 纯静态 + 去购物车之后，这里只剩下一个真实需求：移动端展开/收起菜单。
  * 因此只保留一段几行的内联脚本，用原生 aria-expanded 控制。
  */
-import { siteConfig, nav, megaMenu } from "@lib/catalog.ts";
+import { siteConfig, nav, megaMenu, megaFeatured } from "@lib/catalog.ts";
+import MegaTree from "./MegaTree.astro";
 
 // 统一成带尾斜杠的站内路径再比对，否则 /blog 与 /blog/ 会被当成两个不同页面
 const currentPath = (() => {
@@ -22,8 +23,9 @@ function isActive(path: string): boolean {
 }
 
 const links = nav.primary.filter((l) => l.path !== "/");
-// 页眉 Products 的 Mega Menu 面板数据（按真实产品派生的分类树）
+// 页眉 Products 的 Mega Menu 面板数据（按真实产品派生的分类树 + 精选机型）
 const mega = megaMenu();
+const featured = megaFeatured(3);
 ---
 
 <header class="site-header">
@@ -78,55 +80,80 @@ const mega = megaMenu();
                                                     class="mega-cat"
                                                     href={col.path}
                                                 >
-                                                    {col.name}
-                                                    <span class="mega-count">
-                                                        {col.count}
+                                                    {col.thumb && (
+                                                        <img
+                                                            class="mega-cat-thumb"
+                                                            src={col.thumb}
+                                                            alt=""
+                                                            width="46"
+                                                            height="46"
+                                                            loading="eager"
+                                                            decoding="async"
+                                                        />
+                                                    )}
+                                                    <span class="mega-cat-txt">
+                                                        <span class="mega-cat-name">
+                                                            {col.name}
+                                                            <span class="mega-count">
+                                                                {col.count}
+                                                            </span>
+                                                        </span>
+                                                        {col.desc && (
+                                                            <span class="mega-cat-desc">
+                                                                {col.desc}
+                                                            </span>
+                                                        )}
                                                     </span>
                                                 </a>
-                                                {col.descendants.length > 0 && (
-                                                    <ul class="mega-sub">
-                                                        {col.descendants.map(
-                                                            (d) => (
-                                                                <li>
-                                                                    <a
-                                                                        href={
-                                                                            d.path
-                                                                        }
-                                                                    >
-                                                                        {d.name}
-                                                                        <span class="mega-count">
-                                                                            {
-                                                                                d.count
-                                                                            }
-                                                                        </span>
-                                                                    </a>
-                                                                </li>
-                                                            ),
-                                                        )}
-                                                    </ul>
+                                                {col.children.length > 0 && (
+                                                    <MegaTree
+                                                        nodes={col.children}
+                                                    />
                                                 )}
+                                                <a
+                                                    class="mega-seeall"
+                                                    href={col.path}
+                                                >
+                                                    All {col.name} →
+                                                </a>
                                             </div>
                                         ))}
+                                    </div>
+                                    <aside class="mega-rail">
+                                        <p class="mega-rail-title">
+                                            Featured models
+                                        </p>
+                                        {featured.map((f) => (
+                                            <a class="mega-feat" href={f.path}>
+                                                <img
+                                                    src={f.thumb}
+                                                    alt={f.name}
+                                                    width="72"
+                                                    height="72"
+                                                    loading="eager"
+                                                    decoding="async"
+                                                />
+                                                <span class="mega-feat-txt">
+                                                    <span class="mega-feat-tag">
+                                                        {f.tag}
+                                                    </span>
+                                                    <span class="mega-feat-name">
+                                                        {f.name}
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        ))}
+                                        <a
+                                            class="mega-cta"
+                                            href={`https://wa.me/${siteConfig.whatsapp.number}`}
+                                            rel="noopener"
+                                        >
+                                            Get a quote on WhatsApp →
+                                        </a>
                                         <a class="mega-all" href="/products/">
                                             Browse all products →
                                         </a>
-                                    </div>
-                                    <a class="mega-feature" href="/products/">
-                                        <img
-                                            src="/images/site/company/vertical-machining-center-workshop.webp"
-                                            alt="Cennetic machining center workshop"
-                                            width="1152"
-                                            height="747"
-                                            loading="eager"
-                                            decoding="async"
-                                        />
-                                        <span class="mega-feature-txt">
-                                            <strong>
-                                                Factory-direct CNC machines
-                                            </strong>
-                                            <em>VMC · HMC · 5-Axis · Lathes</em>
-                                        </span>
-                                    </a>
+                                    </aside>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +312,7 @@ const mega = megaMenu();
         max-width: var(--container-max);
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 240px;
+        grid-template-columns: 1fr 268px;
         gap: 1.8rem;
         background: var(--color-paper);
         border: 1px solid var(--color-line);
@@ -295,117 +322,178 @@ const mega = megaMenu();
     }
     .mega-cols {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
         gap: 1.4rem 2rem;
         align-content: start;
     }
     .mega .mega-cat {
         display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0 0 0.4rem;
-        margin-bottom: 0.5rem;
+        align-items: flex-start;
+        gap: 0.7rem;
+        padding: 0 0 0.55rem;
+        margin-bottom: 0.6rem;
         border: none;
         border-bottom: 1px solid var(--color-line);
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 0.95rem;
         white-space: normal;
         color: var(--color-ink);
     }
-    .mega .mega-cat:hover {
+    .mega-cat-thumb {
+        flex-shrink: 0;
+        width: 46px;
+        height: 46px;
+        object-fit: cover;
+        border-radius: var(--radius-sm);
+        background: var(--color-surface);
+        border: 1px solid var(--color-line-soft);
+    }
+    .mega-cat-txt {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        min-width: 0;
+    }
+    .mega-cat-name {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.95rem;
+        line-height: 1.25;
+        white-space: normal;
+    }
+    .mega-cat-desc {
+        font-family: var(--font-body);
+        font-weight: 400;
+        font-size: 0.78rem;
+        line-height: 1.4;
+        color: var(--color-muted);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .mega .mega-cat:hover .mega-cat-name {
         color: var(--color-brand);
-        border-bottom-color: var(--color-brand);
     }
     .mega-count {
-        margin-left: auto;
-        font-size: 0.72rem;
+        flex-shrink: 0;
+        font-size: 0.7rem;
         font-weight: 600;
         color: var(--color-muted);
         background: var(--color-surface);
         border-radius: 999px;
         padding: 0.05rem 0.5rem;
     }
-    .mega-sub {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.4rem;
-    }
-    .mega .mega-sub a {
-        display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-        padding: 0;
-        border: none;
-        font-family: var(--font-body);
-        font-weight: 400;
-        font-size: 0.86rem;
-        line-height: 1.4;
-        white-space: normal;
-        color: var(--color-body);
-    }
-    .mega .mega-sub a:hover {
-        color: var(--color-brand);
-        border: none;
-    }
-    .mega .mega-sub .mega-count {
-        background: none;
-        padding: 0;
-        font-size: 0.72rem;
-        color: var(--color-faint);
-    }
-    .mega .mega-all {
-        grid-column: 1 / -1;
-        justify-self: start;
+    /* 子分类树样式已随 MegaTree.astro 组件自带(作用域样式归属渲染组件);
+       此处不再重复,否则因 cid 不同根本命不中。 */
+    .mega .mega-seeall {
+        display: inline-block;
         padding: 0;
         border: none;
         font-family: var(--font-display);
         font-weight: 600;
-        font-size: 0.88rem;
+        font-size: 0.82rem;
         color: var(--color-brand);
     }
-    .mega .mega-all:hover {
+    .mega .mega-seeall:hover {
         color: var(--color-brand-dark);
         border: none;
     }
-    .mega .mega-feature {
-        position: relative;
+    /* 右侧栏：精选机型 + 快捷入口 */
+    .mega-rail {
         display: flex;
-        align-items: flex-end;
-        padding: 0;
+        flex-direction: column;
+        gap: 0.7rem;
+        border-left: 1px solid var(--color-line);
+        padding-left: 1.6rem;
+    }
+    .mega-rail-title {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-faint);
+    }
+    .mega .mega-feat {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.4rem;
+        margin: 0 -0.4rem;
         border: none;
         border-radius: var(--radius);
-        overflow: hidden;
-        min-height: 220px;
+        background: transparent;
         white-space: normal;
+        color: var(--color-ink);
     }
-    .mega-feature img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
+    .mega .mega-feat:hover {
+        background: var(--color-surface);
+        border: none;
+    }
+    .mega-feat img {
+        width: 56px;
+        height: 56px;
         object-fit: cover;
+        border-radius: var(--radius-sm);
+        background: var(--color-paper);
+        border: 1px solid var(--color-line-soft);
+        flex-shrink: 0;
     }
-    .mega-feature-txt {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        padding: 2.6rem 1rem 1rem;
-        background: linear-gradient(transparent, rgb(0 0 0 / 0.72));
-        color: #fff;
-        display: grid;
-        gap: 0.15rem;
+    .mega-feat-txt {
+        display: flex;
+        flex-direction: column;
+        gap: 0.12rem;
+        min-width: 0;
     }
-    .mega-feature-txt strong {
+    .mega-feat-tag {
+        font-size: 0.68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--color-brand);
+    }
+    .mega-feat-name {
         font-family: var(--font-display);
-        font-size: 0.95rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
-    .mega-feature-txt em {
-        font-style: normal;
-        font-size: 0.8rem;
-        opacity: 0.85;
+    .mega .mega-cta {
+        margin-top: 0.2rem;
+        padding: 0.6rem 0.9rem;
+        border: none;
+        border-radius: var(--radius-sm);
+        background: var(--color-brand);
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.82rem;
+        text-align: center;
+    }
+    .mega .mega-cta:hover {
+        background: var(--color-brand-dark);
+        color: #fff;
+        border: none;
+    }
+    .mega .mega-all {
+        padding: 0;
+        border: none;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 0.82rem;
+        color: var(--color-muted);
+        text-align: center;
+    }
+    .mega .mega-all:hover {
+        color: var(--color-brand);
+        border: none;
     }
 
     .toggle {
