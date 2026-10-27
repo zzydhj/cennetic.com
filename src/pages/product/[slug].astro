@@ -279,11 +279,30 @@ const description = `${product.name} by Cennetic — ${product.summary
     }
 
     /*
-     * 上一版写死 max-width:900px：既与全站栅格不同宽（左侧对齐、右侧短 220px），
-     * 又在 16px 字号下形成约 113 字符/行。改用 ch 约束行长。
+     * 产品正文（运营在后台输入的 HTML）外层统一受容器约束：整段与下方公司通版区
+     * 同宽（全栏），不再单独收进 78ch 窄列——那会把运营输入的宽规格表挤在 2/3 列里、
+     * 右侧留大片空白，与通版区明显不一致。文字段落仍限 75ch 保证可读，表格/图片铺满。
      */
     .detail {
-        max-width: 78ch;
+        max-width: none;
+    }
+
+    /*
+     * 正文由 CMS 以 set:html 注入,子元素不带 Astro 作用域属性;若写成
+     * `.detail :global(.qf-article-body) > p`,Astro 会把 [data-astro-cid] 加到末端
+     * 的 p 上 → 命中 0 个。所以整条选择器必须全部放进 :global()。
+     * 只限顶层段落/列表行宽保证可读,表格仍铺满(见下)。
+     */
+    :global(.detail .qf-article-body > p),
+    :global(.detail .qf-article-body > ul),
+    :global(.detail .qf-article-body > ol),
+    :global(.detail .qf-article-body > blockquote) {
+        max-width: 75ch;
+    }
+
+    :global(.detail .qf-article-body table) {
+        width: 100%;
+        max-width: 100%;
     }
 
     .grid {
