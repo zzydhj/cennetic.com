@@ -225,50 +225,27 @@ const lcpImage = siteConfig.hero.poster;
         )
     }
 
-    <section class="band band-dark" aria-labelledby="contact-h">
-        <div class="shell contact">
-            <div>
-                <p class="eyebrow">Contact us</p>
-                <h2 id="contact-h" class="section-title">
-                    Send us your part drawing
-                </h2>
-                <p class="contact-lede">
-                    Tell us the material, part size, tolerance and monthly
-                    volume — we will recommend a configuration and send pricing
-                    on WhatsApp.
-                </p>
-                <p class="actions">
-                    <a
-                        class="btn btn-wa"
-                        href={wa}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        >WhatsApp {siteConfig.whatsapp.display}</a
-                    >
-                    <a
-                        class="btn btn-light btn-sm"
-                        href={`mailto:${siteConfig.email}`}>Email us</a
-                    >
-                </p>
-            </div>
-            <ul class="ways">
-                <li>
-                    <span>Email</span><a href={`mailto:${siteConfig.email}`}
-                        >{siteConfig.email}</a
-                    >
-                </li>
-                <li>
-                    <span>Phone</span><a href={`tel:${siteConfig.phone}`}
-                        >{siteConfig.phoneDisplay}</a
-                    >
-                </li>
-                <li>
-                    <span>Factory</span>{siteConfig.address.street}, {
-                        siteConfig.address.city
-                    }, {siteConfig.address.region}
-                </li>
-                <li><span>Hours</span>{siteConfig.hours}</li>
-            </ul>
+    <section class="band band-cta" aria-labelledby="contact-h">
+        <div class="shell cta">
+            <p class="eyebrow">Contact us</p>
+            <h2 id="contact-h" class="section-title">
+                Send us your part drawing
+            </h2>
+            <p class="cta-lede">
+                Tell us the material, part size, tolerance and monthly volume —
+                we will recommend a configuration and send pricing on WhatsApp.
+            </p>
+            <p class="actions">
+                <a
+                    class="btn btn-wa"
+                    href={wa}
+                    rel="noopener noreferrer"
+                    target="_blank">WhatsApp {siteConfig.whatsapp.display}</a
+                >
+                <a class="btn btn-ghost" href={`mailto:${siteConfig.email}`}
+                    >Email us</a
+                >
+            </p>
         </div>
     </section>
 </BaseLayout>
@@ -296,13 +273,24 @@ const lcpImage = siteConfig.hero.poster;
         padding-block: clamp(3.5rem, 9vw, 6.5rem);
     }
 
-    .band-dark {
-        background: #1c1f24;
-        color: #c8ccd3;
+    /* 首页收尾 CTA：浅底居中，与下方深色页脚形成明暗对比，不再两块深色相连 */
+    .band-cta {
+        text-align: center;
     }
 
-    .band-dark .section-title {
-        color: #fff;
+    .cta {
+        max-width: 52ch;
+        margin-inline: auto;
+    }
+
+    .cta-lede {
+        color: var(--color-body);
+        line-height: 1.7;
+        margin: 0 0 1.6rem;
+    }
+
+    .band-cta .actions {
+        justify-content: center;
     }
 
     /* ── Hero ── */
@@ -551,54 +539,8 @@ const lcpImage = siteConfig.hero.poster;
         color: var(--color-faint);
     }
 
-    /* ── 联系区 ── */
-    .contact {
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-        gap: clamp(1.75rem, 4vw, 3.5rem);
-        align-items: start;
-    }
-
-    .contact-lede {
-        color: #aeb4bd;
-        max-width: 48ch;
-        margin: 0 0 1.5rem;
-        line-height: 1.7;
-    }
-
-    .ways {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.9rem;
-        font-size: 0.92rem;
-    }
-
-    .ways li {
-        display: flex;
-        flex-direction: column;
-        gap: 0.15rem;
-    }
-
-    .ways span {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #7f8792;
-    }
-
-    .ways a {
-        color: #fff;
-    }
-    .ways a:hover {
-        color: var(--color-brand);
-    }
-
     @media (width < 960px) {
-        .two,
-        .contact {
+        .two {
             grid-template-columns: minmax(0, 1fr);
         }
 
