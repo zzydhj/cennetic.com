@@ -454,6 +454,26 @@ export const PHRASES: Array<[string, string]> = [
     ["省外（内）", "in/out province"],
     ["臂式", "arm-type"],
     ["范围", "range"],
+
+    // —— 长尾补录(Z600L+ 主机参数表写法变体)——
+    ["工作台最大载重", "Max. Worktable Load"],
+    ["主轴中心至立柱轨道面距离", "Spindle center to column guideway"],
+    ["主轴鼻端至工作台距离", "Spindle nose to worktable"],
+    ["主轴锥孔/直径", "Spindle taper / bore dia."],
+    ["（X/Y/Z）快速移位", "Rapid traverse (X/Y/Z)"],
+    ["快速移位", "rapid traverse"],
+    ["铼纳克N3ME", "RNC N3ME"],
+    ["铼纳克", "RNC"],
+    ["机床外观尺寸", "Machine overall dimensions (L×W×H)"],
+    ["直结式", "direct-drive"],
+    ["翻转式", "flip-type"],
+    ["滑块数量", "slider qty"],
+    ["球墨", "ductile iron"],
+    ["怡泰", "Yitai"],
+    ["益准", "Yizhun"],
+    ["日光灯", "work light"],
+    ["每台", "per machine"],
+    ["重量", "weight"],
 ];
 
 /** 单位/数字正则替换(在短语替换之后跑) */

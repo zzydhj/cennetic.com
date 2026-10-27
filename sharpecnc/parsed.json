@@ -3882,7 +3882,146 @@
       "/uFile/116849/product/202252392018137.png",
       "/uFile/116849/product/2021916203854749.jpg"
     ],
-    "specs": [],
+    "specs": [
+      {
+        "group": "",
+        "item": "床面最大回转直径",
+        "unit": "Φ570",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "最大加工直径",
+        "unit": "Φ500（根据刀塔变化）",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "刀架上最大加工直径",
+        "unit": "Φ280",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "最大加工长度",
+        "unit": "750（根据刀塔变化）",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "主轴头形式（可选卡盘）",
+        "unit": "A2-6(8寸)",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "主轴电机功率",
+        "unit": "11-15KW",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "主轴最高转速",
+        "unit": "3000rpm",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "主轴孔直径",
+        "unit": "Φ66",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "棒料通径",
+        "unit": "Φ52",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "X/Z轴丝杆规格",
+        "unit": "3210/4010",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "X轴极限行程",
+        "unit": "270",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "X轴电机扭矩",
+        "unit": "11N.M",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "X/Z轴线轨规格",
+        "unit": "45",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "Z轴极限行程",
+        "unit": "810",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "Z轴电机扭矩",
+        "unit": "11N.M",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "X\\Z轴连接方式",
+        "unit": "直联",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "可选刀塔",
+        "unit": "100-12T(刀盘对边不小于380)",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "可选刀塔中心高尺寸",
+        "unit": "100",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "套筒直径",
+        "unit": "80",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "套筒行程",
+        "unit": "80",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "尾座最大行程",
+        "unit": "480",
+        "value": "mm"
+      },
+      {
+        "group": "",
+        "item": "尾座套筒锥孔",
+        "unit": "莫氏5号",
+        "value": ""
+      },
+      {
+        "group": "",
+        "item": "外型尺寸",
+        "unit": "3.1*1.8*2.1",
+        "value": "m"
+      }
+    ],
     "config": []
   },
   {
@@ -4305,7 +4444,110 @@
       "/uFile/116849/product/202252316360579.png",
       "/uFile/116849/product/2021916204337456.jpg"
     ],
-    "specs": [],
+    "specs": [
+      {
+        "group": "",
+        "item": "系统",
+        "unit": "三菱、新代",
+        "value": "日本、台湾"
+      },
+      {
+        "group": "",
+        "item": "三轴导轨",
+        "unit": "RGH45HA（滚柱）",
+        "value": "台湾上银"
+      },
+      {
+        "group": "",
+        "item": "三轴丝杆",
+        "unit": "Φ50*10/φ50*10/φ50*10",
+        "value": "台湾上银"
+      },
+      {
+        "group": "",
+        "item": "进给轴电机",
+        "unit": "新代/三菱",
+        "value": "新代/三菱"
+      },
+      {
+        "group": "",
+        "item": "丝杆轴承",
+        "unit": "",
+        "value": "上银FAG、日本NSK)"
+      },
+      {
+        "group": "",
+        "item": "主轴",
+        "unit": "BT40-M150-8000/12000rpm",
+        "value": "台湾德九"
+      },
+      {
+        "group": "",
+        "item": "主轴电机功率",
+        "unit": "15KW",
+        "value": "新代/三菱"
+      },
+      {
+        "group": "",
+        "item": "系统",
+        "unit": "新代/三菱M80",
+        "value": "客户选配"
+      },
+      {
+        "group": "",
+        "item": "刀库",
+        "unit": "24t",
+        "value": "台湾冈田"
+      },
+      {
+        "group": "",
+        "item": "联轴器",
+        "unit": "24-25/25-35",
+        "value": "德国或日本品牌"
+      },
+      {
+        "group": "",
+        "item": "注油机",
+        "unit": "",
+        "value": "宝腾/china"
+      },
+      {
+        "group": "",
+        "item": "主轴驱动",
+        "unit": "15kw",
+        "value": "新代/三菱"
+      },
+      {
+        "group": "",
+        "item": "三轴电机（扭矩NM）",
+        "unit": "X:22 Y:22 Z:22",
+        "value": "新代/三菱"
+      },
+      {
+        "group": "",
+        "item": "电磁阀",
+        "unit": "",
+        "value": "亚德客"
+      },
+      {
+        "group": "",
+        "item": "交流接触器",
+        "unit": "",
+        "value": "施耐德"
+      },
+      {
+        "group": "",
+        "item": "热过载继电器",
+        "unit": "",
+        "value": "施耐德"
+      },
+      {
+        "group": "",
+        "item": "断路器",
+        "unit": "",
+        "value": "施耐德"
+      }
+    ],
     "config": []
   },
   {
@@ -4490,7 +4732,290 @@
       "/uFile/116849/product/2021916204942542.jpg",
       "/uFile/116849/product/202191620550181.jpg"
     ],
-    "specs": [],
+    "specs": [
+      {
+        "group": "",
+        "item": "工作台尺寸",
+        "unit": "mm",
+        "value": "750*420"
+      },
+      {
+        "group": "",
+        "item": "允许最大荷重",
+        "unit": "kg",
+        "value": "350"
+      },
+      {
+        "group": "",
+        "item": "T型槽尺寸",
+        "unit": "宽度-距离-数目",
+        "value": "14mm-140mm-3"
+      },
+      {
+        "group": "",
+        "item": "加工范围",
+        "unit": "mm",
+        "value": "650*420*520"
+      },
+      {
+        "group": "",
+        "item": "工作台最大行程－X轴",
+        "unit": "mm",
+        "value": "650"
+      },
+      {
+        "group": "",
+        "item": "滑座最大行程－Y轴",
+        "unit": "mm",
+        "value": "420"
+      },
+      {
+        "group": "",
+        "item": "主轴箱最大行程－Z轴",
+        "unit": "mm",
+        "value": "520"
+      },
+      {
+        "group": "",
+        "item": "主轴中心到立柱导轨面距离",
+        "unit": "mm",
+        "value": "500"
+      },
+      {
+        "group": "",
+        "item": "主轴传动方式",
+        "unit": "-",
+        "value": "皮带式主轴/直联式主轴"
+      },
+      {
+        "group": "",
+        "item": "主轴端面至工作台面距离",
+        "unit": "最小-最大",
+        "value": "130mm-630mm"
+      },
+      {
+        "group": "",
+        "item": "主轴",
+        "unit": "锥孔（7：24）",
+        "value": "外径150mm BT40"
+      },
+      {
+        "group": "",
+        "item": "转数范围",
+        "unit": "r/min",
+        "value": "皮带：0-10000转/直联0-12000转"
+      },
+      {
+        "group": "",
+        "item": "主轴电机功率",
+        "unit": "额定功率/最高功率",
+        "value": "7.5-11KW"
+      },
+      {
+        "group": "",
+        "item": "床身",
+        "unit": "铸铁",
+        "value": "HT250"
+      },
+      {
+        "group": "",
+        "item": "床身",
+        "unit": "油路",
+        "value": "自动注油"
+      },
+      {
+        "group": "",
+        "item": "床身",
+        "unit": "丝杆",
+        "value": "C3级磨制滚珠丝杆4012"
+      },
+      {
+        "group": "",
+        "item": "床身",
+        "unit": "滚柱导轨",
+        "value": "X,Y:RG35"
+      },
+      {
+        "group": "",
+        "item": "床身",
+        "unit": "滚柱导轨",
+        "value": "Z:RG45"
+      },
+      {
+        "group": "",
+        "item": "系统",
+        "unit": "工业系统",
+        "value": "上海铼钠克N3ME"
+      },
+      {
+        "group": "",
+        "item": "外观",
+        "unit": "钣金",
+        "value": "全防护式"
+      },
+      {
+        "group": "",
+        "item": "进给电机功率",
+        "unit": "进给电机功率",
+        "value": "进给电机功率"
+      },
+      {
+        "group": "",
+        "item": "X轴/Y轴",
+        "unit": "kW",
+        "value": "2.4KW"
+      },
+      {
+        "group": "",
+        "item": "Z轴",
+        "unit": "kW",
+        "value": "3.9KW"
+      },
+      {
+        "group": "",
+        "item": "切削进给速度范围",
+        "unit": "mm/min",
+        "value": "1-10000"
+      },
+      {
+        "group": "",
+        "item": "最高移动速度",
+        "unit": "最高移动速度",
+        "value": "最高移动速度"
+      },
+      {
+        "group": "",
+        "item": "X轴",
+        "unit": "m/min",
+        "value": "36"
+      },
+      {
+        "group": "",
+        "item": "Y轴",
+        "unit": "m/min",
+        "value": "36"
+      },
+      {
+        "group": "",
+        "item": "Z轴",
+        "unit": "m/min",
+        "value": "36"
+      },
+      {
+        "group": "",
+        "item": "刀库",
+        "unit": "刀库",
+        "value": "刀库"
+      },
+      {
+        "group": "",
+        "item": "最大刀具长度",
+        "unit": "mm",
+        "value": "300"
+      },
+      {
+        "group": "",
+        "item": "最大刀具重量",
+        "unit": "kg",
+        "value": "7"
+      },
+      {
+        "group": "",
+        "item": "容量/圆盘式",
+        "unit": "把",
+        "value": "24"
+      },
+      {
+        "group": "",
+        "item": "最大刀盘直径",
+        "unit": "mm",
+        "value": "φ100"
+      },
+      {
+        "group": "",
+        "item": "换刀时间圆盘式",
+        "unit": "s",
+        "value": "(刀对刀)/1.4"
+      },
+      {
+        "group": "",
+        "item": "机床定位精度执行标准JISB6330",
+        "unit": "机床定位精度执行标准JISB6330",
+        "value": "机床定位精度执行标准JISB6330"
+      },
+      {
+        "group": "",
+        "item": "X轴",
+        "unit": "mm",
+        "value": "±0.005/300"
+      },
+      {
+        "group": "",
+        "item": "Y轴",
+        "unit": "mm",
+        "value": "±0.005/300"
+      },
+      {
+        "group": "",
+        "item": "Z轴",
+        "unit": "mm",
+        "value": "±0.005/300"
+      },
+      {
+        "group": "",
+        "item": "机床重复定位精度执行标准JISB6330",
+        "unit": "机床重复定位精度执行标准JISB6330",
+        "value": "机床重复定位精度执行标准JISB6330"
+      },
+      {
+        "group": "",
+        "item": "X轴",
+        "unit": "mm",
+        "value": "±0.003"
+      },
+      {
+        "group": "",
+        "item": "Y轴",
+        "unit": "mm",
+        "value": "±0.003"
+      },
+      {
+        "group": "",
+        "item": "Z轴",
+        "unit": "mm",
+        "value": "±0.003"
+      },
+      {
+        "group": "",
+        "item": "动力源",
+        "unit": "动力源",
+        "value": "动力源"
+      },
+      {
+        "group": "",
+        "item": "电气总容量",
+        "unit": "KVA",
+        "value": "15"
+      },
+      {
+        "group": "",
+        "item": "气压",
+        "unit": "Mpa",
+        "value": "0.5-0.7"
+      },
+      {
+        "group": "",
+        "item": "机床尺寸(长X宽X高)",
+        "unit": "mm",
+        "value": "2000*2005*2381"
+      },
+      {
+        "group": "",
+        "item": "机床重量",
+        "unit": "kg",
+        "value": "4500KG"
+      }
+    ],
     "config": [
       {
         "category": "床身",
@@ -5200,7 +5725,122 @@
       "/uFile/116849/product/2023112291418532.jpg",
       "/uFile/116849/product/2023424165327551.jpg"
     ],
-    "specs": [],
+    "specs": [
+      {
+        "group": "",
+        "item": "X、Y、Z行程",
+        "unit": "mm",
+        "value": "600*450*330"
+      },
+      {
+        "group": "",
+        "item": "工作台尺寸",
+        "unit": "mm",
+        "value": "700*420"
+      },
+      {
+        "group": "",
+        "item": "工作台最大载重",
+        "unit": "kg",
+        "value": "250"
+      },
+      {
+        "group": "",
+        "item": "主轴中心至立柱轨道面距离",
+        "unit": "mm",
+        "value": "464"
+      },
+      {
+        "group": "",
+        "item": "主轴鼻端至工作台距离",
+        "unit": "mm",
+        "value": "300-630"
+      },
+      {
+        "group": "",
+        "item": "T型槽尺寸",
+        "unit": "mm",
+        "value": "14T*3*125"
+      },
+      {
+        "group": "",
+        "item": "主轴锥孔/直径",
+        "unit": "/",
+        "value": "BT30（Φ110）"
+      },
+      {
+        "group": "",
+        "item": "主轴转速",
+        "unit": "r/min",
+        "value": "20000"
+      },
+      {
+        "group": "",
+        "item": "（X/Y/Z）快速移位",
+        "unit": "m/min",
+        "value": "36/48"
+      },
+      {
+        "group": "",
+        "item": "刀库容量",
+        "unit": "set",
+        "value": "BT30-21T“Speedcn”怡泰翻转式伺服刀库"
+      },
+      {
+        "group": "",
+        "item": "THKC3级滚珠丝杆",
+        "unit": "mm",
+        "value": "XY：Φ28*12 Z:Φ32*12"
+      },
+      {
+        "group": "",
+        "item": "THKC3级滚珠丝杆",
+        "unit": "mm",
+        "value": "XY：Φ28*16 Z:Φ32*16"
+      },
+      {
+        "group": "",
+        "item": "THKC3 线性导轨 （线轨宽度/滑块数量）",
+        "unit": "mm",
+        "value": "XYZ：30*2"
+      },
+      {
+        "group": "",
+        "item": "益准主轴电机",
+        "unit": "KW",
+        "value": "3.7/24000转"
+      },
+      {
+        "group": "",
+        "item": "图科进给电机",
+        "unit": "KW",
+        "value": "2.9KW/3000转/18.6N.m"
+      },
+      {
+        "group": "",
+        "item": "图科进给电机",
+        "unit": "KW",
+        "value": "1.8KW/3000转/18.6N.m"
+      },
+      {
+        "group": "",
+        "item": "系统",
+        "unit": "台",
+        "value": "铼纳克N3ME"
+      },
+      {
+        "group": "",
+        "item": "机床外观尺寸",
+        "unit": "mm",
+        "value": "1748*2410*2320"
+      },
+      {
+        "group": "",
+        "item": "重量",
+        "unit": "kg",
+        "value": "约3500"
+      }
+    ],
     "config": [
       {
         "category": "床身",

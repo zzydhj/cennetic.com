@@ -66,7 +66,7 @@ function specTable(specs: SpecRow[]): string {
         let span = 1;
         while (gi + span < rows.length && rows[gi + span].g === rows[gi].g && rows[gi].g) span += 1;
         rows.slice(gi, gi + span).forEach((r, idx) => {
-            const gcell = idx === 0 ? `<td rowspan="${span}">${esc(r.g)}</td>` : "";
+            const gcell = idx === 0 && r.g ? `<td rowspan="${span}">${esc(r.g)}</td>` : "";
             out.push(
                 `<tr>${gcell}<td>${esc(r.i)}</td>${r.u ? `<td>${esc(r.u)}</td>` : ""}<td>${esc(r.v)}</td></tr>`,
             );

@@ -57,14 +57,22 @@ function parseTable(html: string): string[][] {
 }
 
 function toSpecs(html: string): SpecRow[] {
-    const rows = parseTable(html).slice(1); // 去表头
+    const all = parseTable(html);
+    const width = all[0]?.length ?? 0; // 表头列数决定布局
+    const rows = all.slice(1); // 去表头
     const out: SpecRow[] = [];
     for (const r of rows) {
-        // 期望列:序号 | 名称(组) | 机型(项目) | 单位 | 参数
-        if (r.length < 5) continue;
-        const [idx, group, item, unit, value] = r;
-        if (!/^\d+$/.test(idx) && !item) continue;
-        out.push({ group, item, unit, value });
+        if (width >= 5) {
+            // 期望列:序号 | 名称(组) | 机型(项目) | 单位 | 参数
+            const [idx, group, item, unit, value] = r;
+            if (!/^\d+$/.test(idx) && !item) continue;
+            out.push({ group, item, unit, value });
+        } else if (width === 4) {
+            // 主机参数表:序号 | 名称(项目) | 单位 | 机型列(参数值) —— 无独立分组列
+            const [idx, item, unit, value] = r;
+            if (!/^\d+$/.test(idx)) continue; // 去跨行合并产生的续行(无序号)
+            out.push({ group: "", item, unit, value });
+        }
     }
     return out;
 }
