@@ -7,7 +7,7 @@
  * 纯静态 + 去购物车之后，这里只剩下一个真实需求：移动端展开/收起菜单。
  * 因此只保留一段几行的内联脚本，用原生 aria-expanded 控制。
  */
-import { siteConfig, nav, megaMenu, megaFeatured } from "@lib/catalog.ts";
+import { siteConfig, nav, megaMenu } from "@lib/catalog.ts";
 import MegaTree from "./MegaTree.astro";
 
 // 统一成带尾斜杠的站内路径再比对，否则 /blog 与 /blog/ 会被当成两个不同页面
@@ -23,9 +23,9 @@ function isActive(path: string): boolean {
 }
 
 const links = nav.primary.filter((l) => l.path !== "/");
-// 页眉 Products 的 Mega Menu 面板数据（按真实产品派生的分类树 + 精选机型）
+// 页眉 Products 的 Mega Menu 面板数据（按真实产品派生的分类树 + 具体机型）
 const mega = megaMenu();
-const featured = megaFeatured(3);
+const wa = `https://wa.me/${siteConfig.whatsapp.number}`;
 ---
 
 <header class="site-header">
@@ -85,67 +85,74 @@ const featured = megaFeatured(3);
                                                             class="mega-cat-thumb"
                                                             src={col.thumb}
                                                             alt=""
-                                                            width="46"
-                                                            height="46"
+                                                            width="44"
+                                                            height="44"
                                                             loading="eager"
                                                             decoding="async"
                                                         />
                                                     )}
-                                                    <span class="mega-cat-txt">
-                                                        <span class="mega-cat-name">
-                                                            {col.name}
-                                                            <span class="mega-count">
-                                                                {col.count}
-                                                            </span>
+                                                    <span class="mega-cat-name">
+                                                        {col.name}
+                                                        <span class="mega-count">
+                                                            {col.count}
                                                         </span>
-                                                        {col.desc && (
-                                                            <span class="mega-cat-desc">
-                                                                {col.desc}
-                                                            </span>
-                                                        )}
                                                     </span>
                                                 </a>
+                                                {col.desc && (
+                                                    <p class="mega-cat-desc">
+                                                        {col.desc}
+                                                    </p>
+                                                )}
                                                 {col.children.length > 0 && (
                                                     <MegaTree
                                                         nodes={col.children}
                                                     />
                                                 )}
+                                                {col.models.length > 0 && (
+                                                    <div class="mega-models">
+                                                        {col.models.map((m) => (
+                                                            <a
+                                                                class="mega-chip"
+                                                                href={m.path}
+                                                                title={m.name}
+                                                            >
+                                                                {m.label}
+                                                            </a>
+                                                        ))}
+                                                    </div>
+                                                )}
                                                 <a
                                                     class="mega-seeall"
                                                     href={col.path}
                                                 >
-                                                    All {col.name} →
+                                                    View all ({col.count}) →
                                                 </a>
                                             </div>
                                         ))}
                                     </div>
                                     <aside class="mega-rail">
-                                        <p class="mega-rail-title">
-                                            Featured models
-                                        </p>
-                                        {featured.map((f) => (
-                                            <a class="mega-feat" href={f.path}>
-                                                <img
-                                                    src={f.thumb}
-                                                    alt={f.name}
-                                                    width="72"
-                                                    height="72"
-                                                    loading="eager"
-                                                    decoding="async"
-                                                />
-                                                <span class="mega-feat-txt">
-                                                    <span class="mega-feat-tag">
-                                                        {f.tag}
-                                                    </span>
-                                                    <span class="mega-feat-name">
-                                                        {f.name}
-                                                    </span>
-                                                </span>
-                                            </a>
-                                        ))}
+                                        <a class="mega-promo" href="/products/">
+                                            <img
+                                                src="/images/site/company/vertical-machining-center-workshop.webp"
+                                                alt="Cennetic machining center workshop"
+                                                width="1152"
+                                                height="747"
+                                                loading="eager"
+                                                decoding="async"
+                                            />
+                                            <span class="mega-promo-txt">
+                                                <strong>
+                                                    Factory-direct CNC machines
+                                                </strong>
+                                                <em>
+                                                    VMC · HMC · 5-Axis ·
+                                                    Turn-Mill
+                                                </em>
+                                            </span>
+                                        </a>
                                         <a
                                             class="mega-cta"
-                                            href={`https://wa.me/${siteConfig.whatsapp.number}`}
+                                            href={wa}
                                             rel="noopener"
                                         >
                                             Get a quote on WhatsApp →
@@ -164,11 +171,7 @@ const featured = megaFeatured(3);
                     ),
                 )
             }
-            <a
-                class="btn btn-wa btn-sm cta"
-                href={`https://wa.me/${siteConfig.whatsapp.number}`}
-                rel="noopener"
-            >
+            <a class="btn btn-wa btn-sm cta" href={wa} rel="noopener">
                 WhatsApp
             </a>
         </nav>
@@ -312,26 +315,33 @@ const featured = megaFeatured(3);
         max-width: var(--container-max);
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 268px;
-        gap: 1.8rem;
+        /* 左栏自适应 + 右栏固定;minmax(0,..) 允许左栏收缩,避免长文本撑破 */
+        grid-template-columns: minmax(0, 1fr) 258px;
+        gap: 1.6rem;
         background: var(--color-paper);
         border: 1px solid var(--color-line);
         border-radius: var(--radius-lg);
         box-shadow: var(--shadow-float);
-        padding: 1.6rem 1.8rem;
+        padding: 1.5rem 1.7rem;
     }
     .mega-cols {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 1.4rem 2rem;
+        gap: 1.3rem 1.8rem;
         align-content: start;
+    }
+    /* 关键:每列 min-width:0,否则 nowrap 的长文字会把列撑宽并溢到右栏 */
+    .mega-col {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
     }
     .mega .mega-cat {
         display: flex;
         align-items: flex-start;
-        gap: 0.7rem;
-        padding: 0 0 0.55rem;
-        margin-bottom: 0.6rem;
+        gap: 0.6rem;
+        padding: 0 0 0.5rem;
+        margin-bottom: 0.55rem;
         border: none;
         border-bottom: 1px solid var(--color-line);
         white-space: normal;
@@ -339,34 +349,30 @@ const featured = megaFeatured(3);
     }
     .mega-cat-thumb {
         flex-shrink: 0;
-        width: 46px;
-        height: 46px;
+        width: 44px;
+        height: 44px;
         object-fit: cover;
         border-radius: var(--radius-sm);
         background: var(--color-surface);
         border: 1px solid var(--color-line-soft);
     }
-    .mega-cat-txt {
-        display: flex;
-        flex-direction: column;
-        gap: 0.15rem;
-        min-width: 0;
-    }
     .mega-cat-name {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        min-width: 0;
         font-family: var(--font-display);
         font-weight: 700;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         line-height: 1.25;
         white-space: normal;
+        overflow-wrap: anywhere;
     }
     .mega-cat-desc {
+        margin: 0 0 0.6rem;
         font-family: var(--font-body);
-        font-weight: 400;
         font-size: 0.78rem;
-        line-height: 1.4;
+        line-height: 1.45;
         color: var(--color-muted);
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -385,88 +391,93 @@ const featured = megaFeatured(3);
         border-radius: 999px;
         padding: 0.05rem 0.5rem;
     }
-    /* 子分类树样式已随 MegaTree.astro 组件自带(作用域样式归属渲染组件);
-       此处不再重复,否则因 cid 不同根本命不中。 */
+    /* 具体机型芯片:短代号,自动换行,绝不溢出列宽 */
+    .mega-models {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 0.6rem;
+    }
+    .mega .mega-chip {
+        padding: 0.18rem 0.55rem;
+        border: 1px solid var(--color-line);
+        border-radius: 6px;
+        background: var(--color-surface);
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.76rem;
+        line-height: 1.3;
+        white-space: nowrap;
+        color: var(--color-body);
+    }
+    .mega .mega-chip:hover {
+        color: var(--color-brand);
+        border-color: var(--color-brand);
+        background: var(--color-paper);
+    }
     .mega .mega-seeall {
-        display: inline-block;
+        margin-top: auto;
+        align-self: flex-start;
         padding: 0;
         border: none;
         font-family: var(--font-display);
         font-weight: 600;
         font-size: 0.82rem;
+        white-space: nowrap;
         color: var(--color-brand);
     }
     .mega .mega-seeall:hover {
         color: var(--color-brand-dark);
         border: none;
     }
-    /* 右侧栏：精选机型 + 快捷入口 */
+    /* 右侧栏：促销卡 + 快捷入口 */
     .mega-rail {
         display: flex;
         flex-direction: column;
-        gap: 0.7rem;
+        gap: 0.6rem;
         border-left: 1px solid var(--color-line);
         padding-left: 1.6rem;
     }
-    .mega-rail-title {
-        margin: 0;
-        font-family: var(--font-display);
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--color-faint);
-    }
-    .mega .mega-feat {
+    .mega .mega-promo {
+        position: relative;
         display: flex;
-        align-items: center;
-        gap: 0.7rem;
-        padding: 0.4rem;
-        margin: 0 -0.4rem;
+        align-items: flex-end;
+        padding: 0;
         border: none;
         border-radius: var(--radius);
-        background: transparent;
-        white-space: normal;
-        color: var(--color-ink);
-    }
-    .mega .mega-feat:hover {
-        background: var(--color-surface);
-        border: none;
-    }
-    .mega-feat img {
-        width: 56px;
-        height: 56px;
-        object-fit: cover;
-        border-radius: var(--radius-sm);
-        background: var(--color-paper);
-        border: 1px solid var(--color-line-soft);
-        flex-shrink: 0;
-    }
-    .mega-feat-txt {
-        display: flex;
-        flex-direction: column;
-        gap: 0.12rem;
-        min-width: 0;
-    }
-    .mega-feat-tag {
-        font-size: 0.68rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--color-brand);
-    }
-    .mega-feat-name {
-        font-family: var(--font-display);
-        font-size: 0.82rem;
-        font-weight: 600;
-        line-height: 1.3;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
         overflow: hidden;
+        min-height: 150px;
+        white-space: normal;
+    }
+    .mega-promo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .mega-promo-txt {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 2.4rem 0.9rem 0.85rem;
+        background: linear-gradient(transparent, rgb(0 0 0 / 0.74));
+        color: #fff;
+        display: grid;
+        gap: 0.12rem;
+    }
+    .mega-promo-txt strong {
+        font-family: var(--font-display);
+        font-size: 0.92rem;
+        line-height: 1.25;
+    }
+    .mega-promo-txt em {
+        font-style: normal;
+        font-size: 0.76rem;
+        opacity: 0.85;
     }
     .mega .mega-cta {
-        margin-top: 0.2rem;
+        margin-top: 0.1rem;
         padding: 0.6rem 0.9rem;
         border: none;
         border-radius: var(--radius-sm);
@@ -476,6 +487,7 @@ const featured = megaFeatured(3);
         font-weight: 600;
         font-size: 0.82rem;
         text-align: center;
+        white-space: normal;
     }
     .mega .mega-cta:hover {
         background: var(--color-brand-dark);
@@ -490,6 +502,7 @@ const featured = megaFeatured(3);
         font-size: 0.82rem;
         color: var(--color-muted);
         text-align: center;
+        white-space: normal;
     }
     .mega .mega-all:hover {
         color: var(--color-brand);

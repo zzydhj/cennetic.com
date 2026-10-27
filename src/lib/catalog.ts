@@ -106,8 +106,8 @@ export function categoryAncestors(cat: ProductCategory): ProductCategory[] {
 /* ── 页眉 Mega Menu ──────────────────────────────────────────────
  * 分类清单里的 count 是旧的、不随产品增减自动更新，所以这里按实际产品
  * 派生计数（含所有后代分类），并只保留有货的顶层分类 —— 后台新增产品后
- * 面板会自动长出新分类，无需改代码。为让面板更具体丰富，额外派生：每个
- * 分类的代表机型缩略图、分类描述，以及真正的多级子分类树（保留层级）。
+ * 面板会自动长出新分类，无需改代码。为让面板更具体，每列额外派生：代表
+ * 机型缩略图、分类描述、多级子分类树，以及该分类下的具体机型（型号代号）。
  */
 export interface MegaNode {
     name: string;
@@ -115,16 +115,17 @@ export interface MegaNode {
     count: number;
     children: MegaNode[];
 }
+/** 一列里的具体机型：label 是型号代号（如 C600），name 是完整产品名（做 title） */
+export interface MegaModel {
+    label: string;
+    name: string;
+    path: string;
+}
 export interface MegaColumn extends MegaNode {
     slug: string;
     thumb: string;
     desc: string;
-}
-export interface MegaFeature {
-    name: string;
-    path: string;
-    thumb: string;
-    tag: string;
+    models: MegaModel[];
 }
 
 function descendantCats(slug: string): ProductCategory[] {
@@ -153,7 +154,23 @@ function childTree(slug: string): MegaNode[] {
         .map((c) => ({ name: c.name, path: c.canonical, count: countIn(c.slug), children: childTree(c.slug) }));
 }
 
-/** 顶层分类列（有货的），按产品数降序 */
+/** 型号代号：去掉品牌前缀与 “| CENNETIC …” 后缀，取首个 token（如 C600 / 1160 / Z600L+） */
+function modelLabel(name: string): string {
+    const cleaned = name
+        .replace(/^CENNETIC\s+/i, '')
+        .replace(/\s*\|\s*CENNETIC.*$/i, '')
+        .trim();
+    return cleaned.split(/\s+/)[0] || cleaned;
+}
+
+/** 该分类下的具体机型（限 limit 台，优先带图的），供 Mega 面板列型号 */
+function modelsUnder(slug: string, limit: number): MegaModel[] {
+    return productsUnder(slug)
+        .slice(0, limit)
+        .map((p) => ({ label: modelLabel(p.name), name: p.name, path: p.canonical }));
+}
+
+/** 顶层分类列（有货的），按产品数降序；每列带具体机型 */
 export function megaMenu(): MegaColumn[] {
     return productCategories
         .filter((c) => c.trail.length === 1 && c.slug !== 'uncategorized')
@@ -165,17 +182,8 @@ export function megaMenu(): MegaColumn[] {
             children: childTree(c.slug),
             thumb: thumbIn(c.slug),
             desc: c.description,
+            models: modelsUnder(c.slug, 8),
         }))
         .filter((col) => col.count > 0)
-        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-}
-
-/** 精选机型：每个顶层分类挑一台代表机（优先带图的），供右侧展示具体型号 */
-export function megaFeatured(limit = 3): MegaFeature[] {
-    const feats: MegaFeature[] = [];
-    for (const col of megaMenu()) {
-        const rep = productsUnder(col.slug).find((p) => p.images.length > 0);
-        if (rep) feats.push({ name: rep.name, path: rep.canonical, thumb: rep.images[0].src, tag: col.name });
-    }
-    return feats.slice(0, limit);
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(a.name));
 }

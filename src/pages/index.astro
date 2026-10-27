@@ -226,26 +226,46 @@ const lcpImage = siteConfig.hero.poster;
     }
 
     <section class="band band-cta" aria-labelledby="contact-h">
-        <div class="shell cta">
-            <p class="eyebrow">Contact us</p>
-            <h2 id="contact-h" class="section-title">
-                Send us your part drawing
-            </h2>
-            <p class="cta-lede">
-                Tell us the material, part size, tolerance and monthly volume —
-                we will recommend a configuration and send pricing on WhatsApp.
-            </p>
-            <p class="actions">
-                <a
-                    class="btn btn-wa"
-                    href={wa}
-                    rel="noopener noreferrer"
-                    target="_blank">WhatsApp {siteConfig.whatsapp.display}</a
-                >
-                <a class="btn btn-ghost" href={`mailto:${siteConfig.email}`}
-                    >Email us</a
-                >
-            </p>
+        <div class="shell">
+            <div class="cta-card">
+                <div class="cta-main">
+                    <p class="eyebrow">Contact us</p>
+                    <h2 id="contact-h" class="section-title">
+                        Send us your part drawing
+                    </h2>
+                    <p class="cta-lede">
+                        Tell us the material, part size, tolerance and monthly
+                        volume — we will recommend a configuration and send
+                        pricing on WhatsApp.
+                    </p>
+                    <p class="actions">
+                        <a
+                            class="btn btn-wa"
+                            href={wa}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            >WhatsApp {siteConfig.whatsapp.display}</a
+                        >
+                        <a
+                            class="btn btn-ghost"
+                            href={`mailto:${siteConfig.email}`}>Email us</a
+                        >
+                    </p>
+                </div>
+                <div class="cta-side">
+                    <p class="cta-side-title">What to include</p>
+                    <ul class="cta-list">
+                        <li>Material and hardness</li>
+                        <li>Part size and key tolerances</li>
+                        <li>Monthly or total quantity</li>
+                        <li>Target cycle time or surface finish</li>
+                    </ul>
+                    <p class="cta-note">
+                        Drawings accepted in STEP, DXF, PDF or IGES. Replies
+                        within one business day.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 </BaseLayout>
@@ -273,24 +293,95 @@ const lcpImage = siteConfig.hero.poster;
         padding-block: clamp(3.5rem, 9vw, 6.5rem);
     }
 
-    /* 首页收尾 CTA：浅底居中，与下方深色页脚形成明暗对比，不再两块深色相连 */
-    .band-cta {
-        text-align: center;
+    /* 首页收尾 CTA：浅底上的一张结构卡(左文案+按钮 / 右“该发什么”清单)，
+       与下方深色页脚形成明暗对比，不再只是居中几行字。 */
+    .cta-card {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: center;
+        background: var(--color-paper);
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-float);
+        padding: clamp(1.75rem, 4vw, 3rem);
     }
 
-    .cta {
-        max-width: 52ch;
-        margin-inline: auto;
+    .cta-main .eyebrow,
+    .cta-main .section-title {
+        text-align: left;
     }
 
     .cta-lede {
         color: var(--color-body);
         line-height: 1.7;
         margin: 0 0 1.6rem;
+        max-width: 46ch;
     }
 
-    .band-cta .actions {
-        justify-content: center;
+    .cta-card .actions {
+        justify-content: flex-start;
+    }
+
+    .cta-side {
+        background: var(--color-surface);
+        border: 1px solid var(--color-line-soft);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+    }
+
+    .cta-side-title {
+        margin: 0 0 0.85rem;
+        font-family: var(--font-display);
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-faint);
+    }
+
+    .cta-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.55rem;
+    }
+
+    .cta-list li {
+        position: relative;
+        padding-left: 1.55rem;
+        font-size: 0.92rem;
+        line-height: 1.4;
+        color: var(--color-body);
+    }
+
+    /* 手绘对勾：左下两条边旋转 45° */
+    .cta-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.28rem;
+        width: 0.85rem;
+        height: 0.45rem;
+        border-left: 2px solid var(--color-brand);
+        border-bottom: 2px solid var(--color-brand);
+        transform: rotate(-45deg);
+    }
+
+    .cta-note {
+        margin: 1rem 0 0;
+        padding-top: 0.85rem;
+        border-top: 1px solid var(--color-line);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--color-muted);
+    }
+
+    @media (max-width: 46rem) {
+        .cta-card {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* ── Hero ── */
