@@ -11,7 +11,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumb from "@components/ui/Breadcrumb.astro";
 import Gallery from "@components/product/Gallery.astro";
-import SpecTable from "@components/product/SpecTable.astro";
 import ProductCard from "@components/ui/ProductCard.astro";
 import Faq from "@components/ui/Faq.astro";
 import ProductCompanySections from "@components/product/ProductCompanySections.astro";
@@ -137,12 +136,6 @@ const description = `${product.name} by Cennetic — ${product.summary
                 </ul>
             </div>
         </div>
-
-        {
-            product.specs.length > 0 && (
-                <SpecTable rows={product.specs} name={product.name} />
-            )
-        }
 
         {
             product.body && (
@@ -300,9 +293,35 @@ const description = `${product.name} by Cennetic — ${product.summary
         max-width: 75ch;
     }
 
+    /*
+     * 正文里的规格表做成“像样”的规格清单：深色表头 + 边框 + 斑马纹。
+     * 分组行标题(Bed/Electrical)是 tbody 里的 td rowspan,不会误染。
+     */
     :global(.detail .qf-article-body table) {
         width: 100%;
         max-width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+        margin: 1.1rem 0 1.9rem;
+    }
+
+    :global(.detail .qf-article-body th),
+    :global(.detail .qf-article-body td) {
+        border: 1px solid var(--color-line);
+        padding: 0.62rem 0.85rem;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    :global(.detail .qf-article-body thead th) {
+        background: var(--color-ink);
+        color: #fff;
+        font-family: var(--font-display);
+        font-weight: 600;
+    }
+
+    :global(.detail .qf-article-body tbody tr:nth-child(even)) {
+        background: var(--color-surface);
     }
 
     .grid {
