@@ -13,24 +13,25 @@ import PageLayout from "@layouts/PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
 
 const meta = {
-    slug: "about-us",
-    // title 兼作面包屑末项，保持简短；<title> 由 BaseLayout 追加品牌后缀
-    title: "About Us",
-    heading: "Empowering Manufacturing with High-Precision CNC Solutions",
-    description:
-        "CENNETIC is a true source factory for high-precision CNC machine tools in Dongguan, China — factory-direct pricing, OEM/ODM capability and turnkey production lines for buyers worldwide.",
-    canonical: "/about-us/",
-    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  slug: "about-us",
+  // title 兼作面包屑末项，保持简短；<title> 由 BaseLayout 追加品牌后缀
+  title: "About Us",
+  heading: "Empowering Manufacturing with High-Precision CNC Solutions",
+  description:
+    "CENNETIC is a true source factory for high-precision CNC machine tools in Dongguan, China — factory-direct pricing, OEM/ODM capability and turnkey production lines for buyers worldwide.",
+  canonical: "/about-us/",
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
 };
 
 const page = { data: meta } as unknown as CollectionEntry<"pages">;
 
 const img = (
-    src: string,
-    w: number,
-    h: number,
-    alt: string,
-    cap: string,
+  src: string,
+  w: number,
+  h: number,
+  alt: string,
+  cap: string,
 ) => /* html */ `
       <figure class="pg-gitem">
         <img src="/images/site/company/${src}.webp" alt="${alt}" width="${w}" height="${h}" loading="lazy" decoding="async" />
@@ -83,6 +84,8 @@ const html = /* html */ `
       ${img("workshop-detail-1", 1037, 668, "Detail of the CENNETIC manufacturing facility", "Inside the Dongguan facility")}
       ${img("workshop-detail-2", 989, 668, "Machining in progress on the factory floor", "Machining in progress")}
       ${img("workshop-detail-3", 1037, 671, "Machine assembly detail in the workshop", "Assembly detail")}
+      ${img("workshop-detail-5", 989, 671, "Row of CNC control panels on the assembly line", "Control panels on the line")}
+      ${img("workshop-detail-4", 989, 671, "Machines wrapped in protective film under the factory crane, ready for export", "Packed and ready to ship")}
     </div>
   </section>
 
@@ -108,6 +111,8 @@ const html = /* html */ `
       ${img("balance-point-detection", 311, 246, "Spindle balance-point detection", "Spindle balance-point detection")}
       ${img("precision-weight-calibration", 309, 246, "Precision weight calibration of the machine", "Precision weight calibration")}
       ${img("machine-inspection", 303, 225, "Final machine inspection before packing", "Final machine inspection")}
+      ${img("laser-calibration-4", 295, 264, "Laser interferometer on a tripod set up in front of a vertical machining center", "Interferometer aligned to the axes")}
+      ${img("digital-waveform-verification", 309, 246, "Circular test result displayed on the machine control screen", "Test result on the control screen")}
       ${img("technical-discussion-1", 390, 321, "Engineers reviewing machine quality", "Engineering &amp; QC review")}
     </div>
   </section>

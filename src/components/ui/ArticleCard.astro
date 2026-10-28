@@ -5,17 +5,18 @@
  * 图片一律带显式宽高：源站 320 张正文图统一是 1200x686，
  * 卡片里按比例缩放即可，不会因为图片晚到而把下方内容顶下去（CLS）。
  * 主图缺失时不输出 img —— 空 alt 的占位图对 SEO 与无障碍都是负分。
+ *
+ * 所有列表（/blog/、/category/、/news-and-media/、首页）都用同一种尺寸的卡片，
+ * 不再有「首条放大」：放大条会占掉一整行，与定列网格的每页数量对不上，末行就留空格。
  */
 import { entryPath, type Article } from "@lib/content.ts";
 import { siteConfig } from "@lib/catalog.ts";
 
 interface Props {
     article: Article;
-    /** first 会放大首条，用于分类页顶部与首页 */
-    featured?: boolean;
 }
 
-const { article, featured = false } = Astro.props;
+const { article } = Astro.props;
 const {
     title,
     heading,
@@ -51,7 +52,7 @@ const ratio =
     heroWidth && heroHeight ? `${heroWidth} / ${heroHeight}` : "16 / 9";
 ---
 
-<article class:list={["card item", { feat: featured }]}>
+<article class="card item">
     {
         hero && (
             <a
@@ -66,7 +67,7 @@ const ratio =
                     alt=""
                     width={heroWidth ?? undefined}
                     height={heroHeight ?? undefined}
-                    loading={featured ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                 />
             </a>
@@ -164,15 +165,5 @@ const ratio =
         padding-top: 0.6rem;
         font-size: 0.74rem;
         color: var(--color-faint);
-    }
-
-    /* 首条：图更大、标题更重，用于列表顶部 */
-    .feat h3 {
-        font-size: 1.3rem;
-    }
-    .feat .desc {
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        font-size: 0.92rem;
     }
 </style>

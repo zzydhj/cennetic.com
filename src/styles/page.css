@@ -205,12 +205,27 @@
     color: var(--color-body);
 }
 
-/* ── 工厂图集：图文卡片网格，混排不同尺寸图统一裁成 3:2 ── */
+/* ── 工厂图集：图文卡片网格，混排不同尺寸图统一裁成 3:2 ──
+   每组 8 图 → 固定 4 列正好 2 行；降级只能走 4→2→1（都是 8 的因数），
+   中间插一档 3 列就会让 8 图末行留空。不用 auto-fill/auto-fit：
+   它们在实际列数 ≠ 图数时末行照样留空格（auto-fit 只在图数少于轨道数才坍轨）。 */
 .pg-gallery {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     margin: 1.2rem 0 0;
+}
+
+@media (max-width: 900px) {
+    .pg-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .pg-gallery {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }
 
 .pg-gitem {

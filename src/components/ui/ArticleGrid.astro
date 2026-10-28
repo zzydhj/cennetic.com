@@ -2,37 +2,31 @@
 /**
  * 文章卡片网格。把「排几列、空态怎么显示」收在这一处，
  * 避免 /blog/、/category/、首页各写一份出入不大的 grid 规则。
+ *
+ * 列数用固定值（配媒体查询降级），不用 auto-fill —— auto-fill 会让实际列数随容器
+ * 宽度浮动，和「每页数量」对不上，最后一行就留空格。固定列数 + 每页数量取列数倍数
+ * 才能整除无空白。
  */
 import ArticleCard from "./ArticleCard.astro";
 import type { Article } from "@lib/content.ts";
 
 interface Props {
     articles: Article[];
-    /** 首条放大展示，用于列表首页与分类页顶部 */
-    featureFirst?: boolean;
     columns?: 3 | 4;
 }
 
-const { articles, featureFirst = false, columns = 4 } = Astro.props;
-const [first, ...rest] = articles;
+const { articles, columns = 4 } = Astro.props;
 ---
 
 {
     articles.length === 0 ? (
         <p class="empty">No articles published here yet.</p>
     ) : (
-        <>
-            {featureFirst && first && (
-                <div class="feat">
-                    <ArticleCard article={first} featured />
-                </div>
-            )}
-            <div class:list={["grid", `c${columns}`]}>
-                {(featureFirst ? rest : articles).map((a) => (
-                    <ArticleCard article={a} />
-                ))}
-            </div>
-        </>
+        <div class:list={["grid", `c${columns}`]}>
+            {articles.map((a) => (
+                <ArticleCard article={a} />
+            ))}
+        </div>
     )
 }
 
@@ -43,19 +37,29 @@ const [first, ...rest] = articles;
         font-size: 0.95rem;
     }
 
-    .feat {
-        margin-bottom: 1.1rem;
-    }
-
     .grid {
         display: grid;
         gap: 1.1rem;
     }
 
     .c3 {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .c4 {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* 窄屏降级为 2 列 / 1 列；每页数量是 3 与 4 的公倍数，各档都整除无空白 */
+    @media (max-width: 900px) {
+        .c3,
+        .c4 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @media (max-width: 600px) {
+        .c3,
+        .c4 {
+            grid-template-columns: minmax(0, 1fr);
+        }
     }
 </style>

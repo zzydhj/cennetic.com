@@ -1,13 +1,13 @@
 /**
  * 内容查询与分页。
  *
- * 分页必须与源站逐页对齐：实测源站每页 10 篇（/blog/ 探测出 11 个分页 = 113 篇；
- * technical-knowledge 74 篇 = 8 页，其中 7 个分页）。分页 URL 是 /blog/page/N/ 形态，
- * Google 可能已收录，少建一页就是 404。
+ * 每页数量必须是列表列数的倍数，否则最后一行会留空格（网格是定列 CSS Grid）。
+ * 列表统一 3 列，故每页 12（= 3×4）。分页 URL 为 /blog/page/N/ 形态，页数随每页数量变化。
+ * Pager 只按当前页数生成链接，不会指向不存在的页。
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export const PER_PAGE = 10;
+export const PER_PAGE = 12;
 
 export type Article = CollectionEntry<'articles'>;
 

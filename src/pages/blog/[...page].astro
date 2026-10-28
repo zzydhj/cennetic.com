@@ -60,5 +60,5 @@ const path = n === 1 ? BASE : `${BASE}page/${n}/`;
     pageType="archive"
     ogImage={d?.hero ?? siteConfig.ogDefaultImage}
 >
-    <ArticleGrid articles={items} featureFirst={n === 1} columns={3} />
+    <ArticleGrid articles={items} columns={3} />
 </ArchiveLayout>
