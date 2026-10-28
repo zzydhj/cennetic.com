@@ -48,16 +48,6 @@ function flatten(
             />
         </a>
 
-        <button
-            class="toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="site-nav"
-        >
-            <span class="sr-only">Menu</span>
-            <span aria-hidden="true"></span>
-        </button>
-
         <nav id="site-nav" class="nav" aria-label="Main navigation">
             <a href="/" class={isActive("/") ? "on" : ""}>Home</a>
             {
@@ -224,10 +214,40 @@ function flatten(
                     ),
                 )
             }
-            <a class="btn btn-primary btn-sm cta" href={wa} rel="noopener">
-                WhatsApp
-            </a>
         </nav>
+
+        <!-- 主转化入口：不放进 .nav，才能既紧跟导航又钉在右边缘（移动端抽屉里不重复出现） -->
+        <a
+            class="btn btn-primary cta"
+            href={wa}
+            rel="noopener"
+            aria-label="WhatsApp"
+        >
+            <svg
+                class="cta-ic"
+                viewBox="0 0 24 24"
+                width="17"
+                height="17"
+                fill="currentColor"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <path
+                    d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.96-.94 1.16c-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 0 1 14.6-11.6 9.31 9.31 0 0 1 2.75 6.63 9.38 9.38 0 0 1-9.11 9.38M20.52 3.45A11.8 11.8 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.15 1.6 5.96L0 24l6.24-1.64a11.9 11.9 0 0 0 5.8 1.48h.01c6.58 0 11.94-5.36 11.95-11.95a11.9 11.9 0 0 0-3.48-8.44"
+                ></path>
+            </svg>
+            <span class="cta-label">WhatsApp</span>
+        </a>
+
+        <button
+            class="toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+        >
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true"></span>
+        </button>
     </div>
 </header>
 
@@ -291,8 +311,7 @@ function flatten(
     .bar {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
+        gap: 1.25rem;
         min-height: var(--header-h);
     }
 
@@ -303,19 +322,17 @@ function flatten(
     }
     .brand-logo {
         display: block;
-        height: 2.35rem;
+        /* 2rem = logo 自然高度 32px，按 1:1 渲染最锐利；占 80px 页眉的 40% */
+        height: 2rem;
         width: auto;
-    }
-    @media (max-width: 40rem) {
-        .brand-logo {
-            height: 1.75rem;
-        }
     }
 
     .nav {
         display: flex;
         align-items: center;
-        gap: 1.15rem;
+        gap: 1.25rem;
+        /* 菜单紧跟 logo 靠左成一组，剩余空间交给 .cta 的 margin-inline-start:auto */
+        margin-inline-start: clamp(1.75rem, 3vw, 3.25rem);
         /* 撑满页眉高度：让 .mega(align-self:stretch) 底边对齐到页眉底部，
            正好接住 absolute 面板的 top:100%(面板包含块是 sticky 的 .site-header)，
            消除「Products 与 Mega 之间那段空隙导致 hover 丢失」的问题。
@@ -323,13 +340,13 @@ function flatten(
         align-self: stretch;
     }
 
-    /* 导航项：大写、粗、中间生长下划线 */
+    /* 导航项：大写、粗、中间生长下划线（0.95rem 在 80px 页眉里才撑得住） */
     .nav a {
         position: relative;
         display: inline-flex;
         align-items: center;
         font-family: var(--font-display);
-        font-size: 0.92rem;
+        font-size: 0.95rem;
         font-weight: 700;
         letter-spacing: 0.02em;
         text-transform: uppercase;
@@ -358,18 +375,44 @@ function flatten(
     .nav a.on {
         color: var(--color-brand);
     }
-    .nav a.cta {
+    /* WhatsApp 主 CTA：钉在右边缘；高 40px，比 32px 的 logo 更重一档，主次分明 */
+    .site-header a.cta {
+        margin-inline-start: auto;
+        flex-shrink: 0;
+        gap: 0.45rem;
+        padding: 0.7rem 1.25rem;
+        font-size: 0.95rem;
         color: #fff;
-        margin-left: 0.25rem;
-        padding: 0.6rem 1.15rem;
-        text-transform: none;
-        letter-spacing: normal;
     }
-    .nav a.cta::after {
-        display: none;
-    }
-    .nav a.cta:hover {
+    .site-header a.cta:hover {
         color: #fff;
+    }
+    .cta-ic {
+        flex-shrink: 0;
+    }
+
+    /* 窄屏：logo 缩一档、CTA 退成图标方钮，保证 logo+按钮+汉堡三者不挤 */
+    @media (width <= 40rem) {
+        .bar {
+            gap: 0.9rem;
+        }
+        .brand-logo {
+            height: 1.6rem;
+        }
+        .site-header a.cta {
+            padding: 0.62rem 0.68rem;
+        }
+        .cta-label {
+            display: none;
+        }
+    }
+    @media (width <= 22rem) {
+        .bar {
+            gap: 0.7rem;
+        }
+        .brand-logo {
+            height: 1.35rem;
+        }
     }
     .chev {
         margin-left: 0.45rem;
@@ -701,7 +744,9 @@ function flatten(
         border: 0;
     }
 
-    @media (width <= 1150px) {
+    /* 断点 1240px：左对齐后页眉需要「logo + 间距 + 7 项菜单 + CTA」一行排完，
+       实测这套内容宽约 1124px，加上两侧 40px 留白 → 1240 以下交给抽屉。 */
+    @media (width <= 1240px) {
         .toggle {
             display: block;
         }
@@ -721,6 +766,8 @@ function flatten(
             flex-direction: column;
             align-items: stretch;
             gap: 0;
+            /* 抽屉是绝对定位：不归零就会把桌面端的左间距算进去，导致整块右缩 */
+            margin-inline-start: 0;
             background: var(--color-paper);
             border-bottom: 1px solid var(--color-line);
             padding: 0.5rem var(--spacing-page) 1rem;
@@ -734,10 +781,6 @@ function flatten(
         }
         .nav a::after {
             display: none;
-        }
-        .nav a.cta {
-            margin: 0.85rem 0 0;
-            justify-content: center;
         }
     }
 </style>
