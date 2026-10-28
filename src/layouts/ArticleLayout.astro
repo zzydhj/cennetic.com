@@ -2,16 +2,14 @@
 /**
  * 文章页正文布局。
  *
- * 正文以清洗过的 HTML 直接输出（set:html），不走 Markdown 编译 —— 原因见
- * scripts/migrate/04-articles.ts 顶部：正文含 143 个表格与大量 qf-* 组件类名，
- * Markdown 往返会丢类名。
- *
- * 迁移时已剥掉的「手写目录」在这里按实际标题重新生成，锚点必定对得上；
- * 已抽走的「作者框」在这里由数据层统一渲染，113 篇共用一份署名记录。
+ * 页头用共享 PageHero（slim）：面包屑 + 分类 + 标题 + 署名行；正文以清洗过的 HTML
+ * 直接输出（set:html），不走 Markdown 编译 —— 原因见 scripts/migrate/04-articles.ts：
+ * 正文含 143 个表格与大量 qf-* 组件类名，Markdown 往返会丢类名。
+ * 迁移时剥掉的手写目录在这里按实际标题重新生成（左侧粘滞 TOC）；作者框由数据层统一渲染。
  */
 import "../styles/article.css";
 import BaseLayout from "./BaseLayout.astro";
-import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import PageHero from "@components/layout/PageHero.astro";
 import ArticleCard from "@components/ui/ArticleCard.astro";
 import Toc from "@components/ui/Toc.astro";
 import AuthorBox from "@components/ui/AuthorBox.astro";
@@ -82,135 +80,107 @@ const updatedText =
     faq={d.faq}
     preloadLcpImage={d.hero}
 >
-    <div class="post-wrap shell">
-        {
-            /*
-      上一版 TOC 是正文里的行内块，占掉了本就不宽的阅读列；现在移到左侧栏并粘滞，
-      正文宽度不再被目录吃掉。
-    */
-        }
-        {
-            toc.length >= 3 && (
-                <aside class="rail" aria-label="Table of contents">
-                    <Toc items={toc} />
-                </aside>
-            )
-        }
+    <PageHero title={d.heading} crumbs={crumbs} eyebrow={categoryName} slim>
+        <p class="ph-byline">
+            <time datetime={d.date.toISOString()}>{dateText}</time>
+            <span aria-hidden="true">·</span>
+            <span>{d.readingMinutes} min read</span>
+            {
+                updatedText && (
+                    <>
+                        <span aria-hidden="true">·</span>
+                        <span>Updated {updatedText}</span>
+                    </>
+                )
+            }
+        </p>
+    </PageHero>
 
-        <article class="post">
-            <header class="post-head">
-                <Breadcrumb items={crumbs} />
+    <div class="shell">
+        <div class:list={["post-wrap", toc.length >= 3 && "has-rail"]}>
+            {
+                toc.length >= 3 && (
+                    <aside class="rail" aria-label="Table of contents">
+                        <Toc items={toc} />
+                    </aside>
+                )
+            }
 
+            <article class="post">
                 {
-                    d.categories.length > 0 && (
-                        <p class="kicker">
-                            {d.categories.map((slug, i) => (
-                                <>
-                                    {i > 0 && (
-                                        <span aria-hidden="true"> · </span>
-                                    )}
-                                    <a href={`/category/${slug}/`}>
-                                        {slug
-                                            .replace(/-/g, " ")
-                                            .replace(/\b\w/g, (m) =>
-                                                m.toUpperCase(),
-                                            )}
-                                    </a>
-                                </>
-                            ))}
-                        </p>
+                    d.hero && (
+                        <figure class="hero">
+                            <img
+                                src={d.hero}
+                                alt={d.heroAlt ?? d.heading}
+                                width={d.heroWidth ?? 1200}
+                                height={d.heroHeight ?? 686}
+                                fetchpriority="high"
+                                decoding="async"
+                            />
+                        </figure>
                     )
                 }
 
-                <h1>{d.heading}</h1>
+                <div class="post-body qf-article-body" set:html={html} />
 
-                <p class="byline">
-                    <time datetime={d.date.toISOString()}>{dateText}</time>
-                    <span aria-hidden="true">·</span>
-                    <span>{d.readingMinutes} min read</span>
-                    {
-                        updatedText && (
-                            <>
-                                <span aria-hidden="true">·</span>
-                                <span>Updated {updatedText}</span>
-                            </>
-                        )
-                    }
-                </p>
-            </header>
+                <aside class="cta-strip">
+                    <p class="cta-title">
+                        Need help choosing the right machine?
+                    </p>
+                    <p class="cta-sub">
+                        Send us your part drawing, materials and tolerance
+                        requirements — we will recommend a configuration based
+                        on 15 years of factory experience.
+                    </p>
+                    <a
+                        class="btn btn-wa"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank">Talk to us on WhatsApp</a
+                    >
+                </aside>
 
-            {
-                d.hero && (
-                    <figure class="hero">
-                        <img
-                            src={d.hero}
-                            alt={d.heroAlt ?? d.heading}
-                            width={d.heroWidth ?? 1200}
-                            height={d.heroHeight ?? 686}
-                            fetchpriority="high"
-                            decoding="async"
+                {
+                    author && (
+                        <AuthorBox
+                            author={author}
+                            readingMinutes={d.readingMinutes}
+                            wordCount={d.wordCount}
                         />
-                    </figure>
-                )
-            }
+                    )
+                }
 
-            <div class="post-body qf-article-body" set:html={html} />
-
-            <aside class="cta-strip">
-                <p class="cta-title">Need help choosing the right machine?</p>
-                <p class="cta-sub">
-                    Send us your part drawing, materials and tolerance
-                    requirements — we will recommend a configuration based on 15
-                    years of factory experience.
-                </p>
-                <a
-                    class="btn btn-wa"
-                    href={wa}
-                    rel="noopener noreferrer"
-                    target="_blank">Talk to us on WhatsApp</a
-                >
-            </aside>
-
-            {
-                author && (
-                    <AuthorBox
-                        author={author}
-                        readingMinutes={d.readingMinutes}
-                        wordCount={d.wordCount}
-                    />
-                )
-            }
-
-            {
-                related.length > 0 && (
-                    <section class="related" aria-labelledby="related-h">
-                        <h2 id="related-h">Related reading</h2>
-                        <div class="rel-grid">
-                            {related.map((r) => (
-                                <ArticleCard article={r} />
-                            ))}
-                        </div>
-                    </section>
-                )
-            }
-        </article>
+                {
+                    related.length > 0 && (
+                        <section class="related" aria-labelledby="related-h">
+                            <h2 id="related-h">Related reading</h2>
+                            <div class="rel-grid">
+                                {related.map((r) => (
+                                    <ArticleCard article={r} />
+                                ))}
+                            </div>
+                        </section>
+                    )
+                }
+            </article>
+        </div>
     </div>
 </BaseLayout>
 
 <style>
     /*
      * 宽屏：左侧 TOC 栏 + 右侧阅读列。窄屏自动堆叠，TOC 回到正文上方。
-     * 阅读列用 ch 而不是 px 约束：行长跟字号联动，16px 与 17px 下都能保住 65–75 字符。
+     * 阅读列用 ch 约束：行长跟字号联动，保住 65–75 字符。
      */
     .post-wrap {
         display: grid;
         gap: clamp(1.5rem, 4vw, 3.5rem);
         align-items: start;
-        padding-top: 0.75rem;
     }
 
     @media (width >= 1080px) {
-        .post-wrap {
+        .post-wrap.has-rail {
             grid-template-columns: 240px minmax(0, 1fr);
         }
 
@@ -220,56 +190,25 @@ const updatedText =
             max-height: calc(100vh - 7rem);
             overflow-y: auto;
         }
-
-        .post {
-            max-width: 76ch;
-        }
-    }
-
-    @media (width < 1080px) {
-        .post {
-            max-width: 72ch;
-        }
     }
 
     .post {
         padding-bottom: 1rem;
         min-width: 0;
+        max-width: 76ch;
     }
 
-    .post-head {
-        padding-top: 0.5rem;
-    }
-
-    .kicker {
-        margin: 1.1rem 0 0.5rem;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-    }
-
-    .kicker a {
-        color: var(--color-brand);
-    }
-
-    h1 {
-        font-size: clamp(1.75rem, 1.3rem + 2.2vw, 2.5rem);
-        line-height: 1.2;
-        margin: 0 0 0.7rem;
-    }
-
-    .byline {
+    .ph-byline {
         display: flex;
         flex-wrap: wrap;
         gap: 0.45rem;
-        margin: 0;
-        font-size: 0.82rem;
-        color: var(--color-muted);
+        margin: 1.1rem 0 0;
+        font-size: 0.85rem;
+        color: rgb(255 255 255 / 0.78);
     }
 
     .hero {
-        margin: 1.75rem 0 0;
+        margin: 0 0 1.75rem;
     }
 
     .hero img {
@@ -278,10 +217,6 @@ const updatedText =
         border-radius: var(--radius);
         display: block;
         background: var(--color-surface-alt);
-    }
-
-    .post-body {
-        margin-top: 1.75rem;
     }
 
     /* 迁移正文里的表格在窄屏要能横向滚动，而不是撑破版面 */

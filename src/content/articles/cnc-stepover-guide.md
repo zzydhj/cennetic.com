@@ -55,7 +55,7 @@ sourceId: 7459
   <p>
     CNC stepover (also called <strong>radial engagement</strong> or <strong>radial depth of cut</strong>) defines how far the cutter steps sideways between each milling pass. It is typically expressed as a percentage of the tool diameter:
   </p>
-  <p style="background:#f5f5f5;border-left:4px solid #cc0000;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
+  <p style="background:#f5f5f5;border-left:4px solid #012760;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
     Stepover (%) = (Radial Engagement ÷ Tool Diameter) × 100
   </p>
   <p>

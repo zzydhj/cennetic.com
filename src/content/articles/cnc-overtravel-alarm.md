@@ -208,7 +208,7 @@ sourceId: 7082
   <!-- 6. MODULE D — EXPERT INSIGHT -->
   <h2 id="4-industry-expert-insight">4. Industry Expert Insight</h2>
 
-  <blockquote style="border-left:4px solid #cc0000;padding:12px 20px;margin:24px 0;background:#f9f9f9;border-radius:0 6px 6px 0;">
+  <blockquote style="border-left:4px solid #012760;padding:12px 20px;margin:24px 0;background:#f9f9f9;border-radius:0 6px 6px 0;">
     <p style="font-style:italic;color:#444;margin:0 0 8px 0;">
       “In my 20 years of CNC field service, the number-one cause of hard
       overtravel alarms is neglected limit switches. Regular cleaning and

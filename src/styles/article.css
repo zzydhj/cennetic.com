@@ -25,6 +25,8 @@
        或左边缘比标题缩进一截，这里统一归零；限宽交给各布局（文章 .post / 页面 .col / 产品 .detail）。 */
     margin-inline: 0;
     padding-inline: 0;
+    /* 长代码串/URL 等不可断词自动换行，避免撑破阅读列 */
+    overflow-wrap: break-word;
 }
 
 /* ── 2. 标题颜色与字体归一：源站存在 #222 与 #333 两套写法 ── */
@@ -68,6 +70,10 @@
 /* ── 5. 表格：源站 143 个表格样式各异，统一成一套可读的对比表 ── */
 .qf-article-body table {
     font-size: 0.95em;
+    /* 宽规格表/对比表在窄屏横向滚动，而不是撑破页面 */
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 .qf-article-body th {

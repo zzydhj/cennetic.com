@@ -2,11 +2,12 @@
 /**
  * 列表页骨架：文章列表、产品分类页、博客分类页共用。
  *
+ * 页头统一用共享 PageHero（深色渐变带 + 面包屑），列表内容放其后的 .shell。
  * 分页存在的前提是 URL 与源站逐条对齐 —— /blog/page/N/ 与 /category/x/page/N/
  * 实测在源站都返回 200 且 index，Google 可能已收录，少建一页就是 404。
  */
 import BaseLayout from "./BaseLayout.astro";
-import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import PageHero from "@components/layout/PageHero.astro";
 import Pager from "@components/ui/Pager.astro";
 import Faq from "@components/ui/Faq.astro";
 import type { Crumb } from "@components/ui/Breadcrumb.astro";
@@ -29,7 +30,7 @@ interface Props {
     pageType?: "archive" | "category" | "page";
     ogImage?: string;
     faq?: Array<{ q: string; a: string }>;
-    /** 列表上方需要限制行长的描述区 */
+    /** 保留位（历史上限制描述区行长）；页头改 PageHero 后不再需要 */
     narrowIntro?: boolean;
 }
 
@@ -48,7 +49,6 @@ const {
     pageType = "archive",
     ogImage,
     faq,
-    narrowIntro = false,
 } = Astro.props;
 ---
 
@@ -62,23 +62,23 @@ const {
     pageType={pageType}
     faq={faq}
 >
-    <div class:list={["archive shell", { narrow: narrowIntro }]}>
-        <Breadcrumb items={crumbs} />
+    <PageHero
+        title={heading}
+        crumbs={crumbs}
+        ledeHtml={intro}
+        lede={intro ? undefined : description}
+    />
 
-        <header class="head">
-            <h1>{heading}</h1>
-            {
-                intro ? (
-                    <p class="intro" set:html={intro} />
-                ) : (
-                    description && <p class="intro">{description}</p>
-                )
-            }
-        </header>
-
+    <div class="shell archive-body">
         <slot />
 
-        {faq?.length && <Faq items={faq} />}
+        {
+            faq?.length && (
+                <div class="faq-wrap">
+                    <Faq items={faq} />
+                </div>
+            )
+        }
 
         {
             pagination && basePath && total !== undefined && (
@@ -94,40 +94,11 @@ const {
 </BaseLayout>
 
 <style>
-    .archive {
-        padding-top: 0.75rem;
+    .archive-body {
+        padding-bottom: 1rem;
     }
-
-    /* 描述区限制行长，不让它在 1160px 宽下撑成一行 120 字 */
-    .head .intro {
-        max-width: 72ch;
-    }
-
-    .narrow .body,
-    .narrow .intro {
-        max-width: var(--container-prose);
-    }
-
-    .head {
-        margin: 1rem 0 1.75rem;
-    }
-
-    h1 {
-        font-size: clamp(1.65rem, 1.3rem + 1.6vw, 2.25rem);
-        margin: 0 0 0.55rem;
-    }
-
-    .intro {
-        font-size: 0.98rem;
-        color: var(--color-muted);
-        max-width: 72ch;
-        margin: 0;
-    }
-
-    .intro :global(p) {
-        margin: 0 0 0.6rem;
-    }
-    .intro :global(a) {
-        text-decoration: underline;
+    .faq-wrap {
+        max-width: 880px;
+        margin-top: 2.5rem;
     }
 </style>

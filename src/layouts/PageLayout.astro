@@ -2,16 +2,16 @@
 /**
  * 普通页面正文布局（About Us / Service / Contact / Privacy / Refund 等）。
  *
- * 正文同样是迁移后的 HTML。与文章布局的差别只有两点：
- * 不生成目录、不显示作者卡与阅读时长 —— 政策页和公司页挂作者署名是不合逻辑的。
- * isListing 的页面（/shop/ /products/ 等）不走这里，由各自的列表模板处理。
+ * 页头统一用共享 PageHero（深色渐变带 + 面包屑）；正文是迁移后的 HTML。
+ * 与文章布局的差别只有两点：不生成目录、不显示作者卡与阅读时长 —— 政策页和公司页
+ * 挂作者署名不合逻辑。isListing 的页面（/shop/ /products/ 等）不走这里，由列表模板处理。
  */
 import BaseLayout from "./BaseLayout.astro";
-import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import PageHero from "@components/layout/PageHero.astro";
 import Faq from "@components/ui/Faq.astro";
 /* 页面正文与文章同源（迁移 HTML + qf-* 类名），缺了这层样式正文会裸奔 */
 import "../styles/article.css";
-/* 营销页分区组件（pg-*）：正文带 pg-page 标记的页面走宽版版式 */
+/* 营销页分区组件（pg-*）：正文带 pg-page 标记的页面走宽版分区版式 */
 import "../styles/page.css";
 import { siteConfig } from "@lib/catalog.ts";
 import { entryPath } from "@lib/content.ts";
@@ -33,8 +33,8 @@ const selfPath = entryPath(d);
 
 /*
  * 宽版模式开关：正文以 <div class="pg-page"> 开头的页面（About/Contact 等营销页）
- * 走 friway 式宽版版式（hero 带 + 通栏分区）；其余页面（政策页等纯长文）
- * 仍走 76ch 阅读列，两者共用这一个布局，靠内容标记自选。
+ * 走 friway 式宽版分区版式（通栏分区）；其余页面（政策页等纯长文）仍走 76ch 阅读列。
+ * 两者共用本布局，靠内容标记自选；页头 PageHero 两种模式都用。
  */
 const wide = /class="pg-page"/.test(html);
 
@@ -60,36 +60,27 @@ const wa = waLink(
     faq={d.faq}
     preloadLcpImage={d.hero}
 >
-    <div class="page shell">
-        <Breadcrumb items={crumbs} />
-
+    <PageHero title={d.heading} lede={d.description} crumbs={crumbs}>
         {
-            wide ? (
-                <header class="pg-hero">
-                    <h1 class="pg-h1">{d.heading}</h1>
-                    {d.description && <p class="pg-lede">{d.description}</p>}
-                    <div class="pg-hero-cta">
-                        <a
-                            class="btn btn-primary"
-                            href={wa}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                        >
-                            Get a Quick Quote
-                        </a>
-                        <a class="btn btn-ghost" href="/products/">
-                            Browse Products
-                        </a>
-                    </div>
-                </header>
-            ) : (
-                <header class="head col">
-                    <h1>{d.heading}</h1>
-                    {d.description && <p class="lede">{d.description}</p>}
-                </header>
+            wide && (
+                <p class="ph-cta">
+                    <a
+                        class="btn btn-light"
+                        href={wa}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        Get a Quick Quote
+                    </a>
+                    <a class="btn btn-outline-light" href="/products/">
+                        Browse Products
+                    </a>
+                </p>
             )
         }
+    </PageHero>
 
+    <div class="shell page-body">
         {/* 联系页路由模板在这里注入询盘表单（hero 与正文之间） */}
         <slot />
 
@@ -126,11 +117,18 @@ const wa = waLink(
 </BaseLayout>
 
 <style>
-    .page {
-        padding-top: 0.75rem;
+    .page-body {
+        padding-bottom: 1rem;
     }
 
-    /* 阅读列：与文章页 .post 同宽，标题/正文/卡片左边缘对齐；宽版模式不用它 */
+    .ph-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin: 1.6rem 0 0;
+    }
+
+    /* 阅读列：与文章页同宽，标题/正文/卡片左边缘对齐；宽版模式不用它 */
     .col {
         max-width: 76ch;
     }
@@ -138,22 +136,7 @@ const wa = waLink(
     /* 宽版模式的 FAQ 区限宽：通栏手风琴在 1400 容器里行太长 */
     .faq-wrap {
         max-width: 880px;
-    }
-
-    .head {
-        margin: 1rem 0 1.75rem;
-    }
-
-    h1 {
-        font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.4rem);
-        margin: 0 0 0.6rem;
-    }
-
-    .lede {
-        font-size: 1.02rem;
-        color: var(--color-muted);
-        max-width: 70ch;
-        margin: 0;
+        margin-top: 2.5rem;
     }
 
     /* 迁移层的居中与内垫已由 article.css 统一归零，限宽交给 .col */

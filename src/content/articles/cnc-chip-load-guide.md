@@ -79,19 +79,19 @@ sourceId: 7463
   <p>
     The formula is straightforward:
   </p>
-  <p style="background:#f5f5f5;border-left:4px solid #cc0000;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
+  <p style="background:#f5f5f5;border-left:4px solid #012760;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
     Chip Load (IPT) = Feed Rate (IPM) ÷ (RPM × Number of Flutes)
   </p>
   <p>
     <strong>Worked example:</strong> A 2-flute carbide end mill running at 10,000 RPM with a feed rate of 40 IPM:
   </p>
-  <p style="background:#f5f5f5;border-left:4px solid #cc0000;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
+  <p style="background:#f5f5f5;border-left:4px solid #012760;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
     Chip Load = 40 ÷ (10,000 × 2) = <strong>0.002 IPT</strong>
   </p>
   <p>
     You can also rearrange the formula to calculate the required feed rate once you know your target chip load:
   </p>
-  <p style="background:#f5f5f5;border-left:4px solid #cc0000;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
+  <p style="background:#f5f5f5;border-left:4px solid #012760;padding:10px 16px;border-radius:0 4px 4px 0;font-family:monospace;font-size:15px;">
     Feed Rate (IPM) = Chip Load × RPM × Number of Flutes
   </p>
   <p>

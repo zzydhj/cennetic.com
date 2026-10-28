@@ -188,7 +188,7 @@ sourceId: 2828
 <h2 id="not-sure-which-machine-is-right-for-your-business">Not Sure Which Machine Is Right for Your Business?</h2>
 <p>Get a free, no-obligation consultation from Cennetic’s engineering team. We’ll match you to the right CNC engraving machine based on your materials, output volume, and budget — backed by 15 years of experience and 750+ businesses served worldwide.</p>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:18px;">
-<a href="/contact-us/" target="_blank" rel="noopener" style="display:inline-block;background:#fff;color:#cc0000;font-weight:bold;font-size:15px;padding:12px 28px;border-radius:4px;text-decoration:none;">📩 Get Free Consultation</a><br>
+<a href="/contact-us/" target="_blank" rel="noopener" style="display:inline-block;background:#fff;color:#012760;font-weight:bold;font-size:15px;padding:12px 28px;border-radius:4px;text-decoration:none;">📩 Get Free Consultation</a><br>
 <a href="mailto:bella@cennetic.com" style="display:inline-block;background:transparent;color:#fff;font-weight:bold;font-size:15px;padding:12px 28px;border-radius:4px;text-decoration:none;border:2px solid #fff;">✉️ bella@cennetic.com</a><br>
 <a href="tel:+8615118243737" style="display:inline-block;background:transparent;color:#fff;font-weight:bold;font-size:15px;padding:12px 28px;border-radius:4px;text-decoration:none;border:2px solid #fff;">📞 +86 151 1824 3737</a></div>
 </div>

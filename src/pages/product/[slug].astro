@@ -5,11 +5,12 @@
  * 询盘型展示站，所以这里不输出价格与加购 —— 源站的 WooCommerce 交易链路
  * 随纯静态化一起下线。转化统一走带型号上下文的 WhatsApp 深链。
  *
- * 结构化数据只输出 Product 的基础字段：没有真实报价就不编造 offers/price，
- * 虚构价格是 Google 结构化数据的手动处罚项。
+ * 页头用共享 PageHero（slim：面包屑 + 分类 + 型号名）；其下是「画廊 + 信息列」，
+ * 再往下是迁移正文（规格/配置表）、公司通版区、相关产品。结构化数据只输出 Product
+ * 基础字段：没有真实报价就不编造 offers/price（虚构价格是 Google 手动处罚项）。
  */
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import PageHero from "@components/layout/PageHero.astro";
 import Gallery from "@components/product/Gallery.astro";
 import ProductCard from "@components/ui/ProductCard.astro";
 import Faq from "@components/ui/Faq.astro";
@@ -99,18 +100,18 @@ const description = `${product.name} by Cennetic — ${product.summary
     }}
     preloadLcpImage={cover?.src}
 >
-    <div class="product-page shell">
-        <Breadcrumb items={crumbs} />
+    <PageHero
+        title={product.name}
+        crumbs={crumbs}
+        eyebrow={product.categories.map((c) => c.name).join(" · ")}
+        slim
+    />
 
+    <div class="shell product-page">
         <div class="product">
             <Gallery images={product.images} name={product.name} />
 
             <div class="info">
-                <p class="kicker">
-                    {product.categories.map((c) => c.name).join(" · ")}
-                </p>
-                <h1>{product.name}</h1>
-
                 {
                     product.summary && (
                         <div class="sum" set:html={product.summary} />
@@ -146,9 +147,6 @@ const description = `${product.name} by Cennetic — ${product.summary
             )
         }
 
-        {
-            /* 问答区与 FAQPage 结构化数据同源（faq 字段），与文章/页面同一套 Faq 组件 */
-        }
         {(product.faq?.length ?? 0) > 0 && <Faq items={product.faq!} />}
 
         {
@@ -177,7 +175,7 @@ const description = `${product.name} by Cennetic — ${product.summary
 
 <style>
     .product-page {
-        padding-top: 0.75rem;
+        padding-bottom: 1rem;
     }
 
     .product {
@@ -186,7 +184,6 @@ const description = `${product.name} by Cennetic — ${product.summary
         grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
         gap: clamp(1.5rem, 4vw, 3.5rem);
         align-items: start;
-        margin-top: 1.25rem;
     }
 
     /* 宽屏下图库随页滚动保持可见，读参数时不用来回滚 */
@@ -197,25 +194,14 @@ const description = `${product.name} by Cennetic — ${product.summary
         }
     }
 
-    .kicker {
-        font-family: var(--font-display);
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--color-brand);
-        margin: 0 0 0.5rem;
-    }
-
-    h1 {
-        font-size: clamp(1.6rem, 1.25rem + 1.6vw, 2.3rem);
-        margin: 0 0 0.9rem;
+    .info {
+        min-width: 0;
     }
 
     .sum {
-        font-size: 0.95rem;
+        font-size: 0.98rem;
         color: var(--color-body);
-        line-height: 1.7;
+        line-height: 1.75;
     }
 
     .sum :global(p) {
@@ -272,19 +258,15 @@ const description = `${product.name} by Cennetic — ${product.summary
     }
 
     /*
-     * 产品正文（运营在后台输入的 HTML）外层统一受容器约束：整段与下方公司通版区
-     * 同宽（全栏），不再单独收进 78ch 窄列——那会把运营输入的宽规格表挤在 2/3 列里、
-     * 右侧留大片空白，与通版区明显不一致。文字段落仍限 75ch 保证可读，表格/图片铺满。
+     * 产品正文外层与下方公司通版区同宽(全栏);文字段落限 75ch 保证可读,表格/图片铺满。
      */
     .detail {
         max-width: none;
     }
 
     /*
-     * 正文由 CMS 以 set:html 注入,子元素不带 Astro 作用域属性;若写成
-     * `.detail :global(.qf-article-body) > p`,Astro 会把 [data-astro-cid] 加到末端
-     * 的 p 上 → 命中 0 个。所以整条选择器必须全部放进 :global()。
-     * 只限顶层段落/列表行宽保证可读,表格仍铺满(见下)。
+     * 正文由 CMS 以 set:html 注入,子元素不带 Astro 作用域属性;整条选择器必须全部
+     * 放进 :global(),否则 Astro 会把 [data-astro-cid] 加到末端元素上命中 0 个。
      */
     :global(.detail .qf-article-body > p),
     :global(.detail .qf-article-body > ul),
@@ -314,7 +296,7 @@ const description = `${product.name} by Cennetic — ${product.summary
     }
 
     :global(.detail .qf-article-body thead th) {
-        background: var(--color-ink);
+        background: var(--gradient);
         color: #fff;
         font-family: var(--font-display);
         font-weight: 600;
@@ -328,6 +310,7 @@ const description = `${product.name} by Cennetic — ${product.summary
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
         gap: var(--gutter);
+        margin-top: 1.25rem;
     }
 
     @media (width <= 880px) {

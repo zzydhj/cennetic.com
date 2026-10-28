@@ -39,7 +39,7 @@ sourceId: 7939
 
     <div class="qf-brand-card">
       <div class="qf-brand-head">
-        <div class="qf-brand-logo" style="background:#cc0000;">QF</div>
+        <div class="qf-brand-logo" style="background:#012760;">CN</div>
         <div>
           <h3 id="cennetic-cnc-export-specialist">CENNETIC CNC <span class="qf-verdict">EXPORT SPECIALIST</span></h3>
           <p>Founded 2010 · Dongguan, Guangdong · 750+ global clients · 40+ countries</p>
