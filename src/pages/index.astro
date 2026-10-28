@@ -10,7 +10,6 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ArticleCard from "@components/ui/ArticleCard.astro";
 import ProductCard from "@components/ui/ProductCard.astro";
 import HeroVideo from "@components/ui/HeroVideo.astro";
-import YouTubeEmbed from "@components/ui/YouTubeEmbed.astro";
 import { getCollection } from "astro:content";
 import { allArticles } from "@lib/content.ts";
 import { siteConfig, allProducts, megaMenu } from "@lib/catalog.ts";
@@ -358,10 +357,17 @@ const lcpImage = siteConfig.hero.poster;
                 </p>
             </div>
             <figure class="frame">
-                <YouTubeEmbed
-                    title="Inside the Cennetic CNC machine factory"
-                    alt="Cennetic factory tour video"
+                <img
+                    src="/images/site/company/machining-center-workshop.webp"
+                    alt="CENNETIC machining center assembly workshop in Dongguan"
+                    width="1152"
+                    height="581"
+                    loading="lazy"
+                    decoding="async"
                 />
+                <figcaption>
+                    Our machining center assembly floor in Dongguan, China.
+                </figcaption>
             </figure>
         </div>
     </section>
@@ -783,6 +789,13 @@ const lcpImage = siteConfig.hero.poster;
         border: 1px solid var(--color-line);
         display: block;
         background: var(--color-surface-alt);
+    }
+
+    .frame figcaption {
+        margin-top: 0.6rem;
+        font-size: 0.82rem;
+        line-height: 1.5;
+        color: var(--color-muted);
     }
 
     /* ── 渐变转化大卡 ── */
