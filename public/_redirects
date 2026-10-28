@@ -14,6 +14,13 @@
 /my-account/ /products/ 301
 /product-cat/ /products/ 301
 
+# ── 新站页数少于源站时的分页兜底（每页 12 篇 = 列表列数倍数，源站 10 篇）──
+# 源站有、新站不再生成的分页 301 回该列表首页，不让旧收录链接落 404。
+/blog/page/11/ /blog/ 301
+/blog/page/12/ /blog/ 301
+/category/maintenance-operations/page/3/ /category/maintenance-operations/ 301
+/category/technical-knowledge/page/8/ /category/technical-knowledge/ 301
+
 # ── 品牌迁移：旧图文件名 → 新图文件名（28 张，通配规则盖不住改名）──
 # 前提：qfcncmachine.com 已在 Zone 层整域 301 到 www.cennetic.com 并保留路径；
 # 旧图 URL 先经 /wp-content→/images 通配落到 /images/<旧名>，再由下面规则落到 <新名>。

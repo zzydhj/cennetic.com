@@ -7,6 +7,8 @@
  *
  * 基线变了就重跑本阶段，规则不会和实际页面脱节。
  */
+import { readdir, readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { MIGRATION_DIR, ROOT, SITE_ORIGIN, SRC_ORIGIN } from './lib/config.ts';
 import { join, writeText, readJson, rel, log, step } from './lib/fs.ts';
 import type { UrlRecord } from './lib/types.ts';
@@ -62,6 +64,61 @@ const IMAGE_RENAMES: Array<[string, string]> = [
 /** 旧图所在目录（改名只动了文件名，没动年/月目录） */
 const IMAGE_DIRS = ['2026/06'];
 
+/** 源站（WordPress）每页文章数，用来判断清单里哪些分页是真的存在过 */
+const SRC_PER_PAGE = 10;
+
+/**
+ * 分页兜底：新站列表是定列网格，每页数量必须取列数的倍数（12），比源站的 10 大，
+ * 页数因此比源站少。源站探测到、新站不再生成的 /blog/page/N/ 与 /category/x/page/N/
+ * 一律 301 回该列表首页 —— 旧域名在 Zone 层整域 301 时是保留路径的，
+ * 不接住这些页就会直接 404。
+ *
+ * 页数由内容实数算出来，不手写清单；PER_PAGE 直接从 src/lib/content.ts 读，
+ * 避免脚本与模板两处漂移。另外：_redirects 的匹配优先于静态文件，
+ * 所以产物里真存在的页必须跳过，写错就会把活页打没。
+ */
+async function stalePaginationRules(
+    manifest: { urls: UrlRecord[] },
+): Promise<string[]> {
+    const contentSrc = await readFile(join(ROOT, 'src/lib/content.ts'), 'utf8');
+    const perPage = Number(
+        contentSrc.match(/export const PER_PAGE\s*=\s*(\d+)/)?.[1],
+    );
+    if (!perPage) throw new Error('没能从 src/lib/content.ts 读出 PER_PAGE');
+
+    // 统计每篇文章属于哪些分类（frontmatter 的 categories 列表）
+    const dir = join(ROOT, 'src/content/articles');
+    const byCategory = new Map<string, number>();
+    let total = 0;
+    for (const f of await readdir(dir)) {
+        if (!f.endsWith('.md')) continue;
+        total += 1;
+        const text = await readFile(join(dir, f), 'utf8');
+        const fm = text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+        const block = fm.match(/^categories:\n((?:[ \t]+- .+\n?)+)/m)?.[1] ?? '';
+        for (const m of block.matchAll(/-\s*([\w-]+)\s*\n?/g)) {
+            const slug = m[1]!;
+            byCategory.set(slug, (byCategory.get(slug) ?? 0) + 1);
+        }
+    }
+
+    const out: string[] = [];
+    for (const u of manifest.urls) {
+        const m = u.path.match(/^\/(blog|category\/[^/]+)\/page\/(\d+)\/$/);
+        if (!m) continue;
+        const list = m[1]!;
+        const n = Number(m[2]);
+        const count =
+            list === 'blog' ? total : byCategory.get(list.split('/').pop()!) ?? 0;
+        if (n <= Math.ceil(count / perPage)) continue; // 新站仍在生成这一页
+        if (n > Math.ceil(count / SRC_PER_PAGE)) continue; // 源站本来也没这一页
+        const target = list === 'blog' ? '/blog/' : `/${list}/`;
+        if (existsSync(join(ROOT, 'dist', u.path, 'index.html'))) continue;
+        out.push(`${u.path} ${target} 301`);
+    }
+    return out.sort();
+}
+
 export async function buildDeployFiles(): Promise<void> {
     step('Phase 5 · 生成部署文件');
 
@@ -87,6 +144,16 @@ export async function buildDeployFiles(): Promise<void> {
         '# ── 已下线的 WooCommerce 交易路径 → 产品列表 ──',
     );
     for (const p of DEAD_TO_PRODUCTS) lines.push(`${p} /products/ 301`);
+
+    const stalePages = await stalePaginationRules(manifest);
+    if (stalePages.length) {
+        lines.push(
+            '',
+            '# ── 新站页数少于源站时的分页兜底（每页 12 篇 = 列表列数倍数，源站 10 篇）──',
+            '# 源站有、新站不再生成的分页 301 回该列表首页，不让旧收录链接落 404。',
+        );
+        for (const r of stalePages) lines.push(r);
+    }
 
     // ── 品牌迁移 ────────────────────────────────────
     // 旧域名 qfcncmachine.com → 新域名 www.cennetic.com 的主机级 301 **不能**写在这里：
@@ -119,7 +186,16 @@ export async function buildDeployFiles(): Promise<void> {
         lines.push(`# dead on source: ${dead}`);
     }
 
-    lines.push('', `# Sitemap ${SITE_ORIGIN}/sitemap-index.xml`, '');
+    lines.push(
+        '',
+        `# Sitemap ${SITE_ORIGIN}/sitemap-index.xml`,
+        '',
+        // 后台是 SPA：/admin 下的前端路由没有对应的静态文件，统一回落到 index.html。
+        // 这条以前只存在于生成产物里、不在本文件，重跑 08 就会把它冲没 → 后台进不去。
+        '# ── 后台 SPA：/admin 下任意前端路由回落到 index.html（200，不改地址栏）──',
+        '/admin/*   /admin/index.html   200',
+        '',
+    );
 
     await writeText(join(PUBLIC_DIR, '_redirects'), lines.join('\n'));
 
@@ -142,7 +218,7 @@ export async function buildDeployFiles(): Promise<void> {
 
     log('');
     log(
-        `✓ ${rel(join(PUBLIC_DIR, '_redirects'))}  —— ${aliases.length} 条别名 + ${DEAD_TO_PRODUCTS.length} 条死路径 + ` +
+        `✓ ${rel(join(PUBLIC_DIR, '_redirects'))}  —— ${aliases.length} 条别名 + ${DEAD_TO_PRODUCTS.length} 条死路径 + ${stalePages.length} 条失效分页 + ` +
         `${IMAGE_RENAMES.length * IMAGE_DIRS.length} 条图片改名 + 2 条图片通配（旧域名整域 301 需在 Cloudflare Zone 层配）`,
     );
     log(`✓ ${rel(join(PUBLIC_DIR, 'robots.txt'))}`);
