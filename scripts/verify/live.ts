@@ -7,7 +7,13 @@
  *
  *   npx tsx scripts/verify/live.ts [baseUrl]
  */
-const BASE = (process.argv[2] ?? 'https://cennetic-com.pages.dev').replace(/\/$/, '');
+/*
+ * BASE 必须与 Cloudflare Pages 项目名一致：项目名是 cennetic.com（带点），
+ * 域名就是 cennetic.com.pages.dev。曾写成 cennetic-com.pages.dev（把点当连字符），
+ * 那个名字根本不存在（DoH 直接 NXDOMAIN），本机探到的是 ECONNRESET 而不是 DNS 失败，
+ * 很容易误判成「站点没部署」。
+ */
+const BASE = (process.argv[2] ?? 'https://cennetic.com.pages.dev').replace(/\/$/, '');
 
 interface Probe {
     status: number;
