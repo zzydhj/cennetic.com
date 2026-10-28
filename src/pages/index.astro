@@ -798,13 +798,16 @@ const lcpImage = siteConfig.hero.poster;
         color: var(--color-muted);
     }
 
-    /* ── 渐变转化大卡 ── */
+    /* ── 渐变转化大卡 ──
+       轨道一律包 minmax(0,…)：grid item 的 min-width 默认是 auto，
+       里面那颗 white-space:nowrap 的 WhatsApp 按钮（含完整号码）会把轨道顶到
+       比容器还宽，而卡片又 overflow:hidden —— 窄屏下文字右端直接被裁掉。 */
     .cta-grad {
         position: relative;
         isolation: isolate;
         overflow: hidden;
         display: grid;
-        grid-template-columns: 1.25fr 1fr;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
         gap: clamp(1.5rem, 4vw, 3rem);
         align-items: center;
         padding: clamp(2rem, 4vw, 3.25rem);
@@ -823,6 +826,9 @@ const lcpImage = siteConfig.hero.poster;
             );
         color: #fff;
         box-shadow: var(--shadow-lg);
+    }
+    .cta-grad > * {
+        min-width: 0;
     }
     .cta-grad-glow {
         position: absolute;
@@ -930,7 +936,7 @@ const lcpImage = siteConfig.hero.poster;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .cta-grad {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
         }
     }
     @media (width <= 560px) {
@@ -942,6 +948,17 @@ const lcpImage = siteConfig.hero.poster;
         }
         .actions .btn {
             flex: 1 1 100%;
+        }
+    }
+    /* 375px 以下：按钮不折行就会顶穿卡片（号码很长），
+       同时收紧卡片内边距与字号，让 “WhatsApp +86 151 1824 3737” 一整行装得下。 */
+    @media (width <= 23.4375rem) {
+        .cta-grad {
+            padding: 1.15rem;
+        }
+        .cta-grad .actions .btn {
+            font-size: 0.85rem;
+            padding: 0.7rem 1rem;
         }
     }
 </style>
