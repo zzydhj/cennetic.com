@@ -468,7 +468,7 @@ function flatten(
         background: var(--color-paper);
         border-left-color: var(--color-accent);
         box-shadow: var(--shadow-sm);
-        font-weight: 800;
+        /* 不改字重:加粗会使文字变宽、标题从一行变两行 → 切换时跳高。选中态靠竖条/底色/字色区分 */
     }
     .mega-tab .mega-count {
         margin-left: auto;
