@@ -48,10 +48,18 @@ export function absoluteUrl(path: string): string {
     return `${ORIGIN}${p.endsWith('/') ? p : `${p}/`}`;
 }
 
-/** 相对路径转站内绝对路径（供 canonical 与 og:image 使用） */
+/**
+ * 静态文件路径 → 绝对 URL（og:image、JSON-LD 的 ImageObject 用）。
+ *
+ * 绝不能复用 absoluteUrl：那个按「目录式页面」补尾斜杠，给图片用会产出
+ * https://…/10003.webp/ 这种 404 地址（Pages 把带斜杠的当目录）。分享图
+ * 拿不到就等于该页在 WhatsApp / Facebook / LinkedIn 上没有卡片，且不会报错，
+ * 只能靠产物闸拦（npm run verify:site 会校验 og:image 指向的文件确实在 dist 里）。
+ */
 export function assetUrl(path?: string): string | undefined {
     if (!path) return undefined;
-    return path.startsWith('http') ? path : absoluteUrl(path);
+    if (/^https?:\/\//.test(path)) return path;
+    return `${ORIGIN}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
 /**
@@ -196,7 +204,7 @@ export function buildJsonLd(input: SeoInput): Record<string, unknown> {
             '@id': `${url}#product`,
             name: input.product.name,
             description: input.product.description,
-            image: input.product.images,
+            image: input.product.images.map((i) => assetUrl(i) ?? i),
             sku: input.product.sku || undefined,
             brand: { '@type': 'Brand', name: 'CENNETIC' },
             manufacturer: { '@id': `${ORIGIN}/#organization` },

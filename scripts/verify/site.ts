@@ -64,6 +64,47 @@ function findRawTemplates(html: string): string[] {
     return [...body.matchAll(/\s([a-zA-Z-]+)="([^"]*\{[a-zA-Z_$][^{}]*\}[^"]*)"/g)].map((m) => `${m[1]}="${m[2]}"`);
 }
 
+/**
+ * 分享图对账。踩过的两个坑都在这里：
+ *   1. ogImage 原样透传 → 产出根相对地址，OG 协议要求绝对 URL，JSON-LD 的
+ *      ImageObject.url / Article.image 也用它，Google 对相对地址按解析失败处理；
+ *   2. 复用 absoluteUrl() 补全 → 它按「目录式页面」加尾斜杠，产出 …/x.webp/ 直接 404。
+ * 两种都不会让构建或页面报错，只能从产物反查文件是否真在 dist 里。
+ */
+async function checkShareImage(p: string, html: string): Promise<void> {
+    const tags: Array<[string, string | undefined]> = [
+        ['og:image', html.match(/property="og:image" content="([^"]*)"/)?.[1]],
+        ['twitter:image', html.match(/name="twitter:image" content="([^"]*)"/)?.[1]],
+    ];
+    for (const [name, raw] of tags) {
+        if (raw === undefined) {
+            if (name === 'og:image') fail.push(`缺 ${name}：${p}`);
+            continue;
+        }
+        let u: URL;
+        try {
+            u = new URL(raw);
+        } catch {
+            fail.push(`${name} 不是绝对 URL（OG 协议要求绝对地址）：${p} → ${raw}`);
+            continue;
+        }
+        if (u.origin !== ORIGIN.origin) {
+            fail.push(`${name} 指向站外，分享图会被抓走：${p} → ${raw}`);
+            continue;
+        }
+        if (u.pathname.endsWith('/')) {
+            fail.push(`${name} 路径带尾斜杠，图片文件不可能命中：${p} → ${raw}`);
+            continue;
+        }
+        // u.pathname 是百分号编码的，中文文件名必须先还原再查盘，否则真实存在的文件会被误报
+        const rel = decodeURIComponent(u.pathname);
+        const f = join(DIST, rel);
+        if (!existsSync(f) && !existsSync(join(f, 'index.html'))) {
+            fail.push(`${name} 指向的产物不存在：${p} → ${raw}`);
+        }
+    }
+}
+
 async function collectHtml(dir: string, acc: string[]): Promise<void> {
     for (const name of await readdir(dir)) {
         const p = join(dir, name);
@@ -124,6 +165,8 @@ async function main(): Promise<void> {
         if (rawTpl.length > 0) {
             fail.push(`属性里的 {…} 未被插值（产出为字面量）：${p} → ${rawTpl.slice(0, 3).join(' | ')}`);
         }
+
+        await checkShareImage(p, html);
 
         if (UTILITY.has(p)) continue;
 

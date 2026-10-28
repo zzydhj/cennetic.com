@@ -89,9 +89,28 @@ for (const c of cacheCases) {
     else fail(`${c.label} 未生效 ${c.path}  实际 [${cc || '无'}]`);
 }
 
+/**
+ * 取一份正文（只用于从首页 HTML 里现取哈希资源名）。带重试：
+ * 上一版这里是直接 fetch，代理一抖就没人接住那个异常，整个闸报栈退出，
+ * 看起来像站点挂了一样 —— 那是工具的错，不是站点的错。
+ */
+async function fetchText(path: string, attempts = 4): Promise<string> {
+    let lastError = '';
+    for (let i = 0; i < attempts; i += 1) {
+        try {
+            const res = await fetch(`${BASE}${path}`);
+            return await res.text();
+        } catch (e) {
+            lastError = (e as Error).message;
+            await new Promise((r) => setTimeout(r, 500 * (i + 1)));
+        }
+    }
+    fail(`取不到 ${path} 的 HTML（网络失败：${lastError}），哈希资源一项未能验证`);
+    return '';
+}
+
 // 哈希资源必须 immutable：从首页 HTML 里现取一个真实文件名，不写死
-const home = await fetch(`${BASE}/`);
-const homeHtml = await home.text();
+const homeHtml = await fetchText('/');
 const asset = /href="(\/_astro\/[^"]+\.css)"/.exec(homeHtml)?.[1];
 if (asset) {
     const p = await probe(asset);
