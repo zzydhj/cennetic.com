@@ -43,12 +43,20 @@ function renderCell(v: unknown, alias?: Record<string, string>): string {
     return alias && Object.prototype.hasOwnProperty.call(alias, s) ? alias[s]! : s;
 }
 
+/**
+ * 像图片地址的字符串才当缩略图。作者表的 avatar 存的是**字母头像**（前台渲染成圆形字块，
+ * 如 "B"），当 URL 用会得到 src="B" → 请求 /admin/B 404。
+ */
+const IMG_SRC_SHAPE = /^(https?:)?\/\/|^\.?\.?\/|^data:|\.(png|jpe?g|gif|svg|webp|avif)(\?|#|$)/i;
+function imgSrc(v: unknown): string | null {
+    const s = typeof v === 'string' ? v.trim() : '';
+    return s && IMG_SRC_SHAPE.test(s) ? s : null;
+}
+
 /** 列表缩略图：主图 → 图集首张 → 头像，都没有就不显示 */
 function thumbOf(row: Row): string | null {
-    const hero = typeof row.hero === 'string' ? row.hero : null;
     const imgs = Array.isArray(row.images) ? (row.images as Array<{ src?: string }>) : null;
-    const avatar = typeof row.avatar === 'string' ? row.avatar : null;
-    return hero ?? imgs?.[0]?.src ?? avatar ?? null;
+    return imgSrc(row.hero) ?? imgSrc(imgs?.[0]?.src) ?? imgSrc(row.avatar);
 }
 
 function previewHref(resource: Resource, row: Row): string {
