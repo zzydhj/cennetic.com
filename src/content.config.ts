@@ -1,6 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { articleSchema, blogCategorySchema, pageSchema } from './lib/content-schema';
+import { articleSchema, blogCategorySchema } from './lib/content-schema';
 
 /**
  * 内容集合定义。字段契约的唯一真相在 ./lib/content-schema.ts（与灌库/快照/后台共用），
@@ -10,6 +10,10 @@ import { articleSchema, blogCategorySchema, pageSchema } from './lib/content-sch
  * 正文含 143 个表格与大量 qf-* 组件类名，Markdown 往返会丢类名。
  * 因此模板侧用 entry.body 取原始 HTML 直接渲染，不走 Markdown 编译。
  * 文件仍是 .md，后台可以正常编辑其 frontmatter 与 HTML 源码。
+ *
+ * 没有 pages 集合：后台的「页面」类型已整体取消（模板结构一直在代码里，那一类行能改的
+ * 只有几行 meta，其中两行前台根本不读）。列表页与首页文案内联在各模板，公司与政策页走
+ * src/content/locked/*.md + src/lib/locked-page.ts，都不经过这里。
  */
 
 const articles = defineCollection({
@@ -26,14 +30,4 @@ const blogCategories = defineCollection({
     schema: blogCategorySchema,
 });
 
-/**
- * WordPress 页面。正文同样是清洗后的 HTML。
- * isListing 标记那些「主体为列表」的页（/blog/ /shop/ /products/ /news-and-media/），
- * 模板只把它们的正文当列表上方的引言区，列表本身仍由数据层生成。
- */
-const pages = defineCollection({
-    loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
-    schema: pageSchema,
-});
-
-export const collections = { articles, blogCategories, pages };
+export const collections = { articles, blogCategories };

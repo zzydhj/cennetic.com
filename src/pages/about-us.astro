@@ -2,15 +2,14 @@
 /**
  * /about-us/ —— 代码自有的「锁定页」（与 /service/ 同一做法）。
  *
- * 公司页几乎不改，刻意不进 Supabase/CMS：内容写死在这里，后台不开放编辑，
- * 发布链路的 snapshot 也不会覆盖它（不在 src/content/pages 目录）。
+ * 公司页几乎不改，刻意不进 Supabase/CMS：内容写死在这里。全站已取消「页面」这一
+ * CMS 类型，后台不再有任何行能与这个路由撞路径（旧版同路径双渲染的隐患已结构性消失）。
  * 相比旧版纯文字，这里补进了工厂车间与质检校准两组真实图片，让页面不再"太素"。
  *
  * 版式复用共享 PageLayout：正文以 class="pg-page" 开头即宽版模式；页头的居中对齐与
  * 车间背景图由 PageLayout 里按 slug='about-us' 配置的 HERO 映射决定。
  */
 import PageLayout from "@layouts/PageLayout.astro";
-import type { CollectionEntry } from "astro:content";
 
 const meta = {
   slug: "about-us",
@@ -24,7 +23,7 @@ const meta = {
     "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
 };
 
-const page = { data: meta } as unknown as CollectionEntry<"pages">;
+const page = { data: meta };
 
 const img = (
   src: string,

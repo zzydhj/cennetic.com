@@ -10,14 +10,19 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ArticleCard from "@components/ui/ArticleCard.astro";
 import ProductCard from "@components/ui/ProductCard.astro";
 import HeroVideo from "@components/ui/HeroVideo.astro";
-import { getCollection } from "astro:content";
 import { allArticles } from "@lib/content.ts";
 import { siteConfig, allProducts, megaMenu } from "@lib/catalog.ts";
 import { waLink } from "@lib/whatsapp.ts";
 
 export const prerender = true;
 
-const home = (await getCollection("pages")).find((p) => p.data.slug === "home");
+/*
+ * 首页 meta description。以前读的是后台 pages 表 home 行的 description（那一行只被读这一个
+ * 字段）；全站已取消「页面」这一 CMS 类型，文案就在这里维护（改后走 git 发布）。
+ */
+const DESCRIPTION =
+    "Cennetic CNC Machine, based in China, manufactures high-precision CNC machining centers, lathes, and 5-axis machines. 15+ years, Get a free quote.";
+
 const articles = await allArticles();
 const products = allProducts();
 
@@ -32,14 +37,13 @@ const wa = waLink(
 );
 
 const heroImage = popular[0]?.images[0] ?? null;
-const description = home?.data.description || siteConfig.description;
 const lcpImage = siteConfig.hero.poster;
 ---
 
 <BaseLayout
     isHome
     title="Cennetic CNC Machine"
-    description={description}
+    description={DESCRIPTION}
     path="/"
     ogImage={heroImage?.src}
     pageType="home"

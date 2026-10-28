@@ -78,29 +78,10 @@ function buildArticles() {
 }
 
 // ── 页面 ────────────────────────────────────────────────────────────────────
-function buildPages() {
-    return listMd('src/content/pages').map((abs) => {
-        const { data, body } = parseMd(abs);
-        return {
-            slug: data.slug,
-            title: data.title,
-            heading: data.heading,
-            description: data.description ?? '',
-            canonical: data.canonical ?? null,
-            robots: data.robots,
-            date: raw(data.date),
-            lastmod: raw(data.lastmod),
-            hero: data.hero ?? null,
-            menu_order: data.menuOrder ?? 0,
-            is_listing: data.isListing ?? false,
-            author: data.author ?? null,
-            faq: data.faq ?? [],
-            body,
-            source_id: data.sourceId ?? null,
-            status: 'published',
-        };
-    });
-}
+/*
+ * 已取消 buildPages：后台的「页面」类型整体删除（src/content/pages/ 不再存在、前台不读），
+ * seed 也不再往 pages 表写行。表本体仍在 supabase/schema.sql 里，只是没人读写它了。
+ */
 
 function readJson(rel: string): unknown {
     return JSON.parse(readFileSync(join(ROOT, rel), 'utf8'));
@@ -110,9 +91,7 @@ async function main() {
     console.log('开始灌库 → Supabase', URL_BASE);
 
     const articles = buildArticles();
-    const pages = buildPages();
     await upsert('articles', articles, 'slug');
-    await upsert('pages', pages, 'slug');
 
     const productRows = readdirSync(join(ROOT, 'src/data/products'))
         .filter((f) => f.endsWith('.json'))

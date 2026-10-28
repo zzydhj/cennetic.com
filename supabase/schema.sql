@@ -59,6 +59,11 @@ create table if not exists public.articles (
 
 -- ============================================================================
 -- 固定页面 pages（正文同样为 HTML）
+--
+-- 已停用：前台与 snapshot 都不再读这张表，后台也没有「页面」这一类型。
+-- 保留 DDL 只为不丢历史（删表后无法重建当时那些行的字段）；文案现在各在：
+--   首页/列表页 → src/pages 模板里的常量；公司页/政策页/联系页 → src/content/locked/*.md。
+-- 重新启用必须同时恢复：内容集合 + 路由 + snapshot 写入 + 后台资源，否则会重复渲染。
 -- ============================================================================
 create table if not exists public.pages (
   id               uuid primary key default gen_random_uuid(),

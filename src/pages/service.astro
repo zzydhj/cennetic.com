@@ -2,15 +2,13 @@
 /**
  * /service/ —— 代码自有的「锁定页」。
  *
- * 像 Service & Support 这种几乎不改的公司页，刻意不进 Supabase/CMS：内容直接写死在这里，
- * 后台不开放编辑，`npm run snapshot`（发布链路）也不会覆盖它 —— 因为它不在快照管理的
- * src/content/pages 目录里。好处是运营点「发布」不会把这一页回滚或（因缺路由）打成 404。
+ * 像 Service & Support 这种几乎不改的公司页，刻意不进 Supabase/CMS：内容直接写在这里。
+ * 全站已取消「页面」这一 CMS 类型，运营点「发布」不会把这一页回滚或（因缺路由）打成 404。
  *
  * 版式仍复用共享 PageLayout：正文以 class="pg-page" 开头即触发宽版模式（深色 PageHero +
  * 通栏 pg-* 分区 + hero CTA）。内容全部基于退款政策页里的真实条款，不编造。
  */
 import PageLayout from "@layouts/PageLayout.astro";
-import type { CollectionEntry } from "astro:content";
 
 const meta = {
   slug: "service",
@@ -25,7 +23,7 @@ const meta = {
 };
 
 // PageLayout 只读取 page.data，这里构造一个等价的内存对象即可复用整套版式
-const page = { data: meta } as unknown as CollectionEntry<"pages">;
+const page = { data: meta };
 
 const html = /* html */ `
 <div class="pg-page">

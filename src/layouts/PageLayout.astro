@@ -4,7 +4,8 @@
  *
  * 页头统一用共享 PageHero（深色渐变带 + 面包屑）；正文是迁移后的 HTML。
  * 与文章布局的差别只有两点：不生成目录、不显示作者卡与阅读时长 —— 政策页和公司页
- * 挂作者署名不合逻辑。isListing 的页面（/shop/ /products/ 等）不走这里，由列表模板处理。
+ * 挂作者署名不合逻辑。这些页已全部是代码自有（src/pages/<slug>.astro + locked md），
+ * 后台不再有「页面」类型，因此这里收的是 LockedPageData而不是 CMS 集合项。
  */
 import BaseLayout from "./BaseLayout.astro";
 import PageHero from "@components/layout/PageHero.astro";
@@ -16,10 +17,12 @@ import "../styles/page.css";
 import { siteConfig } from "@lib/catalog.ts";
 import { entryPath } from "@lib/content.ts";
 import { waLink } from "@lib/whatsapp.ts";
-import type { CollectionEntry } from "astro:content";
+import { DEFAULT_ROBOTS } from "@lib/content-schema.ts";
+import type { LockedPageData } from "@lib/locked-page.ts";
 
 interface Props {
-    page: CollectionEntry<"pages">;
+    /** 锁定页的 meta（about-us / service 这类在 .astro 里内联，政策与联系页来自 locked md） */
+    page: { data: LockedPageData };
     /** 正文原始 HTML */
     html: string;
     /** 分类式页面（如 /news-and-media/）会在正文后再插列表区 */
@@ -28,7 +31,7 @@ interface Props {
 
 const { page, html, afterBody = false } = Astro.props;
 const d = page.data;
-// 后台新建的页面可能没填 canonical，由 entryPath 按 slug 兜底
+// canonical 缺省时由 entryPath 按 slug 兜底
 const selfPath = entryPath(d);
 
 /*
@@ -70,7 +73,7 @@ const wa = waLink(
     title={d.title}
     description={d.description}
     path={selfPath}
-    robots={d.robots}
+    robots={d.robots ?? DEFAULT_ROBOTS}
     ogImage={d.hero}
     breadcrumb={crumbs}
     pageType="page"

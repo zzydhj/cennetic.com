@@ -12,7 +12,6 @@ import { buildMedia } from './03-media.ts';
 import { buildArticles } from './04-articles.ts';
 import { buildTaxonomies } from './05-taxonomies.ts';
 import { buildProducts } from './06-products.ts';
-import { buildPages } from './07-pages.ts';
 import { buildDeployFiles, buildHeaders } from './08-deploy-files.ts';
 import { stagePublicImages } from './09-stage-public.ts';
 
@@ -23,7 +22,8 @@ const ALL: Record<string, { title: string; run: (refresh: boolean) => Promise<vo
     '04': { title: '文章迁移', run: buildArticles },
     '05': { title: '分类数据迁移', run: buildTaxonomies },
     '06': { title: '产品数据迁移', run: buildProducts },
-    '07': { title: '页面迁移', run: buildPages },
+    // 阶段 07（页面迁移）已从管道里摘除：后台不再有「页面」这一内容类型，
+    // 重跑它只会往一个没人读的目录里写文件。脚本本体留在 07-pages.ts 作清洗规则溯源。
     '08': {
         title: '部署文件生成',
         // _redirects / robots.txt 与 _headers 同属“Pages 部署配置”，一起产，

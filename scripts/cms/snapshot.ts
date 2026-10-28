@@ -6,7 +6,7 @@
  *   npx tsx scripts/cms/snapshot.ts --check    只比对不写盘，任何不一致退出码 1（回归闸）
  *
  * 保真约定（与 scripts/migrate 的产出逐字对齐，否则快照会制造无意义 diff）：
- *  - frontmatter 键序 = 04-articles.ts / 07-pages.ts 中的字面顺序，null/undefined/'' 由
+ *  - frontmatter 键序 = 04-articles.ts 等迁移脚本里的字面顺序，null/undefined/'' 由
  *    toFrontmatter 自动省略，因此库里留空 = 文件里没这一行；
  *  - .md 正文 = toFrontmatter(...) + '\n' + body(去首尾空白) + '\n'；
  *  - .json = JSON.stringify(v, null, 2) + '\n'；site.json 直接回写库里的原文；
@@ -17,7 +17,6 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { toFrontmatter } from '../migrate/lib/frontmatter.ts';
-import { CODE_OWNED_PAGE_SLUGS } from '../../src/lib/locked-pages.ts';
 import { ROOT, loadEnvFile, requireEnv } from './lib/env.ts';
 import { createRestClient } from './lib/rest.ts';
 
@@ -41,24 +40,6 @@ interface ArticleRow {
     robots: string;
     word_count: number;
     reading_minutes: number;
-    faq: Json[] | null;
-    body: string;
-    source_id: number | null;
-}
-
-interface PageRow {
-    slug: string;
-    title: string;
-    heading: string;
-    description: string;
-    canonical: string | null;
-    robots: string;
-    date: string | null;
-    lastmod: string | null;
-    hero: string | null;
-    menu_order: number;
-    is_listing: boolean;
-    author: string | null;
     faq: Json[] | null;
     body: string;
     source_id: number | null;
@@ -108,7 +89,6 @@ interface AuthorRow {
 /** 受快照管理的目录：目录 → 扩展名。目录内不属于本次生成集的同类型文件会被删除。 */
 const MANAGED_DIRS: Array<{ dir: string; ext: string }> = [
     { dir: 'src/content/articles', ext: '.md' },
-    { dir: 'src/content/pages', ext: '.md' },
     { dir: 'src/data/products', ext: '.json' },
     { dir: 'src/data/blog-categories', ext: '.json' },
 ];
@@ -169,41 +149,21 @@ function assertDateText(table: string, col: string, v: unknown): void {
     }
 }
 
-/**
- * 代码自有页守卫：About Us / Service / 两份政策的内容在 git 里
- * （src/pages/<slug>.astro），不属于后台管理范围。库里若出现同名 published 行
- * （后台手工重建、从备份恢复、别人在 Supabase 控制台插行），快照会往
- * src/content/pages/ 写 <slug>.md，那个路径就会被静态路由与 [slug].astro 各渲染一次 ——
- * 整页样式错乱且构建不报错。宁可在这里把发布拦住，并说清该怎么改。
+/*
+ * 这里不再读 pages 表，也不再有「代码自有页」守卫：后台的「页面」类型已整体取消，
+ * 快照不往 src/content/ 写任何页面文件，所以「库里一行与代码路由抢同一个 URL
+ * → 同页双渲染、样式清单错拿」这类事故在结构上已不可能发生。
+ * 页面文案的去向：首页/列表页 → 各模板常量；公司页/政策页/联系页 → src/content/locked/*.md。
  */
-export function assertNoCodeOwnedPages(
-    pages: Array<{ slug: string }>,
-): void {
-    const bad = pages
-        .map((p) => p.slug)
-        .filter((s) => (CODE_OWNED_PAGE_SLUGS as readonly string[]).includes(s));
-    if (bad.length === 0) return;
-    throw new Error(
-        `pages 表里出现了代码自有页：${bad.join(', ')}。\n` +
-            `  这几页的内容写死在 git（src/pages/<slug>.astro），后台不开放编辑。\n` +
-            `  请删除这些行、或把 slug 改成别的名字，否则发布会得到一份与静态路由\n` +
-            `  同路径的内容文件，同一 URL 被渲染两次 → 整页样式错乱且构建不报错。`,
-    );
-}
 
 function assertShape(
     articles: ArticleRow[],
-    pages: PageRow[],
     siteData: string,
 ): void {
     for (const a of articles) {
         assertDateText('articles', 'date', a.date);
         assertDateText('articles', 'lastmod', a.lastmod);
         assertDateText('articles', 'modified', a.modified);
-    }
-    for (const p of pages) {
-        assertDateText('pages', 'date', p.date);
-        assertDateText('pages', 'lastmod', p.lastmod);
     }
     if (!/^\s*\{/.test(String(siteData))) {
         throw new Error(`site_settings.data 不是 site.json 原文（收到「${String(siteData).slice(0, 40)}」）。${MIGRATION_HINT}`);
@@ -214,9 +174,8 @@ async function collect(): Promise<Map<string, string>> {
     const rest = createRestClient(requireEnv('SUPABASE_URL'), requireEnv('SUPABASE_SECRET_KEY'));
     const out = new Map<string, string>();
 
-    const [articles, pages, products, blogCats, prodCats, authors, siteRows] = await Promise.all([
+    const [articles, products, blogCats, prodCats, authors, siteRows] = await Promise.all([
         rest.list<ArticleRow>('articles', 'select=*&status=eq.published&order=slug.asc'),
-        rest.list<PageRow>('pages', 'select=*&status=eq.published&order=slug.asc'),
         rest.list<ProductRow>('products', 'select=*&status=eq.published&order=slug.asc'),
         rest.list<BlogCategoryRow>('blog_categories', 'select=*&order=slug.asc'),
         rest.list<ProductCategoryRow>('product_categories', 'select=*&order=slug.asc'),
@@ -227,7 +186,6 @@ async function collect(): Promise<Map<string, string>> {
     // 空表保护：某类内容整表读空通常是查询/权限出问题，绝不能变成「删光 113 篇」
     const guards: Array<[string, number]> = [
         ['articles', articles.length],
-        ['pages', pages.length],
         ['products', products.length],
         ['blog_categories', blogCats.length],
         ['product_categories', prodCats.length],
@@ -238,8 +196,7 @@ async function collect(): Promise<Map<string, string>> {
     }
     if (siteRows.length !== 1) throw new Error(`site_settings 应为单行，实际 ${siteRows.length} 行`);
 
-    assertShape(articles, pages, siteRows[0]!.data);
-    assertNoCodeOwnedPages(pages);
+    assertShape(articles, siteRows[0]!.data);
 
     const prodCatName = new Map(prodCats.map((c) => [c.slug, c.name]));
 
@@ -267,27 +224,6 @@ async function collect(): Promise<Map<string, string>> {
             sourceId: num(a.source_id),
         });
         out.set(`src/content/articles/${a.slug}.md`, `${fm}\n${mdBody(a.body)}\n`);
-    }
-
-    for (const p of pages) {
-        assertSlug('pages', p.slug);
-        const fm = toFrontmatter({
-            title: p.title,
-            heading: p.heading,
-            slug: p.slug,
-            canonical: opt(p.canonical) ?? `/${p.slug}/`,
-            description: p.description,
-            robots: p.robots,
-            date: opt(p.date),
-            lastmod: opt(p.lastmod),
-            hero: opt(p.hero),
-            sourceId: num(p.source_id),
-            menuOrder: p.menu_order,
-            isListing: p.is_listing,
-            faq: faqOf(p.faq),
-            author: opt(p.author),
-        });
-        out.set(`src/content/pages/${p.slug}.md`, `${fm}\n${mdBody(p.body)}\n`);
     }
 
     for (const p of products) {

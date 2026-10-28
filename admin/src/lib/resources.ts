@@ -74,7 +74,7 @@ export interface Resource {
     ascending?: boolean;
     /**
      * 这张表有没有 updated_at 列（仪表盘的「最近改动」与趋势图按它取数）。
-     * 以 supabase/schema.sql 为准：articles / pages / products / site_settings 有，
+     * 以 supabase/schema.sql 为准：articles / products / site_settings 有，
      * 分类与作者这三张参照表没有（schema.sql 的 updated_at 触发器也只挂可变表）。
      * 漏标会让 PostgREST 报 42703 并返回 400，那一类内容就从时间线里静默消失。
      */
@@ -162,41 +162,12 @@ export const RESOURCES: Resource[] = [
             { name: 'body', label: '正文 (HTML)', type: 'html', full: true, help: '默认纯文本模式：直接写字，空一行=新段落，系统自动包段落标签；带表格/样式的旧正文会自动切源码模式。保存时自动过滤不安全内容。' },
         ],
     },
-    {
-        key: 'pages',
-        table: 'pages',
-        hasUpdatedAt: true,
-        label: '页面',
-        singular: '页面',
-        group: '内容',
-        icon: 'page',
-        desc: '固定页（联系页、Blog/Products 等列表页的引言与 SEO）。注意：About Us、Service、隐私政策、退款政策这 4 页已写死在代码里、不在后台管理，列表里看不到是正常的，也别用同名 slug 重建。',
-        idField: 'slug',
-        titleField: 'title',
-        orderBy: 'menu_order',
-        preview: true,
-        listCols: [
-            { name: 'title', label: '标题' },
-            { name: 'menu_order', label: '排序' },
-        ],
-        fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true, help: '页面地址 /<slug>/。about-us / service / privacy-policy / cnc-machine-refund-policy 是代码保留 slug，用了会跟静态路由撞成同一个 URL，发布闸会直接拦住。' },
-            { name: 'title', label: 'SEO 标题', type: 'text', required: true, full: true, quick: true },
-            { name: 'heading', label: '页面 H1', type: 'text', required: true, full: true },
-            { name: 'description', label: '摘要', type: 'textarea', full: true, quick: true },
-            { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动' },
-            { name: 'robots', label: 'Robots', type: 'text', full: true },
-            { name: 'date', label: '日期', type: 'text' },
-            { name: 'lastmod', label: '最后修改', type: 'text' },
-            { name: 'hero', label: '主图', type: 'image', full: true },
-            { name: 'menu_order', label: '菜单排序', type: 'number', help: '数字越小越靠前。' },
-            { name: 'is_listing', label: '列表页', type: 'boolean', help: '主体是列表的页(如 /blog/ /products/)，正文只当列表上方引言。' },
-            { name: 'author', label: '作者', type: 'ref', refTable: 'authors', refValue: 'slug', refLabel: 'name' },
-            STATUS,
-            { name: 'faq', label: 'FAQ 问答', type: 'faq', full: true, help: '逐条填问答：保存后可能以可展开问答下拉出现在 Google 搜索结果下方，页面也会渲染问答区。不用写任何代码，不需要就留空。' },
-            { name: 'body', label: '正文 (HTML)', type: 'html', full: true, help: '默认纯文本模式：直接写字，空一行=新段落，系统自动包段落标签；带表格/样式的内容会自动切源码模式。保存时自动过滤不安全内容。' },
-        ],
-    },
+    /*
+     * 已取消「页面」这一类型（原本的 pages 资源）：模板结构一直在 git 里，
+     * 后台能改的只有几行 meta，而 products / shop 两行前台根本不读（改了没反应）。
+     * 文案现去向：首页与列表页 → 各模板常量；公司页 / 政策页 / 联系页 → src/content/locked/*.md。
+     * Supabase 里的 pages 表不再被快照与前台读取，加回来必须同时恢复一条内容集合与路由。
+     */
     {
         key: 'products',
         table: 'products',
@@ -368,14 +339,16 @@ const toRailLink = (r: Resource): RailLink => ({ to: `/${r.key}`, label: r.label
 
 /**
  * 侧栏：全一级平铺，不再分组。顺序：
- * 仪表盘 → 文章 → 页面 → 产品 → 媒体库 → 博客分类 → 产品分类 → 作者 → 站点设置
+ * 仪表盘 → 文章 → 产品 → 媒体库 → 博客分类 → 产品分类 → 作者 → 站点设置
+ * （以前还有一个「页面」，已随 pages 类型整体取消）
  * 由 NAV 派生而不是写死，以后新增资源会自动排在作者前后这一片里。
  */
 export const RAIL_LINKS: RailLink[] = [
     { to: '/', label: '仪表盘', icon: 'dashboard' },
-    ...NAV.slice(0, 3).map(toRailLink),
+    // 3 → 2：以前切前三项（文章/页面/产品）排在媒体库前，取消页面后只剩文章与产品两类正文内容
+    ...NAV.slice(0, 2).map(toRailLink),
     { to: '/media', label: '媒体库', icon: 'image' },
-    ...NAV.slice(3).map(toRailLink),
+    ...NAV.slice(2).map(toRailLink),
     {
         to: '/site_settings',
         label: '站点设置',

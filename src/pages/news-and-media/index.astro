@@ -3,38 +3,42 @@
  * /news-and-media/ —— 源站正文是 Elementor 残骸（面包屑+重复标题+WP 文章循环），
  * 没有可保留的引言内容，故不再渲染正文；引言职责归 description，列表由本站组件出。
  * 分页沿用源站的归档行为：本页面列最新 12 篇，完整翻页入口指向 /blog/。
+ *
+ * 文案与 SEO 写在本文件（原后台 pages 表的 news-and-media 行；全站已取消「页面」这一
+ * CMS 类型）。og:image 不再用那一行里的 hero —— 它指向 /wp-content/uploads/2025/12/
+ * best-gaming-laptop-model-entry-header.jpg，是源站一篇游戏本文章的残留图，本站根本没有
+ * 这个文件（经 /wp-content 通配 301 后落 404），改用站点默认分享图。
  */
-import { getCollection } from "astro:content";
 import ArchiveLayout from "@layouts/ArchiveLayout.astro";
 import ArticleGrid from "@components/ui/ArticleGrid.astro";
 import { allArticles } from "@lib/content.ts";
 import { siteConfig } from "@lib/catalog.ts";
+import { DEFAULT_ROBOTS } from "@lib/content-schema.ts";
 
 export const prerender = true;
 
-const entry = (await getCollection("pages")).find(
-    (p) => p.data.slug === "news-and-media",
-);
-const d = entry?.data;
+const TITLE = "News & Media";
+/* H1 与 <title> 不同是源站既有行为（那一行 heading 存的就是不带 & 的 "News Media"） */
+const HEADING = "News Media";
+const DESCRIPTION =
+    "Company news, product releases and media coverage from the Cennetic factory in Dongguan, China.";
 
 const posts = await allArticles();
 const latest = posts.slice(0, 12);
 ---
 
 <ArchiveLayout
-    title={d?.title ?? "News & Media"}
-    description={d?.description ??
-        "Company news, product releases and media coverage from Cennetic CNC Machine in Dongguan, China."}
-    heading={d?.heading ?? "News & Media"}
+    title={TITLE}
+    description={DESCRIPTION}
+    heading={HEADING}
     path="/news-and-media/"
-    robots={d?.robots ??
-        "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"}
+    robots={DEFAULT_ROBOTS}
     crumbs={[
         { name: "Home", path: "/" },
         { name: "News & Media", path: "/news-and-media/" },
     ]}
     pageType="archive"
-    ogImage={d?.hero ?? siteConfig.ogDefaultImage}
+    ogImage={siteConfig.ogDefaultImage}
 >
     <section class="latest" aria-labelledby="latest-h">
         <h2 id="latest-h">Latest from the factory</h2>

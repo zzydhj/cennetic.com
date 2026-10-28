@@ -1,90 +1,42 @@
 ---
 /**
- * 顶级单段路径的唯一入口 —— 同时承接两类内容：
- *   文章  /<slug>/        （113 篇）
- *   页面  /about-us/ 等   （非列表型页面）
+ * 顶级单段路径的唯一入口 —— 文章 /<slug>/。
  *
- * 为什么必须合成一条路由：两类内容在源站都是顶级单段路径。若各写一个
- * [slug].astro 与 [page].astro，Astro 会按文件名顺序静默遮蔽其中一个，
- * 表现是「某些文章莫名 404」且构建不报错 —— 这类 bug 极难定位，所以不留发生条件。
+ * 这里以前同时承接「非列表型页面」，两类内容合用一条动态路由是因为它们在源站都是
+ * 顶级单段路径：若各写一个 [slug].astro 与 [page].astro，Astro 会按文件名顺序静默
+ * 遮蔽其中一个，表现是「某些文章莫名 404」且构建不报错。
  *
- * 同时断言两边 slug 不重叠：源站靠 WordPress 的命名唯一性保证，
- * 后台新增时若文章与页面重名，必须让构建失败，而不是悄悄少生成一页。
+ * 后台的「页面」这一内容类型已整体取消（模板结构本来就在代码里，后台能改的只有几行
+ * meta），现在每个页面都有自己的静态路由：首页 index.astro，列表页 blog / category /
+ * products / shop / news-and-media，公司与政策页 about-us / service / privacy-policy /
+ * cnc-machine-refund-policy / contact-us。于是双类型合路、slug 冲突断言、以及「同一个
+ * URL 被后台行与代码路由各渲染一次 → 样式清单错拿」这一整类事故都不再有可能发生。
+ *
+ * 重复 slug 不在这里兜：Astro 对相同 params 会直接构建失败，比静默少生成一页好。
  */
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import ArticleLayout from "@layouts/ArticleLayout.astro";
-import PageLayout from "@layouts/PageLayout.astro";
 import { allArticles, relatedArticles } from "@lib/content.ts";
-import { isCodeOwnedPage } from "@lib/locked-pages.ts";
 
 export const prerender = true;
 
 type ArticleEntry = CollectionEntry<"articles">;
-type PageEntry = CollectionEntry<"pages">;
 
 export async function getStaticPaths() {
-    const [articles, pages] = await Promise.all([
-        getCollection("articles") as Promise<ArticleEntry[]>,
-        getCollection("pages") as Promise<PageEntry[]>,
-    ]);
-
-    const articleBySlug = new Map(articles.map((a) => [a.data.slug, a]));
-    // home 由 src/pages/index.astro 输出；isListing 的页面走各自的列表路由；
-    // contact-us 由静态路由 src/pages/contact-us.astro 接管 —— 若不排除，
-    // 同一路径会被渲染两次，HTML 虽被新版覆盖但样式清单错拿旧版渲染的，
-    // 表现是询盘表单样式整体丢失（构建日志可见 /contact-us/ 出现两次）。
-    const pageBySlug = new Map(
-        pages
-            .filter(
-                (p) =>
-                    !p.data.isListing &&
-                    p.data.slug !== "home" &&
-                    p.data.slug !== "contact-us" &&
-                    /* 代码自有的锁定页（About Us / Service / 两份政策）由各自的
-                       src/pages/<slug>.astro 渲染。后台万一被重建出同名行，
-                       这里再生成一次就是同路径双渲染 → 样式清单错拿、
-                       整页样式莫名丢失且构建不报错，所以一并排除。 */
-                    !isCodeOwnedPage(p.data.slug),
-            )
-            .map((p) => [p.data.slug, p]),
-    );
-
-    const collisions = [...pageBySlug.keys()].filter((s) =>
-        articleBySlug.has(s),
-    );
-    if (collisions.length > 0) {
-        throw new Error(
-            `文章与页面 slug 冲突，会有一方被静默覆盖：${collisions.join(", ")}。` +
-                `请重命名 src/content/ 下的其中之一。`,
-        );
-    }
-
+    const articles = await getCollection("articles");
     const pool = await allArticles();
-
-    return [
-        ...[...articleBySlug.entries()].map(([slug, entry]) => ({
-            params: { slug },
-            props: {
-                kind: "article" as const,
-                entry,
-                related: relatedArticles(entry, pool, 4),
-            },
-        })),
-        ...[...pageBySlug.entries()].map(([slug, entry]) => ({
-            params: { slug },
-            props: {
-                kind: "page" as const,
-                entry,
-                related: [] as ArticleEntry[],
-            },
-        })),
-    ];
+    return articles.map((entry) => ({
+        params: { slug: entry.data.slug },
+        props: {
+            entry: entry as ArticleEntry,
+            related: relatedArticles(entry as ArticleEntry, pool, 4),
+        },
+    }));
 }
 
-const { kind, entry, related } = Astro.props as {
-    kind: "article" | "page";
-    entry: ArticleEntry | PageEntry;
+const { entry, related } = Astro.props as {
+    entry: ArticleEntry;
     related: ArticleEntry[];
 };
 
@@ -95,14 +47,4 @@ const { kind, entry, related } = Astro.props as {
 const html = (entry as unknown as { body?: string }).body?.trim() ?? "";
 ---
 
-{
-    kind === "article" ? (
-        <ArticleLayout
-            article={entry as ArticleEntry}
-            html={html}
-            related={related}
-        />
-    ) : (
-        <PageLayout page={entry as PageEntry} html={html} />
-    )
-}
+<ArticleLayout article={entry} html={html} related={related} />

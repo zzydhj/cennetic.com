@@ -6,11 +6,10 @@
  */
 import PageLayout from "@layouts/PageLayout.astro";
 import { parseLockedPage } from "@lib/locked-page.ts";
-import type { CollectionEntry } from "astro:content";
 import raw from "../content/locked/cnc-machine-refund-policy.md?raw";
 
 const { data, body } = parseLockedPage(raw);
-const page = { data } as unknown as CollectionEntry<"pages">;
+const page = { data };
 ---
 
 <PageLayout page={page} html={'<div class="policy-body">' + body + "</div>"} />

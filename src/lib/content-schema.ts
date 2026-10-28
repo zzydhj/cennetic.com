@@ -41,23 +41,10 @@ export const articleSchema = z.object({
     sourceId: z.number().int().optional(),
 });
 
-/** 固定页面 frontmatter（对应集合 pages） */
-export const pageSchema = z.object({
-    title: z.string(),
-    heading: z.string(),
-    description: z.string().default(''),
-    slug: z.string(),
-    canonical: z.string().optional(),
-    robots: z.string().default(DEFAULT_ROBOTS),
-    date: z.coerce.date().optional(),
-    lastmod: z.coerce.date().optional(),
-    hero: z.string().optional(),
-    menuOrder: z.number().int().default(0),
-    isListing: z.boolean().default(false),
-    author: z.string().optional(),
-    faq: z.array(faqItemSchema).optional(),
-    sourceId: z.number().int().optional(),
-});
+/*
+ * 这里没有 pageSchema：后台的「页面」类型已整体取消。首页与列表页文案内联在各模板的
+ * 常量里，公司页/政策页/联系页走 src/content/locked/*.md（类型见 src/lib/locked-page.ts）。
+ */
 
 /** 博客分类（对应集合 blogCategories，数据在 src/data/blog-categories/*.json） */
 export const blogCategorySchema = z.object({
@@ -151,7 +138,6 @@ export const mediaAssetSchema = z.object({
 
 export type FaqItem = z.infer<typeof faqItemSchema>;
 export type ArticleFrontmatter = z.infer<typeof articleSchema>;
-export type PageFrontmatter = z.infer<typeof pageSchema>;
 export type BlogCategory = z.infer<typeof blogCategorySchema>;
 export type Product = z.infer<typeof productSchema>;
 export type ProductCategory = z.infer<typeof productCategorySchema>;

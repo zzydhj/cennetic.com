@@ -5,60 +5,58 @@
  * 用单个 [...page] 路由同时承接首页与分页：源站这两类 URL 都在且都被 index，
  * 拆成两个文件容易让分页漏建（分页漏一页就是一个 404）。
  */
-import { getCollection } from "astro:content";
 import ArchiveLayout from "@layouts/ArchiveLayout.astro";
 import ArticleGrid from "@components/ui/ArticleGrid.astro";
 import { allArticles, paginate, pageCount } from "@lib/content.ts";
 import { siteConfig } from "@lib/catalog.ts";
+import { DEFAULT_ROBOTS } from "@lib/content-schema.ts";
 
 export const prerender = true;
 
 const BASE = "/blog/";
 
+/*
+ * /blog/ 的文案与 SEO（原后台 pages 表的 blog 行；全站已取消「页面」这一 CMS 类型）。
+ * 注意三个不同的标题：TITLE 是第 1 页的 <title>（翻页拼成 Blog - Page N），HEADING 是页内 H1，
+ * DESCRIPTION 同时充当 meta description 与列表上方的引言 —— 保持与旧后台那一行一致。
+ */
+const TITLE = "Blog";
+const HEADING = "CNC Machining Guides & Technical Articles";
+const DESCRIPTION =
+    "Practical CNC machining guides from Cennetic — buying advice, technical explainers, comparisons and maintenance know-how for factory engineers.";
+
 export async function getStaticPaths() {
     const posts = await allArticles();
-    const blogPage = (await getCollection("pages")).find(
-        (p) => p.data.slug === "blog",
-    );
-
     return Array.from({ length: pageCount(posts.length) }, (_, i) => ({
         params: { page: i === 0 ? undefined : `page/${i + 1}` },
-        props: { entry: blogPage, n: i + 1 },
+        props: { n: i + 1 },
     }));
 }
 
 const n = Astro.props.n ?? 1;
-const entry = Astro.props.entry;
 
 const posts = await allArticles();
 const { items, pagination } = paginate(posts, n, BASE);
-const d = entry?.data;
 
 const path = n === 1 ? BASE : `${BASE}page/${n}/`;
 ---
 
 <ArchiveLayout
-    title={n === 1
-        ? d?.title || "CNC Machining Guides & Technical Articles"
-        : `Blog - Page ${n}`}
-    description={d?.description ||
-        "Practical CNC machining guides from Cennetic — buying advice, technical explainers, comparisons and maintenance know-how for factory engineers."}
-    heading={n === 1
-        ? "CNC Machining Guides & Technical Articles"
-        : `Blog — page ${n}`}
+    title={n === 1 ? TITLE : `Blog - Page ${n}`}
+    description={DESCRIPTION}
+    heading={n === 1 ? HEADING : `Blog — page ${n}`}
     path={path}
-    robots={d?.robots ??
-        "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"}
+    robots={DEFAULT_ROBOTS}
     crumbs={[
         { name: "Home", path: "/" },
         { name: "Blog", path: BASE },
     ]}
-    intro={n === 1 ? d?.description || undefined : undefined}
+    intro={n === 1 ? DESCRIPTION : undefined}
     pagination={pagination}
     basePath={BASE}
     total={posts.length}
     pageType="archive"
-    ogImage={d?.hero ?? siteConfig.ogDefaultImage}
+    ogImage={siteConfig.ogDefaultImage}
 >
     <ArticleGrid articles={items} columns={3} />
 </ArchiveLayout>
