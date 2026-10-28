@@ -254,3 +254,20 @@
 .qf-article-body .wd-entities-title {
     display: none;
 }
+
+/* ── 10. 政策/锁定页清单 ──
+   Tailwind v4 的 preflight 把 ul/ol 的 list-style 全局清零（迁移内容靠自定义类不受影响），
+   但政策页用裸 <ul>/<ol> 写清单会没了项目符号、li 字号也被迁移层压到 14.5px。
+   在 .policy-body 作用域内恢复，特异性 (0,2,1) 压过 preflight 与迁移层，不波及其它文章。 */
+.qf-article-body .policy-body ul {
+    list-style: disc;
+}
+
+.qf-article-body .policy-body ol {
+    list-style: decimal;
+}
+
+.qf-article-body .policy-body li {
+    font-size: inherit;
+    margin-bottom: 0.5em;
+}

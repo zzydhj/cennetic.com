@@ -1,0 +1,16 @@
+---
+/**
+ * /cnc-machine-refund-policy/ —— 代码自有的「锁定页」。
+ * 正文存于 src/content/locked/cnc-machine-refund-policy.md（不在 snapshot 管理目录），
+ * 用 Vite ?raw 原样读入解析后交给 PageLayout 渲染；后台不开放编辑、发布不会覆盖。
+ */
+import PageLayout from "@layouts/PageLayout.astro";
+import { parseLockedPage } from "@lib/locked-page.ts";
+import type { CollectionEntry } from "astro:content";
+import raw from "../content/locked/cnc-machine-refund-policy.md?raw";
+
+const { data, body } = parseLockedPage(raw);
+const page = { data } as unknown as CollectionEntry<"pages">;
+---
+
+<PageLayout page={page} html={'<div class="policy-body">' + body + "</div>"} />
