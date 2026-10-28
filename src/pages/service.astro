@@ -13,13 +13,15 @@ import PageLayout from "@layouts/PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
 
 const meta = {
-    slug: "service",
-    title: "CNC Machine Service & Support | Warranty, Installation & Remote Diagnostics",
-    heading: "Engineering Support From the Factory That Built Your Machine",
-    description:
-        "After-sales support for Cennetic CNC machines — 2-year warranty, free replacement parts, remote diagnostics, installation and commissioning guidance, and direct access to the engineers who build your machine.",
-    canonical: "/service/",
-    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+  slug: "service",
+  // title 同时用作 <title> 与面包屑末项，故取简洁的一条（关键词交给 description 承载）
+  title: "CNC Machine Service & Support",
+  heading: "Engineering Support From the Factory That Built Your Machine",
+  description:
+    "After-sales support for Cennetic CNC machines — 2-year warranty, free replacement parts, remote diagnostics, installation and commissioning guidance, and direct access to the engineers who build your machine.",
+  canonical: "/service/",
+  robots:
+    "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
 };
 
 // PageLayout 只读取 page.data，这里构造一个等价的内存对象即可复用整套版式
