@@ -55,6 +55,12 @@ export interface Field {
 export interface ListCol {
     name: string;
     label: string;
+    /**
+     * 单元格里遇到这些字面量时改显示对应的文本。
+     * 用在存哨位值的列上：product_categories.parent 的 '0' 是 schema 默认的「顶级」，
+     * 直接列成 0 编辑看不出到底有没有上级（编辑页的 hint 已说明「顶层填 0」）。
+     */
+    alias?: Record<string, string>;
 }
 
 export interface Resource {
@@ -257,7 +263,7 @@ export const RESOURCES: Resource[] = [
         listCols: [
             { name: 'name', label: '名称' },
             { name: 'slug', label: 'Slug' },
-            { name: 'parent', label: '上级' },
+            { name: 'parent', label: '上级', alias: { '0': '顶级' } },
         ],
         fields: [
             { name: 'slug', label: 'Slug', type: 'text', required: true },

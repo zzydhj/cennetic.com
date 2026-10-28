@@ -36,11 +36,11 @@ type Sort = { col: string; dir: 'asc' | 'desc' };
 
 const PAGE_SIZE = 20;
 
-function renderCell(v: unknown): string {
+/** 列渲染：数组拼成一行、布尔说人话，再按 ListCol.alias 把哨位值换成可读文本 */
+function renderCell(v: unknown, alias?: Record<string, string>): string {
     if (v == null) return '';
-    if (Array.isArray(v)) return v.join(', ');
-    if (typeof v === 'boolean') return v ? '是' : '否';
-    return String(v);
+    const s = Array.isArray(v) ? v.join(', ') : typeof v === 'boolean' ? (v ? '是' : '否') : String(v);
+    return alias && Object.prototype.hasOwnProperty.call(alias, s) ? alias[s]! : s;
 }
 
 /** 列表缩略图：主图 → 图集首张 → 头像，都没有就不显示 */
@@ -357,7 +357,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
                                                                         to={`/${resource.key}/${encodeURIComponent(key)}`}
                                                                         className="block max-w-[26rem] truncate font-medium text-slate-800 transition-colors hover:text-brand-700"
                                                                     >
-                                                                        {renderCell(r[c.name]) || '（未命名）'}
+                                                                        {renderCell(r[c.name], c.alias) || '（未命名）'}
                                                                     </Link>
                                                                     {c.name !== resource.idField && (
                                                                         <span className="mt-0.5 block max-w-[26rem] truncate font-mono text-[11px] text-slate-400">{key}</span>
@@ -366,7 +366,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
                                                             </div>
                                                         ) : (
                                                             <span className={cx('block max-w-[18rem] truncate', /date|updated|menu_order/.test(c.name) ? 'tabular-nums text-slate-500' : 'text-slate-600')}>
-                                                                {c.name === 'date' ? date(r[c.name] as string) : renderCell(r[c.name])}
+                                                                {c.name === 'date' ? date(r[c.name] as string) : renderCell(r[c.name], c.alias)}
                                                             </span>
                                                         )}
                                                     </td>
