@@ -1,10 +1,10 @@
 ---
 /**
- * /shop/ 、/products/ 、/service/ 共用的产品全量列表。
+ * /shop/ 、/products/ 共用的产品全量列表。
  *
- * 这三个 URL 在源站都是自动生成的产品循环页（实测 .entry-content 为空），
- * 所以内容一致、只有标题与定位不同。合成一个组件由三个路由传参调用，
- * 避免三份几乎相同却会各自漂移的副本。
+ * 这两个 URL 在源站都是自动生成的产品循环页（实测 .entry-content 为空），
+ * 所以内容一致、只有标题与定位不同。合成一个组件由两个路由传参调用，
+ * 避免两份几乎相同却会各自漂移的副本。
  */
 import ArchiveLayout from "@layouts/ArchiveLayout.astro";
 import ProductCard from "@components/ui/ProductCard.astro";
@@ -12,7 +12,7 @@ import { allProducts, productCategories, siteConfig } from "@lib/catalog.ts";
 import { waLink } from "@lib/whatsapp.ts";
 
 interface Props {
-    slug: "shop" | "products" | "service";
+    slug: "shop" | "products";
 }
 
 const { slug } = Astro.props;
@@ -32,13 +32,6 @@ const COPY = {
         description:
             "Cennetic CNC machine product range: vertical machining centers, drilling and tapping centers, and precision machine tools from a Chinese source factory.",
         intro: "Our machining center range covers linear-guideway high-speed models through to heavy-duty box-guideway machines for mould and die work.",
-    },
-    service: {
-        title: "CNC Machine Service & Support",
-        heading: "Service & Support",
-        description:
-            "Warranty, installation, training and remote diagnostics for Cennetic CNC machines — support from the factory that built your machine.",
-        intro: "Support comes from the engineers who build the machines, not a third-party reseller. Every model includes a 2-year warranty on major components.",
     },
 } as const;
 
