@@ -16,6 +16,7 @@ import type { CollectionEntry } from "astro:content";
 import ArticleLayout from "@layouts/ArticleLayout.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import { allArticles, relatedArticles } from "@lib/content.ts";
+import { isCodeOwnedPage } from "@lib/locked-pages.ts";
 
 export const prerender = true;
 
@@ -39,7 +40,12 @@ export async function getStaticPaths() {
                 (p) =>
                     !p.data.isListing &&
                     p.data.slug !== "home" &&
-                    p.data.slug !== "contact-us",
+                    p.data.slug !== "contact-us" &&
+                    /* 代码自有的锁定页（About Us / Service / 两份政策）由各自的
+                       src/pages/<slug>.astro 渲染。后台万一被重建出同名行，
+                       这里再生成一次就是同路径双渲染 → 样式清单错拿、
+                       整页样式莫名丢失且构建不报错，所以一并排除。 */
+                    !isCodeOwnedPage(p.data.slug),
             )
             .map((p) => [p.data.slug, p]),
     );

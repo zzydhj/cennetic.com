@@ -17,6 +17,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { toFrontmatter } from '../migrate/lib/frontmatter.ts';
+import { CODE_OWNED_PAGE_SLUGS } from '../../src/lib/locked-pages.ts';
 import { ROOT, loadEnvFile, requireEnv } from './lib/env.ts';
 import { createRestClient } from './lib/rest.ts';
 
@@ -168,6 +169,28 @@ function assertDateText(table: string, col: string, v: unknown): void {
     }
 }
 
+/**
+ * 代码自有页守卫：About Us / Service / 两份政策的内容在 git 里
+ * （src/pages/<slug>.astro），不属于后台管理范围。库里若出现同名 published 行
+ * （后台手工重建、从备份恢复、别人在 Supabase 控制台插行），快照会往
+ * src/content/pages/ 写 <slug>.md，那个路径就会被静态路由与 [slug].astro 各渲染一次 ——
+ * 整页样式错乱且构建不报错。宁可在这里把发布拦住，并说清该怎么改。
+ */
+export function assertNoCodeOwnedPages(
+    pages: Array<{ slug: string }>,
+): void {
+    const bad = pages
+        .map((p) => p.slug)
+        .filter((s) => (CODE_OWNED_PAGE_SLUGS as readonly string[]).includes(s));
+    if (bad.length === 0) return;
+    throw new Error(
+        `pages 表里出现了代码自有页：${bad.join(', ')}。\n` +
+            `  这几页的内容写死在 git（src/pages/<slug>.astro），后台不开放编辑。\n` +
+            `  请删除这些行、或把 slug 改成别的名字，否则发布会得到一份与静态路由\n` +
+            `  同路径的内容文件，同一 URL 被渲染两次 → 整页样式错乱且构建不报错。`,
+    );
+}
+
 function assertShape(
     articles: ArticleRow[],
     pages: PageRow[],
@@ -216,6 +239,7 @@ async function collect(): Promise<Map<string, string>> {
     if (siteRows.length !== 1) throw new Error(`site_settings 应为单行，实际 ${siteRows.length} 行`);
 
     assertShape(articles, pages, siteRows[0]!.data);
+    assertNoCodeOwnedPages(pages);
 
     const prodCatName = new Map(prodCats.map((c) => [c.slug, c.name]));
 

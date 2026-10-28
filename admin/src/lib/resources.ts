@@ -155,7 +155,7 @@ export const RESOURCES: Resource[] = [
         singular: '页面',
         group: '内容',
         icon: 'page',
-        desc: '关于/联系/政策等固定页，前台地址 /<slug>/',
+        desc: '固定页（联系页、Blog/Products 等列表页的引言与 SEO）。注意：About Us、Service、隐私政策、退款政策这 4 页已写死在代码里、不在后台管理，列表里看不到是正常的，也别用同名 slug 重建。',
         idField: 'slug',
         titleField: 'title',
         orderBy: 'menu_order',
@@ -165,7 +165,7 @@ export const RESOURCES: Resource[] = [
             { name: 'menu_order', label: '排序' },
         ],
         fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true, help: '页面地址 /<slug>/。' },
+            { name: 'slug', label: 'Slug', type: 'text', required: true, help: '页面地址 /<slug>/。about-us / service / privacy-policy / cnc-machine-refund-policy 是代码保留 slug，用了会跟静态路由撞成同一个 URL，发布闸会直接拦住。' },
             { name: 'title', label: 'SEO 标题', type: 'text', required: true, full: true, quick: true },
             { name: 'heading', label: '页面 H1', type: 'text', required: true, full: true },
             { name: 'description', label: '摘要', type: 'textarea', full: true, quick: true },
