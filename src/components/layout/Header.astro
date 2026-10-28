@@ -316,6 +316,11 @@ function flatten(
         display: flex;
         align-items: center;
         gap: 1.15rem;
+        /* 撑满页眉高度：让 .mega(align-self:stretch) 底边对齐到页眉底部，
+           正好接住 absolute 面板的 top:100%(面板包含块是 sticky 的 .site-header)，
+           消除「Products 与 Mega 之间那段空隙导致 hover 丢失」的问题。
+           导航项仍靠 align-items:center 垂直居中，视觉不变。 */
+        align-self: stretch;
     }
 
     /* 导航项：大写、粗、中间生长下划线 */
