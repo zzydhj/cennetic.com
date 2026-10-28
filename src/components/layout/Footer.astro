@@ -103,9 +103,10 @@ const year = new Date().getFullYear();
 <style>
     .site-footer {
         margin-top: 4rem;
-        background: #1c1f24;
-        color: #c8ccd3;
+        background: var(--color-brand-deep);
+        color: #c3cde0;
         padding-top: 3rem;
+        border-top: 3px solid var(--color-accent);
     }
 
     .grid {
@@ -117,7 +118,7 @@ const year = new Date().getFullYear();
 
     .f-title {
         font-size: 0.95rem;
-        color: #fff;
+        color: var(--color-accent-on-dark);
         margin: 0 0 0.9rem;
         letter-spacing: 0.02em;
     }
@@ -138,7 +139,7 @@ const year = new Date().getFullYear();
         font-size: 0.85rem;
     }
     .col a {
-        color: #c8ccd3;
+        color: #c3cde0;
     }
     .col a:hover {
         color: #fff;
@@ -158,10 +159,10 @@ const year = new Date().getFullYear();
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 0.5rem;
-        border-top: 1px solid rgb(255 255 255 / 0.1);
+        border-top: 1px solid rgb(255 255 255 / 0.12);
         padding: 1.1rem 0;
         font-size: 0.78rem;
-        color: #8b919b;
+        color: rgb(255 255 255 / 0.55);
     }
 
     @media (width <= 900px) {

@@ -2,12 +2,9 @@
 /**
  * 产品卡片。用于 /shop/、/products/、分类页与首页畅销区。
  *
- * 图片比例：产品图实测是 1024x1024 正方形（不是文章配图那种 1200x686），
- * 所以这里用 1:1 容器 + contain：正方形图正好填满不裁，
- * 万一有非正方形的图也只留同色底边，不会把机身或图上的参数文字切掉。
- *
- * 内容克制：卡片只承担「认得出是哪台机器 + 点进去」，
- * 长描述与规格表属于详情页，堆在卡片里会让列表无法扫读。
+ * 版式对齐参考站卡片体系：图片区 + 分类胶囊(非大写、浅底) + 两行标题 +
+ * 底部动作条(左“查看规格”文字链 / 右“获取报价”绿胶囊)。整卡 hover 上浮 + 图片缩放。
+ * 产品图多为正方形，图片区用 4/3 + contain，保证机身与图上参数文字不被裁掉。
  */
 import type { Product } from "@lib/catalog.ts";
 import { siteConfig } from "@lib/catalog.ts";
@@ -44,24 +41,18 @@ const wa = waLink(
                     decoding="async"
                 />
             ) : (
-                <span class="noimg">QF</span>
+                <span class="noimg">CENNETIC</span>
             )
         }
     </a>
 
     <div class="body">
         {category && <span class="cat">{category}</span>}
-        <h3><a href={product.canonical}>{product.name}</a></h3>
-
-        <p class="act">
-            <a class="btn btn-ghost btn-sm" href={product.canonical}
-                >View specs</a
-            >
-            <a
-                class="btn btn-wa btn-sm"
-                href={wa}
-                rel="noopener noreferrer"
-                target="_blank">Get price</a
+        <h3 class="title"><a href={product.canonical}>{product.name}</a></h3>
+        <p class="foot">
+            <a class="spec" href={product.canonical}>View specs →</a>
+            <a class="quote" href={wa} rel="noopener noreferrer" target="_blank"
+                >Get a quote</a
             >
         </p>
     </div>
@@ -73,87 +64,118 @@ const wa = waLink(
         flex-direction: column;
         height: 100%;
     }
+    .prod:hover {
+        border-color: var(--color-accent);
+    }
 
-    /* 1:1 正方形容器，跟产品图原生比例一致，不做任何裁切 */
     .thumb {
         display: block;
         flex: 0 0 auto;
-        aspect-ratio: 1 / 1;
-        background: var(--color-surface-alt);
+        aspect-ratio: 4 / 3;
+        background: var(--color-surface);
         overflow: hidden;
     }
-
     .thumb img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         display: block;
+        transition: transform 0.35s var(--ease);
     }
-
+    .prod:hover .thumb img {
+        transform: scale(1.05);
+    }
     .noimg {
         display: grid;
         place-items: center;
         height: 100%;
         font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 2rem;
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: 0.08em;
         color: var(--color-line);
     }
 
     .body {
         display: flex;
         flex-direction: column;
-        gap: 0.45rem;
-        padding: 0.95rem 1rem 1.05rem;
+        gap: 0.5rem;
+        padding: 1rem 1.1rem 1.1rem;
         flex: 1 1 auto;
         min-width: 0;
     }
 
+    /* 分类：浅底胶囊，非大写 */
     .cat {
-        font-family: var(--font-display);
-        font-size: 0.7rem;
+        align-self: flex-start;
+        background: var(--color-brand-soft);
+        color: var(--color-brand-deep);
+        border-radius: var(--radius-pill);
+        padding: 0.16rem 0.6rem;
+        font-size: 0.72rem;
         font-weight: 600;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: var(--color-brand);
-        /* 分类名有长有短，固定两行高度让各卡标题起线一致 */
+        line-height: 1.5;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .title {
+        font-size: 1.02rem;
+        line-height: 1.4;
+        margin: 0;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        min-height: 2.1em;
     }
-
-    h3 {
-        font-size: 1rem;
-        line-height: 1.32;
-        margin: 0;
-        /* 型号名长短差异大，统一截到 3 行，卡片高度才齐平 */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    h3 a {
+    .title a {
         color: var(--color-ink);
     }
-    h3 a:hover {
+    .title a:hover {
         color: var(--color-brand);
     }
 
-    .act {
-        display: flex;
-        gap: 0.45rem;
+    .foot {
         margin: auto 0 0;
-        padding-top: 0.75rem;
+        padding-top: 0.8rem;
+        border-top: 1px solid var(--color-line-soft);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
     }
-
-    .act :global(.btn) {
-        flex: 1;
-        padding-inline: 0.5rem;
+    .spec {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--color-muted);
         white-space: nowrap;
+    }
+    .spec:hover {
+        color: var(--color-brand);
+    }
+    .quote {
+        display: inline-flex;
+        align-items: center;
+        background: var(--color-good);
+        color: #fff;
+        border-radius: var(--radius-pill);
+        padding: 0.4rem 0.9rem;
+        font-family: var(--font-display);
+        font-size: 0.78rem;
+        font-weight: 700;
+        white-space: nowrap;
+        transition:
+            background-color var(--dur) var(--ease),
+            transform var(--dur) var(--ease),
+            box-shadow var(--dur) var(--ease);
+    }
+    .quote:hover {
+        background: #166a2e;
+        color: #fff;
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
     }
 </style>

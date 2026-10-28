@@ -1,70 +1,85 @@
 /**
  * 设计令牌 —— 全站品牌视觉的唯一来源。
  *
- * 取值来自源站实测：主色 #cc0000（文章正文与按钮高频出现），
- * 悬停态 #990000，标题墨色 #222，正文 #333。
- * 字体沿用原站品牌组合 Montserrat（标题）+ Albert Sans（正文），
- * 但改为自托管子集，不再向 fonts.googleapis.com 发阻塞请求。
+ * 品牌基调：主色取 logo 的深藏青 #012760（旧站沿用源站的红 #cc0000 已整体退场），
+ * 点缀/渐变第二色用科技青蓝 #00b4d8，渐变一律“藏青→青蓝”。字体全站 Inter 单族。
+ * 版式骨架（圆角/阴影/尺度/区块节奏）对齐参考站框架，颜色只换成我们的品牌色。
  *
  * 任何组件都不允许写死颜色或字号，一律引用这里的变量。
  */
 
-@import '@fontsource/montserrat/500.css';
-@import '@fontsource/montserrat/600.css';
-@import '@fontsource/montserrat/700.css';
-@import '@fontsource/albert-sans/400.css';
-@import '@fontsource/albert-sans/600.css';
-@import '@fontsource/albert-sans/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
 
 @theme {
-    /* 品牌色 */
-    --color-brand: #cc0000;
-    --color-brand-dark: #990000;
-    --color-brand-soft: #fdeaea;
-    --color-brand-tint: #fff5f5;
-    /*
-     * 品牌红在深色／视频背景上对比度只有 2–3:1，达不到 AA。
-     * 深色底上一律用这个提亮版，不要把 #cc0000 直接往暗处放。
-     */
-    --color-brand-on-dark: #ff8f8f;
+    /* 品牌主色：深藏青（logo 色） */
+    --color-brand: #012760;
+    --color-brand-dark: #011d49;
+    --color-brand-deep: #010f2e;
+    --color-brand-soft: #e7ecf5;
+    --color-brand-tint: #f2f5fb;
+    /* 藏青在白底上够深、对比足；但把主色直接放到深色/图片上要提亮版 */
+    --color-brand-on-dark: #9ec5f0;
+
+    /* 点缀色：科技青蓝（渐变第二色、图标、强调边、对勾） */
+    --color-accent: #00b4d8;
+    --color-accent-dark: #0096b4;
+    --color-accent-soft: #e2f6fb;
+    --color-accent-on-dark: #4fd0ee;
+
+    /* 渐变（藏青→青蓝） */
+    --gradient: linear-gradient(135deg, #012760 0%, #00b4d8 100%);
+    --gradient-h: linear-gradient(90deg, #012760 0%, #00b4d8 100%);
+    --gradient-soft: linear-gradient(135deg, rgb(1 39 96 / 0.08) 0%, rgb(0 180 216 / 0.08) 100%);
 
     /* 中性色 */
-    --color-ink: #222222;
-    --color-body: #333333;
-    --color-muted: #666666;
-    --color-faint: #8a8a8a;
-    --color-line: #e5e5e5;
-    --color-line-soft: #f0f0f0;
-    --color-surface: #f7f8fa;
-    --color-surface-alt: #f9f9f9;
+    --color-ink: #0f2038;
+    --color-body: #475569;
+    --color-muted: #64748b;
+    --color-faint: #94a3b8;
+    --color-line: #e2e8f0;
+    --color-line-soft: #eef2f6;
+    --color-surface: #f6f8fb;
+    --color-surface-alt: #f2f5fa;
     --color-paper: #ffffff;
+    --color-footer: #0a1630;
 
-    /* 语义色 */
+    /* 语义色（bad 保留为告警红，仅用于校验/错误，不作品牌色） */
     --color-good: #1a7f37;
     --color-good-soft: #ecf7ef;
     --color-warn: #b06000;
     --color-warn-soft: #fdf4e6;
-    --color-bad: #cc0000;
+    --color-bad: #d92d20;
 
-    /* 字体 */
-    --font-display: 'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --font-body: 'Albert Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    /* 字体：全站 Inter 单族 */
+    --font-display: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
     /* 间距与尺寸 */
-    --spacing-page: clamp(1.25rem, 4vw, 3rem);
+    --spacing-page: clamp(1.25rem, 4vw, 2.5rem);
     --gutter: 1.25rem;
-    --radius-sm: 4px;
-    --radius: 8px;
-    --radius-lg: 14px;
+    --header-h: 80px;
+    --section-y: clamp(3.5rem, 7vw, 6rem);
+    --radius-sm: 6px;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
 
-    /* 容器：正文最宽读数长度；站宽按用户要求统一 1400px（头部/正文/页脚同宽） */
+    /* 容器：站宽统一 1400px（头部/正文/页脚同宽） */
     --container-prose: 720px;
     --container-wide: 1400px;
     --container-max: 1400px;
 
-    /* 阴影：克制成一层极淡的分隔，不用原站 Elementor 的多重投影 */
-    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05);
-    --shadow-float: 0 6px 20px rgb(0 0 0 / 0.18);
+    /* 阴影：以藏青为投影色，克制分层 */
+    --shadow-card: 0 1px 3px rgb(15 32 56 / 0.06), 0 4px 16px rgb(15 32 56 / 0.06);
+    --shadow-float: 0 16px 48px rgb(15 32 56 / 0.18);
+    --shadow-sm: 0 1px 3px rgb(15 32 56 / 0.08);
+    --shadow: 0 6px 20px rgb(15 32 56 / 0.1);
+    --shadow-lg: 0 16px 48px rgb(15 32 56 / 0.16);
+    --shadow-primary: 0 8px 24px rgb(1 39 96 / 0.28);
 
     /* 动效 */
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);

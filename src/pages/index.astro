@@ -1,13 +1,10 @@
 ---
 /**
- * 首页。
- *
- * 源站首页是 10 万字符的 Elementor 页面（head 内联 CSS 就有 102KB）。
- * 按既定方向「保留品牌视觉、重写排版」，这里不搬那套 DOM，
- * 而是用真实数据（产品分类 / 产品 / 文章）重新组装。
+ * 首页。按参考站框架重排：满血渐变 Hero + 玻璃数据条、分类图片卡、畅销机型、
+ * 图标特性网格、关于(图文+视频)、最新文章、渐变转化大卡。内容全部用真实数据
+ * (产品分类 / 产品 / 文章)组装，不搬源站那套 10 万字符 Elementor DOM。
  *
  * 布局约定：section 全出血负责背景色带与纵向节奏，内部只放一层 .shell 控制宽度。
- * 上一版 main 和 section 各加一次边距，三层叠加把 1440 视口的内容压成 1040px。
  */
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ArticleCard from "@components/ui/ArticleCard.astro";
@@ -16,11 +13,7 @@ import HeroVideo from "@components/ui/HeroVideo.astro";
 import YouTubeEmbed from "@components/ui/YouTubeEmbed.astro";
 import { getCollection } from "astro:content";
 import { allArticles } from "@lib/content.ts";
-import {
-    siteConfig,
-    allProducts,
-    footerProductCategories,
-} from "@lib/catalog.ts";
+import { siteConfig, allProducts, megaMenu } from "@lib/catalog.ts";
 import { waLink } from "@lib/whatsapp.ts";
 
 export const prerender = true;
@@ -31,18 +24,16 @@ const products = allProducts();
 
 const latest = articles.slice(0, 3);
 const popular = products.slice(0, 4);
-const categories = footerProductCategories;
+// 分类卡用 megaMenu 派生的代表机型图 + 真实计数
+const cats = megaMenu();
 
 const wa = waLink(
     { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
-    {
-        text: "Hi Cennetic, I would like a quote for CNC machines.",
-    },
+    { text: "Hi Cennetic, I would like a quote for CNC machines." },
 );
 
 const heroImage = popular[0]?.images[0] ?? null;
 const description = home?.data.description || siteConfig.description;
-// 首屏真正最先绘制的是 hero 的 poster，不是产品图：preload 必须指向它，否则白预加载一张次要图
 const lcpImage = siteConfig.hero.poster;
 ---
 
@@ -55,74 +46,102 @@ const lcpImage = siteConfig.hero.poster;
     pageType="home"
     preloadLcpImage={lcpImage}
 >
-    <section class="band band-hero">
-        <!--
-          原站首页 hero 就是一段全屏背景视频（Elementor section 背景，10.38MB 无 poster）。
-          这里用原生实现：视频绝对铺满整个 section，文案浮在上头；
-          poster 仍是 LCP 元素，视频满足条件后才空闲加载并淡入。
-        -->
+    <!-- ── Hero：满血渐变 + 视频背景 + 玻璃数据条 ── -->
+    <section class="band-hero">
         <HeroVideo variant="fill" />
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
 
         <div class="shell hero">
             <div class="hero-copy">
-                <p class="eyebrow">{siteConfig.legalName} · Dongguan, China</p>
-                <h1>High-Precision CNC Machining Solutions</h1>
+                <span class="hero-eyebrow">
+                    <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                        ><path
+                            d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"></path></svg
+                    >
+                    {siteConfig.shortName} · Dongguan, China
+                </span>
+                <h1>
+                    High-Precision <span class="hl">CNC Machining</span> Solutions
+                </h1>
                 <p class="lede">
                     A true source factory — not a trading company. We engineer
-                    and build machining centers, drilling and tapping centers
+                    and build machining centers, drilling &amp; tapping centers
                     and CNC lathes, and ship them direct to factories across
                     Europe, North America and Southeast Asia.
                 </p>
                 <p class="actions">
                     <a
-                        class="btn btn-wa"
+                        class="btn btn-light btn-lg"
                         href={wa}
                         rel="noopener noreferrer"
                         target="_blank">Get a Quick Quote</a
                     >
-                    <a class="btn btn-light" href="/about-us/"
-                        >Discover Our Factory</a
+                    <a class="btn btn-outline-light btn-lg" href="/products/"
+                        >Explore Products</a
                     >
                 </p>
-
-                <dl class="stats">
-                    <div><dt>15+</dt><dd>Years manufacturing</dd></div>
-                    <div><dt>750+</dt><dd>Factories served</dd></div>
-                    <div><dt>2-year</dt><dd>Machine warranty</dd></div>
-                </dl>
+                <ul class="badges">
+                    <li>ISO-grade build</li>
+                    <li>2-year warranty</li>
+                    <li>CE / SGS</li>
+                    <li>Global install &amp; support</li>
+                </ul>
             </div>
         </div>
 
-        {
-            popular[0] && (
-                <a class="hero-tag" href={popular[0].canonical}>
-                    <span>Featured model</span>
-                    <strong>{popular[0].name}</strong>
-                </a>
-            )
-        }
+        <dl class="hero-stats">
+            <div class="shell hero-stats-inner">
+                <div><dt>15+</dt><dd>Years manufacturing</dd></div>
+                <div><dt>750+</dt><dd>Factories served</dd></div>
+                <div><dt>2-yr</dt><dd>Machine warranty</dd></div>
+                <div><dt>3</dt><dd>Continents exported</dd></div>
+            </div>
+        </dl>
     </section>
 
-    <section class="band" aria-labelledby="cats-h">
+    <!-- ── 分类：图片卡 ── -->
+    <section class="section" aria-labelledby="cats-h">
         <div class="shell">
-            <p class="eyebrow">Machine categories</p>
-            <h2 id="cats-h" class="section-title">
-                Built for the job you actually run
-            </h2>
-            <p class="section-lede">
-                Every category below is manufactured in our own facility, with
-                the spindle, control and guideway options we would put on our
-                own production floor.
-            </p>
-            <ul class="cat-list">
+            <div class="section-head">
+                <p class="eyebrow">Machine categories</p>
+                <h2 id="cats-h" class="section-title">
+                    Built for the job you actually run
+                </h2>
+                <p class="section-sub">
+                    Every category is manufactured in our own facility, with the
+                    spindle, control and guideway options we would put on our
+                    own production floor.
+                </p>
+            </div>
+            <ul class="cat-grid">
                 {
-                    categories.map((c) => (
+                    cats.map((c) => (
                         <li>
-                            <a href={c.path}>
-                                <>
-                                    <span>{c.label}</span>
-                                    <em>Browse →</em>
-                                </>
+                            <a class="cat-card" href={c.path}>
+                                {c.thumb && (
+                                    <img
+                                        src={c.thumb}
+                                        alt=""
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                )}
+                                <span class="cat-card-ov">
+                                    <span class="cat-card-name">{c.name}</span>
+                                    <span class="cat-card-cta">
+                                        {c.count} models →
+                                    </span>
+                                </span>
                             </a>
                         </li>
                     ))
@@ -131,21 +150,28 @@ const lcpImage = siteConfig.hero.poster;
         </div>
     </section>
 
+    <!-- ── 畅销机型 ── -->
     {
         popular.length > 0 && (
-            <section class="band band-tint" aria-labelledby="best-h">
+            <section class="section section--alt" aria-labelledby="best-h">
                 <div class="shell">
-                    <p class="eyebrow">Best sellers</p>
-                    <h2 id="best-h" class="section-title">
-                        Popular models
-                    </h2>
+                    <div class="section-head">
+                        <p class="eyebrow">Best sellers</p>
+                        <h2 id="best-h" class="section-title">
+                            Popular models
+                        </h2>
+                        <p class="section-sub">
+                            Factory-direct machines our customers specify most
+                            often.
+                        </p>
+                    </div>
                     <div class="grid" data-count={popular.length}>
-                        {popular.map((p) => (
-                            <ProductCard product={p} />
+                        {popular.map((p, i) => (
+                            <ProductCard product={p} eager={i === 0} />
                         ))}
                     </div>
                     <p class="more">
-                        <a class="btn btn-ghost btn-sm" href="/shop/">
+                        <a class="btn btn-ghost btn-sm" href="/products/">
                             View all products
                         </a>
                     </p>
@@ -154,19 +180,159 @@ const lcpImage = siteConfig.hero.poster;
         )
     }
 
-    <section class="band" aria-labelledby="why-h">
-        <div class="shell two">
-            <div>
-                <p class="eyebrow">About Cennetic</p>
+    <!-- ── 为何选我们：图标网格 ── -->
+    <section class="section" aria-labelledby="why-h">
+        <div class="shell">
+            <div class="section-head">
+                <p class="eyebrow eyebrow--accent">Why Cennetic</p>
                 <h2 id="why-h" class="section-title">
+                    What you get buying direct from the builder
+                </h2>
+            </div>
+            <ul class="feat-grid">
+                <li class="feat">
+                    <span class="feat-ic"
+                        ><svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            ><path
+                                d="M3 21h18M5 21V8l5 3V8l5 3V6l4 2v13"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        ></span
+                    >
+                    <h3>Direct source factory</h3>
+                    <p>
+                        We machine, assemble and test in our own Dongguan plant
+                        — you deal with the builder, not a reseller.
+                    </p>
+                </li>
+                <li class="feat">
+                    <span class="feat-ic"
+                        ><svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            ><path
+                                d="M12 13l4-4M12 3a9 9 0 100 18 9 9 0 000-18z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        ></span
+                    >
+                    <h3>Precision you can verify</h3>
+                    <p>
+                        Guideway and box-way VMCs, 5-axis and turn-mill centres
+                        built to rated accuracy and checked before shipping.
+                    </p>
+                </li>
+                <li class="feat">
+                    <span class="feat-ic"
+                        ><svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            ><path
+                                d="M12 3l7 3v6c0 4-3 6-7 9-4-3-7-5-7-9V6l7-3z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        ></span
+                    >
+                    <h3>2-year machine warranty</h3>
+                    <p>
+                        Spindle, guideway and structural cover, plus lifetime
+                        access to consumables, tooling and spares.
+                    </p>
+                </li>
+                <li class="feat">
+                    <span class="feat-ic"
+                        ><svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            ><path
+                                d="M4 13a8 8 0 0116 0M4 13v3a2 2 0 002 2h1v-5H6a2 2 0 00-2 2zm16 0v3a2 2 0 01-2 2h-1v-5h1a2 2 0 012 2z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        ></span
+                    >
+                    <h3>Install, training &amp; support</h3>
+                    <p>
+                        Commissioning, operator training and remote diagnostics
+                        from the engineers who built your machine.
+                    </p>
+                </li>
+                <li class="feat">
+                    <span class="feat-ic"
+                        ><svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            ><path
+                                d="M4 5h16v14H4zM4 9h16M8 5v14"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        ></span
+                    >
+                    <h3>Application review</h3>
+                    <p>
+                        Send a drawing — we recommend the model, fixture and
+                        tooling path for your part and monthly volume.
+                    </p>
+                </li>
+                <li class="feat">
+                    <span class="feat-ic"
+                        ><svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            ><path
+                                d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        ></span
+                    >
+                    <h3>Global export experience</h3>
+                    <p>
+                        15+ years shipping to Europe, North America and
+                        Southeast Asia, with export documentation handled.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── 关于：图文 + 视频 ── -->
+    <section class="section section--tint" aria-labelledby="about-h">
+        <div class="shell two">
+            <div class="about-copy">
+                <p class="eyebrow">About {siteConfig.shortName}</p>
+                <h2 id="about-h" class="section-title">
                     Your direct source for precision CNC manufacturing
                 </h2>
                 <p>
                     CENNETIC is a manufacturer and innovator of high-precision
-                    CNC machine tools in China. We are dedicated to engineering,
-                    manufacturing and delivering top-tier, high-efficiency
-                    machining solutions to the global market — with the
-                    engineers who build your machine also being the ones who
+                    CNC machine tools in China. We engineer, build and deliver
+                    top-tier, high-efficiency machining solutions worldwide —
+                    the engineers who build your machine are the ones who
                     support it.
                 </p>
                 <ul class="ticks">
@@ -176,13 +342,12 @@ const lcpImage = siteConfig.hero.poster;
                         Installation, training and remote diagnostics included
                     </li>
                     <li>
-                        Consumables, tooling and spares supplied for the
-                        machine's life
+                        Consumables, tooling and spares for the machine's life
                     </li>
                 </ul>
                 <p class="actions">
                     <a
-                        class="btn btn-wa btn-sm"
+                        class="btn btn-primary btn-sm"
                         href={wa}
                         rel="noopener noreferrer"
                         target="_blank">Get a Quick Quote</a
@@ -192,7 +357,6 @@ const lcpImage = siteConfig.hero.poster;
                     >
                 </p>
             </div>
-
             <figure class="frame">
                 <YouTubeEmbed
                     title="Inside the Cennetic CNC machine factory"
@@ -202,14 +366,17 @@ const lcpImage = siteConfig.hero.poster;
         </div>
     </section>
 
+    <!-- ── 最新文章 ── -->
     {
         latest.length > 0 && (
-            <section class="band band-tint" aria-labelledby="art-h">
+            <section class="section" aria-labelledby="art-h">
                 <div class="shell">
-                    <p class="eyebrow">Useful articles</p>
-                    <h2 id="art-h" class="section-title">
-                        Technical guides from the shop floor
-                    </h2>
+                    <div class="section-head">
+                        <p class="eyebrow">Useful articles</p>
+                        <h2 id="art-h" class="section-title">
+                            Technical guides from the shop floor
+                        </h2>
+                    </div>
                     <div class="grid" data-count={latest.length}>
                         {latest.map((a) => (
                             <ArticleCard article={a} />
@@ -225,15 +392,17 @@ const lcpImage = siteConfig.hero.poster;
         )
     }
 
-    <section class="band band-cta" aria-labelledby="contact-h">
+    <!-- ── 转化大卡：渐变 ── -->
+    <section class="section" aria-labelledby="contact-h">
         <div class="shell">
-            <div class="cta-card">
-                <div class="cta-main">
-                    <p class="eyebrow">Contact us</p>
+            <div class="cta-grad">
+                <div class="cta-grad-glow" aria-hidden="true"></div>
+                <div class="cta-grad-main">
+                    <p class="eyebrow eyebrow--glass">Contact us</p>
                     <h2 id="contact-h" class="section-title">
                         Send us your part drawing
                     </h2>
-                    <p class="cta-lede">
+                    <p>
                         Tell us the material, part size, tolerance and monthly
                         volume — we will recommend a configuration and send
                         pricing on WhatsApp.
@@ -247,12 +416,12 @@ const lcpImage = siteConfig.hero.poster;
                             >WhatsApp {siteConfig.whatsapp.display}</a
                         >
                         <a
-                            class="btn btn-ghost"
+                            class="btn btn-outline-light"
                             href={`mailto:${siteConfig.email}`}>Email us</a
                         >
                     </p>
                 </div>
-                <div class="cta-side">
+                <div class="cta-grad-side">
                     <p class="cta-side-title">What to include</p>
                     <ul class="cta-list">
                         <li>Material and hardness</li>
@@ -261,8 +430,8 @@ const lcpImage = siteConfig.hero.poster;
                         <li>Target cycle time or surface finish</li>
                     </ul>
                     <p class="cta-note">
-                        Drawings accepted in STEP, DXF, PDF or IGES. Replies
-                        within one business day.
+                        STEP, DXF, PDF or IGES accepted. Replies within one
+                        business day.
                     </p>
                 </div>
             </div>
@@ -271,351 +440,343 @@ const lcpImage = siteConfig.hero.poster;
 </BaseLayout>
 
 <style>
-    /* ── 色带：全出血，宽度只由内部 .shell 控制一次 ── */
-    .band {
-        padding-block: clamp(2.75rem, 6vw, 5rem);
-    }
-
-    .band-tint {
-        background: var(--color-surface);
-    }
-
+    /* ── Hero ── */
     .band-hero {
-        /* 全屏背景：自己当定位上下文，高度接近一整屏 */
         position: relative;
         isolation: isolate;
         overflow: hidden;
-        min-height: clamp(30rem, 86svh, 46rem);
-        display: flex;
-        align-items: center;
-        background: var(--color-ink);
-        border-bottom: 1px solid var(--color-line);
-        padding-block: clamp(3.5rem, 9vw, 6.5rem);
+        background: var(--color-brand-deep);
+        padding-top: clamp(4rem, 9vw, 7rem);
     }
-
-    /* 首页收尾 CTA：浅底上的一张结构卡(左文案+按钮 / 右“该发什么”清单)，
-       与下方深色页脚形成明暗对比，不再只是居中几行字。 */
-    .cta-card {
-        display: grid;
-        grid-template-columns: 1.25fr 1fr;
-        gap: clamp(1.5rem, 4vw, 3rem);
-        align-items: center;
-        background: var(--color-paper);
-        border: 1px solid var(--color-line);
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-float);
-        padding: clamp(1.75rem, 4vw, 3rem);
-    }
-
-    .cta-main .eyebrow,
-    .cta-main .section-title {
-        text-align: left;
-    }
-
-    .cta-lede {
-        color: var(--color-body);
-        line-height: 1.7;
-        margin: 0 0 1.6rem;
-        max-width: 46ch;
-    }
-
-    .cta-card .actions {
-        justify-content: flex-start;
-    }
-
-    .cta-side {
-        background: var(--color-surface);
-        border: 1px solid var(--color-line-soft);
-        border-radius: var(--radius);
-        padding: 1.4rem 1.5rem;
-    }
-
-    .cta-side-title {
-        margin: 0 0 0.85rem;
-        font-family: var(--font-display);
-        font-size: 0.74rem;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--color-faint);
-    }
-
-    .cta-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: 0.55rem;
-    }
-
-    .cta-list li {
-        position: relative;
-        padding-left: 1.55rem;
-        font-size: 0.92rem;
-        line-height: 1.4;
-        color: var(--color-body);
-    }
-
-    /* 手绘对勾：左下两条边旋转 45° */
-    .cta-list li::before {
-        content: "";
+    .hero-scrim {
         position: absolute;
-        left: 0;
-        top: 0.28rem;
-        width: 0.85rem;
-        height: 0.45rem;
-        border-left: 2px solid var(--color-brand);
-        border-bottom: 2px solid var(--color-brand);
-        transform: rotate(-45deg);
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(
+            135deg,
+            rgb(1 15 46 / 0.86) 0%,
+            rgb(1 39 96 / 0.72) 48%,
+            rgb(0 150 180 / 0.55) 120%
+        );
     }
-
-    .cta-note {
-        margin: 1rem 0 0;
-        padding-top: 0.85rem;
-        border-top: 1px solid var(--color-line);
-        font-size: 0.8rem;
-        line-height: 1.5;
-        color: var(--color-muted);
+    .hero-glow {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image:
+            linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: radial-gradient(
+            circle at 78% 12%,
+            #000 0%,
+            transparent 70%
+        );
     }
-
-    @media (max-width: 46rem) {
-        .cta-card {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* ── Hero ── */
     .hero {
-        /* 文案在视频与遮罩之上 */
         position: relative;
         z-index: 1;
+        padding-bottom: clamp(3rem, 6vw, 5rem);
     }
-
     .hero-copy {
-        max-width: 40rem;
+        max-width: 44rem;
     }
-
-    /* 压在视频上，必须用亮色文字 + 投影保证对比度 */
+    .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: var(--radius-pill);
+        background: rgb(255 255 255 / 0.14);
+        border: 1px solid rgb(255 255 255 / 0.28);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+    .hero-eyebrow svg {
+        color: var(--color-accent-on-dark);
+    }
     .band-hero h1 {
         color: #fff;
-        text-shadow: 0 2px 18px rgb(0 0 0 / 0.35);
-    }
-
-    .band-hero .eyebrow {
-        color: var(--color-brand-on-dark);
-    }
-
-    h1 {
         font-size: clamp(2.1rem, 1.4rem + 3.4vw, 3.5rem);
-        line-height: 1.08;
+        line-height: 1.1;
         letter-spacing: -0.02em;
-        margin: 0 0 0.9rem;
+        margin: 1.1rem 0 1rem;
     }
-
+    .band-hero h1 .hl {
+        background: linear-gradient(90deg, #4fd0ee, #9ec5f0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
     .lede {
-        font-size: 1.06rem;
+        font-size: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
         line-height: 1.7;
-        color: var(--color-muted);
-        max-width: 54ch;
-        margin: 0 0 1.6rem;
+        color: rgb(255 255 255 / 0.86);
+        max-width: 38rem;
+        margin: 0 0 1.8rem;
     }
-
-    /* hero 的 lede 在视频上，改用半透白字 */
-    .band-hero .lede {
-        color: rgb(255 255 255 / 0.88);
-    }
-
     .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.65rem;
+        gap: 0.8rem;
         margin: 0;
     }
-
-    /* 图上压一条型号标签，让全屏视频同时承担导航职责 */
-    .hero-tag {
-        position: absolute;
-        right: clamp(1rem, 3vw, 2rem);
-        bottom: clamp(1rem, 3vw, 2rem);
-        z-index: 1;
-        max-width: min(22rem, calc(100% - 2rem));
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-        padding: 0.7rem 0.95rem;
-        border: 1px solid rgb(255 255 255 / 0.18);
-        border-radius: var(--radius);
-        background: rgb(28 31 36 / 0.72);
-        backdrop-filter: blur(8px);
-        color: #fff;
-    }
-
-    .hero-tag:hover {
-        background: rgb(28 31 36 / 0.86);
-        border-color: var(--color-brand);
-    }
-
-    .hero-tag span {
-        font-size: 0.68rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--color-brand-on-dark);
-        font-weight: 600;
-    }
-
-    .hero-tag strong {
-        font-size: 0.92rem;
-        font-family: var(--font-display);
-        line-height: 1.3;
-    }
-
-    .stats {
+    .badges {
+        list-style: none;
+        margin: 1.8rem 0 0;
+        padding: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: clamp(1.25rem, 4vw, 2.75rem);
-        margin: 2rem 0 0;
-        padding-top: 1.5rem;
-        /* 分隔线在深色视频上用半透白，用 --color-line 会几乎看不见 */
-        border-top: 1px solid rgb(255 255 255 / 0.22);
+        gap: 0.5rem;
     }
-
-    .stats div {
-        display: flex;
-        flex-direction: column;
+    .badges li {
+        padding: 0.3rem 0.75rem;
+        border-radius: var(--radius-pill);
+        background: rgb(255 255 255 / 0.1);
+        border: 1px solid rgb(255 255 255 / 0.2);
+        color: rgb(255 255 255 / 0.92);
+        font-size: 0.78rem;
+        font-weight: 600;
     }
-
-    .stats dt {
+    .hero-stats {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+    }
+    .hero-stats-inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgb(255 255 255 / 0.16);
+        border-top: 1px solid rgb(255 255 255 / 0.16);
+        padding-inline: 0;
+        max-width: none;
+    }
+    .hero-stats div {
+        background: rgb(13 10 55 / 0.28);
+        backdrop-filter: blur(4px);
+        padding: clamp(1.1rem, 3vw, 1.9rem) 0.75rem;
+        text-align: center;
+    }
+    .hero-stats dt {
         font-family: var(--font-display);
-        font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem);
-        font-weight: 700;
-        /* 品牌红 #cc0000 在视频上只到 2–3:1，大字号也要提亮才达 AA */
-        color: var(--color-brand-on-dark);
+        font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.3rem);
+        font-weight: 800;
         line-height: 1;
+        color: #fff;
     }
-
-    .stats dd {
-        margin: 0.35rem 0 0;
+    .hero-stats dd {
+        margin: 0.5rem 0 0;
         font-size: 0.82rem;
-        color: rgb(255 255 255 / 0.82);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: rgb(255 255 255 / 0.72);
     }
 
-    /* ── 分类列表 ── */
-    .cat-list {
+    /* ── 区块通用 ── */
+    .section {
+        padding-block: var(--section-y);
+    }
+    .section--alt {
+        background: var(--color-surface);
+    }
+    .section--tint {
+        background: var(--color-brand-tint);
+    }
+    .section-head {
+        text-align: center;
+        max-width: 44rem;
+        margin: 0 auto clamp(2rem, 4vw, 3rem);
+    }
+
+    /* ── 分类图片卡 ── */
+    .cat-grid {
         list-style: none;
-        margin: 1.5rem 0 0;
+        margin: 0;
         padding: 0;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
-        gap: var(--gutter);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+        gap: clamp(0.9rem, 2vw, 1.4rem);
     }
-
-    .cat-list a {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 1.25rem;
-        min-height: 7.5rem;
-        padding: 1.1rem 1.15rem;
-        border: 1px solid var(--color-line);
+    .cat-card {
+        position: relative;
+        display: block;
+        aspect-ratio: 3 / 2;
         border-radius: var(--radius);
-        background: var(--color-paper);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        background: var(--color-brand-deep);
+        transition:
+            box-shadow var(--dur) var(--ease),
+            transform var(--dur) var(--ease);
+    }
+    .cat-card img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s var(--ease);
+    }
+    .cat-card:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-4px);
+    }
+    .cat-card:hover img {
+        transform: scale(1.06);
+    }
+    .cat-card-ov {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 2.4rem 1rem 0.9rem;
+        background: linear-gradient(transparent, rgb(1 15 46 / 0.85));
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+    .cat-card-name {
         font-family: var(--font-display);
         font-weight: 700;
-        font-size: 0.98rem;
+        font-size: 1rem;
         line-height: 1.3;
-        color: var(--color-ink);
+    }
+    .cat-card-cta {
+        flex-shrink: 0;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--color-accent-on-dark);
     }
 
-    .cat-list a:hover {
-        border-color: var(--color-brand);
-        color: var(--color-brand);
-    }
-
-    .cat-list em {
-        font-style: normal;
-        font-size: 0.76rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        color: var(--color-brand);
-    }
-
-    /* ── 网格：列数跟条目数对齐，避免孤儿行与空槽 ── */
+    /* ── 网格(产品/文章) ── */
     .grid {
         display: grid;
         gap: var(--gutter);
-        margin-top: 1.5rem;
     }
-
-    /*
-     * auto-fill 会为未使用的轨道留下空位（实测 4 张卡挤成 3 列 + 孤儿行），
-     * 所以按条目数显式给列数：4 项走 4 列、3 项走 3 列，窄屏再降级。
-     */
     .grid[data-count="4"] {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
     .grid[data-count="3"] {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
     @media (width <= 1080px) {
         .grid[data-count="4"] {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
-
     @media (width <= 720px) {
         .grid[data-count="3"],
         .grid[data-count="4"] {
             grid-template-columns: minmax(0, 1fr);
         }
     }
-
     .more {
-        margin: 1.75rem 0 0;
+        margin: 2rem 0 0;
+        text-align: center;
     }
 
-    /* ── 关于区 ── */
-    .two {
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
-        gap: clamp(1.75rem, 4vw, 3.5rem);
-        align-items: center;
-    }
-
-    .two p:not(.actions, .eyebrow) {
-        color: var(--color-body);
-        line-height: 1.75;
-        margin: 0 0 1.1rem;
-    }
-
-    .ticks {
+    /* ── 特性图标网格 ── */
+    .feat-grid {
         list-style: none;
-        margin: 0 0 1.5rem;
+        margin: 0;
         padding: 0;
         display: grid;
-        gap: 0.5rem;
-        font-size: 0.92rem;
-        color: var(--color-body);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.9rem, 2vw, 1.4rem);
     }
-
-    .ticks li {
-        padding-left: 1.5rem;
-        position: relative;
+    .feat {
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        background: var(--color-paper);
+        padding: clamp(1.4rem, 2.4vw, 1.9rem);
+        transition:
+            box-shadow var(--dur) var(--ease),
+            transform var(--dur) var(--ease),
+            border-color var(--dur) var(--ease);
     }
-
-    .ticks li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        font-weight: 700;
+    .feat:hover {
+        box-shadow: var(--shadow);
+        border-color: rgb(1 39 96 / 0.25);
+        transform: translateY(-4px);
+    }
+    .feat-ic {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+        background: var(--gradient-soft);
         color: var(--color-brand);
+        margin-bottom: 1rem;
     }
-
-    .frame {
+    .feat h3 {
+        font-size: 1.08rem;
+        margin: 0 0 0.45rem;
+    }
+    .feat p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--color-muted);
         margin: 0;
     }
 
-    .frame img {
+    /* ── 关于 ── */
+    .two {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        gap: clamp(1.75rem, 4vw, 3.5rem);
+        align-items: center;
+    }
+    .about-copy .section-title {
+        margin-top: 0.4rem;
+    }
+    .about-copy > p:not(.actions, .eyebrow) {
+        color: var(--color-body);
+        line-height: 1.75;
+        margin: 0 0 1.2rem;
+    }
+    .ticks {
+        list-style: none;
+        margin: 0 0 1.6rem;
+        padding: 0;
+        display: grid;
+        gap: 0.6rem;
+        font-size: 0.95rem;
+        color: var(--color-body);
+    }
+    .ticks li {
+        position: relative;
+        padding-left: 1.9rem;
+    }
+    .ticks li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.15rem;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--color-accent-soft);
+    }
+    .ticks li::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 0.42rem;
+        width: 8px;
+        height: 4px;
+        border-left: 2px solid var(--color-accent-dark);
+        border-bottom: 2px solid var(--color-accent-dark);
+        transform: rotate(-45deg);
+    }
+    .frame {
+        margin: 0;
+    }
+    .frame :global(img) {
         width: 100%;
         height: auto;
         border-radius: var(--radius-lg);
@@ -624,84 +785,150 @@ const lcpImage = siteConfig.hero.poster;
         background: var(--color-surface-alt);
     }
 
-    .frame figcaption {
-        margin-top: 0.6rem;
-        font-size: 0.78rem;
-        color: var(--color-faint);
+    /* ── 渐变转化大卡 ── */
+    .cta-grad {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: center;
+        padding: clamp(2rem, 4vw, 3.25rem);
+        border-radius: var(--radius-lg);
+        background:
+            radial-gradient(
+                900px 400px at 85% 0%,
+                rgb(0 180 216 / 0.4),
+                transparent 60%
+            ),
+            linear-gradient(
+                135deg,
+                var(--color-brand-deep) 0%,
+                var(--color-brand) 55%,
+                #0096b4 120%
+            );
+        color: #fff;
+        box-shadow: var(--shadow-lg);
+    }
+    .cta-grad-glow {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+            linear-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(circle at 20% 20%, #000, transparent 75%);
+    }
+    .eyebrow--glass {
+        background: rgb(255 255 255 / 0.16);
+        color: #fff;
+    }
+    .cta-grad-main .section-title {
+        color: #fff;
+        font-size: clamp(1.7rem, 1.2rem + 2vw, 2.5rem);
+    }
+    .cta-grad-main > p:not(.actions, .eyebrow) {
+        color: rgb(255 255 255 / 0.86);
+        line-height: 1.7;
+        max-width: 40ch;
+        margin: 0 0 1.6rem;
+    }
+    .cta-grad-side {
+        background: rgb(255 255 255 / 0.08);
+        border: 1px solid rgb(255 255 255 / 0.18);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+        backdrop-filter: blur(4px);
+    }
+    .cta-side-title {
+        margin: 0 0 0.9rem;
+        font-family: var(--font-display);
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-accent-on-dark);
+    }
+    .cta-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.6rem;
+    }
+    .cta-list li {
+        position: relative;
+        padding-left: 1.6rem;
+        font-size: 0.92rem;
+        line-height: 1.4;
+        color: rgb(255 255 255 / 0.92);
+    }
+    .cta-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.28rem;
+        width: 0.85rem;
+        height: 0.45rem;
+        border-left: 2px solid var(--color-accent-on-dark);
+        border-bottom: 2px solid var(--color-accent-on-dark);
+        transform: rotate(-45deg);
+    }
+    .cta-note {
+        margin: 1rem 0 0;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgb(255 255 255 / 0.18);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: rgb(255 255 255 / 0.7);
     }
 
-    @media (width < 960px) {
-        .two {
-            grid-template-columns: minmax(0, 1fr);
-        }
-
-        /*
-         * 窄屏不弄全屏：竖屏里把文案压在图上既挤又影响可读性，而且视频本来就不加载。
-         * 让背景退回普通图片（in-flow）排在文案上方，比“假全屏”更稳。
-         */
+    /* ── 响应式 ── */
+    @media (width <= 960px) {
         .band-hero {
-            display: block;
-            min-height: 0;
-            background: var(--color-paper);
-            padding-block: clamp(2.5rem, 6vw, 4rem);
+            padding-top: 0;
         }
-
-        /*
-         * 必须是 relative 而不是 static：.poster / .vid 自身是 position:absolute，
-         * 一旦父级变成 static，它们的包含块会逃逸到 .band-hero，
-         * 结果图片盖满整段 section、深色文案压在图上且无遮罩（实测对比度 1.1–3.3:1）。
-         */
         .band-hero :global(.hero-visual.variant-fill) {
             position: relative;
             inset: auto;
             aspect-ratio: 16 / 10;
             border-radius: var(--radius-lg);
-            border: 1px solid var(--color-line);
+            border: 1px solid rgb(255 255 255 / 0.2);
             overflow: hidden;
             margin-bottom: 1.75rem;
         }
-
         .band-hero :global(.hero-visual.variant-fill .scrim) {
             display: none;
         }
-
-        /* 回到浅背景，文字恢复深色 */
-        .band-hero h1 {
-            color: var(--color-ink);
-            text-shadow: none;
+        .hero-scrim,
+        .hero-glow {
+            display: none;
         }
-
-        .band-hero .eyebrow {
-            color: var(--color-brand);
+        .hero {
+            background: var(--color-brand-deep);
+            padding-block: clamp(2.5rem, 6vw, 4rem);
         }
-
-        .band-hero .lede {
-            color: var(--color-muted);
+        .two {
+            grid-template-columns: minmax(0, 1fr);
         }
-
-        .stats {
-            border-top-color: var(--color-line);
+        .feat-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-
-        .stats dt {
-            color: var(--color-brand);
+        .cta-grad {
+            grid-template-columns: 1fr;
         }
-
-        .stats dd {
-            color: var(--color-muted);
+    }
+    @media (width <= 560px) {
+        .hero-stats-inner {
+            grid-template-columns: repeat(2, 1fr);
         }
-
-        .hero-tag {
-            position: static;
-            max-width: none;
-            margin-top: 1.25rem;
-            background: var(--color-surface);
-            border-color: var(--color-line);
-            color: var(--color-ink);
+        .feat-grid {
+            grid-template-columns: minmax(0, 1fr);
         }
-
-        .hero-tag span {
-            color: var(--color-brand);
+        .actions .btn {
+            flex: 1 1 100%;
         }
     }
 </style>

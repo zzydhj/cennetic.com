@@ -107,7 +107,7 @@ export function categoryAncestors(cat: ProductCategory): ProductCategory[] {
  * 分类清单里的 count 是旧的、不随产品增减自动更新，所以这里按实际产品
  * 派生计数（含所有后代分类），并只保留有货的顶层分类 —— 后台新增产品后
  * 面板会自动长出新分类，无需改代码。为让面板更具体，每列额外派生：代表
- * 机型缩略图、分类描述、多级子分类树，以及该分类下的具体机型（型号代号）。
+ * 机型缩略图、分类描述、多级子分类树，以及该分类下的具体机型（型号代号+图）。
  */
 export interface MegaNode {
     name: string;
@@ -115,11 +115,12 @@ export interface MegaNode {
     count: number;
     children: MegaNode[];
 }
-/** 一列里的具体机型：label 是型号代号（如 C600），name 是完整产品名（做 title） */
+/** 一列里的具体机型：label 型号代号、name 完整名(title)、thumb 首图、path 详情 */
 export interface MegaModel {
     label: string;
     name: string;
     path: string;
+    thumb: string;
 }
 export interface MegaColumn extends MegaNode {
     slug: string;
@@ -163,11 +164,12 @@ function modelLabel(name: string): string {
     return cleaned.split(/\s+/)[0] || cleaned;
 }
 
-/** 该分类下的具体机型（限 limit 台，优先带图的），供 Mega 面板列型号 */
+/** 该分类下的具体机型（限 limit 台，只取带图的），供 Mega 面板做缩略图卡片 */
 function modelsUnder(slug: string, limit: number): MegaModel[] {
     return productsUnder(slug)
+        .filter((p) => p.images.length > 0)
         .slice(0, limit)
-        .map((p) => ({ label: modelLabel(p.name), name: p.name, path: p.canonical }));
+        .map((p) => ({ label: modelLabel(p.name), name: p.name, path: p.canonical, thumb: p.images[0].src }));
 }
 
 /** 顶层分类列（有货的），按产品数降序；每列带具体机型 */

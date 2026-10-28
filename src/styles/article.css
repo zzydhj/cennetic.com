@@ -46,7 +46,7 @@
     font-size: clamp(1.18rem, 1.05rem + 0.6vw, 1.35rem);
 }
 
-/* ── 3. 品牌红统一：源站混用 #cc0000 与 #e53935 等，一律收进令牌 ── */
+/* ── 3. 品牌红统一：源站混用 #012760 与 #012760 等，一律收进令牌 ── */
 .qf-article-body h2 {
     border-bottom-color: var(--color-brand);
 }

@@ -30,7 +30,7 @@
 
 .qf-article-body .qf-author-avatar {
   align-items: center;
-  background: #cc0000;
+  background: #012760;
   border-radius: 50%;
   color: #fff;
   display: flex;
@@ -80,14 +80,14 @@
 }
 
 .qf-article-body .qf-compare th {
-  background: #cc0000;
+  background: #012760;
   color: #fff;
   padding: 9px 14px;
   text-align: left;
 }
 
 .qf-article-body .qf-compare tr:hover td {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-article-body .qf-compare tr:nth-child(even) td {
@@ -101,7 +101,7 @@
 }
 
 .qf-article-body .qf-compare-table tbody tr:hover {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-article-body .qf-compare-table tbody tr:nth-child(even) {
@@ -120,13 +120,13 @@
 }
 
 .qf-article-body .qf-compare-table thead tr {
-  background: #cc0000;
+  background: #012760;
   color: #fff;
 }
 
 .qf-article-body .qf-cons {
-  background: #fff5f5;
-  border: 1px solid #ffc5c5;
+  background: #f2f5fb;
+  border: 1px solid #c7d4e8;
   border-radius: 6px;
   flex: 1;
   min-width: 220px;
@@ -134,7 +134,7 @@
 }
 
 .qf-article-body .qf-cons h4 {
-  color: #cc0000;
+  color: #012760;
   margin: 0 0 10px 0;
 }
 
@@ -150,7 +150,7 @@
 }
 
 .qf-article-body .qf-cta-box {
-  background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+  background: linear-gradient(135deg, #012760 0%, #011d49 100%);
   border-radius: 8px;
   color: #fff;
   margin: 32px 0;
@@ -188,7 +188,7 @@
 }
 
 .qf-article-body .qf-highlight strong {
-  color: #cc0000;
+  color: #012760;
 }
 
 .qf-article-body .qf-pros {
@@ -232,7 +232,7 @@
 }
 
 .qf-article-body .qf-references a {
-  color: #cc0000;
+  color: #012760;
   text-decoration: none;
 }
 
@@ -261,7 +261,7 @@
 
 .qf-article-body .qf-testimonial {
   background: #f9f9f9;
-  border-left: 4px solid #cc0000;
+  border-left: 4px solid #012760;
   border-radius: 0 6px 6px 0;
   margin: 16px 0;
   padding: 16px 20px;
@@ -282,12 +282,12 @@
 }
 
 .qf-article-body a {
-  color: #cc0000;
+  color: #012760;
   text-decoration: none;
 }
 
 .qf-article-body a:hover {
-  color: #990000;
+  color: #011d49;
   text-decoration: underline;
 }
 
@@ -297,8 +297,8 @@
 
 .qf-article-body blockquote {
   background: #f9f9f9;
-  background-color: #fff5f5;
-  border-left: 4px solid #cc0000;
+  background-color: #f2f5fb;
+  border-left: 4px solid #012760;
   border-radius: 0 6px 6px 0;
   color: #444;
   font-style: italic;
@@ -326,8 +326,8 @@
 }
 
 .qf-article-body h2 {
-  border-bottom: 2px solid #cc0000;
-  border-left: 4px solid #cc0000;
+  border-bottom: 2px solid #012760;
+  border-left: 4px solid #012760;
   color: #222;
   font-size: 22px;
   line-height: 1.35;
@@ -422,14 +422,14 @@
 }
 
 .qf-article-body th {
-  background: #cc0000;
+  background: #012760;
   color: #fff;
   padding: 9px 14px;
   text-align: left;
 }
 
 .qf-article-body tr:hover td {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-article-body tr:nth-child(even) td {
@@ -473,8 +473,8 @@
 
 .qf-author-avatar {
   align-items: center;
-  background: #cc0000;
-  background-color: #cc0000;
+  background: #012760;
+  background-color: #012760;
   border-radius: 50%;
   color: #fff;
   display: flex;
@@ -536,7 +536,7 @@
 }
 
 .qf-author-info .qf-author-title {
-  color: #cc0000;
+  color: #012760;
   display: block;
   font-size: 0.85em;
   font-weight: 600;
@@ -566,7 +566,7 @@
 
 .qf-avatar {
   align-items: center;
-  background: #cc0000;
+  background: #012760;
   border-radius: 50%;
   color: #fff;
   display: flex;
@@ -595,7 +595,7 @@
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  color: #cc0000 !important;
+  color: #012760 !important;
   display: inline-block;
   font-size: 13px;
   font-weight: bold;
@@ -607,13 +607,13 @@
 }
 
 .qf-az-nav a:hover {
-  background: #cc0000;
-  border-color: #cc0000;
+  background: #012760;
+  border-color: #012760;
   color: #fff !important;
 }
 
 .qf-best {
-  color: #cc0000;
+  color: #012760;
   font-weight: 700;
 }
 
@@ -713,7 +713,7 @@
 .qf-btn-w {
   background: #fff;
   border-radius: 4px;
-  color: #cc0000 !important;
+  color: #012760 !important;
   display: inline-block;
   font-size: 15px;
   font-weight: 700;
@@ -742,7 +742,7 @@
 }
 
 .qf-card-btn {
-  background: #cc0000;
+  background: #012760;
   border-radius: 4px;
   color: #fff !important;
   display: block;
@@ -755,7 +755,7 @@
 }
 
 .qf-card-head {
-  background: #cc0000;
+  background: #012760;
   color: #fff;
   padding: 14px 18px;
 }
@@ -891,12 +891,12 @@
 }
 
 .qf-compare-table tbody tr:hover {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-compare-table tbody tr:nth-child(even) {
   background: #fafafa;
-  background-color: #fff5f5;
+  background-color: #f2f5fb;
 }
 
 .qf-compare-table tbody tr:nth-child(odd) {
@@ -912,8 +912,8 @@
 }
 
 .qf-compare-table th {
-  background: #cc0000;
-  background-color: #cc0000;
+  background: #012760;
+  background-color: #012760;
   border-bottom: 1px solid #eee;
   color: #fff;
   font-size: 14px;
@@ -929,18 +929,18 @@
 }
 
 .qf-compare-table thead tr {
-  background: #cc0000;
-  background-color: #cc0000;
+  background: #012760;
+  background-color: #012760;
   color: #fff;
 }
 
 .qf-compare-table tr:hover {
-  background: #fff5f5;
-  background-color: #fff5f5;
+  background: #f2f5fb;
+  background-color: #f2f5fb;
 }
 
 .qf-compare-table tr:hover td {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-compare-table tr:nth-child(even) {
@@ -953,9 +953,9 @@
 }
 
 .qf-con-box {
-  background: #fff5f5;
-  background-color: #fff5f5;
-  border: 1px solid #ffc5c5;
+  background: #f2f5fb;
+  background-color: #f2f5fb;
+  border: 1px solid #c7d4e8;
   border-radius: 6px;
   flex: 1;
   min-width: 220px;
@@ -963,21 +963,21 @@
 }
 
 .qf-con-box h3 {
-  color: #cc0000;
+  color: #012760;
   font-size: 18px;
   margin-top: 0;
 }
 
 .qf-con-box h4 {
-  color: #cc0000;
+  color: #012760;
   margin-bottom: 10px;
   margin-top: 0;
 }
 
 .qf-cons {
-  background: #fff5f5;
+  background: #f2f5fb;
   background-color: #fff7f0;
-  border: 1px solid #ffc5c5;
+  border: 1px solid #c7d4e8;
   border-radius: 6px;
   flex: 1;
   min-width: 220px;
@@ -985,14 +985,14 @@
 }
 
 .qf-cons h3 {
-  color: #cc0000;
+  color: #012760;
   font-size: 17px;
   margin: 0 0 10px;
   margin-top: 0;
 }
 
 .qf-cons h4 {
-  color: #cc0000;
+  color: #012760;
   font-size: 15px;
   margin: 0 0 10px 0;
   margin-bottom: 10px;
@@ -1019,17 +1019,17 @@
 }
 
 .qf-cons-box {
-  background: #fff5f5;
-  border: 1px solid #ffc5c5;
+  background: #f2f5fb;
+  border: 1px solid #c7d4e8;
 }
 
 .qf-cons-box h4 {
-  color: #cc0000;
+  color: #012760;
   margin-top: 0;
 }
 
 .qf-cta {
-  background: linear-gradient(135deg, #cc0000, #990000);
+  background: linear-gradient(135deg, #012760, #011d49);
   border-radius: 8px;
   color: #fff;
   margin: 40px 0;
@@ -1063,7 +1063,7 @@
 }
 
 .qf-cta-box {
-  background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+  background: linear-gradient(135deg, #012760 0%, #011d49 100%);
   border-radius: 8px;
   color: #fff;
   margin: 36px 0;
@@ -1135,7 +1135,7 @@
 .qf-cta-btn {
   background: #fff;
   border-radius: 4px;
-  color: #cc0000;
+  color: #012760;
   cursor: pointer;
   display: inline-block;
   font-size: 15px;
@@ -1165,7 +1165,7 @@
 .qf-cta-btn.qf-cta-btn-primary {
   background: #fff !important;
   border-radius: 4px;
-  color: #cc0000 !important;
+  color: #012760 !important;
   display: inline-block;
   font-size: 15px;
   font-weight: 700;
@@ -1178,7 +1178,7 @@
 
 .qf-cta-btn.qf-cta-btn-primary:hover {
   background: #ffe0e0 !important;
-  color: #cc0000 !important;
+  color: #012760 !important;
   text-decoration: none;
 }
 
@@ -1245,7 +1245,7 @@
 }
 
 .qf-data-bar sup a {
-  color: #cc0000;
+  color: #012760;
   font-size: 11px;
 }
 
@@ -1260,7 +1260,7 @@
 }
 
 .qf-data-box strong {
-  color: #cc0000;
+  color: #012760;
 }
 
 .qf-faq {
@@ -1302,7 +1302,7 @@
 }
 
 .qf-formula strong {
-  color: #cc0000;
+  color: #012760;
 }
 
 .qf-glossary-letter {
@@ -1311,7 +1311,7 @@
 }
 
 .qf-glossary-letter-heading {
-  background: #cc0000;
+  background: #012760;
   border-radius: 6px;
   color: #fff;
   display: inline-block;
@@ -1326,7 +1326,7 @@
 
 .qf-glossary-term {
   background: #fafafa;
-  border-left: 3px solid #cc0000;
+  border-left: 3px solid #012760;
   border-radius: 0 6px 6px 0;
   margin-bottom: 10px;
   padding: 10px 16px;
@@ -1340,7 +1340,7 @@
 }
 
 .qf-glossary-term strong {
-  color: #cc0000;
+  color: #012760;
   font-size: 15px;
 }
 
@@ -1358,7 +1358,7 @@
 }
 
 .qf-highlight strong {
-  color: #cc0000;
+  color: #012760;
 }
 
 .qf-highlight-box {
@@ -1373,7 +1373,7 @@
 }
 
 .qf-highlight-box strong {
-  color: #cc0000;
+  color: #012760;
 }
 
 .qf-low {
@@ -1535,7 +1535,7 @@
 
 .qf-quote {
   background: #f9f9f9;
-  border-left: 4px solid #cc0000;
+  border-left: 4px solid #012760;
   border-radius: 0 6px 6px 0;
   margin: 24px 0;
   padding: 16px 22px;
@@ -1591,12 +1591,12 @@
 }
 
 .qf-references a {
-  color: #cc0000;
+  color: #012760;
   text-decoration: none;
 }
 
 .qf-references a:hover {
-  color: #990000;
+  color: #011d49;
   text-decoration: underline;
 }
 
@@ -1642,12 +1642,12 @@
 }
 
 .qf-references ol a {
-  color: #cc0000;
+  color: #012760;
   text-decoration: underline;
 }
 
 .qf-references ol a:hover {
-  color: #990000;
+  color: #011d49;
   text-decoration: none;
 }
 
@@ -1659,7 +1659,7 @@
 }
 
 .qf-references ol li a {
-  color: #cc0000;
+  color: #012760;
   text-decoration: none;
 }
 
@@ -1698,7 +1698,7 @@
 }
 
 .qf-score-num {
-  color: #cc0000;
+  color: #012760;
   font-size: 32px;
   font-weight: 900;
   line-height: 1;
@@ -1732,7 +1732,7 @@
 }
 
 .qf-symbol-box .qf-symbol {
-  color: #cc0000;
+  color: #012760;
   font-size: 48px;
   font-weight: bold;
   margin: 10px 0;
@@ -1759,7 +1759,7 @@
 }
 
 .qf-table tbody tr:hover {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-table tbody tr:nth-child(even) {
@@ -1775,7 +1775,7 @@
 }
 
 .qf-table th {
-  background: #cc0000;
+  background: #012760;
   border-bottom: 1px solid #eee;
   color: #fff;
   font-size: 14px;
@@ -1788,12 +1788,12 @@
 }
 
 .qf-table thead tr {
-  background: #cc0000;
+  background: #012760;
   color: #fff;
 }
 
 .qf-table tr:hover td {
-  background: #fff5f5;
+  background: #f2f5fb;
 }
 
 .qf-table tr:nth-child(even) td {
@@ -1809,7 +1809,7 @@
 .qf-testimonial {
   background: #f9f9f9;
   background-color: #f9f9f9;
-  border-left: 4px solid #cc0000;
+  border-left: 4px solid #012760;
   border-radius: 0 6px 6px 0;
   margin: 20px 0;
   margin-bottom: 20px;
@@ -1925,7 +1925,7 @@
 }
 
 .qf-toc ul li a {
-  color: #cc0000;
+  color: #012760;
   font-size: 14px;
   text-decoration: none;
 }
@@ -1938,14 +1938,14 @@
   background: #fff;
   border: 1px solid #e8e8e8;
   border-radius: 0 0 6px 6px;
-  border-top: 3px solid #cc0000;
+  border-top: 3px solid #012760;
   flex: 1;
   min-width: 220px;
   padding: 16px 18px;
 }
 
 .qf-type-card h4 {
-  color: #cc0000;
+  color: #012760;
   font-size: 15px;
   margin: 0 0 8px 0;
 }
@@ -1965,7 +1965,7 @@
 }
 
 .qf-verdict {
-  background: #cc0000;
+  background: #012760;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
@@ -1986,7 +1986,7 @@
 }
 
 .qf-winner-col {
-  background: #fff5f5 !important;
+  background: #f2f5fb !important;
 }
 
 @media (max-width: 600px) {
