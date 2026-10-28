@@ -190,10 +190,12 @@ export async function buildDeployFiles(): Promise<void> {
         '',
         `# Sitemap ${SITE_ORIGIN}/sitemap-index.xml`,
         '',
-        // 后台是 SPA：/admin 下的前端路由没有对应的静态文件，统一回落到 index.html。
-        // 这条以前只存在于生成产物里、不在本文件，重跑 08 就会把它冲没 → 后台进不去。
-        '# ── 后台 SPA：/admin 下任意前端路由回落到 index.html（200，不改地址栏）──',
-        '/admin/*   /admin/index.html   200',
+        // 这里以前有一条 `/admin/* → /admin/index.html 200` 的后台 SPA 回落规则，已删。
+        // 两个理由：
+        //   1. 线上实测它根本不生效（/admin/products 返回站点 404 页），后台深链接不能建在它上面；
+        //   2. 它本身是个地雷：/admin/assets/index-xxx.js 也匹配 /admin/*，而 Pages 的规则
+        //      优先于静态文件——哪天它生效了，后台的 JS/CSS 会被当 index.html 返回，后台直接白屏。
+        // 后台已改为 hash 路由（见 admin/src/main.tsx），index.html 自身就能承载前端路由。
         '',
     );
 

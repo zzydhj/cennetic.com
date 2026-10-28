@@ -8,6 +8,7 @@
  *
  * 检查项（fail 即退出码 1，Action 会拒绝发布）：
  *   1. 每个内容页：title 非空、恰好一个 H1、canonical 存在且等于本站该路径
+ *   1b. 属性值里残留的 {expr}（Astro 不插值，得到字面量，构建不报错）
  *   2. noindex 页不得混进 sitemap；可索引页必须在 sitemap 里（少一条就是少收录）
  *   3. sitemap 里每条 URL 的域名必须是 SITE_ORIGIN，且产物里真有这个文件
  *   4. _redirects 语法：来源不得带 scheme（跨域名 301 在 Pages 层根本无效，必须去 Zone 配）
@@ -49,6 +50,18 @@ function fileFor(sitePath: string): string {
 function isNoindex(html: string): boolean {
     const tag = html.match(/<meta\s[^>]*name="robots"[^>]*>/i)?.[0];
     return !!tag && /noindex/i.test(tag);
+}
+
+/**
+ * 抓 Astro 的一个静默坑：属性值里的 {…} 不会被动插值。
+ *   href="mailto:{siteConfig.email}"   → 原样输出 mailto:{siteConfig.email}
+ *   href={`mailto:${x}`} / href={x}     → 才求值
+ * 404 页真实踩过（mail 地址成了字面量），构建与页面都不报错，只能从产物里扫。
+ * 先剔掉 script/style 块，避开 JSON-LD 与内联 JS 里的合法花括号。
+ */
+function findRawTemplates(html: string): string[] {
+    const body = html.replace(/<(script|style)[\s\S]*?<\/\1>/gi, '');
+    return [...body.matchAll(/\s([a-zA-Z-]+)="([^"]*\{[a-zA-Z_$][^{}]*\}[^"]*)"/g)].map((m) => `${m[1]}="${m[2]}"`);
 }
 
 async function collectHtml(dir: string, acc: string[]): Promise<void> {
@@ -105,6 +118,13 @@ async function main(): Promise<void> {
             continue;
         }
         const html = await readFile(file, 'utf8');
+
+        // 本检查故意排在 UTILITY 跳过之前：404 页不参与收录对账，但同样会带未插值模板
+        const rawTpl = findRawTemplates(html);
+        if (rawTpl.length > 0) {
+            fail.push(`属性里的 {…} 未被插值（产出为字面量）：${p} → ${rawTpl.slice(0, 3).join(' | ')}`);
+        }
+
         if (UTILITY.has(p)) continue;
 
         if (!/<title>[^<]+<\/title>/.test(html)) fail.push(`标题为空：${p}`);

@@ -3,6 +3,7 @@
  * 与上传解耦——上传仍走 ImageField/MediaLibrary，这里只负责「选」。
  */
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { ago, bytes } from '../lib/format';
 import { cx } from '../lib/cx';
@@ -88,11 +89,13 @@ export function MediaPicker({
                     desc={q ? '换个关键词试试。' : '去媒体库上传后回来这里挑选。'}
                     action={
                         !q ? (
-                            <a href="/admin/media">
+                            // 路由内跳转：写成 /admin/media 这种绝对路径会整页刷新去请求
+                            // 一个没有对应文件的地址，线上直接 404（后台深链接都靠 hash）。
+                            <Link to="/media" onClick={onClose}>
                                 <Button variant="secondary" icon="upload">
                                     去媒体库上传
                                 </Button>
-                            </a>
+                            </Link>
                         ) : undefined
                     }
                 />
