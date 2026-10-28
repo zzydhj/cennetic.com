@@ -38,6 +38,23 @@ const selfPath = entryPath(d);
  */
 const wide = /class="pg-page"/.test(html);
 
+/*
+ * 页头差异化：公司类页面按 slug 指定对齐与背景图（写死在代码里，不受快照影响）。
+ * About Us 居中 + 车间全景（品牌气场）；Service 左对齐 + 机器加工特写（行动/支持）。
+ * 背景图叠在藏青→青蓝渐变与网格之下，遮罩保证白字可读。
+ */
+const HERO: Record<string, { align?: "left" | "center"; image?: string }> = {
+    "about-us": {
+        align: "center",
+        image: "/images/site/company/machining-center-workshop.webp",
+    },
+    service: {
+        align: "left",
+        image: "/images/site/company/cnc-working.webp",
+    },
+};
+const hero = HERO[d.slug] ?? {};
+
 const crumbs = [
     { name: "Home", path: "/" },
     ...(d.slug === "home" ? [] : [{ name: d.title, path: selfPath }]),
@@ -60,10 +77,21 @@ const wa = waLink(
     faq={d.faq}
     preloadLcpImage={d.hero}
 >
-    <PageHero title={d.heading} lede={d.description} crumbs={crumbs}>
+    <PageHero
+        title={d.heading}
+        lede={d.description}
+        crumbs={crumbs}
+        align={hero.align}
+        image={hero.image}
+    >
         {
             wide && (
-                <p class="ph-cta">
+                <p
+                    class:list={[
+                        "ph-cta",
+                        hero.align === "center" && "ph-cta-center",
+                    ]}
+                >
                     <a
                         class="btn btn-light"
                         href={wa}
@@ -126,6 +154,10 @@ const wa = waLink(
         flex-wrap: wrap;
         gap: 0.8rem;
         margin: 1.6rem 0 0;
+    }
+
+    .ph-cta-center {
+        justify-content: center;
     }
 
     /* 阅读列：与文章页同宽，标题/正文/卡片左边缘对齐；宽版模式不用它 */

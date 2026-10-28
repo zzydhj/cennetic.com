@@ -20,6 +20,8 @@ interface Props {
     slim?: boolean;
     /** 可选背景图（叠在渐变上，加暗保证白字可读） */
     image?: string;
+    /** 文本对齐：left（默认，偏行动/工具页）| center（偏品牌页，如 About Us） */
+    align?: "left" | "center";
 }
 
 const {
@@ -30,10 +32,19 @@ const {
     crumbs = [],
     slim = false,
     image,
+    align = "left",
 } = Astro.props;
+const center = align === "center";
 ---
 
-<section class:list={["page-hero", slim && "ph-slim"]}>
+<section
+    class:list={[
+        "page-hero",
+        slim && "ph-slim",
+        center && "ph-center",
+        image && "ph-image",
+    ]}
+>
     {
         image && (
             <img
@@ -139,23 +150,42 @@ const {
             rgb(0 150 180 / 0.55) 120%
         );
     }
+    /* 有背景图时遮罩加深，保证白字在车间/机械照片上仍可读 */
+    .ph-image .ph-scrim {
+        background: linear-gradient(
+            135deg,
+            rgb(1 15 46 / 0.9) 0%,
+            rgb(1 39 96 / 0.82) 52%,
+            rgb(0 120 150 / 0.72) 120%
+        );
+    }
     .ph-glow {
         position: absolute;
         inset: 0;
         z-index: -1;
         background-image:
-            linear-gradient(rgb(255 255 255 / 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+            linear-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgb(255 255 255 / 0.07) 1px, transparent 1px);
         background-size: 44px 44px;
         mask-image: radial-gradient(
             circle at 80% 10%,
             #000 0%,
-            transparent 70%
+            transparent 72%
         );
     }
     .ph-inner {
         /* 与 .shell 同宽上限(1400 居中),使 hero 文字左边缘与正文/页眉基线对齐 */
         max-width: var(--container-wide);
+    }
+    /* 居中变体：标题/副文案/面包屑/眉标整体居中（CTA 按钮由 PageLayout 的 ph-cta-center 居中） */
+    .ph-center .ph-inner {
+        text-align: center;
+    }
+    .ph-center .ph-crumbs ol {
+        justify-content: center;
+    }
+    .ph-center .ph-lede {
+        margin-inline: auto;
     }
     .ph-crumbs ol {
         list-style: none;

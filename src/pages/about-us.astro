@@ -1,18 +1,43 @@
 ---
-title: About Us
-heading: Empowering Manufacturing with High-Precision CNC Solutions
-slug: about-us
-canonical: /about-us/
-description: CENNETIC is a true source factory for high-precision CNC machine tools in Dongguan, China — factory-direct pricing, OEM/ODM capability and turnkey production lines for buyers worldwide.
-robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
-date: '2025-12-29T14:41:22'
-lastmod: '2026-05-17T14:53:14'
-sourceId: 937
-menuOrder: 0
-isListing: false
----
+/**
+ * /about-us/ —— 代码自有的「锁定页」（与 /service/ 同一做法）。
+ *
+ * 公司页几乎不改，刻意不进 Supabase/CMS：内容写死在这里，后台不开放编辑，
+ * 发布链路的 snapshot 也不会覆盖它（不在 src/content/pages 目录）。
+ * 相比旧版纯文字，这里补进了工厂车间与质检校准两组真实图片，让页面不再"太素"。
+ *
+ * 版式复用共享 PageLayout：正文以 class="pg-page" 开头即宽版模式；页头的居中对齐与
+ * 车间背景图由 PageLayout 里按 slug='about-us' 配置的 HERO 映射决定。
+ */
+import PageLayout from "@layouts/PageLayout.astro";
+import type { CollectionEntry } from "astro:content";
 
+const meta = {
+    slug: "about-us",
+    // title 兼作面包屑末项，保持简短；<title> 由 BaseLayout 追加品牌后缀
+    title: "About Us",
+    heading: "Empowering Manufacturing with High-Precision CNC Solutions",
+    description:
+        "CENNETIC is a true source factory for high-precision CNC machine tools in Dongguan, China — factory-direct pricing, OEM/ODM capability and turnkey production lines for buyers worldwide.",
+    canonical: "/about-us/",
+    robots: "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
+};
 
+const page = { data: meta } as unknown as CollectionEntry<"pages">;
+
+const img = (
+    src: string,
+    w: number,
+    h: number,
+    alt: string,
+    cap: string,
+) => /* html */ `
+      <figure class="pg-gitem">
+        <img src="/images/site/company/${src}.webp" alt="${alt}" width="${w}" height="${h}" loading="lazy" decoding="async" />
+        <figcaption>${cap}</figcaption>
+      </figure>`;
+
+const html = /* html */ `
 <div class="pg-page">
   <div class="pg-stats">
     <div><b>15+</b><span>Years of CNC manufacturing</span></div>
@@ -48,6 +73,20 @@ isListing: false
   </section>
 
   <section class="pg-section tint">
+    <p class="pg-eyebrow">Inside the Factory</p>
+    <h2>Where Your Machine Is Built</h2>
+    <p>Machines are engineered and assembled in our own facility in Dalingshan, Dongguan — not outsourced to a third party. This is the floor they are built, tested and calibrated on.</p>
+    <div class="pg-gallery">
+      ${img("machining-center-workshop", 1152, 581, "CENNETIC machining center assembly floor in Dongguan", "Machining center assembly floor")}
+      ${img("vertical-machining-center-workshop", 1152, 747, "Vertical machining centers on the production line", "Vertical machining centers on the line")}
+      ${img("turret-milling-machine-workshop", 1152, 681, "Turret milling machine being assembled in the workshop", "Turret milling machine build")}
+      ${img("workshop-detail-1", 1037, 668, "Detail of the CENNETIC manufacturing facility", "Inside the Dongguan facility")}
+      ${img("workshop-detail-2", 989, 668, "Machining in progress on the factory floor", "Machining in progress")}
+      ${img("workshop-detail-3", 1037, 671, "Machine assembly detail in the workshop", "Assembly detail")}
+    </div>
+  </section>
+
+  <section class="pg-section">
     <p class="pg-eyebrow">Product Range</p>
     <h2>Five Product Lines, One Responsible Factory</h2>
     <div class="pg-cards">
@@ -59,10 +98,24 @@ isListing: false
     </div>
   </section>
 
+  <section class="pg-section tint">
+    <p class="pg-eyebrow">Quality &amp; Calibration</p>
+    <h2>Every Machine Measured Before It Ships</h2>
+    <p>Nothing leaves the factory unchecked: laser interferometer calibration, ball-bar volumetric testing and multi-step inspection are run on every machine at our Dalingshan facility.</p>
+    <div class="pg-gallery">
+      ${img("laser-calibration-1", 295, 284, "Laser interferometer calibration of a machine axis", "Laser interferometer calibration")}
+      ${img("laser-calibration-2", 297, 284, "Axis positioning verification with laser equipment", "Axis positioning verification")}
+      ${img("balance-point-detection", 311, 246, "Spindle balance-point detection", "Spindle balance-point detection")}
+      ${img("precision-weight-calibration", 309, 246, "Precision weight calibration of the machine", "Precision weight calibration")}
+      ${img("machine-inspection", 303, 225, "Final machine inspection before packing", "Final machine inspection")}
+      ${img("technical-discussion-1", 390, 321, "Engineers reviewing machine quality", "Engineering &amp; QC review")}
+    </div>
+  </section>
+
   <section class="pg-section pg-2col">
     <div>
-      <p class="pg-eyebrow">Quality &amp; Compliance</p>
-      <h2>Certified Processes, Calibrated Machines</h2>
+      <p class="pg-eyebrow">Certifications &amp; Lead Time</p>
+      <h2>Certified Processes, Predictable Delivery</h2>
       <p>Our manufacturing operations are certified under <strong>ISO 9001:2015</strong>, and our machines comply with <strong>CE</strong> directives for international deployment. Every machine undergoes rigorous multi-step inspections — including 100% laser calibration and ball-bar testing — before leaving our facility in Dalingshan, Dongguan.</p>
       <p>Standard CNC lathes and milling machines typically ship in <strong>30–45 days</strong>; customized equipment and complete turnkey production lines are scheduled up front (60–90 days depending on complexity).</p>
     </div>
@@ -89,3 +142,7 @@ isListing: false
     </div>
   </section>
 </div>
+`;
+---
+
+<PageLayout page={page} html={html.trim()} />
