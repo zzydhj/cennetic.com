@@ -8,12 +8,15 @@
  *   npx tsx scripts/verify/live.ts [baseUrl]
  */
 /*
- * BASE 必须与 Cloudflare Pages 项目名一致：项目名是 cennetic.com（带点），
- * 域名就是 cennetic.com.pages.dev。曾写成 cennetic-com.pages.dev（把点当连字符），
- * 那个名字根本不存在（DoH 直接 NXDOMAIN），本机探到的是 ECONNRESET 而不是 DNS 失败，
- * 很容易误判成「站点没部署」。
+ * BASE = Cloudflare Pages 项目名 + .pages.dev。项目名至今仍是 qfcncmachine-com
+ * （改名要在 Pages → 项目 → Settings 里改，域名跟着变）。
+ *
+ * ⚠ 别拿「域名能不能解析」判断项目存在：带点的名字是泛解析 ——
+ *   实测 zzz-not-a-project.com.pages.dev 一样能解析，并回一个 16KB 的
+ *   Cloudflare 通用错误页（lang="en-US"、无品牌、无 /_astro/）；
+ *   而不带点的乱名才是真 NXDOMAIN。判据要看响应体是不是我们的产物。
  */
-const BASE = (process.argv[2] ?? 'https://cennetic.com.pages.dev').replace(/\/$/, '');
+const BASE = (process.argv[2] ?? 'https://qfcncmachine-com.pages.dev').replace(/\/$/, '');
 
 interface Probe {
     status: number;
@@ -165,12 +168,19 @@ try {
 
 // ── 5. 关键路径可达 ──────────────────────────────────────────
 console.log('\n=== 5. 关键页面与资源 ===');
+/*
+ * 清单只列本站真实存在的资源：
+ *   · /favicon.svg 已随品牌更换删除（旧的是红底 Q），BaseLayout 不再引用它；
+ *   · /admin/config.yml 是 Decap CMS 时代的产物，后台已换成自写 React 应用。
+ * 这两条长期报红只会掩盖真问题（例如 manifest 里残留的旧品牌主题色）。
+ */
 const must200 = [
     '/', '/blog/', '/blog/page/3/', '/cnc-gdt-guide/', '/product/v-856-vertical-machining-center/',
     '/products/', '/about-us/', '/contact-us/', '/news-and-media/', '/service/',
     '/category/technical-knowledge/', '/product-category/machining-centers/vertical-machining-centers/',
-    '/admin/', '/admin/config.yml', '/images/site/hero-banner.mp4', '/images/site/hero-poster.webp',
-    '/site.webmanifest', '/favicon.svg', '/apple-touch-icon.png', '/sitemap-index.xml',
+    '/admin/', '/images/site/hero-banner.mp4', '/images/site/hero-poster.webp',
+    '/site.webmanifest', '/favicon.ico', '/favicon-32x32.png', '/apple-touch-icon.png',
+    '/icon-192.png', '/icon-512.png', '/sitemap-index.xml',
 ];
 for (const p of must200) {
     const r = await probe(p);
