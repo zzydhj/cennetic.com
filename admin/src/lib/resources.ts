@@ -66,6 +66,13 @@ export interface Resource {
     titleField: string;
     orderBy: string;
     ascending?: boolean;
+    /**
+     * 这张表有没有 updated_at 列（仪表盘的「最近改动」与趋势图按它取数）。
+     * 以 supabase/schema.sql 为准：articles / pages / products / site_settings 有，
+     * 分类与作者这三张参照表没有（schema.sql 的 updated_at 触发器也只挂可变表）。
+     * 漏标会让 PostgREST 报 42703 并返回 400，那一类内容就从时间线里静默消失。
+     */
+    hasUpdatedAt?: boolean;
     /** 单例表（如站点设置），无列表、直接编辑唯一行 */
     singleton?: boolean;
     /** 单例表没有可读的标题列时用它（站点设置的 id 是布尔 true，不能直接当标题显示） */
@@ -114,6 +121,7 @@ export const RESOURCES: Resource[] = [
     {
         key: 'articles',
         table: 'articles',
+        hasUpdatedAt: true,
         label: '文章',
         singular: '文章',
         group: '内容',
@@ -151,6 +159,7 @@ export const RESOURCES: Resource[] = [
     {
         key: 'pages',
         table: 'pages',
+        hasUpdatedAt: true,
         label: '页面',
         singular: '页面',
         group: '内容',
@@ -185,6 +194,7 @@ export const RESOURCES: Resource[] = [
     {
         key: 'products',
         table: 'products',
+        hasUpdatedAt: true,
         label: '产品',
         singular: '产品',
         group: '内容',
@@ -287,6 +297,7 @@ export const RESOURCES: Resource[] = [
     {
         key: 'site_settings',
         table: 'site_settings',
+        hasUpdatedAt: true,
         label: '站点设置',
         singular: '站点设置',
         group: '系统',

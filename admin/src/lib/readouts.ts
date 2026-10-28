@@ -61,7 +61,9 @@ export async function fetchCounts(): Promise<Record<string, ResourceCount>> {
 export async function fetchFeed(limit = 12): Promise<FeedItem[]> {
     if (feedCache) return feedCache.slice(0, limit);
     const groups = await Promise.all(
-        NAV.map(async (r): Promise<FeedItem[]> => {
+        // 只包有 updated_at 的表：分类/作者没有这一列，按它排序会得到 400（42703），
+        // 结果既不报错也没数据。它们仍可正常增删改，只是没得时间可排。
+        NAV.filter((r) => r.hasUpdatedAt).map(async (r): Promise<FeedItem[]> => {
             const { data } = await supabase
                 .from(r.table)
                 .select('*')
@@ -110,11 +112,12 @@ export interface TrendRow {
 /**
  * 趋势图的数据底：每张表只取 updated_at（和存在时的 date）。
  * 两张图共用一份：「内容改动」按 updated_at 分月，「发布产出」按 date 分月。
+ * 没有 updated_at 的参照表（分类/作者）不进图：它们没有时间轴可统计。
  */
 export async function fetchTrendRows(): Promise<TrendRow[]> {
     if (trendCache) return trendCache;
     const groups = await Promise.all(
-        NAV.map(async (r): Promise<TrendRow[]> => {
+        NAV.filter((r) => r.hasUpdatedAt).map(async (r): Promise<TrendRow[]> => {
             const hasDate = r.fields.some((f) => f.name === 'date');
             const cols = hasDate ? 'updated_at,date' : 'updated_at';
             const { data } = await supabase.from(r.table).select(cols);

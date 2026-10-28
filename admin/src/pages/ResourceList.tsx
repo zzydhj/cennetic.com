@@ -74,6 +74,8 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
 
     const quickFields = useMemo(() => resource.fields.filter((f) => f.quick), [resource]);
     const hasStatus = resource.fields.some((f) => f.name === 'status');
+    // 分类/作者这类参照表没有 updated_at，表头与单元格用同一个开关，不留空列
+    const hasUpdatedCol = !!resource.hasUpdatedAt;
 
     const load = (): void => {
         setLoading(true);
@@ -298,7 +300,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
                                     );
                                 })}
                                 {hasStatus && <th className="th">状态</th>}
-                                <th className="th">更新</th>
+                                {hasUpdatedCol && <th className="th">更新</th>}
                                 <th className="th text-right">操作</th>
                             </tr>
                         </thead>
@@ -374,7 +376,11 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
                                                         <StatusBadge status={r.status as string | undefined} />
                                                     </td>
                                                 )}
-                                                <td className="td whitespace-nowrap text-[11px] tabular-nums text-slate-400">{ago(r.updated_at as string | undefined)}</td>
+                                                {hasUpdatedCol && (
+                                                    <td className="td whitespace-nowrap text-[11px] tabular-nums text-slate-400">
+                                                        {ago(r.updated_at as string | undefined)}
+                                                    </td>
+                                                )}
                                                 <td className="td">
                                                     <div className="flex items-center justify-end gap-0.5">
                                                         {quickFields.length > 0 && (
