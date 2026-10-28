@@ -357,6 +357,6 @@ sourceId: 7518
 <h3 id="what-happens-if-i-enter-the-wrong-offset">What happens if I enter the wrong offset?</h3>
 <p>An incorrect offset can cause the tool to cut too deep (causing scrap or breakage) or too shallow (leaving material). In worst cases, it can crash the tool into the workpiece or fixture, damaging the machine. Always double-check offset values and use simulation if available.</p>
 <h3 id="does-cennetic-provide-training-on-tool-length-offsets">Does Cennetic provide training on tool length offsets?</h3>
-<p>Yes, Cennetic offers free online tutorials and paid on-site training for all our CNC machines. Our support team can also help you set up your offset procedures. Visit our <a href="/related-content/">CNC setup guide</a> for more details.</p>
+<p>Yes, Cennetic offers free online tutorials and paid on-site training for all our CNC machines. Our support team can also help you set up your offset procedures.</p>
 <h2 id="call-to-action-master-cnc-tool-length-offset-with-cennetic">Call to Action: Master CNC Tool Length Offset with Cennetic</h2>
 <p>Ready to eliminate setup errors and boost your machining accuracy? Cennetic’s CNC machines come with intuitive controls and built-in tool measurement features. Contact our team today for a free consultation and see how we can help you streamline your workflow. <a href="/contact-us/">Get in touch now</a>!</p>
