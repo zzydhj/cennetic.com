@@ -71,12 +71,15 @@
     color: var(--color-muted);
 }
 
-/* ── 徽章 pill：认证与能力标签 ── */
-.pg-badges {
+/* ── 徽章 pill：认证与能力标签 ──
+   选择器带 .pg-page 前缀提高特异性:正文包在 .qf-article-body 里,
+   迁移层有 `.qf-article-body ul{margin:0 0 16px;padding-left:22px}`(0,1,1),
+   会压过单类名(0,1,0)导致徽章 margin-top 归零、与数据条粘连。用 (0,2,0) 压回。 */
+.pg-page .pg-badges {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin: 1.6rem 0 0;
+    margin: 2.75rem 0 0;
     padding: 0;
     list-style: none;
 }
@@ -143,8 +146,8 @@
     }
 }
 
-/* ── 清单：品牌红圆勾 ── */
-.pg-checks {
+/* ── 清单：品牌圆勾（同样需 .pg-page 前缀压过迁移层 ul 的 padding-left/margin）── */
+.pg-page .pg-checks {
     display: grid;
     gap: 0.75rem;
     margin: 0;
