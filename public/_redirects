@@ -53,6 +53,12 @@
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure-430x358.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure-430x358.webp   301
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure.webp   301
 
+# ── 迁移期换了目录的媒体文件（上面的通配只改前缀，盖不住换位置）──
+# 首页背景视频：源站 /wp-content/uploads/2026/05/banner.mp4 原片 10.38MB 且无 poster，
+# 压到 0.59MB 并补 poster 后改放在 /images/site/hero-banner.mp4。
+# 少了这条，通配规则会把它指向不存在的 /images/2026/05/banner.mp4 → 404。
+/wp-content/uploads/2026/05/banner.mp4  /images/site/hero-banner.mp4  301
+
 # ── 源站图片旧路径 → 新站 /images/ ──
 # Google 已收录这些图片 URL，保留 301 以免图片搜索结果里的图集体失效。
 # 占位符只能用 Pages 认得的 :splat。以前写成 /images/:year/:month/:file* 与 /images/:path*，

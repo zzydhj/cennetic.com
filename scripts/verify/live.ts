@@ -180,7 +180,11 @@ const redirectCases: Array<{ path: string; expectTo: string }> = [
     { path: '/cart/', expectTo: '/products/' },
     { path: '/checkout/', expectTo: '/products/' },
     { path: '/my-account/', expectTo: '/products/' },
-    { path: '/wp-content/uploads/2026/05/banner.mp4', expectTo: '/images/2026/05/banner.mp4' },
+    // 这条同时盖住两个坑：通配占位符写错（产出带尾 * 的 404）与媒体文件换了目录
+    // （banner.mp4 已搬到 /images/site/hero-banner.mp4，必须有显式规则）。
+    { path: '/wp-content/uploads/2026/05/banner.mp4', expectTo: '/images/site/hero-banner.mp4' },
+    // 真通配路径：只改前缀、不换名字的图
+    { path: '/wp-content/uploads/2026/06/v-856-vmc-main.webp', expectTo: '/images/2026/06/v-856-vmc-main.webp' },
 ];
 for (const c of redirectCases) {
     const p = await probe(c.path);
