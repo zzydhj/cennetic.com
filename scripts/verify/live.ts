@@ -151,6 +151,31 @@ if (root.headers['content-security-policy']) {
 
 // ── 4. _redirects：301 别名 ──────────────────────────────────
 console.log('\n=== 4. 重定向 ===');
+
+/**
+ * 301 断言必须精确到路径本身，并且跟到目标拿 200。
+ *
+ * 之前用 includes() 做前缀匹配，放过了一条真 bug：_redirects 写成 /images/:path* 时
+ * Pages 不认这种命名捕获，Location 变成 /images/<路径>*（尾 * 是字面量）→ 目标 404，
+ * 但前缀相同照样判过。所以这里除了精确相等，还显式拒绝未替换的占位符（残留 * 或 :name）。
+ */
+function targetPathOk(location: string | null | undefined, expectTo: string): boolean {
+    if (!location || /[*]/.test(location) || /\/:[a-z]/i.test(location)) return false;
+    try {
+        return new URL(location, BASE).pathname === expectTo;
+    } catch {
+        return false;
+    }
+}
+async function targetStatus(loc: string): Promise<number> {
+    try {
+        const r = await fetch(new URL(loc, BASE).href, { redirect: 'manual', cache: 'no-store' });
+        return r.status;
+    } catch {
+        return -1;
+    }
+}
+
 const redirectCases: Array<{ path: string; expectTo: string }> = [
     { path: '/cart/', expectTo: '/products/' },
     { path: '/checkout/', expectTo: '/products/' },
@@ -159,11 +184,13 @@ const redirectCases: Array<{ path: string; expectTo: string }> = [
 ];
 for (const c of redirectCases) {
     const p = await probe(c.path);
-    if (p.status === 301 && (p.location ?? '').includes(c.expectTo)) {
-        pass(`${c.path} -> ${p.location}`);
-    } else {
+    if (p.status !== 301 || !targetPathOk(p.location, c.expectTo)) {
         fail(`${c.path} 期望 301 到 ${c.expectTo}，实际 ${p.status} Location=${p.location ?? '无'}`);
+        continue;
     }
+    const t = await targetStatus(p.location!);
+    if (t === 200) pass(`${c.path} -> ${p.location}（目标 200）`);
+    else fail(`${c.path} -> ${p.location} 但目标不可达：${t}`);
 }
 
 // 基线里的 5 条源站别名：从 url-manifest 动态取，不写死
@@ -177,9 +204,13 @@ try {
     console.log(`\n  基线记录的源站别名 ${aliases.length} 条：`);
     for (const a of aliases) {
         const p = await probe(a.path);
-        const ok = p.status === 301 && (p.location ?? '').includes(a.target ?? '');
-        if (ok) pass(`${a.path} -> ${p.location}`);
-        else fail(`${a.path} 期望 301 到 ${a.target}，实际 ${p.status} Location=${p.location ?? '无'}`);
+        if (p.status !== 301 || !targetPathOk(p.location, a.target ?? '')) {
+            fail(`${a.path} 期望 301 到 ${a.target}，实际 ${p.status} Location=${p.location ?? '无'}`);
+            continue;
+        }
+        const t = await targetStatus(p.location!);
+        if (t === 200) pass(`${a.path} -> ${p.location}（目标 200）`);
+        else fail(`${a.path} -> ${p.location} 但目标不可达：${t}`);
     }
 } catch (e) {
     console.log(`  ! 读不到 url-manifest.json，跳过别名检查：${(e as Error).message}`);

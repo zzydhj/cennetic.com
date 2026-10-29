@@ -22,8 +22,8 @@
 /category/technical-knowledge/page/8/ /category/technical-knowledge/ 301
 
 # ── 品牌迁移：旧图文件名 → 新图文件名（28 张，通配规则盖不住改名）──
-# 前提：qfcncmachine.com 已在 Zone 层整域 301 到 www.cennetic.com 并保留路径；
-# 旧图 URL 先经 /wp-content→/images 通配落到 /images/<旧名>，再由下面规则落到 <新名>。
+# 只在有人直接请求 /images/<旧名> 时生效（典型是 Google 图片搜索的历史结果）。
+# 旧域名 qfcncmachine.com 已决定不做整域 301，旧站页面不会再导流到这里。
 /images/2026/06/qiaofeng-jr-v85p-cnc-machine-dimensions-three-view-drawing.webp   /images/2026/06/cennetic-jr-v85p-cnc-machine-dimensions-three-view-drawing.webp   301
 /images/2026/06/qiaofeng-jr-v85p-core-configuration-mitsubishi-m80-bt40-spindle-servo.webp   /images/2026/06/cennetic-jr-v85p-core-configuration-mitsubishi-m80-bt40-spindle-servo.webp   301
 /images/2026/06/qiaofeng-jr-v85p-high-precision-machining-cnc-vmc-working-100x100.webp   /images/2026/06/cennetic-jr-v85p-high-precision-machining-cnc-vmc-working-100x100.webp   301
@@ -55,8 +55,10 @@
 
 # ── 源站图片旧路径 → 新站 /images/ ──
 # Google 已收录这些图片 URL，保留 301 以免图片搜索结果里的图集体失效。
-/wp-content/uploads/:year/:month/:file*  /images/:year/:month/:file*  301
-/wp-content/uploads/:path*  /images/:path*  301
+# 占位符只能用 Pages 认得的 :splat。以前写成 /images/:year/:month/:file* 与 /images/:path*，
+# Pages 不认这种命名捕获，会把结尾的 * 当字面量留在结果里，产出 /images/<路径>* —— 线上实测 404，
+# 而当时 verify:live 用 includes 断言，前缀相同就放过了（断言已改为精确相等 + 目标必须 200）。
+/wp-content/uploads/*  /images/:splat  301
 
 # ── 源站正文链到、但源站自己就已 404 的链接 ──
 # 不重定向（重定向到不相关页会欺骗爬虫），交给 404 页给出出路。
