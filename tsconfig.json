@@ -3,7 +3,8 @@
     "include": [
         ".astro/types.d.ts",
         "src/**/*",
-        "scripts/**/*"
+        "scripts/**/*",
+        "functions/**/*"
     ],
     "exclude": [
         "dist",

@@ -119,22 +119,30 @@ export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
         return json({ ok: false, error: `Please fill in a valid ${missing.join(', ')}.`, fields: missing }, 422);
     }
 
-    const res = await fetch(`${VITE_SUPABASE_URL}/rest/v1/inquiries`, {
-        method: 'POST',
-        // anon key + apikey：role=anon，能过的那条策略就是库上唯一的 for insert to anon
-        headers: {
-            apikey: VITE_SUPABASE_ANON_KEY,
-            Authorization: `Bearer ${VITE_SUPABASE_ANON_KEY}`,
-            'Content-Type': 'application/json',
-            prefer: 'return=minimal',
-        },
-        body: JSON.stringify({ name, email, phone, country, message, page, product, state: 'new', note: '' }),
-        signal: AbortSignal.timeout(15_000),
-    });
+    /* 整段包起来：没有这个 try，出网失败或 Supabase 不可达会让函数直接抛异常，
+     * 访客收到的是 Cloudflare 品牌错误页（带第三方标识且读不懂），而不是一句可用的提示。 */
+    try {
+        const res = await fetch(`${VITE_SUPABASE_URL}/rest/v1/inquiries`, {
+            method: 'POST',
+            // anon key + apikey：role=anon，能过的那条策略就是库上唯一的 for insert to anon
+            headers: {
+                apikey: VITE_SUPABASE_ANON_KEY,
+                Authorization: `Bearer ${VITE_SUPABASE_ANON_KEY}`,
+                'Content-Type': 'application/json',
+                prefer: 'return=minimal',
+            },
+            body: JSON.stringify({ name, email, phone, country, message, page, product, state: 'new', note: '' }),
+            signal: AbortSignal.timeout(15_000),
+        });
 
-    if (!res.ok) {
-        // 库端拒绝的具体原因（多半是 RLS 或长度）只写日志，回给访客一句不泄露内部结构的话
-        console.error('inquiry rejected by database', res.status, (await res.text()).slice(0, 300));
+        if (!res.ok) {
+            // 库端拒绝的具体原因（多半是 RLS 或长度）只写日志，回给访客一句不泄露内部结构的话
+            console.error('inquiry rejected by database', res.status, (await res.text()).slice(0, 300));
+            if (html) return back('failed');
+            return json({ ok: false, error: 'We could not record your inquiry just now. Please try again, or use WhatsApp below.' }, 502);
+        }
+    } catch (e) {
+        console.error('inquiry write threw', e instanceof Error ? e.message : String(e));
         if (html) return back('failed');
         return json({ ok: false, error: 'We could not record your inquiry just now. Please try again, or use WhatsApp below.' }, 502);
     }
