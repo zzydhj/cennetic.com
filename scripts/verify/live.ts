@@ -245,6 +245,40 @@ const notFound = await probe('/this-page-should-not-exist-xyz/');
 if (notFound.status === 404) pass('404  未知路径正确返回 404');
 else fail(`未知路径返回 ${notFound.status}，期望 404`);
 
+// ── 6. Pages Functions 端点在线 ──────────────────────────────
+console.log('\n=== 6. Functions 端点 ===');
+/*
+ * 只断言「函数在、而且按设计拒人」，不往库里写任何东西：
+ *   /api/inquiry 用空 body 打 → 必须 422 且回 JSON（不是 Pages 的 404 HTML）
+ *   /api/publish  无凭据打   → 必须 401
+ * 这两条能在函数没部署上、被路由遮蔽、或 Pages 回滚到旧构建时立刻报出来。
+ * 不拿成功提交做断言：那会往库里留测试数据，而且依赖表存在与密钥配置。
+ */
+async function postJson(path: string, body: unknown): Promise<{ status: number; json: boolean; text: string }> {
+    for (let i = 0; i < 3; i += 1) {
+        try {
+            const res = await fetch(`${BASE}${path}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(body),
+            });
+            const text = await res.text();
+            return { status: res.status, json: (res.headers.get('content-type') ?? '').includes('json'), text };
+        } catch {
+            await new Promise((r) => setTimeout(r, 400 * (i + 1)));
+        }
+    }
+    return { status: 0, json: false, text: '' };
+}
+
+const inq = await postJson('/api/inquiry', {});
+if (inq.status === 422 && inq.json) pass('/api/inquiry 在线，空提交被服务端校验拦住（422 + JSON）');
+else fail(`/api/inquiry 异常：HTTP ${inq.status} content-type=${inq.json ? 'json' : '非 JSON'} ${inq.text.slice(0, 80)}`);
+
+const pub = await postJson('/api/publish', {});
+if (pub.status === 401 && pub.json) pass('/api/publish 在线，无凭据被拒（401）');
+else fail(`/api/publish 异常：HTTP ${pub.status} ${pub.text.slice(0, 80)}`);
+
 // ── 汇总 ─────────────────────────────────────────────────────
 console.log(`\n${failures === 0 ? '✓ 线上验收全部通过' : `✗ 线上验收失败 ${failures} 项`}`);
 process.exit(failures === 0 ? 0 : 1);
