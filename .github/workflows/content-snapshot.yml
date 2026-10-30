@@ -82,7 +82,7 @@ jobs:
           git config user.name "cennetic-cms"
           git config user.email "cms@cennetic.com"
           git add -A
-          git commit -m "内容发布：Supabase 快照（${{ github.event.inputs.reason || 'manual' }}）"
+          git commit -m "内容发布：站点快照（${{ github.event.inputs.reason || 'manual' }}）"
           git push origin HEAD:main
 
       # 失败时把定位信息写到 Summary 顶部，非技术同事不用再去翻日志。
