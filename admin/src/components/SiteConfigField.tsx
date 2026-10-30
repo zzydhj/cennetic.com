@@ -96,7 +96,7 @@ const GROUPS: Group[] = [
     {
         section: SITE_SECTIONS[3]!,
         leaves: [
-            { path: ['logo'], label: '站点 Logo 路径', placeholder: '/images/site/logo.svg', help: '一般是个站内路径，文件在代码仓库的 public 里（SVG 不能从后台上传）。要换标请让开发把新文件放进仓库后再改这里。' },
+            { path: ['logo'], label: '站点 Logo 路径', placeholder: '/images/site/logo.svg', help: '一般是个站内路径（SVG 不能从后台上传）。要换标请把新文件交给开发，上线后再改这里。' },
             { path: ['ogDefaultImage'], label: '默认分享封面', kind: 'image', help: '文章/产品没配图时，社交分享卡用它。建议 1200×630。' },
             { path: ['hero', 'video'], label: '首页背景视频', help: '站内路径，如 /images/site/hero-banner.mp4。改动会直接影响首页加载，非开发建议只核对不改。' },
             { path: ['hero', 'poster'], label: '视频封面图', kind: 'image', help: '封面的 LCP 元素，务必保留，否则首页会先白一块。' },

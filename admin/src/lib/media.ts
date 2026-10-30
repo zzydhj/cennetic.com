@@ -106,7 +106,7 @@ export async function deleteMedia(key: string): Promise<void> {
             /* 非 JSON 响应：本地 vite 没有这个接口时会回到 HTML */
         }
         throw new Error(
-            detail || `删除桶内对象失败（${res.status}）；本地 dev 没有 Pages Function，这类操作要到部署环境做`,
+            detail || `云端文件删除失败（${res.status}）；本地开发环境没有这个接口，此类操作要到线上后台做`,
         );
     }
 }

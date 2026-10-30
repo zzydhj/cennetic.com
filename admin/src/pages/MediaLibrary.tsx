@@ -159,7 +159,7 @@ export default function MediaLibrary() {
             try {
                 await deleteMedia(target.key);
             } catch (e) {
-                toast.fail('未删除', e instanceof Error ? e.message : 'R2 对象没删掉，记录已保留');
+                toast.fail('未删除', e instanceof Error ? e.message : '云端文件没删掉，记录已保留');
                 return;
             }
         }
@@ -170,7 +170,7 @@ export default function MediaLibrary() {
         }
         invalidateReadouts();
         setRows((rs) => rs.filter((r) => r.id !== target.id));
-        toast.ok(isR2 ? '已删除图片' : '已从媒体库移除', isR2 ? `${target.key} · 引用它的内容会变成破图` : '文件仍在仓库 public/images 里，要彻底删除请改代码提交');
+        toast.ok(isR2 ? '已删除图片' : '已从媒体库移除', isR2 ? `${target.key} · 引用它的内容会变成破图` : '文件仍在站内目录里，要彻底删除请联系开发');
     }
 
     return (
@@ -188,10 +188,10 @@ export default function MediaLibrary() {
                             合计 {bytes(total)}
                         </Badge>
                         <Badge tone="slate" icon="folder">
-                            仓库静态 {num(repoCount)} 张
+                            站内静态 {num(repoCount)} 张
                         </Badge>
                         <Badge tone="gold" icon="database">
-                            R2 上传 {num(rows.length - repoCount)} 张
+                            后台上传 {num(rows.length - repoCount)} 张
                         </Badge>
                         <Tooltip text="引用＝这张图被多少条内容（文章/页面/产品/站点配置）的正文或字段用到。点右上「检查引用」现算，不会自动跑。">
                             <Badge tone={refs ? (usedCount > 0 ? 'green' : 'amber') : 'slate'} icon="link">
@@ -273,8 +273,8 @@ export default function MediaLibrary() {
                     size="sm"
                     options={[
                         { value: 'all', label: '全部', count: rows.length },
-                        { value: 'repo', label: '仓库', count: repoCount },
-                        { value: 'r2', label: 'R2', count: rows.length - repoCount },
+                        { value: 'repo', label: '站内', count: repoCount },
+                        { value: 'r2', label: '上传', count: rows.length - repoCount },
                         { value: 'used', label: '在用', count: refs ? usedCount : undefined },
                         { value: 'free', label: '未引用', count: refs ? rows.length - usedCount : undefined },
                     ]}
@@ -356,7 +356,7 @@ export default function MediaLibrary() {
                                             isR2 ? 'bg-gold-600/80' : 'bg-ink-900/55',
                                         )}
                                     >
-                                        {isR2 ? 'R2 上传' : '仓库静态'}
+                                        {isR2 ? '后台上传' : '站内静态'}
                                     </span>
                                     {refs && (
                                         <span className="absolute right-2 top-2">
@@ -435,7 +435,7 @@ export default function MediaLibrary() {
                                             <td className="td whitespace-nowrap tabular-nums text-slate-500">{bytes(r.bytes)}</td>
                                             <td className="td whitespace-nowrap">
                                                 <Badge tone={isR2 ? 'gold' : 'slate'} icon={isR2 ? 'database' : 'folder'}>
-                                                    {isR2 ? 'R2' : '仓库'}
+                                                    {isR2 ? '上传' : '站内'}
                                                 </Badge>
                                                 <p className="mt-1 text-[10px] text-slate-400">{r.mime?.replace('image/', '') ?? '—'}</p>
                                             </td>
@@ -493,8 +493,8 @@ export default function MediaLibrary() {
                 title={askDel && sourceOf(askDel.key) === 'r2' ? '删除这张上传的图片？' : '从媒体库移除这张图？'}
                 desc={
                     askDel && sourceOf(askDel.key) === 'r2'
-                        ? `会同时删掉存储桶里的对象和这条记录（${askDel.key}）。前台引用它的地方会变成破图，建议先点「检查引用」。`
-                        : `这张图在代码仓库的 public/images 里（${askDel?.key ?? ''}），受 git 管理：这里只会把它从媒体库列表移除，文件本身还在，前台照常显示。`
+                        ? `会同时删掉云端文件和这条记录（${askDel.key}）。前台引用它的地方会变成破图，建议先点「检查引用」。`
+                        : `这张图是站内静态资源（${askDel?.key ?? ''}），随站点代码一起发布：这里只会把它从媒体库列表移除，文件本身还在，前台照常显示。`
                 }
                 confirmLabel={askDel && sourceOf(askDel.key) === 'r2' ? '删除图片' : '仅从库移除'}
             />

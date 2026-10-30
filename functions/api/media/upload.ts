@@ -23,7 +23,10 @@ function makeKey(name: string): string {
 export const onRequestPost = async (ctx: FnCtx): Promise<Response> => {
     const denied = await requireUser(ctx);
     if (denied) return denied;
-    if (!ctx.env.MEDIA) return json({ error: 'R2 绑定 MEDIA 未注入本部署（加绑定后需重新构建一次）' }, 500);
+    if (!ctx.env.MEDIA) {
+        console.error('media binding MEDIA missing');
+        return json({ error: '图片存储未就绪，请联系运维（新增绑定后需重新部署一次）。' }, 500);
+    }
 
     try {
         const form = await ctx.request.formData();

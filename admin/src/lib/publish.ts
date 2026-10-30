@@ -2,14 +2,12 @@ import { supabase } from './supabase';
 
 export interface PublishResult {
     ok: boolean;
-    /** GitHub Actions 运行页，成功时可直接打开看进度 */
-    runUrl?: string;
     error?: string;
 }
 
 /**
  * 通知线上「内容变了，去跑快照发布」。
- * 真正干活的是 Pages Function /api/publish（它再触发 GitHub Action），
+ * 真正干活的是服务端函数 /api/publish（它再触发构建流水线），
  * 这里只负责带上当前登录用户的令牌并给出可读结果。
  */
 export async function triggerPublish(reason = 'admin'): Promise<PublishResult> {
@@ -23,13 +21,13 @@ export async function triggerPublish(reason = 'admin'): Promise<PublishResult> {
         body: JSON.stringify({ reason }),
     });
 
-    let payload: { ok?: boolean; runUrl?: string; error?: string } = {};
+    let payload: { ok?: boolean; error?: string } = {};
     try {
         payload = (await res.json()) as typeof payload;
     } catch {
         /* 非 JSON 响应，按状态码兜底 */
     }
 
-    if (res.ok && payload.ok) return { ok: true, runUrl: payload.runUrl };
+    if (res.ok && payload.ok) return { ok: true };
     return { ok: false, error: payload.error ?? `发布触发失败（HTTP ${res.status}）` };
 }

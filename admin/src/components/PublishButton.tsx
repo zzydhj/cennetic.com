@@ -12,15 +12,18 @@ import { useToast } from './Toast';
 const LS_KEY = 'cennetic:lastPublish';
 
 /**
- * 顶栏「发布上线」：把 Supabase 里的改动推到线上。
- * 链路：本按钮 → /api/publish（Pages Function）→ GitHub Action（快照 + 回归闸 + 提交 main）→ Pages 重建。
+ * 顶栏「发布上线」：把内容库里的改动推到线上。
+ * 链路：本按钮 → /api/publish（服务端函数）→ 构建流水线（快照 + 回归闸 + 提交）→ 线上重建。
  * 反馈一律走 Toast + 内联进度，不再用 window.confirm/alert。
+ *
+ * 不展示 runUrl：接口会返回流水线运行页地址（那是排障入口），但它是代码托管站的
+ * 仓库链接，直接挂在后台 UI 上等于把仓库地址交给任何能看到屏幕的人（2026-10-30 按站主要求去掉）。
+ * 要看进度请走服务端日志或让运维直接给链接。
  */
 export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element {
     const toast = useToast();
     const [ask, setAsk] = useState(false);
     const [busy, setBusy] = useState(false);
-    const [runUrl, setRunUrl] = useState<string | null>(null);
     const [lastAt, setLastAt] = useState<string | null>(null);
     const [latest, setLatest] = useState<string | null>(null);
 
@@ -34,21 +37,18 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
     async function go(): Promise<void> {
         setAsk(false);
         setBusy(true);
-        setRunUrl(null);
         const r = await triggerPublish('admin');
         setBusy(false);
         if (r.ok) {
             const stamp = new Date().toISOString();
             window.localStorage.setItem(LS_KEY, stamp);
             setLastAt(stamp);
-            setRunUrl(r.runUrl ?? null);
             invalidateReadouts();
             void fetchLatestChange().then(setLatest);
             toast.push({
                 tone: 'success',
                 title: '发布已触发',
                 desc: '快照 → 回归闸 → 线上重建，约 2–4 分钟完成',
-                action: r.runUrl ? { label: '查看构建进度', href: r.runUrl } : undefined,
                 duration: 8000,
             });
         } else {
@@ -89,31 +89,19 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
                 {busy ? '发布中' : '发布上线'}
             </Button>
 
-            {runUrl && (
-                <a
-                    href={runUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="focus-ring inline-flex h-8 w-8 items-center justify-center rounded-lg text-emerald-600 ring-1 ring-inset ring-emerald-100 transition-colors hover:bg-emerald-50"
-                    title="查看本次构建的 Actions 运行"
-                >
-                    <Icon name="branch" className="h-4 w-4" />
-                </a>
-            )}
-
             <ConfirmDialog
                 open={ask}
                 onClose={() => setAsk(false)}
                 onConfirm={() => void go()}
                 title="确认发布上线？"
-                desc="会把后台内容快照进仓库并触发线上重建，全程约 2–4 分钟。"
+                desc="会把后台内容同步到线上并触发重建，全程约 2–4 分钟。"
                 confirmLabel="开始发布"
                 tone="primary"
             >
                 <div className="mt-3 flex items-center gap-1.5 rounded-lg bg-slate-50 px-3 py-2.5 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-100">
                     <span className="inline-flex items-center gap-1">
                         <Icon name="database" className="h-3.5 w-3.5 text-brand-500" />
-                        快照写入仓库
+                        内容快照
                     </span>
                     <Icon name="chevronRight" className="h-3 w-3 text-slate-300" />
                     <span className="inline-flex items-center gap-1">
@@ -123,12 +111,12 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
                     <Icon name="chevronRight" className="h-3 w-3 text-slate-300" />
                     <span className="inline-flex items-center gap-1">
                         <Icon name="globe" className="h-3.5 w-3.5 text-brand-500" />
-                        Pages 重建
+                        线上重建
                     </span>
                 </div>
                 {drafts > 0 && (
                     <p className="mt-2.5 text-[11px] leading-relaxed text-amber-700">
-                        当前有 {drafts} 篇草稿：它们会写入仓库，但前台列表与 sitemap 只收录已发布内容。
+                        当前有 {drafts} 篇草稿：它们会一并归档，但前台列表与 sitemap 只收录已发布内容。
                     </p>
                 )}
             </ConfirmDialog>

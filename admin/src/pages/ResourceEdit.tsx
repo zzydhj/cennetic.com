@@ -1,6 +1,6 @@
 /**
  * 通用编辑页：配置驱动的分区表单 + 右侧常驻「发布 / SEO 预览 / 校验 / 危险区」。
- * 保存只写内容库（Supabase），上线仍统一走顶栏的发布流水线。
+ * 保存只写内容库，上线仍统一走顶栏的发布流水线。
  */
 import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
@@ -394,7 +394,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                                 desc="保存只进内容库，上线仍需点顶栏发布"
                             >
                                 <p className="text-[11px] leading-relaxed text-slate-500">
-                                    站点设置全站唯一，没有草稿/状态概念：表单改的就是这一份配置本身。保存后点顶栏「发布上线」快照进仓库并重建前台。本页保存入口只有右上角一个。
+                                    站点设置全站唯一，没有草稿/状态概念：表单改的就是这一份配置本身。保存后点顶栏「发布上线」才会同步到前台。本页保存入口只有右上角一个。
                                 </p>
                             </SectionCard>
                         ) : (

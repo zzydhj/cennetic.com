@@ -10,7 +10,7 @@ import { Badge, Button, Card, IconInput, Input, Label, Tooltip } from '../compon
 
 const FEATURES = [
     { icon: 'layers', title: '一处编辑，全站生效', desc: '文章 / 页面 / 设备 / 站点配置同一内容库' },
-    { icon: 'shield', title: '发布前有回归闸', desc: '快照写入仓库后自动校验，不达标不上线' },
+    { icon: 'shield', title: '发布前有回归闸', desc: '内容变更先过校验，不达标不上线' },
     { icon: 'image', title: '图片自动压 WebP', desc: '超大图上传即压缩，前台再按尺寸派生' },
 ] as const;
 
@@ -65,7 +65,7 @@ export default function Login() {
                         内容，管成一套系统
                     </h1>
                     <p className="mt-4 max-w-md text-[13px] leading-relaxed text-slate-400">
-                        静态站前台 + Supabase 内容库 + 三段式发布流水线。编辑体验留给运营，性能与安全交给构建流程。
+                        前台静态渲染 + 独立内容库 + 三段式发布流水线。编辑体验留给运营，性能与安全交给构建流程。
                     </p>
                     <ul className="mt-8 max-w-md space-y-4">
                         {FEATURES.map((f) => (
@@ -87,8 +87,6 @@ export default function Login() {
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                         服务正常
                     </span>
-                    <span className="h-3 w-px bg-white/10" />
-                    <span>Astro · Supabase · Cloudflare Pages</span>
                     <span className="ml-auto font-mono">v1.0</span>
                 </div>
             </section>
@@ -129,7 +127,7 @@ export default function Login() {
                             <Label htmlFor="password" className="justify-between">
                                 <span className="flex items-center gap-1">
                                     密码
-                                    <Tooltip text="密码由 Supabase Auth 托管，忘记密码请联系运维在数据库侧重置。">
+                                    <Tooltip text="密码由后台账号体系独立托管，忘记密码请联系运维重置。">
                                         <span className="inline-flex h-4 w-4 cursor-help items-center justify-center rounded-full border border-slate-300 text-[10px] font-bold text-slate-400">
                                             ?
                                         </span>

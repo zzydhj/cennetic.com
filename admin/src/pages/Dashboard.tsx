@@ -219,9 +219,9 @@ export default function Dashboard(): JSX.Element {
                     </div>
                     <ol className="px-5 py-4">
                         {[
-                            { icon: 'database', label: '快照写入仓库', hint: '内容 → content/*.yaml' },
-                            { icon: 'shield', label: '回归闸校验', hint: 'verify:site 全站自洽' },
-                            { icon: 'globe', label: 'Pages 重建上线', hint: '约 2–4 分钟' },
+                            { icon: 'database', label: '内容快照归档', hint: '后台内容 → 站点数据' },
+                            { icon: 'shield', label: '回归闸校验', hint: '全站构建自洽校验' },
+                            { icon: 'globe', label: '站点重建上线', hint: '约 2–4 分钟' },
                         ].map((s, i) => (
                             <li key={s.label} className="relative flex gap-3 pb-4 last:pb-0">
                                 {i < 2 && <span className="absolute left-[15px] top-8 h-[calc(100%-8px)] w-px bg-slate-200" />}
@@ -402,7 +402,7 @@ export default function Dashboard(): JSX.Element {
                         {loading ? <Skeleton rows={4} /> : <SplitBar segments={compose} />}
                     </SectionCard>
 
-                    <SectionCard icon="database" title="媒体与存储" desc="R2 图片资产">
+                    <SectionCard icon="database" title="媒体与存储" desc="图片资产">
                         <div className="grid grid-cols-1 gap-2.5">
                             <MiniStat icon="image" label="图片张数" value={`${num(media.items)} 张`} tone="brand" />
                             <MiniStat icon="download" label="总体积" value={bytes(media.bytes)} tone="gold" />

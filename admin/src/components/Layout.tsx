@@ -149,7 +149,7 @@ function Rail({
                     改动不会自动上线
                 </p>
                 <p className="mt-1 text-[10.5px] leading-relaxed text-slate-500">
-                    保存只进内容库，点顶栏「发布上线」才快照进仓库并重建前台。
+                    保存只进内容库，点顶栏「发布上线」才会同步到前台。
                 </p>
             </div>
         </div>
@@ -292,7 +292,7 @@ export default function Layout() {
                 group: '操作',
                 label: '发布上线',
                 icon: 'rocket',
-                hint: '快照 → 回归闸 → Pages 重建',
+                hint: '快照 → 回归闸 → 线上重建',
                 run: () => nav('/'),
             },
             {
@@ -443,7 +443,7 @@ export default function Layout() {
                                             <p className="truncate text-[13px] font-bold text-slate-800">{email || '未登录'}</p>
                                             <p className="mt-0.5 flex items-center gap-1 text-[11px] text-slate-500">
                                                 <Icon name="shield" className="h-3 w-3" />
-                                                Supabase Auth · {total} 条内容
+                                                身份已验证 · {total} 条内容
                                             </p>
                                         </div>
                                     </div>
@@ -484,10 +484,9 @@ export default function Layout() {
                             <Icon name="factory" className="h-3.5 w-3.5 text-brand-400" />
                             Cennetic Content Center
                         </span>
-                        <span>Astro 静态站 · Supabase 内容库 · Cloudflare Pages 托管</span>
                         <span className="ml-auto flex items-center gap-1.5">
                             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            发布闸 verify:site 在线
+                            发布前校验闸已启用
                         </span>
                     </div>
                 </footer>
