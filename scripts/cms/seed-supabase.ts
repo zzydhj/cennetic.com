@@ -158,8 +158,9 @@ async function main() {
         .replace(/\s+$/, '') + '\n';
     await upsert('site_settings', [{ id: true, data: siteText }], 'id');
 
+    // pages 表已停写（后台「页面」类型整体删除），日志里不再报它的行数
     console.log('\n✓ 灌库完成。抽查建议：Supabase Table Editor 各表行数应为 ' +
-        `articles=${articles.length} pages=${pages.length} products=${productRows.length} ` +
+        `articles=${articles.length} products=${productRows.length} ` +
         `blog=${blogCats.length} prodCats=${prodCats.length} authors=${authorRows.length} site=1`);
 }
 
