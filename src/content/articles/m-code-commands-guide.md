@@ -1,6 +1,6 @@
 ---
 title: 'M-Code Commands: Complete Guide (M00-M30)'
-heading: 'M-Code Commands: Complete Guide (M00-M30) | Cennetic'
+heading: 'M-Code Commands: Complete Guide (M00-M30)'
 description: Master all M-code commands M00-M30. Complete reference with examples, use cases & expert tips. Reduce errors 40%. Free guide for CNC beginners.
 slug: m-code-commands-guide
 canonical: /m-code-commands-guide/

@@ -20,19 +20,6 @@ sourceId: 7082
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / reference only)
-     Focus Keyword  : CNC overtravel alarm
-     Title (54 chr) : CNC Overtravel Alarm: Causes, Reset & Prevention Guide
-     Permalink (20) : cnc-overtravel-alarm
-     Description(149): Learn how to diagnose, reset, and prevent CNC overtravel
-                       alarms. Expert guide covering soft & hard limits,
-                       FANUC/Siemens steps, and real-world fixes.
-     Target KW Density: ~1.25%  (≈18 occurrences / 1,400 words)
-============================================================ -->
-
-
-
 <!-- ══════════════════════════════════════════════════════════
      ARTICLE BODY
 ══════════════════════════════════════════════════════════ -->

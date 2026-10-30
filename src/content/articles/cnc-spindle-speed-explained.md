@@ -21,13 +21,6 @@ sourceId: 7452
 ---
 
 
-<!-- ============================================================
-     CNC SPINDLE SPEED EXPLAINED – FULL FIXED VERSION FOR WORDPRESS
-     cennetic.com | Author: Bella | Updated: August 2026
-============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- 1. INTRO -->

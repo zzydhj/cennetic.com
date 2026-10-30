@@ -21,20 +21,6 @@ sourceId: 7483
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / reference only)
-     Focus Keyword     : CNC surface finish
-     Title (59 chr)    : CNC Surface Finish Explained: Ra, Rz & RMS Beginner's Guide
-     Permalink (28 chr): cnc-surface-finish-explained
-     Description (148) : Learn CNC surface finish Ra, Rz & RMS in plain English.
-                         Compare parameters, measurement methods & real-world
-                         applications. Expert guide by Cennetic.
-     Target KW Density : ~1.25%  (≈19 occurrences / 1,500 words)
-     Category          : Technical Knowledge (primary) + Buying Guides (secondary)
-============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- ① INTRODUCTION -->

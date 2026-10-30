@@ -1,6 +1,6 @@
 ---
 title: 'CNC GD&T Explained: Complete Guide For Beginners'
-heading: 'CNC GD&T Explained: Complete Guide for Beginners | Cennetic'
+heading: 'CNC GD&T Explained: Complete Guide for Beginners'
 description: Master CNC GD&T with 14 symbols, datums & tolerancing. Complete guide with examples, MMC & tips. Reduce scrap 30%. Free reference for beginners.
 slug: cnc-gdt-guide
 canonical: /cnc-gdt-guide/

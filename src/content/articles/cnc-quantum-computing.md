@@ -1,6 +1,6 @@
 ---
-title: 'CNC Quantum Computing: Hybrid AI Optimization | CENNETIC'
-heading: 'CNC Quantum Computing: Hybrid AI Optimization | CENNETIC'
+title: 'CNC Quantum Computing: Hybrid AI Optimization'
+heading: 'CNC Quantum Computing: Hybrid AI Optimization'
 description: CNC quantum computing by Cennetic uses hybrid quantum-classical algorithms to cut cycle times up to 40% and scrap rates by 85%. Trusted by 750+ manufacturers.
 slug: cnc-quantum-computing
 canonical: /cnc-quantum-computing/

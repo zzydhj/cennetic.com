@@ -21,21 +21,6 @@ sourceId: 7265
 ---
 
 
-<!-- ============================================================
-     SEO METADATA (paste into RankMath fields)
-     ============================================================
-     Focus Keyword : CNC in-process monitoring
-     Title (56 ch) : CNC In-Process Monitoring: Predictive Maintenance Guide
-     Permalink      : /cnc-in-process-monitoring/
-     Meta Description (158 ch):
-       Learn how CNC in-process monitoring works, which sensors
-       to use, and how maintenance engineers cut downtime with
-       Cennetic's predictive maintenance systems.
-     Keyword Density target: ~1.25%
-     ============================================================ -->
-
-
-
 <div class="qf-article-body">
 
 <!-- ══════════════════════════════════════════════════
@@ -258,7 +243,6 @@ sourceId: 7265
 <!-- ══════════════════════════════════════════════════
      11. AUTHOR BOX
      ══════════════════════════════════════════════════ -->
-
 
 <!-- ══════════════════════════════════════════════════
      12. REFERENCES

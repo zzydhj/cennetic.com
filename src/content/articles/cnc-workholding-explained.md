@@ -20,21 +20,6 @@ sourceId: 7475
 ---
 
 
-<!-- ============================================================
-     SEO METADATA (paste into RankMath fields)
-     ============================================================
-     Focus Keyword : CNC workholding
-     Title (55 ch) : CNC Workholding Explained: A Beginner's Guide
-     Permalink      : /cnc-workholding-explained/
-     Meta Description (158 ch):
-       Learn CNC workholding from the ground up — fixture types,
-       vise selection, clamping methods, and pro tips from
-       Cennetic's 15 years of CNC expertise.
-     Keyword Density target: ~1.25%
-     ============================================================ -->
-
-
-
 <div class="qf-article-body">
 
 <!-- ══════════════════════════════════════════════════
@@ -256,7 +241,6 @@ sourceId: 7475
 <!-- ══════════════════════════════════════════════════
      11. AUTHOR BOX
      ══════════════════════════════════════════════════ -->
-
 
 <!-- ══════════════════════════════════════════════════
      12. REFERENCES

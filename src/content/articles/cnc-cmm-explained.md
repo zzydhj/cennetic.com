@@ -21,20 +21,6 @@ sourceId: 7503
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / reference only)
-     Focus Keyword     : CNC CMM
-     Title (58 chr)    : CNC CMM Explained: Beginner's Guide to Measuring Machines
-     Permalink (17 chr): cnc-cmm-explained
-     Description (144) : Learn what a CNC CMM is, how it works, types & real-world
-                         applications. Cennetic's beginner guide covers CMM vs CNC,
-                         key features & buying tips.
-     Target KW Density : ~1.25%  (≈19 occurrences / 1,500 words)
-     Category          : Technical Knowledge (primary) + Buying Guides (secondary)
-============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- ① INTRODUCTION -->

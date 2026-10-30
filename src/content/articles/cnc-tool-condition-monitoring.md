@@ -1,5 +1,5 @@
 ---
-title: CNC Tool Condition Monitoring For Wear Detection | Cennetic
+title: CNC Tool Condition Monitoring For Wear Detection
 heading: 'CNC Tool Condition Monitoring: Detect Wear and Optimize Your Machining'
 description: Monitor CNC tool wear and breakage in real time with Cennetic. Use acoustic emission, vibration, and process data to reduce scrap and downtime.
 slug: cnc-tool-condition-monitoring

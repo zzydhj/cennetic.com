@@ -82,8 +82,14 @@ const description = `${product.name} by Cennetic — ${product.summary
     .slice(0, 150)}`;
 ---
 
+{
+    /* 标题不再手动拼 "| CENNETIC CNC"：BaseLayout → formatTitle() 已经统一加了
+    " - Cennetic CNC Machine" 后缀，这里再拼一次等于 <title> 里品牌出现三遍；
+    碰上 name 自带尾巴的产品（t-600、v-856）更是四遍，而且那段尾巴会跟着
+    product.name 一起进入 H1、面包屑与 JSON-LD 的 Product.name。 */
+}
 <BaseLayout
-    title={`${product.name} | CENNETIC CNC`}
+    title={product.name}
     description={description.slice(0, 255)}
     path={product.canonical}
     ogImage={cover?.src}

@@ -1,6 +1,6 @@
 ---
 title: 'G-Code Commands: Complete Guide (G00-G03)'
-heading: 'G-Code Commands: Complete Guide (G00-G03) | Cennetic'
+heading: 'G-Code Commands: Complete Guide (G00-G03)'
 description: Master G-code commands G00 G01 G02 G03. Complete guide with I/J/K parameters, examples & tips. Reduce errors 40%, cut cycle time 35%. Free reference.
 slug: g-code-commands-guide
 canonical: /g-code-commands-guide/

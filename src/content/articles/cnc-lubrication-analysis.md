@@ -1,5 +1,5 @@
 ---
-title: CNC Lubrication Analysis For Precision CNC Health | Cennetic
+title: CNC Lubrication Analysis For Precision CNC Health
 heading: 'CNC Lubrication Analysis: Precision Oil Condition Monitoring for Metrology Engineers'
 description: CNC lubrication analysis helps detect particles, water, viscosity change, and wear trends to protect precision CNC spindles, hydraulics, and guideways.
 slug: cnc-lubrication-analysis

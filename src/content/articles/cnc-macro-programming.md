@@ -33,16 +33,9 @@ sourceId: 7550
 ---
 
 
-<!-- ============================================================
-   CNC Macro Programming: Beginner's Guide to Parametric
-   Cennetic | cennetic.com
-   ============================================================ -->
-
-
 <div class="qf-article-body">
 
 <!-- ① 引言段 -->
-
 
 <p><strong>CNC macro programming</strong> — also called parametric programming — is one of the most powerful skills a machinist can master. If you’re a CNC beginner looking to move beyond fixed G-code and unlock true programming flexibility, this guide is for you. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve seen firsthand how CNC macro programming can cut programming time by up to 70% and reduce setup errors dramatically. Let’s break it all down.</p>
 
@@ -252,7 +245,6 @@ M99
 </div>
 
 <!-- ⑩ Author Box -->
-
 
 <!-- ⑪ References -->
 <div class="qf-references">

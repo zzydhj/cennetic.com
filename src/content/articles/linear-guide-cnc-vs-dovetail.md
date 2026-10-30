@@ -20,13 +20,6 @@ sourceId: 2883
 ---
 
 
-<!-- ============================================================
-     Linear Guide CNC vs Dovetail — Cennetic Blog Article
-     Author: Bella | CENNETIC.COM | Last updated: June 2026
-     ============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- 1. 引言段 -->

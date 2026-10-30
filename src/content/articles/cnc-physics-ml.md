@@ -21,31 +21,6 @@ sourceId: 7352
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / Yoast reference)
-     ──────────────────────────────────────────────────────────
-     Focus Keyword    : CNC physics ML
-     Title (54 chr)   : CNC Physics ML: Physics-Informed Machine Learning Guide
-     Permalink        : cnc-physics-ml  (14 chr)
-     Description(158) : Learn how CNC physics ML combines physics-informed neural
-                        networks with AI to cut scrap, extend tool life, and
-                        optimize machining. Free study by Cennetic.
-     Keyword Density  : ~1.25%  (≈19 occurrences / ~1,520 words)
-     Category         : Technical Knowledge (primary)
-                        Industry Applications (secondary)
-     ──────────────────────────────────────────────────────────
-     ✅ Focus Keyword in SEO Title
-     ✅ Focus Keyword in Meta Description
-     ✅ Focus Keyword in URL (cnc-physics-ml)
-     ✅ Focus Keyword in first paragraph
-     ✅ Focus Keyword in H2/H3 subheadings
-     ✅ Focus Keyword as image alt text (image 1)
-     ✅ Keyword Density ≈ 1.25%
-     ✅ URL ≤ 75 characters
-============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- 1. 引言段 -->

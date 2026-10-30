@@ -33,17 +33,6 @@ sourceId: 7538
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / reference only, not rendered)
-     Focus Keyword   : CNC threading cycle
-     Title (52 chr)  : CNC Threading Cycle: Beginner's Guide to G76 and G92
-     Permalink (19)  : cnc-threading-cycle
-     Description(145): Learn the CNC threading cycle with our complete G76 vs G92 guide. Real-world cases, code examples, and expert tips to cut threads with precision.
-     Keyword Density : ~1.25%  (≈20 occurrences / ~1,600 words)
-     ============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- ① 引言段 -->

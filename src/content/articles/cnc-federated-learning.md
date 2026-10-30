@@ -1,5 +1,5 @@
 ---
-title: 'CNC Federated Learning: Collaborative AI | CENNETIC'
+title: 'CNC Federated Learning: Collaborative AI'
 heading: 'CNC Federated Learning: Revolutionize Collaborative Optimization'
 description: CNC federated learning enables multi-site AI optimization without sharing raw data. Trusted by 750+ manufacturers. Free feasibility assessment from Cennetic.
 slug: cnc-federated-learning

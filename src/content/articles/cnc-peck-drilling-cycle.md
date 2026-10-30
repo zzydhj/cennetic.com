@@ -21,33 +21,7 @@ sourceId: 7526
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / Yoast reference)
-     ──────────────────────────────────────────────────────────
-     Focus Keyword    : CNC peck drilling cycle
-     Title (57 chr)   : CNC Peck Drilling Cycle: G73 & G83 Complete Guide
-     Permalink        : cnc-peck-drilling-cycle  (23 chr)
-     Description(159) : Master the CNC peck drilling cycle with G73 & G83.
-                        Learn peck depth settings, chip control tips, and
-                        real use cases. Expert guide by Cennetic.
-     Keyword Density  : ~1.25%  (≈20 occurrences / ~1,600 words)
-     Category         : Technical Knowledge (primary)
-                        Maintenance & Operations (secondary)
-     ──────────────────────────────────────────────────────────
-     ✅ Focus Keyword in SEO Title
-     ✅ Focus Keyword in Meta Description
-     ✅ Focus Keyword in URL (cnc-peck-drilling-cycle)
-     ✅ Focus Keyword at beginning of content (first sentence)
-     ✅ Focus Keyword in H2/H3 subheadings
-     ✅ Image alt text contains Focus Keyword (image 1)
-     ✅ Keyword Density ≈ 1.25%
-     ✅ URL ≤ 75 characters
-============================================================ -->
-
-
-
 <div class="qf-article-body">
-
 
   <!-- 1. 引言段 -->
   <p>The <strong>CNC peck drilling cycle</strong> is one of the most essential techniques every CNC operator and programmer needs to master. By drilling in controlled incremental steps, peck drilling breaks chips, clears debris, and prevents tool breakage — especially in deep or difficult holes. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ industrial clients from our facility in Dalingshan, Dongguan, we have spent 15 years helping manufacturers across the USA, Europe, and Southeast Asia optimize their drilling operations using cycles like G73 and G83. This guide covers everything you need to know.</p>

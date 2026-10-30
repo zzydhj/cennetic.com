@@ -1,6 +1,6 @@
 ---
 title: 'CNC Cutter Compensation: G40 G41 G42 Guide'
-heading: 'CNC Cutter Compensation: G40 G41 G42 Guide | Cennetic'
+heading: 'CNC Cutter Compensation: G40 G41 G42 Guide'
 description: Master CNC cutter compensation G40 G41 G42. Reduce errors 40%, improve accuracy 35%. Beginner-friendly guide with examples & real cases.
 slug: cnc-cutter-compensation-guide
 canonical: /cnc-cutter-compensation-guide/

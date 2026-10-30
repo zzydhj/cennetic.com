@@ -1,6 +1,6 @@
 ---
-title: CNC Machine Refund Policy & Warranty Terms | Cennetic
-heading: CNC Machine Refund Policy & Warranty Terms | Cennetic
+title: CNC Machine Refund Policy & Warranty Terms
+heading: CNC Machine Refund Policy & Warranty Terms
 slug: cnc-machine-refund-policy
 canonical: /cnc-machine-refund-policy/
 description: Cennetic's CNC machine refund policy and 2-year warranty explained. Quality-issue refunds supported, free return shipping. Read full terms before purchasing.

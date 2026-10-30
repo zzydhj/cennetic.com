@@ -1,6 +1,6 @@
 ---
 title: 'CNC Boring Cycle Guide: G85 G86 G87 G88 G89'
-heading: 'CNC Boring Cycle Guide: G85 G86 G87 G88 G89 | Cennetic'
+heading: 'CNC Boring Cycle Guide: G85 G86 G87 G88 G89'
 description: Master CNC boring cycles G85-G89 for precision bore finishing. Reduce errors 40%, improve tolerance 35%. Expert guide with real cases & FAQ.
 slug: cnc-boring-cycle-guide
 canonical: /cnc-boring-cycle-guide/

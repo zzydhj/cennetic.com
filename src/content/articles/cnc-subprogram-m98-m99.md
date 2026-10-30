@@ -20,32 +20,9 @@ sourceId: 7546
 ---
 
 
-<!-- ============================================================
-SEO INFORMATION (for RankMath / Yoast — copy into plugin fields)
-================================================================
-Focus Keyword  : CNC subprogram
-Title (49 chr) : CNC Subprogram M98 M99: Complete Beginner's Guide
-Permalink      : /cnc-subprogram-m98-m99/
-Meta Desc(148) : Learn CNC subprogram programming with M98 & M99. Reduce code by 75%, cut errors, and boost efficiency. Step-by-step guide with real G-code examples.
-Keyword Density: ~1.25%  (≈15 occurrences / ~1,200 words)
-Checklist      :
-  ✅ Focus Keyword in SEO Title
-  ✅ Focus Keyword in Meta Description
-  ✅ Focus Keyword in URL (/cnc-subprogram-m98-m99/)
-  ✅ Focus Keyword at beginning of content (first paragraph)
-  ✅ Focus Keyword used throughout content body
-  ✅ Focus Keyword in H2/H3/H4 subheadings
-  ✅ Image alt text contains Focus Keyword
-  ✅ Keyword Density ≈ 1.25%
-  ✅ URL length: 24 characters (well under 75)
-============================================================ -->
-
-
-
 <div class="qf-article-body">
 
 <!-- ① 引言段 -->
-
 
 <p>A <strong>CNC subprogram</strong> is one of the most powerful tools in a machinist’s programming arsenal. If you’re new to <strong>CNC subprogram</strong> programming, mastering <strong>M98</strong> (call subprogram) and <strong>M99</strong> (return from subprogram) can cut your programming time by up to 40% and dramatically reduce on-machine errors. At <a href="/" rel="noopener">Cennetic CNC</a> — a Dongguan-based manufacturer with 15+ years of experience serving 750+ clients across Europe, North America, and Southeast Asia — we use <strong>CNC subprogram</strong> techniques every day. This guide explains everything a beginner needs to know.</p>
 
@@ -291,7 +268,6 @@ Checklist      :
 </div>
 
 <!-- ⑫ Author Box -->
-
 
 <!-- ⑬ References -->
 <div class="qf-references">

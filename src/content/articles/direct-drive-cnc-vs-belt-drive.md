@@ -21,20 +21,6 @@ sourceId: 2891
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / reference only)
-     Focus Keyword     : direct drive CNC
-     Title (52 chr)    : Direct Drive CNC vs Belt Drive: Speed & Torque Guide
-     Permalink (30 chr): direct-drive-cnc-vs-belt-drive
-     Description (156) : Compare direct drive CNC vs belt drive on speed, torque
-                         & maintenance. Expert analysis with real data, FANUC
-                         specs & ROI insights for maintenance engineers.
-     Target KW Density : ~1.25%  (≈19 occurrences / 1,500 words)
-     Category          : Comparisons (primary) + Maintenance & Operations (secondary)
-============================================================ -->
-
-
-
 <div class="qf-article-body">
 
   <!-- ① INTRODUCTION -->

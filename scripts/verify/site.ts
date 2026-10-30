@@ -175,6 +175,19 @@ async function main(): Promise<void> {
         const h1s = (html.match(/<h1[\s>]/g) ?? []).length;
         if (h1s !== 1) fail.push(`H1 数量应为 1，实际 ${h1s}：${p}`);
 
+        /**
+         * 品牌尾巴。formatTitle() 会统一加 “ - Cennetic CNC Machine” 后缀，
+         * 内容字段自己再带一份“| Cennetic”就会让 <title> 里品牌出现两遍；
+         * 落在 heading 上更糟 —— H1 会直接显示“…| Cennetic”。
+         * 尾巴可能来自库里的 title/heading，也可能来自模板手动拼的后缀，
+         * 两边都改过一轮，所以只能从产物上卡。
+         */
+        const titleText = (html.match(/<title>([^<]*)<\/title>/) ?? [])[1] ?? '';
+        const h1Text = ((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) ?? [])[1] ?? '')
+            .replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        if (/\s[|｜]\s*cennetic/i.test(titleText)) fail.push(`<title> 带品牌尾巴，与站点名后缀重复：${p} → ${titleText}`);
+        if (/\s[|｜]\s*cennetic/i.test(h1Text)) fail.push(`H1 带品牌尾巴：${p} → ${h1Text}`);
+
         const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
         const expect = `${SITE_ORIGIN}${p}`;
         if (canonical !== expect) fail.push(`canonical 不符：${p}  实际=${canonical ?? '无'}  期望=${expect}`);

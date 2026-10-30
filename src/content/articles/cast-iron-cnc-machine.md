@@ -21,20 +21,6 @@ sourceId: 2895
 ---
 
 
-<!-- ============================================================
-     SEO INFORMATION (for RankMath / reference only)
-     Focus Keyword    : cast iron CNC machine
-     Title (52 chr)   : Cast Iron CNC Machine: Best Choice for Heavy Cutting
-     Permalink (21)   : cast-iron-cnc-machine
-     Description (159): Discover why a cast iron CNC machine outperforms steel
-                        frames for heavy cutting. Compare damping, rigidity &
-                        thermal stability. Get a free quote from Cennetic.
-     Target KW Density: ~1.25%  (≈18 occurrences / 1,450 words)
-     Recommended Category: Comparisons (primary) + Technical Knowledge (secondary)
-============================================================ -->
-
-
-
 <!-- ══════════════════════════════════════════════════════════
      ARTICLE BODY
 ══════════════════════════════════════════════════════════ -->
