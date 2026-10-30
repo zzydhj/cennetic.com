@@ -13,6 +13,7 @@
  *   3. sitemap 里每条 URL 的域名必须是 SITE_ORIGIN，且产物里真有这个文件
  *   4. _redirects 语法：来源不得带 scheme（跨域名 301 在 Pages 层根本无效，必须去 Zone 配）
  *   5. _redirects 的站内目标必须存在（或能被另一条规则接住），避免 301 打到 404
+ *   6. 产物里不得出现不该外露的技术栈字样与内部术语（站主要求，防文案复发）
  *   提示项（warn，不阻塞）：description 缺失/过短、无 JSON-LD
  *
  *   npm run verify:site
@@ -240,8 +241,45 @@ async function main(): Promise<void> {
         }
     }
 
+    /*
+     * ── 6. 技术栈不外露 ──────────────────────────────────
+     * 为什么做成闸而不是写进文档：这类泄露是「每加一句文案都可能复发」的，靠人记住必然
+     * 失效。2026-10-30 一次性清了 20 多处，其中 4 处（Dashboard 的流水线步骤、媒体库的
+     * 删除确认框）是拿构建产物扫出来才发现的 —— 源码 grep 被结果条数上限截断漏掉了它们。
+     *
+     * 判据故意用精确短语，不用 Astro / Supabase 这类裸词：依赖自带的字符串撞不得，
+     * supabase-js 里就有 "Cloudflare Workers detected"、"contacting the Supabase Auth server"
+     * 和几条 github.com 文档链接，它们不在界面显示，也不在本次要求范围内（站主选择只清界面）。
+     * 同理不校验 data-astro-cid-* 与 /_astro/ —— 删前者会让作用域样式全部失配、全站样式崩。
+     */
+    const STACK_WORDS = [
+        'Astro · Supabase', 'Astro 静态站', 'Supabase 内容库', 'Supabase Auth ·', '密码由 Supabase',
+        '静态站前台', '快照写入仓库', '快照进仓库', '代码仓库', '受 git 管理', '仓库静态',
+        'verify:site', 'Pages Function', 'Pages 重建', 'Pages 上线', 'Cloudflare Pages',
+        'R2 上传', 'R2 图片', 'R2 对象', 'R2 绑定', 'GH_API_TOKEN', 'GH_OWNER', 'content/*.yaml', '发布闸',
+    ];
+    async function* walkAssets(dir: string): AsyncGenerator<string> {
+        for (const name of await readdir(dir)) {
+            const p = join(dir, name);
+            if ((await stat(p)).isDirectory()) yield* walkAssets(p);
+            /* 只扫会被人看到的东西：页面与脚本；sourcemap 不算产物文案，跳过 */
+            else if (/\.(js|html)$/i.test(name) && !/\.map$/i.test(name)) yield p;
+        }
+    }
+    let stackScanned = 0;
+    for await (const f of walkAssets(DIST)) {
+        const rel = f.slice(DIST.length + 1).replace(/\\/g, '/');
+        const text = await readFile(f, 'utf8');
+        stackScanned++;
+        for (const w of STACK_WORDS) {
+            const n = text.split(w).length - 1;
+            if (n > 0) fail.push(`${rel} 出现不该外露的技术栈字样「${w}」×${n}`);
+        }
+    }
+    if (!existsSync(join(DIST, 'admin'))) warn.push('dist/admin 不存在：本次未校验后台产物的技术栈字样（先跑 npm run build）');
+
     // ── 汇总 ────────────────────────────────────────────────────
-    console.log(`产物页面 ${pages.length} 个（可索引 ${indexable.size}）｜sitemap ${listed.size} 条｜_redirects 规则已解析`);
+    console.log(`产物页面 ${pages.length} 个（可索引 ${indexable.size}）｜sitemap ${listed.size} 条｜_redirects 规则已解析｜技术栈扫描 ${stackScanned} 个文件`);
     if (warn.length > 0) {
         console.log(`\n提示 ${warn.length} 条（不阻塞）：`);
         for (const w of warn.slice(0, 20)) console.log(`  · ${w}`);
