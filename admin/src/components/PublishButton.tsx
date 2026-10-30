@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { triggerPublish } from '../lib/publish';
+import { precheckPublish } from '../lib/precheck';
 import { fetchLatestChange, invalidateReadouts } from '../lib/readouts';
 import { ago } from '../lib/format';
 import { cx } from '../lib/cx';
@@ -37,6 +38,23 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
     async function go(): Promise<void> {
         setAsk(false);
         setBusy(true);
+
+        /*
+         * 发布是全站级的：快照逐行检查内容，一行不合格就整次中断，
+         * 而“触发”本身会回成功——不先预检，运营只会看到「发布已触发」然后什么也没发生。
+         */
+        const bad = await precheckPublish();
+        if (bad.length > 0) {
+            setBusy(false);
+            toast.push({
+                tone: 'error',
+                title: `有 ${bad.length} 处内容不合格，已拦下本次发布`,
+                desc: bad.slice(0, 3).join('；') + (bad.length > 3 ? `；另有 ${bad.length - 3} 处，改完再发` : ''),
+                duration: 16000,
+            });
+            return;
+        }
+
         const r = await triggerPublish('admin');
         setBusy(false);
         if (r.ok) {

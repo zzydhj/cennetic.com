@@ -48,6 +48,12 @@ export interface Field {
     compact?: boolean;
     /** image/gallery 字段的最大张数 */
     max?: number;
+    /**
+     * 字数上下限。必须与 supabase/schema.sql 里对应列的 check 一致，
+     * 否则会变成「前端放行、数据库拒掉」，运营收到的是英文约束名报错。
+     */
+    minLen?: number;
+    maxLen?: number;
     /** json 字段改用专属业务表单渲染（站点设置），仍产出同样的 JSON 文本 */
     formMode?: boolean;
 }
@@ -143,12 +149,12 @@ export const RESOURCES: Resource[] = [
             { name: 'date', label: '日期' },
         ],
         fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true, help: '网址里那截标识，前台地址是 /<slug>/。定好后尽量别改，改了旧链接要做 301。' },
+            { name: 'slug', label: '网址标识', type: 'text', required: true, help: '前台地址是 /这个值/。只能用英文小写、数字和连字符，例如 cnc-lathe-buying-guide。定好后尽量别改，改了旧链接会失效。' },
             { name: 'title', label: 'SEO 标题', type: 'text', required: true, full: true, quick: true, help: '浏览器标签 + Google 搜索结果里的蓝标题 + 分享卡标题。可与页面 H1 不同。' },
             { name: 'heading', label: '页面 H1', type: 'text', required: true, full: true, help: '打开页面后最上面那个可见大标题。' },
-            { name: 'description', label: '摘要', type: 'textarea', required: true, full: true, quick: true, hint: '30–255 字符', help: 'Google 结果标题下的两行说明(meta description)，影响点击率。' },
+            { name: 'description', label: '摘要', type: 'textarea', required: true, full: true, quick: true, minLen: 30, maxLen: 255, hint: '30–255 字符', help: 'Google 结果标题下的两行说明，影响点击率。' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动', help: '告诉搜索引擎本页的权威地址，防重复内容。一般留空(自动=本页)。' },
-            { name: 'date', label: '发布日期', type: 'text', help: '格式 YYYY-MM-DDTHH:MM:SS。' },
+            { name: 'date', label: '发布日期', type: 'text', help: '写成 2026-10-30 即可；需要精确到时间就填 2026-10-30T09:00:00。' },
             { name: 'lastmod', label: '最后修改', type: 'text' },
             { name: 'categories', label: '分类', type: 'ref', multiple: true, refTable: 'blog_categories', refValue: 'slug', refLabel: 'name', help: '勾选所属博客分类，决定文章出现在哪些分类页。' },
             { name: 'author', label: '作者', type: 'ref', refTable: 'authors', refValue: 'slug', refLabel: 'name' },
@@ -183,10 +189,10 @@ export const RESOURCES: Resource[] = [
         preview: true,
         listCols: [
             { name: 'name', label: '名称' },
-            { name: 'slug', label: 'Slug' },
+            { name: 'slug', label: '网址标识' },
         ],
         fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true, help: '产品地址 /product/<slug>/。' },
+            { name: 'slug', label: '网址标识', type: 'text', required: true, help: '产品地址 /product/<slug>/。' },
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true, help: '产品名，也用于列表卡片标题。' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true, hint: '留空自动' },
             { name: 'summary', label: '简介 (卡片用)', type: 'html', full: true, quick: true, compact: true, help: '列表卡片/详情顶部的一小段介绍。纯文本直接写即可，系统自动包段落；也可含简单 HTML。' },
@@ -209,11 +215,11 @@ export const RESOURCES: Resource[] = [
         orderBy: 'name',
         listCols: [
             { name: 'name', label: '名称' },
-            { name: 'slug', label: 'Slug' },
+            { name: 'slug', label: '网址标识' },
             { name: 'count', label: '文章数' },
         ],
         fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true },
+            { name: 'slug', label: '网址标识', type: 'text', required: true },
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true },
             { name: 'description', label: '描述', type: 'textarea', full: true },
             { name: 'title', label: 'SEO 标题', type: 'text', full: true },
@@ -233,16 +239,16 @@ export const RESOURCES: Resource[] = [
         orderBy: 'canonical',
         listCols: [
             { name: 'name', label: '名称' },
-            { name: 'slug', label: 'Slug' },
+            { name: 'slug', label: '网址标识' },
             { name: 'parent', label: '上级', alias: { '0': '顶级' } },
         ],
         fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true },
+            { name: 'slug', label: '网址标识', type: 'text', required: true },
             { name: 'name', label: '名称', type: 'text', required: true, full: true, quick: true },
             { name: 'description', label: '描述', type: 'textarea', full: true },
-            { name: 'parent', label: '上级 slug', type: 'text', hint: '顶层填 0' },
+            { name: 'parent', label: '上级分类', type: 'text', hint: '填上级的网址标识；顶级分类填 0' },
             { name: 'canonical', label: 'Canonical', type: 'text', full: true },
-            { name: 'trail', label: '祖先链', type: 'tags', full: true, hint: '每行一个 slug' },
+            { name: 'trail', label: '祖先链', type: 'tags', full: true, hint: '每行一个网址标识' },
             { name: 'robots', label: 'Robots', type: 'text', full: true },
             { name: 'title', label: 'SEO 标题', type: 'text', full: true },
             { name: 'count', label: '产品数', type: 'number' },
@@ -260,11 +266,11 @@ export const RESOURCES: Resource[] = [
         orderBy: 'name',
         listCols: [
             { name: 'name', label: '名称' },
-            { name: 'slug', label: 'Slug' },
+            { name: 'slug', label: '网址标识' },
             { name: 'role', label: '职位' },
         ],
         fields: [
-            { name: 'slug', label: 'Slug', type: 'text', required: true },
+            { name: 'slug', label: '网址标识', type: 'text', required: true },
             { name: 'name', label: '名称', type: 'text', required: true },
             { name: 'role', label: '职位', type: 'text', full: true },
             { name: 'bio', label: '简介', type: 'textarea', full: true },

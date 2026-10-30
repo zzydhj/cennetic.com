@@ -3,6 +3,7 @@
  * 保存只写内容库，上线仍统一走顶栏的发布流水线。
  */
 import { useEffect, useMemo, useState } from 'react';
+import { explainDbError, validateRow } from '../lib/validate';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { sanitizeHtml } from '../lib/sanitize';
@@ -143,6 +144,21 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
     async function save(): Promise<void> {
         setSaving(true);
         setError(null);
+
+        /*
+         * 先本地校验。地址留空会让整站发布静默停摆（快照逐行检查 slug，一行错全部中断），
+         * 摘要短于 30 字会被数据库的 check 拒掉并回英文约束名 —— 这些都必须在点「创建」
+         * 当刻就说清楚，不能等发布没反应了再回头查。
+         */
+        const issues = validateRow(resource, form);
+        if (issues.length > 0) {
+            setSaving(false);
+            const msg = issues.map((x) => `${x.label}：${x.msg}`).join('；');
+            setError(msg);
+            toast.fail('还没保存', msg);
+            return;
+        }
+
         const payload: Row = {};
         for (const f of resource.fields) {
             let v = form[f.name];
@@ -172,11 +188,30 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
             payload[f.name] = v ?? null;
         }
         if (resource.singleton) payload.id = true;
+
+        /*
+         * 保存走的是 upsert(onConflict: 地址)，撞车会直接改掉另一条内容，
+         * 而提示语还会是「已新建」—— 那是数据丢失。新建时先查一次占用。
+         */
+        if (isNew) {
+            const key = String(payload[resource.idField] ?? '');
+            const { data: hit } = await supabase.from(resource.table).select(resource.titleField).eq(resource.idField, key).limit(1);
+            if (hit && hit.length > 0) {
+                setSaving(false);
+                const msg = `这个网址标识已经被「${String((hit[0] as unknown as Record<string, unknown>)[resource.titleField] ?? key)}」用了，请换一个；若是要改那一条，回列表点它编辑。`;
+                setError(msg);
+                toast.fail('还没保存', msg);
+                return;
+            }
+        }
+
         const { error: e } = await supabase.from(resource.table).upsert(payload, { onConflict: resource.idField });
         setSaving(false);
         if (e) {
-            setError(e.message);
-            toast.fail('保存失败', e.message);
+            /* 不把 PostgREST 的英文原文丢给运营：里面全是表名、列名、约束名 */
+            const msg = explainDbError(e as { code?: string; message?: string }, resource);
+            setError(msg);
+            toast.fail('未保存', msg);
             return;
         }
         invalidateReadouts();
