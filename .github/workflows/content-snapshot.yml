@@ -45,9 +45,11 @@ jobs:
           cache: npm
 
       - name: 安装依赖
+        id: install
         run: npm ci
 
       - name: 变量注入自检（只报有无，不报内容）
+        id: envcheck
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
@@ -56,17 +58,20 @@ jobs:
           npx tsx --version
 
       - name: 从 Supabase 生成内容快照
+        id: snapshot
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
         run: npm run snapshot
 
       - name: 回归闸（整站构建 + 自洽校验）
+        id: gate
         run: |
           npm run build
           npm run verify:site
 
       - name: 提交并推送（无变化则跳过）
+        id: commit
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo "内容无变化，不提交。"
@@ -80,16 +85,32 @@ jobs:
           git commit -m "内容发布：Supabase 快照（${{ github.event.inputs.reason || 'manual' }}）"
           git push origin HEAD:main
 
-      # 失败时把原因重跑一遍写到 Summary 顶部，非技术同事不用再去翻日志
+      # 失败时把定位信息写到 Summary 顶部，非技术同事不用再去翻日志。
+      #
+      # 上一版只重跑了 snapshot:check 并把标题写成「原因如下」—— 但失败往往发生在
+      # 快照之前的步骤（装依赖 / Secrets 注入 / 构建），那时 snapshot:check 照样全绿，
+      # 于是 Summary 给出的是一个「其实没问题」的误导结论（2026-10-30 真实踩过）。
+      # 现在先按 GitHub 自己的步骤结论把红的那一步点名出来，再把只读校验当辅助证据附在后面。
       - name: 失败原因写到 Summary
         if: failure()
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          STEPS_JSON: ${{ toJSON(steps) }}
         run: |
           {
-            echo "### ❌ 本次发布未完成，原因如下（只读校验，不会改任何文件）"
+            echo "### ❌ 本次发布未完成"
+            echo ""
+            echo "**卡在哪一步（❌ 那行就是失败点）：**"
             echo '```'
-            npm run snapshot:check 2>&1 | tail -n 40 || true
+            node -e 'const N={install:"安装依赖",envcheck:"变量注入自检（Secrets）",snapshot:"从 Supabase 生成快照",gate:"回归闸 build+verify:site",commit:"提交并推送"};const s=JSON.parse(process.env.STEPS_JSON||"{}");for(const[k,v]of Object.entries(s))console.log((v.outcome==="failure"?"❌ ":v.outcome==="success"?"✅ ":"⬜️ ")+String(N[k]||k).padEnd(34)+(v.outcome||"未执行"))'
             echo '```'
+            echo ""
+            echo "**辅助证据：重跑一遍只读快照校验（不改任何文件）**"
+            echo '```'
+            npm run snapshot:check 2>&1 | tail -n 25 || true
+            echo '```'
+            echo ""
+            echo "> 上面这份校验如果是「全部一致」，说明数据库与代码都没问题，"
+            echo "> 真正的原因要看❌ 那一步的日志（点 Summary 左侧对应的步骤名）。"
           } >> "$GITHUB_STEP_SUMMARY"
