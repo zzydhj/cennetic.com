@@ -89,6 +89,8 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
     const [loading, setLoading] = useState(!isNew);
     const [saving, setSaving] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    /** 乐观锁拦下了一次可能覆盖别人改动的保存，错误条上多给一个「坚持用我的版本」出口 */
+    const [conflict, setConflict] = useState(false);
     const [refs, setRefs] = useState<Record<string, RefOption[]>>({});
     const [askDel, setAskDel] = useState(false);
 
@@ -141,9 +143,10 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
 
     const setVal = (name: string, v: unknown): void => setForm((f) => ({ ...f, [name]: v }));
 
-    async function save(): Promise<void> {
+    async function save(force = false): Promise<void> {
         setSaving(true);
         setError(null);
+        setConflict(false);
 
         /*
          * 先本地校验。地址留空会让整站发布静默停摆（快照逐行检查 slug，一行错全部中断），
@@ -211,18 +214,57 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
             }
         }
 
+        const done = (): void => {
+            invalidateReadouts();
+            toast.ok(isNew ? `已新建${resource.singular}` : `已保存${resource.singular}`, '点顶栏「发布上线」后才会出现在前台');
+            nav(`/${resource.key}`);
+        };
+        const failed = (e: { code?: string; message?: string }): void => {
+            /* 不把 PostgREST 的英文原文丢给运营：里面全是表名、列名、约束名 */
+            const msg = explainDbError(e, resource);
+            setError(msg);
+            toast.fail('未保存', msg);
+        };
+
+        /*
+         * 乐观锁：编辑时把「我打开那一刻的 updated_at」当写入条件。对方中途存过，
+         * 这个值就变了 → 影响 0 行 → 说明我这一下会把对方的修改退回我打开时的版本，当场拦住。
+         * 不建锁表、不做心跳：只改这一处，而它防的正是「无声丢内容」这件事。
+         * 只对带 updated_at 列的类型生效（文章 / 产品 / 站点设置），分类与作者不并发编辑。
+         */
+        const stamp = !isNew && resource.hasUpdatedAt ? String((JSON.parse(baseline) as Row).updated_at ?? '') : '';
+        if (stamp && !force) {
+            const { data: written, error: e } = await supabase
+                .from(resource.table)
+                .update(payload)
+                .eq(resource.idField, original)
+                .eq('updated_at', stamp)
+                .select(resource.idField);
+            setSaving(false);
+            if (e) {
+                failed(e as { code?: string; message?: string });
+                return;
+            }
+            if (!written || written.length === 0) {
+                setConflict(true);
+                setError(
+                    '这篇在你打开之后又被保存过一次。现在直接保存，会把对方那次修改退回你打开时的版本（包括你根本没碰过的字段）。' +
+                        '如果只有你一个人在用，多半是自己开了两个标签页；若对方改的内容要保留，请先复制你写的内容再刷新重做。',
+                );
+                toast.fail('可能覆盖别人的改动，已暂停保存', '确认无误后可强制保存');
+                return;
+            }
+            done();
+            return;
+        }
+
         const { error: e } = await supabase.from(resource.table).upsert(payload, { onConflict: resource.idField });
         setSaving(false);
         if (e) {
-            /* 不把 PostgREST 的英文原文丢给运营：里面全是表名、列名、约束名 */
-            const msg = explainDbError(e as { code?: string; message?: string }, resource);
-            setError(msg);
-            toast.fail('未保存', msg);
+            failed(e as { code?: string; message?: string });
             return;
         }
-        invalidateReadouts();
-        toast.ok(isNew ? `已新建${resource.singular}` : `已保存${resource.singular}`, '点顶栏「发布上线」后才会出现在前台');
-        nav(`/${resource.key}`);
+        done();
     }
 
     async function remove(): Promise<void> {
@@ -343,9 +385,19 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                 <div className="mb-4 flex items-start gap-2.5 rounded-lg bg-accent-soft px-3.5 py-2.5 text-xs font-medium text-accent ring-1 ring-inset ring-accent/20">
                     <Icon name="alert" className="mt-px h-4 w-4 shrink-0" />
                     <span className="min-w-0 flex-1">{error}</span>
-                    <button type="button" onClick={() => setError(null)} className="shrink-0 underline">
-                        知道了
-                    </button>
+                    {conflict ? (
+                        <button
+                            type="button"
+                            onClick={() => void save(true)}
+                            className="shrink-0 rounded-md bg-accent/10 px-2 py-0.5 font-semibold underline"
+                        >
+                            坚持用我的版本
+                        </button>
+                    ) : (
+                        <button type="button" onClick={() => setError(null)} className="shrink-0 underline">
+                            知道了
+                        </button>
+                    )}
                 </div>
             )}
 
