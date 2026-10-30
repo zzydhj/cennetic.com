@@ -161,7 +161,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
         }
         setRows((rs) => rs.filter((r) => !ids.includes(String(r[resource.idField]))));
         setPicked([]);
-        toast.ok(`已删除 ${ids.length} 条记录`, '该操作不可撤销，如需找回请从内容库快照恢复');
+        toast.ok(`已删除 ${ids.length} 条记录`, '此操作不可撤销，如需找回要重新录入');
         invalidateReadouts();
     }
 
@@ -184,7 +184,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
         setRows((rs) => rs.map((r) => (String(r[resource.idField]) === String(payload[resource.idField]) ? { ...r, ...payload } : r)));
         setQuick(null);
         invalidateReadouts();
-        toast.ok('已保存快改', '改动只进内容库，需发布才上前台');
+        toast.ok('已保存快改', '改动只存在后台，需点发布才上网站');
     }
 
     const cols = resource.listCols;
@@ -534,7 +534,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
                 onClose={() => setAskDel(null)}
                 onConfirm={() => void removeBatch(askDel ?? [])}
                 title={`删除 ${askDel?.length ?? 0} 条${resource.singular}？`}
-                desc={`将从内容库永久移除${askDel && askDel.length === 1 ? `「${askDel[0]}」` : `这 ${askDel?.length ?? 0} 条记录`}，前台在下次发布后不再出现。此操作不可撤销。`}
+                desc={`将从后台永久删除${askDel && askDel.length === 1 ? `「${askDel[0]}」` : `这 ${askDel?.length ?? 0} 条记录`}，网站在下次发布后不再出现。此操作不可撤销。`}
                 confirmLabel="永久删除"
             />
         </div>

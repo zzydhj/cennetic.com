@@ -150,9 +150,9 @@ export default function Inquiries() {
                         <Badge tone={counts.new > 0 ? 'blue' : 'slate'} icon="inbox">
                             {counts.new} 条未读
                         </Badge>
-                        <Tooltip text="访客提交时走的是数据库给 anon 的唯一一条插入策略：只能投递、只能标成未读，读不到任何历史行。">
+                        <Tooltip text="访客只能提交新留言：看不到任何历史询盘，也改不了这里的备注与处理状态。">
                             <Badge tone="green" icon="shield">
-                                共 {rows.length} 条 · 写入受 RLS 约束
+                                共 {rows.length} 条 · 仅后台可看
                             </Badge>
                         </Tooltip>
                     </>
@@ -195,7 +195,7 @@ export default function Inquiries() {
                         title={rows.length === 0 ? '还没有收到询盘' : '这个筛选条件下没有记录'}
                         desc={
                             rows.length === 0
-                                ? '前台联系页的表单提交后会出现在这里。若迟迟没有，先确认已部署带 /api/inquiry 的版本。'
+                                ? '前台联系页的访客留言会自动收到这里。迟迟没有的话，先自己打开联系页试提一条。'
                                 : '换个关键词或切回「全部」看看。'
                         }
                     />
@@ -317,7 +317,7 @@ export default function Inquiries() {
                 onClose={() => setAskDel(null)}
                 onConfirm={() => askDel && void remove(askDel)}
                 title="删除这条询盘？"
-                desc={`来自 ${askDel?.name ?? ''}（${askDel?.email ?? ''}）的记录会被永久删除，备注一并丢失。若只是想归档，标成「已处理」或「垃圾」更合适。`}
+                desc={`来自 ${askDel?.name ?? ''}（${askDel?.email ?? ''}）的记录会被永久删除，备注一并丢失。若只是想收起来，标成「已处理」或「垃圾」更合适。`}
                 confirmLabel="删除"
             />
         </div>

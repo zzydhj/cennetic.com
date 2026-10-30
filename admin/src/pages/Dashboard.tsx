@@ -156,15 +156,16 @@ export default function Dashboard(): JSX.Element {
                     <div className="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                         <div className="max-w-md">
                             <Badge tone="gold" icon="star" className="bg-white/10 text-gold-300 ring-white/15">
-                                CENNETIC 内容中台
+                                CENNETIC 内容后台
                             </Badge>
                             <h3 className="mt-3 text-[19px] font-bold leading-snug tracking-tightest">
-                                一处编辑，全站生效
+                                一处修改，全站同步
                             </h3>
+                            {/* 旧版这里写的是「改动经 快照 → 回归闸 → 重建 三段流水线」，是开发视角的实现描述 */}
                             <p className="mt-2 text-[13px] leading-relaxed text-slate-300">
-                                文章、页面、设备与站点配置都在同一个内容库里；改动经
-                                <span className="mx-1 font-semibold text-white">快照 → 回归闸 → 重建</span>
-                                三段流水线后出现在前台。
+                                文章、产品、设备资料与站点配置都在这一处维护；改完点顶栏「发布上线」，系统会
+                                <span className="mx-1 font-semibold text-white">先检查全站，再更新到网站</span>
+                                不会把线上改坏。
                             </p>
                             <div className="mt-5 flex flex-wrap items-center gap-2.5">
                                 <Link to="/articles">
@@ -200,8 +201,8 @@ export default function Dashboard(): JSX.Element {
                             <Icon name="rocket" className="h-[18px] w-[18px]" />
                         </span>
                         <div className="min-w-0">
-                            <h3 className="text-[13px] font-semibold tracking-tightest text-slate-800">发布流水线</h3>
-                            <p className="mt-0.5 text-[11px] text-slate-500">顶栏「发布上线」触发</p>
+                            <h3 className="text-[13px] font-semibold tracking-tightest text-slate-800">发布上线</h3>
+                            <p className="mt-0.5 text-[11px] text-slate-500">改完内容，点顶栏「发布上线」</p>
                         </div>
                         <span className="ml-auto">
                             {loading ? (
@@ -218,10 +219,15 @@ export default function Dashboard(): JSX.Element {
                         </span>
                     </div>
                     <ol className="px-5 py-4">
+                        {/*
+                         * 这三步是给使用者看的「会发生什么」，不是构建流水线的内部名称。
+                         * 旧版写的「内容快照归档 / 回归闸校验 / 全站构建自洽校验」只有开发能懂。
+                         * 注意：这里必须用花括号包起来的注释形式；裸写块注释会被当成文字渲染到页面上。
+                         */}
                         {[
-                            { icon: 'database', label: '内容快照归档', hint: '后台内容 → 站点数据' },
-                            { icon: 'shield', label: '回归闸校验', hint: '全站构建自洽校验' },
-                            { icon: 'globe', label: '站点重建上线', hint: '约 2–4 分钟' },
+                            { icon: 'database', label: '收齐你的改动', hint: '把你保存的内容打包' },
+                            { icon: 'shield', label: '自动检查全站', hint: '逐页核对，有问题不上线' },
+                            { icon: 'globe', label: '更新到网站', hint: '约 2–4 分钟，客户即可看到' },
                         ].map((s, i) => (
                             <li key={s.label} className="relative flex gap-3 pb-4 last:pb-0">
                                 {i < 2 && <span className="absolute left-[15px] top-8 h-[calc(100%-8px)] w-px bg-slate-200" />}
@@ -237,7 +243,7 @@ export default function Dashboard(): JSX.Element {
                     </ol>
                     <div className="border-t border-slate-100 bg-slate-50/60 px-5 py-3 text-[11px] leading-relaxed text-slate-500">
                         最近改动：<span className="font-medium text-slate-700">{ago(latest)}</span>
-                        ；线上前台只展示 status=published 的内容。
+                        ；没发布的草稿不会出现在网站上。
                     </div>
                 </Card>
             </div>
@@ -414,7 +420,7 @@ export default function Dashboard(): JSX.Element {
                             />
                         </div>
                         <p className="mt-3 text-[11px] leading-relaxed text-slate-400">
-                            超过 400KB 或长边超过 1600px 的图片上传时自动转 WebP，前台再按尺寸生成衍生图。
+                            超过 400KB 或长边超过 1600px 的图片，上传时会自动压缩；网站上不同位置会自动选用合适尺寸，不必手动处理。
                         </p>
                     </SectionCard>
                 </div>

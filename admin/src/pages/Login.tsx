@@ -8,10 +8,16 @@ import { useAuth } from '../lib/auth';
 import { Icon } from '../components/Icon';
 import { Badge, Button, Card, IconInput, Input, Label, Tooltip } from '../components/ui';
 
+/*
+ * 登录页左侧是甲方（运营人员）看到的第一屏，该讲「你能用它做什么、你不用担心什么」，
+ * 不是实现方式。旧版三条（内容库 / 回归闸 / WebP）是写给开发者自己看的，
+ * 站主 2026-10-30 明确指出这类文案不该出现在交付给客户的后台里。
+ * 第三条换成「客户询盘进后台」—— 那才是使用者真正关心的东西，之前一个字没提。
+ */
 const FEATURES = [
-    { icon: 'layers', title: '一处编辑，全站生效', desc: '文章 / 页面 / 设备 / 站点配置同一内容库' },
-    { icon: 'shield', title: '发布前有回归闸', desc: '内容变更先过校验，不达标不上线' },
-    { icon: 'image', title: '图片自动压 WebP', desc: '超大图上传即压缩，前台再按尺寸派生' },
+    { icon: 'layers', title: '改一处，全站同步', desc: '首页、产品、新闻不用分别维护，也不会改漏' },
+    { icon: 'shield', title: '发布前先检查', desc: '有问题的内容不会上线，不会把网站改坏' },
+    { icon: 'inbox', title: '客户询盘直接进后台', desc: '访客留的联系方式登录就能看到，不经任何第三方' },
 ] as const;
 
 export default function Login() {
@@ -58,14 +64,14 @@ export default function Login() {
                 </div>
 
                 <div className="relative px-12">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-300">企业版 · 内容中台</p>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-300">CENNETIC 内容后台</p>
                     <h1 className="mt-4 max-w-md text-[34px] font-bold leading-[1.15] tracking-tightest text-white text-balance">
-                        把数控设备的
+                        网站内容，
                         <br />
-                        内容，管成一套系统
+                        你自己就能改
                     </h1>
                     <p className="mt-4 max-w-md text-[13px] leading-relaxed text-slate-400">
-                        前台静态渲染 + 独立内容库 + 三段式发布流水线。编辑体验留给运营，性能与安全交给构建流程。
+                        文章、产品、图片、客户询盘都在这一处维护。改完点顶栏「发布上线」，几分钟后客户就能看到。
                     </p>
                     <ul className="mt-8 max-w-md space-y-4">
                         {FEATURES.map((f) => (
@@ -178,15 +184,19 @@ export default function Login() {
 
                     <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
                         <Badge tone="slate" icon="globe">
+                            {/*
+                             * 原来这里写的是「生产环境 / 本地开发」—— 那是防开发自己搞混环境的术语，
+                             * 客户看了只会迷惑。改成直接显域名：登录时能核对是不是官方后台，对使用者才有意义。
+                             */}
                             {typeof window === 'undefined'
                                 ? '—'
                                 : window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-                                    ? '本地开发'
-                                    : '生产环境'}
+                                    ? '本地调试，改动不会上线'
+                                    : window.location.hostname}
                         </Badge>
                         <span className="flex items-center gap-1.5 text-[11px] text-slate-400">
                             <Icon name="factory" className="h-3.5 w-3.5" />
-                            CENNETIC 内容中台
+                            CENNETIC 内容后台
                         </span>
                     </div>
                 </Card>

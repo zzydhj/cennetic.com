@@ -51,7 +51,7 @@ const GROUPS: Group[] = [
             {
                 path: ['url'],
                 label: '站点主地址',
-                help: '必须带 https://、结尾不要斜杠。canonical、sitemap、OG 分享卡都拼这个值，填错会影响 SEO。',
+                help: '必须带 https://、结尾不要斜杠。网站地址、搜索收录与分享卡片都用这个值，填错会导致客户打不开或搜不到。',
                 placeholder: 'https://www.example.com',
             },
             { path: ['language'], label: '语言代码', help: '写进 html lang 属性。本站面向海外，保持 en。', placeholder: 'en' },
@@ -112,7 +112,7 @@ const GROUPS: Group[] = [
     {
         section: SITE_SECTIONS[4]!,
         leaves: [
-            { path: ['analytics', 'gtagId'], label: 'Google Analytics 衡量 ID', help: '形如 G-XXXXXXX 或 GT-XXXXXXX。留空则前台不注入统计脚本。' },
+            { path: ['analytics', 'gtagId'], label: 'Google Analytics 衡量 ID', help: '形如 G-XXXXXXX 或 GT-XXXXXXX。留空则网站不加载统计脚本。' },
             { path: ['tawk', 'propertyId'], label: 'Tawk.to Property ID', help: '在线客服。留空则不加载聊天挂件。' },
             { path: ['tawk', 'widgetId'], label: 'Tawk.to Widget ID', help: '与 Property ID 成对出现，别只填一个。' },
         ],
@@ -192,7 +192,7 @@ export function SiteConfigField({
                     站点配置读取失败，这里不能编辑
                 </p>
                 <p className="mt-1.5 text-[11px] leading-relaxed text-slate-600">
-                    后台只提供表单、不提供手改 JSON 的入口，所以这种情况得由开发在数据库里修好。内容库与线上暂不受影响，发布会被回归闸拦下。
+                    这里只提供表单、不提供手改原文的入口，所以这种情况需要联系开发处理。线上网站暂不受影响，发布也会被自动检查拦下。
                 </p>
                 <pre className="mt-2 max-h-28 overflow-auto rounded-md bg-ink-900 px-3 py-2 font-mono text-[10px] leading-relaxed text-slate-200">{error}</pre>
             </div>

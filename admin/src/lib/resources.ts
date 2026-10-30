@@ -293,7 +293,7 @@ export const RESOURCES: Resource[] = [
                 type: 'json',
                 full: true,
                 formMode: true,
-                help: '前台每个页面都读这里。表单只能改字段的值，改不动结构，语法也永远合法；需要新增字段由开发在代码里加。改完保存再点顶栏「发布上线」才会生效；改错不会弄坏线上，但发布会被回归闸拦下。',
+                help: '前台每个页面都读这里。表单只能改字段的值，改不动结构，语法也永远合法；需要新增字段由开发在代码里加。改完保存再点顶栏「发布上线」才会生效；改错不会弄坏线上——发布前会自动检查，不合格这次发布不会执行。',
             },
         ],
     },
@@ -328,9 +328,9 @@ export interface SiteSection {
 
 /** 站点设置的二级页：同一行数据按分组拆成独立路由，侧栏在「站点设置」下展开显示 */
 export const SITE_SECTIONS: SiteSection[] = [
-    { key: 'brand', label: '品牌与站点地址', icon: 'factory', desc: '页眉、标题、sitemap 与分享链接都读这一段' },
+    { key: 'brand', label: '品牌与站点地址', icon: 'factory', desc: '页眉、标题、搜索收录与分享链接都用这一段' },
     { key: 'contact', label: '联系方式', icon: 'mail', desc: '电话、邮箱、WhatsApp 与结构化地址' },
-    { key: 'inquiry', label: '询盘接收邮箱', icon: 'inbox', desc: '询盘统一转发到这里，后台只存地址' },
+    { key: 'inquiry', label: '对外联系邮箱', icon: 'inbox', desc: '表单上的「发邮件」按钮用这个地址；访客提交的询盘本身不转发，在后台「询盘」页看' },
     { key: 'media', label: '图片与首页素材', icon: 'image', desc: 'Logo、分享封面、背景视频与工厂视频' },
     { key: 'scripts', label: '第三方脚本', icon: 'code', desc: 'GA / Tawk 的 ID，留空即不加载对应脚本' },
 ];

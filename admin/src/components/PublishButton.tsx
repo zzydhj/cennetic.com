@@ -48,7 +48,7 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
             toast.push({
                 tone: 'success',
                 title: '发布已触发',
-                desc: '快照 → 回归闸 → 线上重建，约 2–4 分钟完成',
+                desc: '约 2–4 分钟后，客户就能看到新内容',
                 duration: 8000,
             });
         } else {
@@ -74,7 +74,7 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
                     {(busy || dirty) && <span className="absolute inline-flex h-full w-full rounded-full bg-current opacity-60 animate-ping-soft" />}
                     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-current" />
                 </span>
-                {busy ? '发布流水线运行中' : dirty ? `内容改动待发布${drafts > 0 ? ` · ${drafts} 篇草稿` : ''}` : '内容与线上一致'}
+                {busy ? '正在发布' : dirty ? `内容改动待发布${drafts > 0 ? ` · ${drafts} 篇草稿` : ''}` : '内容与线上一致'}
             </span>
 
             <Button
@@ -94,29 +94,29 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
                 onClose={() => setAsk(false)}
                 onConfirm={() => void go()}
                 title="确认发布上线？"
-                desc="会把后台内容同步到线上并触发重建，全程约 2–4 分钟。"
+                desc="会把你在后台的改动更新到网站，全程约 2–4 分钟。"
                 confirmLabel="开始发布"
                 tone="primary"
             >
                 <div className="mt-3 flex items-center gap-1.5 rounded-lg bg-slate-50 px-3 py-2.5 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-100">
                     <span className="inline-flex items-center gap-1">
                         <Icon name="database" className="h-3.5 w-3.5 text-brand-500" />
-                        内容快照
+                        收齐改动
                     </span>
                     <Icon name="chevronRight" className="h-3 w-3 text-slate-300" />
                     <span className="inline-flex items-center gap-1">
                         <Icon name="shield" className="h-3.5 w-3.5 text-brand-500" />
-                        回归闸校验
+                        自动检查
                     </span>
                     <Icon name="chevronRight" className="h-3 w-3 text-slate-300" />
                     <span className="inline-flex items-center gap-1">
                         <Icon name="globe" className="h-3.5 w-3.5 text-brand-500" />
-                        线上重建
+                        更新到网站
                     </span>
                 </div>
                 {drafts > 0 && (
                     <p className="mt-2.5 text-[11px] leading-relaxed text-amber-700">
-                        当前有 {drafts} 篇草稿：它们会一并归档，但前台列表与 sitemap 只收录已发布内容。
+                        当前有 {drafts} 篇草稿：它们会一并保存，但网站上只显示已发布的内容。
                     </p>
                 )}
             </ConfirmDialog>
@@ -125,7 +125,7 @@ export function PublishButton({ drafts = 0 }: { drafts?: number }): JSX.Element 
 }
 
 /** 供其它页面复用的「发布中」小指示 */
-export function Publishing({ label = '发布流水线运行中' }: { label?: string }): JSX.Element {
+export function Publishing({ label = '正在发布' }: { label?: string }): JSX.Element {
     return (
         <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-medium text-brand-700 ring-1 ring-inset ring-brand-100">
             <Spinner className="h-3 w-3" />

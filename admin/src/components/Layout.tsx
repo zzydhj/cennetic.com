@@ -25,12 +25,16 @@ function railLink({ isActive }: { isActive: boolean }): string {
         : `${linkBase} text-slate-400 hover:bg-white/[0.05] hover:text-slate-100`;
 }
 
-/** 运行环境：由域名判定，不做成配置项，避免线上线下打架 */
+/**
+ * 运行环境：由域名判定，不做成配置项，避免线上线下打架。
+ * 标签用「正式站点 / 本地调试 / 预览地址」而不是「生产环境」—— 顶栏天天显示，
+ * 得让运营看得懂；它的实际作用是提醒「在这里改的东西会不会真的上线」。
+ */
 function useEnv(): { label: string; tone: 'green' | 'amber' | 'blue' } {
     const host = typeof window === 'undefined' ? '' : window.location.hostname;
-    if (host === 'localhost' || host === '127.0.0.1') return { label: '本地开发', tone: 'amber' };
-    if (host.endsWith('cennetic.com')) return { label: '生产环境', tone: 'green' };
-    return { label: '预览环境', tone: 'blue' };
+    if (host === 'localhost' || host === '127.0.0.1') return { label: '本地调试，改动不上线', tone: 'amber' };
+    if (host.endsWith('cennetic.com')) return { label: '正式站点', tone: 'green' };
+    return { label: '预览地址', tone: 'blue' };
 }
 
 /** 由路径反推面包屑：/articles/<slug> → 内容 / 文章 / 编辑 */
@@ -149,7 +153,7 @@ function Rail({
                     改动不会自动上线
                 </p>
                 <p className="mt-1 text-[10.5px] leading-relaxed text-slate-500">
-                    保存只进内容库，点顶栏「发布上线」才会同步到前台。
+                    保存只是暂存，点顶栏「发布上线」后客户才看得到。
                 </p>
             </div>
         </div>
@@ -292,7 +296,7 @@ export default function Layout() {
                 group: '操作',
                 label: '发布上线',
                 icon: 'rocket',
-                hint: '快照 → 回归闸 → 线上重建',
+                hint: '改动 → 检查 → 上线',
                 run: () => nav('/'),
             },
             {
@@ -486,7 +490,7 @@ export default function Layout() {
                         </span>
                         <span className="ml-auto flex items-center gap-1.5">
                             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            发布前校验闸已启用
+                            内容发布前自动检查
                         </span>
                     </div>
                 </footer>

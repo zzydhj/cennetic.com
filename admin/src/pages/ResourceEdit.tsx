@@ -391,7 +391,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                                 icon="rocket"
                                 tone="gold"
                                 title="改动如何生效"
-                                desc="保存只进内容库，上线仍需点顶栏发布"
+                                desc="保存只是存进后台，上线仍需点顶栏发布"
                             >
                                 <p className="text-[11px] leading-relaxed text-slate-500">
                                     站点设置全站唯一，没有草稿/状态概念：表单改的就是这一份配置本身。保存后点顶栏「发布上线」才会同步到前台。本页保存入口只有右上角一个。
@@ -416,8 +416,8 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                                         />
                                         <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
                                             {form.status === 'published'
-                                                ? '已发布：下次发布流水线跑完后，前台列表、sitemap 与分类页都会收录它。'
-                                                : '草稿：只存在于后台，前台与 sitemap 都不会出现，可放心反复编辑。'}
+                                                ? '已发布：下次发布后，网站首页、列表页与搜索收录都会带上它。'
+                                                : '草稿：只存在于后台，网站上不会出现，也不会被搜索收录，可放心反复编辑。'}
                                         </p>
                                     </>
                                 ) : (
@@ -505,7 +505,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                                     危险区
                                 </p>
                                 <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
-                                    删除会直接从内容库移除这条记录，下次发布后前台不再有该页面。
+                                    删除会把这条记录从后台移除，下次发布后网站上不再有该页面。
                                 </p>
                                 <Button variant="danger" icon="trash" className="mt-3" onClick={() => setAskDel(true)}>
                                     删除这条{resource.singular}
@@ -565,7 +565,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                 onClose={() => setAskDel(false)}
                 onConfirm={() => void remove()}
                 title={`删除「${String(form[resource.titleField] ?? id ?? '')}」？`}
-                desc="将从内容库永久移除，前台在下次发布后不再有这个页面。此操作不可撤销。"
+                desc="将从后台永久删除，网站在下次发布后不再有该页面。此操作不可撤销。"
                 confirmLabel="永久删除"
             />
         </div>
