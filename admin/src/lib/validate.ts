@@ -37,11 +37,16 @@ const isEmpty = (v: unknown): boolean =>
  */
 const DATE_FIELDS = new Set(['date', 'lastmod', 'modified']);
 
-/** 返回全部问题（不只报第一个）：让运营一次改完，而不是保存失败五次才知道有五处 */
-export function validateRow(resource: Resource, form: Record<string, unknown>): Issue[] {
+/**
+ * 返回全部问题（不只报第一个）：让运营一次改完，而不是保存失败五次才知道有五处。
+ * only 用于列表页的「快改」面板：那里只提交少数字段，拿整张表单去校会要求用户
+ * 补完不相关的必填项。但地址字段（slug）永远参校 —— 它为空会停摆全站发布。
+ */
+export function validateRow(resource: Resource, form: Record<string, unknown>, only?: string[]): Issue[] {
     const issues: Issue[] = [];
 
     for (const f of resource.fields) {
+        if (only && !only.includes(f.name) && f.name !== resource.idField) continue;
         const v = form[f.name];
         const isId = !resource.singleton && f.name === resource.idField;
 
@@ -80,6 +85,22 @@ export function validateRow(resource: Resource, form: Record<string, unknown>): 
         }
     }
     return issues;
+}
+
+/**
+ * 通用版：读 / 删 / 改状态这类不带具体字段的失败。
+ * 删除失败会把外键约束名（如 products_categories_fkey）直接吐出来，
+ * 等于把内部结构印在界面上；所以这里一律翻成人话，原文只进控制台供开发排查。
+ */
+export function friendlyDbMessage(err: { code?: string; message?: string }): string {
+    const m = err.message ?? '';
+    console.warn('[内容库] 操作失败：', err.code, m);
+    if (err.code === '42501' || /permission denied|row-level security/i.test(m)) return '当前账号没有这项权限，请重新登录后再试。';
+    if (err.code === '23503' || /foreign key/i.test(m)) return '这条内容还被别的东西引用着，不能直接删除。';
+    if (err.code === '42P01' || /does not exist/i.test(m)) return '后台找不到需要的数据，请联系开发。';
+    if (err.code === '23505' || /duplicate key/i.test(m)) return '已经存在同地址的记录，请刷新后重试。';
+    if (/could not connect|fetch failed|networkerror/i.test(m)) return '连不上内容库，请检查网络后重试。';
+    return '操作没成功。请把这条提示原样转给开发处理。';
 }
 
 /**

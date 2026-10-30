@@ -10,6 +10,7 @@
  */
 import { useEffect, useMemo, useState } from 'react';
 import { supabase } from '../lib/supabase';
+import { friendlyDbMessage } from '../lib/validate';
 import { ago, dateTime } from '../lib/format';
 import { cx } from '../lib/cx';
 import { Icon, type IconName } from '../components/Icon';
@@ -72,7 +73,7 @@ export default function Inquiries() {
             .select('*')
             .order('created_at', { ascending: false })
             .then(({ data, error }) => {
-                if (error) toast.fail('读取询盘失败', error.message);
+                if (error) toast.fail('读取询盘失败', friendlyDbMessage(error));
                 setRows((data as InquiryRow[]) ?? []);
                 setLoading(false);
             });
@@ -96,7 +97,7 @@ export default function Inquiries() {
     async function setState(row: InquiryRow, next: State): Promise<void> {
         const { error } = await supabase.from('inquiries').update({ state: next }).eq('id', row.id);
         if (error) {
-            toast.fail('改状态失败', error.message);
+            toast.fail('改状态失败', friendlyDbMessage(error));
             return;
         }
         setRows((rs) => rs.map((r) => (r.id === row.id ? { ...r, state: next } : r)));
@@ -106,7 +107,7 @@ export default function Inquiries() {
     async function saveNote(row: InquiryRow): Promise<void> {
         const { error } = await supabase.from('inquiries').update({ note: draftNote }).eq('id', row.id);
         if (error) {
-            toast.fail('备注未保存', error.message);
+            toast.fail('备注未保存', friendlyDbMessage(error));
             return;
         }
         setRows((rs) => rs.map((r) => (r.id === row.id ? { ...r, note: draftNote } : r)));
@@ -117,7 +118,7 @@ export default function Inquiries() {
         setAskDel(null);
         const { error } = await supabase.from('inquiries').delete().eq('id', row.id);
         if (error) {
-            toast.fail('删除失败', error.message);
+            toast.fail('删除失败', friendlyDbMessage(error));
             return;
         }
         setRows((rs) => rs.filter((r) => r.id !== row.id));

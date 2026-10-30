@@ -6,6 +6,7 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
+import { explainDbError, friendlyDbMessage, validateRow } from '../lib/validate';
 import { sanitizeHtml } from '../lib/sanitize';
 import { invalidateReadouts } from '../lib/readouts';
 import { ago, date, num } from '../lib/format';
@@ -91,7 +92,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
             .from(resource.table)
             .select('*')
             .then(({ data, error }) => {
-                if (error) toast.fail('读取失败', error.message);
+                if (error) toast.fail('读取失败', friendlyDbMessage(error));
                 setRows((data as Row[]) ?? []);
                 setLoading(false);
             });
@@ -143,7 +144,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
             .update({ status: next })
             .in(resource.idField, picked);
         if (error) {
-            toast.fail('批量改状态失败', error.message);
+            toast.fail('批量改状态失败', explainDbError(error as { code?: string; message?: string }, resource));
             return;
         }
         setRows((rs) => rs.map((r) => (picked.includes(String(r[resource.idField])) ? { ...r, status: next } : r)));
@@ -156,7 +157,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
         const { error } = await supabase.from(resource.table).delete().in(resource.idField, ids);
         setAskDel(null);
         if (error) {
-            toast.fail('删除失败', error.message);
+            toast.fail('删除失败', friendlyDbMessage(error));
             return;
         }
         setRows((rs) => rs.filter((r) => !ids.includes(String(r[resource.idField]))));
@@ -168,6 +169,16 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
     async function saveQuick(): Promise<void> {
         if (!quick) return;
         setSaving(true);
+        /*
+         * 快改面板也必须过校验：摘要这类字段在库里有 30–255 的 check，
+         * 绕过它就会把 PostgREST 的英文约束名直接弹给运营（上一版只修了编辑页，漏了这里）。
+         */
+        const issues = validateRow(resource, quick, quickFields.map((f) => f.name));
+        if (issues.length > 0) {
+            setSaving(false);
+            toast.fail('快改未保存', issues.map((x) => `${x.label}：${x.msg}`).join('；'));
+            return;
+        }
         const payload: Row = { [resource.idField]: quick[resource.idField] };
         for (const f of quickFields) {
             let v = quick[f.name];
@@ -178,7 +189,7 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
         const { error } = await supabase.from(resource.table).upsert(payload, { onConflict: resource.idField });
         setSaving(false);
         if (error) {
-            toast.fail('快改未保存', error.message);
+            toast.fail('快改未保存', explainDbError(error as { code?: string; message?: string }, resource));
             return;
         }
         setRows((rs) => rs.map((r) => (String(r[resource.idField]) === String(payload[resource.idField]) ? { ...r, ...payload } : r)));

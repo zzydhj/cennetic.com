@@ -9,6 +9,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '../lib/supabase';
+import { friendlyDbMessage } from '../lib/validate';
 import { deleteMedia, uploadImage } from '../lib/media';
 import { invalidateReadouts } from '../lib/readouts';
 import { buildReferenceIndex, sourceOf, type RefIndex } from '../lib/references';
@@ -67,7 +68,7 @@ export default function MediaLibrary() {
             .select('*')
             .order('created_at', { ascending: false })
             .then(({ data, error }) => {
-                if (error) toast.fail('读取媒体库失败', error.message);
+                if (error) toast.fail('读取媒体库失败', friendlyDbMessage(error));
                 setRows((data as MediaRow[]) ?? []);
                 setLoading(false);
             });
@@ -165,7 +166,7 @@ export default function MediaLibrary() {
         }
         const { error } = await supabase.from('media_assets').delete().eq('id', target.id);
         if (error) {
-            toast.fail('删除失败', error.message);
+            toast.fail('删除失败', friendlyDbMessage(error));
             return;
         }
         invalidateReadouts();

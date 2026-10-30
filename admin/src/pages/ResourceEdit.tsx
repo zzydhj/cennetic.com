@@ -3,7 +3,7 @@
  * 保存只写内容库，上线仍统一走顶栏的发布流水线。
  */
 import { useEffect, useMemo, useState } from 'react';
-import { explainDbError, validateRow } from '../lib/validate';
+import { explainDbError, friendlyDbMessage, validateRow } from '../lib/validate';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { sanitizeHtml } from '../lib/sanitize';
@@ -118,7 +118,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
             ? supabase.from(resource.table).select('*').limit(1)
             : supabase.from(resource.table).select('*').eq(resource.idField, decodeURIComponent(id!)).limit(1);
         query.then(({ data, error: e }) => {
-            if (e) setError(e.message);
+            if (e) setError(friendlyDbMessage(e));
             const row = (data as Row[])?.[0] ?? defaults(resource);
             setForm(row);
             setBaseline(JSON.stringify(row));
@@ -191,11 +191,17 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
 
         /*
          * 保存走的是 upsert(onConflict: 地址)，撞车会直接改掉另一条内容，
-         * 而提示语还会是「已新建」—— 那是数据丢失。新建时先查一次占用。
+         * 而提示语还会是「已新建」—— 那是数据丢失。
+         * 不只是新建要查：编辑时只要把地址改成了另一个已存在的值，同样会覆盖对方，
+         * 而「改个网址写错一个字母」是日常操作里最容易撞上的。
          */
-        if (isNew) {
-            const key = String(payload[resource.idField] ?? '');
-            const { data: hit } = await supabase.from(resource.table).select(resource.titleField).eq(resource.idField, key).limit(1);
+        const original = isNew ? '' : String((JSON.parse(baseline) as Row)[resource.idField] ?? '');
+        const key = String(payload[resource.idField] ?? '');
+        if (isNew || (original && key !== original)) {
+            let q = supabase.from(resource.table).select(resource.titleField).eq(resource.idField, key);
+            /* 编辑改名时要排除自己（自己那条当然占着原地址） */
+            if (original) q = q.neq(resource.idField, original);
+            const { data: hit } = await q.limit(1);
             if (hit && hit.length > 0) {
                 setSaving(false);
                 const msg = `这个网址标识已经被「${String((hit[0] as unknown as Record<string, unknown>)[resource.titleField] ?? key)}」用了，请换一个；若是要改那一条，回列表点它编辑。`;
@@ -224,8 +230,9 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
         const { error: e } = await supabase.from(resource.table).delete().eq(resource.idField, decodeURIComponent(id));
         setAskDel(false);
         if (e) {
-            setError(e.message);
-            toast.fail('删除失败', e.message);
+            const msg = friendlyDbMessage(e);
+            setError(msg);
+            toast.fail('删除失败', msg);
             return;
         }
         invalidateReadouts();
