@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import ResourceList from './pages/ResourceList';
 import ResourceEdit from './pages/ResourceEdit';
 import MediaLibrary from './pages/MediaLibrary';
+import Inquiries from './pages/Inquiries';
 import { ToastProvider } from './components/Toast';
 
 function Gate() {
@@ -42,6 +43,8 @@ export default function App() {
                         <Route element={<Layout />}>
                             <Route index element={<Dashboard />} />
                             <Route path="media" element={<MediaLibrary />} />
+                            {/* 询盘不是内容类型，不进通用 CRUD：没有新建、不参与发布 */}
+                            <Route path="inquiries" element={<Inquiries />} />
                             {NAV.map((r) => (
                                 <Route key={r.key} path={r.key} element={<ResourceList resource={r} />} />
                             ))}

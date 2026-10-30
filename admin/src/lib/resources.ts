@@ -339,9 +339,10 @@ const toRailLink = (r: Resource): RailLink => ({ to: `/${r.key}`, label: r.label
 
 /**
  * 侧栏：全一级平铺，不再分组。顺序：
- * 仪表盘 → 文章 → 产品 → 媒体库 → 博客分类 → 产品分类 → 作者 → 站点设置
+ * 仪表盘 → 文章 → 产品 → 媒体库 → 博客分类 → 产品分类 → 作者 → 询盘 → 站点设置
  * （以前还有一个「页面」，已随 pages 类型整体取消）
  * 由 NAV 派生而不是写死，以后新增资源会自动排在作者前后这一片里。
+ * 媒体库与询盘不在 NAV 里：它们不是内容类型（不进快照、不参与发布），各有一个专属页。
  */
 export const RAIL_LINKS: RailLink[] = [
     { to: '/', label: '仪表盘', icon: 'dashboard' },
@@ -349,6 +350,7 @@ export const RAIL_LINKS: RailLink[] = [
     ...NAV.slice(0, 2).map(toRailLink),
     { to: '/media', label: '媒体库', icon: 'image' },
     ...NAV.slice(2).map(toRailLink),
+    { to: '/inquiries', label: '询盘', icon: 'inbox' },
     {
         to: '/site_settings',
         label: '站点设置',

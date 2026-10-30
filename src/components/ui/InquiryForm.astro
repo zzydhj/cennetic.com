@@ -2,16 +2,22 @@
 /**
  * 询盘表单（联系页专用）。
  *
- * 静态站没有提交后端，所以不做「填了没反应」的死表单：
- * 提交时在客户端把字段组装成一段询盘文本，唤起 WhatsApp 并预填好内容；
- * 旁边再给一个「生成邮件草稿」按钮，走 mailto 把同样的内容放进邮件正文。
- * 两条出口都是用户自己的客户端动作，不经过任何第三方服务，也不收集数据。
+ * 主通道：POST /api/inquiry → Pages Function 校验后写 Supabase 的 inquiries 表，
+ * 后台登录即可看到；不经任何第三方表单服务，也不抄送邮件。
+ * 权限边界在数据库的 RLS 策略里（访客只准插入、读不到任何历史行），
+ * 不依赖本组件与函数自觉。
+ *
+ * 无 JS 也能投递：form 带原生 method/action，脚本在场时才接管为 AJAX；
+ * 两种路径的回执共用同一批锚点块（服务端 303 靠 :target，脚本靠 .show）。
+ * 底下仍保留 WhatsApp 与邮件草稿两条备用出口（访客自己的客户端动作）。
  * 表单字段沿用源站 FluentForm 的口径（姓名/邮箱/国家/电话/留言），老用户无学习成本。
  */
 import { siteConfig } from "@lib/catalog.ts";
 
 const waNumber = siteConfig.whatsapp.number;
 const email = siteConfig.inquiryEmail;
+/* 构建期就知道本页地址，无 JS 时也能把来源页一并投递 */
+const here = Astro.url.pathname;
 ---
 
 <section class="inquiry" aria-labelledby="inquiry-h">
@@ -19,13 +25,26 @@ const email = siteConfig.inquiryEmail;
         <div class="intro">
             <h2 id="inquiry-h">Send Us an Inquiry</h2>
             <p>
-                Tell us your requirements — the green button opens WhatsApp with
-                your message ready to send. No account, no waiting for a form
-                queue: it lands straight on our sales engineer's phone.
+                Fill this in and it goes straight to our sales engineers — no
+                third-party form service in between. WhatsApp and an email draft
+                stay available below if you would rather use those.
             </p>
         </div>
 
-        <form id="inquiry-form">
+        <!-- 无 JS 也能投递：method/action 是原生提交兜底，脚本在场时接管为 AJAX -->
+        <form id="inquiry-form" method="post" action="/api/inquiry">
+            <!-- 蜜罐：不能用 display:none（部分机器人会跳过隐藏字段），用视觉移出视口 -->
+            <div class="hp" aria-hidden="true">
+                <label for="iq-bot">Leave this field empty</label>
+                <input
+                    id="iq-bot"
+                    name="bot_field"
+                    type="text"
+                    tabindex="-1"
+                    autocomplete="off"
+                />
+            </div>
+            <input type="hidden" name="page" value={here} />
             <div class="row">
                 <div class="field">
                     <label for="iq-name">Full Name *</label>
@@ -83,8 +102,11 @@ const email = siteConfig.inquiryEmail;
                 ></textarea>
             </div>
             <div class="actions">
-                <button class="btn btn-wa" type="submit">
-                    Send via WhatsApp
+                <button class="btn btn-primary" type="submit" id="iq-send">
+                    Send Inquiry
+                </button>
+                <button class="btn btn-wa" type="button" id="iq-wa">
+                    Or via WhatsApp
                 </button>
                 <button class="btn btn-ghost" type="button" id="iq-mail">
                     Generate Email Draft
@@ -95,6 +117,23 @@ const email = siteConfig.inquiryEmail;
                 <a href={`mailto:${email}`}>{email}</a> — we reply within one working
                 day.
             </p>
+            <!-- 四条回执共用一套：无 JS 时靠 :target 命中，有 JS 时加 .show -->
+            <div id="iq-sent" class="note ok" role="status">
+                <strong>Thank you — your inquiry is in.</strong> We reply within one
+                working day. If it is urgent, WhatsApp is faster.
+            </div>
+            <div id="iq-invalid" class="note warn" role="alert">
+                <strong>Please check the form.</strong> Full name, a valid email and a
+                message are required.
+            </div>
+            <div id="iq-rate" class="note warn" role="alert">
+                <strong>Too many attempts.</strong> Please wait a minute and send it
+                once more, or use WhatsApp below.
+            </div>
+            <div id="iq-failed" class="note warn" role="alert">
+                <strong>We could not record that.</strong> Please try again, or reach us
+                on WhatsApp or email below — nothing you typed has been lost.
+            </div>
         </form>
     </div>
 </section>
@@ -117,9 +156,52 @@ const email = siteConfig.inquiryEmail;
 
     const form = document.getElementById("inquiry-form");
     const mailBtn = document.getElementById("iq-mail");
+    const waBtn = document.getElementById("iq-wa");
+    const sendBtn = document.getElementById("iq-send");
+    const notes = ["iq-sent", "iq-invalid", "iq-rate", "iq-failed"]
+        .map((id) => document.getElementById(id));
 
-    form?.addEventListener("submit", (e) => {
+    /** 一次只挂一条回执；传空串即全部收起 */
+    function showNote(id) {
+        for (const n of notes) n?.classList.toggle("show", n.id === id);
+    }
+
+    form?.addEventListener("submit", async (e) => {
+        // 脚本在场就接管，不让整页跳走；无 JS 时这段不跑，原生 method/action 兜底
         e.preventDefault();
+        if (!form.reportValidity()) return;
+        showNote("");
+        if (sendBtn) {
+            sendBtn.disabled = true;
+            sendBtn.setAttribute("aria-busy", "true");
+        }
+        try {
+            const fd = new FormData(form);
+            fd.set("page", window.location.pathname);
+            const r = await fetch("/api/inquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify(Object.fromEntries(fd)),
+            });
+            const j = await r.json().catch(() => ({}));
+            if (r.ok && j.ok) {
+                form.reset();
+                showNote("iq-sent");
+            } else {
+                showNote(r.status === 429 ? "iq-rate" : r.status === 422 ? "iq-invalid" : "iq-failed");
+            }
+        } catch {
+            // 网络层失败：字段内容还在输入框里，如实告诉访客没送出去
+            showNote("iq-failed");
+        } finally {
+            if (sendBtn) {
+                sendBtn.disabled = false;
+                sendBtn.removeAttribute("aria-busy");
+            }
+        }
+    });
+
+    waBtn?.addEventListener("click", () => {
         if (!form.reportValidity()) return;
         const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(
             compose(form),
@@ -228,5 +310,42 @@ const email = siteConfig.inquiryEmail;
         margin: 0;
         font-size: 0.82rem;
         color: var(--color-muted);
+    }
+
+    /* 蜜罐：移出视口但仍在表单内。不能用 display:none —— 部分机器人会跳过不可见字段 */
+    .hp {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    .note {
+        display: none;
+        margin: 0;
+        padding: 0.8rem 0.95rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--color-line);
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: var(--color-ink);
+    }
+
+    /* 无 JS 时由服务端 303 带锚点回来命中 :target；脚本在场时加 .show */
+    .note:target,
+    .note.show {
+        display: block;
+    }
+
+    .note.ok {
+        background: var(--color-accent-soft);
+        border-color: var(--color-accent);
+    }
+
+    .note.warn {
+        background: var(--color-warn-soft);
+        border-color: var(--color-warn);
     }
 </style>

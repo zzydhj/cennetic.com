@@ -38,7 +38,10 @@ create table if not exists public.articles (
   -- 日期存原文（裸 ISO 串）：timestamptz 会因构建环境时区不同(CF=UTC vs 本地=+8)把日期渲染漂 8h，
   -- 故与 frontmatter 逐字对齐；排序/比较靠 ISO 字典序，足够。
   "date"           text not null,
-  lastmod          text,
+  -- lastmod 必须是「原文日期或空」：早期它是 timestamptz，0002 改列型时把
+  -- default now() 一起带了过来，于是省略该列的写入会塞进「2026-…+00」这种
+  -- 带偏移的脏值，把快照的形状守卫打爆（见 migrations/0005）。默认值钉成 ''。
+  lastmod          text not null default '',
   modified         text,
   categories       text[] not null default '{}',        -- 指向 blog_categories.slug
   author           text,                                -- 指向 authors.slug
@@ -171,6 +174,24 @@ create table if not exists public.media_assets (
   created_at   timestamptz not null default now()
 );
 
+-- ============================================================================
+-- 询盘 inquiries（前台表单写入的业务数据，不是站点内容 → 不进快照）
+--   权限与其余内容表不同，单独写在下面：访客只准投递，读不到任何历史行。
+-- ============================================================================
+create table if not exists public.inquiries (
+  id          uuid primary key default gen_random_uuid(),
+  name        text not null,
+  email       text not null,
+  phone       text not null default '',
+  country     text not null default '',
+  message     text not null,
+  page        text not null default '',                  -- 来源页，产品页复用时区分机型
+  product     text not null default '',
+  state       text not null default 'new' check (state in ('new','reading','done','junk')),
+  note        text not null default '',                  -- 内部备注，永不对访客开放
+  created_at  timestamptz not null default now()
+);
+
 -- ── 索引：贴合列表/筛选/发布的访问模式 ──────────────────────────────────────
 create index if not exists articles_status_idx      on public.articles (status);
 create index if not exists articles_date_idx        on public.articles ("date" desc);
@@ -180,6 +201,8 @@ create index if not exists pages_menu_order_idx     on public.pages (menu_order)
 create index if not exists products_status_idx      on public.products (status);
 create index if not exists product_categories_parent_idx on public.product_categories (parent);
 create index if not exists product_categories_trail_idx  on public.product_categories using gin (trail);
+create index if not exists inquiries_created_idx    on public.inquiries (created_at desc);
+create index if not exists inquiries_state_idx      on public.inquiries (state);
 
 -- ── updated_at 触发器（仅对含该列的可变表）─────────────────────────────────
 do $$
@@ -218,3 +241,35 @@ end$$;
 
 -- 表属主/服务密钥走 BYPASSRLS（Supabase 的 service_role 默认绕过 RLS），
 -- 故 snapshot/seed 脚本用 service_role 能整表读写，前台 anon 被拒。
+
+-- ============================================================================
+-- 询盘表的 RLS 与上面相反：访客必须能投递，但绝不能读到彼此
+--   · anon 只有一条 for insert 策略，且 with check 里带真实约束（长度/邮箱格式/
+--     state 只能 'new'/note 只能空）—— 拿到公开 anon key 也只能丢一条合规新询盘，
+--     读不到历史、改不了别人的行、也不能把自己标的东西预设为已处理。
+--     约束放在 with check 而不是只放前端，是为了绕过 Pages Function 直打 REST 同样被库拦住。
+--   · authenticated 全权（查看 / 改状态 / 写备注 / 删除）。
+-- ============================================================================
+alter table public.inquiries enable row level security;
+alter table public.inquiries force row level security;
+
+drop policy if exists "public_drop_only" on public.inquiries;
+create policy "public_drop_only" on public.inquiries
+  for insert to anon
+  with check (
+    state = 'new'
+    and note = ''
+    and char_length(trim(name)) between 1 and 120
+    and char_length(trim(email)) between 3 and 254
+    and email ~ '^[^@\s]+@[^@\s]+\.[^@\s]+$'
+    and char_length(trim(message)) between 5 and 4000
+    and char_length(phone)   <= 60
+    and char_length(country) <= 80
+    and char_length(page)    <= 300
+    and char_length(product) <= 200
+  );
+
+drop policy if exists "authenticated_full_access" on public.inquiries;
+create policy "authenticated_full_access" on public.inquiries
+  for all to authenticated
+  using (true) with check (true);
