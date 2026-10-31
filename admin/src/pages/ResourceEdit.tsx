@@ -4,6 +4,7 @@
  */
 import { useEffect, useMemo, useState } from 'react';
 import { explainDbError, friendlyDbMessage, validateRow } from '../lib/validate';
+import { UploadScopeProvider } from '../lib/uploadScope';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { sanitizeHtml } from '../lib/sanitize';
@@ -283,6 +284,11 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
     }
 
     const statusField = resource.fields.find((f) => f.name === 'status');
+    /*
+     * 上传时带给服务端的归属标识：用当前这条内容的网址标识，新建时还没填就退回类型名。
+     * 它只影响图片文件名可读性（uploads/2026/10/v-856…-spindle-143205.webp），不参与业务判断。
+     */
+    const uploadScope = resource.singleton ? resource.key : String(form[resource.idField] ?? '').trim() || resource.key;
     const seoTitle = String(form.title ?? form.name ?? '');
     const seoDesc = stripHtml(String(form.description ?? form.summary ?? ''));
     const seoPath = String(form.canonical ?? '') || (resource.key === 'products' ? `/product/${String(form.slug ?? '')}/` : `/${String(form.slug ?? '')}/`);
@@ -322,6 +328,8 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
     }
 
     return (
+        /* Provider 只多包一层，目的是让埋在三层下的 ImageField 知道在为谁上传 */
+        <UploadScopeProvider value={uploadScope}>
         <div className="pb-20">
             <PageHeader
                 kicker={`${resource.group} · ${isNew ? '新建' : siteSection ? siteSection.label : '编辑'}`}
@@ -663,5 +671,6 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                 confirmLabel="永久删除"
             />
         </div>
+        </UploadScopeProvider>
     );
 }

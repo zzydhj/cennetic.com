@@ -58,12 +58,17 @@ async function compressImage(file: File): Promise<{ blob: Blob; width: number; h
     return blob ? { blob, width: w, height: h } : { blob: file, width: w0, height: h0 };
 }
 
-/** 压缩后上传到 R2（经 Pages Function），并登记进媒体库，返回公开 URL 与最终宽高 */
-export async function uploadImage(file: File): Promise<UploadedMedia> {
+/**
+ * 压缩后上传到对象存储（经 Pages Function），并登记进媒体库，返回公开 URL 与最终宽高。
+ * scope 是「这条图给哪篇内容用」（一般传那条内容的网址标识），服务端会把它编进文件名；
+ * 不传则只靠原文件名加时间，不会报错。
+ */
+export async function uploadImage(file: File, scope = ''): Promise<UploadedMedia> {
     const { blob, width, height } = await compressImage(file);
     const name = blob === file ? file.name : `${(file.name.replace(/\.[^.]+$/, '') || 'image').replace(/[^\w.\-]+/g, '-')}.webp`;
     const fd = new FormData();
     fd.append('file', new File([blob], name, { type: blob.type || 'image/webp' }));
+    if (scope) fd.append('scope', scope);
 
     const res = await fetch('/api/media/upload', { method: 'POST', headers: await authHeaders(), body: fd });
     if (!res.ok) {

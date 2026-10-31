@@ -5,6 +5,7 @@
  */
 import { useRef, useState } from 'react';
 import { uploadImage } from '../lib/media';
+import { useUploadScope } from '../lib/uploadScope';
 import { cx } from '../lib/cx';
 import { Icon } from './Icon';
 
@@ -33,6 +34,8 @@ export function ImageField({
     onChange: (v: unknown) => void;
 }): JSX.Element {
     const [busy, setBusy] = useState(false);
+    /* 当前在为哪条内容上传（由编辑页的 Provider 提供），用来让服务端把归属编进文件名 */
+    const scope = useUploadScope();
     const [err, setErr] = useState<string | null>(null);
     const [drag, setDrag] = useState(false);
     const [done, setDone] = useState(0);
@@ -60,7 +63,7 @@ export function ImageField({
         const acc: Img[] = multiple ? [...list] : [];
         try {
             for (const [i, f] of todo.entries()) {
-                const up = await uploadImage(f);
+                const up = await uploadImage(f, scope);
                 const img: Img = { src: up.url, alt: f.name.replace(/\.[^.]+$/, ''), width: up.width, height: up.height };
                 if (multiple) {
                     acc.push(img);
