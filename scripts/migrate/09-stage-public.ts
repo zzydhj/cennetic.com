@@ -21,10 +21,10 @@
  * 只需把图片 URL 出口（scripts/migrate/lib/images.ts 的 publicPathFromKey）
  * 改成指向 R2 域名，业务代码不用动。
  *
- * 同步是幂等的：只复制比目标新的文件，删掉源里已不存在的孤儿文件，
- * 所以重跑不会把 public/images 变成垃圾堆积场。
+ * 同步是幂等的：只复制比目标新的文件。不在源清单里的文件只报告、不删除 ——
+ * public/images 已随仓库提交并被内容引用，本脚本无权删它（详见下方 stale 那段注释）。
  */
-import { cp, readdir, rm, stat, mkdir } from 'node:fs/promises';
+import { cp, readdir, stat, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { ROOT } from './lib/config.ts';
@@ -98,10 +98,23 @@ export async function stagePublicImages(): Promise<void> {
         copied += 1;
     }
 
-    // 清掉源里已不存在的孤儿文件，避免旧图长期留在产物里
+    /*
+     * 这里以前会 rm 掉「源里没有」的文件，现在只报告、不删。
+     *
+     * 原因：public/images 已随仓库提交，是正式内容而不是可重建的中间产物；而
+     * media-staging 只覆盖其中一部分路径。实测无差别清理会删 196 个文件（153 张产品图
+     * + 43 张站内素材），其中 156 个正被数据库引用 —— 一条命令就能让全站产品图破图。
+     * 把清理范围收窄到「staging 出现过的顶层目录」后，仍会删掉 43 个 site/company/ 下的
+     * 在用图片（因为 staging 里也有一个 site/ 顶层）。既然任何自动判据都在误删真实内容，
+     * 删这个动作本身就不该由本脚本做 —— 要看哪些没被引用，拿下面报出的清单人工定。
+     */
     const keep = new Set(source);
-    const orphans = target.filter((f) => !keep.has(f));
-    for (const f of orphans) await rm(join(PUBLIC_IMAGES, f), { force: true });
+    const stale = target.filter((f) => !keep.has(f));
+    if (stale.length > 0) {
+        log(`ℹ ${stale.length} 个文件不在本次同步源里（多为人工维护的正式图），已全部保留未删：`);
+        for (const f of stale.slice(0, 12)) log(`    · ${f}`);
+        if (stale.length > 12) log(`    … 另有 ${stale.length - 12} 个`);
+    }
 
     const bytes = (await Promise.all(source.map((f) => stat(join(PUBLIC_IMAGES, f)))))
         .reduce((s, x) => s + x.size, 0);
@@ -109,6 +122,6 @@ export async function stagePublicImages(): Promise<void> {
     log('');
     log(`✓ public/images 就绪：${source.length} 个文件，合计 ${(bytes / 1024 / 1024).toFixed(1)} MB`);
     log(`    来源 WordPress 原图 ${staged.length} + 人工产物 ${site.length}（site-assets）`);
-    log(`    新复制 ${copied}，已存在跳过 ${skipped}，清理孤儿 ${orphans.length}`);
+    log(`    新复制 ${copied}，已存在跳过 ${skipped}，不在源清单内而保留 ${stale.length}`);
     log(`  注：这是切换到 Cloudflare R2 之前的临时托管方式`);
 }
