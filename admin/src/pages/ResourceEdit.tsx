@@ -250,7 +250,7 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
                 setConflict(true);
                 setError(
                     '这篇在你打开之后又被保存过一次。现在直接保存，会把对方那次修改退回你打开时的版本（包括你根本没碰过的字段）。' +
-                        '如果只有你一个人在用，多半是自己开了两个标签页；若对方改的内容要保留，请先复制你写的内容再刷新重做。',
+                    '如果只有你一个人在用，多半是自己开了两个标签页；若对方改的内容要保留，请先复制你写的内容再刷新重做。',
                 );
                 toast.fail('可能覆盖别人的改动，已暂停保存', '确认无误后可强制保存');
                 return;
@@ -330,347 +330,347 @@ export default function ResourceEdit({ resource }: { resource: Resource }): JSX.
     return (
         /* Provider 只多包一层，目的是让埋在三层下的 ImageField 知道在为谁上传 */
         <UploadScopeProvider value={uploadScope}>
-        <div className="pb-20">
-            <PageHeader
-                kicker={`${resource.group} · ${isNew ? '新建' : siteSection ? siteSection.label : '编辑'}`}
-                title={
-                    <span className="flex flex-wrap items-center gap-2.5">
-                        {isNew ? `新建${resource.singular}` : resource.displayName ?? String(form[resource.titleField] ?? resource.singular)}
-                        {siteSection && (
-                            <Badge tone="gold" icon={siteSection.icon}>
-                                {siteSection.label}
-                            </Badge>
-                        )}
-                        {!isNew && statusField && <StatusBadge status={form.status as string | undefined} />}
-                    </span>
-                }
-                desc={resource.desc ?? `维护${resource.singular}；带 * 的字段是前台生成的必需项。`}
-                meta={
-                    <>
-                        {resource.singleton ? (
-                            <Tooltip text="站点设置全站只有这一行，改完所有页面都会用它；所以默认只读，要改需显式解锁。">
-                                <Badge tone="amber" icon="lock">
-                                    全站唯一 · 影响所有页面
+            <div className="pb-20">
+                <PageHeader
+                    kicker={`${resource.group} · ${isNew ? '新建' : siteSection ? siteSection.label : '编辑'}`}
+                    title={
+                        <span className="flex flex-wrap items-center gap-2.5">
+                            {isNew ? `新建${resource.singular}` : resource.displayName ?? String(form[resource.titleField] ?? resource.singular)}
+                            {siteSection && (
+                                <Badge tone="gold" icon={siteSection.icon}>
+                                    {siteSection.label}
                                 </Badge>
-                            </Tooltip>
-                        ) : (
-                            <Badge tone="slate" icon="link">
-                                <span className="font-mono">{String(form[resource.idField] ?? '（保存后生成地址）')}</span>
-                            </Badge>
-                        )}
-                        {!isNew && form.updated_at != null && (
-                            <Badge tone="slate" icon="history">
-                                更新于 {dateTime(form.updated_at as string)}（{ago(form.updated_at as string)}）
-                            </Badge>
-                        )}
-                        {dirty && (
-                            <Badge tone="amber" dot>
-                                有未保存改动
-                            </Badge>
-                        )}
-                    </>
-                }
-                actions={
-                    <>
-                        <Link to={`/${resource.key}`}>
-                            <Button variant="secondary" icon="chevronLeft">
-                                返回{resource.label}
-                            </Button>
-                        </Link>
-                        {dirty && (
-                            <Button variant="ghost" icon="refresh" onClick={() => setForm(JSON.parse(baseline) as Row)}>
-                                放弃改动
-                            </Button>
-                        )}
-                        <Button icon="check" loading={saving} onClick={() => void save()}>
-                            {isNew ? '创建' : '保存'}
-                        </Button>
-                    </>
-                }
-            />
-
-            {error && (
-                <div className="mb-4 flex items-start gap-2.5 rounded-lg bg-accent-soft px-3.5 py-2.5 text-xs font-medium text-accent ring-1 ring-inset ring-accent/20">
-                    <Icon name="alert" className="mt-px h-4 w-4 shrink-0" />
-                    <span className="min-w-0 flex-1">{error}</span>
-                    {conflict ? (
-                        <button
-                            type="button"
-                            onClick={() => void save(true)}
-                            className="shrink-0 rounded-md bg-accent/10 px-2 py-0.5 font-semibold underline"
-                        >
-                            坚持用我的版本
-                        </button>
-                    ) : (
-                        <button type="button" onClick={() => setError(null)} className="shrink-0 underline">
-                            知道了
-                        </button>
-                    )}
-                </div>
-            )}
-
-            <div className="grid grid-cols-1 gap-5 xl:grid-cols-12">
-                {/* 左：分区表单 */}
-                <div className="space-y-5 xl:col-span-8">
-                    {sections.map((g, gi) => (
-                        <SectionCard
-                            key={g.key}
-                            id={g.key}
-                            className="scroll-mt-24"
-                            icon={SECTION_META[g.key].icon}
-                            title={SECTION_META[g.key].title}
-                            desc={SECTION_META[g.key].desc}
-                            tone={g.key === 'adv' ? 'slate' : g.key === 'body' ? 'green' : 'brand'}
-                            actions={
-                                g.key === 'seo' ? (
-                                    <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
-                                        <Icon name="eye" className="h-3.5 w-3.5" />
-                                        Google 结果实时预览
-                                    </span>
-                                ) : (
-                                    <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
-                                        <Icon name="list" className="h-3.5 w-3.5" />
-                                        {g.fields.length} 个字段
-                                    </span>
-                                )
-                            }
-                            bodyClassName={g.key === 'body' ? 'p-4' : 'p-5'}
-                        >
-                            <div className={cx('grid grid-cols-1 gap-4', g.key === 'body' ? '' : 'md:grid-cols-2')}>
-                                {g.fields.map((f) => (
-                                    <FieldControl
-                                        key={f.name}
-                                        field={f}
-                                        value={form[f.name]}
-                                        options={refs[f.name] ?? []}
-                                        section={siteSection?.key}
-                                        onChange={(v) => setVal(f.name, v)}
-                                    />
-                                ))}
-                            </div>
-                            {g.key === 'seo' && hasSeo && (
-                                <div className="mt-4 space-y-2 border-t border-slate-100 pt-4">
-                                    <p className="text-[11px] leading-relaxed text-slate-500">
-                                        下面是这条页面目前在 Google 结果里的样子，随输入实时变：蓝标题来自「SEO 标题 / 标题」字段，灰两行来自「摘要 / 描述」字段，结果下方的问答下拉来自「FAQ 问答」组。
-                                    </p>
-                                    <SeoPreview
-                                        title={seoTitle}
-                                        description={seoDesc}
-                                        path={seoPath}
-                                        brand="CENNETIC"
-                                        hero={heroSrc || null}
-                                        heroAlt={String(form.hero_alt ?? '')}
-                                    />
-                                </div>
                             )}
-                            {gi === 0 && !resource.singleton && (
-                                <p className="mt-4 flex items-start gap-1.5 rounded-lg bg-brand-50/70 px-3 py-2 text-[11px] leading-relaxed text-brand-700 ring-1 ring-inset ring-brand-100">
-                                    <Icon name="alert" className="mt-px h-3.5 w-3.5 shrink-0" />
-                                    Slug 是前台网址的一部分，改动后旧链接不会自动跳转，需要额外做 301。
-                                </p>
+                            {!isNew && statusField && <StatusBadge status={form.status as string | undefined} />}
+                        </span>
+                    }
+                    desc={resource.desc ?? `维护${resource.singular}；带 * 的字段是前台生成的必需项。`}
+                    meta={
+                        <>
+                            {resource.singleton ? (
+                                <Tooltip text="站点设置全站只有这一行，改完所有页面都会用它；所以默认只读，要改需显式解锁。">
+                                    <Badge tone="amber" icon="lock">
+                                        全站唯一 · 影响所有页面
+                                    </Badge>
+                                </Tooltip>
+                            ) : (
+                                <Badge tone="slate" icon="link">
+                                    <span className="font-mono">{String(form[resource.idField] ?? '（保存后生成地址）')}</span>
+                                </Badge>
                             )}
-                        </SectionCard>
-                    ))}
+                            {!isNew && form.updated_at != null && (
+                                <Badge tone="slate" icon="history">
+                                    更新于 {dateTime(form.updated_at as string)}（{ago(form.updated_at as string)}）
+                                </Badge>
+                            )}
+                            {dirty && (
+                                <Badge tone="amber" dot>
+                                    有未保存改动
+                                </Badge>
+                            )}
+                        </>
+                    }
+                    actions={
+                        <>
+                            <Link to={`/${resource.key}`}>
+                                <Button variant="secondary" icon="chevronLeft">
+                                    返回{resource.label}
+                                </Button>
+                            </Link>
+                            {dirty && (
+                                <Button variant="ghost" icon="refresh" onClick={() => setForm(JSON.parse(baseline) as Row)}>
+                                    放弃改动
+                                </Button>
+                            )}
+                            <Button icon="check" loading={saving} onClick={() => void save()}>
+                                {isNew ? '创建' : '保存'}
+                            </Button>
+                        </>
+                    }
+                />
 
-                    {!resource.preview && !resource.singleton && (
-                        <Card className="flex items-center gap-3 p-4">
-                            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-400">
-                                <Icon name="eye" className="h-4 w-4" />
-                            </span>
-                            <p className="text-[11px] leading-relaxed text-slate-500">
-                                该类型没有独立前台页面（只做数据/分类），因此不提供预览链接；发布后会被引用它的页面读取。
-                            </p>
-                        </Card>
-                    )}
-                </div>
-
-                {/* 右：常驻决策栏 */}
-                <aside className="space-y-5 xl:col-span-4">
-                    <div className="sticky top-[88px] space-y-5">
-                        {resource.singleton ? (
-                            /* 单例配置没有状态/草稿概念，保存只放顶栏一处：这里再摆一个保存按钮会让人以为要点两次 */
-                            <SectionCard
-                                icon="rocket"
-                                tone="gold"
-                                title="改动如何生效"
-                                desc="保存只是存进后台，上线仍需点顶栏发布"
+                {error && (
+                    <div className="mb-4 flex items-start gap-2.5 rounded-lg bg-accent-soft px-3.5 py-2.5 text-xs font-medium text-accent ring-1 ring-inset ring-accent/20">
+                        <Icon name="alert" className="mt-px h-4 w-4 shrink-0" />
+                        <span className="min-w-0 flex-1">{error}</span>
+                        {conflict ? (
+                            <button
+                                type="button"
+                                onClick={() => void save(true)}
+                                className="shrink-0 rounded-md bg-accent/10 px-2 py-0.5 font-semibold underline"
                             >
-                                <p className="text-[11px] leading-relaxed text-slate-500">
-                                    站点设置全站唯一，没有草稿/状态概念：表单改的就是这一份配置本身。保存后点顶栏「发布上线」才会同步到前台。本页保存入口只有右上角一个。
-                                </p>
-                            </SectionCard>
+                                坚持用我的版本
+                            </button>
                         ) : (
-                            <SectionCard
-                                icon="rocket"
-                                tone="gold"
-                                title="发布这条内容"
-                                desc="状态决定是否上前台，改动仍需点顶栏发布"
-                            >
-                                {statusField ? (
-                                    <>
-                                        <SegmentedControl<'draft' | 'published'>
-                                            value={form.status === 'published' ? 'published' : 'draft'}
-                                            onChange={(v) => setVal('status', v)}
-                                            options={[
-                                                { value: 'draft', label: '草稿', icon: 'pencil' },
-                                                { value: 'published', label: '已发布', icon: 'globe' },
-                                            ]}
-                                        />
-                                        <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-                                            {form.status === 'published'
-                                                ? '已发布：下次发布后，网站首页、列表页与搜索收录都会带上它。'
-                                                : '草稿：只存在于后台，网站上不会出现，也不会被搜索收录，可放心反复编辑。'}
-                                        </p>
-                                    </>
-                                ) : (
-                                    <p className="text-[11px] leading-relaxed text-slate-500">
-                                        该类型没有草稿概念，保存后下次发布即生效。
-                                    </p>
-                                )}
-                                <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
-                                    <Button icon="check" loading={saving} onClick={() => void save()}>
-                                        {isNew ? '创建立即返回' : '保存'}
-                                    </Button>
-                                    {resource.preview && !isNew && (
-                                        <Button
-                                            variant="secondary"
-                                            icon="external"
-                                            onClick={() => window.open(window.location.origin + seoPath, '_blank', 'noopener')}
-                                        >
-                                            前台预览
-                                        </Button>
-                                    )}
-                                </div>
-                            </SectionCard>
+                            <button type="button" onClick={() => setError(null)} className="shrink-0 underline">
+                                知道了
+                            </button>
                         )}
+                    </div>
+                )}
 
-                        {/* 没有必填项、也没有正文/主图可读时（如站点设置），整张自检卡只是噪音，不渲染 */}
-                        {(required.length > 0 || hasBodyField || hasHeroField) && (
+                <div className="grid grid-cols-1 gap-5 xl:grid-cols-12">
+                    {/* 左：分区表单 */}
+                    <div className="space-y-5 xl:col-span-8">
+                        {sections.map((g, gi) => (
                             <SectionCard
-                                icon="shield"
-                                title="保存前自检"
-                                desc={`${required.length} 个必填项 · ${sections.length} 个分区`}
+                                key={g.key}
+                                id={g.key}
+                                className="scroll-mt-24"
+                                icon={SECTION_META[g.key].icon}
+                                title={SECTION_META[g.key].title}
+                                desc={SECTION_META[g.key].desc}
+                                tone={g.key === 'adv' ? 'slate' : g.key === 'body' ? 'green' : 'brand'}
                                 actions={
-                                    missing.length === 0 ? (
-                                        <Badge tone="green" icon="checkCircle">
-                                            可保存
-                                        </Badge>
+                                    g.key === 'seo' ? (
+                                        <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
+                                            <Icon name="eye" className="h-3.5 w-3.5" />
+                                            Google 结果实时预览
+                                        </span>
                                     ) : (
-                                        <Badge tone="red" icon="alert">
-                                            缺 {missing.length} 项
-                                        </Badge>
+                                        <span className="hidden items-center gap-1.5 text-[11px] text-slate-400 sm:flex">
+                                            <Icon name="list" className="h-3.5 w-3.5" />
+                                            {g.fields.length} 个字段
+                                        </span>
                                     )
                                 }
-                                bodyClassName="p-4"
+                                bodyClassName={g.key === 'body' ? 'p-4' : 'p-5'}
                             >
-                                <ul className="space-y-1.5">
-                                    {required.map((f) => {
-                                        const ok = !!String(form[f.name] ?? '').trim();
-                                        return (
-                                            <li key={f.name} className="flex items-center gap-2 text-[12px]">
-                                                <Icon
-                                                    name={ok ? 'checkCircle' : 'dot'}
-                                                    className={cx('h-3.5 w-3.5 shrink-0', ok ? 'text-emerald-500' : 'text-slate-300')}
-                                                />
-                                                <span className={cx('min-w-0 flex-1 truncate', ok ? 'text-slate-600' : 'font-medium text-slate-800')}>
-                                                    {f.label}
-                                                </span>
-                                                {!ok && <span className="shrink-0 text-[10px] font-semibold uppercase text-accent">必填</span>}
-                                            </li>
-                                        );
-                                    })}
-                                    {required.length === 0 && <li className="text-[12px] text-slate-400">该类型没有强制必填项</li>}
-                                </ul>
-                                {(hasBodyField || hasHeroField) && (
-                                    <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3 text-[11px]">
-                                        {hasBodyField && (
-                                            <span className="flex items-center gap-1.5 text-slate-500">
-                                                <Icon name="code" className="h-3.5 w-3.5 text-slate-400" />
-                                                正文 {bodyChars} 字
-                                            </span>
-                                        )}
-                                        {hasHeroField && (
-                                            <span className="flex items-center gap-1.5 text-slate-500">
-                                                <Icon name="image" className="h-3.5 w-3.5 text-slate-400" />
-                                                {heroSrc ? '已设置主图' : '未设置主图'}
-                                            </span>
-                                        )}
-                                    </div>
-                                )}
-                            </SectionCard>
-                        )}
-
-                        {!isNew && !resource.singleton && (
-                            <Card className="border-accent/20 p-4">
-                                <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-accent">
-                                    <Icon name="alert" className="h-3.5 w-3.5" />
-                                    危险区
-                                </p>
-                                <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
-                                    删除会把这条记录从后台移除，下次发布后网站上不再有该页面。
-                                </p>
-                                <Button variant="danger" icon="trash" className="mt-3" onClick={() => setAskDel(true)}>
-                                    删除这条{resource.singular}
-                                </Button>
-                            </Card>
-                        )}
-
-                        {sections.length > 1 && (
-                            <Card className="p-4">
-                                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">分区跳转</p>
-                                <div className="flex flex-wrap gap-1.5">
-                                    {sections.map((g) => (
-                                        <a
-                                            key={g.key}
-                                            href={`#${g.key}`}
-                                            className="rounded-md bg-slate-50 px-2 py-1 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-100 transition-colors hover:bg-brand-50 hover:text-brand-700"
-                                        >
-                                            {SECTION_META[g.key].title}
-                                        </a>
+                                <div className={cx('grid grid-cols-1 gap-4', g.key === 'body' ? '' : 'md:grid-cols-2')}>
+                                    {g.fields.map((f) => (
+                                        <FieldControl
+                                            key={f.name}
+                                            field={f}
+                                            value={form[f.name]}
+                                            options={refs[f.name] ?? []}
+                                            section={siteSection?.key}
+                                            onChange={(v) => setVal(f.name, v)}
+                                        />
                                     ))}
                                 </div>
+                                {g.key === 'seo' && hasSeo && (
+                                    <div className="mt-4 space-y-2 border-t border-slate-100 pt-4">
+                                        <p className="text-[11px] leading-relaxed text-slate-500">
+                                            下面是这条页面目前在 Google 结果里的样子，随输入实时变：蓝标题来自「SEO 标题 / 标题」字段，灰两行来自「摘要 / 描述」字段，结果下方的问答下拉来自「FAQ 问答」组。
+                                        </p>
+                                        <SeoPreview
+                                            title={seoTitle}
+                                            description={seoDesc}
+                                            path={seoPath}
+                                            brand="CENNETIC"
+                                            hero={heroSrc || null}
+                                            heroAlt={String(form.hero_alt ?? '')}
+                                        />
+                                    </div>
+                                )}
+                                {gi === 0 && !resource.singleton && (
+                                    <p className="mt-4 flex items-start gap-1.5 rounded-lg bg-brand-50/70 px-3 py-2 text-[11px] leading-relaxed text-brand-700 ring-1 ring-inset ring-brand-100">
+                                        <Icon name="alert" className="mt-px h-3.5 w-3.5 shrink-0" />
+                                        Slug 是前台网址的一部分，改动后旧链接不会自动跳转，需要额外做 301。
+                                    </p>
+                                )}
+                            </SectionCard>
+                        ))}
+
+                        {!resource.preview && !resource.singleton && (
+                            <Card className="flex items-center gap-3 p-4">
+                                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-400">
+                                    <Icon name="eye" className="h-4 w-4" />
+                                </span>
+                                <p className="text-[11px] leading-relaxed text-slate-500">
+                                    该类型没有独立前台页面（只做数据/分类），因此不提供预览链接；发布后会被引用它的页面读取。
+                                </p>
                             </Card>
                         )}
                     </div>
-                </aside>
-            </div>
 
-            {/* 底部常驻动作条：只在有未保存改动时出现 */}
-            <div
-                className={cx(
-                    'fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200/80 bg-white/85 px-4 py-3 backdrop-blur-xl transition-all duration-300 ease-expo sm:px-6 lg:pl-[264px]',
-                    dirty ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0',
-                )}
-            >
-                <div className="mx-auto flex max-w-[1360px] flex-wrap items-center gap-3">
-                    <span className="flex items-center gap-2 text-[12px] font-medium text-amber-700">
-                        <span className="relative flex h-2 w-2">
-                            <span className="absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-60 animate-ping-soft" />
-                            <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+                    {/* 右：常驻决策栏 */}
+                    <aside className="space-y-5 xl:col-span-4">
+                        <div className="sticky top-[88px] space-y-5">
+                            {resource.singleton ? (
+                                /* 单例配置没有状态/草稿概念，保存只放顶栏一处：这里再摆一个保存按钮会让人以为要点两次 */
+                                <SectionCard
+                                    icon="rocket"
+                                    tone="gold"
+                                    title="改动如何生效"
+                                    desc="保存只是存进后台，上线仍需点顶栏发布"
+                                >
+                                    <p className="text-[11px] leading-relaxed text-slate-500">
+                                        站点设置全站唯一，没有草稿/状态概念：表单改的就是这一份配置本身。保存后点顶栏「发布上线」才会同步到前台。本页保存入口只有右上角一个。
+                                    </p>
+                                </SectionCard>
+                            ) : (
+                                <SectionCard
+                                    icon="rocket"
+                                    tone="gold"
+                                    title="发布这条内容"
+                                    desc="状态决定是否上前台，改动仍需点顶栏发布"
+                                >
+                                    {statusField ? (
+                                        <>
+                                            <SegmentedControl<'draft' | 'published'>
+                                                value={form.status === 'published' ? 'published' : 'draft'}
+                                                onChange={(v) => setVal('status', v)}
+                                                options={[
+                                                    { value: 'draft', label: '草稿', icon: 'pencil' },
+                                                    { value: 'published', label: '已发布', icon: 'globe' },
+                                                ]}
+                                            />
+                                            <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+                                                {form.status === 'published'
+                                                    ? '已发布：下次发布后，网站首页、列表页与搜索收录都会带上它。'
+                                                    : '草稿：只存在于后台，网站上不会出现，也不会被搜索收录，可放心反复编辑。'}
+                                            </p>
+                                        </>
+                                    ) : (
+                                        <p className="text-[11px] leading-relaxed text-slate-500">
+                                            该类型没有草稿概念，保存后下次发布即生效。
+                                        </p>
+                                    )}
+                                    <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
+                                        <Button icon="check" loading={saving} onClick={() => void save()}>
+                                            {isNew ? '创建立即返回' : '保存'}
+                                        </Button>
+                                        {resource.preview && !isNew && (
+                                            <Button
+                                                variant="secondary"
+                                                icon="external"
+                                                onClick={() => window.open(window.location.origin + seoPath, '_blank', 'noopener')}
+                                            >
+                                                前台预览
+                                            </Button>
+                                        )}
+                                    </div>
+                                </SectionCard>
+                            )}
+
+                            {/* 没有必填项、也没有正文/主图可读时（如站点设置），整张自检卡只是噪音，不渲染 */}
+                            {(required.length > 0 || hasBodyField || hasHeroField) && (
+                                <SectionCard
+                                    icon="shield"
+                                    title="保存前自检"
+                                    desc={`${required.length} 个必填项 · ${sections.length} 个分区`}
+                                    actions={
+                                        missing.length === 0 ? (
+                                            <Badge tone="green" icon="checkCircle">
+                                                可保存
+                                            </Badge>
+                                        ) : (
+                                            <Badge tone="red" icon="alert">
+                                                缺 {missing.length} 项
+                                            </Badge>
+                                        )
+                                    }
+                                    bodyClassName="p-4"
+                                >
+                                    <ul className="space-y-1.5">
+                                        {required.map((f) => {
+                                            const ok = !!String(form[f.name] ?? '').trim();
+                                            return (
+                                                <li key={f.name} className="flex items-center gap-2 text-[12px]">
+                                                    <Icon
+                                                        name={ok ? 'checkCircle' : 'dot'}
+                                                        className={cx('h-3.5 w-3.5 shrink-0', ok ? 'text-emerald-500' : 'text-slate-300')}
+                                                    />
+                                                    <span className={cx('min-w-0 flex-1 truncate', ok ? 'text-slate-600' : 'font-medium text-slate-800')}>
+                                                        {f.label}
+                                                    </span>
+                                                    {!ok && <span className="shrink-0 text-[10px] font-semibold uppercase text-accent">必填</span>}
+                                                </li>
+                                            );
+                                        })}
+                                        {required.length === 0 && <li className="text-[12px] text-slate-400">该类型没有强制必填项</li>}
+                                    </ul>
+                                    {(hasBodyField || hasHeroField) && (
+                                        <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3 text-[11px]">
+                                            {hasBodyField && (
+                                                <span className="flex items-center gap-1.5 text-slate-500">
+                                                    <Icon name="code" className="h-3.5 w-3.5 text-slate-400" />
+                                                    正文 {bodyChars} 字
+                                                </span>
+                                            )}
+                                            {hasHeroField && (
+                                                <span className="flex items-center gap-1.5 text-slate-500">
+                                                    <Icon name="image" className="h-3.5 w-3.5 text-slate-400" />
+                                                    {heroSrc ? '已设置主图' : '未设置主图'}
+                                                </span>
+                                            )}
+                                        </div>
+                                    )}
+                                </SectionCard>
+                            )}
+
+                            {!isNew && !resource.singleton && (
+                                <Card className="border-accent/20 p-4">
+                                    <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-accent">
+                                        <Icon name="alert" className="h-3.5 w-3.5" />
+                                        危险区
+                                    </p>
+                                    <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
+                                        删除会把这条记录从后台移除，下次发布后网站上不再有该页面。
+                                    </p>
+                                    <Button variant="danger" icon="trash" className="mt-3" onClick={() => setAskDel(true)}>
+                                        删除这条{resource.singular}
+                                    </Button>
+                                </Card>
+                            )}
+
+                            {sections.length > 1 && (
+                                <Card className="p-4">
+                                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">分区跳转</p>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {sections.map((g) => (
+                                            <a
+                                                key={g.key}
+                                                href={`#${g.key}`}
+                                                className="rounded-md bg-slate-50 px-2 py-1 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-100 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                                            >
+                                                {SECTION_META[g.key].title}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </Card>
+                            )}
+                        </div>
+                    </aside>
+                </div>
+
+                {/* 底部常驻动作条：只在有未保存改动时出现 */}
+                <div
+                    className={cx(
+                        'fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200/80 bg-white/85 px-4 py-3 backdrop-blur-xl transition-all duration-300 ease-expo sm:px-6 lg:pl-[264px]',
+                        dirty ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-full opacity-0',
+                    )}
+                >
+                    <div className="mx-auto flex max-w-[1360px] flex-wrap items-center gap-3">
+                        <span className="flex items-center gap-2 text-[12px] font-medium text-amber-700">
+                            <span className="relative flex h-2 w-2">
+                                <span className="absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-60 animate-ping-soft" />
+                                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+                            </span>
+                            有未保存改动
                         </span>
-                        有未保存改动
-                    </span>
-                    <span className="hidden text-[11px] text-slate-400 sm:block">离开本页前请先保存，否则改动只留在浏览器里。</span>
-                    <div className="ml-auto flex items-center gap-2">
-                        <Button variant="ghost" icon="close" onClick={() => setForm(JSON.parse(baseline) as Row)}>
-                            放弃
-                        </Button>
-                        <Button icon="check" loading={saving} onClick={() => void save()}>
-                            {isNew ? '创建' : '保存'}
-                        </Button>
+                        <span className="hidden text-[11px] text-slate-400 sm:block">离开本页前请先保存，否则改动只留在浏览器里。</span>
+                        <div className="ml-auto flex items-center gap-2">
+                            <Button variant="ghost" icon="close" onClick={() => setForm(JSON.parse(baseline) as Row)}>
+                                放弃
+                            </Button>
+                            <Button icon="check" loading={saving} onClick={() => void save()}>
+                                {isNew ? '创建' : '保存'}
+                            </Button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <ConfirmDialog
-                open={askDel}
-                onClose={() => setAskDel(false)}
-                onConfirm={() => void remove()}
-                title={`删除「${String(form[resource.titleField] ?? id ?? '')}」？`}
-                desc="将从后台永久删除，网站在下次发布后不再有该页面。此操作不可撤销。"
-                confirmLabel="永久删除"
-            />
-        </div>
+                <ConfirmDialog
+                    open={askDel}
+                    onClose={() => setAskDel(false)}
+                    onConfirm={() => void remove()}
+                    title={`删除「${String(form[resource.titleField] ?? id ?? '')}」？`}
+                    desc="将从后台永久删除，网站在下次发布后不再有该页面。此操作不可撤销。"
+                    confirmLabel="永久删除"
+                />
+            </div>
         </UploadScopeProvider>
     );
 }

@@ -4,7 +4,10 @@
  * 存量迁移正文含表格/样式等复杂结构：这类内容锁定纯文本模式，避免段落化破坏结构。
  * 保存时仍由页面统一走 sanitizeHtml，这里的预览也先过一遍，避免「所见非所得」。
  */
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ClipboardEvent as ReactClipboardEvent } from 'react';
+import { uploadImage } from '../lib/media';
+import { useUploadScope } from '../lib/uploadScope';
+import { useToast } from './Toast';
 import { sanitizeHtml } from '../lib/sanitize';
 import { stripHtml } from '../lib/format';
 import { cx } from '../lib/cx';
@@ -63,6 +66,10 @@ export function HtmlField({
 }): JSX.Element {
     const text = String(value ?? '');
     const ref = useRef<HTMLTextAreaElement>(null);
+    const toast = useToast();
+    /* 上传时要告诉服务端这张图属于哪篇内容，才能生成带归属的文件名 */
+    const scope = useUploadScope();
+    const [pasting, setPasting] = useState(0);
     const [preview, setPreview] = useState(false);
     const [pick, setPick] = useState(false);
     const [showSample, setShowSample] = useState(false);
@@ -117,6 +124,35 @@ export function HtmlField({
         });
     }
 
+    /*
+     * 粘贴本地图片（包括从微信/QQ/浏览器复制的截图）：直接传图并插在光标处。
+     * 以前必须先切到媒体库页上传、再回编辑页用「插图」挑回来，写到一半跳走很容易丢内容。
+     * 挂在容器上而不是 textarea：自定义 Textarea 不一定会转发 onPaste，而事件会冒泡到这一层。
+     */
+    async function onPaste(e: ReactClipboardEvent<HTMLDivElement>): Promise<void> {
+        const files = Array.from(e.clipboardData?.files ?? []).filter((f) => f.type.startsWith('image/'));
+        if (!files.length) return;   // 粘的是文字，不拦，走浏览器默认行为
+        e.preventDefault();
+        setPasting((n) => n + files.length);
+        for (const f of files) {
+            try {
+                const up = await uploadImage(f, scope);
+                const stem = f.name.replace(/\.[^.]+$/, '').trim();
+                /* 截图类文件名（image1、截图、blob…）当 alt 没有意义，宁可不填也要提醒补，
+                   否则正文里会攒出一堆无效 alt —— 这次刚把产品图的空 alt 清理过 */
+                const generic = !stem || /^(image|blob|screenshot|screen[\s-]*shot|pasted|截图|屏幕快照|图片)\d*$/i.test(stem);
+                insert(
+                    `<img src="${up.url}" alt="${generic ? '' : stem.replace(/"/g, '')}"${up.width ? ` width="${up.width}"` : ''}${up.height ? ` height="${up.height}"` : ''} loading="lazy">`,
+                );
+                if (generic) toast.ok('图片已插入', '文件名看不出内容，alt 先留空了，请补一句描述');
+            } catch (err) {
+                toast.fail('粘贴的图片没传上去', err instanceof Error ? err.message : '未知错误');
+            } finally {
+                setPasting((n) => Math.max(0, n - 1));
+            }
+        }
+    }
+
     const toPlain = (): void => {
         if (!canPlain) return;
         setPlain(htmlToText(text));
@@ -128,7 +164,10 @@ export function HtmlField({
     };
 
     return (
-        <div className="overflow-hidden rounded-lg border border-slate-200/90 bg-white shadow-inner transition-shadow focus-within:shadow-card focus-within:border-brand-300">
+        <div
+            onPaste={onPaste}
+            className="overflow-hidden rounded-lg border border-slate-200/90 bg-white shadow-inner transition-shadow focus-within:shadow-card focus-within:border-brand-300"
+        >
             {/* 工具条 */}
             <div className="flex flex-wrap items-center gap-1.5 border-b border-slate-100 bg-[linear-gradient(180deg,#fcfdff,#f5f7fb)] px-2 py-1.5">
                 <span className="mr-0.5 flex items-center gap-0.5 rounded-md bg-slate-200/70 p-0.5">
@@ -160,6 +199,12 @@ export function HtmlField({
                 <Button size="sm" variant="secondary" icon="image" onClick={() => setPick(true)}>
                     插图
                 </Button>
+                {pasting > 0 && (
+                    <span className="flex items-center gap-1 rounded bg-brand-50 px-2 py-1 text-[11px] font-medium text-brand-700">
+                        <Icon name="image" className="h-3.5 w-3.5" />
+                        图片上传中 ×{pasting}
+                    </span>
+                )}
                 {sample && (
                     <Button size="sm" variant="secondary" icon="layers" onClick={() => setShowSample((s) => !s)}>
                         示例模板
@@ -228,7 +273,7 @@ export function HtmlField({
                         setPlain(e.target.value);
                         onChange(textToHtml(e.target.value));
                     }}
-                    placeholder="直接写字：空一行就是新段落，系统自动包段落标签；插图点上方按钮。"
+                    placeholder="直接写字：空一行就是新段落，系统自动包段落标签；插图可点上方按钮，也可以把图复制过来直接粘贴。"
                     className={cx('resize-none rounded-none border-0 bg-white shadow-none focus:shadow-none', paneH)}
                 />
             ) : (
