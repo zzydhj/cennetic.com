@@ -22,6 +22,41 @@ const PUBLIC_DIR = join(ROOT, 'public');
 const DEAD_TO_PRODUCTS = ['/cart/', '/checkout/', '/my-account/', '/product-cat/'];
 
 /**
+ * 跨目录的图片改名。上面那节 IMAGE_RENAMES 是「同目录内换文件名」（它遍历 IMAGE_DIRS
+ * 拼前缀），盖不住这种旧路径与新路径不在同一目录的情况。
+ *
+ * 2026-10-31：v-856 与 t-600 的图始终带着 AI 生成时的临时命名（「任务9-___根据图2-6，-21.webp」、
+ * 「nanobanana-edited-…-拷贝-1.webp」），跟其余 25 个产品的
+ * /images/products/<slug>/NN.webp 不一致，所以改成同一规范。旧地址可能已被 Google 图片
+ * 收录，因此逐条留 301。
+ *
+ * 中文旧名额外多给一条 percent-encoded 规则：浏览器实际发出的是编码后的路径，
+ * 而 _redirects 匹配前是否先解码没有文档保证，两条都写才不会漏。
+ */
+const IMAGE_MOVES: Array<[string, string]> = [
+    ['2026/06/任务9-___根据图2-6，-21.webp', 'products/v-856-vertical-machining-center/01.webp'],
+    ['2026/06/任务9-___根据图2-6，-13.webp', 'products/v-856-vertical-machining-center/02.webp'],
+    ['2026/06/任务9-___根据图2-6，-14.webp', 'products/v-856-vertical-machining-center/03.webp'],
+    ['2026/06/任务9-___根据图2-6，-23.webp', 'products/v-856-vertical-machining-center/04.webp'],
+    ['2026/06/任务9-___根据图2-6，-24.webp', 'products/v-856-vertical-machining-center/05.webp'],
+    ['2026/06/任务9-___根据图2-6，-21-100x100.webp', 'products/v-856-vertical-machining-center/01-100x100.webp'],
+    ['2026/06/任务9-___根据图2-6，-21-300x300.webp', 'products/v-856-vertical-machining-center/01-300x300.webp'],
+    ['2026/06/任务9-___根据图2-6，-21-430x430.webp', 'products/v-856-vertical-machining-center/01-430x430.webp'],
+    ['2026/06/任务9-___根据图2-6，-21-700x700.webp', 'products/v-856-vertical-machining-center/01-700x700.webp'],
+    ['2026/06/任务9-___根据图2-6，-21-768x768.webp', 'products/v-856-vertical-machining-center/01-768x768.webp'],
+    ['2026/06/任务9-___根据图2-6，-21-800x800.webp', 'products/v-856-vertical-machining-center/01-800x800.webp'],
+    ['2026/06/任务9-___根据图2-6，-13-100x100.webp', 'products/v-856-vertical-machining-center/02-100x100.webp'],
+    ['2026/06/任务9-___根据图2-6，-13-300x300.webp', 'products/v-856-vertical-machining-center/02-300x300.webp'],
+    ['2026/06/任务9-___根据图2-6，-13-430x430.webp', 'products/v-856-vertical-machining-center/02-430x430.webp'],
+    ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1.webp', 'products/t-600-high-speed-drilling-and-tapping-center/01.webp'],
+    ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-100x100.webp', 'products/t-600-high-speed-drilling-and-tapping-center/01-100x100.webp'],
+    ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-300x300.webp', 'products/t-600-high-speed-drilling-and-tapping-center/01-300x300.webp'],
+    ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-430x430.webp', 'products/t-600-high-speed-drilling-and-tapping-center/01-430x430.webp'],
+    ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-700x700.webp', 'products/t-600-high-speed-drilling-and-tapping-center/01-700x700.webp'],
+    ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-768x768.webp', 'products/t-600-high-speed-drilling-and-tapping-center/01-768x768.webp'],
+];
+
+/**
  * 品牌迁移（qfcncmachine.com + QiaoFeng → cennetic.com + Cennetic）留下的旧图文件名。
  *
  * 文件名里的品牌字样跟着一起改了，但 Google 图片搜索里已收录的还是旧路径，
@@ -170,6 +205,18 @@ export async function buildDeployFiles(): Promise<void> {
         for (const [oldName, newName] of IMAGE_RENAMES) {
             lines.push(`/images/${dir}/${oldName}   /images/${dir}/${newName}   301`);
         }
+    }
+
+    lines.push(
+        '',
+        `# ── 跨目录改名的图片（${IMAGE_MOVES.length} 条，上面两节都盖不住）──`,
+        '# v-856 与 t-600 的图从 AI 临时命名改成与其余产品一致的 /images/products/<slug>/NN.webp。',
+        '# 中文旧名同时给原文与 percent-encoded 两条，防匹配差异。',
+    );
+    for (const [o, n] of IMAGE_MOVES) {
+        lines.push(`/images/${o}   /images/${n}   301`);
+        const enc = o.split('/').map(encodeURIComponent).join('/');
+        if (enc !== o) lines.push(`/images/${enc}   /images/${n}   301`);
     }
 
     lines.push(

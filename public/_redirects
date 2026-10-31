@@ -53,6 +53,50 @@
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure-430x358.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure-430x358.webp   301
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure.webp   301
 
+# ── 跨目录改名的图片（20 条，上面两节都盖不住）──
+# v-856 与 t-600 的图从 AI 临时命名改成与其余产品一致的 /images/products/<slug>/NN.webp。
+# 中文旧名同时给原文与 percent-encoded 两条，防匹配差异。
+/images/2026/06/任务9-___根据图2-6，-21.webp   /images/products/v-856-vertical-machining-center/01.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21.webp   /images/products/v-856-vertical-machining-center/01.webp   301
+/images/2026/06/任务9-___根据图2-6，-13.webp   /images/products/v-856-vertical-machining-center/02.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-13.webp   /images/products/v-856-vertical-machining-center/02.webp   301
+/images/2026/06/任务9-___根据图2-6，-14.webp   /images/products/v-856-vertical-machining-center/03.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-14.webp   /images/products/v-856-vertical-machining-center/03.webp   301
+/images/2026/06/任务9-___根据图2-6，-23.webp   /images/products/v-856-vertical-machining-center/04.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-23.webp   /images/products/v-856-vertical-machining-center/04.webp   301
+/images/2026/06/任务9-___根据图2-6，-24.webp   /images/products/v-856-vertical-machining-center/05.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-24.webp   /images/products/v-856-vertical-machining-center/05.webp   301
+/images/2026/06/任务9-___根据图2-6，-21-100x100.webp   /images/products/v-856-vertical-machining-center/01-100x100.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21-100x100.webp   /images/products/v-856-vertical-machining-center/01-100x100.webp   301
+/images/2026/06/任务9-___根据图2-6，-21-300x300.webp   /images/products/v-856-vertical-machining-center/01-300x300.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21-300x300.webp   /images/products/v-856-vertical-machining-center/01-300x300.webp   301
+/images/2026/06/任务9-___根据图2-6，-21-430x430.webp   /images/products/v-856-vertical-machining-center/01-430x430.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21-430x430.webp   /images/products/v-856-vertical-machining-center/01-430x430.webp   301
+/images/2026/06/任务9-___根据图2-6，-21-700x700.webp   /images/products/v-856-vertical-machining-center/01-700x700.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21-700x700.webp   /images/products/v-856-vertical-machining-center/01-700x700.webp   301
+/images/2026/06/任务9-___根据图2-6，-21-768x768.webp   /images/products/v-856-vertical-machining-center/01-768x768.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21-768x768.webp   /images/products/v-856-vertical-machining-center/01-768x768.webp   301
+/images/2026/06/任务9-___根据图2-6，-21-800x800.webp   /images/products/v-856-vertical-machining-center/01-800x800.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-21-800x800.webp   /images/products/v-856-vertical-machining-center/01-800x800.webp   301
+/images/2026/06/任务9-___根据图2-6，-13-100x100.webp   /images/products/v-856-vertical-machining-center/02-100x100.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-13-100x100.webp   /images/products/v-856-vertical-machining-center/02-100x100.webp   301
+/images/2026/06/任务9-___根据图2-6，-13-300x300.webp   /images/products/v-856-vertical-machining-center/02-300x300.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-13-300x300.webp   /images/products/v-856-vertical-machining-center/02-300x300.webp   301
+/images/2026/06/任务9-___根据图2-6，-13-430x430.webp   /images/products/v-856-vertical-machining-center/02-430x430.webp   301
+/images/2026/06/%E4%BB%BB%E5%8A%A19-___%E6%A0%B9%E6%8D%AE%E5%9B%BE2-6%EF%BC%8C-13-430x430.webp   /images/products/v-856-vertical-machining-center/02-430x430.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-%E6%8B%B7%E8%B4%9D-1.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-100x100.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-100x100.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-%E6%8B%B7%E8%B4%9D-1-100x100.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-100x100.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-300x300.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-300x300.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-%E6%8B%B7%E8%B4%9D-1-300x300.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-300x300.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-430x430.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-430x430.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-%E6%8B%B7%E8%B4%9D-1-430x430.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-430x430.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-700x700.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-700x700.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-%E6%8B%B7%E8%B4%9D-1-700x700.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-700x700.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-768x768.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-768x768.webp   301
+/images/2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-%E6%8B%B7%E8%B4%9D-1-768x768.webp   /images/products/t-600-high-speed-drilling-and-tapping-center/01-768x768.webp   301
+
 # ── 迁移期换了目录的媒体文件（上面的通配只改前缀，盖不住换位置）──
 # 首页背景视频：源站 /wp-content/uploads/2026/05/banner.mp4 原片 10.38MB 且无 poster，
 # 压到 0.59MB 并补 poster 后改放在 /images/site/hero-banner.mp4。
