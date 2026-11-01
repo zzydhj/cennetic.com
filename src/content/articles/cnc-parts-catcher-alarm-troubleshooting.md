@@ -10,7 +10,7 @@ modified: '2026-07-20T04:29:42'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-parts-catcher-alarm-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-parts-catcher-alarm-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -24,7 +24,7 @@ sourceId: 7168
 
   <p>If you operate a CNC lathe, you have likely encountered a <strong>CNC parts catcher alarm</strong> that abruptly halts production. At Cennetic, established in 2010 in Dalingshan Town, Dongguan, we understand the frustration of unexpected downtime. The parts catcher is a critical component for automated machining, and when it fails, it triggers a part collection error that can lead to damaged components or tool collisions. With over 15 years of experience manufacturing robust CNC machines, this guide will help you diagnose and fix common CNC parts catcher faults quickly.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-parts-catcher-alarm-1.webp" alt="CNC operator troubleshooting parts catcher alarm on machine control panel" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-parts-catcher-alarm-1.webp" alt="CNC operator troubleshooting parts catcher alarm on machine control panel" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="understanding-the-cnc-parts-catcher-alarm">Understanding the CNC Parts Catcher Alarm</h2>
   <p>According to industry data, automated material handling failures account for a significant portion of unplanned machine downtime. A CNC parts catcher alarm typically triggers when the machine’s control system detects an anomaly—such as a part not being caught, a mechanical jam in the pneumatic arm, or a sensor failure. Ignoring these alarms or simply hitting “reset” without finding the root cause can lead to severe damage to the machine’s turret or spindle.</p>
@@ -67,7 +67,7 @@ sourceId: 7168
     <li><strong>Aerospace Components:</strong> A shop machining curved turbine blades encountered a part collector error because the blade’s shape caused it to tip over, missing the sensor’s beam. Adding a custom urethane insert to the tray kept the part upright and resolved the alarm.</li>
   </ol>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-parts-catcher-alarm-2.webp" alt="Cennetic CNC lathe parts catcher with sensor array and shock-absorbing tray" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-parts-catcher-alarm-2.webp" alt="Cennetic CNC lathe parts catcher with sensor array and shock-absorbing tray" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="what-our-global-clients-say">What Our Global Clients Say</h2>
   <p>Cennetic exports high-performance CNC lathes primarily to Europe, North America, and Southeast Asia. Our machines are engineered to minimize nuisance alarms and maximize automated runtime.</p>

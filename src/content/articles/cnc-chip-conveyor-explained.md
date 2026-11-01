@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-chip-conveyor-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -57,7 +57,7 @@ sourceId: 7566
 
 <p>Without a chip conveyor, operators must manually shovel chips — a time-consuming, ergonomically hazardous task that interrupts production and introduces injury risk, particularly with sharp titanium or stainless steel turnings.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-chip-conveyor-explained-1.webp" alt="CNC chip conveyor removing steel turnings from machining center" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-explained-1.webp" alt="CNC chip conveyor removing steel turnings from machining center" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
 
 <!-- 4. TYPES TABLE -->
 <h2 id="3-types-of-cnc-chip-conveyors-which-one-is-right-for-your-ma">3. Types of CNC Chip Conveyors: Which One Is Right for Your Machine?</h2>
@@ -105,7 +105,7 @@ sourceId: 7566
 
 <p><strong>Beginner recommendation:</strong> For most CNC shops running mixed materials, a <strong>hinged belt conveyor</strong> offers the best balance of versatility, reliability, and cost. Cennetic’s QF-series hinged belt models handle everything from aluminium fines to steel spaghetti, with a perforated belt that allows coolant to drain cleanly back into the machine sump — protecting both your coolant investment and your machine’s filtration system.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-chip-conveyor-explained-2.webp" alt="CNC chip conveyor system diagram showing hinged belt and coolant drain" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-explained-2.webp" alt="CNC chip conveyor system diagram showing hinged belt and coolant drain" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
 
 <!-- 5. CORE FEATURES -->
 <h2 id="4-core-features-of-cennetic-cnc-chip-conveyors">4. Core Features of Cennetic CNC Chip Conveyors</h2>
@@ -147,7 +147,7 @@ sourceId: 7566
 <div class="qf-testimonial"><blockquote>“เราผลิตชิ้นส่วนยานยนต์จากเหล็กกล้าในปริมาณสูง การสะสมของเศษโลหะทำให้เครื่องจักรหยุดทำงานบ่อยครั้ง หลังจากติดตั้งระบบสายพานลำเลียงของ Cennetic สายการผลิตของเราทำงานได้อย่างต่อเนื่องตลอด 3 กะโดยไม่มีการหยุดชะงัก ทีมสนับสนุนตอบสนองรวดเร็วและเป็นมืออาชีพมาก”
   (“We produce high-volume automotive steel components. Chip accumulation was causing frequent machine stoppages. After installing Cennetic’s conveyor system, our production line runs continuously across all 3 shifts without interruption. The support team is fast and highly professional.”)</blockquote></div>
 
-<img decoding="async" src="/images/2026/06/cnc-chip-conveyor-explained-3.webp" alt="CNC chip conveyor installation on vertical machining center" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-explained-3.webp" alt="CNC chip conveyor installation on vertical machining center" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
 
 <!-- 8. PROS / CONS -->
 <h2 id="7-pros-and-cons-of-cnc-chip-conveyors">7. Pros and Cons of CNC Chip Conveyors</h2>

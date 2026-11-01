@@ -10,7 +10,7 @@ modified: '2026-06-28T11:56:26'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/closed-loop-cnc-system-1.webp
+hero: https://media.cennetic.com/images/2026/06/closed-loop-cnc-system-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -58,7 +58,7 @@ sourceId: 2899
   </ol>
   <p>The result is a system that actively compensates for load variations, acceleration forces, thermal drift, and mechanical compliance — maintaining commanded position regardless of external disturbances. Open loop stepper systems have no step 3 or step 4: they command a move and have no mechanism to detect or correct for missed steps.</p>
 
-  <img decoding="async" src="/images/2026/06/closed-loop-cnc-system-1.webp" alt="closed loop CNC system vs open loop stepper motor comparison diagram showing feedback architecture" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/closed-loop-cnc-system-1.webp" alt="closed loop CNC system vs open loop stepper motor comparison diagram showing feedback architecture" width="1200" height="686" loading="lazy">
 
   <h2 id="3-encoder-types-in-closed-loop-cnc-systems">3. Encoder Types in Closed Loop CNC Systems</h2>
   <p>The encoder is the heart of any <strong>closed loop CNC system</strong>. The type of encoder selected determines the system’s accuracy ceiling, resolution, and behavior after power loss. There are two primary categories:</p>
@@ -176,7 +176,7 @@ sourceId: 2899
   <p><strong>Pain point:</strong> Synchronization errors between axes in open loop systems cause surface defects on complex 3D mold surfaces — visible as witness marks, steps, or texture variations that require extensive hand polishing to correct.</p>
   <p><strong>Solution:</strong> A <strong>closed loop CNC system</strong> with master-slave axis synchronization and high-resolution rotary encoders maintains inter-axis position synchronization to within ±0.002mm. The result is smooth, consistent surface finish across complex 3D surfaces — dramatically reducing or eliminating hand polishing operations.</p>
 
-  <img decoding="async" src="/images/2026/06/closed-loop-cnc-system-2.webp" alt="CNC retrofit with closed loop servo system installation on machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/closed-loop-cnc-system-2.webp" alt="CNC retrofit with closed loop servo system installation on machining center" width="1200" height="686" loading="lazy">
 
   <!-- 7. Testimonials -->
   <h2 id="7-what-our-customers-say-about-closed-loop-cnc-system-upgrad">7. What Our Customers Say About Closed Loop CNC System Upgrades</h2>
@@ -221,7 +221,7 @@ sourceId: 2899
     🏭 <strong>About Cennetic CNC:</strong> Founded in <strong>2010</strong> in Daling Mountain Town, Dongguan, Guangdong, Cennetic has <strong>15 years</strong> of CNC manufacturing and applications experience, serving <strong>750+ customers</strong> across Europe, North America, and Southeast Asia. All machines and retrofit systems come with a <strong>2-year warranty</strong>. Verified quality issues are fully covered under our refund policy. Our engineering team provides closed loop system specification, tuning support, and retrofit project management for a wide range of CNC machine types and controllers.
   </div>
 
-  <img decoding="async" src="/images/2026/06/closed-loop-cnc-system-3.webp" alt="accuracy comparison graph open loop vs closed loop CNC system positional error data" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/closed-loop-cnc-system-3.webp" alt="accuracy comparison graph open loop vs closed loop CNC system positional error data" width="1200" height="686" loading="lazy">
 
   <!-- 10. FAQ -->
   <h2 id="9-faq-closed-loop-cnc-system">9. FAQ: Closed Loop CNC System</h2>

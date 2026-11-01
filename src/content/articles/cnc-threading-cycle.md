@@ -10,7 +10,7 @@ modified: '2026-06-26T10:03:40'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-threading-cycle-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-threading-cycle-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -38,7 +38,7 @@ sourceId: 7538
   <!-- ① 引言段 -->
   <p>If you’re a CNC beginner diving into thread cutting, mastering the <strong>CNC threading cycle</strong> is your first step toward precision, efficiency, and reduced scrap. At <a href="/" rel="noopener">Cennetic CNC</a>, we’ve helped <strong>750+ machinists</strong> across Europe, North America, and Southeast Asia optimize their threading processes since 2010. In this guide, you’ll learn the <strong>CNC threading cycle</strong> definition, the real difference between G76 (multiple-pass) and G92 (simple thread) cycles, complete G-code examples, and real-world case studies that have saved clients up to 30% in cycle time.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-threading-cycle-1.webp" alt="CNC threading cycle G76 vs G92 toolpath comparison on CNC lathe" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-threading-cycle-1.webp" alt="CNC threading cycle G76 vs G92 toolpath comparison on CNC lathe" width="1200" height="686" loading="lazy">
 
   <!-- ② 行业数据段 -->
   <h2 id="1-why-the-cnc-threading-cycle-matters-industry-data">1. Why the CNC Threading Cycle Matters: Industry Data</h2>
@@ -62,7 +62,7 @@ sourceId: 7538
     <li><strong>Spring Pass</strong>: A final non-cutting pass in G76 to clean up the thread form.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-threading-cycle-2.webp" alt="CNC thread cutting process on lathe with coolant showing threading cycle in action" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-threading-cycle-2.webp" alt="CNC thread cutting process on lathe with coolant showing threading cycle in action" width="1200" height="686" loading="lazy">
 
   <!-- ④ G92 -->
   <h2 id="3-g92-simple-thread-cycle-code-parameters-use-cases">3. G92 Simple Thread Cycle — Code, Parameters &amp; Use Cases</h2>
@@ -130,7 +130,7 @@ G00 X100.0 Z50.0                  ; Retract</code></pre>
     </tbody>
   </table>
 
-  <img decoding="async" src="/images/2026/06/cnc-threading-cycle-3.webp" alt="CNC thread profile diagram showing pitch, depth, and infeed angle for G76 threading cycle" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-threading-cycle-3.webp" alt="CNC thread profile diagram showing pitch, depth, and infeed angle for G76 threading cycle" width="1200" height="686" loading="lazy">
 
   <!-- ⑥ 对比表格 -->
   <h2 id="5-g76-vs-g92-full-comparison-table">5. G76 vs G92: Full Comparison Table</h2>

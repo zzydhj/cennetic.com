@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-cycle-time-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-cycle-time-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -26,7 +26,7 @@ sourceId: 7487
   <!-- 1. 引言段 -->
   <p><strong>CNC cycle time</strong> is one of the most critical metrics in precision manufacturing — it directly determines your cost per part, machine utilization, and ability to compete on price and delivery. Whether you are running a high-mix job shop or a dedicated production cell, understanding how to calculate and reduce CNC cycle time is the fastest path to improving profitability. At <a href="/" rel="noopener">Cennetic Intelligent Equipment</a>, founded in 2010 and based in Dalingshan, Dongguan, Guangdong, China, we have helped 750+ manufacturers across the US, Europe, and Southeast Asia achieve measurable cycle time reductions — in one documented case, cutting cycle time by 22% and saving over $45,000 annually. This guide covers everything: definition, calculation formula, optimization strategies, and real-world results.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cycle-time-explained-1.webp" alt="CNC cycle time display on a milling center VMC machining operation" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cycle-time-explained-1.webp" alt="CNC cycle time display on a milling center VMC machining operation" width="1200" height="686" loading="lazy">
 
   <!-- 2. 行业数据段 -->
   <h2 id="why-cnc-cycle-time-directly-impacts-your-bottom-line">Why CNC Cycle Time Directly Impacts Your Bottom Line</h2>
@@ -60,7 +60,7 @@ sourceId: 7487
   </ul>
   <p>If your cycle time exceeds your takt time, you cannot meet customer demand without overtime, additional shifts, or extra machines. Closing this gap is the core objective of cycle time optimization.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cycle-time-explained-2.webp" alt="CNC cycle time calculation formula infographic showing cutting and non-cutting time" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cycle-time-explained-2.webp" alt="CNC cycle time calculation formula infographic showing cutting and non-cutting time" width="1200" height="686" loading="lazy">
 
   <h2 id="2-how-to-calculate-cnc-cycle-time-formula-and-example">2. How to Calculate CNC Cycle Time: Formula and Example</h2>
 
@@ -177,7 +177,7 @@ sourceId: 7487
 
   <div class="qf-testimonial"><blockquote>“We were scared to push parameters on 316L stainless — one scrap implant component costs us $180 in material alone. Cennetic gave us validated feeds and speeds with documented test results, and re-wrote our CAM retracts. Cycle time dropped 28% and our scrap rate didn’t move. That’s exactly the confidence we needed to scale production.”</blockquote><figcaption>— Dr. Amir R., Process Engineering Lead, Medical Device Manufacturer, Penang, Malaysia</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-cycle-time-explained-3.webp" alt="CNC cycle time reduction results dashboard comparing optimized vs traditional setup" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cycle-time-explained-3.webp" alt="CNC cycle time reduction results dashboard comparing optimized vs traditional setup" width="1200" height="686" loading="lazy">
 
   <!-- 6. Pros / Cons -->
   <h2 id="6-pros-cons-of-cnc-cycle-time-reduction">6. Pros &amp; Cons of CNC Cycle Time Reduction</h2>

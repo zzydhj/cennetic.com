@@ -10,7 +10,7 @@ modified: '2026-07-14T08:05:25'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-chip-conveyor-alarm-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-alarm-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -60,7 +60,7 @@ sourceId: 7108
 
 <p>Understanding which code your machine displays is the first step to minimising lost production time. Always cross-reference with your machine builder’s alarm manual for model-specific definitions.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-chip-conveyor-alarm-1.webp" alt="CNC chip conveyor alarm auger jam error indicator lights" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-alarm-1.webp" alt="CNC chip conveyor alarm auger jam error indicator lights" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
 
 <!-- 4. TECHNICAL SPECS TABLE -->
 <h2 id="3-technical-specifications-cennetic-qf-2000-vs-competitors">3. Technical Specifications: Cennetic QF-2000 vs. Competitors</h2>
@@ -97,7 +97,7 @@ sourceId: 7108
 <div class="qf-testimonial"><blockquote>“ต้องการระบบสายพานลำเลียงเศษโลหะที่รองรับปริมาณงานสูงสำหรับสายการผลิตอะลูมิเนียมของเรา Cennetic ส่งมอบและติดตั้งภายในเวลาที่กำหนด และทีมสนับสนุนตอบสนองรวดเร็วมาก ไม่มีปัญหา alarm เลยในช่วง 8 เดือนที่ผ่านมา”
   (“We needed a high-volume chip conveyor for our aluminium production line. Cennetic delivered and installed on schedule, and the support team responds very quickly. Zero alarm events in the past 8 months.”)</blockquote></div>
 
-<img decoding="async" src="/images/2026/06/cnc-chip-conveyor-alarm-2.webp" alt="CNC chip conveyor alarm diagnostic check on tablet by engineer" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-alarm-2.webp" alt="CNC chip conveyor alarm diagnostic check on tablet by engineer" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
 
 <!-- 6. TROUBLESHOOTING -->
 <h2 id="6-step-by-step-troubleshooting-for-cnc-chip-conveyor-alarms">6. Step-by-Step Troubleshooting for CNC Chip Conveyor Alarms</h2>
@@ -146,7 +146,7 @@ sourceId: 7108
   <strong>Key Takeaway:</strong> The upfront cost of an advanced alarm-equipped chip conveyor is typically recovered within <strong>3–6 months</strong> through reduced downtime alone — before factoring in extended auger life and lower maintenance labour. For high-mix shops running difficult materials like titanium or Inconel, the ROI case is even stronger.
 </div>
 
-<img decoding="async" src="/images/2026/06/cnc-chip-conveyor-alarm-3.webp" alt="CNC chip conveyor alarm caused by auger jam with tangled metal chips" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-conveyor-alarm-3.webp" alt="CNC chip conveyor alarm caused by auger jam with tangled metal chips" style="max-width:100%;border-radius:6px;margin:16px 0" width="1200" height="686" loading="lazy">
 
 <!-- 9. MAINTENANCE -->
 <h2 id="8-preventive-maintenance-schedule-to-avoid-chip-removal-erro">8. Preventive Maintenance Schedule to Avoid Chip Removal Errors</h2>

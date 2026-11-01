@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-surface-finish-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-surface-finish-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -43,7 +43,7 @@ sourceId: 7483
     right finish specification for any part.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-1.webp" alt="Cennetic CNC surface finish measurement with contact profilometer on precision machined part" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-surface-finish-explained-1.webp" alt="Cennetic CNC surface finish measurement with contact profilometer on precision machined part" width="1200" height="686" loading="lazy">
 
   <!-- ② INDUSTRY DATA -->
   <h2 id="why-cnc-surface-finish-specification-is-more-critical-than-e">Why CNC Surface Finish Specification Is More Critical Than Ever</h2>
@@ -141,7 +141,7 @@ sourceId: 7483
     they require before machining.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-2.webp" alt="Cennetic CNC surface finish Ra vs Rz parameter diagram showing peak-to-valley measurement" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-surface-finish-explained-2.webp" alt="Cennetic CNC surface finish Ra vs Rz parameter diagram showing peak-to-valley measurement" width="1200" height="686" loading="lazy">
 
   <!-- ④ MEASUREMENT METHODS -->
   <h2 id="2-cnc-surface-finish-measurement-methods">2. CNC Surface Finish Measurement Methods</h2>
@@ -386,7 +386,7 @@ sourceId: 7483
       Medical Device Contract Manufacturer,
       Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-surface-finish-explained-3.webp" alt="Cennetic CNC surface roughness measurement report with profilometer trace and Ra Rz values" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-surface-finish-explained-3.webp" alt="Cennetic CNC surface roughness measurement report with profilometer trace and Ra Rz values" width="1200" height="686" loading="lazy">
 
   <!-- ⑧ PROS / CONS -->
   <h2 id="6-pros-cons-of-specifying-tight-cnc-surface-finish">6. Pros &amp; Cons of Specifying Tight CNC Surface Finish</h2>

@@ -10,7 +10,7 @@ modified: '2026-07-20T04:42:15'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-tsc-alarm-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-tsc-alarm-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -24,7 +24,7 @@ sourceId: 7144
 
   <p>If you are a maintenance engineer, few things are as frustrating as a sudden <strong>CNC TSC alarm</strong> halting your production line. The Through Spindle Coolant (TSC) system is vital for deep-hole drilling and high-speed milling, but when pressure drops, the machine stops instantly to protect the spindle. Established in 2010 in Dalingshan Town, Dongguan, Cennetic has spent over 15 years engineering high-performance CNC machines equipped with ultra-reliable TSC systems. In this guide, we will help you diagnose the root causes of a CNC through spindle coolant alarm and get your machine back online.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-tsc-alarm-1.webp" alt="CNC operator checking spindle after a CNC TSC alarm triggers" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tsc-alarm-1.webp" alt="CNC operator checking spindle after a CNC TSC alarm triggers" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="why-does-the-cnc-through-spindle-coolant-alarm-trigger">Why Does the CNC Through Spindle Coolant Alarm Trigger?</h2>
   <p>According to cutting tool experts at Sandvik Coromant, high-pressure coolant systems (typically running at 15 to 70 bar) significantly increase tool life and chip evacuation. However, this high pressure requires a perfectly sealed and filtered system. A CNC TSC alarm usually indicates a <strong>TSC pressure error</strong>—meaning the sensor has detected that the coolant pressure has fallen below the safe operating threshold (often around 10 bar).</p>

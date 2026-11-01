@@ -10,7 +10,7 @@ modified: '2026-06-28T12:23:23'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-workholding-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-workholding-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -27,7 +27,7 @@ sourceId: 7475
      ══════════════════════════════════════════════════ -->
 <p>If you are new to CNC machining, understanding <strong>CNC workholding</strong> is the single most important foundation skill you can build. Without a reliable way to secure your workpiece, even the most expensive machine and the sharpest tooling will produce scrap. At <a href="/" rel="noopener">Cennetic CNC</a> — a Dongguan-based manufacturer with 15 years of CNC workholding experience serving 750+ customers across Europe, North America, and Southeast Asia — we have seen firsthand how the right fixture transforms a struggling shop into a precision operation. This beginner’s guide covers the <strong>CNC workholding definition</strong>, the most common <strong>CNC fixture types</strong>, a deep dive into <strong>CNC vise</strong> selection, and a practical comparison of <strong>CNC clamping methods</strong> so you can start machining with confidence from day one.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-workholding-explained-1.webp" alt="CNC workholding vise clamping a metal workpiece on a milling machine" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-workholding-explained-1.webp" alt="CNC workholding vise clamping a metal workpiece on a milling machine" width="1200" height="686" loading="lazy">
 
 <!-- ══════════════════════════════════════════════════
      2. INDUSTRY DATA — real cited reports
@@ -141,7 +141,7 @@ sourceId: 7475
 <h3 id="43-magnetic-clamping">4.3 Magnetic Clamping</h3>
 <p>Electromagnetic or permanent-magnet chucks hold ferrous workpieces (steel, cast iron) by magnetic attraction. They are extremely fast to load and unload, leave no marks on the workpiece surface, and provide excellent access around all four sides of the part. Magnetic chucks are standard equipment in surface grinding, but they can also be used on mills for light-to-medium cuts. Non-ferrous materials (aluminium, brass, titanium) cannot be held magnetically without special adapters.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-workholding-explained-3.webp" alt="CNC clamping methods diagram showing mechanical vise vacuum and magnetic workholding" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-workholding-explained-3.webp" alt="CNC clamping methods diagram showing mechanical vise vacuum and magnetic workholding" width="1200" height="686" loading="lazy">
 
 <h3 id="44-zero-point-modular-fixturing">4.4 Zero-Point / Modular Fixturing</h3>
 <p>A zero-point pallet system uses a base plate with precision-ground receiver bores. Every fixture or tombstone in your shop is fitted with matching locating pins. When you drop a fixture onto the pallet, it locates to within 0.005 mm automatically and locks pneumatically or mechanically. Changeover time drops from 20–30 minutes (re-indicating a vise) to under 30 seconds. Zero-point systems are the fastest-growing category in CNC workholding because they remove setup time — which is pure non-cutting, non-earning time — from the equation entirely.</p>
@@ -151,7 +151,7 @@ sourceId: 7475
      ══════════════════════════════════════════════════ -->
 <h2 id="5-real-world-use-cases-customer-testimonials">5. Real-World Use Cases &amp; Customer Testimonials</h2>
 
-<img decoding="async" src="/images/2026/06/cnc-workholding-explained-2.webp" alt="Cennetic CNC workholding vise installed on a machining center in a production environment" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-workholding-explained-2.webp" alt="Cennetic CNC workholding vise installed on a machining center in a production environment" width="1200" height="686" loading="lazy">
 
 <h3 id="case-1-automotive-supplier-germany">Case 1 — Automotive Supplier, Germany</h3>
 <p>A medium-sized Bavarian tier-2 supplier was milling aluminium transmission brackets at high volume. Part movement during aggressive side-milling passes was causing dimensional rejects at a rate of around 12–15%. After switching to Cennetic’s modular vise system with custom soft jaws profiled to the bracket’s curved base, the scrap rate fell below 2% within the first month. Throughput increased by roughly 20% because operators no longer needed to stop and re-indicate drifted parts.</p>

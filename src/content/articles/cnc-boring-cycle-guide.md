@@ -10,7 +10,7 @@ modified: '2026-07-16T12:08:13'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-boring-cycle-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-boring-cycle-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -31,7 +31,7 @@ sourceId: 7530
   <!-- 1. INTRO -->
   <p>Welcome to our comprehensive guide on the <strong>CNC boring cycle</strong>, designed specifically for CNC beginners and intermediate machinists. Whether you’re just starting or looking to refine your skills, understanding the <strong>CNC boring cycle</strong> — including G85, G86, G87, G88, and G89 — is crucial for achieving precision bore finishing in modern manufacturing. At <a href="/" rel="noopener">CENNETIC</a>, we’ve supported <strong>750+ manufacturers</strong> across Europe, North America, and Southeast Asia since 2010, and mastering <strong>CNC boring cycles</strong> is consistently among the top skills our application engineers teach to new operators.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-boring-cycle-1.webp" alt="CNC boring cycle G86 operation on vertical machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-boring-cycle-1.webp" alt="CNC boring cycle G86 operation on vertical machining center" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="why-boring-cycles-matter">1. Why CNC Boring Cycles Matter: Industry Data</h2>
@@ -69,7 +69,7 @@ sourceId: 7530
     </table>
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-boring-cycle-2.webp" alt="Comparison table of CNC boring cycles G85 to G89" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-boring-cycle-2.webp" alt="Comparison table of CNC boring cycles G85 to G89" width="1200" height="686" loading="lazy">
 
   <!-- 4. BORING CYCLE COMPARISON -->
   <h2 id="boring-cycle-comparison">3. G85, G86, G87, G88, G89: Complete Comparison</h2>
@@ -182,7 +182,7 @@ sourceId: 7530
 
   <div class="qf-testimonial"><blockquote>“Our aerospace component facility in Bangkok, Thailand, produces titanium bearing housings with extremely tight tolerances. We implemented G87 back boring cycles to machine bottom faces without repositioning, which cut our setup time by 30% and eliminated alignment errors. The 2-year warranty and responsive after-sales support from CENNETIC gave us confidence to expand to three more machines.”</blockquote><figcaption>— Somchai W., Quality Manager, Thai Aerospace Precision Co., Ltd., Bangkok, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-boring-cycle-3.webp" alt="Precision measurement of CNC boring cycle finished hole" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-boring-cycle-3.webp" alt="Precision measurement of CNC boring cycle finished hole" width="1200" height="686" loading="lazy">
 
   <!-- 7. PROS / CONS -->
   <h2 id="pros-cons">6. Pros &amp; Cons of CNC Boring Cycles</h2>

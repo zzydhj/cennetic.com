@@ -11,7 +11,7 @@ categories:
   - buying-guides
   - comparisons
 author: bella
-hero: /images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp
+hero: https://media.cennetic.com/images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp
 heroWidth: 1024
 heroHeight: 1024
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -28,7 +28,7 @@ sourceId: 7941
 
   <p>If you’re searching for an <strong>affordable vertical machining center from China</strong> that delivers real precision — not just a low price tag — this guide is for you. At <a href="/" rel="noopener">CENNETIC CNC</a>, we manufacture three purpose-built 3-axis VMC models for global buyers: the high-speed <strong>V-856</strong>, the heavy-duty <strong>L-1060</strong>, and the integrator-ready <strong>JR-V85P</strong>. By the end of this guide, you’ll know exactly which model fits your application, what specs actually matter, and how to avoid the most common VMC buying mistakes.</p>
 
-  <img decoding="async" src="/images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" alt="CENNETIC affordable vertical machining center from China — L-1060 heavy-duty VMC front view" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1024" height="1024" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cennetic-l1060-hard-rail-heavy-cutting-machining-center-front-view.webp" alt="CENNETIC affordable vertical machining center from China — L-1060 heavy-duty VMC front view" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1024" height="1024" loading="lazy">
 
   <div class="qf-highlight">
     💡 <strong>Quick Answer:</strong> Need high-speed precision milling? → <strong>V-856</strong>. Heavy-duty steel cutting? → <strong>L-1060</strong>. Building a custom CNC system? → <strong>JR-V85P</strong> bare machine.

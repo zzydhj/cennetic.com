@@ -10,7 +10,7 @@ modified: '2026-06-23T15:18:41'
 categories:
   - comparisons
 author: bella
-hero: /images/2026/06/cnc-edm-machine-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-edm-machine-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -28,7 +28,7 @@ sourceId: 2875
 
   <p>This guide breaks down the core differences between CNC EDM and CNC milling, backed by real industry data and a documented customer case study, so you can make an informed decision for your specific application.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-edm-machine-1.webp" alt="CNC EDM machine vs CNC milling comparison in mold factory" style="max-width:100%;height:auto;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-edm-machine-1.webp" alt="CNC EDM machine vs CNC milling comparison in mold factory" style="max-width:100%;height:auto;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
   <!-- ══ 2. 行业数据段 ══ -->
   <h2 id="1-what-the-industry-data-says">1. What the Industry Data Says</h2>
@@ -113,7 +113,7 @@ sourceId: 2875
 
   <p><strong>Outcome:</strong> The mold was delivered 2 weeks ahead of schedule with zero rework required. The customer has since placed orders for three additional Cennetic EDM machines for their second production facility.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-edm-machine-2.webp" alt="CNC EDM machine eroding deep rib cavity in hardened mold steel" style="max-width:100%;height:auto;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-edm-machine-2.webp" alt="CNC EDM machine eroding deep rib cavity in hardened mold steel" style="max-width:100%;height:auto;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
   <!-- ══ 5. Testimonials ══ -->
   <h2 id="4-what-our-customers-say">4. What Our Customers Say</h2>
@@ -154,7 +154,7 @@ sourceId: 2875
     <strong>Bottom Line:</strong> Use CNC milling for bulk roughing and open 3D contouring. Deploy your <strong>CNC EDM machine</strong> for deep narrow slots, sharp internal corners, hardened materials, and any feature where a rotating tool physically cannot reach. The two technologies are complementary — not competitive.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-edm-machine-3.webp" alt="Cross-section diagram showing CNC EDM vs milling application zones in mold cavity" style="max-width:100%;height:auto;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-edm-machine-3.webp" alt="Cross-section diagram showing CNC EDM vs milling application zones in mold cavity" style="max-width:100%;height:auto;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
   <!-- ══ 8. FAQ ══ -->
   <h2 id="6-frequently-asked-questions">6. Frequently Asked Questions</h2>

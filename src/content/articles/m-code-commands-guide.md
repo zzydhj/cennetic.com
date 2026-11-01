@@ -10,7 +10,7 @@ modified: '2026-07-16T12:55:55'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/m-code-commands-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/m-code-commands-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -33,7 +33,7 @@ sourceId: 7423
 
   <p>This comprehensive guide covers all essential <strong>M-code commands</strong> from M00 to M30, providing detailed explanations, real-world examples, and practical programming tips. Whether you’re setting up your first job or debugging a complex program, understanding <strong>M-code commands</strong> will reduce errors, improve safety, and boost productivity. By the end of this guide, you’ll have a complete reference for all common <strong>M-code commands</strong> and the confidence to use them effectively in your CNC programs.</p>
 
-  <img decoding="async" src="/images/2026/06/m-code-commands-explained-1.webp" alt="CNC beginner learning M-code commands on CENNETIC control panel" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/m-code-commands-explained-1.webp" alt="CNC beginner learning M-code commands on CENNETIC control panel" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="why-m-codes-matter">1. Why M-Code Commands Matter: Industry Data</h2>
@@ -206,7 +206,7 @@ sourceId: 7423
 
   <p><strong>Note:</strong> While M00-M30 are standardized across most CNC controls, some manufacturers implement additional M-codes or slight variations. Always consult your machine’s programming manual for exact syntax and available M-codes. CENNETIC provides comprehensive programming documentation for all our machines, ensuring you have accurate reference materials.</p>
 
-  <img decoding="async" src="/images/2026/06/m-code-commands-explained-2.webp" alt="CNC control panel displaying M03 spindle on M06 tool change M30 program end commands" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/m-code-commands-explained-2.webp" alt="CNC control panel displaying M03 spindle on M06 tool change M30 program end commands" width="1200" height="686" loading="lazy">
 
   <!-- 6. PROGRAMMING EXAMPLES -->
   <h2 id="programming-examples">5. M-Code Programming Examples</h2>
@@ -340,7 +340,7 @@ sourceId: 7423
 
   <div class="qf-testimonial"><blockquote>“Our contract manufacturing shop in Bangkok, Thailand, runs 24/7 lights-out production on CENNETIC vertical machining centers. Before understanding M30 program end and rewind, we had operators manually restarting programs every cycle—defeating the purpose of automation. After properly implementing M30 in all production programs, we achieved true lights-out operation. Our machine utilization jumped from 62% to 94%, and we’re now running 500+ parts per day per machine with minimal supervision. The 2-year warranty gave us confidence to invest in three additional machines. Understanding M-codes, especially M30, was the key to unlocking our automation potential.”</blockquote><figcaption>— Somchai R., Owner, Bangkok Precision Manufacturing Co., Ltd., Bangkok, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/m-code-commands-explained-3.webp" alt="CENNETIC in production with M30 program end displayed" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/m-code-commands-explained-3.webp" alt="CENNETIC in production with M30 program end displayed" width="1200" height="686" loading="lazy">
 
   <!-- 8. PROS / CONS -->
   <h2 id="pros-cons">7. Pros &amp; Cons of M-Code Commands</h2>

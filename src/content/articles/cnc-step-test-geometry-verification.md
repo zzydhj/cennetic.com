@@ -10,7 +10,7 @@ modified: '2026-07-20T04:06:12'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-step-test-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-step-test-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -24,7 +24,7 @@ sourceId: 7300
 
   <p>For energy engineers, precision is non-negotiable. The <strong>CNC step test</strong> is a critical procedure to verify machine geometry, alignment, and squareness—ensuring your CNC machine delivers repeatable accuracy for complex components. Established in 2010 in Dalingshan Town, Dongguan, Cennetic has spent over 15 years perfecting our quality control processes. We know that a poorly aligned machine can cause severe production bottlenecks; performing a rigorous step test before shipment reduces these risks to near zero.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-step-test-1.webp" alt="CNC step test procedure with dial indicator on granite surface plate" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-step-test-1.webp" alt="CNC step test procedure with dial indicator on granite surface plate" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="industry-standards-and-the-need-for-precision">Industry Standards and the Need for Precision</h2>
   <p>According to a 2024 report by Mordor Intelligence, the demand for high-precision machining centers in the energy sector is growing rapidly, driven by the need for tighter tolerances in renewable energy components. To meet these demands, machine geometry must be flawless. The CNC step test, guided by international standards like ISO 230-2 and ASME B5.54, is the most reliable method to detect microscopic deviations in pitch, roll, and yaw.</p>
@@ -37,7 +37,7 @@ sourceId: 7300
     <li><strong>Repeatability Verification:</strong> It confirms that the machine returns to the exact same position consistently, which is vital for automated batch production.</li>
   </ul>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-step-test-2.webp" alt="Laser interferometer used for CNC step test and geometric verification" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-step-test-2.webp" alt="Laser interferometer used for CNC step test and geometric verification" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="real-world-use-cases-for-the-cnc-step-test">Real-World Use Cases for the CNC Step Test</h2>
   <p>Our commitment to rigorous testing has helped over 750+ clients worldwide. Here is how proper machine geometry verification solves real manufacturing pain points:</p>
@@ -89,7 +89,7 @@ sourceId: 7300
 
   <div class="qf-testimonial"><blockquote>“Before partnering with Cennetic, we struggled with machine repeatability. The machines verified by their CNC step test have completely solved our heat exchanger plate alignment issues.”</blockquote></div>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-step-test-3.webp" alt="CNC step test data analysis software for machine alignment" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-step-test-3.webp" alt="CNC step test data analysis software for machine alignment" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="pros-and-cons-of-the-cnc-step-test">Pros and Cons of the CNC Step Test</h2>
   <div class="qf-pros-cons">

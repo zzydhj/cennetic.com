@@ -11,7 +11,7 @@ categories:
   - comparisons
   - maintenance-operations
 author: bella
-hero: /images/2026/06/direct-drive-cnc-1.webp
+hero: https://media.cennetic.com/images/2026/06/direct-drive-cnc-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 2891
     for your shop floor.
   </p>
 
-  <img decoding="async" src="/images/2026/06/direct-drive-cnc-1.webp" alt="Cennetic direct drive CNC vs belt drive spindle comparison with speed torque graph" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/direct-drive-cnc-1.webp" alt="Cennetic direct drive CNC vs belt drive spindle comparison with speed torque graph" width="1200" height="686" loading="lazy">
 
   <!-- ② INDUSTRY DATA -->
   <h2 id="market-context-why-direct-drive-cnc-technology-is-accelerati">Market Context: Why Direct Drive CNC Technology Is Accelerating</h2>
@@ -188,7 +188,7 @@ sourceId: 2891
     </tbody>
   </table>
 
-  <img decoding="async" src="/images/2026/06/direct-drive-cnc-2.webp" alt="Cennetic direct drive CNC spindle cutaway diagram with labeled motor and bearing components" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/direct-drive-cnc-2.webp" alt="Cennetic direct drive CNC spindle cutaway diagram with labeled motor and bearing components" width="1200" height="686" loading="lazy">
 
   <!-- ⑤ SECTION 2 — CORE FEATURES -->
   <h2 id="3-core-features-of-cennetics-direct-drive-cnc-spindle-system">3. Core Features of Cennetic’s Direct Drive CNC Spindle System</h2>
@@ -317,7 +317,7 @@ sourceId: 2891
       standardized on Cennetic direct drive across our entire implant cell.”</blockquote><figcaption>— Somchai P., Quality &amp; Engineering Manager, Medical Device Contract
       Manufacturer, Bangkok, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/direct-drive-cnc-3.webp" alt="Thermal comparison image of direct drive CNC spindle vs belt drive spindle temperature distribution" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/direct-drive-cnc-3.webp" alt="Thermal comparison image of direct drive CNC spindle vs belt drive spindle temperature distribution" width="1200" height="686" loading="lazy">
 
   <!-- ⑦ PROS / CONS -->
   <h2 id="5-pros-cons-of-direct-drive-cnc-vs-belt-drive">5. Pros &amp; Cons of Direct Drive CNC vs Belt Drive</h2>

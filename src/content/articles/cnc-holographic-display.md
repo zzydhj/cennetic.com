@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-holographic-display-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-holographic-display-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -36,7 +36,7 @@ sourceId: 7411
     Welcome to the future of CNC machining. At <a href="/" rel="noopener">CENNETIC</a>, we understand that transitioning from traditional machining to CNC can be daunting for beginners. That’s why we developed the <strong>CNC holographic display</strong> — a cutting-edge visualization tool that projects your designs in full 3D, directly above the machine bed. With this technology, you can visualize toolpaths, detect collisions, and optimize machining strategies <em>before cutting a single chip</em>. Backed by 15 years of industry expertise, ISO 9001 certification, and the trust of 750+ customers across Europe, North America, and Southeast Asia, this display is your most reliable partner in precision machining.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-holographic-display-1.webp" alt="CNC holographic display in use by beginner operator" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-holographic-display-1.webp" alt="CNC holographic display in use by beginner operator" width="1200" height="686" loading="lazy">
 
   <!-- ===== 2. INDUSTRY DATA ===== -->
   <h2 id="1-why-cnc-visualization-technology-is-now-a-market-imperativ">1. Why CNC Visualization Technology Is Now a Market Imperative</h2>
@@ -80,7 +80,7 @@ sourceId: 7411
   <h3 id="35-beginner-mode">3.5 Beginner Mode</h3>
   <p>A dedicated <strong>“Beginner Mode”</strong> simplifies the interface to three core functions: Load Part → View → Simulate. Issues are flagged in plain English, not cryptic alarm numbers. Most new users report running their first successful job within one hour of practice.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-holographic-display-2.webp" alt="CNC holographic display collision detection 3D visualization" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-holographic-display-2.webp" alt="CNC holographic display collision detection 3D visualization" width="1200" height="686" loading="lazy">
 
   <!-- ===== 5. COMPARE TABLE ===== -->
   <h2 id="4-cnc-holographic-display-vs-traditional-visualization-metho">4. CNC Holographic Display vs. Traditional Visualization Methods</h2>
@@ -157,7 +157,7 @@ sourceId: 7411
   <h3 id="case-3-multi-process-coordination">Case 3 — Multi-Process Coordination</h3>
   <p>A prototyping shop in Vietnam used the display to sequence turning and milling operations on a lathe-mill combo machine. The visual simulation caught a critical timing error that would have ruined a <strong>USD 2,000 titanium component</strong> — paying for the display in a single prevented mistake.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-holographic-display-3.webp" alt="CNC holographic display visualization compared to finished machined part" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-holographic-display-3.webp" alt="CNC holographic display visualization compared to finished machined part" width="1200" height="686" loading="lazy">
 
   <!-- ===== 7. TESTIMONIALS ===== -->
   <h2 id="6-what-our-customers-say">6. What Our Customers Say</h2>

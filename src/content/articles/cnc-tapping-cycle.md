@@ -10,7 +10,7 @@ modified: '2026-06-26T14:40:28'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-tapping-cycle-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-tapping-cycle-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -25,7 +25,7 @@ sourceId: 7534
 <!-- ── 1. Introduction ── -->
 <p>If you’re a <strong>CNC beginner</strong>, the term <strong>CNC tapping cycle</strong> might sound intimidating — but mastering it is essential for creating accurate internal threads in machined parts. In this guide, we break down the complete <strong>CNC tapping cycle definition</strong>, explain the <strong>G84 right-hand tap</strong> and <strong>G74 left-hand tap</strong> canned cycles, walk through real G-code examples, and show you how to run a <strong>CNC rigid tapping cycle</strong> with confidence. Whether you’re programming a vertical machining center or a CNC lathe, this guide from <a href="/" rel="noopener">Cennetic</a> will help you tap like a pro.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-tapping-cycle-1.webp" alt="CNC tapping cycle in action with G84 rigid tapping" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tapping-cycle-1.webp" alt="CNC tapping cycle in action with G84 rigid tapping" width="1200" height="686" loading="lazy">
 
 <!-- ── 2. Industry Data ── -->
 <div class="qf-highlight">
@@ -109,7 +109,7 @@ G80</code></pre>
   </tbody>
 </table>
 
-<img decoding="async" src="/images/2026/06/cnc-tapping-cycle-2.webp" alt="CNC control panel programming G84 tapping cycle" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tapping-cycle-2.webp" alt="CNC control panel programming G84 tapping cycle" width="1200" height="686" loading="lazy">
 
 <!-- ── 5. Real-World Use Cases ── -->
 <h2 id="3-real-world-use-cases">3. Real-World Use Cases</h2>
@@ -135,7 +135,7 @@ G80</code></pre>
 
 <div class="qf-testimonial"><blockquote>“Cennetic’s machines gave us the speed and reliability we needed for our OEM contract. Running G84 at high RPM on aluminum with mist coolant, we hit our takt time targets from day one. After-sales support from Bella’s team was also very responsive whenever we had parameter questions.”</blockquote><figcaption>— Nguyen T.H., Production Manager, Electronics Contract Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
-<img decoding="async" src="/images/2026/06/cnc-tapping-cycle-3.webp" alt="Comparison of broken tap and successful CNC tapping cycle result" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tapping-cycle-3.webp" alt="Comparison of broken tap and successful CNC tapping cycle result" width="1200" height="686" loading="lazy">
 
 <!-- ── 6. Pros / Cons ── -->
 <h2 id="4-pros-cons-of-cnc-tapping-cycles">4. Pros &amp; Cons of CNC Tapping Cycles</h2>

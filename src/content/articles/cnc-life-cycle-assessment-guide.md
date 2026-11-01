@@ -10,7 +10,7 @@ modified: '2026-07-20T04:01:24'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-life-cycle-assessment-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-life-cycle-assessment-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -24,7 +24,7 @@ sourceId: 7312
 
   <p>In the precision-driven world of modern manufacturing, a <strong>CNC life cycle assessment</strong> (LCA) has become an indispensable tool for quality engineers seeking to balance high-performance machining with environmental responsibility. At Cennetic, established in 2010 in Dalingshan Town, Dongguan, we understand that sustainability is no longer just a corporate buzzword—it is a measurable, critical metric for global supply chains. This comprehensive guide explores how integrating LCA principles into CNC machining processes can help quality engineers reduce carbon footprints, lower costs, and ensure compliance with stringent international standards.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-life-cycle-assessment-1.webp" alt="CNC life cycle assessment stages infographic for quality engineers" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-life-cycle-assessment-1.webp" alt="CNC life cycle assessment stages infographic for quality engineers" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="the-growing-importance-of-green-manufacturing-data">The Growing Importance of Green Manufacturing Data</h2>
   <p>According to the European Commission’s Ecodesign for Sustainable Products Regulation (ESPR) and guidelines from the National Institute of Standards and Technology (NIST), manufacturers are increasingly required to provide transparent environmental data for their components. A CNC life cycle assessment provides a systematic framework—aligned with ISO 14040 standards—to evaluate the environmental burdens associated with a machined part, from raw material extraction (cradle) to final production (gate).</p>
@@ -33,7 +33,7 @@ sourceId: 7312
   <p>For a quality engineer, a robust CNC life cycle assessment comprises four key stages: goal definition, inventory analysis, impact assessment, and interpretation. The inventory analysis phase is particularly crucial, as it quantifies energy inputs, coolant usage, material waste, and direct emissions.</p>
   <p>Unlike traditional machine shops, Cennetic integrates these LCA metrics directly into our manufacturing floor. By analyzing the life cycle data of our machining processes, we have optimized our tool paths, upgraded to energy-efficient servo motors, and implemented closed-loop coolant recycling. This allows us to provide our global clients with OEM parts that meet both strict dimensional tolerances and low-carbon requirements.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-life-cycle-assessment-2.webp" alt="Quality engineer reviewing CNC environmental impact and LCA data" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-life-cycle-assessment-2.webp" alt="Quality engineer reviewing CNC environmental impact and LCA data" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="comparing-cennetics-green-machining-vs-industry-averages">Comparing Cennetic’s Green Machining vs. Industry Averages</h2>
   <p>By applying CNC life cycle assessment principles to our operations, Cennetic consistently outperforms traditional machining facilities in environmental metrics. Here is how our optimized processes compare:</p>
@@ -79,7 +79,7 @@ sourceId: 7312
 
   <div class="qf-testimonial"><blockquote>“The efficiency of Cennetic’s optimized machining processes directly translated to cost savings for us. Their reliable quality and standard 2-year warranty make them our most trusted supplier in the region.”</blockquote></div>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-life-cycle-assessment-3.webp" alt="CNC machine life cycle assessment environmental impact comparison" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-life-cycle-assessment-3.webp" alt="CNC machine life cycle assessment environmental impact comparison" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="pros-and-cons-of-adopting-lca-in-cnc-sourcing">Pros and Cons of Adopting LCA in CNC Sourcing</h2>
   <div class="qf-pros-cons">

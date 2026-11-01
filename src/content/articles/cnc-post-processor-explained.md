@@ -10,7 +10,7 @@ modified: '2026-06-28T09:30:01'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-post-processor-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-post-processor-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -50,7 +50,7 @@ sourceId: 7510
     💡 <strong>Key Insight:</strong> The post processor is the final software layer before metal is cut. Even a perfectly designed toolpath in your CAM software can cause a machine crash if the post processor outputs incorrect G-code. <strong>Getting the post right is not optional — it’s foundational.</strong>
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-post-processor-explained-1.webp" alt="CNC post processor explained in action with 5-axis machining" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-post-processor-explained-1.webp" alt="CNC post processor explained in action with 5-axis machining" width="1200" height="686" loading="lazy">
 
   <!-- 3. 主体内容 -->
   <h2 id="2-what-is-a-cnc-post-processor-definition">2. What Is a CNC Post Processor? (Definition)</h2>
@@ -114,7 +114,7 @@ END PGM DRILL_PROG MM</code></pre>
     ⚠️ <strong>Critical:</strong> These two programs are <strong>completely incompatible</strong>. Loading Fanuc G-code into a Heidenhain TNC 640 will trigger an immediate controller alarm and the machine will not run. This is why using the correct <strong>CNC post processor</strong> for your specific machine is non-negotiable.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-post-processor-explained-2.webp" alt="CNC post processor comparison showing correct vs incorrect G-code output" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-post-processor-explained-2.webp" alt="CNC post processor comparison showing correct vs incorrect G-code output" width="1200" height="686" loading="lazy">
 
   <h2 id="4-how-does-a-cnc-post-processor-work-step-by-step">4. How Does a CNC Post Processor Work? (Step-by-Step)</h2>
   <p>Understanding the workflow helps you troubleshoot issues and configure your post correctly. Here’s the complete path from design to cutting:</p>
@@ -145,7 +145,7 @@ END PGM DRILL_PROG MM</code></pre>
   <h3 id="55-controller-specific-cycle-support">5.5 Controller-Specific Cycle Support</h3>
   <p>Modern CNC controllers include powerful built-in fixed cycles for drilling, tapping, boring, probing, and pallet changing. A good post processor maps your CAM operations directly to these native cycles rather than outputting inefficient linear approximations. For example, a Heidenhain rigid tapping cycle (CYCL DEF 206) is far more efficient and accurate than a manually interpolated tapping routine.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-post-processor-explained-3.webp" alt="CNC post processor results showing high-quality 5-axis impeller machining" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-post-processor-explained-3.webp" alt="CNC post processor results showing high-quality 5-axis impeller machining" width="1200" height="686" loading="lazy">
 
   <!-- 6. 对比表格 -->
   <h2 id="6-generic-vs-custom-post-processor-full-comparison">6. Generic vs. Custom Post Processor: Full Comparison</h2>

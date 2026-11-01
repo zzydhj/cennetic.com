@@ -10,7 +10,7 @@ modified: '2026-06-14T14:58:48'
 categories:
   - buying-guides
 author: bella
-hero: /images/2026/06/5-axis-cnc-machine-1-1.webp
+hero: https://media.cennetic.com/images/2026/06/5-axis-cnc-machine-1-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -88,7 +88,7 @@ sourceId: 2800
 <p><!-- ========== MODULE E: USE CASES ========== --></p>
 <h2 id="module-e-use-cases-real-pain-points-solved">Module E: Use Cases – Real Pain Points Solved</h2>
 <figure style="margin:0 0 24px 0;">
-  <img decoding="async" src="/images/2026/06/5-axis-cnc-machine-1-1.webp" alt="5-axis CNC machine machining complex aerospace impeller part" style="width:100%;border-radius:8px;" width="1200" height="686" loading="lazy"><figcaption style="font-size:13px;color:#666;margin-top:6px;">5-axis simultaneous machining of a titanium aerospace impeller — single setup, 4-hour cycle time.</figcaption></figure>
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/5-axis-cnc-machine-1-1.webp" alt="5-axis CNC machine machining complex aerospace impeller part" style="width:100%;border-radius:8px;" width="1200" height="686" loading="lazy"><figcaption style="font-size:13px;color:#666;margin-top:6px;">5-axis simultaneous machining of a titanium aerospace impeller — single setup, 4-hour cycle time.</figcaption></figure>
 <ol>
 <li>
   <strong>Aerospace Impeller Machining</strong><br>
@@ -115,7 +115,7 @@ A mold shop faced challenges machining deep cavities with steep walls. Using a 3
 <p><!-- ========== MODULE B: CORE FEATURES ========== --></p>
 <h2 id="module-b-core-features-and-real-world-benefits">Module B: Core Features and Real-World Benefits</h2>
 <figure style="margin:0 0 24px 0;">
-  <img decoding="async" src="/images/2026/06/5-axis-cnc-machine-2.webp" alt="3-axis vs 5-axis CNC setup comparison showing reduced clamping operations" style="width:100%;border-radius:8px;" width="1200" height="686" loading="lazy"><figcaption style="font-size:13px;color:#666;margin-top:6px;">Left: 3-axis requiring 5 separate setups. Right: 5-axis completing the same part in a single clamping.</figcaption></figure>
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/5-axis-cnc-machine-2.webp" alt="3-axis vs 5-axis CNC setup comparison showing reduced clamping operations" style="width:100%;border-radius:8px;" width="1200" height="686" loading="lazy"><figcaption style="font-size:13px;color:#666;margin-top:6px;">Left: 3-axis requiring 5 separate setups. Right: 5-axis completing the same part in a single clamping.</figcaption></figure>
 <ul>
 <li>
   <strong>Simultaneous 5-Axis Interpolation</strong><br>
@@ -130,7 +130,7 @@ The machine base is made of Meehanite cast iron, stress-relieved for stability. 
 <p><!-- ========== MODULE C: PROS AND CONS ========== --></p>
 <h2 id="module-c-pros-and-cons">Module C: Pros and Cons</h2>
 <figure style="margin:0 0 24px 0;">
-  <img decoding="async" src="/images/2026/06/5-axis-cnc-machine-3.webp" alt="high quality surface finish achieved on 5-axis CNC machined aerospace part" style="width:100%;border-radius:8px;" width="1200" height="686" loading="lazy"><figcaption style="font-size:13px;color:#666;margin-top:6px;">Mirror-quality surface finish on a 5-axis CNC machined aerospace component — Ra 0.4μm achieved without secondary polishing.</figcaption></figure>
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/5-axis-cnc-machine-3.webp" alt="high quality surface finish achieved on 5-axis CNC machined aerospace part" style="width:100%;border-radius:8px;" width="1200" height="686" loading="lazy"><figcaption style="font-size:13px;color:#666;margin-top:6px;">Mirror-quality surface finish on a 5-axis CNC machined aerospace component — Ra 0.4μm achieved without secondary polishing.</figcaption></figure>
 <h3 id="pros-of-5-axis-cnc-machines">Pros of 5-Axis CNC Machines</h3>
 <ul>
 <li>Single setup for complex parts – reduces lead time and operator error.</li>

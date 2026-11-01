@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-lights-out-advanced-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-lights-out-advanced-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -31,7 +31,7 @@ sourceId: 7391
 
   <p><strong>CNC lights-out manufacturing</strong> — the practice of running CNC machining centers continuously, unattended, through nights and weekends — has moved from a niche capability to a mainstream competitive strategy for precision manufacturers worldwide. At <a href="/" rel="noopener">CENNETIC.COM</a>, we have been designing, manufacturing, and exporting CNC machining centers since 2010, supporting 750+ clients across Europe, North America, and Southeast Asia from our factory in Dalingshan, Dongguan, Guangdong, China. In this guide, we break down exactly what <strong>CNC lights-out manufacturing</strong> requires, which technologies make it reliable, what realistic ROI looks like, and how to evaluate whether your operation is ready to make the transition.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-lights-out-advanced-1.webp" alt="CNC lights-out manufacturing autonomous factory floor running unmanned overnight production" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-lights-out-advanced-1.webp" alt="CNC lights-out manufacturing autonomous factory floor running unmanned overnight production" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="1-the-market-case-for-cnc-lights-out-manufacturing">1. The Market Case for CNC Lights-Out Manufacturing</h2>
@@ -59,7 +59,7 @@ sourceId: 7391
 
   <p>The critical distinction between <em>partially automated</em> and <em>true lights-out</em> CNC production is the depth of integration between these systems. A machine with an automatic pallet changer but no in-process gauging will accumulate dimensional drift overnight. A machine with probing but no tool breakage detection will crash on a broken tool at 2 AM. Reliable <strong>CNC lights-out manufacturing</strong> requires all layers working in concert.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-lights-out-advanced-2.webp" alt="CNC lights-out manufacturing robotic loading system with automated pallet changer" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-lights-out-advanced-2.webp" alt="CNC lights-out manufacturing robotic loading system with automated pallet changer" width="1200" height="686" loading="lazy">
 
   <!-- 4. CORE FEATURES / COMPARISON TABLE -->
   <h2 id="3-core-technologies-lights-out-cnc-vs-standard-cnc-operation">3. Core Technologies: Lights-Out CNC vs Standard CNC Operation</h2>
@@ -145,7 +145,7 @@ sourceId: 7391
 
   <div class="qf-testimonial"><blockquote>“เราเผชิญกับปัญหาการขาดแคลนช่างฝีมือในกะกลางคืนมาหลายปี การเปลี่ยนมาใช้ระบบ CNC lights-out manufacturing กับเครื่องจักรจาก CENNETIC ช่วยให้เราเพิ่มอัตราการใช้งานเครื่องจักรได้อย่างมีนัยสำคัญ ช่างเทคนิคเพียงคนเดียวสามารถดูแลเครื่องได้หลายเครื่องพร้อมกันผ่านระบบ remote monitoring การรับประกัน 2 ปีและทีมสนับสนุนของ Bella ทำให้เรามั่นใจในการลงทุนครั้งนี้มาก”</blockquote><figcaption>— Somchai W., Plant Manager, Automotive Structural Parts Manufacturer, Amata City Industrial Estate, Chonburi, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-lights-out-advanced-3.webp" alt="CNC lights-out manufacturing unmanned night shift with remote monitoring dashboard" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-lights-out-advanced-3.webp" alt="CNC lights-out manufacturing unmanned night shift with remote monitoring dashboard" width="1200" height="686" loading="lazy">
 
   <!-- 7. PROS / CONS -->
   <h2 id="6-pros-cons-of-cnc-lights-out-manufacturing">6. Pros &amp; Cons of CNC Lights-Out Manufacturing</h2>

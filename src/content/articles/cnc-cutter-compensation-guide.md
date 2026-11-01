@@ -10,7 +10,7 @@ modified: '2026-07-16T12:40:54'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-cutter-compensation-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-cutter-compensation-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -33,7 +33,7 @@ sourceId: 7522
 
   <p><strong>CNC cutter compensation</strong>, also known as cutter radius compensation, allows your CNC machine to automatically adjust the tool path based on the actual tool diameter. This is essential for achieving precise dimensions, especially when using different tools or compensating for tool wear. The G-codes <strong>G40</strong> (cancel), <strong>G41</strong> (left compensation), and <strong>G42</strong> (right compensation) control this feature. Without proper <strong>cutter compensation</strong>, your parts may be out of tolerance, leading to scrap and wasted material.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cutter-compensation-1.webp" alt="CNC cutter compensation demonstration on milling machine" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cutter-compensation-1.webp" alt="CNC cutter compensation demonstration on milling machine" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="why-cutter-compensation-matters">1. Why CNC Cutter Compensation Matters: Industry Data</h2>
@@ -96,7 +96,7 @@ sourceId: 7522
     <li><strong>X__ Y__:</strong> First compensated move (linear move required)</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-cutter-compensation-2.webp" alt="Diagram illustrating CNC cutter compensation G41 and G42 offset directions" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cutter-compensation-2.webp" alt="Diagram illustrating CNC cutter compensation G41 and G42 offset directions" width="1200" height="686" loading="lazy">
 
   <h3 id="34-choosing-between-g41-and-g42">3.4 Choosing Between G41 and G42</h3>
   <div class="qf-table">
@@ -252,7 +252,7 @@ sourceId: 7522
 
   <div class="qf-testimonial"><blockquote>“Our job shop in Bangkok, Thailand, handles high-mix, low-volume production with frequent tool changes. Before using CNC cutter compensation, every tool change required program verification and often modification, costing us 10-15 minutes per setup. After CENNETIC trained our team on G41/G42 and proper offset management, we reduced setup time by 70%. We now run the same programs with 8mm, 10mm, and 12mm end mills by simply changing the D-code offset. This flexibility increased our throughput by 35% and made us more competitive. The 2-year warranty and local support gave us confidence to invest in three more machines.”</blockquote><figcaption>— Narong P., Owner, Bangkok Precision Machining Co., Ltd., Bangkok, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-cutter-compensation-3.webp" alt="CNC operator adjusting cutter compensation offset on CENNETIC control" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cutter-compensation-3.webp" alt="CNC operator adjusting cutter compensation offset on CENNETIC control" width="1200" height="686" loading="lazy">
 
   <!-- 8. PROS / CONS -->
   <h2 id="pros-cons">7. Pros &amp; Cons of CNC Cutter Compensation</h2>

@@ -10,7 +10,7 @@ modified: '2026-06-29T13:35:06'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-overtravel-alarm-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-overtravel-alarm-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -41,7 +41,7 @@ sourceId: 7082
     proven prevention strategies.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-overtravel-alarm-1.webp" alt="Cennetic CNC overtravel alarm displayed on FANUC control panel" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-overtravel-alarm-1.webp" alt="Cennetic CNC overtravel alarm displayed on FANUC control panel" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="industry-context-why-cnc-overtravel-alarms-matter">Industry Context: Why CNC Overtravel Alarms Matter</h2>
@@ -190,7 +190,7 @@ sourceId: 7082
     <li>Log the event in your maintenance record and schedule a switch replacement if wear is detected.</li>
   </ol>
 
-  <img decoding="async" src="/images/2026/06/cnc-overtravel-alarm-2.webp" alt="Technician inspecting CNC limit switch to diagnose overtravel alarm" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-overtravel-alarm-2.webp" alt="Technician inspecting CNC limit switch to diagnose overtravel alarm" width="1200" height="686" loading="lazy">
 
   <!-- 6. MODULE D — EXPERT INSIGHT -->
   <h2 id="4-industry-expert-insight">4. Industry Expert Insight</h2>
@@ -271,7 +271,7 @@ sourceId: 7082
       five days and the problem has never returned. Excellent after-sales
       support — exactly what we need as a growing facility.”</blockquote><figcaption>— Nguyen T.H., Production Manager, Medical Device Lab, Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-overtravel-alarm-3.webp" alt="Monthly CNC limit switch cleaning and inspection to prevent overtravel alarms" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-overtravel-alarm-3.webp" alt="Monthly CNC limit switch cleaning and inspection to prevent overtravel alarms" width="1200" height="686" loading="lazy">
 
   <!-- 8. PROS / CONS -->
   <h2 id="6-pros-cons-of-cennetics-overtravel-protection-system">6. Pros &amp; Cons of Cennetic’s Overtravel Protection System</h2>

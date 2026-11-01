@@ -10,7 +10,7 @@ modified: '2026-08-24T12:24:55'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-adaptive-control-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-adaptive-control-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -29,7 +29,7 @@ sourceId: 7261
     <!-- 4. 行业数据段 -->
     <p>The shift towards smart manufacturing is accelerating. According to recent industry reports, the integration of real-time monitoring systems is becoming standard. Data shows that implementing intelligent feed optimization can reduce overall machining cycle times by 15-25% and extend tool life by up to 40%, making CNC adaptive control a critical upgrade for modern machine shops aiming to stay competitive.</p>
 
-    <img decoding="async" src="/images/2026/06/cnc-adaptive-control-1.webp" alt="CNC adaptive control real-time feed optimization on milling machine" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-adaptive-control-1.webp" alt="CNC adaptive control real-time feed optimization on milling machine" width="1200" height="686" loading="lazy">
 
     <!-- 5. 主体内容 H2 -->
     <h2 id="1-core-features-of-cnc-adaptive-control">1. Core Features of CNC Adaptive Control</h2>
@@ -40,7 +40,7 @@ sourceId: 7261
     
     <p><strong>Seamless Integration:</strong> Modern CNC adaptive control systems work as add-on modules for major controllers like Fanuc, Siemens, and Heidenhain. Installation typically takes less than 4 hours with no modifications required to existing post-processors.</p>
 
-    <img decoding="async" src="/images/2026/06/cnc-adaptive-control-2.webp" alt="CNC adaptive control interface with real-time feed and load display" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-adaptive-control-2.webp" alt="CNC adaptive control interface with real-time feed and load display" width="1200" height="686" loading="lazy">
 
     <!-- 6. 对比表格 -->
     <h2 id="2-traditional-machining-vs-cnc-adaptive-control">2. Traditional Machining vs. CNC Adaptive Control</h2>
@@ -86,7 +86,7 @@ sourceId: 7261
 
     <div class="qf-testimonial"><blockquote>“In our high-volume electronics casing line, consistency is everything. The adaptive control not only sped up our roughing cycles by 20% but also gave us peace of mind during unmanned night shifts. It’s a game-changer for mass production.”</blockquote></div>
 
-    <img decoding="async" src="/images/2026/06/cnc-adaptive-control-3.webp" alt="CNC adaptive control machining aerospace Inconel part with real-time optimization" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-adaptive-control-3.webp" alt="CNC adaptive control machining aerospace Inconel part with real-time optimization" width="1200" height="686" loading="lazy">
 
     <!-- 8. Pros/Cons双栏卡片 -->
     <div class="qf-pros-cons">

@@ -10,7 +10,7 @@ modified: '2026-07-16T14:44:35'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-gdt-explained-2.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-gdt-explained-2.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -393,7 +393,7 @@ sourceId: 7506
     <strong>Pro Tip:</strong> Use MMC whenever possible for position tolerances on holes and shafts. It provides bonus tolerance, enables functional gaging, and reduces scrap while maintaining assembly fit. Use RFS only when the geometric control must be independent of size (e.g., perpendicularity of a mounting surface).
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-gdt-explained-2.webp" alt="CNC GD&amp;T inspection with CMM for geometric tolerancing" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-gdt-explained-2.webp" alt="CNC GD&amp;T inspection with CMM for geometric tolerancing" width="1200" height="686" loading="lazy">
 
   <!-- 9. CASE STUDIES -->
   <h2 id="case-studies">8. Real-World Case Studies &amp; Customer Testimonials</h2>
@@ -478,7 +478,7 @@ sourceId: 7506
   <h3 id="whats-the-difference-between-flatness-and-surface-finish">What’s the difference between flatness and surface finish?</h3>
   <p><strong>Flatness</strong> is a geometric control (form tolerance) that controls how flat a surface is—the variation between the highest and lowest points. <strong>Surface finish (Ra, Rz)</strong> is a texture control that measures the microscopic roughness of peaks and valleys. A surface can be very flat (good flatness) but rough (poor finish), or very smooth (good finish) but wavy (poor flatness). Flatness ⏥ 0.001 means the surface must lie between two parallel planes 0.001″ apart. Ra 32 means the average roughness is 32 microinches. They control different things—don’t confuse them.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-gdt-explained-3.webp" alt="CNC machining with GD&amp;T blueprint for geometric tolerancing" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-gdt-explained-3.webp" alt="CNC machining with GD&amp;T blueprint for geometric tolerancing" width="1200" height="686" loading="lazy">
 
   <!-- 13. CTA -->
   <div class="qf-cta-box">

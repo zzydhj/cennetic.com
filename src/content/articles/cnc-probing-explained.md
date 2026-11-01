@@ -10,7 +10,7 @@ modified: '2026-07-15T03:00:25'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-probing-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-probing-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -27,7 +27,7 @@ sourceId: 7554
 
   <p>If you’re new to CNC machining, <strong>CNC probing</strong> is one of the most impactful technologies you can add to your workflow. CNC probing uses a <strong>touch probe</strong> to automatically measure workpiece position, tool offsets, and part dimensions directly on the machine — eliminating manual setup errors and dramatically improving accuracy. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve helped beginners reduce scrap rates significantly after implementing probing cycles. This guide covers what CNC probing is, how probing cycles work, and why it’s a game-changer for your shop.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-probing-explained-1.webp" alt="CNC probing touch probe measuring workpiece on milling machine" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-probing-explained-1.webp" alt="CNC probing touch probe measuring workpiece on milling machine" width="1200" height="686" loading="lazy">
 
   <!-- ② 行业数据段 -->
   <div class="qf-data-box">
@@ -45,7 +45,7 @@ sourceId: 7554
     <li><strong>Scanning Probe:</strong> Continuously measures surface profiles. Used for complex surface inspection and reverse engineering.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-probing-explained-2.webp" alt="CNC probing cycle diagram showing touch probe sequence" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-probing-explained-2.webp" alt="CNC probing cycle diagram showing touch probe sequence" width="1200" height="686" loading="lazy">
 
   <h2 id="2-understanding-cnc-probing-cycles">2. Understanding CNC Probing Cycles</h2>
 
@@ -234,7 +234,7 @@ M99
   <h3 id="q6-which-cnc-controllers-support-probing-cycles">Q6: Which CNC controllers support probing cycles?</h3>
   <p>All major controllers support CNC probing via the G31 skip function and Macro B (or equivalent): <strong>Fanuc 0i / 30i / 31i / 32i</strong>, <strong>Siemens 840D / 828D</strong>, <strong>Heidenhain TNC 640 / iTNC 530</strong>, <strong>Haas NGC / Classic</strong>, and <strong>Mitsubishi M800 / M80</strong>. Entry-level or budget controllers may have limited macro support — always verify with your machine documentation before purchasing a probe.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-probing-explained-3.webp" alt="CNC probing touch probe inspecting aerospace bracket on machining centre" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-probing-explained-3.webp" alt="CNC probing touch probe inspecting aerospace bracket on machining centre" width="1200" height="686" loading="lazy">
 
   <!-- ⑨ CTA Box -->
   <div class="qf-cta-box">

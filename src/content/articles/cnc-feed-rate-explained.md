@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-feed-rate-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-feed-rate-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -29,7 +29,7 @@ sourceId: 7449
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-feed-rate-explained-1.webp" alt="CNC feed rate comparison showing correct vs incorrect cut quality chip formation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-feed-rate-explained-1.webp" alt="CNC feed rate comparison showing correct vs incorrect cut quality chip formation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 2. INDUSTRY DATA -->
@@ -215,7 +215,7 @@ sourceId: 7449
   </div>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-feed-rate-explained-2.webp" alt="CNC aluminium milling showing perfect chip formation at optimised feed rate" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-feed-rate-explained-2.webp" alt="CNC aluminium milling showing perfect chip formation at optimised feed rate" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 5. USE CASES -->
@@ -338,7 +338,7 @@ sourceId: 7449
   </div>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-feed-rate-explained-3.webp" alt="CNC feed rate formula infographic showing IPM RPM feed per tooth calculation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-feed-rate-explained-3.webp" alt="CNC feed rate formula infographic showing IPM RPM feed per tooth calculation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 8. FAQ -->

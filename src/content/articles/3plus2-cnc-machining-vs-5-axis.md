@@ -11,7 +11,7 @@ categories:
   - comparisons
   - buying-guides
 author: bella
-hero: /images/2026/06/32-cnc-machining-1.webp
+hero: https://media.cennetic.com/images/2026/06/32-cnc-machining-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -24,7 +24,7 @@ sourceId: 2832
 <div class="qf-article-body">
 <p><strong>3+2 CNC machining</strong> — also known as positional 5-axis machining — is one of the most cost-effective strategies available to processing plants today. As a technical decision-maker, choosing between <strong>3+2 CNC machining</strong> and full 5-axis machining directly impacts your setup time, surface quality, and capital investment. At <a href="/" target="_blank" rel="noopener">Cennetic CNC Machine</a>, we have helped over <strong>750+ processing plants</strong> across Europe, North America, and Southeast Asia navigate this exact decision since 2010. This guide compares both strategies with real-world data so you can invest wisely.</p>
 <p>According to the <strong>2024 Machining Centers Market Report</strong> by Mordor Intelligence, the global CNC machining center market is projected to grow at a CAGR of 6.8% through 2029, driven by demand for multi-axis capabilities in automotive, aerospace, and mold-making sectors. A separate analysis by <strong>Grand View Research (2023)</strong> confirms that 5-axis CNC adoption among small-to-mid-size manufacturers has accelerated, yet 3+2 positional machining remains the dominant choice for plants processing prismatic and angled-feature parts — accounting for an estimated 55–60% of multi-axis installations in job shops globally.</p>
-<p><img decoding="async" src="/images/2026/06/32-cnc-machining-1.webp" alt="3+2 CNC machining vs 5-axis machine comparison — Cennetic CNC Machine Dongguan China" width="1200" height="686" loading="lazy"></p>
+<p><img decoding="async" src="https://media.cennetic.com/images/2026/06/32-cnc-machining-1.webp" alt="3+2 CNC machining vs 5-axis machine comparison — Cennetic CNC Machine Dongguan China" width="1200" height="686" loading="lazy"></p>
 <p>Founded in 2010 and based in <strong>Dalang Town, Dongguan, Guangdong, China</strong>, Cennetic has been manufacturing CE-certified CNC machines for over 15 years, serving <strong>750+ customers</strong> worldwide. Every machine comes with a <strong>2-year warranty</strong> and dedicated after-sales support.</p>
 <h2 id="1-what-is-32-cnc-machining-key-concepts-explained">1. What Is 3+2 CNC Machining? Key Concepts Explained</h2>
 <p>In <strong>3+2 CNC machining</strong>, the workpiece is tilted and rotated to a fixed angle using two rotary axes (typically A and C), and then standard 3-axis cutting proceeds. This allows the machine to access multiple faces of a part in a single setup — without requiring continuous simultaneous 5-axis interpolation. The result is a significant reduction in re-clamping errors, setup time, and fixture costs compared to pure 3-axis machining.</p>
@@ -104,7 +104,7 @@ sourceId: 2832
 <p>By tilting the workpiece to an optimal angle, <strong>3+2 CNC machining</strong> allows the use of shorter cutting tools with less overhang. This improves rigidity, reduces vibration, and delivers a better surface finish — often Ra 0.8 µm or better on aluminum — without the need for secondary polishing operations.</p>
 <h3 id="35-dust-coolant-and-chip-management">3.5 Dust, Coolant, and Chip Management</h3>
 <p>When planning your upgrade, factor in total operating costs. 3+2 machines typically use flood coolant for metal cutting, requiring a coolant management system ($2,000–$5,000). Full 5-axis machines often require through-spindle coolant for deep-cavity work, adding to both machine cost and maintenance complexity. Budget these into your ROI calculation from day one.</p>
-<p><img decoding="async" src="/images/2026/06/32-cnc-machining-2.webp" alt="3+2 CNC machining in action on an aluminum part — Cennetic CNC factory Dongguan" width="1200" height="686" loading="lazy"></p>
+<p><img decoding="async" src="https://media.cennetic.com/images/2026/06/32-cnc-machining-2.webp" alt="3+2 CNC machining in action on an aluminum part — Cennetic CNC factory Dongguan" width="1200" height="686" loading="lazy"></p>
 <h2 id="4-customer-case-studies-testimonials">4. Customer Case Studies &amp; Testimonials</h2>
 <h3 id="case-study-1-valve-body-production-germany">Case Study 1: Valve Body Production — Germany</h3>
 <p>A hydraulic components manufacturer in Germany was running four separate 3-axis setups to machine valve bodies. After switching to <strong>3+2 CNC machining</strong> with a Cennetic-recommended configuration, they consolidated to a single setup, reduced per-part cycle time from 4 hours to 52 minutes, and cut scrap rates from 6% to under 1.5%. ROI was achieved in 14 months.</p>
@@ -165,7 +165,7 @@ sourceId: 2832
 </div>
 <div class="qf-highlight-box">
   💡 <strong>Decision Rule:</strong> If more than 15% of your total production time is spent on hand finishing, secondary setups, or fixture re-clamping for angled-feature parts — <strong>3+2 CNC machining will deliver immediate ROI</strong>. Only consider upgrading to full 5-axis when your part mix consistently includes freeform surfaces, deep undercuts, or tolerances tighter than ±0.01mm on complex contours.</div>
-<p><img decoding="async" src="/images/2026/06/32-cnc-machining-3.webp" alt="ROI comparison chart 3+2 CNC machining vs 5-axis for small processing plant" width="1200" height="686" loading="lazy"></p>
+<p><img decoding="async" src="https://media.cennetic.com/images/2026/06/32-cnc-machining-3.webp" alt="ROI comparison chart 3+2 CNC machining vs 5-axis for small processing plant" width="1200" height="686" loading="lazy"></p>
 <h2 id="6-when-to-upgrade-from-32-to-full-5-axis-cnc-machining">6. When to Upgrade from 3+2 to Full 5-Axis CNC Machining</h2>
 <p>The decision to upgrade from <strong>3+2 CNC machining</strong> to full 5-axis is rarely about capability alone — it is about whether your current part mix justifies the investment. Use the following triggers as a practical decision framework:</p>
 <ul>

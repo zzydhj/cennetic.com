@@ -10,7 +10,7 @@ modified: '2026-08-14T10:58:26'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-first-article-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-first-article-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -25,7 +25,7 @@ sourceId: 7495
   <!-- 1. 引言段 -->
   <p><strong>CNC first article inspection</strong> (FAIR) is the single most important quality gate in precision manufacturing. Whether you’re a quality engineer setting up a new production line or a procurement manager evaluating a CNC supplier, understanding the FAIR process can mean the difference between a flawless production run and a costly batch of scrap. At <a href="/" rel="noopener">Cennetic Intelligent Equipment</a>, founded in 2010 and headquartered in Dalingshan, Dongguan, Guangdong, China, we have delivered precision CNC solutions to 750+ manufacturers across the US, Europe, and Southeast Asia — and 100% first article inspection is built into every order we fulfill.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-first-article-explained-1.webp" alt="CNC first article inspection process with micrometer and CAD drawing" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-first-article-explained-1.webp" alt="CNC first article inspection process with micrometer and CAD drawing" width="1200" height="686" loading="lazy">
 
   <!-- 2. 行业数据段 -->
   <h2 id="why-cnc-first-article-inspection-matters-industry-data">Why CNC First Article Inspection Matters: Industry Data</h2>
@@ -48,7 +48,7 @@ sourceId: 7495
     <li><strong>PPAP (AIAG)</strong> — Production Part Approval Process for automotive</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-first-article-explained-2.webp" alt="CNC first article inspection using CMM coordinate measuring machine" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-first-article-explained-2.webp" alt="CNC first article inspection using CMM coordinate measuring machine" width="1200" height="686" loading="lazy">
 
   <h2 id="2-the-complete-fair-process-5-key-steps">2. The Complete FAIR Process: 5 Key Steps</h2>
   <p>Understanding the step-by-step FAIR workflow helps both buyers and manufacturers align expectations and avoid delays. Here is how Cennetic executes the process:</p>
@@ -140,7 +140,7 @@ sourceId: 7495
 
   <div class="qf-testimonial"><blockquote>“We were struggling with inconsistent part quality from our previous supplier. After switching to Cennetic and receiving their FAIR report on the first batch, we could see immediately that every dimension was within spec. Lead time was fast and communication was excellent.”</blockquote><figcaption>— Thanh N., Engineering Lead, Ho Chi Minh City, Vietnam (Electronics Manufacturing)</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-first-article-explained-3.webp" alt="Cennetic CNC workshop team reviewing first article inspection FAIR report" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-first-article-explained-3.webp" alt="Cennetic CNC workshop team reviewing first article inspection FAIR report" width="1200" height="686" loading="lazy">
 
   <!-- 6. Pros / Cons -->
   <h2 id="5-pros-cons-of-implementing-fair-in-your-supply-chain">5. Pros &amp; Cons of Implementing FAIR in Your Supply Chain</h2>

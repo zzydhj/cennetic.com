@@ -10,7 +10,7 @@ modified: '2026-07-15T03:30:42'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-atc-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-atc-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7558
     to an ATC-equipped machine.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-atc-explained-1.webp" alt="CNC ATC automatic tool changer arm gripping tool on milling machine" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-atc-explained-1.webp" alt="CNC ATC automatic tool changer arm gripping tool on milling machine" width="1200" height="686" loading="lazy">
 
   <!-- 3. Industry Data Section -->
   <h2 id="1-why-cnc-atc-matters-industry-data">1. Why CNC ATC Matters: Industry Data</h2>
@@ -91,7 +91,7 @@ sourceId: 7558
     machine for your shop.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-atc-explained-2.webp" alt="CNC ATC tool changer types comparison diagram carousel swing-arm chain" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-atc-explained-2.webp" alt="CNC ATC tool changer types comparison diagram carousel swing-arm chain" width="1200" height="686" loading="lazy">
 
   <!-- Compare Table -->
   <table class="qf-table">
@@ -285,7 +285,7 @@ sourceId: 7558
   <div class="qf-testimonial"><blockquote>“เครื่อง Cennetic ช่วยให้เราลดเวลาที่ไม่ได้ตัดชิ้นงานลงได้มากกว่า 60% และตอนนี้เราสามารถรันกะกลางคืนแบบไม่มีพนักงานได้แล้ว — คุ้มค่าการลงทุนมาก”
     (“The Cennetic machine helped us cut non-machining time by over 60%, and we can now run the night shift lights-out — a very worthwhile investment.”)</blockquote></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-atc-explained-3.webp" alt="CNC ATC beginner learning automatic tool changer operation on machining centre" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-atc-explained-3.webp" alt="CNC ATC beginner learning automatic tool changer operation on machining centre" width="1200" height="686" loading="lazy">
 
   <!-- 9. Pros / Cons -->
   <h2 id="7-pros-and-cons-of-cnc-atc">7. Pros and Cons of CNC ATC</h2>

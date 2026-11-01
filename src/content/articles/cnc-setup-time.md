@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-setup-time-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-setup-time-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -26,7 +26,7 @@ sourceId: 7491
   <!-- 1. 引言段 -->
   <p><strong>CNC setup time</strong> is the single largest drain on productivity in high-mix, low-volume manufacturing — and for most job shops, it is also the most controllable variable on the factory floor. At <a href="/" rel="noopener">Cennetic Intelligent Equipment</a>, founded in 2010 and based in Dalingshan, Dongguan, Guangdong, China, we have helped 750+ manufacturers across the US, Europe, and Southeast Asia cut changeover times by an average of 73% using proven SMED methodology and purpose-built machine features. This comprehensive guide defines CNC setup time, explains the SMED process step by step, and gives you actionable strategies to slash changeover — backed by real-world case studies and authoritative industry data.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-setup-time-1.webp" alt="CNC setup time reduction using quick-change tooling on VMC machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-setup-time-1.webp" alt="CNC setup time reduction using quick-change tooling on VMC machining center" width="1200" height="686" loading="lazy">
 
   <!-- 2. 行业数据段 -->
   <h2 id="why-cnc-setup-time-is-a-critical-business-metric">Why CNC Setup Time Is a Critical Business Metric</h2>
@@ -53,7 +53,7 @@ sourceId: 7491
 
   <p>The core principle of <strong>SMED (Single-Minute Exchange of Die)</strong>, developed by Shigeo Shingo, is to systematically convert as many internal tasks as possible into external tasks — targeting total setup times under 10 minutes. When combined with quick-change hardware, automated probing, and standardized procedures, sub-10-minute setups are achievable on most CNC machining centers.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-setup-time-2.webp" alt="CNC setup time SMED comparison traditional vs optimized changeover process" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-setup-time-2.webp" alt="CNC setup time SMED comparison traditional vs optimized changeover process" width="1200" height="686" loading="lazy">
 
   <h2 id="2-the-smed-process-4-steps-to-reduce-cnc-setup-time">2. The SMED Process: 4 Steps to Reduce CNC Setup Time</h2>
 
@@ -160,7 +160,7 @@ sourceId: 7491
 
   <div class="qf-testimonial"><blockquote>“Short runs used to be a money-loser for us because setup took longer than the actual machining. Cennetic’s presetter and probing routines solved that completely. Now 8-minute setups mean even 5-piece jobs are profitable. Our scrap rate dropped from 5% to under 1% — that alone covers the machine cost.”</blockquote><figcaption>— Linh T., Manufacturing Director, Surgical Instruments Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-setup-time-3.webp" alt="CNC setup time OEE improvement dashboard showing changeover reduction results" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-setup-time-3.webp" alt="CNC setup time OEE improvement dashboard showing changeover reduction results" width="1200" height="686" loading="lazy">
 
   <!-- 6. Pros / Cons -->
   <h2 id="5-pros-cons-of-implementing-smed-for-cnc-setup-time-reductio">5. Pros &amp; Cons of Implementing SMED for CNC Setup Time Reduction</h2>

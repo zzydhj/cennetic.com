@@ -10,7 +10,7 @@ modified: '2026-08-14T12:29:57'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-coolant-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-coolant-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -31,7 +31,7 @@ sourceId: 7471
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-coolant-explained-1.webp" alt="CNC coolant explained infographic showing coolant types and purposes for beginners" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-coolant-explained-1.webp" alt="CNC coolant explained infographic showing coolant types and purposes for beginners" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 2. INDUSTRY DATA -->
@@ -86,7 +86,7 @@ sourceId: 7471
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-coolant-explained-2.webp" alt="Comparison of CNC coolant types emulsion straight oil synthetic semi-synthetic" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-coolant-explained-2.webp" alt="Comparison of CNC coolant types emulsion straight oil synthetic semi-synthetic" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 5. COOLANT TYPE COMPARISON TABLE -->
@@ -284,7 +284,7 @@ sourceId: 7471
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-coolant-explained-3.webp" alt="CNC coolant in action showing high-pressure coolant delivery and chip breaking on machining center" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-coolant-explained-3.webp" alt="CNC coolant in action showing high-pressure coolant delivery and chip breaking on machining center" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 11. CTA BOX -->

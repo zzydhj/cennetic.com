@@ -10,7 +10,7 @@ modified: '2026-06-28T10:46:43'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-work-coordinate-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-work-coordinate-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -50,7 +50,7 @@ sourceId: 7514
     💡 <strong>Key Insight:</strong> The <strong>CNC work coordinate system</strong> is the bridge between your G-code program and the physical location of your part on the machine table. Get it wrong and every cut is wrong. Get it right and your machine runs with repeatable precision — shift after shift.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-work-coordinate-explained-1.webp" alt="CNC work coordinate G54 offset screen on machine control panel" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-work-coordinate-explained-1.webp" alt="CNC work coordinate G54 offset screen on machine control panel" width="1200" height="686" loading="lazy">
 
   <!-- 3. 主体内容 -->
   <h2 id="2-what-is-a-cnc-work-coordinate-system-definition">2. What Is a CNC Work Coordinate System? (Definition)</h2>
@@ -175,7 +175,7 @@ M99                          (Return to main program)</code></pre>
     <li><strong>Dry run before cutting.</strong> Run the program at 10% feed rate override with the spindle off to verify all movements before committing to material.</li>
   </ol>
 
-  <img decoding="async" src="/images/2026/06/cnc-work-coordinate-explained-2.webp" alt="CNC work coordinate diagram with multiple fixture offsets G54 to G57 on machine table" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-work-coordinate-explained-2.webp" alt="CNC work coordinate diagram with multiple fixture offsets G54 to G57 on machine table" width="1200" height="686" loading="lazy">
 
   <h2 id="6-real-world-use-cases-for-cnc-work-coordinates">6. Real-World Use Cases for CNC Work Coordinates</h2>
 
@@ -289,7 +289,7 @@ M99                          (Return to main program)</code></pre>
     🏭 <strong>About Cennetic CNC:</strong> Founded in <strong>2010</strong> in Daling Mountain Town, Dongguan, Guangdong, Cennetic has 15 years of CNC manufacturing and applications experience, serving <strong>750+ customers</strong> across Europe, North America, and Southeast Asia. All machines come with a <strong>2-year warranty</strong>. Quality issues are fully covered under our refund policy. Our engineering team provides hands-on work coordinate setup support for every machine we deliver.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-work-coordinate-explained-3.webp" alt="CNC work coordinate setup using dial indicator to measure part zero on machine table" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-work-coordinate-explained-3.webp" alt="CNC work coordinate setup using dial indicator to measure part zero on machine table" width="1200" height="686" loading="lazy">
 
   <!-- 10. FAQ -->
   <h2 id="10-faq-cnc-work-coordinate-system-explained">10. FAQ: CNC Work Coordinate System Explained</h2>

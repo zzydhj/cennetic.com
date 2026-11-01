@@ -10,6 +10,7 @@
  * 车间背景图由 PageLayout 里按 slug='about-us' 配置的 HERO 映射决定。
  */
 import PageLayout from "@layouts/PageLayout.astro";
+import { mediaUrl } from "@lib/media-url.ts";
 
 const meta = {
   slug: "about-us",
@@ -33,7 +34,7 @@ const img = (
   cap: string,
 ) => /* html */ `
       <figure class="pg-gitem">
-        <img src="/images/site/company/${src}.webp" alt="${alt}" width="${w}" height="${h}" loading="lazy" decoding="async" />
+        <img src="${mediaUrl('/images/site/company/' + src + '.webp')}" alt="${alt}" width="${w}" height="${h}" loading="lazy" decoding="async" />
         <figcaption>${cap}</figcaption>
       </figure>`;
 

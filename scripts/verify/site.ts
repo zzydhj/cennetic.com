@@ -72,6 +72,14 @@ function findRawTemplates(html: string): string[] {
  *   2. 复用 absoluteUrl() 补全 → 它按「目录式页面」加尾斜杠，产出 …/x.webp/ 直接 404。
  * 两种都不会让构建或页面报错，只能从产物反查文件是否真在 dist 里。
  */
+/*
+ * 图片存储的资产域。与 src/lib/media-url.ts 里的 MEDIA_ORIGIN 必须同值（两处改了不同步，
+ * 发布闸就会把正常的分享图判成错误）。
+ * 图搬进对象存储后，og/twitter 会指向这里 —— 它属于本站资产而不是第三方图床，
+ * 所以按同域处理；但文件不在 dist 里，不能拿去查盘。
+ */
+const MEDIA_ORIGIN = 'https://media.cennetic.com';
+
 async function checkShareImage(p: string, html: string): Promise<void> {
     const tags: Array<[string, string | undefined]> = [
         ['og:image', html.match(/property="og:image" content="([^"]*)"/)?.[1]],
@@ -89,14 +97,22 @@ async function checkShareImage(p: string, html: string): Promise<void> {
             fail.push(`${name} 不是绝对 URL（OG 协议要求绝对地址）：${p} → ${raw}`);
             continue;
         }
-        if (u.origin !== ORIGIN.origin) {
-            fail.push(`${name} 指向站外，分享图会被抓走：${p} → ${raw}`);
+        const isMedia = u.origin === MEDIA_ORIGIN;
+        if (u.origin !== ORIGIN.origin && !isMedia) {
+            fail.push(`${name} 指向第三方域名，分享图会被抓走：${p} → ${raw}`);
+            continue;
+        }
+        /* 资产域也不能乱指：路径必须守住 images/ 约定，否则多半是拼接写错了 */
+        if (isMedia && !u.pathname.startsWith('/images/')) {
+            fail.push(`${name} 在资产域下的路径不符合 images/ 约定：${p} → ${raw}`);
             continue;
         }
         if (u.pathname.endsWith('/')) {
             fail.push(`${name} 路径带尾斜杠，图片文件不可能命中：${p} → ${raw}`);
             continue;
         }
+        /* 图在对象存储里，本地产物没这个文件，只能靠 verify:live 抽远程可达性 */
+        if (isMedia) continue;
         // u.pathname 是百分号编码的，中文文件名必须先还原再查盘，否则真实存在的文件会被误报
         const rel = decodeURIComponent(u.pathname);
         const f = join(DIST, rel);

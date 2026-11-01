@@ -10,7 +10,7 @@ modified: '2026-08-24T13:41:14'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-thermal-compensation-advanced-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-thermal-compensation-advanced-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -30,7 +30,7 @@ sourceId: 7285
 
   <p>Established in 2010, Cennetic has served more than <strong>750 customers</strong> across Europe, the Americas, and Southeast Asia. From Dalingshan Town, Dongguan, Guangdong, China, our team helps manufacturers evaluate CNC equipment, monitoring options, and precision-focused improvement projects.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-thermal-compensation-advanced-1.webp" alt="CNC thermal compensation sensor installation on a machine spindle" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-thermal-compensation-advanced-1.webp" alt="CNC thermal compensation sensor installation on a machine spindle" loading="lazy" width="1200" height="686">
 
   <h2 id="1-why-cnc-thermal-compensation-matters">1. Why CNC Thermal Compensation Matters</h2>
 
@@ -81,7 +81,7 @@ sourceId: 7285
 
   <p>A thermal model should be validated using a suitable measurement process, such as probing cycles, laser interferometer testing, ballbar testing, calibrated artifacts, or finished-part measurement. Results should be compared before and after compensation under defined conditions. Recalibration may be needed after major service, spindle replacement, machine relocation, structural repair, changes in coolant management, or substantial process changes.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-thermal-compensation-advanced-2.webp" alt="CNC thermal compensation temperature mapping and error trend analysis" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-thermal-compensation-advanced-2.webp" alt="CNC thermal compensation temperature mapping and error trend analysis" loading="lazy" width="1200" height="686">
 
   <h2 id="4-typical-applications-for-cnc-thermal-compensation">4. Typical Applications for CNC Thermal Compensation</h2>
 

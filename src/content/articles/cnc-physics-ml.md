@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-physics-ml-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-physics-ml-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -34,7 +34,7 @@ sourceId: 7352
   <h2 id="2-what-is-cnc-physics-informed-machine-learning">2. What Is CNC Physics-Informed Machine Learning?</h2>
   <p><strong>CNC physics ML</strong> combines the rigor of physics-based modeling with the adaptability of artificial intelligence. Unlike black-box AI models, physics-informed neural networks (PINNs) embed governing equations — such as heat transfer, vibration dynamics, and material plasticity — directly into the learning process. This ensures predictions remain physically plausible even with limited training data, making the technology especially valuable in high-mix, low-volume production environments where data collection is expensive.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-physics-ml-1.webp" alt="CNC physics ML model integrating heat transfer and vibration dynamics in machining" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-physics-ml-1.webp" alt="CNC physics ML model integrating heat transfer and vibration dynamics in machining" width="1200" height="686" loading="lazy">
 
   <h2 id="3-the-core-advantage-hybrid-modeling">3. The Core Advantage: Hybrid Modeling</h2>
   <p>Cennetic’s <strong>CNC hybrid modeling</strong> approach seamlessly integrates physics-based simulations with machine learning algorithms. This synergy enables real-time optimization of cutting parameters — speed, feed rate, and depth of cut — based on live sensor feedback from force dynamometers, thermocouples, and accelerometers. Our internal validation tests show the system predicts tool wear with <strong>95% accuracy</strong>, reducing unplanned downtime by <strong>30%</strong> across client deployments.</p>
@@ -67,7 +67,7 @@ sourceId: 7352
   <p>A surgical instrument producer in Ho Chi Minh City required zero-defect output on 316L stainless steel components. Cennetic’s <strong>CNC physics ML</strong> platform monitored tool wear in real time and triggered automatic tool changes before defects could occur, resulting in a <strong>99.8% yield rate</strong> and full compliance with ISO 13485 medical device quality requirements.</p>
   <div class="qf-testimonial"><blockquote>“In medical manufacturing, one defective part can mean a product recall. Cennetic’s system gives us real-time confidence that every tool change happens at exactly the right moment. Our yield went from 96% to 99.8% — that’s the difference between profit and loss on our margins.”</blockquote><figcaption>— Production Director, Medical Device Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-physics-ml-2.webp" alt="Comparison of surface finish results with and without CNC physics ML optimization" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-physics-ml-2.webp" alt="Comparison of surface finish results with and without CNC physics ML optimization" width="1200" height="686" loading="lazy">
 
   <!-- 8. Pros/Cons -->
   <div class="qf-pros-cons">
@@ -116,7 +116,7 @@ sourceId: 7352
   <h3 id="how-long-does-implementation-take">How long does implementation take?</h3>
   <p>Typical deployment takes <strong>2–4 weeks</strong>, including sensor installation, model training, and production validation. Cennetic’s engineers provide full on-site support and operator training. Most clients realize measurable ROI within <strong>3 months</strong> through reduced scrap, longer tool life, and increased throughput.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-physics-ml-3.webp" alt="CNC physics ML dashboard showing real-time optimization parameters and tool wear prediction" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-physics-ml-3.webp" alt="CNC physics ML dashboard showing real-time optimization parameters and tool wear prediction" width="1200" height="686" loading="lazy">
 
   <!-- 11. CTA Box -->
   <div class="qf-cta-box">

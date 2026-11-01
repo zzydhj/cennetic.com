@@ -10,7 +10,7 @@ modified: '2026-08-18T11:17:44'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-doe-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-doe-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7328
     These figures underscore a clear message: in a competitive global market, CNC DOE is not a luxury — it is a strategic necessity.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-doe-1.webp" alt="CNC DOE contour plot analysis by manufacturing process engineer" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-doe-1.webp" alt="CNC DOE contour plot analysis by manufacturing process engineer" width="1200" height="686" loading="lazy">
 
   <!-- 3. CORE FEATURES -->
   <h2 id="1-core-features-of-the-cnc-doe-methodology">1. Core Features of the CNC DOE Methodology</h2>
@@ -112,7 +112,7 @@ sourceId: 7328
     </tbody>
   </table>
 
-  <img decoding="async" src="/images/2026/06/cnc-doe-2.webp" alt="CNC DOE before and after part quality comparison in machining" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-doe-2.webp" alt="CNC DOE before and after part quality comparison in machining" width="1200" height="686" loading="lazy">
 
   <!-- 5. USE CASES -->
   <h2 id="3-real-world-cnc-doe-use-cases">3. Real-World CNC DOE Use Cases</h2>
@@ -147,7 +147,7 @@ sourceId: 7328
 
   <div class="qf-testimonial"><blockquote>“Regulatory compliance for our surgical implants is non-negotiable. CNC DOE gave us the statistical evidence our quality team needed to validate the process and pass our FDA audit. The support from Cennetic throughout the study was exceptional — they understood our industry constraints from day one.”</blockquote></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-doe-3.webp" alt="CNC DOE results analysis on machining optimization dashboard" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-doe-3.webp" alt="CNC DOE results analysis on machining optimization dashboard" width="1200" height="686" loading="lazy">
 
   <!-- 6. PROS / CONS -->
   <h2 id="4-pros-and-cons-of-implementing-cnc-doe">4. Pros and Cons of Implementing CNC DOE</h2>

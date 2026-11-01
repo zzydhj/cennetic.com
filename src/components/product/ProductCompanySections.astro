@@ -13,10 +13,11 @@
  */
 import { siteConfig } from "@lib/catalog.ts";
 import { waLink } from "@lib/whatsapp.ts";
+import { mediaUrl } from "@lib/media-url.ts";
 
 const { productName } = Astro.props as { productName: string };
 
-const img = (name: string) => `/images/site/company/${name}`;
+const img = (name: string) => mediaUrl('/images/site/company/' + name);
 const quote = waLink(
     { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
     {
@@ -602,7 +603,7 @@ const bento = [
         border-radius: var(--radius-lg);
         overflow: hidden;
         color: #fff;
-        background: url("/images/site/company/cnc-working.webp") right center /
+        background: url("https://media.cennetic.com/images/site/company/cnc-working.webp") right center /
             cover no-repeat;
         background-color: var(--color-ink);
     }

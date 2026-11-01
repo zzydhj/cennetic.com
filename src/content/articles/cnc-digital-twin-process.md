@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-digital-twin-process-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-digital-twin-process-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -27,7 +27,7 @@ sourceId: 7348
 
   <p>The <strong>CNC digital twin process</strong> is rapidly becoming the cornerstone of modern smart manufacturing. As an IT architect or manufacturing decision-maker, you understand the value of data-driven decisions — and the <strong>CNC digital twin process</strong> bridges the physical and digital worlds, enabling real-time simulation, predictive analytics, and continuous optimization of CNC machining operations without touching a single piece of metal. <a href="/" rel="noopener">CENNETIC.COM</a>, founded in 2010 and headquartered in Dalingshan, Dongguan, Guangdong, China, has spent over 15 years engineering and delivering ISO 9001-certified CNC solutions to <strong>750+ customers</strong> across Europe, North America, and Southeast Asia.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-digital-twin-process-1.webp" alt="CNC digital twin process visualization in control room" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-digital-twin-process-1.webp" alt="CNC digital twin process visualization in control room" width="1200" height="686" loading="lazy">
 
   <!-- ② 行业数据段（4篇真实权威报告） -->
   <h2 id="1-why-the-cnc-digital-twin-process-matters-industry-data">1. Why the CNC Digital Twin Process Matters: Industry Data</h2>
@@ -60,7 +60,7 @@ sourceId: 7348
   <!-- ④ 核心功能 -->
   <h2 id="3-core-features-of-the-cennetic-cnc-digital-twin-process">3. Core Features of the CENNETIC CNC Digital Twin Process</h2>
 
-  <img decoding="async" src="/images/2026/06/cnc-digital-twin-process-3.webp" alt="CNC digital twin process architecture diagram" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-digital-twin-process-3.webp" alt="CNC digital twin process architecture diagram" width="1200" height="686" loading="lazy">
 
   <h3 id="31-real-time-machining-simulation">3.1 Real-Time Machining Simulation</h3>
   <p>Run the entire <strong>CNC digital twin process</strong> in a virtual environment before production begins. The system detects collisions, gouges, and fixture interferences with sub-millimeter accuracy — validated to within <strong>0.01 mm</strong> for aerospace and medical applications. New part programs can be fully validated in hours instead of days, dramatically accelerating time-to-first-part and reducing costly first-article failures.</p>
@@ -77,7 +77,7 @@ sourceId: 7348
   <!-- ⑤ 对比表格 -->
   <h2 id="4-cnc-digital-twin-process-vs-traditional-machining-approach">4. CNC Digital Twin Process vs. Traditional Machining Approach</h2>
 
-  <img decoding="async" src="/images/2026/06/cnc-digital-twin-process-2.webp" alt="CNC digital twin process vs traditional machining comparison" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-digital-twin-process-2.webp" alt="CNC digital twin process vs traditional machining comparison" width="1200" height="686" loading="lazy">
 
   <table class="qf-compare-table">
     <thead>

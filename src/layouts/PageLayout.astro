@@ -19,6 +19,7 @@ import { entryPath } from "@lib/content.ts";
 import { waLink } from "@lib/whatsapp.ts";
 import { DEFAULT_ROBOTS } from "@lib/content-schema.ts";
 import type { LockedPageData } from "@lib/locked-page.ts";
+import { mediaUrl } from "@lib/media-url.ts";
 
 interface Props {
     /** 锁定页的 meta（about-us / service 这类在 .astro 里内联，政策与联系页来自 locked md） */
@@ -49,11 +50,11 @@ const wide = /class="pg-page"/.test(html);
 const HERO: Record<string, { align?: "left" | "center"; image?: string }> = {
     "about-us": {
         align: "center",
-        image: "/images/site/company/machining-center-workshop.webp",
+        image: mediaUrl("/images/site/company/machining-center-workshop.webp"),
     },
     service: {
         align: "left",
-        image: "/images/site/company/cnc-working.webp",
+        image: mediaUrl("/images/site/company/cnc-working.webp"),
     },
 };
 const hero = HERO[d.slug] ?? {};

@@ -10,7 +10,7 @@ modified: '2026-08-24T13:37:14'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-spindle-health-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-spindle-health-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -28,7 +28,7 @@ sourceId: 7277
 
     <p>Rather than relying only on fixed maintenance intervals or overall vibration alarms, an effective <strong>CNC Spindle Health</strong> program tracks condition data over time. This approach can help maintenance teams investigate bearing-related symptoms, plan interventions during scheduled downtime, and protect demanding machining applications—from aerospace alloys and mold steels to medical and automotive components.</p>
 
-    <img decoding="async" src="/images/2026/06/cnc-spindle-health-1.webp" alt="CNC Spindle Health monitoring system with bearing condition sensors" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-health-1.webp" alt="CNC Spindle Health monitoring system with bearing condition sensors" width="1200" height="686" loading="lazy">
 
     <h2 id="1-cnc-spindle-health-monitoring-and-industry-maintenance-tre">1. CNC Spindle Health Monitoring and Industry Maintenance Trends</h2>
 
@@ -51,7 +51,7 @@ sourceId: 7277
         <li><strong>Maintenance history:</strong> Lubrication, contamination events, collisions, and toolholder condition should be reviewed alongside sensor data.</li>
     </ul>
 
-    <img decoding="async" src="/images/2026/06/cnc-spindle-health-2.webp" alt="CNC Spindle Health comparison between healthy and worn spindle bearing condition" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-health-2.webp" alt="CNC Spindle Health comparison between healthy and worn spindle bearing condition" width="1200" height="686" loading="lazy">
 
     <h2 id="3-traditional-checks-vs-cnc-spindle-health-monitoring">3. Traditional Checks vs. CNC Spindle Health Monitoring</h2>
 
@@ -113,7 +113,7 @@ sourceId: 7277
 
     <div class="qf-testimonial"><blockquote>“For high-volume aluminum component production, we value a simple way to compare machine trends across shifts. It helps our maintenance and production teams discuss priorities using the same operating data.”</blockquote></div>
 
-    <img decoding="async" src="/images/2026/06/cnc-spindle-health-3.webp" alt="CNC Spindle Health analytics dashboard for bearing condition monitoring" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-health-3.webp" alt="CNC Spindle Health analytics dashboard for bearing condition monitoring" width="1200" height="686" loading="lazy">
 
     <h2 id="6-benefits-and-considerations-of-bearing-condition-monitorin">6. Benefits and Considerations of Bearing Condition Monitoring</h2>
 

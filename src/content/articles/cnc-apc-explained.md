@@ -10,7 +10,7 @@ modified: '2026-07-14T09:22:12'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-apc-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-apc-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -34,7 +34,7 @@ sourceId: 7562
 
   <p>Cennetic has been manufacturing CNC automation solutions from Dalingshan Town, Dongguan, Guangdong since 2010. With 750+ customers across Europe, North America, and Southeast Asia, and 15 years of CNC industry expertise, our APC systems are trusted worldwide. All systems come with a <strong>2-year warranty</strong> and CE certification.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-apc-explained-1.webp" alt="CNC APC automatic pallet changer close-up" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-apc-explained-1.webp" alt="CNC APC automatic pallet changer close-up" width="1200" height="686" loading="lazy">
 
   <!-- 2. 行业数据段 -->
   <h2 id="why-cnc-apc-technology-is-growing-fast">Why CNC APC Technology Is Growing Fast</h2>
@@ -54,7 +54,7 @@ sourceId: 7562
 
   <p>Cennetic’s APC systems feature precision-ground pallets and hydraulic clamping, ensuring positional repeatability within <strong>0.002 mm</strong> — critical for tight-tolerance aerospace and medical components.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-apc-explained-2.webp" alt="CNC APC pallet changer operation diagram" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-apc-explained-2.webp" alt="CNC APC pallet changer operation diagram" width="1200" height="686" loading="lazy">
 
   <!-- 4. 对比表格 -->
   <h2 id="2-apc-vs-manual-pallet-change-vs-pallet-pool-which-is-right-">2. APC vs. Manual Pallet Change vs. Pallet Pool: Which Is Right for You?</h2>
@@ -127,7 +127,7 @@ sourceId: 7562
     All Cennetic APCs include a safety interlock that halts pallet exchange if a fault is detected, and seamless integration with major CNC controllers (FANUC, Siemens, Mitsubishi). This ensures safe, unattended operation and compliance with CE and ISO 9001:2015 standards.</p></li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-apc-explained-3.webp" alt="CNC APC pallet changer maintenance and installation" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-apc-explained-3.webp" alt="CNC APC pallet changer maintenance and installation" width="1200" height="686" loading="lazy">
 
   <!-- 6. 用例 -->
   <h2 id="4-real-world-use-cases-of-cnc-pallet-changers">4. Real-World Use Cases of CNC Pallet Changers</h2>

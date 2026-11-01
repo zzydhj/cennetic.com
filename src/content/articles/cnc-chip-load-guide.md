@@ -10,7 +10,7 @@ modified: '2026-08-14T12:08:44'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-chip-load-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-chip-load-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -31,7 +31,7 @@ sourceId: 7463
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-chip-load-1.webp" alt="CNC chip load calculation example showing end mill cutting aluminum with chip thickness indicator" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-load-1.webp" alt="CNC chip load calculation example showing end mill cutting aluminum with chip thickness indicator" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 2. INDUSTRY DATA -->
@@ -98,7 +98,7 @@ sourceId: 7463
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-chip-load-2.webp" alt="CNC chip load comparison diagram showing ideal chip formation vs poor chip formation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-load-2.webp" alt="CNC chip load comparison diagram showing ideal chip formation vs poor chip formation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <h3 id="41-too-low-chip-load-rubbing">4.1 Too Low Chip Load (Rubbing)</h3>
@@ -301,7 +301,7 @@ sourceId: 7463
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-chip-load-3.webp" alt="CNC chip load settings being adjusted on Cennetic control panel for optimal feed per tooth" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-chip-load-3.webp" alt="CNC chip load settings being adjusted on Cennetic control panel for optimal feed per tooth" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 12. CTA BOX -->

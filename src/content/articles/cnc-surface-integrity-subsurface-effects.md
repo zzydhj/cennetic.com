@@ -10,7 +10,7 @@ modified: '2026-06-28T12:53:24'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-surface-integrity-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-surface-integrity-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -27,7 +27,7 @@ sourceId: 7229
 
 <h2 id="1-understanding-cnc-surface-integrity">1. Understanding CNC Surface Integrity</h2>
 <p>Surface integrity refers to the topological, mechanical, and metallurgical state of a machined surface. For process engineers, it is not only about roughness — subsurface alterations such as microcracks, phase transformations, work-hardened layers, and residual stress distributions directly influence fatigue life and corrosion resistance. The landmark CIRP keynote review by Jawahir et al. documents how surface and subsurface conditions left by machining are a primary driver of fatigue strength and functional performance, which is why many fatigue-critical failures trace back to surface and subsurface condition rather than bulk material defects.</p>
-<p><img decoding="async" src="/images/2026/06/cnc-surface-integrity-1.webp" alt="CNC surface integrity subsurface damage layer cross-section" width="1200" height="686" loading="lazy"></p>
+<p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-surface-integrity-1.webp" alt="CNC surface integrity subsurface damage layer cross-section" width="1200" height="686" loading="lazy"></p>
 
 <h2 id="2-why-cnc-surface-integrity-matters-across-growing-markets">2. Why CNC Surface Integrity Matters Across Growing Markets</h2>
 <p>The market context reinforces the point. Mordor Intelligence reports the machining centers market on a steady multi-year growth trajectory, while Grand View Research notes the global CNC machines market continues to expand as aerospace, medical, and automotive demand rises. As tolerances tighten across these sectors, CNC surface integrity shifts from a finishing afterthought to a primary design requirement that buyers increasingly specify and audit.</p>
@@ -39,7 +39,7 @@ sourceId: 7229
 
 <h3 id="cnc-work-hardening">CNC Work Hardening</h3>
 <p>Work hardening raises surface hardness but can create a brittle layer prone to cracking. In stainless steel 316L, an overly aggressive feed produced a deep, heavily deformed layer that became a corrosion-initiation site in a chemical-handling component. By tuning cutting parameters, we typically aim for a controlled, shallow work-hardened layer (on the order of 0.05 mm in many stainless jobs) that improves wear resistance without sacrificing ductility — exact targets are always set per material and load case.</p>
-<p><img decoding="async" src="/images/2026/06/cnc-surface-integrity-2.webp" alt="CNC work hardening hardness depth profile graph" width="1200" height="686" loading="lazy"></p>
+<p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-surface-integrity-2.webp" alt="CNC work hardening hardness depth profile graph" width="1200" height="686" loading="lazy"></p>
 
 <h3 id="cnc-surface-residual-stress">CNC Surface Residual Stress</h3>
 <p>Residual stress — compressive or tensile — strongly affects component stability. Tensile stress tends to accelerate crack propagation, while a compressive layer generally improves fatigue life. In a high-pressure turbine disk, tensile residual stress from poor cooling contributed to distortion in service. Techniques such as cryogenic and high-pressure-coolant machining can shift the near-surface state toward compression; in our internal trials, moving from a tensile to a compressive surface state extended fatigue life by roughly a factor of two to three on tested coupons, consistent with trends reported in the surface-integrity literature.</p>
@@ -58,7 +58,7 @@ sourceId: 7229
 
 <h2 id="5-real-world-case-and-customer-testimonials">5. Real-World Case and Customer Testimonials</h2>
 <p>A European aerospace manufacturer experienced repeated fatigue failures in an aluminum 7075-T6 bracket. Cross-sectioning revealed subsurface microcracks and a tensile residual-stress condition left by aggressive roughing. After switching to Cennetic’s high-speed finishing with controlled chip load and a compressive-favoring strategy, the detectable subsurface damage was eliminated and the surface state moved into compression. The redesigned process more than doubled the validated cycle life in their fatigue qualification — a strong example of CNC surface integrity decided at the machining stage rather than after the fact.</p>
-<p><img decoding="async" src="/images/2026/06/cnc-surface-integrity-3.webp" alt="CNC surface integrity case study aerospace bracket failure" width="1200" height="686" loading="lazy"></p>
+<p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-surface-integrity-3.webp" alt="CNC surface integrity case study aerospace bracket failure" width="1200" height="686" loading="lazy"></p>
 
 <div class="qf-testimonial"><blockquote>“Cennetic helped us close out a recurring fatigue issue on a structural bracket. Their team measured residual stress and reworked the finishing strategy instead of just polishing the surface. Our parts now pass qualification with margin to spare.”</blockquote></div>
 

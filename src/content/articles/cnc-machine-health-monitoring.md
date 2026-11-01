@@ -10,7 +10,7 @@ modified: '2026-08-24T12:28:44'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-machine-health-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-machine-health-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -30,7 +30,7 @@ sourceId: 7273
 
   <p>Since 2010, Cennetic has served <strong>750+ customers</strong> in manufacturing markets across Europe, the Americas, and Southeast Asia. From our manufacturing base in Dalingshan Town, Dongguan, Guangdong, China, we support CNC users seeking a more structured approach to machine condition monitoring, maintenance prioritization, and production reliability.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-machine-health-1.webp" alt="CNC machine health monitoring dashboard for predictive maintenance" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-machine-health-1.webp" alt="CNC machine health monitoring dashboard for predictive maintenance" loading="lazy" width="1200" height="686">
 
   <h2 id="1-why-cnc-machine-health-monitoring-matters">1. Why CNC Machine Health Monitoring Matters</h2>
 
@@ -72,7 +72,7 @@ sourceId: 7273
 
   <p>When remote access is required, it should be deployed according to the manufacturer’s cybersecurity policies. Industrial control system security requires more than a connected dashboard: network segmentation, access control, patch management, and account governance should be part of the deployment plan. [[1]](#__1)</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-machine-health-2.webp" alt="CNC machine health monitoring tablet dashboard with machine condition data" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-machine-health-2.webp" alt="CNC machine health monitoring tablet dashboard with machine condition data" loading="lazy" width="1200" height="686">
 
   <h2 id="3-how-predictive-analytics-supports-maintenance-planning">3. How Predictive Analytics Supports Maintenance Planning</h2>
 
@@ -102,7 +102,7 @@ sourceId: 7273
 
   <p>Coolant restrictions and chip buildup can create unstable cutting conditions, elevated heat, poor surface finish, and tool-life variation. By trending coolant pressure and flow, teams can identify recurring filter, pump, plumbing, or chip-evacuation issues. This is particularly useful for multi-axis milling, titanium machining, and operations with demanding thermal control requirements.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-machine-health-3.webp" alt="CNC machine health monitoring for coolant pressure and flow condition" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-machine-health-3.webp" alt="CNC machine health monitoring for coolant pressure and flow condition" loading="lazy" width="1200" height="686">
 
   <h2 id="5-cnc-machine-health-monitoring-comparison-checklist">5. CNC Machine Health Monitoring Comparison Checklist</h2>
 

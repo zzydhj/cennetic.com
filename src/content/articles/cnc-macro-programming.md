@@ -10,7 +10,7 @@ modified: '2026-07-15T02:08:55'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-macro-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-macro-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -39,7 +39,7 @@ sourceId: 7550
 
 <p><strong>CNC macro programming</strong> — also called parametric programming — is one of the most powerful skills a machinist can master. If you’re a CNC beginner looking to move beyond fixed G-code and unlock true programming flexibility, this guide is for you. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and serving 750+ manufacturers across Europe, North America, and Southeast Asia, we’ve seen firsthand how CNC macro programming can cut programming time by up to 70% and reduce setup errors dramatically. Let’s break it all down.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-macro-1.webp" alt="CNC macro programming on control panel with variables" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-macro-1.webp" alt="CNC macro programming on control panel with variables" width="1200" height="686" loading="lazy">
 
 <!-- ② 行业数据段 -->
 <div class="qf-data-bar">
@@ -60,7 +60,7 @@ sourceId: 7550
   <li><strong>Custom Macro B Subprograms:</strong> Create reusable parametric subprograms callable with different arguments. This is the foundation of parametric programming for families of parts.</li>
 </ul>
 
-<img decoding="async" src="/images/2026/06/cnc-macro-2.webp" alt="CNC macro programming parametric flow diagram with variables and loops" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-macro-2.webp" alt="CNC macro programming parametric flow diagram with variables and loops" width="1200" height="686" loading="lazy">
 
 <h2 id="3-cnc-macro-programming-code-examples-fanuc-macro-b">3. CNC Macro Programming Code Examples (Fanuc Macro B)</h2>
 
@@ -231,7 +231,7 @@ M99
   <p>A poorly written WHILE loop — for example, one where the exit condition is never met — will cause the machine to execute indefinitely until the operator presses <strong>Emergency Stop</strong>. Always verify your loop increment logic (<code>#10 = #10 + #11</code>) and ensure the condition will eventually become false. Test on a simulator first, and use a <strong>safety counter variable</strong> as a backup exit condition on critical programs.</p>
 </div>
 
-<img decoding="async" src="/images/2026/06/cnc-macro-3.webp" alt="CNC macro programming beginner learning parametric code on Cennetic machine" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-macro-3.webp" alt="CNC macro programming beginner learning parametric code on Cennetic machine" width="1200" height="686" loading="lazy">
 
 <!-- ⑨ CTA Box -->
 <div class="qf-cta-box">

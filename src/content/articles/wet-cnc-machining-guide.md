@@ -10,7 +10,7 @@ modified: '2026-06-18T14:15:21'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/wet-cnc-machining-1.webp
+hero: https://media.cennetic.com/images/2026/06/wet-cnc-machining-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -39,7 +39,7 @@ sourceId: 2859
 
 <p>Wet CNC machining uses a flood or mist of coolant to lubricate and cool the cutting zone. This method is essential for materials like aluminum, stainless steel, and titanium, where heat management is critical. But wet isn’t always better — dry machining can be advantageous for certain materials and operations. Understanding the trade-offs is key to maximizing efficiency and part quality.</p>
 
-<img decoding="async" src="/images/2026/06/wet-cnc-machining-1.webp" alt="wet CNC machining process with coolant flushing chips from aluminum workpiece" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/wet-cnc-machining-1.webp" alt="wet CNC machining process with coolant flushing chips from aluminum workpiece" width="1200" height="686" loading="lazy">
 
 <!-- ===== 1. INDUSTRY DATA ===== -->
 <h2 id="1-why-wet-cnc-machining-matters-industry-context">1. Why Wet CNC Machining Matters: Industry Context</h2>
@@ -70,7 +70,7 @@ sourceId: 2859
 <h3 id="25-reduced-fire-risk">2.5 Reduced Fire Risk</h3>
 <p>When machining flammable materials like magnesium or certain engineering plastics, coolant acts as a fire suppressant. Dry machining of magnesium can produce sparks that ignite chips — a serious safety hazard. Wet CNC machining eliminates this risk, making it the mandatory choice for such materials in any responsible shop environment.</p>
 
-<img decoding="async" src="/images/2026/06/wet-cnc-machining-2.webp" alt="wet CNC machining tool wear comparison dry vs wet showing extended tool life with coolant" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/wet-cnc-machining-2.webp" alt="wet CNC machining tool wear comparison dry vs wet showing extended tool life with coolant" width="1200" height="686" loading="lazy">
 
 <!-- ===== 3. COMPARISON TABLE ===== -->
 <h2 id="3-wet-cnc-machining-vs-dry-machining-full-comparison">3. Wet CNC Machining vs Dry Machining: Full Comparison</h2>
@@ -214,7 +214,7 @@ sourceId: 2859
 <!-- ===== 7. HIGHLIGHT ===== -->
 <div class="qf-highlight"><strong>Bottom Line:</strong> For the vast majority of metal-cutting applications — especially steel, stainless, titanium, and aluminum — <strong>wet CNC machining delivers a clear ROI</strong> through reduced tooling costs, lower scrap rates, and higher throughput. The coolant investment is typically recovered within weeks on any medium-to-high volume production run. Cennetic’s CNC machines, backed by <strong>15 years of process expertise</strong> and a <strong>2-year warranty</strong>, are engineered to maximize the benefits of wet machining for B2B operations worldwide.</div>
 
-<img decoding="async" src="/images/2026/06/wet-cnc-machining-3.webp" alt="machining technician measuring surface finish of wet CNC machined part with coolant system" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/wet-cnc-machining-3.webp" alt="machining technician measuring surface finish of wet CNC machined part with coolant system" width="1200" height="686" loading="lazy">
 
 <!-- ===== 8. FAQ ===== -->
 <h2 id="7-frequently-asked-questions-about-wet-cnc-machining">7. Frequently Asked Questions About Wet CNC Machining</h2>

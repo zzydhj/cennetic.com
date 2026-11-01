@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-spindle-speed-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-spindle-speed-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -26,7 +26,7 @@ sourceId: 7452
   <!-- 1. INTRO -->
   <p><strong>CNC spindle speed</strong> — the rotational velocity at which your machine’s spindle turns — is one of the most critical parameters in CNC machining. Set it correctly and you get clean cuts, long tool life, and consistent surface finish. Set it wrong and you face burned tools, chatter, and scrapped parts. This guide from <strong>Cennetic</strong> breaks down <strong>CNC RPM explained</strong>, the relationship between RPM and surface speed (SFM / m/min), and how to calculate the right spindle speed for any material — from aluminium to hardened steel.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-spindle-speed-explained-1.webp" alt="CNC spindle speed explained with RPM and SFM diagram" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-speed-explained-1.webp" alt="CNC spindle speed explained with RPM and SFM diagram" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy"></p>
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="1-why-cnc-spindle-speed-mastery-is-a-market-imperative">1. Why CNC Spindle Speed Mastery Is a Market Imperative</h2>
@@ -111,7 +111,7 @@ sourceId: 7452
   <p><strong>Solution:</strong> Reducing RPM to 14,000 (SFM 1,833) brought the cutting speed within the recommended range for MDF. Burn marks were eliminated, edge quality improved significantly, and the rejection rate dropped from 12% to under 1%. The principle: <strong>for large-diameter router bits in wood composites, limit RPM even when SFM targets are high</strong>.</p>
   <div class="qf-testimonial"><blockquote>“Our operators assumed maximum RPM meant maximum quality. The burn marks on our MDF edges were costing us a fortune in rework. Cennetic helped us understand that SFM — not RPM — is what matters. After adjusting the spindle speed, our rejection rate went from 12% to almost zero within a week.”</blockquote><figcaption>— Ahmad F., Production Manager, Furniture Components Manufacturer, Selangor, Malaysia</figcaption></div>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-spindle-speed-explained-3.webp" alt="CNC spindle speed use case aluminium automotive part chip formation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-speed-explained-3.webp" alt="CNC spindle speed use case aluminium automotive part chip formation" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy"></p>
 
   <!-- 7. PROS / CONS -->
   <h2 id="6-high-rpm-vs-low-rpm-pros-cons">6. High RPM vs Low RPM: Pros &amp; Cons</h2>

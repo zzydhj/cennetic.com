@@ -10,7 +10,7 @@ modified: '2026-06-28T11:39:36'
 categories:
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-machine-for-aerospace-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-machine-for-aerospace-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -67,7 +67,7 @@ sourceId: 2910
   <h3 id="25-high-pressure-coolant-and-chip-management">2.5 High-Pressure Coolant and Chip Management</h3>
   <p>Titanium and Inconel are both poor thermal conductors — heat generated at the cutting edge has nowhere to go except into the tool and workpiece. High-pressure through-spindle coolant (70–100 bar) is essential for these materials: it penetrates the cutting zone directly, evacuates chips before they re-cut, and dramatically extends tool life. Cennetic machines support through-spindle coolant up to <strong>70 bar</strong>, combined with an integrated chip conveyor system for continuous chip evacuation during long production runs.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-machine-for-aerospace-1.webp" alt="CNC machine for aerospace machining titanium part on 5-axis machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-machine-for-aerospace-1.webp" alt="CNC machine for aerospace machining titanium part on 5-axis machining center" width="1200" height="686" loading="lazy">
 
   <!-- 4. 材料对比表 -->
   <h2 id="3-aerospace-material-machining-guide-titanium-inconel-alumin">3. Aerospace Material Machining Guide: Titanium, Inconel &amp; Aluminum</h2>
@@ -212,7 +212,7 @@ sourceId: 2910
     📌 <strong>Note on Quality Compliance:</strong> Cennetic machines are <strong>designed and built to support AS9100D-compliant production workflows</strong> — including the dimensional accuracy, process stability, and documentation capability that AS9100D-certified suppliers require. Cennetic as a machine builder does not itself hold AS9100D certification; the certification applies to your manufacturing quality management system, not the machine. Our machines provide the technical foundation your QMS needs to achieve and maintain AS9100D compliance.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-machine-for-aerospace-2.webp" alt="aerospace grade CNC machine finished titanium bracket precision measurement" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-machine-for-aerospace-2.webp" alt="aerospace grade CNC machine finished titanium bracket precision measurement" width="1200" height="686" loading="lazy">
 
   <!-- 6. Testimonials -->
   <h2 id="5-what-aerospace-suppliers-say-about-cennetic-cnc-machines">5. What Aerospace Suppliers Say About Cennetic CNC Machines</h2>
@@ -269,7 +269,7 @@ sourceId: 2910
   </ul>
   <p>The result was a measurable ROI within the first production year, driven primarily by scrap reduction and cycle time improvement on high-value titanium material.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-machine-for-aerospace-3.webp" alt="CNC machine for aerospace with robot automation pallet changer lights-out production" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-machine-for-aerospace-3.webp" alt="CNC machine for aerospace with robot automation pallet changer lights-out production" width="1200" height="686" loading="lazy">
 
   <!-- 10. FAQ -->
   <h2 id="8-faq-cnc-machine-for-aerospace-parts">8. FAQ: CNC Machine for Aerospace Parts</h2>

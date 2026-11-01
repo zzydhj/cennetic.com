@@ -10,7 +10,7 @@ modified: '2026-08-24T13:38:55'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-lubrication-analysis-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-lubrication-analysis-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -45,7 +45,7 @@ sourceId: 7281
 
   <p>An effective program does not depend on a single laboratory result. It compares samples taken from the same machine and system over time, using consistent sampling locations and procedures. This trend-based approach helps maintenance teams distinguish normal operating variation from a meaningful shift that needs inspection or corrective action.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-lubrication-analysis-1.webp" alt="CNC lubrication analysis lab test for oil contamination and wear particles" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-lubrication-analysis-1.webp" alt="CNC lubrication analysis lab test for oil contamination and wear particles" loading="lazy" width="1200" height="686">
 
   <h2 id="3-which-cnc-fluids-should-be-tested">3. Which CNC Fluids Should Be Tested?</h2>
 
@@ -84,7 +84,7 @@ sourceId: 7281
     <li><strong>Coolant Condition Checks:</strong> For water-miscible metalworking fluids, concentration, pH, tramp oil, and microbial condition can help identify fluid-management issues that may influence tool life, corrosion control, odor, and operator comfort.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-lubrication-analysis-2.webp" alt="CNC lubrication analysis comparison of clean and contaminated machine lubricant" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-lubrication-analysis-2.webp" alt="CNC lubrication analysis comparison of clean and contaminated machine lubricant" loading="lazy" width="1200" height="686">
 
   <h2 id="5-how-lubricant-condition-can-affect-precision-machining">5. How Lubricant Condition Can Affect Precision Machining</h2>
 
@@ -149,7 +149,7 @@ sourceId: 7281
 
   <p>For medical, aerospace, automotive, and mold-making operations, coolant condition can influence chip evacuation, corrosion protection, tool performance, and surface appearance. Testing water-miscible coolant separately from lubricating oil helps maintenance teams choose the correct corrective action.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-lubrication-analysis-3.webp" alt="CNC lubrication analysis oil sampling procedure for machine maintenance" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-lubrication-analysis-3.webp" alt="CNC lubrication analysis oil sampling procedure for machine maintenance" loading="lazy" width="1200" height="686">
 
   <h2 id="8-illustrative-customer-scenarios-and-testimonials">8. Illustrative Customer Scenarios and Testimonials</h2>
 

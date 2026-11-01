@@ -10,7 +10,7 @@ modified: '2026-07-24T06:53:57'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-way-cover-alarm-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-way-cover-alarm-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -28,7 +28,7 @@ sourceId: 7152
     A <strong>CNC way cover alarm</strong> is a safety-triggered fault that stops your lathe mid-cycle the moment the controller detects the way cover is out of position — costing you production time and, if left unresolved, risking serious damage to your linear guides and ball screws. At <a href="/" rel="noopener">CENNETIC</a>, founded in 2010 and based in Dongguan, Guangdong, China, our team has helped <strong>750+ machine shops</strong> across Europe, the Americas, and Southeast Asia diagnose and eliminate way cover faults. With <strong>15 years of CNC field experience</strong>, this guide covers every common cause of a <strong>CNC way cover alarm</strong> — from misaligned limit switches to chip-jammed tracks — and gives you a clear, step-by-step path to resolution.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-way-cover-alarm-1.webp" alt="CNC way cover alarm showing cover position error on lathe control panel" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-way-cover-alarm-1.webp" alt="CNC way cover alarm showing cover position error on lathe control panel" width="1200" height="686" loading="lazy">
 
   <!-- ④ INDUSTRY DATA -->
   <h2 id="1-why-cnc-way-cover-alarms-are-a-serious-production-risk">1. Why CNC Way Cover Alarms Are a Serious Production Risk</h2>
@@ -60,7 +60,7 @@ sourceId: 7152
     <li><strong>Controller parameter error:</strong> Incorrect dwell time or position tolerance settings in the CNC parameters can cause the controller to flag a fault before the cover has had time to complete its travel.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-way-cover-alarm-2.webp" alt="CNC way cover alarm diagnosis showing reinforced cover with chip-shedding features" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-way-cover-alarm-2.webp" alt="CNC way cover alarm diagnosis showing reinforced cover with chip-shedding features" width="1200" height="686" loading="lazy">
 
   <!-- ⑥ DIAGNOSTIC TABLE -->
   <h2 id="3-cnc-way-cover-alarm-quick-reference-diagnostic-table">3. CNC Way Cover Alarm Quick-Reference Diagnostic Table</h2>

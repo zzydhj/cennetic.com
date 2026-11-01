@@ -13,6 +13,7 @@ import HeroVideo from "@components/ui/HeroVideo.astro";
 import { allArticles } from "@lib/content.ts";
 import { siteConfig, allProducts, megaMenu } from "@lib/catalog.ts";
 import { waLink } from "@lib/whatsapp.ts";
+import { mediaUrl } from "@lib/media-url.ts";
 
 export const prerender = true;
 
@@ -362,7 +363,7 @@ const lcpImage = siteConfig.hero.poster;
             </div>
             <figure class="frame">
                 <img
-                    src="/images/site/company/machining-center-workshop.webp"
+                    src={mediaUrl('/images/site/company/machining-center-workshop.webp')}
                     alt="CENNETIC machining center assembly workshop in Dongguan"
                     width="1152"
                     height="581"

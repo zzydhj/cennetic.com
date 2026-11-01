@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-blockchain-quality-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-blockchain-quality-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -27,7 +27,7 @@ sourceId: 7360
 
   <p>In precision manufacturing, <strong>CNC blockchain quality</strong> is rapidly emerging as the gold standard for part traceability and quality assurance. Traditional traceability methods — paper trails, siloed databases, manual inspection logs — are inherently vulnerable to errors, tampering, and audit failures. <strong>CNC blockchain quality</strong> systems replace these fragile processes with an immutable, decentralized digital ledger that records every machining step, measurement, and inspection event in real time, creating a verifiable chain of provenance that no single party can alter. <a href="/" rel="noopener">CENNETIC.COM</a>, founded in 2010 and headquartered in Dalingshan, Dongguan, Guangdong, China, has spent 15 years delivering ISO 9001-certified CNC solutions to <strong>750+ customers</strong> across Europe, North America, and Southeast Asia — and our <strong>CNC blockchain quality</strong> platform brings that manufacturing expertise directly into the distributed ledger era.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-blockchain-quality-1.webp" alt="CNC blockchain quality traceability system in action" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-blockchain-quality-1.webp" alt="CNC blockchain quality traceability system in action" width="1200" height="686" loading="lazy">
 
   <!-- ② 行业数据段 -->
   <h2 id="1-why-cnc-blockchain-quality-is-transforming-manufacturing-i">1. Why CNC Blockchain Quality Is Transforming Manufacturing: Industry Data</h2>
@@ -59,7 +59,7 @@ sourceId: 7360
   <!-- ④ 核心功能 -->
   <h2 id="3-core-features-of-cennetics-cnc-blockchain-quality-syst">3. Core Features of Cennetic’s CNC Blockchain Quality System</h2>
 
-  <img decoding="async" src="/images/2026/06/cnc-blockchain-quality-2.webp" alt="CNC blockchain quality dashboard vs traditional paper tracking" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-blockchain-quality-2.webp" alt="CNC blockchain quality dashboard vs traditional paper tracking" width="1200" height="686" loading="lazy">
 
   <h3 id="31-immutable-part-history-on-the-blockchain">3.1 Immutable Part History on the Blockchain</h3>
   <p>Each part manufactured under the <strong>CNC blockchain quality</strong> system receives a unique digital identity on the ledger. From raw material batch certification to final dimensional inspection, every event is timestamped, encrypted, and permanently recorded. When a client faces a warranty claim or regulatory inquiry, they can instantly retrieve the complete machining history — proving the part was produced within specification and protecting against unwarranted liability. In one documented case, a customer avoided a six-figure liability exposure by presenting blockchain-verified machining records that proved the part met all dimensional tolerances at time of delivery.</p>
@@ -146,7 +146,7 @@ sourceId: 7360
   <!-- ⑥ 案例 + 3条 Testimonials -->
   <h2 id="5-real-world-applications-customer-testimonials">5. Real-World Applications &amp; Customer Testimonials</h2>
 
-  <img decoding="async" src="/images/2026/06/cnc-blockchain-quality-3.webp" alt="CNC blockchain quality network in manufacturing facility" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-blockchain-quality-3.webp" alt="CNC blockchain quality network in manufacturing facility" width="1200" height="686" loading="lazy">
 
   <h3 id="case-study-1-aerospace-engine-components-france">Case Study 1: Aerospace Engine Components — France 🇫🇷</h3>
   <p>A French aerospace subcontractor producing turbine blades and structural engine components for a major European OEM was facing increasing audit pressure and a 14-day average defect identification time when non-conformances were reported by the end customer. After implementing Cennetic’s <strong>CNC blockchain quality</strong> system across their 5-axis machining line, every machining parameter, tool change, and CMM result was recorded immutably on the ledger. Results within six months:</p>

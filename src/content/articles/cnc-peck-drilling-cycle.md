@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-peck-drilling-cycle-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-peck-drilling-cycle-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -30,7 +30,7 @@ sourceId: 7526
   <h2 id="1-why-the-cnc-peck-drilling-cycle-matters-industry-context">1. Why the CNC Peck Drilling Cycle Matters: Industry Context</h2>
   <p>Hole-making operations account for approximately <strong>40% of all metal cutting operations</strong> in manufacturing, making drilling efficiency a critical factor in overall productivity. According to the <strong>Mordor Intelligence 2024 Machining Centers Market Report</strong>, the global machining centers market is growing at a CAGR of ~6%, driven by increasing demand for precision hole-making in aerospace, automotive, and medical sectors <sup><a href="https://www.mordorintelligence.com/industry-reports/machining-centers-market" rel="noopener" target="_blank">[1]</a></sup>. A study published in the <strong>Journal of Manufacturing Processes</strong> (Elsevier, 2021) confirmed that optimized peck drilling parameters can reduce drill wear by 35–45% in titanium alloy machining compared to continuous feed drilling <sup><a href="https://www.sciencedirect.com/science/article/pii/S1526612521000475" rel="noopener" target="_blank">[2]</a></sup>. Furthermore, the <strong>International Journal of Advanced Manufacturing Technology</strong> (Springer, 2020) found that chip evacuation strategy — the core principle behind peck drilling — is the single most influential factor in deep hole drilling tool life <sup><a href="https://link.springer.com/article/10.1007/s00170-020-05365-9" rel="noopener" target="_blank">[3]</a></sup>. These findings validate why the <strong>CNC peck drilling cycle</strong> remains a cornerstone of modern machining practice.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-peck-drilling-cycle-1.webp" alt="CNC peck drilling cycle in action with G73 high speed peck drilling" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-peck-drilling-cycle-1.webp" alt="CNC peck drilling cycle in action with G73 high speed peck drilling" width="1200" height="686" loading="lazy">
 
   <!-- 3. 主体内容 -->
   <h2 id="2-what-is-the-cnc-peck-drilling-cycle">2. What Is the CNC Peck Drilling Cycle?</h2>
@@ -87,7 +87,7 @@ sourceId: 7526
   <p>A precision mold manufacturer in Ho Chi Minh City struggled with chip welding and inconsistent hole tolerances when drilling 60 HRC tool steel. Implementing the <strong>G83 CNC peck drilling cycle</strong> with a dwell at the bottom of each peck allowed chips to break cleanly before retract. The result was a <strong>50% increase in tool life</strong> and consistent hole tolerances within ±0.025 mm, meeting their export customers’ drawing requirements.</p>
   <div class="qf-testimonial"><blockquote>“Hardened steel drilling used to be our biggest headache — chips welding to the flutes, oversized holes, broken drills. The G83 peck cycle with a bottom dwell solved all three problems at once. Our scrap rate on mold plates dropped from 12% to under 2%.”</blockquote><figcaption>— Workshop Supervisor, Precision Mold &amp; Die Manufacturer, Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-peck-drilling-cycle-2.webp" alt="Comparison of standard drilling vs CNC peck drilling cycle hole quality results" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-peck-drilling-cycle-2.webp" alt="Comparison of standard drilling vs CNC peck drilling cycle hole quality results" width="1200" height="686" loading="lazy">
 
   <!-- 6. Pros/Cons -->
   <div class="qf-pros-cons">
@@ -120,7 +120,7 @@ sourceId: 7526
     💡 <strong>Key Rule of Thumb:</strong> Start with a peck depth (Q value) of <strong>1–2× the drill diameter</strong> for G83 in steel, and <strong>2–3× the drill diameter</strong> for G73 in aluminum. Monitor chip formation after the first few holes — long stringy chips mean reduce Q; powdery chips mean you can increase Q for faster cycle time. When in doubt, choose <strong>G83 over G73</strong> for any hole deeper than 3× the drill diameter.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-peck-drilling-cycle-3.webp" alt="G73 high speed peck vs G83 deep hole peck cycle tool path diagram comparison" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-peck-drilling-cycle-3.webp" alt="G73 high speed peck vs G83 deep hole peck cycle tool path diagram comparison" width="1200" height="686" loading="lazy">
 
   <!-- 8. FAQ -->
   <h2 id="6-frequently-asked-questions">6. Frequently Asked Questions</h2>

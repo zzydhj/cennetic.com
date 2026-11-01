@@ -12,7 +12,7 @@ categories:
   - buying-guides
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-quantum-computing-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-quantum-computing-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -27,7 +27,7 @@ sourceId: 7368
 <!-- ① 引言段 -->
 <p><strong>CNC quantum computing</strong> is transforming precision manufacturing by applying hybrid quantum-classical algorithms to the most complex machining optimization challenges — problems that conventional CAM software cannot solve efficiently. At <a href="/" rel="noopener">Cennetic</a>, founded in 2010 and headquartered in Dalingshan Town, Dongguan, Guangdong, we have spent 15 years advancing CNC innovation for manufacturers worldwide. With 750+ global clients across aerospace, medical, and automotive sectors, our CNC quantum computing solution delivers measurable results: cycle time reductions of up to 40%, scrap rate improvements of up to 85%, and ROI typically achieved within 12–18 months. Whether you are in France, the United States, or Malaysia, Cennetic’s quantum-powered optimization platform is engineered to give your production line a decisive competitive advantage.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-quantum-computing-1.webp" alt="CNC quantum computing hybrid optimization system in precision manufacturing facility" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-quantum-computing-1.webp" alt="CNC quantum computing hybrid optimization system in precision manufacturing facility" width="1200" height="686" loading="lazy">
 
 <!-- ② 行业数据段 -->
 <h2 id="1-why-cnc-quantum-computing-is-gaining-industrial-momentum">§1 — Why CNC Quantum Computing Is Gaining Industrial Momentum</h2>
@@ -155,7 +155,7 @@ sourceId: 7368
 
 <div class="qf-testimonial"><blockquote>“We were losing contracts because our lead times couldn’t compete. Cennetic’s CNC quantum computing solution cut our mold delivery from six weeks to three, and the surface finish quality meant zero polishing time. We won a major Japanese OEM contract directly because of this improvement.”</blockquote><figcaption>— Ahmad Fadzil, General Manager, Precision Tooling Division, Shah Alam, Malaysia</figcaption></div>
 
-<img decoding="async" src="/images/2026/06/cnc-quantum-computing-2.webp" alt="CNC quantum computing vs traditional CNC performance comparison results across aerospace and automotive use cases" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-quantum-computing-2.webp" alt="CNC quantum computing vs traditional CNC performance comparison results across aerospace and automotive use cases" width="1200" height="686" loading="lazy">
 
 <!-- ⑥ Pros / Cons -->
 <h2 id="6-pros-cons-of-adopting-cnc-quantum-computing">§6 — Pros &amp; Cons of Adopting CNC Quantum Computing</h2>
@@ -212,7 +212,7 @@ sourceId: 7368
 <h3 id="what-training-and-support-does-cennetic-provide">What training and support does Cennetic provide?</h3>
 <p>Cennetic provides a comprehensive onboarding program: a 2-day on-site workshop for operators and programmers, plus access to an online learning portal with 50+ hours of video tutorials. No quantum physics background is required — the interface integrates directly with Mastercam and Siemens NX workflows. Advanced algorithm customization training is available for engineering teams. Our 24/7 support team is based in Dongguan, Guangdong, serving clients across Europe, North America, and Southeast Asia.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-quantum-computing-3.webp" alt="CNC quantum computing retrofit module installation on industrial machining center" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-quantum-computing-3.webp" alt="CNC quantum computing retrofit module installation on industrial machining center" width="1200" height="686" loading="lazy">
 
 <!-- ⑨ CTA Box -->
 <div class="qf-cta-box">

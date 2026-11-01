@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-axis-explained-2.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-axis-explained-2.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -171,7 +171,7 @@ sourceId: 7445
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-axis-explained-2.webp" alt="CNC axis machining examples showing 3-axis milling bracket and 5-axis machining impeller blade" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-axis-explained-2.webp" alt="CNC axis machining examples showing 3-axis milling bracket and 5-axis machining impeller blade" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 7. REAL-WORLD USE CASES + TESTIMONIALS -->
@@ -270,7 +270,7 @@ sourceId: 7445
   </div>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-axis-explained-3.webp" alt="CNC control panel showing X Y Z coordinates and rotary axis position indicators for multi-axis machining" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-axis-explained-3.webp" alt="CNC control panel showing X Y Z coordinates and rotary axis position indicators for multi-axis machining" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 10. FAQ -->

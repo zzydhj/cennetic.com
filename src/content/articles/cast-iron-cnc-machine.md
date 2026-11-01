@@ -11,7 +11,7 @@ categories:
   - comparisons
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cast-iron-cnc-machine-1.webp
+hero: https://media.cennetic.com/images/2026/06/cast-iron-cnc-machine-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -41,7 +41,7 @@ sourceId: 2895
     data — so you can make the right investment decision for your facility.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cast-iron-cnc-machine-1.webp" alt="Cennetic cast iron CNC machine frame with superior vibration damping for heavy cutting" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cast-iron-cnc-machine-1.webp" alt="Cennetic cast iron CNC machine frame with superior vibration damping for heavy cutting" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="why-cast-iron-cnc-machine-frames-are-gaining-ground">Why Cast Iron CNC Machine Frames Are Gaining Ground</h2>
@@ -171,7 +171,7 @@ sourceId: 2895
     service life.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cast-iron-cnc-machine-2.webp" alt="Heavy cutting operation on Cennetic cast iron CNC machine showing smooth surface finish" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cast-iron-cnc-machine-2.webp" alt="Heavy cutting operation on Cennetic cast iron CNC machine showing smooth surface finish" width="1200" height="686" loading="lazy">
 
   <!-- 5. MODULE C — CORE FEATURES -->
   <h2 id="3-key-features-of-cennetics-cast-iron-cnc-machine-design">3. Key Features of Cennetic’s Cast Iron CNC Machine Design</h2>
@@ -270,7 +270,7 @@ sourceId: 2895
       excellent — fast response and real technical knowledge.”</blockquote><figcaption>— Tran V.L., Production Director, Precision Valve Manufacturer,
       Ho Chi Minh City, Vietnam</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cast-iron-cnc-machine-3.webp" alt="Cennetic cast iron CNC machines in heavy cutting processing factory production line" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cast-iron-cnc-machine-3.webp" alt="Cennetic cast iron CNC machines in heavy cutting processing factory production line" width="1200" height="686" loading="lazy">
 
   <!-- 7. PROS / CONS -->
   <h2 id="5-pros-cons-of-a-cast-iron-cnc-machine-frame">5. Pros &amp; Cons of a Cast Iron CNC Machine Frame</h2>

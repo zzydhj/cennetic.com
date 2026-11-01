@@ -10,7 +10,7 @@ modified: '2026-07-19T12:13:26'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-molecular-dynamics-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-molecular-dynamics-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -32,7 +32,7 @@ sourceId: 7340
   
   <p>While direct MD-controlled cutting is still an advanced academic and specialized industrial application (such as Single Point Diamond Turning), the insights gained from these simulations allow manufacturers like Cennetic to optimize spindle vibration control, structural rigidity, and cutting parameters in our commercial CNC centers. This theoretical breakthrough helps prevent subsurface damage in brittle materials like silicon wafers and titanium alloys.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-molecular-dynamics-1.webp" alt="CNC molecular dynamics simulation showing atomic-scale cutting precision" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-molecular-dynamics-1.webp" alt="CNC molecular dynamics simulation showing atomic-scale cutting precision" width="1200" height="686" loading="lazy">
 
   <h2 id="comparing-machining-approaches">Comparing Machining Approaches</h2>
   <p>Understanding the shift from macro-scale mechanics to nanoscale insights is key to appreciating the future of manufacturing:</p>
@@ -97,7 +97,7 @@ sourceId: 7340
     </div>
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-molecular-dynamics-2.webp" alt="CNC molecular dynamics cutting surface finish comparison showing superior smoothness" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-molecular-dynamics-2.webp" alt="CNC molecular dynamics cutting surface finish comparison showing superior smoothness" width="1200" height="686" loading="lazy">
 
   <div class="qf-highlight">
     <strong>Why Choose Cennetic CNC?</strong> Located in Dalingshan Town, Dongguan City, we have been a trusted CNC manufacturer since 2010. We stand behind our quality with a comprehensive <strong>2-year warranty</strong>. Please note: to maintain our high standards, we do not support no-reason refunds, but we fully support returns or solutions for any verified quality issues.
@@ -113,7 +113,7 @@ sourceId: 7340
   <p><strong>What materials benefit most from this precision?</strong><br>
   Hard, brittle, or difficult-to-machine materials such as silicon, titanium alloys, and advanced ceramics benefit the most, as ultra-precision control prevents subsurface damage and work hardening.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-molecular-dynamics-3.webp" alt="Cennetic precision CNC machine inspired by molecular dynamics R&amp;D" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-molecular-dynamics-3.webp" alt="Cennetic precision CNC machine inspired by molecular dynamics R&amp;D" width="1200" height="686" loading="lazy">
 
   <div class="qf-cta-box">
     <h3 id="elevate-your-machining-precision-today">Elevate Your Machining Precision Today</h3>

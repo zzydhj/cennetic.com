@@ -10,7 +10,7 @@ modified: '2026-08-18T11:48:16'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-cfd-coolant-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-cfd-coolant-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7336
     For manufacturers supplying aerospace, medical, and automotive OEMs, the ability to document simulation-validated thermal management is increasingly a qualification requirement — not merely a best practice.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cfd-coolant-1.webp" alt="CNC CFD coolant simulation showing flow vectors and temperature distribution" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cfd-coolant-1.webp" alt="CNC CFD coolant simulation showing flow vectors and temperature distribution" width="1200" height="686" loading="lazy">
 
   <!-- ③ CORE FEATURES -->
   <h2 id="1-core-features-of-cennetics-cnc-cfd-coolant-system">1. Core Features of Cennetic’s CNC CFD Coolant System</h2>
@@ -132,7 +132,7 @@ sourceId: 7336
     </tbody>
   </table>
 
-  <img decoding="async" src="/images/2026/06/cnc-cfd-coolant-2.webp" alt="CNC CFD coolant comparison of titanium machining results before and after optimization" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cfd-coolant-2.webp" alt="CNC CFD coolant comparison of titanium machining results before and after optimization" width="1200" height="686" loading="lazy">
 
   <!-- ⑤ USE CASES + TESTIMONIALS -->
   <h2 id="3-real-world-cnc-cfd-coolant-application-cases">3. Real-World CNC CFD Coolant Application Cases</h2>
@@ -167,7 +167,7 @@ sourceId: 7336
 
   <div class="qf-testimonial"><blockquote>“Burn marks on our D2 steel mold inserts were costing us thousands of dollars in scrap every month. We had adjusted coolant flow rates manually for years without solving it. Cennetic’s CFD analysis showed us that the impingement angle was completely wrong — a problem invisible to the naked eye. After the fix, our rejection rate went from 16% to almost zero. The ROI was achieved in less than six weeks.”</blockquote></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-cfd-coolant-3.webp" alt="CNC CFD coolant cross-section showing optimized flow paths in CNC machine" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cfd-coolant-3.webp" alt="CNC CFD coolant cross-section showing optimized flow paths in CNC machine" width="1200" height="686" loading="lazy">
 
   <!-- ⑥ PROS / CONS -->
   <h2 id="4-pros-and-cons-of-cnc-cfd-coolant-simulation">4. Pros and Cons of CNC CFD Coolant Simulation</h2>

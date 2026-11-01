@@ -10,7 +10,7 @@ modified: '2026-07-20T04:23:39'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-steady-rest-alarm-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-steady-rest-alarm-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -24,7 +24,7 @@ sourceId: 7164
 
   <p>If you are a lathe operator machining long shafts, encountering a <strong>CNC steady rest alarm</strong> can bring your entire production line to a frustrating halt. At Cennetic, established in 2010 in Dalingshan Town, Dongguan, we have spent over 15 years engineering robust CNC lathes and providing precision machining services. We know firsthand that diagnosing a CNC steady rest fault quickly is essential to maintaining tight tolerances and preventing costly machine downtime.</p>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-steady-rest-alarm-1.webp" alt="CNC steady rest alarm displayed on lathe control panel" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-steady-rest-alarm-1.webp" alt="CNC steady rest alarm displayed on lathe control panel" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="the-true-cost-of-a-cnc-steady-rest-alarm">The True Cost of a CNC Steady Rest Alarm</h2>
   <p>According to a comprehensive study by Deloitte on smart manufacturing, unplanned machine downtime costs industrial manufacturers an estimated $50 billion annually. A significant portion of lathe downtime is attributed to workholding failures, including the dreaded CNC steady rest alarm. When the steady rest position is compromised, it not only stops the machine but can also lead to severe workpiece deflection, tool breakage, or even spindle damage.</p>
@@ -67,7 +67,7 @@ sourceId: 7164
     <li><strong>Oil &amp; Gas Drill Pipes (Southeast Asia):</strong> A heavy-duty lathe stopped mid-cut due to a low-pressure alarm. The root cause was a worn hydraulic seal in the steady rest cylinder. Replacing the seal restored full clamping force and allowed production to resume safely.</li>
   </ol>
 
-  <p><img decoding="async" src="/images/2026/06/cnc-steady-rest-alarm-2.webp" alt="Technician performing steady rest troubleshooting on a CNC lathe" width="1200" height="686" loading="lazy"></p>
+  <p><img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-steady-rest-alarm-2.webp" alt="Technician performing steady rest troubleshooting on a CNC lathe" width="1200" height="686" loading="lazy"></p>
 
   <h2 id="what-our-global-clients-say">What Our Global Clients Say</h2>
   <p>Our commitment to building reliable CNC machines and providing expert machining services has earned the trust of clients worldwide. Here is what they have to say about Cennetic’s equipment stability:</p>

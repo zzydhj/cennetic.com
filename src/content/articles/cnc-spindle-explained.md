@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-spindle-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-spindle-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -32,7 +32,7 @@ sourceId: 7442
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-spindle-explained-1.webp" alt="CNC spindle cross-section diagram with labeled components showing bearing shaft and motor assembly" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-explained-1.webp" alt="CNC spindle cross-section diagram with labeled components showing bearing shaft and motor assembly" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 2. INDUSTRY DATA -->
@@ -191,7 +191,7 @@ sourceId: 7442
   </div>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-spindle-explained-2.webp" alt="CNC spindle air-cooled vs water-cooled comparison showing thermal performance difference" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-explained-2.webp" alt="CNC spindle air-cooled vs water-cooled comparison showing thermal performance difference" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 7. CASE STUDIES + TESTIMONIALS -->
@@ -311,7 +311,7 @@ sourceId: 7442
   </div>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-spindle-explained-3.webp" alt="CNC spindle cutting aluminium with coolant flow showing precision machining in production" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-spindle-explained-3.webp" alt="CNC spindle cutting aluminium with coolant flow showing precision machining in production" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 10. FAQ -->

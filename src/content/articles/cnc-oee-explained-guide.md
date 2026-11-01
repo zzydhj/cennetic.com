@@ -10,7 +10,7 @@ modified: '2026-07-19T07:35:56'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-oee-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-oee-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7499
   
   <p>For example, if your machine’s Availability is 90% (0.90), Performance is 95% (0.95), and Quality is 99% (0.99), your OEE = 0.90 × 0.95 × 0.99 = 0.846, or <strong>84.6%</strong>.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-oee-explained-1.webp" alt="CNC OEE explained dashboard showing availability, performance, and quality metrics" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-oee-explained-1.webp" alt="CNC OEE explained dashboard showing availability, performance, and quality metrics" width="1200" height="686" loading="lazy">
 
   <h2 id="core-features-of-cnc-oee-monitoring">Core Features of CNC OEE Monitoring</h2>
   <p>While calculating OEE manually is possible, modern manufacturing relies on automated tracking. Here is how automatic tracking compares to manual methods:</p>
@@ -103,7 +103,7 @@ sourceId: 7499
     </div>
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-oee-explained-2.webp" alt="Cennetic CNC machine operator with CNC OEE explained display showing 85%" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-oee-explained-2.webp" alt="Cennetic CNC machine operator with CNC OEE explained display showing 85%" width="1200" height="686" loading="lazy">
 
   <div class="qf-highlight">
     <strong>Why Choose Cennetic?</strong> Based in Dalingshan Town, Dongguan City, we have been manufacturing premium CNC machines since 2010. We offer a solid <strong>2-year warranty</strong> on our machines. We stand by our quality: we support refunds for any confirmed quality issues (no-reason returns are not supported).
@@ -119,7 +119,7 @@ sourceId: 7499
   <p><strong>Why is quality part of OEE?</strong><br>
   Producing defective parts wastes time and materials. Even if a machine runs fast with high uptime, poor quality lowers your effective output. Including quality ensures you focus on making good, sellable parts.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-oee-explained-3.webp" alt="OEE improvement chart for Cennetic CNC machines after having CNC OEE explained" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-oee-explained-3.webp" alt="OEE improvement chart for Cennetic CNC machines after having CNC OEE explained" width="1200" height="686" loading="lazy">
 
   <div class="qf-cta-box">
     <h3 id="ready-to-optimize-your-cnc-production">Ready to Optimize Your CNC Production?</h3>

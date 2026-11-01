@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-in-process-monitoring-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-in-process-monitoring-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -30,7 +30,7 @@ sourceId: 7265
 
 <p>At <a href="/" rel="noopener">Cennetic CNC</a> — a Dongguan-based precision equipment manufacturer established in 2010 with ISO 9001 certification — we have been helping 750+ customers across Europe, North America, and Southeast Asia implement sensor-based monitoring systems that integrate directly with existing Fanuc, Siemens, and Heidenhain controllers. This guide covers everything a maintenance engineer needs to understand the technology, evaluate the business case, and implement <strong>CNC in-process monitoring</strong> correctly from day one.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-in-process-monitoring-1.webp" alt="CNC in-process monitoring dashboard displaying real-time spindle power and vibration sensor data for predictive maintenance" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-in-process-monitoring-1.webp" alt="CNC in-process monitoring dashboard displaying real-time spindle power and vibration sensor data for predictive maintenance" width="1200" height="686" loading="lazy">
 
 <!-- ══════════════════════════════════════════════════
      2. INDUSTRY DATA — real cited reports
@@ -62,7 +62,7 @@ sourceId: 7265
 <h3 id="24-thermal-monitoring">2.4 Thermal Monitoring</h3>
 <p>Infrared temperature sensors or embedded thermocouples track cutting-zone temperature or spindle bearing temperature. Excessive heat is both a symptom and a cause of accelerated tool wear; monitoring it allows the system to recommend coolant flow adjustment or feed rate reduction before wear accelerates to the point of part rejection. Spindle bearing temperature trending is a classic predictive maintenance signal: a bearing running 8–10°C above its historical baseline is approaching end-of-life even if it sounds and feels normal.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-in-process-monitoring-2.webp" alt="CNC in-process monitoring sensor integration module for force and power measurement on a milling machine" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-in-process-monitoring-2.webp" alt="CNC in-process monitoring sensor integration module for force and power measurement on a milling machine" width="1200" height="686" loading="lazy">
 
 <!-- ══════════════════════════════════════════════════
      4. SYSTEM FEATURES — with real depth
@@ -219,7 +219,7 @@ sourceId: 7265
 <h3 id="how-do-i-calculate-and-justify-the-roi-to-management">How do I calculate and justify the ROI to management?</h3>
 <p>The ROI calculation for CNC in-process monitoring has three components: scrap cost reduction (current annual scrap cost × expected percentage reduction, typically 50–80% for monitored processes), unplanned downtime cost reduction (number of unplanned stops per year × average cost per incident × expected reduction rate), and extended tool life savings (annual tooling spend × percentage increase in average tool life). Cennetic provides a free ROI spreadsheet that prompts for your own data and calculates payback period automatically. Most customers find payback periods of 6–10 months. For management presentations, the unplanned downtime number is typically the most compelling — a single spindle rebuild or machine crash can cost more than the monitoring system.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-in-process-monitoring-3.webp" alt="CNC in-process monitoring ROI analysis chart showing scrap rate reduction through predictive maintenance" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-in-process-monitoring-3.webp" alt="CNC in-process monitoring ROI analysis chart showing scrap rate reduction through predictive maintenance" width="1200" height="686" loading="lazy">
 
 <h3 id="what-are-the-most-common-calibration-and-false-alarm-issues-">What are the most common calibration and false-alarm issues, and how are they avoided?</h3>
 <p>The two most common sources of false alarms in a new installation are (1) setting fixed thresholds without a proper baseline — if the baseline is measured on a worn tool rather than a new one, the threshold is set too high and misses genuine wear events, or too low and triggers on normal process variation; and (2) not accounting for programmed feed-rate changes within the cycle — a deliberate feed reduction for a finishing pass looks exactly like a sudden power drop, which some systems interpret as a breakage event. Cennetic’s adaptive mode addresses both issues by building a statistical baseline from multiple cycles and by correlating sensor data with the controller’s feed-rate override signal. During commissioning, the Cennetic technical team walks through threshold validation using the first 20 cycles — this single step eliminates the majority of false-alarm issues before they frustrate the maintenance team.</p>

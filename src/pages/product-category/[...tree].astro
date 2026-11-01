@@ -47,9 +47,13 @@ const blurb = cat.description
     .replace(/\s+/g, " ")
     .trim();
 
-// 分类图可能指向源站已删除的文件，读不到就不输出
-const hero = cat.image
-    ? `/images/${cat.image.replace(/^\/wp-content\/uploads\//, "")}`
+// 分类图可能指向源站已删除的文件，读不到就不输出。
+// 图已统一存到图片存储，旧数据里可能还是站内相对路径，所以两种都要能接。
+const catImg = cat.image as string | undefined;
+const hero = catImg
+    ? catImg.startsWith("http")
+        ? catImg
+        : `https://media.cennetic.com/images/${catImg.replace(/^\/wp-content\/uploads\//, "").replace(/^\/+/, "")}`
     : undefined;
 ---
 

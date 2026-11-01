@@ -10,7 +10,7 @@ modified: '2026-08-24T12:27:10'
 categories:
   - maintenance-operations
 author: bella
-hero: /images/2026/06/cnc-tool-condition-monitoring-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-tool-condition-monitoring-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -43,7 +43,7 @@ sourceId: 7269
 
   <p>Cennetic’s <strong>CNC tool condition monitoring</strong> solution is designed to collect and interpret multiple machining signals in real time. A single signal can be affected by background noise or a changing process. Combining several data sources gives engineers a more complete view of the cutting process and helps distinguish normal variation from conditions that require attention.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-tool-condition-monitoring-1.webp" alt="CNC tool condition monitoring sensor on spindle" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tool-condition-monitoring-1.webp" alt="CNC tool condition monitoring sensor on spindle" loading="lazy" width="1200" height="686">
 
   <h3 id="21-acoustic-emission-monitoring">2.1 Acoustic Emission Monitoring</h3>
 
@@ -131,7 +131,7 @@ sourceId: 7269
 
   <p>Installation time varies by machine condition and integration scope. A straightforward sensor installation may be completed quickly, but a responsible deployment should always include validation time. For unusual materials, highly interrupted cuts, ceramic or diamond tooling, or complex five-axis toolpaths, additional calibration may be required.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-tool-condition-monitoring-2.webp" alt="CNC tool condition monitoring dashboard showing a tool wear alert" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tool-condition-monitoring-2.webp" alt="CNC tool condition monitoring dashboard showing a tool wear alert" loading="lazy" width="1200" height="686">
 
   <h2 id="6-applications-for-aerospace-medical-automotive-and-general-">6. Applications for Aerospace, Medical, Automotive, and General Precision Machining</h2>
 
@@ -145,7 +145,7 @@ sourceId: 7269
     <li><strong>General precision machining:</strong> shops seeking earlier warning of abnormal cutting behavior or opportunities to improve tool-use consistency.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-tool-condition-monitoring-3.webp" alt="CNC tool condition monitoring for aerospace component machining" loading="lazy" width="1200" height="686">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tool-condition-monitoring-3.webp" alt="CNC tool condition monitoring for aerospace component machining" loading="lazy" width="1200" height="686">
 
   <h2 id="7-customer-scenarios-and-illustrative-testimonials">7. Customer Scenarios and Illustrative Testimonials</h2>
 

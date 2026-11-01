@@ -10,7 +10,7 @@ modified: '2026-07-15T06:34:44'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-subprogram-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-subprogram-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -26,7 +26,7 @@ sourceId: 7546
 
 <p>A <strong>CNC subprogram</strong> is one of the most powerful tools in a machinist’s programming arsenal. If you’re new to <strong>CNC subprogram</strong> programming, mastering <strong>M98</strong> (call subprogram) and <strong>M99</strong> (return from subprogram) can cut your programming time by up to 40% and dramatically reduce on-machine errors. At <a href="/" rel="noopener">Cennetic CNC</a> — a Dongguan-based manufacturer with 15+ years of experience serving 750+ clients across Europe, North America, and Southeast Asia — we use <strong>CNC subprogram</strong> techniques every day. This guide explains everything a beginner needs to know.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-subprogram-1.webp" alt="CNC subprogram M98 M99 example on controller" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-subprogram-1.webp" alt="CNC subprogram M98 M99 example on controller" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
 <!-- ② 行业数据段 -->
 <h2 id="1-why-cnc-subprogram-programming-matters-in-2026">1. Why CNC Subprogram Programming Matters in 2026</h2>
@@ -199,7 +199,7 @@ sourceId: 7546
 
 <div class="qf-testimonial"><blockquote>“Kami menggunakan mesin Cennetic untuk produksi komponen otomotif. Dengan CNC subprogram, satu operator kini bisa mengelola tiga mesin sekaligus. Efisiensi produksi kami naik 35% dalam tiga bulan pertama.”</blockquote><figcaption>— Andi S., Kepala Produksi, PT Maju Teknik Mandiri · Bekasi, Indonesia</figcaption></div>
 
-<img decoding="async" src="/images/2026/06/cnc-subprogram-2.webp" alt="CNC subprogram programming on computer with Cennetic machine" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-subprogram-2.webp" alt="CNC subprogram programming on computer with Cennetic machine" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
 <!-- ⑧ Pros / Cons -->
 <h2 id="9-pros-cons-of-using-cnc-subprograms">9. Pros &amp; Cons of Using CNC Subprograms</h2>
@@ -254,7 +254,7 @@ sourceId: 7546
 <h3 id="how-many-times-can-i-call-the-same-cnc-subprogram">How many times can I call the same CNC subprogram?</h3>
 <p>There is no practical limit to how many times a main program can call the same <strong>CNC subprogram</strong>. You can also use the <code>L</code> address (e.g., <code>M98 P1000 L8</code>) to repeat a subprogram call a specified number of times in a single line.</p>
 
-<img decoding="async" src="/images/2026/06/cnc-subprogram-3.webp" alt="CNC subprogram flow diagram M98 M99 call and return" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-subprogram-3.webp" alt="CNC subprogram flow diagram M98 M99 call and return" style="max-width:100%;border-radius:6px;margin:16px 0;" width="1200" height="686" loading="lazy">
 
 <!-- ⑪ CTA Box -->
 <div class="qf-cta-box">

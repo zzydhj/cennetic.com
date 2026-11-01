@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-cmm-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-cmm-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7503
     difference between a <strong>CMM vs CNC machine</strong>.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cmm-explained-1.webp" alt="Cennetic CNC CMM coordinate measuring machine performing automated inspection on a machined part" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cmm-explained-1.webp" alt="Cennetic CNC CMM coordinate measuring machine performing automated inspection on a machined part" width="1200" height="686" loading="lazy">
 
   <!-- ② INDUSTRY DATA -->
   <h2 id="why-cnc-cmm-adoption-is-accelerating-globally">Why CNC CMM Adoption Is Accelerating Globally</h2>
@@ -228,7 +228,7 @@ sourceId: 7503
     service in covered regions.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cmm-explained-2.webp" alt="Cennetic CNC CMM bridge type probing a precision machined workpiece with touch-trigger probe" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cmm-explained-2.webp" alt="Cennetic CNC CMM bridge type probing a precision machined workpiece with touch-trigger probe" width="1200" height="686" loading="lazy">
 
   <!-- ⑥ CMM vs CNC TABLE -->
   <h2 id="4-cmm-vs-cnc-machine-understanding-the-difference">4. CMM vs CNC Machine: Understanding the Difference</h2>
@@ -370,7 +370,7 @@ sourceId: 7503
       level of traceability is non-negotiable.”</blockquote><figcaption>— Nattaporn S., Quality &amp; Regulatory Affairs Manager,
       Medical Device Contract Manufacturer, Bangkok, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-cmm-explained-3.webp" alt="Cennetic CNC CMM quality control lab with bridge and gantry CMM systems in operation" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cmm-explained-3.webp" alt="Cennetic CNC CMM quality control lab with bridge and gantry CMM systems in operation" width="1200" height="686" loading="lazy">
 
   <!-- ⑧ PROS / CONS -->
   <h2 id="6-pros-cons-of-cnc-cmm-for-beginners">6. Pros &amp; Cons of CNC CMM for Beginners</h2>

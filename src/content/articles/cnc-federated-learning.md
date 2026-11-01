@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-federated-learning-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-federated-learning-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -28,7 +28,7 @@ sourceId: 7364
   <strong>CNC federated learning</strong> is redefining how manufacturers harness AI across distributed factories — without ever surrendering sensitive production data. In the era of Industry 4.0, CNC shops face a paradox: the more machines they connect, the more valuable the collective intelligence becomes, yet sharing raw process data across sites raises serious privacy and IP concerns. <strong>CNC federated learning</strong> solves this by keeping raw data on-site while sharing only encrypted model updates — enabling cross-factory optimization that was previously impossible. Cennetic, founded in 2010 and headquartered in Dalingsham Town, Dongguan, Guangdong, has spent 15 years solving exactly this challenge. Our platform serves 750+ clients globally, helping manufacturers in aerospace, automotive, medical devices, and electronics achieve collective intelligence while maintaining full data sovereignty.
 </p>
 
-<img decoding="async" src="/images/2026/06/cnc-federated-learning-1.webp" alt="CNC federated learning network diagram showing privacy-preserving collaboration" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-federated-learning-1.webp" alt="CNC federated learning network diagram showing privacy-preserving collaboration" width="1200" height="686" loading="lazy">
 
 <!-- ② 行业数据段 -->
 <h2 id="why-cnc-federated-learning-is-now-a-competitive-necessity">Why CNC Federated Learning Is Now a Competitive Necessity</h2>
@@ -62,7 +62,7 @@ sourceId: 7364
   Raw production data never leaves your facility. The result is a continuously improving global model that reflects the collective experience of your entire manufacturing network — the defining advantage of <strong>CNC federated learning</strong> over any single-site AI approach.
 </p>
 
-<img decoding="async" src="/images/2026/06/cnc-federated-learning-2.webp" alt="CNC federated learning process flow from local training to global model update" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-federated-learning-2.webp" alt="CNC federated learning process flow from local training to global model update" width="1200" height="686" loading="lazy">
 
 <h2 id="3-core-features-of-cennetics-cnc-federated-learning-platform">3. Core Features of Cennetic’s CNC Federated Learning Platform</h2>
 
@@ -173,7 +173,7 @@ sourceId: 7364
   <li>Each plant retained <strong>100% data sovereignty</strong></li>
 </ul>
 
-<img decoding="async" src="/images/2026/06/cnc-federated-learning-3.webp" alt="CNC federated learning tool wear prediction accuracy improvement chart" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-federated-learning-3.webp" alt="CNC federated learning tool wear prediction accuracy improvement chart" width="1200" height="686" loading="lazy">
 
 <h3 id="what-our-clients-say-about-cnc-federated-learning">What Our Clients Say About CNC Federated Learning</h3>
 

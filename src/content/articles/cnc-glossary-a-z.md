@@ -10,7 +10,7 @@ modified: '2026-08-16T10:02:59'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-glossary-a-z-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-glossary-a-z-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -38,7 +38,7 @@ sourceId: 7415
     Understanding <strong>CNC definitions</strong> is the first step to mastering CNC machining. Use the A–Z quick-jump navigation below to find any term instantly.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-glossary-a-z-1.webp" alt="CNC glossary A-Z infographic with labeled machine parts" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-glossary-a-z-1.webp" alt="CNC glossary A-Z infographic with labeled machine parts" width="1200" height="686" loading="lazy">
 
   <!-- ===== 2. INDUSTRY DATA ===== -->
   <h2 id="1-why-cnc-terminology-matters-more-than-ever-in-2026">1. Why CNC Terminology Matters More Than Ever in 2026</h2>
@@ -510,7 +510,7 @@ sourceId: 7415
     </div>
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-glossary-a-z-2.webp" alt="CNC glossary A-Z spindle speed and machining terms in action" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-glossary-a-z-2.webp" alt="CNC glossary A-Z spindle speed and machining terms in action" width="1200" height="686" loading="lazy">
 
   <!-- ===== 5. COMPARE TABLE ===== -->
   <h2 id="4-cnc-milling-vs-turning-key-terms-compared">4. CNC Milling vs. Turning: Key Terms Compared</h2>
@@ -579,7 +579,7 @@ sourceId: 7415
   <h3 id="case-3-supplier-communication-in-southeast-asia">Case 3 — Supplier Communication in Southeast Asia</h3>
   <p>A purchasing agent at an electronics manufacturer in Malaysia needed to specify surface finish and tolerance requirements to a new CNC supplier. Using the glossary definitions for <strong>“Ra,” “Tolerance,” “Datum,”</strong> and <strong>“GD&amp;T,”</strong> she communicated requirements precisely, reducing first-article rejection rates by over 15% compared to the previous supplier relationship.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-glossary-a-z-3.webp" alt="CNC glossary A-Z definitions table with symbols and units" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-glossary-a-z-3.webp" alt="CNC glossary A-Z definitions table with symbols and units" width="1200" height="686" loading="lazy">
 
   <!-- ===== 7. TESTIMONIALS ===== -->
   <h2 id="6-what-our-customers-say">6. What Our Customers Say</h2>

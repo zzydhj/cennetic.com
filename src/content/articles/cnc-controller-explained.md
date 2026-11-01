@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - buying-guides
 author: bella
-hero: /images/2026/06/cnc-controller-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-controller-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -36,7 +36,7 @@ sourceId: 7438
     If you’re a CNC beginner — or a buyer evaluating machines for your workshop or factory — understanding the <strong>CNC controller</strong> is the single most important step to making the right investment. The CNC controller is the brain of every CNC machine: it interprets G-code instructions and converts them into precise electrical signals that drive motors, spindles, and axes. Without a reliable CNC control unit, even the finest machine frame and spindle assembly cannot produce accurate, repeatable parts. This guide by <a href="/" rel="noopener">CENNETIC</a> — founded in 2010 in Dongguan, China, with 15 years of CNC manufacturing experience — breaks down every major CNC controller type, its core functions, and exactly how to choose the right one for your application.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-controller-explained-1.webp" alt="CNC controller explained — control unit mounted on a CNC machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-controller-explained-1.webp" alt="CNC controller explained — control unit mounted on a CNC machining center" width="1200" height="686" loading="lazy">
 
   <!-- ===== 2. INDUSTRY DATA ===== -->
   <h2 id="1-why-the-cnc-controller-market-is-accelerating-in-2026">1. Why the CNC Controller Market Is Accelerating in 2026</h2>
@@ -133,7 +133,7 @@ sourceId: 7438
     Modern CNC controllers support <strong>Ethernet, USB, RS232, and CAN bus</strong> communication. Ethernet connectivity enables direct program transfer from CAM workstations, remote monitoring via web browser, and integration with factory MES/ERP systems. One CENNETIC customer reduced manual data entry errors by over 80% after switching to automated Ethernet-based program transfer.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-controller-explained-2.webp" alt="CNC controller types comparison — industrial control unit on a vertical machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-controller-explained-2.webp" alt="CNC controller types comparison — industrial control unit on a vertical machining center" width="1200" height="686" loading="lazy">
 
   <!-- ===== 6. COMPARE TABLE ===== -->
   <h2 id="5-cnc-controller-types-compared-which-is-right-for-you">5. CNC Controller Types Compared: Which Is Right for You?</h2>

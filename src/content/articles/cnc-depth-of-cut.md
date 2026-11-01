@@ -10,7 +10,7 @@ modified: '2026-08-16T06:18:30'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-depth-of-cut-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-depth-of-cut-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -28,7 +28,7 @@ sourceId: 7456
   <!-- 1. INTRODUCTION (Focus Keyword in first paragraph) -->
   <p><strong>CNC depth of cut</strong> is one of the most critical parameters in any machining operation — and one of the most misunderstood by beginners. Whether you’re running a job shop in Germany, a precision parts facility in California, or a growing factory in Vietnam, getting your <strong>CNC depth of cut</strong> right directly determines your tool life, surface finish, cycle time, and ultimately your profitability. At <a href="/" rel="noopener">CENNETIC.COM</a>, we have been manufacturing and supplying high-precision CNC machine tools since 2010, serving 750+ clients across Europe, North America, and Southeast Asia. In this guide, we break down the <strong>CNC depth of cut definition</strong>, explain <strong>axial depth CNC</strong> and <strong>radial depth CNC</strong> in plain language, and give you actionable parameters you can use today.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-depth-of-cut-1.webp" alt="CNC depth of cut diagram showing axial and radial depth illustration" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-depth-of-cut-1.webp" alt="CNC depth of cut diagram showing axial and radial depth illustration" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="1-why-cnc-depth-of-cut-matters-more-than-ever">1. Why CNC Depth of Cut Matters More Than Ever</h2>
@@ -135,7 +135,7 @@ sourceId: 7456
 
   <p><em>Material Removal Rate formula for reference: <strong>MRR (in³/min) = ADOC × RDOC × Feed Rate</strong>. Increasing either DOC dimension multiplies MRR proportionally — but also multiplies cutting force.</em></p>
 
-  <img decoding="async" src="/images/2026/06/cnc-depth-of-cut-2.webp" alt="CNC depth of cut comparison showing good vs bad surface finish results" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-depth-of-cut-2.webp" alt="CNC depth of cut comparison showing good vs bad surface finish results" width="1200" height="686" loading="lazy">
 
   <!-- 4. PROS / CONS -->
   <h2 id="4-deep-vs-shallow-depth-of-cut-pros-cons">4. Deep vs Shallow Depth of Cut: Pros &amp; Cons</h2>
@@ -202,7 +202,7 @@ sourceId: 7456
 
   <div class="qf-testimonial"><blockquote>“เราซื้อเครื่อง VMC จาก CENNETIC เพื่อผลิตชิ้นส่วนยานยนต์ ทีมงานช่วยเราตั้งค่า depth of cut ที่เหมาะสมสำหรับเหล็กกล้า ทำให้ประสิทธิภาพการผลิตเพิ่มขึ้นอย่างเห็นได้ชัด บริการหลังการขายและการรับประกัน 2 ปีทำให้เรามั่นใจมากในการลงทุนครั้งนี้”</blockquote><figcaption>— Somchai P., Factory Director, Automotive Parts Supplier, Chonburi, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-depth-of-cut-3.webp" alt="CNC depth of cut optimization example on CENNETIC vertical machining center" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-depth-of-cut-3.webp" alt="CNC depth of cut optimization example on CENNETIC vertical machining center" width="1200" height="686" loading="lazy">
 
   <!-- 7. FAQ -->
   <h2 id="7-frequently-asked-questions-about-cnc-depth-of-cut">7. Frequently Asked Questions About CNC Depth of Cut</h2>

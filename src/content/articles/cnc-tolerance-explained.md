@@ -10,7 +10,7 @@ modified: '2026-08-14T12:43:58'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-tolerance-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-tolerance-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -31,7 +31,7 @@ sourceId: 7479
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-tolerance-explained-1.webp" alt="CNC tolerance explained comparison showing good vs bad part dimensional accuracy" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tolerance-explained-1.webp" alt="CNC tolerance explained comparison showing good vs bad part dimensional accuracy" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 2. INDUSTRY DATA -->
@@ -270,11 +270,11 @@ sourceId: 7479
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-tolerance-explained-2.webp" alt="CNC tolerance inspection using CMM coordinate measuring machine for precision verification" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tolerance-explained-2.webp" alt="CNC tolerance inspection using CMM coordinate measuring machine for precision verification" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <p>
-    <img decoding="async" src="/images/2026/06/cnc-tolerance-explained-3.webp" alt="CNC parts with consistent tolerance showing precision machined components batch inspection" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
+    <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-tolerance-explained-3.webp" alt="CNC parts with consistent tolerance showing precision machined components batch inspection" style="max-width:100%;height:auto;border-radius:6px;" width="1200" height="686" loading="lazy">
   </p>
 
   <!-- 10. CTA BOX -->

@@ -10,7 +10,7 @@ modified: '2026-06-18T14:24:55'
 categories:
   - buying-guides
 author: bella
-hero: /images/2026/06/small-cnc-machine-2.webp
+hero: https://media.cennetic.com/images/2026/06/small-cnc-machine-2.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -68,7 +68,7 @@ sourceId: 2855
 <h3 id="34-ce-certified-2-year-warranty">3.4 CE Certified &amp; 2-Year Warranty</h3>
 <p>All Cennetic small CNC machines are <strong>CE certified</strong> and backed by a <strong>2-year warranty</strong> on all major components. Our after-sales support team provides remote troubleshooting and spare parts logistics to customers across Europe, North America, and Southeast Asia.</p>
 
-<img decoding="async" src="/images/2026/06/small-cnc-machine-2.webp" alt="small CNC machine cutting aluminum precision workshop" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/small-cnc-machine-2.webp" alt="small CNC machine cutting aluminum precision workshop" width="1200" height="686" loading="lazy">
 
 <!-- ===== 4. COMPARISON TABLE ===== -->
 <h2 id="4-small-cnc-machine-vs-large-cnc-machine-full-comparison">4. Small CNC Machine vs Large CNC Machine: Full Comparison</h2>
@@ -160,7 +160,7 @@ sourceId: 2855
 <p><strong>Challenge:</strong> Jewelry makers require fine detail and smooth finishes. Outsourcing wax mold production adds cost and unpredictable lead times.<br>
 <strong>Solution:</strong> A compact CNC with a 0.5mm end mill can produce wax molds for casting in-house. This eliminates outsourcing costs and reduces lead times from weeks to days, directly improving margins and customer responsiveness.</p>
 
-<img decoding="async" src="/images/2026/06/small-cnc-machine-3.webp" alt="small CNC machine vs large CNC machine size comparison workshop" width="1200" height="686" loading="lazy">
+<img decoding="async" src="https://media.cennetic.com/images/2026/06/small-cnc-machine-3.webp" alt="small CNC machine vs large CNC machine size comparison workshop" width="1200" height="686" loading="lazy">
 
 <!-- ===== 6. TESTIMONIALS ===== -->
 <h2 id="6-what-our-customers-say">6. What Our Customers Say</h2>

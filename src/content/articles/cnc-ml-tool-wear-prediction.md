@@ -10,7 +10,7 @@ modified: '2026-08-18T14:24:17'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-ml-tool-wear-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-ml-tool-wear-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7344
     For manufacturers supplying precision components to global OEMs under tight delivery schedules, the ability to predict and prevent tool failure is no longer a competitive advantage — it is a production continuity requirement.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-ml-tool-wear-1.webp" alt="CNC ML tool wear prediction system with multi-sensor monitoring setup" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-ml-tool-wear-1.webp" alt="CNC ML tool wear prediction system with multi-sensor monitoring setup" width="1200" height="686" loading="lazy">
 
   <!-- ③ CORE FEATURES -->
   <h2 id="1-core-features-of-cennetics-cnc-ml-tool-wear-prediction-sys">1. Core Features of Cennetic’s CNC ML Tool Wear Prediction System</h2>
@@ -67,7 +67,7 @@ sourceId: 7344
     The trained model runs on an edge computing module mounted directly on the machine, eliminating cloud latency and ensuring real-time response. Wear state and RUL predictions are fed directly to the CNC controller, which can trigger operator alerts, automatically adjust feed rate to extend tool life, or initiate a controlled tool change at the optimal moment — before failure but without premature replacement.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-ml-tool-wear-2.webp" alt="CNC ML tool wear prediction accuracy graph showing RUL estimation" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-ml-tool-wear-2.webp" alt="CNC ML tool wear prediction accuracy graph showing RUL estimation" width="1200" height="686" loading="lazy">
 
   <!-- ④ COMPARISON TABLE -->
   <h2 id="2-cnc-ml-tool-wear-prediction-vs-traditional-tool-management">2. CNC ML Tool Wear Prediction vs. Traditional Tool Management Methods</h2>
@@ -166,7 +166,7 @@ sourceId: 7344
 
   <div class="qf-testimonial"><blockquote>“Micro-tool breakage in medical-grade stainless is a nightmare — one broken tool means a scrapped implant component worth hundreds of dollars and a non-conformance report. Cennetic’s system gave us 5 minutes of warning, every time. We haven’t had an unplanned breakage in four months. The FDA audit went smoothly because we had complete tool change records automatically logged by the system. It paid for itself in the first month.”</blockquote></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-ml-tool-wear-3.webp" alt="CNC ML tool wear monitoring dashboard showing sensor data and RUL prediction" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-ml-tool-wear-3.webp" alt="CNC ML tool wear monitoring dashboard showing sensor data and RUL prediction" width="1200" height="686" loading="lazy">
 
   <!-- ⑥ PROS / CONS -->
   <h2 id="4-pros-and-cons-of-cnc-ml-tool-wear-prediction">4. Pros and Cons of CNC ML Tool Wear Prediction</h2>

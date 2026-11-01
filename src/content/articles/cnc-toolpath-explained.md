@@ -10,7 +10,7 @@ modified: '2026-06-28T11:02:11'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-toolpath-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-toolpath-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -62,7 +62,7 @@ sourceId: 7467
     <li><strong>Climb vs. Conventional Milling</strong> — Climb milling (tool rotation matches feed direction) produces better surface finish and is preferred for finishing. Conventional milling is sometimes used for roughing in difficult materials.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-toolpath-explained-1.webp" alt="CNC toolpath explained with roughing and finishing passes on metal workpiece" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-toolpath-explained-1.webp" alt="CNC toolpath explained with roughing and finishing passes on metal workpiece" width="1200" height="686" loading="lazy">
 
   <h2 id="3-types-of-cnc-toolpaths-roughing-vs-finishing">3. Types of CNC Toolpaths: Roughing vs. Finishing</h2>
   <p>Every machined part requires at least two categories of <strong>CNC toolpath</strong>: roughing to remove bulk material quickly, and finishing to achieve the final dimensions and surface quality. Understanding when and how to use each is fundamental to efficient machining.</p>
@@ -95,7 +95,7 @@ sourceId: 7467
     <li><strong>5-Axis Toolpaths</strong> — The tool tilts (A/B axis) while moving in XYZ, enabling undercuts, complex compound angles, and single-setup machining of parts that would require multiple setups on a 3-axis machine.</li>
   </ul>
 
-  <img decoding="async" src="/images/2026/06/cnc-toolpath-explained-2.webp" alt="CNC toolpath types comparison adaptive clearing vs conventional milling strategy" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-toolpath-explained-2.webp" alt="CNC toolpath types comparison adaptive clearing vs conventional milling strategy" width="1200" height="686" loading="lazy">
 
   <h2 id="4-core-cnc-toolpath-strategies-features-and-benefits">4. Core CNC Toolpath Strategies: Features and Benefits</h2>
 
@@ -284,7 +284,7 @@ sourceId: 7467
     🏭 <strong>About Cennetic CNC:</strong> Founded in <strong>2010</strong> in Daling Mountain Town, Dongguan, Guangdong, Cennetic has 15 years of CNC manufacturing and applications experience, serving <strong>750+ customers</strong> across Europe, North America, and Southeast Asia. All machines come with a <strong>2-year warranty</strong>. Quality issues are fully covered under our refund policy. Our engineering team provides toolpath strategy consultation and CAM setup support for every machine we deliver.
   </div>
 
-  <img decoding="async" src="/images/2026/06/cnc-toolpath-explained-3.webp" alt="CNC toolpath simulation in CAM software showing adaptive clearing strategy for beginners" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-toolpath-explained-3.webp" alt="CNC toolpath simulation in CAM software showing adaptive clearing strategy for beginners" width="1200" height="686" loading="lazy">
 
   <!-- 10. FAQ -->
   <h2 id="9-faq-cnc-toolpath-explained">9. FAQ: CNC Toolpath Explained</h2>

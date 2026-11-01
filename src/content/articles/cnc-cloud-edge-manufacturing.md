@@ -11,7 +11,7 @@ categories:
   - technical-knowledge
   - industry-applications
 author: bella
-hero: /images/2026/06/cnc-cloud-edge-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-cloud-edge-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -25,7 +25,7 @@ sourceId: 7356
 
   <p>For AI researchers and smart manufacturing engineers pushing the boundaries of Industry 4.0, <strong>CNC cloud edge</strong> collaborative manufacturing represents a genuine paradigm shift. The <strong>CNC cloud edge</strong> architecture moves computation out of centralized data centers and places intelligence directly at the machine level — enabling sub-10ms real-time control, distributed AI inference, and multi-site data collaboration that traditional cloud-only approaches simply cannot deliver. <a href="/" rel="noopener">CENNETIC.COM</a>, founded in 2010 and headquartered in Dalingshan, Dongguan, Guangdong, China, has spent 15 years developing and deploying ISO 9001-certified CNC solutions for <strong>750+ customers</strong> across Europe, North America, and Southeast Asia — and our <strong>CNC cloud edge</strong> platform is the culmination of that field experience.</p>
 
-  <img decoding="async" src="/images/2026/06/cnc-cloud-edge-1.webp" alt="CNC cloud edge collaborative manufacturing system diagram" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cloud-edge-1.webp" alt="CNC cloud edge collaborative manufacturing system diagram" width="1200" height="686" loading="lazy">
 
   <h2 id="1-why-cnc-cloud-edge-manufacturing-is-accelerating-industry-">1. Why CNC Cloud Edge Manufacturing Is Accelerating: Industry Data</h2>
 
@@ -54,7 +54,7 @@ sourceId: 7356
 
   <h2 id="3-core-features-of-cennetics-cnc-cloud-edge-platform">3. Core Features of Cennetic’s CNC Cloud Edge Platform</h2>
 
-  <img decoding="async" src="/images/2026/06/cnc-cloud-edge-2.webp" alt="CNC cloud edge platform AI researcher monitoring interface" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-cloud-edge-2.webp" alt="CNC cloud edge platform AI researcher monitoring interface" width="1200" height="686" loading="lazy">
 
   <h3 id="31-real-time-edge-ai-inference">3.1 Real-Time Edge AI Inference</h3>
   <p>Deploy trained AI models directly on <strong>CNC cloud edge</strong> nodes for sub-10ms decision-making — without any cloud round-trip. Researchers can test reinforcement learning algorithms, adaptive control policies, and anomaly detection models in live production environments. Supported runtimes include <strong>TensorFlow Lite, ONNX Runtime</strong>, and custom C++ models, deployable via Docker containers with pre-built SDKs for Python and C#. A pre-trained model zoo covering predictive maintenance and anomaly detection is included out of the box.</p>

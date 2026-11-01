@@ -10,7 +10,7 @@ modified: '2026-08-18T11:25:52'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/cnc-fea-machining-1.webp
+hero: https://media.cennetic.com/images/2026/06/cnc-fea-machining-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -42,7 +42,7 @@ sourceId: 7332
     For engineering teams supplying precision components to global OEMs, the ability to present simulation-validated process data is increasingly a contractual requirement — not merely a competitive advantage.
   </p>
 
-  <img decoding="async" src="/images/2026/06/cnc-fea-machining-1.webp" alt="CNC FEA machining simulation stress contour analysis on aerospace component" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-fea-machining-1.webp" alt="CNC FEA machining simulation stress contour analysis on aerospace component" width="1200" height="686" loading="lazy">
 
   <!-- ③ CORE FEATURES -->
   <h2 id="1-core-capabilities-of-cennetics-cnc-fea-machining-service">1. Core Capabilities of Cennetic’s CNC FEA Machining Service</h2>
@@ -120,7 +120,7 @@ sourceId: 7332
     </tbody>
   </table>
 
-  <img decoding="async" src="/images/2026/06/cnc-fea-machining-2.webp" alt="CNC FEA machining temperature and tool wear simulation results" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-fea-machining-2.webp" alt="CNC FEA machining temperature and tool wear simulation results" width="1200" height="686" loading="lazy">
 
   <!-- ⑤ USE CASES + TESTIMONIALS -->
   <h2 id="3-real-world-cnc-fea-machining-use-cases">3. Real-World CNC FEA Machining Use Cases</h2>
@@ -155,7 +155,7 @@ sourceId: 7332
 
   <div class="qf-testimonial"><blockquote>“Micro-tool wear is notoriously difficult to predict — most engineers just replace tools on a fixed interval and accept the waste. Cennetic’s FEA simulation showed us exactly which parameter was driving wear, and the fix was a simple feed rate adjustment. Tool consumption dropped by 40% and our surface finish consistency improved dramatically. We now use FEA simulation as a standard step before any new micro-milling process qualification.”</blockquote></div>
 
-  <img decoding="async" src="/images/2026/06/cnc-fea-machining-3.webp" alt="CNC FEA machining deformation analysis validation comparison chart" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/cnc-fea-machining-3.webp" alt="CNC FEA machining deformation analysis validation comparison chart" width="1200" height="686" loading="lazy">
 
   <!-- ⑥ PROS / CONS -->
   <h2 id="4-pros-and-cons-of-cnc-fea-machining-simulation">4. Pros and Cons of CNC FEA Machining Simulation</h2>

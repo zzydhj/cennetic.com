@@ -10,7 +10,7 @@ modified: '2026-07-16T14:00:20'
 categories:
   - technical-knowledge
 author: bella
-hero: /images/2026/06/g-code-commands-explained-1.webp
+hero: https://media.cennetic.com/images/2026/06/g-code-commands-explained-1.webp
 heroWidth: 1200
 heroHeight: 686
 robots: follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large
@@ -33,7 +33,7 @@ sourceId: 7419
 
   <p>This comprehensive guide explains the four essential <strong>G-code commands</strong> that control tool motion: <strong>G00</strong> (rapid positioning), <strong>G01</strong> (linear interpolation), <strong>G02</strong> (clockwise arc), and <strong>G03</strong> (counterclockwise arc). You’ll learn proper syntax, coordinate systems, I/J/K parameters for arcs, complete programming examples, and real-world applications. By mastering these core <strong>G-code commands</strong>, you’ll reduce programming errors, improve part quality, and boost productivity in your CNC operations.</p>
 
-  <img decoding="async" src="/images/2026/06/g-code-commands-explained-1.webp" alt="CNC machine running G-code commands G00 G01 G02 G03" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/g-code-commands-explained-1.webp" alt="CNC machine running G-code commands G00 G01 G02 G03" width="1200" height="686" loading="lazy">
 
   <!-- 2. INDUSTRY DATA -->
   <h2 id="why-g-code-matters">1. Why G-Code Commands Matter: Industry Data</h2>
@@ -219,7 +219,7 @@ sourceId: 7419
 <span class="k">G03 X70. Y10. I20. J0. F200</span> <span class="c">( CCW arc: end X70 Y10, center offset I20 J0 )</span>
 </div>
 
-  <img decoding="async" src="/images/2026/06/g-code-commands-explained-2.webp" alt="Precision CNC machined part with G02 G03 circular interpolation arcs" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/g-code-commands-explained-2.webp" alt="Precision CNC machined part with G02 G03 circular interpolation arcs" width="1200" height="686" loading="lazy">
 
   <!-- 7. I J K PARAMETERS -->
   <h2 id="ijk-parameters">6. Understanding I, J, K Parameters for Arcs</h2>
@@ -392,7 +392,7 @@ sourceId: 7419
 
   <div class="qf-testimonial"><blockquote>“Our contract manufacturing shop in Chiang Mai, Thailand, produces aluminum enclosures with rounded corners. We were struggling with inconsistent radii—some parts had R5.2mm, others R4.8mm, causing 15% scrap. After CENNETIC trained our team on G02/G03 with I, J, K parameters, we achieved consistent ±0.02mm radius tolerance. Scrap rate dropped from 15% to 1.8%, saving us $18,000 annually. We now use G02/G03 for all radii and contours. The key was understanding that I, J, K are incremental offsets from the start point—once we grasped that concept, programming arcs became simple. Bella’s remote training in English and Thai made adoption seamless.”</blockquote><figcaption>— Apinya S., CNC Manager, Chiang Mai Precision Co., Ltd., Chiang Mai, Thailand</figcaption></div>
 
-  <img decoding="async" src="/images/2026/06/g-code-commands-explained-3.webp" alt="CNC operator reviewing G-code commands on tablet near CENNETIC" width="1200" height="686" loading="lazy">
+  <img decoding="async" src="https://media.cennetic.com/images/2026/06/g-code-commands-explained-3.webp" alt="CNC operator reviewing G-code commands on tablet near CENNETIC" width="1200" height="686" loading="lazy">
 
   <!-- 10. COMPLETE REFERENCE TABLE -->
   <h2 id="complete-reference">9. Complete G-Code Reference Table</h2>
