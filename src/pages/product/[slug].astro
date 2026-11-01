@@ -282,6 +282,31 @@ const description = `${product.name} by Cennetic — ${product.summary
     }
 
     /*
+     * 设备清单（Standard/Optional equipment 这类 h3 紧跟的列表）单条文字很短，
+     * 一列排下来会全部堆在左边、右侧大片留白，改成 2/3 列占满正文宽度。
+     * 全站 30 处命中：26 处是设备清单，另 4 处（Spindle & Drive System 等）
+     * 也是同类短条目列表，分列同样合适。
+     * 这里要同时解除上面 75ch 的限宽；h3 + ul 的特异性 (0,2,2) 高于 > ul 的 (0,2,1)，
+     * 所以能覆盖，不需要 !important。
+     */
+    :global(.detail .qf-article-body h3 + ul) {
+        max-width: none;
+        columns: 2;
+        column-gap: 2.5rem;
+    }
+
+    /* 条目不能被拦腰拆到两列里 */
+    :global(.detail .qf-article-body h3 + ul > li) {
+        break-inside: avoid;
+    }
+
+    @media (min-width: 1280px) {
+        :global(.detail .qf-article-body h3 + ul) {
+            columns: 3;
+        }
+    }
+
+    /*
      * 正文里的规格表做成“像样”的规格清单：深色表头 + 边框 + 斑马纹。
      * 分组行标题(Bed/Electrical)是 tbody 里的 td rowspan,不会误染。
      */
