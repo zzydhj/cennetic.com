@@ -37,6 +37,23 @@ type Sort = { col: string; dir: 'asc' | 'desc' };
 
 const PAGE_SIZE = 20;
 
+/**
+ * 列表只用来展示，但旧写法 `select('*')` 会把每篇文章的完整正文一起拽下来：
+ * 实测 113 篇文章的列表响应 2,457 KB，而表格真正用到的只有 22 KB —— 多传 100 多倍，
+ * 跨境链路上首屏能等十几秒。正文改到点进编辑页时按单行取。
+ *
+ * 这里故意用「排除大字段」而不是「列举需要的列」：后者只要漏了某一列，
+ * 列表会静默显示空白，比慢更难发现；而 body 是唯一确证的体积大头。
+ * idField 与 updated_at 可能不在 fields 声明里（site_settings 的主键 id、库里自动维护的时间戳），所以单独补。
+ */
+const HEAVY_FIELDS = new Set(['body']);
+function listSelect(resource: Resource): string {
+    const cols = resource.fields.filter((f) => !HEAVY_FIELDS.has(f.name)).map((f) => f.name);
+    if (!cols.includes(resource.idField)) cols.unshift(resource.idField);
+    if (resource.hasUpdatedAt && !cols.includes('updated_at')) cols.push('updated_at');
+    return cols.join(',');
+}
+
 /** 列渲染：数组拼成一行、布尔说人话，再按 ListCol.alias 把哨位值换成可读文本 */
 function renderCell(v: unknown, alias?: Record<string, string>): string {
     if (v == null) return '';
@@ -90,10 +107,11 @@ export default function ResourceList({ resource }: { resource: Resource }): JSX.
         setLoading(true);
         supabase
             .from(resource.table)
-            .select('*')
+            .select(listSelect(resource))
             .then(({ data, error }) => {
                 if (error) toast.fail('读取失败', friendlyDbMessage(error));
-                setRows((data as Row[]) ?? []);
+                /* 传的是运行期拼出来的列名字符串，supabase-js 无法解析 列名 → 推成错误行类型，这里断言回业务行 */
+                setRows((data as unknown as Row[]) ?? []);
                 setLoading(false);
             });
     };
