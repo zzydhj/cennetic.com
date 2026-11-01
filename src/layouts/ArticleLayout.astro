@@ -219,11 +219,21 @@ const updatedText =
         background: var(--color-surface-alt);
     }
 
-    /* 迁移正文里的表格在窄屏要能横向滚动，而不是撑破版面 */
+    /*
+      表格不能默认块级化：行盒会按内容最大宽度收缩、列不参与容器分配，
+      宽屏下右侧出现大空洞（产品页实测过：行宽卡在 1026px，1113 与 2560 视口下纹丝不动）。
+      横向滚动只在真放不下的窄屏启用。
+    */
     .post-body :global(table) {
-        display: block;
-        overflow-x: auto;
+        width: 100%;
         max-width: 100%;
+    }
+
+    @media (max-width: 700px) {
+        .post-body :global(table) {
+            display: block;
+            overflow-x: auto;
+        }
     }
 
     .cta-strip {
