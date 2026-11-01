@@ -176,10 +176,20 @@ const wa = waLink(
     }
 
     /* 迁移层的居中与内垫已由 article.css 统一归零，限宽交给 .col */
+    /*
+      表格不能块级化：行盒会按内容宽度收缩、列不参与容器分配，宽屏下右侧出现大空洞
+      （详见 article.css 里同一条规则的说明）。横向滚动只在窄屏启用。
+    */
     .body :global(table) {
-        display: block;
-        overflow-x: auto;
+        width: 100%;
         max-width: 100%;
+    }
+
+    @media (max-width: 700px) {
+        .body :global(table) {
+            display: block;
+            overflow-x: auto;
+        }
     }
 
     .strip {

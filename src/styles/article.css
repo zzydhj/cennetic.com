@@ -70,10 +70,23 @@
 /* ── 5. 表格：源站 143 个表格样式各异，统一成一套可读的对比表 ── */
 .qf-article-body table {
     font-size: 0.95em;
-    /* 宽规格表/对比表在窄屏横向滚动，而不是撑破页面 */
-    display: block;
-    overflow-x: auto;
+    /*
+      必须保持表格显示。上一版这里写了 display:block + overflow-x:auto
+      （本意是让宽表在窄屏能横向滚动），但块级化会让行盒按内容最大宽度收缩、
+      列不再参与容器分配：实测规格表行宽 1026px 在 1113 与 2560 视口下纹丝不动，
+      宽屏右侧留下 611px 空洞，看上去就是“内容偏左、左右没占满”，
+      而且窗口越宽越明显。
+    */
+    width: 100%;
     max-width: 100%;
+}
+
+/* 真正放不下的窄屏才退回横向滚动：此时容器已比内容窄，收缩没有副作用 */
+@media (max-width: 700px) {
+    .qf-article-body table {
+        display: block;
+        overflow-x: auto;
+    }
 }
 
 .qf-article-body th {
