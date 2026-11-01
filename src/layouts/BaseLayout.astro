@@ -14,6 +14,7 @@ import Header from '@components/layout/Header.astro';
 import Footer from '@components/layout/Footer.astro';
 import ContactDock from '@components/ui/ContactDock.astro';
 import { siteConfig } from '@lib/catalog.ts';
+import { MEDIA_ORIGIN } from '@lib/media-url.ts';
 import type { SeoInput } from '@lib/seo.ts';
 
 export interface Props extends SeoInput {
@@ -48,7 +49,14 @@ const {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
-        {/* 图片在 media 子域时才需要 preconnect；同域托管时不建无用连接 */}
+        {/*
+          图片搬到 media 子域后，冷加载第一张图要 7.6s、同域后续只要 ~1s（实测），
+          差值就是新域名的 DNS + TLS 握手。preconnect 让它在解析 HTML 时就提前开始，
+          不用等到第一个 <img> 出现；dns-prefetch 给不支持 preconnect 的浏览器兜底。
+        */}
+        <link rel="preconnect" href={MEDIA_ORIGIN} crossorigin />
+        <link rel="dns-prefetch" href={MEDIA_ORIGIN} />
+
         {preloadLcpImage && (
             <link
                 rel="preload"
