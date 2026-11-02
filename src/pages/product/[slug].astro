@@ -293,11 +293,37 @@ const description = `${product.name} by Cennetic — ${product.summary
         max-width: none;
         columns: 2;
         column-gap: 2.5rem;
+        /*
+          迁移层给正文列表留了 22px 左内垫（.qf-article-body ul{padding-left:22px}），
+          但全局 preflight 又把 list-style 关成了 none —— 符号没有，缩进白留：
+          实测 h3 左边缘 40px 而 li 在 62px，标题与内容不齐。
+          这里归零，改由 li 自己的内垫给圆点留位，让圆点正好落在标题左边缘上。
+        */
+        padding-left: 0;
     }
 
-    /* 条目不能被拦腰拆到两列里 */
     :global(.detail .qf-article-body h3 + ul > li) {
         break-inside: avoid;
+        position: relative;
+        padding-left: 0.95rem;
+        /*
+          原本条目间距只有 7px，比行距（line-height 26.1 - 字号 14.5 ≈ 11.6px）还小，
+          长条目换行后下一条目看起来像同一条的延续 —— 条目边界读不出来。
+          拉到 0.8em（约 12px）使条目间隔明显大于行内间隔。
+        */
+        margin-bottom: 0.8em;
+    }
+
+    /* 全局 preflight 关掉了项目符号，这里补一个藏青小圆点作为条目锚点 */
+    :global(.detail .qf-article-body h3 + ul > li::before) {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--color-brand);
     }
 
     @media (min-width: 1280px) {
