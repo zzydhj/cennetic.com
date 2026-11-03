@@ -96,7 +96,7 @@ const GROUPS: Group[] = [
     {
         section: SITE_SECTIONS[3]!,
         leaves: [
-            { path: ['logo'], label: '站点 Logo 地址', placeholder: 'https://media.cennetic.com/images/site/logo.svg', help: '填图片完整地址（SVG 不能在后台上传，要换标志请把新文件交给开发）。' },
+            { path: ['logo'], label: '站点 Logo 地址', placeholder: '/images/site/logo.svg', help: '站内路径（如 /images/site/logo.svg）或完整图片地址都可以。SVG 不能在后台上传，要换标志请把新文件交给开发。' },
             { path: ['ogDefaultImage'], label: '默认分享封面', kind: 'image', help: '文章/产品没配图时，社交分享卡用它。建议 1200×630。' },
             { path: ['hero', 'video'], label: '首页背景视频', help: '填完整地址，如 https://media.cennetic.com/images/site/hero-banner.mp4。改动会直接影响首页加载，非开发建议只核对不改。' },
             { path: ['hero', 'poster'], label: '视频封面图', kind: 'image', help: '封面的 LCP 元素，务必保留，否则首页会先白一块。' },

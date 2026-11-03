@@ -17,7 +17,7 @@ import { mediaUrl } from "@lib/media-url.ts";
 
 const { productName } = Astro.props as { productName: string };
 
-const img = (name: string) => mediaUrl('/images/site/company/' + name);
+const img = (name: string) => mediaUrl("/images/site/company/" + name);
 const quote = waLink(
     { number: siteConfig.whatsapp.number, siteUrl: siteConfig.url },
     {
@@ -603,8 +603,8 @@ const bento = [
         border-radius: var(--radius-lg);
         overflow: hidden;
         color: #fff;
-        background: url("https://media.cennetic.com/images/site/company/cnc-working.webp") right center /
-            cover no-repeat;
+        background: url("https://media.cennetic.com/images/site/company/cnc-working.webp")
+            right center / cover no-repeat;
         background-color: var(--color-ink);
     }
     .banner-overlay {
@@ -624,6 +624,8 @@ const bento = [
     }
     .banner-logo {
         height: 34px;
+        /* 与页眉 .brand-logo 同理：不声明比例时，未加载会按 alt 文本定宽，加载完撑宽推位 */
+        aspect-ratio: 1485.01 / 197.07;
         width: auto;
         margin-bottom: 1.6rem;
         filter: brightness(0) invert(1);

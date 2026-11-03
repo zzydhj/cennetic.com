@@ -324,6 +324,13 @@ function flatten(
         display: block;
         /* 2rem = logo 自然高度 32px，按 1:1 渲染最锐利；占 80px 页眉的 40% */
         height: 2rem;
+        /*
+          必须显式声明比例。上一版只写 width:auto，图片未加载时 Chrome 会退化成
+          「按 alt 文本定宽」（实测 96px），加载完变 241px —— 导航被向右推 145px，
+          就是「乍看没有 logo、HOME 顶到最前面」的观感。
+          7.535 = logo.svg 的 viewBox 1485.01 / 197.07，与标签上的 width/height 属性一致。
+        */
+        aspect-ratio: 1485.01 / 197.07;
         width: auto;
     }
 
