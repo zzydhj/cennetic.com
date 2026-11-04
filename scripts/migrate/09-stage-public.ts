@@ -1,6 +1,16 @@
 /**
  * Phase 5 · 把图片同步到 public/images，供 Pages 托管。
  *
+ * ⚠ 现状（2026-11）：本阶段已退役，正常情况下不该再跑。
+ *   - 图片已改由 R2 托管、经 media.cennetic.com 访问，URL 出口在 src/lib/media-url.ts；
+ *     下方预告的「切 R2」已经完成，本脚本不再是站点的取图路径。
+ *   - media-staging/ 已清理（内容早已同步进 public/images，独有部分是改名前的旧副本）。
+ *   - 旧站 qfcncmachine.com 已决定整体废弃，03 抓取阶段无法重跑 —— 别指望重抓。
+ *   - public/images 现存的是迁桶前的副本，加上仍在站内使用的品牌资源
+ *     （site/logo.svg 与 favicon/icon 系列，由 site_settings.logo 与 verify/live.ts 依赖）。
+ *     删减它是一次架构改动（先改 live.ts 断言），不是跑本脚本能做的事。
+ * 保留代码是为了迁移过程可复现，不代表它还在服役。
+ *
  * 两个来源，后者叠加在前者之上：
  *
  *   media-staging/  WordPress 原图（由 03 抓取，不入 Git）
@@ -15,11 +25,6 @@
  * 10.38MB 原片转出来的，它不是 WordPress 媒体库里的东西，prebuild 重跑抓不回来；
  * 而 media-staging/ 与 public/images/ 都在 .gitignore 里。不单独存一份进仓库，
  * 裸 clone 就永远得不到这两个文件 —— 首页会没背景视频。
- *
- * 这是**切到 Cloudflare R2 之前**的临时链路：图片随构建产物一起发边缘节点。
- * 定案是原图存 R2、经 media.cennetic.com 访问，届时本阶段退役，
- * 只需把图片 URL 出口（scripts/migrate/lib/images.ts 的 publicPathFromKey）
- * 改成指向 R2 域名，业务代码不用动。
  *
  * 同步是幂等的：只复制比目标新的文件。不在源清单里的文件只报告、不删除 ——
  * public/images 已随仓库提交并被内容引用，本脚本无权删它（详见下方 stale 那段注释）。
@@ -58,7 +63,10 @@ export async function stagePublicImages(): Promise<void> {
     if (!stagingPresent) {
         throw new Error(
             `缺少 ${rel(STAGING_DIR)}，中止。public/images 已随仓库提交，` +
-            `此时做孤儿清理会把它们误删。如确需重抓：npm run migrate -- 03`,
+            `此时做孤儿清理会把它们误删。\n` +
+            `本阶段已退役：图片现由 R2 托管（media.cennetic.com），而旧站已废弃、` +
+            `无法通过 npm run migrate -- 03 重抓。若只是想调整站内资源，` +
+            `直接改 public/images 与 src/lib/media-url.ts，不要跑本脚本。`,
         );
     }
 
