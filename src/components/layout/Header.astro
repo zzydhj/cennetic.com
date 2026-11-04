@@ -272,6 +272,55 @@ function flatten(
         t.addEventListener("click", () => activate(id));
     }
 
+    /*
+     * 斜穿保活（hover intent）。
+     *
+     * 触发项 .mega 实际上只包含 Products 那几个字（约 130px 宽），而面板是居中在它身上的
+     * 1400px。鼠标往左下或右下的卡片走时，会先从 .mega 的左/右边界出去，那一刻 y 还在
+     * 页眉内、尚未到达面板顶边 —— :hover 丢失，面板开始收起，而鼠标正朝着它去，
+     * 于是只能「直着往下」才能保持打开。
+     *
+     * 纯 CSS 修不了：用来搭桥的 ::before 本身要依赖 .mega:hover 才存在，一出界就跟着消失。
+     * 也不能把桥直接盖在页眉上 —— 那会拦住 HOME / ABOUT US 这些菜单项的点击。
+     * 所以离开后留一段意图时间，期间鼠标进入面板（或回到触发项）就取消收起。
+     */
+    const mega = document.querySelector<HTMLElement>(".nav .mega");
+    const panel = mega?.querySelector<HTMLElement>(".mega-panel");
+    if (mega && panel) {
+        // 斜穿「触发项边界→面板顶边」这段实测只需 80～150ms，260ms 有余量又不拖。
+        const HOLD_MS = 260;
+        let hold = 0;
+        const keep = () => {
+            clearTimeout(hold);
+            hold = 0;
+            mega.classList.add("is-open");
+        };
+        const drop = () => {
+            clearTimeout(hold);
+            hold = window.setTimeout(() => {
+                mega.classList.remove("is-open");
+                hold = 0;
+            }, HOLD_MS);
+        };
+        const close = () => {
+            clearTimeout(hold);
+            hold = 0;
+            mega.classList.remove("is-open");
+        };
+        // 面板是 .mega 的后代，两者都要听：在两者之间移动会先 leave 后 enter，靠延时衔接
+        for (const el of [mega, panel]) {
+            el.addEventListener("mouseenter", keep);
+            el.addEventListener("mouseleave", drop);
+        }
+        // 点了面板里的链接就该立即收起，否则跳完页面它还悬着
+        panel.addEventListener("click", close);
+        // 键盘退出（Esc）与页面滚动同样收起
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") close();
+        });
+        window.addEventListener("scroll", close, { passive: true });
+    }
+
     // 移动端抽屉
     const btn = document.querySelector<HTMLButtonElement>(
         ".site-header .toggle",
@@ -426,6 +475,7 @@ function flatten(
         transition: transform 0.25s var(--ease);
     }
     .mega:hover .chev,
+    .mega.is-open .chev,
     .mega:focus-within .chev {
         transform: rotate(180deg);
     }
@@ -452,7 +502,13 @@ function flatten(
             visibility 0.2s;
         z-index: 60;
     }
+    /*
+     * .is-open 由脚本维持：触发项只有 Products 那一小块宽，斜着往左下/右下的卡片走时，
+     * 鼠标会先从触发项的左右边界出去、此时还没到达面板顶边，:hover 会在这一刻丢失。
+     * 见脚本里的意图延迟说明。
+     */
     .mega:hover .mega-panel,
+    .mega.is-open .mega-panel,
     .mega:focus-within .mega-panel {
         opacity: 1;
         visibility: visible;
