@@ -16,6 +16,10 @@
  *   Cloudflare 通用错误页（lang="en-US"、无品牌、无 /_astro/）；
  *   而不带点的乱名才是真 NXDOMAIN。判据要看响应体是不是我们的产物。
  */
+import { readFile } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 const BASE = (process.argv[2] ?? 'https://qfcncmachine-com.pages.dev').replace(/\/$/, '');
 
 interface Probe {
@@ -201,6 +205,39 @@ for (const c of redirectCases) {
     const t = await targetStatus(p.location!);
     if (t === 200) pass(`${c.path} -> ${p.location}（目标 200）`);
     else fail(`${c.path} -> ${p.location} 但目标不可达：${t}`);
+}
+
+/*
+ * 指向资产域的 301 终点不在 dist 里，verify:site 按设计跳过它（它只能查盘）。
+ * 这里补一段真实 HTTP 抽查：从 _redirects 取出这类规则抽样跟到底，
+ * 要求确实 301 到该地址、且该地址能取到图。
+ * 2026-11-22 产品图迁进桶后，这 49 条接力终点只有这里能兜住 ——
+ * 否则对象名写错只会默默 404，而 Google 图片里的历史地址正好就断在这。
+ */
+console.log('\n=== 4b. 指向资产域的 301 终点抽查 ===');
+{
+    const here = dirname(fileURLToPath(import.meta.url));
+    const text = await readFile(join(here, '../../public/_redirects'), 'utf8');
+    const assetRules = text.split(/\r?\n/)
+        .map((l) => l.trim()).filter((l) => l && !l.startsWith('#'))
+        .map((l) => l.split(/\s+/))
+        .filter((p) => p.length >= 2 && /^https:\/\/media\.cennetic\.com\/images\//.test(p[1]));
+    const stride = Math.max(1, Math.floor(assetRules.length / 6));
+    const sample = assetRules.filter((_, i) => i % stride === 0).slice(0, 6);
+    for (const [from, to] of sample) {
+        const p = await probe(from);
+        /* Location 比较只看路径：Pages 可能回编码形态不同的同一个地址 */
+        const got = p.location ? new URL(p.location, BASE).pathname : '';
+        if (p.status !== 301 || got !== new URL(to).pathname) {
+            fail(`${from} 期望 301 到资产域，实际 ${p.status} Location=${p.location ?? '无'}`);
+            continue;
+        }
+        const r = await fetch(to, { redirect: 'manual', cache: 'no-store' });
+        const type = r.headers.get('content-type') ?? '';
+        if (r.status === 200 && type.startsWith('image/')) pass(`${from} -> ${type} ${r.headers.get('content-length')}B`);
+        else fail(`${from} 的资产域终点取不到：${r.status} ${type || '无 content-type'}`);
+    }
+    console.log(`  指向资产域的规则共 ${assetRules.length} 条，本次抽查 ${sample.length} 条`);
 }
 
 // 基线里的 5 条源站别名：从 url-manifest 动态取，不写死

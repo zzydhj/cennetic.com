@@ -15,6 +15,27 @@ import type { UrlRecord } from './lib/types.ts';
 
 const PUBLIC_DIR = join(ROOT, 'public');
 
+/*
+ * 图片资产域。必须与 src/lib/media-url.ts 的 MEDIA_ORIGIN 同值（两处改了不同步，
+ * 生成出来的 301 就会指向错的域名），也与 scripts/verify/site.ts 的同名常量绑死。
+ */
+const MEDIA_ORIGIN = 'https://media.cennetic.com';
+
+/**
+ * 301 的目标域名跟着文件实际所在位置走：仓库 public/images 里还在就用站内路径，
+ * 不在了说明这批已迁对象存储（2026-11-22 换图批次起产品图存桶）就用资产域绝对 URL。
+ *
+ * Pages 的 _redirects 只限制「来源不得带协议」，目标允许绝对 URL；verify:site
+ * 对非 / 开头的目标跳过存在性校验，所以可达性由 verify:live 的抽查兜住。
+ * 不这么做的后果是真实的：上一轮删掉仓库旧图后，这些接力终点全部指向 404，
+ * Google 图片搜索里的历史地址就断了。
+ */
+function redirectTarget(relPath: string): string {
+    return existsSync(join(PUBLIC_DIR, 'images', relPath))
+        ? `/images/${relPath}`
+        : `${MEDIA_ORIGIN}/images/${relPath}`;
+}
+
 /**
  * 源站已失效但仍可能被外链指向的交易类路径。
  * 购物车随纯静态化下线，统一 301 到产品列表，不给死链留 404。
@@ -207,7 +228,7 @@ export async function buildDeployFiles(): Promise<void> {
     );
     for (const dir of IMAGE_DIRS) {
         for (const [oldName, newName] of IMAGE_RENAMES) {
-            lines.push(`/images/${dir}/${oldName}   /images/${dir}/${newName}   301`);
+            lines.push(`/images/${dir}/${oldName}   ${redirectTarget(`${dir}/${newName}`)}   301`);
         }
     }
 
@@ -218,9 +239,9 @@ export async function buildDeployFiles(): Promise<void> {
         '# 中文旧名同时给原文与 percent-encoded 两条，防匹配差异。',
     );
     for (const [o, n] of IMAGE_MOVES) {
-        lines.push(`/images/${o}   /images/${n}   301`);
+        lines.push(`/images/${o}   ${redirectTarget(n)}   301`);
         const enc = o.split('/').map(encodeURIComponent).join('/');
-        if (enc !== o) lines.push(`/images/${enc}   /images/${n}   301`);
+        if (enc !== o) lines.push(`/images/${enc}   ${redirectTarget(n)}   301`);
     }
 
     lines.push(
