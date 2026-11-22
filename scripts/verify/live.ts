@@ -183,8 +183,10 @@ const redirectCases: Array<{ path: string; expectTo: string }> = [
     // 这条同时盖住两个坑：通配占位符写错（产出带尾 * 的 404）与媒体文件换了目录
     // （banner.mp4 已搬到 /images/site/hero-banner.mp4，必须有显式规则）。
     { path: '/wp-content/uploads/2026/05/banner.mp4', expectTo: '/images/site/hero-banner.mp4' },
-    // 真通配路径：只改前缀、不换名字的图
-    { path: '/wp-content/uploads/2026/06/v-856-vmc-main.webp', expectTo: '/images/2026/06/v-856-vmc-main.webp' },
+    // 真通配路径：只改前缀、不换名字的图。
+    // 2026-11-22 换图后这张的目标文件名加了日期前缀（旧文件已删，不能再用同名断言），
+    // 它仍然验证通配规则本身可用：目标必须 200，否则说明 301 指向了已删除的文件。
+    { path: '/wp-content/uploads/2026/06/v-856-vmc-main.webp', expectTo: '/images/2026/06/20261122-v-856-vmc-main.webp' },
 ];
 for (const c of redirectCases) {
     const p = await probe(c.path);
