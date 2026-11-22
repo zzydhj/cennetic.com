@@ -54,6 +54,10 @@ const IMAGE_MOVES: Array<[string, string]> = [
     ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-430x430.webp', 'products/t-600-high-speed-drilling-and-tapping-center/20261122-01.webp'],
     ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-700x700.webp', 'products/t-600-high-speed-drilling-and-tapping-center/20261122-01.webp'],
     ['2026/08/nanobanana-edited-2026-05-04T12-04-10-389Z1-拷贝-1-768x768.webp', 'products/t-600-high-speed-drilling-and-tapping-center/20261122-01.webp'],
+    // 2026-11-22 换图：这张从未改过名，旧站 wp-content 地址靠末尾通配规则同名映射到站内旧名，
+    // 而旧名文件已删、内容改用带日期前缀的新名 —— 不补这条接力，通配会把请求送到 404。
+    // verify:live 的「真通配路径」用例实测拦下了它，当时 targetStatus 只测一跳也帮它蒙混过。
+    ['2026/06/v-856-vmc-main.webp', '2026/06/20261122-v-856-vmc-main.webp'],
 ];
 
 /**

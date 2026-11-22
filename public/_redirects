@@ -52,6 +52,9 @@
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure-100x83.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure-100x83.webp   301
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure-430x358.webp   /images/2026/06/cennetic-L1060-z-axis-column-structure-430x358.webp   301
 /images/2026/06/qiaofeng-L1060-z-axis-column-structure.webp   /images/2026/06/20261122-cennetic-L1060-z-axis-column-structure.webp   301
+# 2026-11-22 换图后的接力：这张从未改过名，旧站 wp-content 地址靠末尾通配规则同名映射过来，
+# 目标文件已换成带日期前缀的名字 —— 不补这一条，通配会把请求送到已删除的文件上（verify:live 实测试出）。
+/images/2026/06/v-856-vmc-main.webp   /images/2026/06/20261122-v-856-vmc-main.webp   301
 
 # ── 跨目录改名的图片（20 条，上面两节都盖不住）──
 # v-856 与 t-600 的图从 AI 临时命名改成与其余产品一致的 /images/products/<slug>/NN.webp。

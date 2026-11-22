@@ -158,6 +158,10 @@ console.log('\n=== 4. 重定向 ===');
  * 之前用 includes() 做前缀匹配，放过了一条真 bug：_redirects 写成 /images/:path* 时
  * Pages 不认这种命名捕获，Location 变成 /images/<路径>*（尾 * 是字面量）→ 目标 404，
  * 但前缀相同照样判过。所以这里除了精确相等，还显式拒绝未替换的占位符（残留 * 或 :name）。
+ *
+ * 目标检查用 redirect:'follow'：图片改名是靠链式 301 接力的（wp-content 通配 → 站内旧名
+ * → 带日期前缀的新名），上一版只测一跳，把“接力正常”误报成“目标不可达”；
+ * 链式末端真 404 时照样会失败，防的是同一件事，不是更松。
  */
 function targetPathOk(location: string | null | undefined, expectTo: string): boolean {
     if (!location || /[*]/.test(location) || /\/:[a-z]/i.test(location)) return false;
@@ -169,7 +173,7 @@ function targetPathOk(location: string | null | undefined, expectTo: string): bo
 }
 async function targetStatus(loc: string): Promise<number> {
     try {
-        const r = await fetch(new URL(loc, BASE).href, { redirect: 'manual', cache: 'no-store' });
+        const r = await fetch(new URL(loc, BASE).href, { redirect: 'follow', cache: 'no-store' });
         return r.status;
     } catch {
         return -1;
@@ -184,9 +188,9 @@ const redirectCases: Array<{ path: string; expectTo: string }> = [
     // （banner.mp4 已搬到 /images/site/hero-banner.mp4，必须有显式规则）。
     { path: '/wp-content/uploads/2026/05/banner.mp4', expectTo: '/images/site/hero-banner.mp4' },
     // 真通配路径：只改前缀、不换名字的图。
-    // 2026-11-22 换图后这张的目标文件名加了日期前缀（旧文件已删，不能再用同名断言），
-    // 它仍然验证通配规则本身可用：目标必须 200，否则说明 301 指向了已删除的文件。
-    { path: '/wp-content/uploads/2026/06/v-856-vmc-main.webp', expectTo: '/images/2026/06/20261122-v-856-vmc-main.webp' },
+    // 断言的是通配规则的直接结果（站内旧名）；旧名之后由一条接力 301 指向带日期前缀的新文件，
+    // 所以目标可达性由 targetStatus 跟完整个链后判 200。
+    { path: '/wp-content/uploads/2026/06/v-856-vmc-main.webp', expectTo: '/images/2026/06/v-856-vmc-main.webp' },
 ];
 for (const c of redirectCases) {
     const p = await probe(c.path);
